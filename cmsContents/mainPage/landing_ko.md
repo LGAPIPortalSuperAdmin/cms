@@ -18,9 +18,6 @@ contents: >-
   \    <figure className="tem-card__img"></figure>
 
 
-  ![](/assets/images/wallpaperflare.com_wallpaper_coding.jpg)
-
-
   \    <div className="tem-card__con">
 
 
