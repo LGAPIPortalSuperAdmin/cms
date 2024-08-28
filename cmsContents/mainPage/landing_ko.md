@@ -1,15 +1,5 @@
 ---
 contents: >-
-  #### ***CMS사용***
-
-
-  새로 만들어서
-
-
-
-
-
-
   <div className="main-content">
 
 
