@@ -54,7 +54,7 @@ contents: >-
   \    <p className="tem-card__txt">
 
 
-  \    Business Connect 파트너십은 서비스와 기능을 차별화해 경쟁력을 확보하는데 날개를 달아드립니다.
+  \    Business Connect 파트너십은 서비스와 기능을 차별화해 경쟁력을 확보하는데 날개를 달아드립니다.1
 
 
   \    </p>
