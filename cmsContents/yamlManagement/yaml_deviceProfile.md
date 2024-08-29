@@ -26,7 +26,7 @@ contents:
 
           디바이스 프로파일 메시지의 스키마는 공통적으로 아래의 항목들을 설명합니다.1
           
-          <img src="https://github.com/LGAPIPortalSuperAdmin/cms/blob/main/cmsPublic/assets/images/wallpaperflare.com_wallpaper_coding.jpg?raw=true" />
+          <img src="https://raw.githubusercontent.com/LGAPIPortalSuperAdmin/cms/main/cmsPublic/assets/images/wallpaperflare.com_wallpaper_coding.jpg" />
 
             - **notification** : 해당 디바이스에서 지원하는 푸시 메시지의 종류
             - **property** : 속성별 Read/Write 지원 여부와 값의 특성
