@@ -27,7 +27,7 @@ contents: >-
   \    <p className="tem-card__txt">
 
 
-  \    직관적으로 설계된 RESTful API 패턴과 견고한 LG의 보안체계로 쉽고 안전하게 서비스를 확장해 보세요.12
+  \    직관적으로 설계된 RESTful API 패턴과 견고한 LG의 보안체계로 쉽고 안전하게 서비스를 확장해 보세요.121
 
 
   \    </p>
