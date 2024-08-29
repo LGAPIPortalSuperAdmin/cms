@@ -24,7 +24,7 @@ contents:
               - *디바이스 상태 조회 API*의 응답 메시지와 *디바이스 제어 API*의 요청 메시지는 디바이스 프로파일을 기반으로 작성됩니다.
               이 스키마를 참고하여 메시지를 구성하고, 예제는 각 API의 정의를 참조하세요.
 
-          디바이스 프로파일 메시지의 스키마는 공통적으로 아래의 항목들을 설명합니다.1223
+          디바이스 프로파일 메시지의 스키마는 공통적으로 아래의 항목들을 설명합니다.12232
           
           <img src="https://github.com/LGAPIPortalSuperAdmin/cms/blob/main/cmsPublic/assets/images/wallpaperflare.com_wallpaper_coding.jpg?raw=true" />
 
