@@ -28,6 +28,8 @@ contents:
 
           Business Connect API는 API의 사용 목적에 따라 다음과 같이 분류됩니다.
 
+          ![1234](/assets/images/wallpaperflare.com_wallpaper_coding.jpg)
+
 
            |API 종류|요약|
            |-|-|
