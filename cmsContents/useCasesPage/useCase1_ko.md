@@ -147,10 +147,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_airpurifier.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="공기청정기"
@@ -180,10 +180,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_sealingpan.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="실링팬"
@@ -213,10 +213,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_robot_cleaner.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="로봇청소기"
@@ -306,10 +306,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_electronic_board.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="전자칠판"
@@ -339,10 +339,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_refrigerator.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="냉장고"
@@ -372,10 +372,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_aerofurniture.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="에어로퍼니처"
@@ -405,10 +405,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_airconditioner_top.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="천장형 시스템에어컨"
@@ -501,10 +501,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_refrigerator.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="냉장고"
@@ -534,10 +534,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_dishwasher.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="식기세척기"
@@ -585,10 +585,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_homebrew.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="홈브루"
@@ -672,10 +672,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_airconditioner_top.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="천장형 시스템에어컨"
@@ -705,10 +705,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_stylist.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="스타일러"
@@ -738,10 +738,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_refrigerator.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="냉장고"
@@ -867,10 +867,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_massage_chair.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="안마 의자"
@@ -900,10 +900,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_water_purifier.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="제습기"
