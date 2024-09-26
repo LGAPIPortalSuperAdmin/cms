@@ -48,8 +48,6 @@ contents: >-
   \    </div>
 
 
-
-
   \    <div className="bg-white">
 
 
@@ -116,10 +114,10 @@ contents: >-
   \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
 
 
-  \    width={80}
+  \    width="80"
 
 
-  \    height={80}
+  \    height="80"
 
 
   \    alt="스탠드 시스템에어컨"
@@ -246,8 +244,6 @@ contents: >-
 
 
   \    </div>
-
-
 
 
   \    <div className="tem-zigzag">
@@ -442,8 +438,6 @@ contents: >-
   \    </div>
 
 
-
-
   \    <div className="tem-zigzag">
 
 
@@ -624,8 +618,6 @@ contents: >-
   \    </div>
 
 
-
-
   \    <div className="tem-zigzag">
 
 
@@ -795,8 +787,6 @@ contents: >-
 
 
   \    </div>
-
-
 
 
   \    <div className="tem-zigzag">
