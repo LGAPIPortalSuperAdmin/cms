@@ -918,10 +918,7 @@ contents: >-
   \    <span>제습기</span>
 
 
-  \    </li>
-
-
-  \    <li>
+  \    </li>\    <li>
 
 
   \    <figure className="tem-thumbnail__img">
