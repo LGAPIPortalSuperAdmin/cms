@@ -15,13 +15,13 @@ contents: >-
   \    <span>Use Cases</span>
 
 
-  \    <span>주거용 빌딩(en)</span>
+  \    <span>주거용 빌딩</span>
 
 
   \    </div>
 
 
-  \    <h2 className="h2 lg">주거용 빌딩</h2>
+  \    <h2 className="h2 lg">주거용 빌딩(en)</h2>
 
 
   \    <p className="t2 lg mt1">
