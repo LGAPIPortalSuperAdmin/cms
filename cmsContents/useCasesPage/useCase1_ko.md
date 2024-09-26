@@ -561,7 +561,7 @@ contents: >-
   \    <figure className="tem-thumbnail__img">
 
 
-  \    <CoImage src="/assets/images/img_usecase_ic_oven.png" width={80} height={80} alt="광파오븐" />
+  \    <CoImage src="/assets/images/img_usecase_ic_oven.png" width="80" height="80" alt="광파오븐" />
 
 
   \    </figure>
@@ -765,7 +765,7 @@ contents: >-
   \    <figure className="tem-thumbnail__img">
 
 
-  \    <CoImage src="/assets/images/img_usecase_ic_tv.png" width={80} height={80} alt="TV" />
+  \    <CoImage src="/assets/images/img_usecase_ic_tv.png" width="80" height="80" alt="TV" />
 
 
   \    </figure>
@@ -843,7 +843,7 @@ contents: >-
   \    <figure className="tem-thumbnail__img">
 
 
-  \    <CoImage src="/assets/images/img_usecase_ic_tv.png" width={80} height={80} alt="TV" />
+  \    <CoImage src="/assets/images/img_usecase_ic_tv.png" width="80" height="80" alt="TV" />
 
 
   \    </figure>
@@ -924,7 +924,7 @@ contents: >-
   \    <figure className="tem-thumbnail__img">
 
 
-  \    <CoImage src="/assets/images/img_usecase_ic_plants.png" width={80} height={80} alt="틔운" />
+  \    <CoImage src="/assets/images/img_usecase_ic_plants.png" width="80" height="80" alt="틔운" />
 
 
   \    </figure>
