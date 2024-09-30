@@ -15,7 +15,7 @@ contents: >-
   \    <span>Use Cases</span>
 
 
-  \    <span>주거용 빌딩1</span>
+  \    <span>주거용 빌딩</span>
 
 
   \    </div>
