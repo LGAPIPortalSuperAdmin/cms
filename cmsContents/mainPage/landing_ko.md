@@ -27,7 +27,7 @@ contents: >-
   \                <figure className="tem-card__img">
 
 
-  \                  <img src="/assets/images/img_main_cont_1_1.png" alt="" />
+  \                  <img src="/assets/images/img_main_cont_1_1.png" alt="" style="porition:relative;" />
 
 
   \                </figure>
