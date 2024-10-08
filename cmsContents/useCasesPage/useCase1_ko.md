@@ -39,10 +39,7 @@ contents: >-
   \              <div className="btns">
 
 
-  \                <CoButton
-
-
-  \                  className="btn-round-black btn-l"
+  \                <CoButton className="btn-round-black btn-l">
 
 
   \                  ThinQ Business API
@@ -51,10 +48,7 @@ contents: >-
   \                </CoButton>
 
 
-  \                <CoButton
-
-
-  \                  className="btn-round-line btn-l"
+  \                <CoButton className="btn-round-line btn-l">
 
 
   \                  Become a partner
