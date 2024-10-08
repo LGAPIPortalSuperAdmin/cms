@@ -294,13 +294,19 @@ contents: >-
   \                  </p>
 
 
-  \                  <CoButton className="btn-round-flat c-link p0">
+  \              <CoLink
 
 
-  \                    자세히 보기 <i className="arr-link"></i>
+  \              href="/ko/product/useCase1?s=1728382496802"
 
 
-  \                  </CoButton>
+  \              className="btn-round-flat c-link p0">
+
+
+  \              자세히 보기<i className="arr-link"></i>
+
+
+  \              </CoLink>
 
 
   \                </div>
@@ -504,7 +510,7 @@ contents: >-
   \              <CoLink
 
 
-  \              href="https://dev.openapi.developer.lge.com/ko/support/qna?s=1728373943354"
+  \              href="/ko/support/qna?s=1728373943354"
 
 
   \              className="btn-round-primary btn-l">
