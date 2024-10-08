@@ -501,7 +501,22 @@ contents: >-
   \              <p className="tem-text__tit">LG Open API 사용을 위한 궁금한 내용을 문의해 보세요.</p>
 
 
-  \              <CoButton className="btn-round-primary btn-l">문의하기</CoButton>
+  \              <CoLink
+
+
+  \              href="https://dev.openapi.developer.lge.com/ko/support/qna?s=1728373943354"
+
+
+  \              target="_blank"
+
+
+  \              className="btn-round-primary btn-l">
+
+
+  \              문의하기
+
+
+  \              </CoLink>
 
 
   \            </div>
