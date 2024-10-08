@@ -1,961 +1,487 @@
 ---
 contents: >-
-  <div className="full-wrap">
+  \    <div className="main-wrap usecase-wrap mt0">
 
 
-  \    <div className="container">
+  \        <div className="top-visual">
 
 
-  \    <div className="breadcrumbs">
+  \          <div className="top-visual__items">
 
 
-  \    <span>HOME</span>
+  \            <CoImage src="/assets/images/img_usecase_v2.png" isFullSize alt="이미지" className="visual-img" />
 
 
-  \    <span>Use Cases</span>
+  \            <div className="box-item">
 
 
-  \    <span>주거용 빌딩</span>
+  \              <p className="sub">빌딩 관제</p>
 
 
-  \    </div>
+  \              <p className="title lgEiText">더 철저한 빌딩 관리</p>
 
 
-  \    <h2 className="h2 lg">주거용 빌딩</h2>
+  \              <p className="text--light mt3">
 
 
-  \    <p className="t2 lg mt1">
+  \                ThinQ Business API를 통해 직접 고객사만의 관제실을 구성할 수 있습니다. <br />
 
 
-  \    <strong>LG Business Connect API를 활용하여 주거용 빌딩을 스마트하게 관리해 보세요.</strong>
+  \                설계된 맞춤 관제실을 사용해 빌딩 환경을 최적의 상태로 구성하고 시설 관리자의 <br />
 
 
-  \    </p>
+  \                운영 효율 높일 수 있습니다.
 
 
-  \    <p className="t2 lg mt1.5">
+  \              </p>
 
 
-  \    빌딩 관제 뿐만 아니라, 입주민들이 사용하는 앱에도 제품 상태조회 및 제어기능을 연동하여 입주자들의 편의성을
+  \              <div className="btns">
 
 
-  \    극대화 해 보세요. 코리빙하우스, 요양시설, 기숙사 등 주거용 빌딩 관리에 최적화 된 기능들을 제공합니다.
+  \                <CoButton
 
 
-  \    </p>
+  \                  className="btn-round-black btn-l"
 
 
-  \    </div>
+  \                  onClick={() =>
 
 
-  \    <div className="bg-white">
+  \                    (window.open('about:blank').location.href =
 
 
-  \    <div className="container">
+  \                      'https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662')
 
 
-  \    <section className="tem-type-zigzag usecase">
+  \                  }>
 
 
-  \    <h3 className="tem-title--t3 c-subred">What you can do?</h3>
+  \                  ThinQ Business API
 
 
-  \    <div className="tem-zigzag">
+  \                </CoButton>
 
 
-  \    <figure className="tem-zigzag__img">
+  \                <CoButton
 
 
-  \    <CoImage src="/assets/images/img_usecase_residence_rounge.png" isFullSize alt="라운지" />
+  \                  className="btn-round-line btn-l"
 
 
-  \    </figure>
+  \                  onClick={() => (window.location.href = '/pub/LG-P-MP-0201S')}>
 
 
-  \    <div className="tem-zigzag__con inner-thumbnail">
+  \                  Become a partner
 
 
-  \    <p className="tem-zigzag__tit">라운지</p>
+  \                </CoButton>
 
 
-  \    <p className="tem-zigzag__txt">
+  \              </div>
 
 
-  \    라운지는 주로 휴식이나 소셜 활동을 즐기는 공간으로 사용되는 실내 공간으로 동료들과 교류하며,
+  \            </div>
 
 
-  \    창의적인 아이디어를 나눌 수 있는 중요한 장소입니다.
+  \          </div>
 
 
-  \    </p>
+  \        </div>
 
 
-  \    <p className="tem-zigzag__txt">동료들과 웃음이 피어날 수 있도록, 보다 쾌적한 환경을 제공하세요.</p>
+  \        <div className="container">
 
 
-  \    <div className="tem-type-thumbnail">
+  \          <div className="grid usecase-grid--1">
 
 
-  \    <h4 className="tem-thumbnail__tit">LG&apos;s Pick!</h4>
+  \            <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
 
 
-  \    <ul className="tem-thumbnail__list">
+  \              <div className="usecase-cont">
 
 
-  \    <li>
+  \                <p className="usecase-cont__title mb2">
 
 
-  \    <figure className="tem-thumbnail__img">
+  \                  <i className="usecase-cont__icon bell"></i>알림을 통한 선제 대응
 
 
-  \    <CoImage
+  \                </p>
 
 
-  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+  \                <p className="usecase-cont__txt">
 
 
-  \    width="80"
+  \                  온습도 센서를 통해 건물의 이상 상태를 파악하고, 문제가 발생하면 빌딩 운영자에게 알림을 제공하여
 
 
-  \    height="80"
+  \                  선제적으로 건물의 공기질 상황을 파악할 수 있도록 합니다.
 
 
-  \    alt="스탠드 시스템에어컨"
+  \                </p>
 
 
-  \    />
+  \              </div>
 
 
-  \    </figure>
+  \            </div>
 
 
-  \    <span>스탠드 시스템에어컨</span>
+  \            <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
 
 
-  \    </li>
+  \              <div className="usecase-cont">
 
 
-  \    <li>
+  \                <p className="usecase-cont__title mb2">
 
 
-  \    <figure className="tem-thumbnail__img">
+  \                  <i className="usecase-cont__icon thumb"></i>데이터 분석을 통한 공간 집중 관리
 
 
-  \    <CoImage
+  \                </p>
 
 
-  \    src="/assets/images/img_usecase_ic_airpurifier.png"
+  \                <p className="usecase-cont__txt">
 
 
-  \    width="80"
+  \                  자주 이상 신호가 발생하는 공간의 설비 제어 이력을 확인하고 문제를 파악 할 수 있습니다. 분석된 정보를
 
 
-  \    height="80"
+  \                  통해 공간을 집중관리하여 입주인원의 만족도를 높일 수 있습니다.
 
 
-  \    alt="공기청정기"
+  \                </p>
 
 
-  \    />
+  \              </div>
 
 
-  \    </figure>
+  \            </div>
 
 
-  \    <span>공기청정기</span>
+  \            <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
 
 
-  \    </li>
+  \              <div className="usecase-cont">
 
 
-  \    <li>
+  \                <p className="usecase-cont__title mb2">
 
 
-  \    <figure className="tem-thumbnail__img">
+  \                  <i className="usecase-cont__icon star"></i>냄새를 통한 공기 청결도 관리
 
 
-  \    <CoImage
+  \                </p>
 
 
-  \    src="/assets/images/img_usecase_ic_sealingpan.png"
+  \                <p className="usecase-cont__txt">
 
 
-  \    width="80"
+  \                  공간의 온습도 뿐만 아니라 냄새 역시 데이터로 관리할 수 있습니다. 에어컨, 공기청정기가 제공하는 냄새
 
 
-  \    height="80"
+  \                  농도값을 측정해 공기의 청결도를 파악하고, 공간 내 공조 기기의 이상 여부를 확인할 수 있습니다.
 
 
-  \    alt="실링팬"
+  \                </p>
 
 
-  \    />
+  \              </div>
 
 
-  \    </figure>
+  \            </div>
 
 
-  \    <span>실링팬</span>
+  \            <div className="col-full mt4 mb0 usecase-pick">
 
 
-  \    </li>
+  \              <p className="usecase-pick__badge">LG's Pick!</p>
 
 
-  \    <li>
+  \              <ul className="usecase-pick__list flex flex-wrap">
 
 
-  \    <figure className="tem-thumbnail__img">
+  \                <li class="usecase-pick__item">
 
 
-  \    <CoImage
+  \                  <figure className="usecase-pick__img">
 
 
-  \    src="/assets/images/img_usecase_ic_robot_cleaner.png"
+  \                    <CoImage
 
 
-  \    width="80"
+  \                      src="/assets/images/img_usecase_ic_airconditioner_stand.png"
 
 
-  \    height="80"
+  \                      isFullSize
 
 
-  \    alt="로봇청소기"
+  \                      alt="아이콘"
 
 
-  \    />
+  \                      className="usecase-pick__img"
 
 
-  \    </figure>
+  \                    />
 
 
-  \    <span>로봇청소기</span>
+  \                  </figure>
 
 
-  \    </li>
+  \                  <p className="usecase-pick__txt">시스템 에어컨</p>
 
 
-  \    </ul>
+  \                </li>
 
 
-  \    </div>
+  \                <li class="usecase-pick__item">
 
 
-  \    </div>
+  \                  <figure className="usecase-pick__img">
 
 
-  \    </div>
+  \                    <CoImage
 
 
-  \    <div className="tem-zigzag">
+  \                      src="/assets/images/img_usecase_ic_temp_moi_sensor.png"
 
 
-  \    <figure className="tem-zigzag__img">
+  \                      isFullSize
 
 
-  \    <CoImage src="/assets/images/img_usecase_residence_seminar.png" isFullSize alt="세미나룸" />
+  \                      alt="아이콘"
 
 
-  \    </figure>
+  \                      className="usecase-pick__img"
 
 
-  \    <div className="tem-zigzag__con inner-thumbnail">
+  \                    />
 
 
-  \    <p className="tem-zigzag__tit">세미나룸</p>
+  \                  </figure>
 
 
-  \    <p className="tem-zigzag__txt">
+  \                  <p className="usecase-pick__txt">온습도센서</p>
 
 
-  \    다수의 사람들이 모여 직원 교육이나 비즈니스 전략 수립, 프로젝트 회의, 제품 발표 등 다양한 목적으로
+  \                </li>
 
 
-  \    활용되는 세미나룸은 구조와 시설이 무엇보다 중요합니다.
+  \                <li class="usecase-pick__item">
 
 
-  \    </p>
+  \                  <figure className="usecase-pick__img">
 
 
-  \    <p className="tem-zigzag__txt">
+  \                    <CoImage
 
 
-  \    참석자들에게 효율적이었던 세미나로 기억 될 수 있도록 추억을 선물해 보세요.
+  \                      src="/assets/images/img_usecase_ic_airpurifier.png"
 
 
-  \    </p>
+  \                      isFullSize
 
 
-  \    <div className="tem-type-thumbnail">
+  \                      alt="아이콘"
 
 
-  \    <h4 className="tem-thumbnail__tit">LG&apos;s Pick!</h4>
+  \                      className="usecase-pick__img"
 
 
-  \    <ul className="tem-thumbnail__list">
+  \                    />
 
 
-  \    <li>
+  \                  </figure>
 
 
-  \    <figure className="tem-thumbnail__img">
+  \                  <p className="usecase-pick__txt">공기청정기</p>
 
 
-  \    <CoImage
+  \                </li>
 
 
-  \    src="/assets/images/img_usecase_ic_electronic_board.png"
+  \              </ul>
 
 
-  \    width="80"
+  \            </div>
 
 
-  \    height="80"
+  \            <div className="box box--r-1.25 box--clean col-full usecase-box">
 
 
-  \    alt="전자칠판"
+  \              <div className="usecase-dev">
 
 
-  \    />
+  \                <h3 className="usecase-dev__tit">ThinQ Business API를 활용하여 어플리케이션을 개발하세요</h3>
 
 
-  \    </figure>
+  \                <p className="usecase-dev__txt">
 
 
-  \    <span>전자칠판</span>
+  \                  스마트 가전과 IoT 제품들의 API를 활용하여 <br />
 
 
-  \    </li>
+  \                  사용자 또는 관리자를 위한 어플리케이션을 구성할 수 있습니다.
 
 
-  \    <li>
+  \                </p>
 
 
-  \    <figure className="tem-thumbnail__img">
+  \                <ul className="usecase-dev__list">
 
 
-  \    <CoImage
+  \                  <li className="usecase-dev__item grid">
 
 
-  \    src="/assets/images/img_usecase_ic_refrigerator.png"
+  \                    <div className="col-4 col-sm-full">
 
 
-  \    width="80"
+  \                      <i className="icon-sensor"></i>온/습도 센서
 
 
-  \    height="80"
+  \                    </div>
 
 
-  \    alt="냉장고"
+  \                    <div className="col-8 col-sm-full">
 
 
-  \    />
+  \                      <dl>
 
 
-  \    </figure>
+  \                        <dt>공기질 상태 확인</dt>
 
 
-  \    <span>냉장고</span>
+  \                        <dd>센서의 공기질 및 온습도 정보값을 확인 할 수 있습니다.</dd>
 
 
-  \    </li>
+  \                      </dl>
 
 
-  \    <li>
+  \                    </div>
 
 
-  \    <figure className="tem-thumbnail__img">
+  \                  </li>
 
 
-  \    <CoImage
+  \                  <li className="usecase-dev__item grid">
 
 
-  \    src="/assets/images/img_usecase_ic_aerofurniture.png"
+  \                    <div className="col-4 col-sm-full">
 
 
-  \    width="80"
+  \                      <i className="icon-air-con"></i>에어컨
 
 
-  \    height="80"
+  \                    </div>
 
 
-  \    alt="에어로퍼니처"
+  \                    <div className="col-8 col-sm-full">
 
 
-  \    />
+  \                      <dl>
 
 
-  \    </figure>
+  \                        <dt>설비 상태 조회</dt>
 
 
-  \    <span>에어로퍼니처</span>
+  \                        <dd>HVAC 설비의 현재 운전정보 등을 확인 할 수 있습니다.</dd>
 
 
-  \    </li>
+  \                      </dl>
 
 
-  \    <li>
+  \                      <dl>
 
 
-  \    <figure className="tem-thumbnail__img">
+  \                        <dt>제어 이력 조회</dt>
 
 
-  \    <CoImage
+  \                        <dd>에어컨 설비의 제어 이력을 조회할 수 있습니다.</dd>
 
 
-  \    src="/assets/images/img_usecase_ic_airconditioner_top.png"
+  \                      </dl>
 
 
-  \    width="80"
+  \                    </div>
 
 
-  \    height="80"
+  \                  </li>
 
 
-  \    alt="천장형 시스템에어컨"
+  \                  <li className="usecase-dev__item grid">
 
 
-  \    />
+  \                    <div className="col-4 col-sm-full">
 
 
-  \    </figure>
+  \                      <i className="icon-air-fresh"></i>공기청정기
 
 
-  \    <span>천장형 시스템에어컨</span>
+  \                    </div>
 
 
-  \    </li>
+  \                    <div className="col-8 col-sm-full">
 
 
-  \    </ul>
+  \                      <dl>
 
 
-  \    </div>
+  \                        <dt>냄새 농도값 확인</dt>
 
 
-  \    </div>
+  \                        <dd>기기가 수집한 공간의 냄새 농도값을 5단계로 확인할 수 있습니다.</dd>
 
 
-  \    </div>
+  \                      </dl>
 
 
-  \    <div className="tem-zigzag">
+  \                    </div>
 
 
-  \    <figure className="tem-zigzag__img">
+  \                  </li>
 
 
-  \    <CoImage src="/assets/images/img_usecase_residence_fnb.png" isFullSize alt="F&B(식당)" />
+  \                </ul>
 
 
-  \    </figure>
+  \              </div>
 
 
-  \    <div className="tem-zigzag__con inner-thumbnail">
+  \            </div>
 
 
-  \    <p className="tem-zigzag__tit">F&B(식당)</p>
+  \            <div className="box box--r-1.25 col-full usecase-box">
 
 
-  \    <p className="tem-zigzag__txt">
+  \              <div className="usecase-more">
 
 
-  \    가족이나 친구들과 함께 편안하고 즐거운 식사를 할 수 있는 식당은 고객 만족도를 높이고, 지속적인 고객
+  \                <p className="usecase-more__title">
 
 
-  \    유치를 가능하는 것이 중요합니다. 고객의 만족도는 보여지는 환경부터 시작점이 된다는 사실 알고
+  \                  디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.
 
 
-  \    계셨나요?
+  \                </p>
 
 
-  \    </p>
+  \                <CoButton className="btn-round-primary btn-l">API 문서 보기</CoButton>
 
 
-  \    <p className="zigzag__txt">
+  \              </div>
 
 
-  \    고객들이 안심하고 식사 할 수 있는 만족도 높은 식당을 위해 고민해 보세요.
+  \            </div>
 
 
-  \    </p>
+  \          </div>
 
 
-  \    <div className="tem-type-thumbnail">
+  \        </div>
 
 
-  \    <h4 className="tem-thumbnail__tit">LG&apos;s Pick!</h4>
-
-
-  \    <ul className="tem-thumbnail__list">
-
-
-  \    <li>
-
-
-  \    <figure className="tem-thumbnail__img">
-
-
-  \    <CoImage
-
-
-  \    src="/assets/images/img_usecase_ic_refrigerator.png"
-
-
-  \    width="80"
-
-
-  \    height="80"
-
-
-  \    alt="냉장고"
-
-
-  \    />
-
-
-  \    </figure>
-
-
-  \    <span>냉장고</span>
-
-
-  \    </li>
-
-
-  \    <li>
-
-
-  \    <figure className="tem-thumbnail__img">
-
-
-  \    <CoImage
-
-
-  \    src="/assets/images/img_usecase_ic_dishwasher.png"
-
-
-  \    width="80"
-
-
-  \    height="80"
-
-
-  \    alt="식기세척기"
-
-
-  \    />
-
-
-  \    </figure>
-
-
-  \    <span>식기세척기</span>
-
-
-  \    </li>
-
-
-  \    <li>
-
-
-  \    <figure className="tem-thumbnail__img">
-
-
-  \    <CoImage src="/assets/images/img_usecase_ic_oven.png" width="80" height="80" alt="광파오븐" />
-
-
-  \    </figure>
-
-
-  \    <span>광파오븐</span>
-
-
-  \    </li>
-
-
-  \    <li>
-
-
-  \    <figure className="tem-thumbnail__img">
-
-
-  \    <CoImage
-
-
-  \    src="/assets/images/img_usecase_ic_homebrew.png"
-
-
-  \    width="80"
-
-
-  \    height="80"
-
-
-  \    alt="홈브루"
-
-
-  \    />
-
-
-  \    </figure>
-
-
-  \    <span>홈브루</span>
-
-
-  \    </li>
-
-
-  \    </ul>
-
-
-  \    </div>
-
-
-  \    </div>
-
-
-  \    </div>
-
-
-  \    <div className="tem-zigzag">
-
-
-  \    <figure className="tem-zigzag__img">
-
-
-  \    <CoImage src="/assets/images/img_usecase_residence_room.png" isFullSize alt="객실" />
-
-
-  \    </figure>
-
-
-  \    <div className="tem-zigzag__con inner-thumbnail">
-
-
-  \    <p className="tem-zigzag__tit">객실</p>
-
-
-  \    <p className="tem-zigzag__txt">
-
-
-  \    객실은 개인이나 그룹이 휴식을 취하거나 숙박하는 공간입니다. 하루의 마무리와 다음날의 준비할 수
-
-
-  \    있도록 쾌적하고 편안한 서비스를 제공할 수 있도록 지속적인 고민이 요구됩니다.
-
-
-  \    </p>
-
-
-  \    <p className="zigzag__txt">자사의 제품이 이런 고민을 해결하는데 도움이 될 것입니다.</p>
-
-
-  \    <div className="tem-type-thumbnail">
-
-
-  \    <h4 className="tem-thumbnail__tit">LG&apos;s Pick!</h4>
-
-
-  \    <ul className="tem-thumbnail__list">
-
-
-  \    <li>
-
-
-  \    <figure className="tem-thumbnail__img">
-
-
-  \    <CoImage
-
-
-  \    src="/assets/images/img_usecase_ic_airconditioner_top.png"
-
-
-  \    width="80"
-
-
-  \    height="80"
-
-
-  \    alt="천장형 시스템에어컨"
-
-
-  \    />
-
-
-  \    </figure>
-
-
-  \    <span>천장형 시스템에어컨</span>
-
-
-  \    </li>
-
-
-  \    <li>
-
-
-  \    <figure className="tem-thumbnail__img">
-
-
-  \    <CoImage
-
-
-  \    src="/assets/images/img_usecase_ic_stylist.png"
-
-
-  \    width="80"
-
-
-  \    height="80"
-
-
-  \    alt="스타일러"
-
-
-  \    />
-
-
-  \    </figure>
-
-
-  \    <span>스타일러</span>
-
-
-  \    </li>
-
-
-  \    <li>
-
-
-  \    <figure className="tem-thumbnail__img">
-
-
-  \    <CoImage
-
-
-  \    src="/assets/images/img_usecase_ic_refrigerator.png"
-
-
-  \    width="80"
-
-
-  \    height="80"
-
-
-  \    alt="냉장고"
-
-
-  \    />
-
-
-  \    </figure>
-
-
-  \    <span>냉장고</span>
-
-
-  \    </li>
-
-
-  \    <li>
-
-
-  \    <figure className="tem-thumbnail__img">
-
-
-  \    <CoImage src="/assets/images/img_usecase_ic_tv.png" width="80" height="80" alt="TV" />
-
-
-  \    </figure>
-
-
-  \    <span>TV</span>
-
-
-  \    </li>
-
-
-  \    </ul>
-
-
-  \    </div>
-
-
-  \    </div>
-
-
-  \    </div>
-
-
-  \    <div className="tem-zigzag">
-
-
-  \    <figure className="tem-zigzag__img">
-
-
-  \    <CoImage src="/assets/images/img_usecase_residence_retiring.png" isFullSize alt="휴게실" />
-
-
-  \    </figure>
-
-
-  \    <div className="tem-zigzag__con inner-thumbnail">
-
-
-  \    <p className="tem-zigzag__tit">휴게실</p>
-
-
-  \    <p className="tem-zigzag__txt">
-
-
-  \    휴게실은 지친 일상에서 휴식을 취하거나 자유롭게 시간을 보낼 수 있어 스트레스를 해소하고 보람을
-
-
-  \    느끼는 장소입니다.
-
-
-  \    </p>
-
-
-  \    <p className="tem-zigzag__txt">
-
-
-  \    많은 사람들이 머무는 곳, 일상의 휴식을 편안하게 보낼 수 있도록 공간을 꾸며 보세요.
-
-
-  \    </p>
-
-
-  \    <div className="tem-type-thumbnail">
-
-
-  \    <h4 className="tem-thumbnail__tit">LG&apos;s Pick!</h4>
-
-
-  \    <ul className="tem-thumbnail__list">
-
-
-  \    <li>
-
-
-  \    <figure className="tem-thumbnail__img">
-
-
-  \    <CoImage src="/assets/images/img_usecase_ic_tv.png" width="80" height="80" alt="TV" />
-
-
-  \    </figure>
-
-
-  \    <span>TV</span>
-
-
-  \    </li>
-
-
-  \    <li>
-
-
-  \    <figure className="tem-thumbnail__img">
-
-
-  \    <CoImage
-
-
-  \    src="/assets/images/img_usecase_ic_massage_chair.png"
-
-
-  \    width="80"
-
-
-  \    height="80"
-
-
-  \    alt="안마 의자"
-
-
-  \    />
-
-
-  \    </figure>
-
-
-  \    <span>안마 의자</span>
-
-
-  \    </li>
-
-
-  \    <li>
-
-
-  \    <figure className="tem-thumbnail__img">
-
-
-  \    <CoImage
-
-
-  \    src="/assets/images/img_usecase_ic_water_purifier.png"
-
-
-  \    width="80"
-
-
-  \    height="80"
-
-
-  \    alt="제습기"
-
-
-  \    />
-
-
-  \    </figure>
-
-
-  \    <span>제습기</span>
-
-
-  \    </li>\    <li>
-
-
-  \    <figure className="tem-thumbnail__img">
-
-
-  \    <CoImage src="/assets/images/img_usecase_ic_plants.png" width="80" height="80" alt="틔운" />
-
-
-  \    </figure>
-
-
-  \    <span>틔운</span>
-
-
-  \    </li>
-
-
-  \    </ul>
-
-
-  \    </div>
-
-
-  \    </div>
-
-
-  \    </div>
-
-
-  \    </section>
-
-
-  \    </div>
-
-
-  \    </div>
-
-
-  \    </div>
+  \      </div>
 ---
