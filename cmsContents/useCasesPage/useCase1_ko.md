@@ -37,14 +37,12 @@ contents: >-2
 
   \    <div className="btns">
 
-
-  \ \[Click me](http://www.google.com){: .btn-round-black btn-l"}
-
-
-  \    <CoLink
-
+   <button
 
   \    className="btn-round-black btn-l"
+
+
+  \    onClick={() => alert('1')}
 
 
   \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
@@ -56,7 +54,7 @@ contents: >-2
   \    ThinQ Business API
 
 
-  \    </CoLink>
+  \    </button>
 
 
   \    <CoLink href="/" className="btn-round-line btn-l">
