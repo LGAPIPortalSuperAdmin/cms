@@ -507,9 +507,6 @@ contents: >-
   \              href="https://dev.openapi.developer.lge.com/ko/support/qna?s=1728373943354"
 
 
-  \              target="_blank"
-
-
   \              className="btn-round-primary btn-l">
 
 
