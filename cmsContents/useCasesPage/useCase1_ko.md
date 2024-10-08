@@ -1,466 +1,491 @@
 ---
-contents: >-
-  \    <div className="main-wrap usecase-wrap mt0">
+contents: >-2
+    <div className="main-wrap usecase-wrap mt0">
 
+  \    <div className="top-visual">
 
-  \        <div className="top-visual">
 
+  \    <div className="top-visual__items">
 
-  \          <div className="top-visual__items">
 
+  \    <CoImage src="/assets/images/img_usecase_v2.png" isFullSize alt="이미지" className="visual-img" />
 
-  \            <CoImage src="/assets/images/img_usecase_v2.png" isFullSize alt="이미지" className="visual-img" />
 
+  \    <div className="box-item">
 
-  \            <div className="box-item">
 
+  \    <p className="sub">빌딩 관제</p>
 
-  \              <p className="sub">빌딩 관제</p>
 
+  \    <p className="title lgEiText">더 철저한 빌딩 관리</p>
 
-  \              <p className="title lgEiText">더 철저한 빌딩 관리</p>
 
+  \    <p className="text--light mt3">
 
-  \              <p className="text--light mt3">
 
+  \    ThinQ Business API를 통해 직접 고객사만의 관제실을 구성할 수 있습니다. <br />
 
-  \                ThinQ Business API를 통해 직접 고객사만의 관제실을 구성할 수 있습니다. <br />
 
+  \    설계된 맞춤 관제실을 사용해 빌딩 환경을 최적의 상태로 구성하고 시설 관리자의 <br />
 
-  \                설계된 맞춤 관제실을 사용해 빌딩 환경을 최적의 상태로 구성하고 시설 관리자의 <br />
 
+  \    운영 효율 높일 수 있습니다.
 
-  \                운영 효율 높일 수 있습니다.
 
+  \    </p>
 
-  \              </p>
 
+  \    <div className="btns">
 
-  \              <div className="btns">
 
+  \    <CoLink
 
-  \                <CoButton className="btn-round-black btn-l">
 
+  \    className="btn-round-black btn-l"
 
-  \                  ThinQ Business API
 
+  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
 
-  \                </CoButton>
 
+  \    target="_blank">
 
-  \                <CoButton className="btn-round-line btn-l">
 
+  \    ThinQ Business API
 
-  \                  Become a partner
 
+  \    </CoLink>
 
-  \                </CoButton>
 
+  \    <CoLink href="/" className="btn-round-line btn-l">
 
-  \              </div>
 
+  \    Become a partner
 
-  \            </div>
 
+  \    </CoLink>
 
-  \          </div>
 
+  \    </div>
 
-  \        </div>
 
+  \    </div>
 
-  \        <div className="container">
 
+  \    </div>
 
-  \          <div className="grid usecase-grid--1">
 
+  \    </div>
 
-  \            <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
 
 
-  \              <div className="usecase-cont">
 
+  \    <div className="container">
 
-  \                <p className="usecase-cont__title mb2">
 
+  \    <div className="grid usecase-grid--1">
 
-  \                  <i className="usecase-cont__icon bell"></i>알림을 통한 선제 대응
 
+  \    {/\* 알림을 통한 선제 대응 \*/}
 
-  \                </p>
 
+  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
 
-  \                <p className="usecase-cont__txt">
 
+  \    <div className="usecase-cont">
 
-  \                  온습도 센서를 통해 건물의 이상 상태를 파악하고, 문제가 발생하면 빌딩 운영자에게 알림을 제공하여
 
+  \    <p className="usecase-cont__title mb2">
 
-  \                  선제적으로 건물의 공기질 상황을 파악할 수 있도록 합니다.
 
+  \    <i className="usecase-cont__icon bell"></i>알림을 통한 선제 대응
 
-  \                </p>
 
+  \    </p>
 
-  \              </div>
 
+  \    <p className="usecase-cont__txt">
 
-  \            </div>
 
+  \    온습도 센서를 통해 건물의 이상 상태를 파악하고, 문제가 발생하면 빌딩 운영자에게 알림을 제공하여
 
-  \            <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
 
+  \    선제적으로 건물의 공기질 상황을 파악할 수 있도록 합니다.
 
-  \              <div className="usecase-cont">
 
+  \    </p>
 
-  \                <p className="usecase-cont__title mb2">
 
+  \    </div>
 
-  \                  <i className="usecase-cont__icon thumb"></i>데이터 분석을 통한 공간 집중 관리
 
+  \    </div>
 
-  \                </p>
 
 
-  \                <p className="usecase-cont__txt">
 
+  \    {/\* 데이터 분석을 통한 공간 집중 관리 \*/}
 
-  \                  자주 이상 신호가 발생하는 공간의 설비 제어 이력을 확인하고 문제를 파악 할 수 있습니다. 분석된 정보를
 
+  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
 
-  \                  통해 공간을 집중관리하여 입주인원의 만족도를 높일 수 있습니다.
 
+  \    <div className="usecase-cont">
 
-  \                </p>
 
+  \    <p className="usecase-cont__title mb2">
 
-  \              </div>
 
+  \    <i className="usecase-cont__icon thumb"></i>데이터 분석을 통한 공간 집중 관리
 
-  \            </div>
 
+  \    </p>
 
-  \            <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
 
+  \    <p className="usecase-cont__txt">
 
-  \              <div className="usecase-cont">
 
+  \    자주 이상 신호가 발생하는 공간의 설비 제어 이력을 확인하고 문제를 파악 할 수 있습니다. 분석된 정보를
 
-  \                <p className="usecase-cont__title mb2">
 
+  \    통해 공간을 집중관리하여 입주인원의 만족도를 높일 수 있습니다.
 
-  \                  <i className="usecase-cont__icon star"></i>냄새를 통한 공기 청결도 관리
 
+  \    </p>
 
-  \                </p>
 
+  \    </div>
 
-  \                <p className="usecase-cont__txt">
 
+  \    </div>
 
-  \                  공간의 온습도 뿐만 아니라 냄새 역시 데이터로 관리할 수 있습니다. 에어컨, 공기청정기가 제공하는 냄새
 
 
-  \                  농도값을 측정해 공기의 청결도를 파악하고, 공간 내 공조 기기의 이상 여부를 확인할 수 있습니다.
 
+  \    {/\* 냄새를 통한 공기 청결도 관리 \*/}
 
-  \                </p>
 
+  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
 
-  \              </div>
 
+  \    <div className="usecase-cont">
 
-  \            </div>
 
+  \    <p className="usecase-cont__title mb2">
 
-  \            <div className="col-full mt4 mb0 usecase-pick">
 
+  \    <i className="usecase-cont__icon star"></i>냄새를 통한 공기 청결도 관리
 
-  \              <p className="usecase-pick__badge">LG's Pick!</p>
 
+  \    </p>
 
-  \              <ul className="usecase-pick__list flex flex-wrap">
 
+  \    <p className="usecase-cont__txt">
 
-  \                <li class="usecase-pick__item">
 
+  \    공간의 온습도 뿐만 아니라 냄새 역시 데이터로 관리할 수 있습니다. 에어컨, 공기청정기가 제공하는 냄새
 
-  \                  <figure className="usecase-pick__img">
 
+  \    농도값을 측정해 공기의 청결도를 파악하고, 공간 내 공조 기기의 이상 여부를 확인할 수 있습니다.
 
-  \                    <CoImage
 
+  \    </p>
 
-  \                      src="/assets/images/img_usecase_ic_airconditioner_stand.png"
 
+  \    </div>
 
-  \                      isFullSize
 
+  \    </div>
 
-  \                      alt="아이콘"
 
 
-  \                      className="usecase-pick__img"
 
+  \    <div className="col-full mt4 mb0 usecase-pick">
 
-  \                    />
 
+  \    <p className="usecase-pick__badge">LG's Pick!</p>
 
-  \                  </figure>
 
+  \    <ul className="usecase-pick__list flex flex-wrap">
 
-  \                  <p className="usecase-pick__txt">시스템 에어컨</p>
 
+  \    <li class="usecase-pick__item">
 
-  \                </li>
 
+  \    <figure className="usecase-pick__img">
 
-  \                <li class="usecase-pick__item">
 
+  \    <CoImage
 
-  \                  <figure className="usecase-pick__img">
 
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
 
-  \                    <CoImage
 
+  \    isFullSize
 
-  \                      src="/assets/images/img_usecase_ic_temp_moi_sensor.png"
 
+  \    alt="아이콘"
 
-  \                      isFullSize
 
+  \    className="usecase-pick__img"
 
-  \                      alt="아이콘"
 
+  \    />
 
-  \                      className="usecase-pick__img"
 
+  \    </figure>
 
-  \                    />
 
+  \    <p className="usecase-pick__txt">시스템 에어컨</p>
 
-  \                  </figure>
 
+  \    </li>
 
-  \                  <p className="usecase-pick__txt">온습도센서</p>
 
+  \    <li class="usecase-pick__item">
 
-  \                </li>
 
+  \    <figure className="usecase-pick__img">
 
-  \                <li class="usecase-pick__item">
 
+  \    <CoImage
 
-  \                  <figure className="usecase-pick__img">
 
+  \    src="/assets/images/img_usecase_ic_temp_moi_sensor.png"
 
-  \                    <CoImage
 
+  \    isFullSize
 
-  \                      src="/assets/images/img_usecase_ic_airpurifier.png"
 
+  \    alt="아이콘"
 
-  \                      isFullSize
 
+  \    className="usecase-pick__img"
 
-  \                      alt="아이콘"
 
+  \    />
 
-  \                      className="usecase-pick__img"
 
+  \    </figure>
 
-  \                    />
 
+  \    <p className="usecase-pick__txt">온습도센서</p>
 
-  \                  </figure>
 
+  \    </li>
 
-  \                  <p className="usecase-pick__txt">공기청정기</p>
 
+  \    <li class="usecase-pick__item">
 
-  \                </li>
 
+  \    <figure className="usecase-pick__img">
 
-  \              </ul>
 
+  \    <CoImage
 
-  \            </div>
 
+  \    src="/assets/images/img_usecase_ic_airpurifier.png"
 
-  \            <div className="box box--r-1.25 box--clean col-full usecase-box">
 
+  \    isFullSize
 
-  \              <div className="usecase-dev">
 
+  \    alt="아이콘"
 
-  \                <h3 className="usecase-dev__tit">ThinQ Business API를 활용하여 어플리케이션을 개발하세요</h3>
 
+  \    className="usecase-pick__img"
 
-  \                <p className="usecase-dev__txt">
 
+  \    />
 
-  \                  스마트 가전과 IoT 제품들의 API를 활용하여 <br />
 
+  \    </figure>
 
-  \                  사용자 또는 관리자를 위한 어플리케이션을 구성할 수 있습니다.
 
+  \    <p className="usecase-pick__txt">공기청정기</p>
 
-  \                </p>
 
+  \    </li>
 
-  \                <ul className="usecase-dev__list">
 
+  \    </ul>
 
-  \                  <li className="usecase-dev__item grid">
 
+  \    </div>
 
-  \                    <div className="col-4 col-sm-full">
 
+  \    <div className="box box--r-1.25 box--clean col-full usecase-box">
 
-  \                      <i className="icon-sensor"></i>온/습도 센서
 
+  \    <div className="usecase-dev">
 
-  \                    </div>
 
+  \    <h3 className="usecase-dev__tit">ThinQ Business API를 활용하여 어플리케이션을 개발하세요</h3>
 
-  \                    <div className="col-8 col-sm-full">
 
+  \    <p className="usecase-dev__txt">
 
-  \                      <dl>
 
+  \    스마트 가전과 IoT 제품들의 API를 활용하여 <br />
 
-  \                        <dt>공기질 상태 확인</dt>
 
+  \    사용자 또는 관리자를 위한 어플리케이션을 구성할 수 있습니다.
 
-  \                        <dd>센서의 공기질 및 온습도 정보값을 확인 할 수 있습니다.</dd>
 
+  \    </p>
 
-  \                      </dl>
 
+  \    <ul className="usecase-dev__list">
 
-  \                    </div>
 
+  \    <li className="usecase-dev__item grid">
 
-  \                  </li>
 
+  \    <div className="col-4 col-sm-full">
 
-  \                  <li className="usecase-dev__item grid">
 
+  \    <i className="icon-sensor"></i>온/습도 센서
 
-  \                    <div className="col-4 col-sm-full">
 
+  \    </div>
 
-  \                      <i className="icon-air-con"></i>에어컨
 
+  \    <div className="col-8 col-sm-full">
 
-  \                    </div>
 
+  \    <dl>
 
-  \                    <div className="col-8 col-sm-full">
 
+  \    <dt>공기질 상태 확인</dt>
 
-  \                      <dl>
 
+  \    <dd>센서의 공기질 및 온습도 정보값을 확인 할 수 있습니다.</dd>
 
-  \                        <dt>설비 상태 조회</dt>
 
+  \    </dl>
 
-  \                        <dd>HVAC 설비의 현재 운전정보 등을 확인 할 수 있습니다.</dd>
 
+  \    </div>
 
-  \                      </dl>
 
+  \    </li>
 
-  \                      <dl>
 
+  \    <li className="usecase-dev__item grid">
 
-  \                        <dt>제어 이력 조회</dt>
 
+  \    <div className="col-4 col-sm-full">
 
-  \                        <dd>에어컨 설비의 제어 이력을 조회할 수 있습니다.</dd>
 
+  \    <i className="icon-air-con"></i>에어컨
 
-  \                      </dl>
 
+  \    </div>
 
-  \                    </div>
 
+  \    <div className="col-8 col-sm-full">
 
-  \                  </li>
 
+  \    <dl>
 
-  \                  <li className="usecase-dev__item grid">
 
+  \    <dt>설비 상태 조회</dt>
 
-  \                    <div className="col-4 col-sm-full">
 
+  \    <dd>HVAC 설비의 현재 운전정보 등을 확인 할 수 있습니다.</dd>
 
-  \                      <i className="icon-air-fresh"></i>공기청정기
 
+  \    </dl>
 
-  \                    </div>
 
+  \    <dl>
 
-  \                    <div className="col-8 col-sm-full">
 
+  \    <dt>제어 이력 조회</dt>
 
-  \                      <dl>
 
+  \    <dd>에어컨 설비의 제어 이력을 조회할 수 있습니다.</dd>
 
-  \                        <dt>냄새 농도값 확인</dt>
 
+  \    </dl>
 
-  \                        <dd>기기가 수집한 공간의 냄새 농도값을 5단계로 확인할 수 있습니다.</dd>
 
+  \    </div>
 
-  \                      </dl>
 
+  \    </li>
 
-  \                    </div>
 
+  \    <li className="usecase-dev__item grid">
 
-  \                  </li>
 
+  \    <div className="col-4 col-sm-full">
 
-  \                </ul>
 
+  \    <i className="icon-air-fresh"></i>공기청정기
 
-  \              </div>
 
+  \    </div>
 
-  \            </div>
 
+  \    <div className="col-8 col-sm-full">
 
-  \            <div className="box box--r-1.25 col-full usecase-box">
 
+  \    <dl>
 
-  \              <div className="usecase-more">
 
+  \    <dt>냄새 농도값 확인</dt>
 
-  \                <p className="usecase-more__title">
 
+  \    <dd>기기가 수집한 공간의 냄새 농도값을 5단계로 확인할 수 있습니다.</dd>
 
-  \                  디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.
 
+  \    </dl>
 
-  \                </p>
 
+  \    </div>
 
-  \                <CoButton className="btn-round-primary btn-l">API 문서 보기</CoButton>
 
+  \    </li>
 
-  \              </div>
 
+  \    </ul>
 
-  \            </div>
 
+  \    </div>
 
-  \          </div>
 
+  \    </div>
 
-  \        </div>
 
+  \    <div className="box box--r-1.25 col-full usecase-box">
 
-  \      </div>
+
+  \    <div className="usecase-more">
+
+
+  \    <p className="usecase-more__title">
+
+
+  \    디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.
+
+
+  \    </p>
+
+
+  \    <CoButton className="btn-round-primary btn-l">API 문서 보기</CoButton>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
 ---
