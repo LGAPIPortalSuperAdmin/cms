@@ -77,8 +77,6 @@ contents: >-2
   \    </div>
 
 
-
-
   \    <div className="container">
 
 
@@ -121,8 +119,6 @@ contents: >-2
   \    </div>
 
 
-
-
   \    
 
 
@@ -159,8 +155,6 @@ contents: >-2
   \    </div>
 
 
-
-
   \    
 
 
@@ -195,8 +189,6 @@ contents: >-2
 
 
   \    </div>
-
-
 
 
   \    <div className="col-full mt4 mb0 usecase-pick">
