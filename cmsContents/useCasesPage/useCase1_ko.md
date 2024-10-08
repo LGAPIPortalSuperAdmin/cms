@@ -85,7 +85,7 @@ contents: >-2
   \    <div className="grid usecase-grid--1">
 
 
-  \    {/\* 알림을 통한 선제 대응 \*/}
+  \    
 
 
   \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
@@ -123,7 +123,7 @@ contents: >-2
 
 
 
-  \    {/\* 데이터 분석을 통한 공간 집중 관리 \*/}
+  \    
 
 
   \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
@@ -161,7 +161,7 @@ contents: >-2
 
 
 
-  \    {/\* 냄새를 통한 공기 청결도 관리 \*/}
+  \    
 
 
   \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
