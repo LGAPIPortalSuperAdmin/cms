@@ -38,10 +38,7 @@ contents: >-2
   \    <div className="btns">
 
 
-  \    <CoButton
-
-
-  \    component="a"
+  \    <CoLink
 
 
   \    className="btn-round-black btn-l"
@@ -56,16 +53,16 @@ contents: >-2
   \    ThinQ Business API
 
 
-  \    </CoButton>
+  \    </CoLink>
 
 
-  \    <CoButton component="a" href="/" className="btn-round-line btn-l">
+  \    <CoLink href="/" className="btn-round-line btn-l">
 
 
   \    Become a partner
 
 
-  \    </CoButton>
+  \    </CoLink>
 
 
   \    </div>
