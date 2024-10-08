@@ -38,31 +38,46 @@ contents: >-2
   \    <div className="btns">
 
 
-  \    <CoLink
+  \    <CoButton
+
+
+  \    component="a"
 
 
   \    className="btn-round-black btn-l"
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
+  \    onClick={() =>
 
 
-  \    target="_blank">
+  \    window.open(
+
+
+  \    'https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662',
+
+
+  \    '_blank',
+
+
+  \    )
+
+
+  \    }>
 
 
   \    ThinQ Business API
 
 
-  \    </CoLink>
+  \    </CoButton>
 
 
-  \    <CoLink href="/" className="btn-round-line btn-l">
+  \    <CoButton component="a" href="/" className="btn-round-line btn-l">
 
 
   \    Become a partner
 
 
-  \    </CoLink>
+  \    </CoButton>
 
 
   \    </div>
@@ -241,7 +256,7 @@ contents: >-2
   \    </li>
 
 
-  \    <li class="usecase-pick__item">
+  \    <li className="usecase-pick__item">
 
 
   \    <figure className="usecase-pick__img">
@@ -274,7 +289,7 @@ contents: >-2
   \    </li>
 
 
-  \    <li class="usecase-pick__item">
+  \    <li className="usecase-pick__item">
 
 
   \    <figure className="usecase-pick__img">
