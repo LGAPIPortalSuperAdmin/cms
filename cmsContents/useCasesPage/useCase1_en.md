@@ -1,6 +1,6 @@
 ---
 contents: >-2
-    <div className="main-wrap usecase-wrap mt0">
+   <div className="main-wrap usecase-wrap mt0">
 
   \    <div className="top-visual">
 
@@ -41,13 +41,13 @@ contents: >-2
   \    <CoLink
 
 
-  \    className="btn-round-black btn-l"
-
-
   \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
 
 
-  \    target="_blank">
+  \    target="_blank"
+
+
+  \    className="btn-round-black btn-l">
 
 
   \    ThinQ Business API
@@ -56,7 +56,7 @@ contents: >-2
   \    </CoLink>
 
 
-  \    <CoLink href="/" className="btn-round-line btn-l">
+  \    <CoLink className="btn-round-line btn-l" href="/pub/LG-P-MP-0201S" target="_blank">
 
 
   \    Become a partner
@@ -85,7 +85,7 @@ contents: >-2
   \    <div className="grid usecase-grid--1">
 
 
-  \    {/\* 알림을 통한 선제 대응 \*/}
+  \    
 
 
   \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
@@ -123,7 +123,7 @@ contents: >-2
 
 
 
-  \    {/\* 데이터 분석을 통한 공간 집중 관리 \*/}
+  \    
 
 
   \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
@@ -161,7 +161,7 @@ contents: >-2
 
 
 
-  \    {/\* 냄새를 통한 공기 청결도 관리 \*/}
+  \    
 
 
   \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
@@ -472,7 +472,13 @@ contents: >-2
   \    </p>
 
 
-  \    <CoButton className="btn-round-primary btn-l">API 문서 보기</CoButton>
+  \    <CoLink href="/" className="btn-round-primary btn-l">
+
+
+  \    API 문서 보기
+
+
+  \    </CoLink>
 
 
   \    </div>
