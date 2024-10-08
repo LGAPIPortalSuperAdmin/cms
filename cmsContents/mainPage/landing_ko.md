@@ -1,480 +1,435 @@
 ---
 contents: >-
-  \    <div className="main-content">
+  \    <div className="main-wrap usecase-wrap mt0">
 
 
-  \          <section className="main-section tem-type-card mt0">
+  \        <div className="top-visual">
 
 
-  \            <h3 className="tem-title--t3.5 tem-title--light txt-center mb7.5">
+  \          <div className="top-visual__items">
 
 
-  \              <b>Start</b> with <br class="mo" />
+  \            <CoImage src="/assets/images/img_usecase_v2.png" isFullSize alt="이미지" className="visual-img" />
 
 
-  \              <b>LG Open API</b>
+  \            <div className="box-item">
 
 
-  \            </h3>
+  \              <p className="sub">빌딩 관제</p>
 
 
-  \            <div className="container w1280">
+  \              <p className="title lgEiText">더 철저한 빌딩 관리</p>
 
 
-  \              <div className="tem-card">
+  \              <p className="text--light mt3">
 
 
-  \                <figure className="tem-card__img">
+  \                ThinQ Business API를 통해 직접 고객사만의 관제실을 구성할 수 있습니다. <br />
 
 
-  \                  <img src="/assets/images/img_main_cont_1_1.png" alt="" style="position:relative !important;" />
+  \                설계된 맞춤 관제실을 사용해 빌딩 환경을 최적의 상태로 구성하고 시설 관리자의 <br />
 
 
-  \                </figure>
-
-
-  \                <div className="tem-card__con">
-
-
-  \                  <p className="tem-card__tit">Easy</p>
-
-
-  \                  <p className="tem-card__txt">
-
-
-  \                    직관적으로 설계된 RESTful API 패턴과
-
-
-  \                    <br class="pc" />
-
-
-  \                    견고한 LG의 보안체계로 쉽고 안전하게 서비스를
-
-
-  \                    <br class="pc" />
-
-
-  \                    확장해 보세요.
-
-
-  \                  </p>
-
-
-  \                </div>
-
-
-  \              </div>
-
-
-  \              <div className="tem-card">
-
-
-  \                <figure className="tem-card__img">
-
-
-  \                  <img src="/assets/images/img_main_cont_1_2.png" alt="" />
-
-
-  \                </figure>
-
-
-  \                <div className="tem-card__con">
-
-
-  \                  <p className="tem-card__tit">Enhancement</p>
-
-
-  \                  <p className="tem-card__txt">
-
-
-  \                    LG Open API 파트너십은 서비스와 기능을 차별화해 경쟁력을 확보하는데 날개를 달아드립니다.
-
-
-  \                  </p>
-
-
-  \                </div>
-
-
-  \              </div>
-
-
-  \              <div className="tem-card">
-
-
-  \                <figure className="tem-card__img">
-
-
-  \                  <img src="/assets/images/img_main_cont_1_3.png" alt="" />
-
-
-  \                </figure>
-
-
-  \                <div className="tem-card__con">
-
-
-  \                  <p className="tem-card__tit">Efficiency</p>
-
-
-  \                  <p className="tem-card__txt">
-
-
-  \                    시뮬레이터를 사용해 원하는 서비스에 맞춰 다양한 시나리오의 API 동작을 검증해 보세요.
-
-
-  \                  </p>
-
-
-  \                </div>
-
-
-  \              </div>
-
-
-  \            </div>
-
-
-  \          </section>
-
-
-  \          <section className="main-section tem-type-zigzag">
-
-
-  \            <div className="container w1280">
-
-
-  \              <div className="tem-zigzag">
-
-
-  \                <figure className="tem-zigzag__img">
-
-
-  \                  <CoImage src="/assets/images/main_img_business_connect_v1.png" isFullSize alt="Business Connect" />
-
-
-  \                </figure>
-
-
-  \                <div className="tem-zigzag__con">
-
-
-  \                  <p className="tem-zigzag__tit">
-
-
-  \                    <small>가정 생활을 더 편리하고 스마트하게</small>스마트 홈
-
-
-  \                  </p>
-
-
-  \                  <p className="tem-zigzag__txt">
-
-
-  \                    저녁에는 수면 환경으로 자동 변경되고, 아침에는 스마트 가전이 최적화합니다. 예약한 시간에 맞춰
-
-
-  \                    자동으로 세탁과 청소기능을 동작하고 귀가 시간에 맞춰 공기 청정 모드를 작동시켜 효율적인 실내 환경을
-
-
-  \                    유지합니다.
-
-
-  \                    <br />
-
-
-  \                    <br />
-
-
-  \                    사용자가 어디에 있든 보다 나은 스마트한 라이프스타일을 경험해 보세요.
-
-
-  \                  </p>
-
-
-  \                  <CoButton className="btn-round-flat c-link p0">
-
-
-  \                    자세히 보기 <i className="arr-link"></i>
-
-
-  \                  </CoButton>
-
-
-  \                </div>
-
-
-  \                <figure className="tem-zigzag__img">
-
-
-  \                  <CoImage src="/assets/images/main_img_thinq_connect_v1.png" isFullSize alt="Home Appliance" />
-
-
-  \                </figure>
-
-
-  \                <div className="tem-zigzag__con">
-
-
-  \                  <p className="tem-zigzag__tit">
-
-
-  \                    <small>스마트한 관리</small>주거용 빌딩
-
-
-  \                  </p>
-
-
-  \                  <p className="tem-zigzag__txt">
-
-
-  \                    빌딩 관제 뿐만 아니라, 입주민들이 사용하는 앱에도 제품 상태조회 및 제어기능을 연동하여 입주자들의
-
-
-  \                    편의성을 극대화 해 보세요.
-
-
-  \                    <br />
-
-
-  \                    <br />
-
-
-  \                    코리빙하우스, 요양시설, 기숙사 등 주거용 빌딩 관리에 최적화 된 기능들을 제공합니다.
-
-
-  \                  </p>
-
-
-  \                  <CoButton className="btn-round-flat c-link p0">
-
-
-  \                    자세히 보기 <i className="arr-link"></i>
-
-
-  \                  </CoButton>
-
-
-  \                </div>
-
-
-  \                <figure className="tem-zigzag__img">
-
-
-  \                  <CoImage src="/assets/images/main_img_lmp_v1.png" isFullSize alt="LMP" />
-
-
-  \                </figure>
-
-
-  \                <div className="tem-zigzag__con">
-
-
-  \                  <p className="tem-zigzag__tit">
-
-
-  \                    <small>귀사만의 솔루션</small>오피스 빌딩
-
-
-  \                  </p>
-
-
-  \                  <p className="tem-zigzag__txt">
-
-
-  \                    API를 활용해 사무용 빌딩(건축, 리모델링, 공유 오피스 등)에 최적화된 기능들과 다양한 LG전자
-
-
-  \                    제품(ThinQ앱 가전, 공조시설, 로봇 등)을 한 번에 관리할 수 있으며, BMS 솔루션 뿐만 아니라 임직원을
-
-
-  \                    위한 앱을 만들 수 있도록 제품 제어를 위한 다양한 기능을 제공합니다.
-
-
-  \                  </p>
-
-
-  \                  <CoButton className="btn-round-flat c-link p0">
-
-
-  \                    자세히 보기 <i className="arr-link"></i>
-
-
-  \                  </CoButton>
-
-
-  \                </div>
-
-
-  \              </div>
-
-
-  \            </div>
-
-
-  \          </section>
-
-
-  \          <section className="main-section tem-type-banner">
-
-
-  \            <div className="container w1280">
-
-
-  \              <h3 className="tem-title--t4 tem-title--light txt-center mb2.5 mb-sm-1.5">
-
-
-  \                <b>파트너 센터</b>
-
-
-  \              </h3>
-
-
-  \              <p className="tem-txt--t2 txt-center mb7.5 mb-sm-3">
-
-
-  \                LG Open API Developer와 함께 비즈니스의 본질에 집중하세요.
+  \                운영 효율 높일 수 있습니다.
 
 
   \              </p>
 
 
-  \              <div className="tem-banner">
+  \              <div className="btns">
 
 
-  \                <ul className="tem-banner__list grid m0">
+  \                <CoButton
 
 
-  \                  <li className="tem-banner__item col-4 col-sm-full">
+  \                  className="btn-round-black btn-l"
 
 
-  \                    <figure className="tem-banner__img">
+  \                  onClick="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
 
 
-  \                      <CoImage src="/assets/images/partner_banner_01.png" isFullSize alt="Home Appliance" />
+  \                  ThinQ Business API
 
 
-  \                    </figure>
+  \                </CoButton>
+
+
+  \                <CoButton
+
+
+  \                  className="btn-round-line btn-l"
+
+
+  \                  onClick={() => (window.location.href = '/pub/LG-P-MP-0201S')}>
+
+
+  \                  Become a partner
+
+
+  \                </CoButton>
+
+
+  \              </div>
+
+
+  \            </div>
+
+
+  \          </div>
+
+
+  \        </div>
+
+
+  \        <div className="container">
+
+
+  \          <div className="grid usecase-grid--1">
+
+
+  \            <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
+
+
+  \              <div className="usecase-cont">
+
+
+  \                <p className="usecase-cont__title mb2">
+
+
+  \                  <i className="usecase-cont__icon bell"></i>알림을 통한 선제 대응
+
+
+  \                </p>
+
+
+  \                <p className="usecase-cont__txt">
+
+
+  \                  온습도 센서를 통해 건물의 이상 상태를 파악하고, 문제가 발생하면 빌딩 운영자에게 알림을 제공하여
+
+
+  \                  선제적으로 건물의 공기질 상황을 파악할 수 있도록 합니다.
+
+
+  \                </p>
+
+
+  \              </div>
+
+
+  \            </div>
+
+
+  \            <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
+
+
+  \              <div className="usecase-cont">
+
+
+  \                <p className="usecase-cont__title mb2">
+
+
+  \                  <i className="usecase-cont__icon thumb"></i>데이터 분석을 통한 공간 집중 관리
+
+
+  \                </p>
+
+
+  \                <p className="usecase-cont__txt">
+
+
+  \                  자주 이상 신호가 발생하는 공간의 설비 제어 이력을 확인하고 문제를 파악 할 수 있습니다. 분석된 정보를
+
+
+  \                  통해 공간을 집중관리하여 입주인원의 만족도를 높일 수 있습니다.
+
+
+  \                </p>
+
+
+  \              </div>
+
+
+  \            </div>
+
+
+  \            <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
+
+
+  \              <div className="usecase-cont">
+
+
+  \                <p className="usecase-cont__title mb2">
+
+
+  \                  <i className="usecase-cont__icon star"></i>냄새를 통한 공기 청결도 관리
+
+
+  \                </p>
+
+
+  \                <p className="usecase-cont__txt">
+
+
+  \                  공간의 온습도 뿐만 아니라 냄새 역시 데이터로 관리할 수 있습니다. 에어컨, 공기청정기가 제공하는 냄새
+
+
+  \                  농도값을 측정해 공기의 청결도를 파악하고, 공간 내 공조 기기의 이상 여부를 확인할 수 있습니다.
+
+
+  \                </p>
+
+
+  \              </div>
+
+
+  \            </div>
+
+
+  \            <div className="col-full mt4 mb0 usecase-pick">
+
+
+  \              <p className="usecase-pick__badge">LG's Pick!</p>
+
+
+  \              <ul className="usecase-pick__list flex flex-wrap">
+
+
+  \                <li class="usecase-pick__item">
+
+
+  \                  <figure className="usecase-pick__img">
+
+
+  \                    <CoImage
+
+
+  \                      src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \                      isFullSize
+
+
+  \                      alt="아이콘"
+
+
+  \                      className="usecase-pick__img"
+
+
+  \                    />
+
+
+  \                  </figure>
+
+
+  \                  <p className="usecase-pick__txt">시스템 에어컨</p>
+
+
+  \                </li>
+
+
+  \                <li class="usecase-pick__item">
+
+
+  \                  <figure className="usecase-pick__img">
+
+
+  \                    <CoImage
+
+
+  \                      src="/assets/images/img_usecase_ic_temp_moi_sensor.png"
+
+
+  \                      isFullSize
+
+
+  \                      alt="아이콘"
+
+
+  \                      className="usecase-pick__img"
+
+
+  \                    />
+
+
+  \                  </figure>
+
+
+  \                  <p className="usecase-pick__txt">온습도센서</p>
+
+
+  \                </li>
+
+
+  \                <li class="usecase-pick__item">
+
+
+  \                  <figure className="usecase-pick__img">
+
+
+  \                    <CoImage
+
+
+  \                      src="/assets/images/img_usecase_ic_airpurifier.png"
+
+
+  \                      isFullSize
+
+
+  \                      alt="아이콘"
+
+
+  \                      className="usecase-pick__img"
+
+
+  \                    />
+
+
+  \                  </figure>
+
+
+  \                  <p className="usecase-pick__txt">공기청정기</p>
+
+
+  \                </li>
+
+
+  \              </ul>
+
+
+  \            </div>
+
+
+  \            <div className="box box--r-1.25 box--clean col-full usecase-box">
+
+
+  \              <div className="usecase-dev">
+
+
+  \                <h3 className="usecase-dev__tit">ThinQ Business API를 활용하여 어플리케이션을 개발하세요</h3>
+
+
+  \                <p className="usecase-dev__txt">
+
+
+  \                  스마트 가전과 IoT 제품들의 API를 활용하여 <br />
+
+
+  \                  사용자 또는 관리자를 위한 어플리케이션을 구성할 수 있습니다.
+
+
+  \                </p>
+
+
+  \                <ul className="usecase-dev__list">
+
+
+  \                  <li className="usecase-dev__item grid">
+
+
+  \                    <div className="col-4 col-sm-full">
+
+
+  \                      <i className="icon-sensor"></i>온/습도 센서
+
+
+  \                    </div>
+
+
+  \                    <div className="col-8 col-sm-full">
+
+
+  \                      <dl>
+
+
+  \                        <dt>공기질 상태 확인</dt>
+
+
+  \                        <dd>센서의 공기질 및 온습도 정보값을 확인 할 수 있습니다.</dd>
+
+
+  \                      </dl>
+
+
+  \                    </div>
 
 
   \                  </li>
 
 
-  \                  <li className="tem-banner__item col-4 col-sm-full">
+  \                  <li className="usecase-dev__item grid">
 
 
-  \                    <figure className="tem-banner__img">
+  \                    <div className="col-4 col-sm-full">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_02.png" isFullSize alt="Home Appliance" />
+  \                      <i className="icon-air-con"></i>에어컨
 
 
-  \                    </figure>
+  \                    </div>
 
 
-  \                  </li>
+  \                    <div className="col-8 col-sm-full">
 
 
-  \                  <li className="tem-banner__item col-4 col-sm-full">
+  \                      <dl>
 
 
-  \                    <figure className="tem-banner__img">
+  \                        <dt>설비 상태 조회</dt>
 
 
-  \                      <CoImage src="/assets/images/partner_banner_03.png" isFullSize alt="Home Appliance" />
+  \                        <dd>HVAC 설비의 현재 운전정보 등을 확인 할 수 있습니다.</dd>
 
 
-  \                    </figure>
+  \                      </dl>
 
 
-  \                  </li>
+  \                      <dl>
 
 
-  \                  <li className="tem-banner__item col-4 col-sm-full">
+  \                        <dt>제어 이력 조회</dt>
 
 
-  \                    <figure className="tem-banner__img">
+  \                        <dd>에어컨 설비의 제어 이력을 조회할 수 있습니다.</dd>
 
 
-  \                      <CoImage src="/assets/images/partner_banner_04.png" isFullSize alt="Home Appliance" />
+  \                      </dl>
 
 
-  \                    </figure>
-
-
-  \                  </li>
-
-
-  \                  <li className="tem-banner__item col-4 col-sm-full">
-
-
-  \                    <figure className="tem-banner__img">
-
-
-  \                      <CoImage src="/assets/images/partner_banner_05.png" isFullSize alt="Home Appliance" />
-
-
-  \                    </figure>
+  \                    </div>
 
 
   \                  </li>
 
 
-  \                  <li className="tem-banner__item col-4 col-sm-full">
+  \                  <li className="usecase-dev__item grid">
 
 
-  \                    <figure className="tem-banner__img">
+  \                    <div className="col-4 col-sm-full">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_06.png" isFullSize alt="Home Appliance" />
+  \                      <i className="icon-air-fresh"></i>공기청정기
 
 
-  \                    </figure>
+  \                    </div>
 
 
-  \                  </li>
+  \                    <div className="col-8 col-sm-full">
 
 
-  \                  <li className="tem-banner__item col-4 col-sm-full">
+  \                      <dl>
 
 
-  \                    <figure className="tem-banner__img">
+  \                        <dt>냄새 농도값 확인</dt>
 
 
-  \                      <CoImage src="/assets/images/partner_banner_07.png" isFullSize alt="Home Appliance" />
+  \                        <dd>기기가 수집한 공간의 냄새 농도값을 5단계로 확인할 수 있습니다.</dd>
 
 
-  \                    </figure>
+  \                      </dl>
 
 
-  \                  </li>
-
-
-  \                  <li className="tem-banner__item col-4 col-sm-full">
-
-
-  \                    <figure className="tem-banner__img">
-
-
-  \                      <CoImage src="/assets/images/partner_banner_08.png" isFullSize alt="Home Appliance" />
-
-
-  \                    </figure>
-
-
-  \                  </li>
-
-
-  \                  <li className="tem-banner__item col-4 col-sm-full">
-
-
-  \                    <figure className="tem-banner__img">
-
-
-  \                      <CoImage src="/assets/images/partner_banner_09.png" isFullSize alt="Home Appliance" />
-
-
-  \                    </figure>
+  \                    </div>
 
 
   \                  </li>
@@ -489,26 +444,35 @@ contents: >-
   \            </div>
 
 
-  \          </section>
+  \            <div className="box box--r-1.25 col-full usecase-box">
 
 
-  \          <section className="main-section tem-type-text">
+  \              <div className="usecase-more">
 
 
-  \            <div className="container">
+  \                <p className="usecase-more__title">
 
 
-  \              <p className="tem-text__tit">LG Open API 사용을 위한 궁금한 내용을 문의해 보세요.</p>
+  \                  디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.
 
 
-  \              <CoButton className="btn-round-primary btn-l">문의하기</CoButton>
+  \                </p>
+
+
+  \                <CoButton className="btn-round-primary btn-l">API 문서 보기</CoButton>
+
+
+  \              </div>
 
 
   \            </div>
 
 
-  \          </section>
+  \          </div>
 
 
   \        </div>
+
+
+  \      </div>
 ---
