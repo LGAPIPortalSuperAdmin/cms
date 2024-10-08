@@ -192,13 +192,19 @@ contents: >-
   \                  </p>
 
 
-  \                  <CoButton className="btn-round-flat c-link p0">
+  \              <CoLink
 
 
-  \                    자세히 보기 <i className="arr-link"></i>
+  \              href="/product/useCase7?s=1728382710224"
 
 
-  \                  </CoButton>
+  \              className="btn-round-flat c-link p0">
+
+
+  \              자세히 보기<i className="arr-link"></i>
+
+
+  \              </CoLink>
 
 
   \                </div>
@@ -246,13 +252,19 @@ contents: >-
   \                  </p>
 
 
-  \                  <CoButton className="btn-round-flat c-link p0">
+  \              <CoLink
 
 
-  \                    자세히 보기 <i className="arr-link"></i>
+  \              href="/product/useCase4?s=1728382660697"
 
 
-  \                  </CoButton>
+  \              className="btn-round-flat c-link p0">
+
+
+  \              자세히 보기<i className="arr-link"></i>
+
+
+  \              </CoLink>
 
 
   \                </div>
@@ -297,7 +309,7 @@ contents: >-
   \              <CoLink
 
 
-  \              href="/ko/product/useCase1?s=1728382496802"
+  \              href="/product/useCase1?s=1728382496802"
 
 
   \              className="btn-round-flat c-link p0">
@@ -510,7 +522,7 @@ contents: >-
   \              <CoLink
 
 
-  \              href="/ko/support/qna?s=1728373943354"
+  \              href="/support/qna?s=1728373943354"
 
 
   \              className="btn-round-primary btn-l">
