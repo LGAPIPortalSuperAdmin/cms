@@ -56,7 +56,7 @@ contents: >-2
   \    </CoLink>
 
 
-  \    <CoLink className="btn-round-line btn-l" href="/pub/LG-P-MP-0201S" target="_blank">
+  \    <CoLink className="btn-round-line btn-l" href="https://dev.openapi.developer.lge.com/en/mypage/partner/landing?s=1728367164739" target="_blank">
 
 
   \    Become a partner
