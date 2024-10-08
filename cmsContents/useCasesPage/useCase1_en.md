@@ -464,7 +464,16 @@ contents: >-2
   \    </p>
 
 
-  \    <CoLink href="/" className="btn-round-primary btn-l">
+  \    <CoLink
+
+
+  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
+
+
+  \    target="_blank"
+
+
+  \    className="btn-round-primary btn-l">
 
 
   \    API 문서 보기
