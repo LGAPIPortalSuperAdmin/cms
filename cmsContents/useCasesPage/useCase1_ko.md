@@ -45,16 +45,7 @@ contents: >-
   \                  className="btn-round-black btn-l"
 
 
-  \                  onClick={() =>
-
-
-  \                    (window.open('about:blank').location.href =
-
-
-  \                      'https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662')
-
-
-  \                  }>
+  \                  onClick="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
 
 
   \                  ThinQ Business API
