@@ -80,7 +80,7 @@ contents: >-2
   \    
 
 
-  \    <div className="box box--r-1.25 box--clean col-4 usecase-box">
+  \    <div className="box box--r-1.25 box--clean usecase-box">
 
 
   \    <div className="usecase-cont">
