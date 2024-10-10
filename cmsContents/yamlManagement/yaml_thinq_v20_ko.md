@@ -1,3 +1,4 @@
+---
 openapi: 3.1.0
 info:
   version: 
@@ -68,4 +69,4 @@ paths:
     $ref: path/client/client_certificate.yaml
   /client:
     $ref: path/client/client.yaml
-  
+---
