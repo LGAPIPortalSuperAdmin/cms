@@ -14,7 +14,7 @@ contents: >-2
   \    <div className="box-item">
 
 
-  \    <p className="sub">스마트 회의실경</p>
+  \    <p className="sub">스마트 회의실</p>
 
 
   \    <p className="title lgEiText">몰입도를 높여주는 스마트 회의실</p>
