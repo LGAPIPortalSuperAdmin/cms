@@ -32,19 +32,4 @@ contents:
         description: >
           ThinQ 기기에서 전달하는 메시지를 받기 위한 사용자 기기 인증서 발급/등록을 위한 API입니다.
 
-    x-tagGroups:
-      - name: Token
-        tags:
-          - PAT(Personal Access Token)
-      - name: APIs
-        tags:
-          - Device API
-          - Push API
-          - Event API
-          - Client API
-    servers:
-      - url: https://api-kic.lgthinq.com
-      - url: https://api-aic.lgthinq.com
-      - url: https://api-eic.lgthinq.com
-
 ---
