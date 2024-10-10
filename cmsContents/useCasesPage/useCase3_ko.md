@@ -143,9 +143,6 @@ contents: >-2
   \    </div>
 
 
-  \
-
-
   \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
 
 
@@ -174,9 +171,6 @@ contents: >-2
 
 
   \    </div>
-
-
-  \
 
 
   \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
