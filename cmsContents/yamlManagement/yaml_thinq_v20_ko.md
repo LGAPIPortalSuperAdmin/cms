@@ -2,7 +2,8 @@
 contents:
 lang: yaml
 code: >
-openapi: 3.1.0
+   openapi: 3.1.0
+
 info:
   version: 
   title: ThinQ Connect API
