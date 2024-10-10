@@ -74,7 +74,7 @@ contents: >-2
   \    <div className="container">
 
 
-  \    <div className="grid usecase-grid--3">
+  \    <div className="grid usecase-grid--2">
 
 
   \    
