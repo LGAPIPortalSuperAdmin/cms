@@ -14,16 +14,16 @@ contents: >-2
   \    <div className="box-item">
 
 
-  \    <p className="sub">수요 반응(DR) 솔루션</p>
+  \    <p className="sub">빌딩 관제</p>
 
 
-  \    <p className="title lgEiText">전력 소모를 줄이는 수요 반응(DR) 솔루션</p>
+  \    <p className="title lgEiText">더 철저한 빌딩 관리</p>
 
 
   \    <p className="text--light mt3">
 
 
-  \    에너지 피크 시점의 수요반응(DR)신호에 맞춰 에어컨, TV 및 가전 등이 자동으로 에너지 소모를 줄이도록 동작하는 Auto-DR기능을 제공합니다.
+  \    ThinQ Business API를 통해 직접 고객사만의 관제실을 구성할 수 있습니다.<br />설계된 맞춤 관제실을 사용해 빌딩 환경을 최적의 상태로 구성하고 시설 관리자의 운영 효율을 높일 수 있습니다.
 
 
   \    </p>
@@ -74,43 +74,55 @@ contents: >-2
   \    <div className="container">
 
 
-  \    <div className="grid usecase-grid--1">
+  \<div class="grid usecase-grid--3">
 
 
-  \    
+  \<div class="box box--r-1.25 box--clean usecase-box">
 
 
-  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
+  \<div class="usecase-cont">
 
 
-  \    <div className="usecase-cont">
+  \<p class="usecase-cont__title mb2"><i class="usecase-cont__icon bell"></i>빌딩 이상 상황에 대한 선제 대응</p>
 
 
-  \    <p className="usecase-cont__title mb2">
+  \<p class="usecase-cont__txt">온습도 센서를 통해 건물의 이상 상태를 파악하고, 문제가 발생하면 빌딩 운영자에게 알림을 제공하여 선제적으로 제품 이상 상황을 파악할 수 있도록 합니다.</p>
 
 
-  \    <i className="usecase-cont__icon bell"></i>전력 수요에 맞춘 전력 소모량 자동 절감
+  \</div></div>
 
 
-  \    </p>
+  \<div class="box box--r-1.25 box--clean usecase-box">
 
 
-  \    <p className="usecase-cont__txt">
+  \<div class="usecase-cont">
 
 
-  \    DR 가입자 모집은 수요반응 사업자의 역할 입니다. DR신호가 LG 제품으로 전달되면, 에어컨, TV, 가전 등의 Auto-DR이 적용된 기기는 DR 이벤트 시간 동안 자동으로 전력 소모량을 줄이는 방식으로 동작 합니다.<br /><br />
+  \<p class="usecase-cont__title mb2"><i class="usecase-cont__icon thumb"></i>데이터 분석을 통한 공간 집중 관리</p>
 
 
-  \    <a href="https://thinq.developer.lge.com/ko/cloud/docs/dr/overview/" target="_blank" class="c-link">더 알아보기</a>
+  \<p class="usecase-cont__txt">자주 이상 신호가 발생하는 공간의 설비 제어 이력을 확인하고 문제를 파악 할 수 있습니다. 분석된 정보를 통해 공간을 집중 관리하여 입주인원의 만족도를 높일 수 있습니다.</p>
 
 
-  \    </p>
+  \</div></div>
 
 
-  \    </div>
+  \<div class="box box--r-1.25 box--clean usecase-box">
 
 
-  \    </div>
+  \<div class="usecase-cont">
+
+
+  \<p class="usecase-cont__title mb2"><i class="usecase-cont__icon star"></i>냄새를 감지하여 공기 청결도 관리</p>
+
+
+  \<p class="usecase-cont__txt">공간의 온습도 뿐만 아니라 냄새 역시 데이터로 관리할 수 있습니다. 에어컨, 공기청정기가 제공하는 냄새 농도값을 측정해 공기의 청결도를 파악할 수 있습니다.</p>
+
+
+  \</div></div>
+
+
+  \</div>
 
 
   \    <div className="col-full mt4 mb0 usecase-pick">
@@ -120,39 +132,6 @@ contents: >-2
 
 
   \    <ul className="usecase-pick__list flex flex-wrap">
-
-
-  \    <li class="usecase-pick__item">
-
-
-  \    <figure className="usecase-pick__img">
-
-
-  \    <CoImage
-
-
-  \    src="/assets/images/img_usecase_ic_temp_moi_sensor.png"
-
-
-  \    isFullSize
-
-
-  \    alt="아이콘"
-
-
-  \    className="usecase-pick__img"
-
-
-  \    />
-
-
-  \    </figure>
-
-
-  \    <p className="usecase-pick__txt">에어컨</p>
-
-
-  \    </li>
 
 
   \    <li class="usecase-pick__item">
@@ -182,7 +161,73 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">TV</p>
+  \    <p className="usecase-pick__txt">시스템 에어컨</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_temp_moi_sensor.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">온습도센서</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airpurifier.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">공기청정기</p>
 
 
   \    </li>
@@ -224,7 +269,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-sensor"></i>Energy 사업자
+  \    <i className="icon-sensor"></i>공기질/온습도 센서
 
 
   \    </div>
@@ -236,10 +281,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>Energy 사업자 정보 등록으로 LG 기기 연동 환경 제공</dt>
+  \    <dt>빌딩 내 공기질/온습도 센서를 통한 공기질 상태 확인</dt>
 
 
-  \    <dd>LG 제품을 수요반응 사업자가 제어할 수 있도록 사업자 등록을 통해 연동 환경을 제공하여 사업자는 LG의 다양한 스마트 기기를 통합하여 에너지 효율성을 극대화하고, 실시간 데이터 모니터링을 통해 최적의 전력 소비를 실현할 수 있습니다.</dd>
+  \    <dd>공기질 센서(airQualitySensor)는 극초미세먼지(PM1) 농도까지 측정할 뿐만 아니라, 습도, 온도, 오염 물질의 농도를 종합 공기 청정도로 표현하여 5단계로 나타내어 공기 청정을 자동화 합니다. 인구 밀도가 높은 오피스에서 쾌적한 청정공기 관리는 사용자의 업무효율을 높여줍니다.</dd>
 
 
   \    </dl>
@@ -257,7 +302,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-air-con"></i>DR 신호
+  \    <i className="icon-air-con"></i>에어컨
 
 
   \    </div>
@@ -269,10 +314,22 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>DR 신호 발령에 따른 기기 제어</dt>
+  \    <dt>에어컨 설비의 운전정보를 확인하여 기기 상태 점검</dt>
 
 
-  \    <dd>DR 신호가 발령되면 해당 신호에 맞춰 기기가 적절하게 반응할 수 있도록 제어 명령을 전달하여 에너지 소비를 조절하거나 특정 기능을 활성화하는 등의 작업을 수행하여 시스템의 효율성을 극대화하고, 에너지 관리 및 최적화를 도모할 수 있습니다.</dd>
+  \    <dd>사용 중인 에어컨의 상태를 확인하여 필터 막힘 또는 온도 불균형 등의 문제를 조기에 감지하고, 필요에 따라 설정을 조정하여 효율적인 에어컨 운영과 함께 쾌적한 실내 환경을 조성합니다. 이와 같은 지능형 에어컨 관리는 사용자의 편안함과 업무 집중도를 높여줍니다.</dd>
+
+
+  \    </dl>
+
+
+  \    <dl>
+
+
+  \    <dt>실내 환경 최적화를 위한 이력 조회</dt>
+
+
+  \    <dd>에어컨의 사용 이력을 조회하고 과거 사용 패턴을 분석하여 에어컨 설정을 최적화할 수 있으며, 각 공간에 맞춤형 환경을 제공하여 모두에게 생산적인 환경을 제공할 수 있습니다. 이러한 환경 최적화는 건강한 작업 공간을 조성합니다.</dd>
 
 
   \    </dl>
@@ -290,7 +347,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-air-fresh"></i>에어컨
+  \    <i className="icon-air-fresh"></i>공기청정기
 
 
   \    </div>
@@ -302,43 +359,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>DR에 따라 자동으로 에어컨 절전모드 동작</dt>
+  \    <dt>청정 공간을 유지하기 위한 냄새 농도값 확인</dt>
 
 
-  \    <dd>수요 반응 요청이 있을 경우, 에어컨은 일정 기간 동안 자동으로 절전 모드로 전환되어 목표 온도를 조절하여 에너지 소비를 최소화하고, 전력망의 안정성을 높이는 데 기여합니다.</dd>
-
-
-  \    </dl>
-
-
-  \    </div>
-
-
-  \    </li>
-
-
-  \    <li className="usecase-dev__item grid">
-
-
-  \    <div className="col-4 col-sm-full">
-
-
-  \    <i className="icon-air-fresh"></i>TV
-
-
-  \    </div>
-
-
-  \    <div className="col-8 col-sm-full">
-
-
-  \    <dl>
-
-
-  \    <dt>DR에 따라 자동으로 TV 절전모드 동작</dt>
-
-
-  \    <dd>수요 반응 요청이 있을 경우, TV는 일정 기간 동안 자동으로 절전 모드로 전환되어 백라이트 밝기를 조절하여 에너지 소비를 최소화하고, 전력망의 안정성을 높이는 데 기여합니다.</dd>
+  \    <dd>기기가 빌딩 내에서 발생하는 다양한 냄새를 정량적으로 측정하고 5단계로 나누어 표시함으로써 해당 공간의 냄새 상태를 보다 명확하게 이해할 수 있도록 돕습니다. 불쾌한 냄새를 효과적으로 제거하여 언제나 상쾌한 공간을 제공합니다.</dd>
 
 
   \    </dl>
@@ -377,7 +401,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect"
+  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
 
 
   \    target="_blank"
