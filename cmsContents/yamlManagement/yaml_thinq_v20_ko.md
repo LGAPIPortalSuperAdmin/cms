@@ -1,7 +1,7 @@
 ---
 contents:
-  lang: yaml
-  code >
+lang: yaml
+code: >
 openapi: 3.1.0
 info:
   version: 
