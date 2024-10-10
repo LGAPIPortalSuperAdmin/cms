@@ -101,7 +101,7 @@ contents: >-2
   \    DR 가입자 모집은 수요반응 사업자의 역할 입니다. DR신호가 LG 제품으로 전달되면, 에어컨, TV, 가전 등의 Auto-DR이 적용된 기기는 DR 이벤트 시간 동안 자동으로 전력 소모량을 줄이는 방식으로 동작 합니다.<br /><br />
 
 
-  \    <a href="https://thinq.developer.lge.com/ko/cloud/docs/dr/overview/" target="_blank" >더 알아보기</a>
+  \    <a href="https://thinq.developer.lge.com/ko/cloud/docs/dr/overview/" target="_blank" class="c-link">더 알아보기</a>
 
 
   \    </p>
