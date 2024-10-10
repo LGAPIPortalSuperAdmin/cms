@@ -74,64 +74,106 @@ contents: >-2
   \    <div className="container">
 
 
-  \	<div class="grid usecase-grid--3">
+  \    <div className="grid usecase-grid--1">
 
 
-  \	<div class="box box--r-1.25 box--clean usecase-box">
+  \    
 
 
-  \	<div class="usecase-cont">
+  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
 
 
-  \	<p class="usecase-cont__title mb2"><i class="usecase-cont__icon bell"></i>빌딩 이상 상황에 대한 선제 대응</p>
+  \    <div className="usecase-cont">
 
 
-  \	<p class="usecase-cont__txt">온습도 센서를 통해 건물의 이상 상태를 파악하고, 문제가 발생하면 빌딩 운영자에게 알림을 제공하여 선제적으로 제품 이상 상황을 파악할 수 있도록 합니다.</p>
+  \    <p className="usecase-cont__title mb2">
 
 
-  \	</div>
+  \    <i className="usecase-cont__icon bell"></i>사용하기 편한 세탁실 예약과 상태 알림
 
 
-  \	</div>
+  \    </p>
 
 
-  \	<div class="box box--r-1.25 box--clean usecase-box">
+  \    <p className="usecase-cont__txt">
 
 
-  \	<div class="usecase-cont">
+  \    입주민(사용자)은 공용 세탁실의 세탁기와 건조기가 동작 중인지를 확인하고 사용 순서를 예약할 수 있습니다. 이 외에도 동작 완료나 사용 가능 시점에 대한 알림을 받을 수 있습니다.
 
 
-  \	<p class="usecase-cont__title mb2"><i class="usecase-cont__icon thumb"></i>데이터 분석을 통한 공간 집중 관리</p>
+  \    </p>
 
 
-  \	<p class="usecase-cont__txt">자주 이상 신호가 발생하는 공간의 설비 제어 이력을 확인하고 문제를 파악 할 수 있습니다. 분석된 정보를 통해 공간을 집중 관리하여 입주인원의 만족도를 높일 수 있습니다.</p>
+  \    </div>
 
 
-  \	</div>
+  \    </div>
 
 
-  \	</div>
+  \    
 
 
-  \	<div class="box box--r-1.25 box--clean usecase-box">
+  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
 
 
-  \	<div class="usecase-cont">
+  \    <div className="usecase-cont">
 
 
-  \	<p class="usecase-cont__title mb2"><i class="usecase-cont__icon star"></i>냄새를 감지하여 공기 청결도 관리</p>
+  \    <p className="usecase-cont__title mb2">
 
 
-  \	<p class="usecase-cont__txt">공간의 온습도 뿐만 아니라 냄새 역시 데이터로 관리할 수 있습니다. 에어컨, 공기청정기가 제공하는 냄새 농도값을 측정해 공기의 청결도를 파악할 수 있습니다.</p>
+  \    <i className="usecase-cont__icon thumb"></i>식품 안전을 위한 냉장고 경고 시스템
 
 
-  \	</div>
+  \    </p>
 
 
-  \	</div>
+  \    <p className="usecase-cont__txt">
 
 
-  \	</div>
+  \    냉장고 문열림이나 고장이 발생하면 관리자가 알림을 받을 수 있어, 저장된 식품이 상하는 일을 미리 방지 할 수 있습니다.
+
+
+  \    </p>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
+
+
+  \    <div className="usecase-cont">
+
+
+  \    <p className="usecase-cont__title mb2">
+
+
+  \    <i className="usecase-cont__icon thumb"></i>안전한 조리를 돕는 공유 주방 안전 관리
+
+
+  \    </p>
+
+
+  \    <p className="usecase-cont__txt">
+
+
+  \    공유 주방의 공기질 센서와 환기장치 연결로 조리 중 발생된 오염된 공기가 공간에 퍼지는 것을 방지하며, 화재감지 센서를 통해 화재로부터 안전하도록 지켜줍니다.
+
+
+  \    </p>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    
 
 
   \    <div className="col-full mt4 mb0 usecase-pick">
