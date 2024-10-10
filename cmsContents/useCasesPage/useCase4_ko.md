@@ -278,7 +278,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">냉장고/p>
+  \    <p className="usecase-pick__txt">냉장고</p>
 
 
   \    </li>
