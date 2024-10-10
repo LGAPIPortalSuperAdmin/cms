@@ -74,13 +74,13 @@ contents: >-2
   \    <div className="container">
 
 
-  \    <div className="grid usecase-grid--1">
+  \    <div className="grid usecase-grid--3">
 
 
   \    
 
 
-  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
+  \    <div className="box box--r-1.25 box--clean usecase-box">
 
 
   \    <div className="usecase-cont">
