@@ -35,7 +35,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/thinq_connect?s=1728544527959"
+  \    href="https://dev.openapi.developer.lge.com/ko/api/thinq_connect"
 
 
   \    target="_blank"
@@ -527,7 +527,7 @@ contents: >-2
   \    <div className="usecase-dev">
 
 
-  \    <h3 className="usecase-dev__tit">ThinQ Business API를 활용하여 어플리케이션을 개발하세요</h3>
+  \    <h3 className="usecase-dev__tit">ThinQ API를 활용하여 어플리케이션을 개발하세요</h3>
 
 
   \    <p className="usecase-dev__txt">
@@ -830,7 +830,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
+  \    href="https://dev.openapi.developer.lge.com/ko/api/thinq_connect"
 
 
   \    target="_blank"
