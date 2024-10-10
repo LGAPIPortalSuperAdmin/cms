@@ -6,7 +6,7 @@ contents:
     openapi: 3.1.0
     info:
       title: ThinQ Connect API
-      version:
+      version: null
   tags:
     - name: PAT(Personal Access Token)
       description: >
