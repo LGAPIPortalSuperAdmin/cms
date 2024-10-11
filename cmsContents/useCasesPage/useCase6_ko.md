@@ -35,7 +35,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
+  \    href="/api/business_connect?s=1727316475662"
 
 
   \    target="_blank"
@@ -50,7 +50,7 @@ contents: >-2
   \    </CoLink>
 
 
-  \    <CoLink className="btn-round-line btn-l" href="https://dev.openapi.developer.lge.com/ko/mypage/partner/landing?s=1728539044388" target="_blank">
+  \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388" target="_blank">
 
 
   \    파트너십 신청
@@ -74,13 +74,13 @@ contents: >-2
   \    <div className="container">
 
 
-  \    <div className="grid usecase-grid--1">
+  \    <div className="grid usecase-grid--3">
 
 
   \    
 
 
-  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
+  \    <div className="box box--r-1.25 box--clean usecase-box">
 
 
   \    <div className="usecase-cont">
@@ -113,7 +113,7 @@ contents: >-2
   \    
 
 
-  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
+  \    <div className="box box--r-1.25 box--clean usecase-box">
 
 
   \    <div className="usecase-cont">
@@ -143,7 +143,7 @@ contents: >-2
   \    </div>
 
 
-  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
+  \    <div className="box box--r-1.25 box--clean usecase-box">
 
 
   \    <div className="usecase-cont">
@@ -173,7 +173,10 @@ contents: >-2
   \    </div>
 
 
-  \    
+  \    </div>
+
+
+  \    <div className="grid usecase-grid--else">
 
 
   \    <div className="col-full mt4 mb0 usecase-pick">
@@ -599,7 +602,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
+  \    href="/api/business_connect?s=1727316475662"
 
 
   \    target="_blank"
