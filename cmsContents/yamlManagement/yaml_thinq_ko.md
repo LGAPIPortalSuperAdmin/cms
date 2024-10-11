@@ -6,206 +6,53 @@ contents:
 
     info:
       version: null
-      title: Business Connect API
+      title: ThinQ Connect API
     servers:
-      - url: https://ap.api.lge.com/bc
-      - url: https://eu.api.lge.com/bc
-      - url: https://us.api.lge.com/bc
-      - url: https://ap-test.api.lge.com/bc
-      - url: https://eu-test.api.lge.com/bc
-      - url: https://us-test.api.lge.com/bc
+      - url: https://api-kic.lgthinq.com
+      - url: https://api-aic.lgthinq.com
+      - url: https://api-eic.lgthinq.com
     tags:
-      - name: Overview
+      - name: PAT(Personal Access Token)
         description: |
-          여러분의 서비스가 LG전자의 가전제품, 디스플레이, 공조설비에 대하여 정보를 조회하거나 제어를 수행하려면 어떻게 해야 할까요? LG전자는 LG전자의 클라우드 서비스에 등록된 디바이스의 정보를 파트너의 서비스가 획득하거나 제어할 수 있도록 Business Connect API를 제공합니다.
-
-                
-
-
-          <디자인된 이미지 들어갈 공간>
-
-
-
-          Business Connect API는 API의 사용 목적에 따라 다음과 같이 분류됩니다.
-
-          ![1234](cmsPublic/assets/images/439101_44606_278.jpg)
-
-
-           |API 종류|요약|
-           |-|-|
-           |Token API|API 호출시 사용될 API Token을 발급하기 위한 API|
-           |Device API|등록된 디바이스의 목록 및 상태를 조회하고, 제어를 수행하기 위한 API|
-           |Event API|디바이스의 상태 변화를 수신하기 위해 대상 디바이스를 관리하기 위한 API|
-           |User API|여러분의 서비스에 등록된 사용자를 관리하기 위한 API|
-           |DR API|전력 수요반응(DR: Demand Response) 서비스 제공자로서 사용자의 디바이스를 제어하기 위한 API|
-      - name: API Call Sequence
-        description: |
-          Business Connect API를 사용하여 서비스를 개발하는 방법을 API 호출 흐름을 통해 설명합니다.
-
-          ## API Token 발급
-          API Token은 모든 Business Connect API 호출의 HTTP 요청 헤더에 포함되어야 합니다. 이 API Token은 LG Open API Developer에서 사전에 발급 받은 API Key와 API Secret 쌍으로 발급될 수 있으며 24시간 동안 유효하기 때문에 만료되기 전에 Token API를 사용하여 API Token을 재발급해야 합니다.
-
-
-           - 사용 API
-              - [`POST /v1/token`](/#tag/Token-API/operation/createAPIToken)
-
-           - 시퀀스
-
-
-          ![Tux, the Linux mascot](../result/business-connect/sequence.jpg)
-
-          ## 디바이스 상태 조회
-          디바이스의 상태를 조회하기 위해 다음과 같이 Device API를 사용합니다.
-
-
-           - 사용 API
-              - [`GET /v1/devices`](/#tag/Token-API/operation/createAPIToken)
-              - [`GET /v1/devices/{deviceId}`](/#tag/Token-API/operation/createAPIToken)
-
-           - 시퀀스
-              1. 여러분의 서비스는 디바이스 목록 조회 API (GET/bc/v1/devices)를 이용하여, LG전자 플랫폼에 등록된 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 목록을 한 번 가져온 후에는 매번 수행할 필요는 없습니다.
-              2. 디바이스 목록에서 상태를 조회할 디바이스의 deviceId 값을 확인하고, 이 값을 이용하여 디바이스 상태 조회 API (GET /bc/v1/devices/{deviceId})를 호출합니다.
-
-
-          ![Tux, the Linux mascot](../result/business-connect/sequence.jpg)
-
-          ## 디바이스 제어
-          디바이스를 제어하기 위해 다음과 같이 Device API를 사용합니다.
-
-
-            - 사용 API
-              - [`GET /v1/devices`](/#tag/Device-API/operation/getDevices)
-              - [`GET /v1/devices/profile/{deviceId}`](/#tag/Device-API/operation/getStatusOfDevice)
-              - [`POST /v1/devices/{deviceId}`](/#tag/Device-API/operation/controlDevice)
-
-            - 시퀀스
-              1. 여러분의 서비스는 디바이스 목록 조회 API (GET /bc/v1/devices)를 이용하여, LG플랫폼에 사용자의 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 목록을 한 번 가져온 후에는 매번 수행할 필요는 없습니다.
-              2. 디바이스 목록에서 제어 대상 디바이스의 deviceId 값을 확인하고, 이 값을 이용하여 디바이스 프로파일 조회 API (GET/bc/v1/devices/profile/{device-id})를 호출합니다.
-              3. API 호출 응답으로 받은 디바이스 프로파일을 바탕으로 해당 디바이스에 대한 제어 명령을 생성합니다. 제어 명령은 디바이스 프로파일에서 제어를 원하는 속성을 찾아 name 과 value 쌍으로 표현합니다.
-              4. deviceId와 제어 명령을 이용하여, 디바이스 제어 API (POST /bc/v1/devices/{device-id})를 호출합니다.
-              5. API 응답으로 디바이스 제어 결과를 반환 받습니다.
-
-
-          ![Tux, the Linux mascot](../result/business-connect/sequence.jpg)
-
-          ## DR 서비스에 사용자 등록
-          B2B 파트너는 사전에 LG전자의 API 관리자와 협의한 이후 DR API를 사용하여 DR 서비스를 위한 사용자를 등록할 수 있습니다. LG전자 사용자와 디바이스는 다음의 순서에 따라 DR 서비스에 등록됩니다.
-
-
-            - 사용 API
-              - [`POST /v1/dr/users`](/#tag/Token-API/operation/createAPIToken)
-
-            - 시퀀스
-              1. LG전자 사용자는 LG ThinQ 서비스에 가입되어 있으며 파트너의 DR 서비스에 가입할 LG 가전제품을 등록한 상태여야 합니다.
-              2. LG전자 사용자는 B2B 파트너의 DR 서비스에 대한 가입을 시도합니다.
-              3. 파트너 서비스는 LMP(LGE Members Platform)의 OAuth 2.0 연동 절차에 따라 LG전자의 로그인 화면을 DR 서비스에서 제공하고 OAuth 연동 정보를 획득합니다.
-              4. LG전자의 DR 서비스는 파트너 서비스와 사전에 정의한 연동 인터페이스에 따라 파트너 서비스 측 OAuth 연동 정보를 획득한 후, 파트너 서비스의 사용자 정보 API를 조회한 결과를 저장합니다. 
-              5. LG전자 사용자가 LG ThinQ 모바일 앱에서 DR 서비스에 등록할 홈과 기기를 지정하면 LG전자의 DR 서비스가 해당 기기를 DR 대상 기기로 등록합니다.
-
-
-          ![Tux, the Linux mascot](../result/business-connect/sequence.jpg)
-
-          ## DR Event 등록 및 모니터링 데이터 다운로드
-          DR Event 를 등록하고 DR 이벤트 전후의 디바이스의 모니터링 데이터를 다운로드 하는 과정을 설명합니다.
-
-
-            - 사용 API
-              - [`POST /v1/events`](/#tag/Token-API/operation/createAPIToken)
-              - [`POST /v1/dr/events/{eventId}/targets`](/#tag/Token-API/operation/createAPIToken)
-              - [`POST /v1/dr/events/{eventId}/targets/{targetId}`](/#tag/Token-API/operation/createAPIToken)
-              - [`POST /v1/dr/events/{eventId}/targets/batch`](/#tag/Token-API/operation/createAPIToken)
-              - [`POST /v1/dr/data-zip/files`](/#tag/Token-API/operation/createAPIToken)
-              - [`POST /v1/dr/data-zip/files/{filename}`](/#tag/Token-API/operation/createAPIToken)
-
-            - 시퀀스
-              1. LG DR 서비스 서버에 DR Request를 등록하기 위해 DR Event 등록 API (POST /bc/v1/events)를 호출합니다.
-              2. DR Event 가 정상적으로 등록되면, DR Event ID (eventId)를 반환합니다.
-              3. 만약 DR Event 생성 후에 해당 DR Event에 참여 필요한 기기 목록 변경이 필요한 경우 DR Event Target 변경 API를 호출합니다.
-              4. DR Event가 종료된 후에 해당 Event에 참여 요청한 기기들의 Event 참여 여부를 확인하고 싶은 경우 기기 상태 정보 조회 API를 호출합니다. 
-
-
-          ![Tux, the Linux mascot](../result/business-connect/sequence.jpg)
-            
-      - name: Base URL
-        description: |
-          Lorem ipsum dolor sit amet, consectetur adipiscing eit. Integer dui ligula, sodales vel elit a, dignissim congue felis. Duis tempus vulputate erat.  Vestibulum quis feugiat mi. Fusce ut auctor odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed id nulla orci.  Curabitur luctus tincidunt nibh id pretium. Fusce tempus sem eu arcu viverra tincidunt. Nullam dignissim bibendum lacinia.  Cras vestibulum augue vitae placerat finibus. Duis tristique magna elit, ac placerat lorem viverra in. In non felis non ante porttitor pharetra non ut nisi.  Suspendisse at nisi tincidunt massa suscipit imperdiet eu et felis. Aliquam sodales enim ut congue mollis. Duis tristique nulla
-
-           
-      - name: Codes
-        description: |
-          # 국가 코드
-          Lorem ipsum dolor sit amet, consectetur adipiscing eit. Integer dui ligula, sodales vel elit a, dignissim congue felis. Duis tempus vulputate erat.  Vestibulum quis feugiat mi. Fusce ut auctor odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed id nulla orci.  Curabitur luctus tincidunt nibh id pretium. Fusce tempus sem eu arcu viverra tincidunt. Nullam dignissim bibendum lacinia.  Cras vestibulum augue vitae placerat finibus. Duis tristique magna elit, ac placerat lorem viverra in. In non felis non ante porttitor pharetra non ut nisi.  Suspendisse at nisi tincidunt massa suscipit imperdiet eu et felis. Aliquam sodales enim ut congue mollis. Duis tristique nulla.
-
-          # HTTP 상태 코드
-          Lorem ipsum dolor sit amet, consectetur adipiscing eit. Integer dui ligula, sodales vel elit a, dignissim congue felis. Duis tempus vulputate erat.  Vestibulum quis feugiat mi. Fusce ut auctor odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed id nulla orci.  Curabitur luctus tincidunt nibh id pretium. Fusce tempus sem eu arcu viverra tincidunt. Nullam dignissim bibendum lacinia.  Cras vestibulum augue vitae placerat finibus. Duis tristique magna elit, ac placerat lorem viverra in. In non felis non ante porttitor pharetra non ut nisi.  Suspendisse at nisi tincidunt massa suscipit imperdiet eu et felis. Aliquam sodales enim ut congue mollis. Duis tristique nulla.
-
-          # 에러 코드
-          Lorem ipsum dolor sit amet, consectetur adipiscing eit. Integer dui ligula, sodales vel elit a, dignissim congue felis. Duis tempus vulputate erat.  Vestibulum quis feugiat mi. Fusce ut auctor odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed id nulla orci.  Curabitur luctus tincidunt nibh id pretium. Fusce tempus sem eu arcu viverra tincidunt. Nullam dignissim bibendum lacinia.  Cras vestibulum augue vitae placerat finibus. Duis tristique magna elit, ac placerat lorem viverra in. In non felis non ante porttitor pharetra non ut nisi.  Suspendisse at nisi tincidunt massa suscipit imperdiet eu et felis. Aliquam sodales enim ut congue mollis. Duis tristique nulla.
-      - name: Token API
-        description: |
-          LG Open API Developer가 B2B 파트너에게 제공한 API Key와 API Secret 쌍을 이용하여 API Token을 주기적으로 발급하기 위해 Token API가 사용됩니다.       이 API로 발급된 API Token은 모든 Business Connect API 호출 시 HTTP 요청 헤더에 포함됩니다.
+          ThinQ API를 호출하기 위해 사용되는 개인 식별 토큰입니다.  개인적이고 비상업적 목적으로만 개인 권한 토큰을 사용할 수 있습니다. 개인 권한 토큰을 사용하여 LG전자가 허용하지 않은 추가 서비스를 개발하고자 하는 경우, LG전자와 이러한 잠재적 추가 서비스에 대해 논의하고 LG전자로부터 서면 동의를 받아야 합니다.
+            1. https://connect-pat.lgthinq.com 페이지를 방문하세요.
+            2. ThinQ 계정 로그인을 합니다.
+            3. "새 토큰 만들기" 버튼을 선택합니다.
+            4. 토큰 이름을 입력합니다.
+            5. 권한 범위에서 해당 토큰이 사용하고자 하는 기능에 대해서 선택합니다.
+            6. "토큰 만들기" 버튼을 누르면 토큰이 생성되고, PAT 페이지로 돌아갑니다.
+            7. 새로 생성된 토큰을 복사해서 사용합니다.
       - name: Device API
-        description: "등록된 디바이스의 목록을 조회하고, 특정 디바이스의 프로파일 및 상태를 조회하거나 디바이스를 제어하기 위해 Device API가 사용됩니다.       기업이 구매한 여러가지 종류의 LG전자 제품에 대하여 Device API를 사용하는 경우, 디바이스가 일괄 등록되어 있는 LG전자 계정이나 설치 현장의 정보를 LG Open API Developer에서 사전에 지정해둘 수 있습니다.       또한 가전제품에 한정하여 Device API를 호출하는 시점에 특정 LG전자 사용자를 지정하여 해당 사용자의 디바이스에 대한 접근을 수행할 수 있습니다.       Device API를 호출하기 위해서는 B2B 파트너 또는 그의 고객이 디바이스를 등록하는 과정이 선행되어야 합니다.       구매한 디바이스는 아래와 같이 디바이스 종류에 따라 해당 LG전자의 플랫폼의 서비스에 가입하여 등록해야 합니다.\n\n |디바이스 종류|LG전자 플랫폼|\n |-|-|\n |가전제품|LG ThinQ (mobile app)|\n |디스플레이|LG Business Cloud\_ (https://lgbusinesscloud.com)|\n |공조설비|LG BECON cloud\_(https://beconcloud.lge.com)|\n"
+        description: |
+          ThinQ 기기 정보를 요청하고 제어하기 위한 API입니다.
+      - name: Push API
+        description: |
+          ThinQ 기기에서 발생하는 푸쉬 메시지를 구독/해제하기 위한 API입니다.
       - name: Event API
         description: |
-          특정 디바이스의 상태 변화를 파트너의 서비스가 수신하거나 수신을 해제하기 위하여 Event API가 사용됩니다. 이 API는 현재 가전제품에 한정하여 제공되며 향후 다른 제품의 지원이 확대될 예정입니다. 파트너 서비스가 디바이스의 상태를 수신하기 위해서는 사전에 LG Open API Developer에서 파트너 서비스의 Callback 호출 정보를 등록해야 합니다.
-      - name: User API
+          ThinQ 기기에서 발생한 상태 변경에 대한 이벤트 메시지를 구독/해제하기 위한 API입니다.
+      - name: Client API
         description: |
-          파트너 서비스에 등록한 LG전자 사용자의 정보를 관리하기 위하여 User API가 사용됩니다. 이 API는 현재 가전제품에 한정하여 제공됩니다.
-      - name: DR API
-        description: |
-          B2B파트너가 전력 수요반응(DR: Demand Response) 사업자로서 DR 서비스 가입자인 LG전자 사용자의 디바이스를 제어하기 위하여 DR API가 사용됩니다. B2B 파트너는 이 API를 활용하여 DR 가입자인 LG전자 사용자를 관리하고, 현재 전력량의 수요에 반응하여 특정 전력 피크 시간 동안 LG전자 사용자 측의 전력 사용을 줄이거나 변경시킬 수 있는 DR Event 를 등록하고, DR 대상 디바이스의 DR Event 참여 여부를 조회할 수 있습니다. DR 대상 디바이스는 현재 에어컨, TV ( ESS )에 한정하여 제공되며 향후 다른 제품의 지원이 확대될 예정입니다. 이 API를 활용한 DR 서비스는 다음의 절차에 따라 진행됩니다.
+          ThinQ 기기에서 전달하는 메시지를 받기 위한 사용자 기기 인증서 발급/등록을 위한 API입니다.  
     paths:
-      /v1/token:
-        post:
-          tags:
-            - Token API
-          summary: Create a new API Token
-          description: |
-            This operation creates a new `API Token` which is required for every calls of Business Connect API. This API Token is valid for **24 hours** so that your client have to be ready to call this API if needed. `API Secret` header is required for this operation.
-          operationId: createAPIToken
-          security:
-            - Business_Connect_API_Key: []
-          parameters:
-            - name: X-Api-Secret
-              in: header
-              required: true
-              schema:
-                type: string
-              description: |
-                `API Secret` is a pair with `API Key`, which was obtained from **My Page** when the paired API Key was initially created.
-              example: 5f3c0222-cb51-4ea8-bae9-60879e8760bb
-          responses:
-            '200':
-              description: OK
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/api-token-res'
-            '400':
-              description: Bad request
-            '401':
-              description: Unauthorized
-      /v1/devices:
+      /devices:
         get:
           tags:
             - Device API
-          summary: List devices
-          description: List all registered devices on your accounts.
-          operationId: getDevices
-          security:
-            - Business_Connect_API_Key: []
+          summary: 기기 목록 조회
+          description: |
+            ThinQ Platform에 등록한 기기 목록을 얻어오기 위한 API입니다. 다른 API를 사용하기 전에 반드시 한 번은 호출되어야 합니다.  해당 API가 응답한 디바이스 목록에는 디바이스를 식별할 수 있는 device-id가 포함되어 있으며, 이 값으로 대상 디바이스를 지정하여 다른 기기 API를 호출할 수 있습니다.  따라서 이 API는 반드시 최초 1번은 호출되어야 하며, 디바이스 목록을 확인 후에는 매번 호출할 필요 없습니다.
           parameters:
             - required: true
-              $ref: '#/components/parameters/X-Api-Token'
-            - required: true
-              $ref: '#/components/parameters/X-Message-Id'
-            - required: true
-              $ref: '#/components/parameters/X-Use-Account'
-            - required: false
               $ref: '#/components/parameters/Authorization'
-            - required: false
-              $ref: '#/components/parameters/X-Country-Code'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
           responses:
             '200':
               description: OK
@@ -217,28 +64,23 @@ contents:
               description: Bad request
             '401':
               description: Unauthorized
-      /v1/devices/profile/{deviceId}:
+      /devices/{deviceId}/profile:
         get:
           tags:
             - Device API
-          summary: Get Profile of the device
-          description: Get Device Profile of the device.
-          operationId: getProfileOfDevice
-          security:
-            - Business_Connect_API_Key: []
+          summary: 기기 프로파일 조회
+          description: 기기 프로파일을 조회하기 위한 API입니다. > 기기 프로파일은 LG 가전의 속성을 기술한 정보로, LG ThinQ 플랫폼이 사용하는 기기 데이터입니다.
           parameters:
             - required: true
-              $ref: '#/components/parameters/X-Api-Token'
-            - required: true
-              $ref: '#/components/parameters/X-Message-Id'
-            - required: true
-              $ref: '#/components/parameters/deviceId'
-            - required: true
-              $ref: '#/components/parameters/X-Use-Account'
-            - required: false
               $ref: '#/components/parameters/Authorization'
-            - required: false
-              $ref: '#/components/parameters/X-Country-Code'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
           responses:
             '200':
               description: OK
@@ -246,3721 +88,667 @@ contents:
                 application/json:
                   schema:
                     $ref: '#/components/schemas/device-profile-res'
+                  examples:
+                    냉장고:
+                      $ref: '#/components/examples/refrigerator-profile-example'
+                    정수기:
+                      $ref: '#/components/examples/water_purifier-profile-example'
+                    와인냉장고:
+                      $ref: '#/components/examples/wine_cellar-profile-example'
+                    김치냉장고:
+                      $ref: '#/components/examples/kimchi_refrigerator-profile-example'
+                    맥주제조기:
+                      $ref: '#/components/examples/home_brew-profile-example'
+                    식물재배기:
+                      $ref: '#/components/examples/plant_cultivator-profile-example'
+                    세탁기:
+                      $ref: '#/components/examples/washer-profile-example'
+                    건조기:
+                      $ref: '#/components/examples/dryer-profile-example'
+                    스타일러:
+                      $ref: '#/components/examples/styler-profile-example'
+                    식기세척기:
+                      $ref: '#/components/examples/dish_washer-profile-example'
+                    워시타워(세탁기):
+                      $ref: '#/components/examples/washtower_washer-profile-example'
+                    워시타워(건조기):
+                      $ref: '#/components/examples/washtower_dryer-profile-example'
+                    일체형워시타워:
+                      $ref: '#/components/examples/washtower-profile-example'
+                    워시콤보세탁기:
+                      $ref: '#/components/examples/main_washcombo-profile-example'
+                    워시콤보미니세탁기:
+                      $ref: '#/components/examples/mini_washcombo-profile-example'
+                    오븐:
+                      $ref: '#/components/examples/oven-profile-example'
+                    쿡탑:
+                      $ref: '#/components/examples/cooktop-profile-example'
+                    후드:
+                      $ref: '#/components/examples/hood-profile-example'
+                    전자레인지:
+                      $ref: '#/components/examples/microwave_oven-profile-example'
+                    에어컨:
+                      $ref: '#/components/examples/air_conditioner-profile-example'
+                    시스템보일러:
+                      $ref: '#/components/examples/system_boiler-profile-example'
+                    공기청정기:
+                      $ref: '#/components/examples/air_purifier-profile-example'
+                    제습기:
+                      $ref: '#/components/examples/dehumidifier-profile-example'
+                    가습기:
+                      $ref: '#/components/examples/humidifier-profile-example'
+                    온수기:
+                      $ref: '#/components/examples/water_heater-profile-example'
+                    실링팬:
+                      $ref: '#/components/examples/ceiling_fan-profile-example'
+                    공기청정팬:
+                      $ref: '#/components/examples/air_purifier_fan-profile-example'
+                    로봇청소기:
+                      $ref: '#/components/examples/robot_cleaner-profile-example'
+                    스틱청소기:
+                      $ref: '#/components/examples/stick_cleaner-profile-example'
             '400':
               description: Bad request
             '401':
               description: Unauthorized
-      /v1/devices/{deviceId}:
+      /devices/{deviceId}/state:
         get:
           tags:
             - Device API
-          summary: Get status of the device
-          description: Get status of the device.
-          operationId: getStatusOfDevice
-          security:
-            - Business_Connect_API_Key: []
+          summary: 기기 상태 조회
+          description: 기기 현재 상태를 조회하기 위한 API입니다. 지정한 device-id의 현재 상태를 얻어올 수 있습니다.
           parameters:
             - required: true
-              $ref: '#/components/parameters/X-Api-Token'
-            - required: true
-              $ref: '#/components/parameters/X-Message-Id'
-            - required: true
-              $ref: '#/components/parameters/X-Use-Account'
-            - required: true
-              $ref: '#/components/parameters/deviceId'
-            - required: false
               $ref: '#/components/parameters/Authorization'
-            - required: false
-              $ref: '#/components/parameters/X-Country-Code'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
           responses:
             '200':
               description: OK
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/device-status-res'
+                    $ref: '#/components/schemas/device-state-res'
                   examples:
                     냉장고:
-                      $ref: '#/components/examples/refrigerator-object-example-res-1'
+                      $ref: '#/components/examples/refrigerator-object-example'
+                    정수기:
+                      $ref: '#/components/examples/water_purifier-object-example'
+                    와인냉장고:
+                      $ref: '#/components/examples/wine_cellar-object-example'
+                    김치냉장고:
+                      $ref: '#/components/examples/kimchi_refrigerator-object-example'
+                    맥주제조기:
+                      $ref: '#/components/examples/home_brew-object-example'
+                    식물재배기:
+                      $ref: '#/components/examples/plant_cultivator-object-example'
+                    세탁기:
+                      $ref: '#/components/examples/washer-object-example'
+                    건조기:
+                      $ref: '#/components/examples/dryer-object-example'
+                    스타일러:
+                      $ref: '#/components/examples/styler-object-example'
+                    식기세척기:
+                      $ref: '#/components/examples/dish_washer-object-example'
+                    워시타워(세탁기):
+                      $ref: '#/components/examples/washtower_washer-object-example'
+                    워시타워(건조기):
+                      $ref: '#/components/examples/washtower_dryer-object-example'
+                    일체형워시타워:
+                      $ref: '#/components/examples/washtower-object-example'
+                    워시콤보세탁기:
+                      $ref: '#/components/examples/main_washcombo-object-example'
+                    워시콤보미니세탁기:
+                      $ref: '#/components/examples/mini_washcombo-object-example'
+                    오븐:
+                      $ref: '#/components/examples/oven-object-example'
+                    쿡탑:
+                      $ref: '#/components/examples/cooktop-object-example'
+                    후드:
+                      $ref: '#/components/examples/hood-object-example'
+                    전자레인지:
+                      $ref: '#/components/examples/microwave_oven-object-example'
+                    에어컨:
+                      $ref: '#/components/examples/air_conditioner-object-example'
+                    시스템보일러:
+                      $ref: '#/components/examples/system_boiler-object-example'
+                    공기청정기:
+                      $ref: '#/components/examples/air_purifier-object-example'
+                    제습기:
+                      $ref: '#/components/examples/dehumidifier-object-example'
+                    가습기:
+                      $ref: '#/components/examples/humidifier-object-example'
+                    온수기:
+                      $ref: '#/components/examples/water_heater-object-example'
+                    실링팬:
+                      $ref: '#/components/examples/ceiling_fan-object-example'
+                    공기청정팬:
+                      $ref: '#/components/examples/air_purifier_fan-object-example'
+                    로봇청소기:
+                      $ref: '#/components/examples/robot_cleaner-object-example'
+                    스틱청소기:
+                      $ref: '#/components/examples/stick_cleaner-object-example'
             '400':
               description: Bad request
             '401':
               description: Unauthorized
+      /devices/{deviceId}/control:
         post:
           tags:
             - Device API
-          summary: Control the device
-          description: Control the device.
-          operationId: controlDevice
-          security:
-            - Business_Connect_API_Key: []
+          summary: 기기 제어
+          description: 기기를 제어하기 위한 API입니다. 지정한 device-id에 제어 명령을 보낼 수 있습니다.
           parameters:
             - required: true
-              $ref: '#/components/parameters/X-Api-Token'
-            - required: true
-              $ref: '#/components/parameters/X-Message-Id'
-            - required: true
-              $ref: '#/components/parameters/X-Use-Account'
-            - required: true
-              $ref: '#/components/parameters/deviceId'
-            - required: false
               $ref: '#/components/parameters/Authorization'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
             - required: false
-              $ref: '#/components/parameters/X-Country-Code'
+              $ref: '#/components/parameters/x-conditional-control'
           requestBody:
             content:
               application/json:
                 schema:
                   type: object
-                  description: 디바이스 유형별 제어 요청 메시지의 스키마는 [**디바이스 프로파일**](http://www.daum.net) 페이지를 참조해주세요.
+                  description: 디바이스 프로파일에 정의된 제어 명령
                 examples:
-                  냉장고 - 냉장실 온도를 섭씨 0도로 설정:
-                    $ref: '#/components/examples/refrigerator-object-example-req-1'
-                  냉장고 - 절전 모드 설정:
-                    $ref: '#/components/examples/refrigerator-object-example-req-2'
+                  냉장고:
+                    $ref: '#/components/examples/refrigerator-command-example'
+                  와인냉장고:
+                    $ref: '#/components/examples/wine_cellar-command-example'
+                  세탁기:
+                    $ref: '#/components/examples/washer-command-example'
+                  건조기:
+                    $ref: '#/components/examples/dryer-command-example'
+                  스타일러:
+                    $ref: '#/components/examples/styler-command-example'
+                  식기세척기:
+                    $ref: '#/components/examples/dish_washer-command-example'
+                  워시타워(세탁기):
+                    $ref: '#/components/examples/washtower_washer-command-example'
+                  워시타워(건조기):
+                    $ref: '#/components/examples/washtower_dryer-command-example'
+                  일체형워시타워:
+                    $ref: '#/components/examples/washtower-command-example'
+                  워시콤보세탁기:
+                    $ref: '#/components/examples/main_washcombo-command-example'
+                  워시콤보미니세탁기:
+                    $ref: '#/components/examples/mini_washcombo-command-example'
+                  오븐:
+                    $ref: '#/components/examples/oven-command-example'
+                  쿡탑:
+                    $ref: '#/components/examples/cooktop-command-example'
+                  후드:
+                    $ref: '#/components/examples/hood-command-example'
+                  전자레인지:
+                    $ref: '#/components/examples/microwave_oven-command-example'
+                  에어컨:
+                    $ref: '#/components/examples/air_conditioner-command-example'
+                  시스템보일러:
+                    $ref: '#/components/examples/system_boiler-command-example'
+                  공기청정기:
+                    $ref: '#/components/examples/air_purifier-command-example'
+                  제습기:
+                    $ref: '#/components/examples/dehumidifier-command-example'
+                  가습기:
+                    $ref: '#/components/examples/humidifier-command-example'
+                  온수기:
+                    $ref: '#/components/examples/water_heater-command-example'
+                  실링팬:
+                    $ref: '#/components/examples/ceiling_fan-command-example'
+                  공기청정팬:
+                    $ref: '#/components/examples/air_purifier_fan-command-example'
+                  로봇청소기:
+                    $ref: '#/components/examples/robot_cleaner-command-example'
           responses:
             '200':
               description: OK
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/device-status-res'
-                  examples:
-                    냉장고:
-                      $ref: '#/components/examples/refrigerator-object-example-res-1'
+                    $ref: '#/components/schemas/device-control-res'
             '400':
               description: Bad request
             '401':
               description: Unauthorized
-      /v1/push:
+      /push:
         get:
           tags:
-            - Event API
-          summary: List IDs of subscribed ThinQ Devices
-          description: Get the list of IDs of ThinQ Devices whose push messages has been subscribed
-          operationId: listDevicesSubscribed
-          security:
-            - Business_Connect_API_Key: []
+            - Push API
+          summary: 기기 푸쉬 구독 목록 조회
+          description: 사용자가 기기 푸쉬 알림을 구독 중인 기기 목록을 조회
           parameters:
             - required: true
-              $ref: '#/components/parameters/X-Api-Token'
-            - required: true
-              $ref: '#/components/parameters/X-Message-Id'
-            - required: true
-              $ref: '#/components/parameters/X-Use-Account'
-            - required: false
               $ref: '#/components/parameters/Authorization'
-            - required: false
-              $ref: '#/components/parameters/X-Country-Code'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
           responses:
             '200':
               description: OK
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/device-id-list-res'
+                    $ref: '#/components/schemas/push-list-res'
             '400':
               description: Bad request
             '401':
               description: Unauthorized
-      /v1/push/{deviceId}:
+      /push/{deviceId}/subscribe:
         post:
           tags:
-            - Event API
-          summary: Subscribe push messages
-          description: Subscribe push messages of the ThinQ Device
-          operationId: subscribePushMessages
-          security:
-            - Business_Connect_API_Key: []
+            - Push API
+          summary: 기기 푸쉬 구독
+          description: 디바이스로부터 발생하는 푸쉬 알림을 받기 위한 구독 요청
           parameters:
             - required: true
-              $ref: '#/components/parameters/X-Api-Token'
-            - required: true
-              $ref: '#/components/parameters/X-Message-Id'
-            - required: true
-              $ref: '#/components/parameters/deviceId'
-            - required: true
-              $ref: '#/components/parameters/X-Use-Account'
-            - required: false
               $ref: '#/components/parameters/Authorization'
-            - required: false
-              $ref: '#/components/parameters/X-Country-Code'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
           responses:
             '200':
               description: OK
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/device-empty-res'
+                    $ref: '#/components/schemas/push-deviceId-res'
+            '400':
+              description: Bad request
+            '401':
+              description: Unauthorized
+      /push/{deviceId}/unsubscribe:
+        delete:
+          tags:
+            - Push API
+          summary: 기기 푸쉬 해제
+          description: 디바이스로부터 발생하는 푸쉬 알림 요청을 해제하기 위한 요청
+          parameters:
+            - required: true
+              $ref: '#/components/parameters/Authorization'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
+          responses:
+            '200':
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/push-deviceId-res'
+            '400':
+              description: Bad request
+            '401':
+              description: Unauthorized
+      /push/devices:
+        get:
+          tags:
+            - Push API
+          summary: 기기 추가/삭제 알림 구독 클라이언트 목록 조회
+          description: 사용자가 기기 추가/삭제/변경 구독을 요청한 client 목록 조회
+          parameters:
+            - required: true
+              $ref: '#/components/parameters/Authorization'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
+          responses:
+            '200':
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/push-client-list-res'
+            '400':
+              description: Bad request
+            '401':
+              description: Unauthorized
+        post:
+          tags:
+            - Push API
+          summary: 기기 추가/삭제 알림 클라이언트 구독
+          description: 기기 추가/삭제/변경 구독을 받기 위해 client 등록 요청
+          parameters:
+            - required: true
+              $ref: '#/components/parameters/Authorization'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
+          responses:
+            '200':
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/push-list-res'
             '400':
               description: Bad request
             '401':
               description: Unauthorized
         delete:
           tags:
-            - Event API
-          summary: Unsubscribe push messages
-          description: Unsubscribe push messages of the LG Device
-          operationId: unsubscribePushMessages
-          security:
-            - Business_Connect_API_Key: []
+            - Push API
+          summary: 기기 추가/삭제 알림 클라이언트 해제
+          description: 기기 추가/삭제/변경 구독을 받기 위해 client 등록 요청
           parameters:
             - required: true
-              $ref: '#/components/parameters/X-Api-Token'
-            - required: true
-              $ref: '#/components/parameters/X-Message-Id'
-            - required: true
-              $ref: '#/components/parameters/deviceId'
-            - required: true
-              $ref: '#/components/parameters/X-Use-Account'
-            - required: false
               $ref: '#/components/parameters/Authorization'
-            - required: false
-              $ref: '#/components/parameters/X-Country-Code'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
           responses:
             '200':
               description: OK
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/device-empty-res'
+                    $ref: '#/components/schemas/push-list-res'
             '400':
               description: Bad request
             '401':
               description: Unauthorized
-      /v1/users:
+      /event:
         get:
           tags:
-            - User API
-          summary: Get User Number
-          description: Get User Number of the user
-          operationId: getUserNumber
-          security:
-            - Business_Connect_API_Key: []
+            - Event API
+          summary: 기기 이벤트 구독 목록 조회
+          description: 사용자가 기기 상태 알림을 구독 중인 기기 목록을 조회
           parameters:
             - required: true
-              $ref: '#/components/parameters/X-Api-Token'
+              $ref: '#/components/parameters/Authorization'
             - required: true
-              $ref: '#/components/parameters/X-Message-Id'
+              $ref: '#/components/parameters/x-message-id'
             - required: true
-              $ref: '#/components/parameters/Authorization-2'
+              $ref: '#/components/parameters/x-country'
             - required: true
-              $ref: '#/components/parameters/X-Country-Code-2'
-          responses:
-            '200':
-              description: Successfully processed the request
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/device-empty-res'
-            '400':
-              description: Bad request
-            '401':
-              description: Unauthorized
-      /v1/user/service:
-        delete:
-          tags:
-            - User API
-          summary: Disconnect the user
-          description: Deactivate the user and Disconnect the user from your service
-          operationId: disconnectService
-          security:
-            - Business_Connect_API_Key: []
-          parameters:
+              $ref: '#/components/parameters/x-client-id'
             - required: true
-              $ref: '#/components/parameters/X-Api-Token'
-            - required: true
-              $ref: '#/components/parameters/X-Message-Id'
-            - required: true
-              $ref: '#/components/parameters/Authorization-2'
-            - required: true
-              $ref: '#/components/parameters/X-Country-Code-2'
+              $ref: '#/components/parameters/x-api-key'
           responses:
             '200':
               description: OK
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/device-empty-res'
+                    $ref: '#/components/schemas/event-list-res'
             '400':
               description: Bad request
             '401':
               description: Unauthorized
-      /v1/dr/groups:
+      /event/{deviceId}/subscribe:
         post:
           tags:
-            - DR API
-          summary: Create & Update a Group
-          description: A POST request to create a new group
+            - Event API
+          summary: 기기 이벤트 구독
+          description: 디바이스로부터 발생하는 상태 변경 알림을 받기 위한 구독 요청
           parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
+            - required: true
+              $ref: '#/components/parameters/Authorization'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
           requestBody:
-            description: Group Infomation
             content:
               application/json:
                 schema:
                   type: object
-                  properties:
-                    groupId:
-                      type: string
-                      example: k-apt-1168011000
-                      description: Group ID
-                    groupName:
-                      type: string
-                      example: 압구정 현대 1차 아파트
-                      description: Group name
-                    partnerId:
-                      type: string
-                      example: kepco-herit-lge
-                      description: 그룹을 생성한 전력사/통합사 ID
-                    areaCode:
-                      type: string
-                      example: '1168011000'
-                      description: |-
-                        - 법정동 코드(국토교통부)
-                        - 10자리번호
-                    buildingCode:
-                      type: string
-                      example: '1168011000103690001004767'
-                      description: |-
-                        - 도로명주소건물관리번호(공간정보 오픈플랫폼)
-                        - 25자리번호
-                        - 법정동코드(10) + 산여부(1) + 지번본번(4) + 지번부번(4) + 시스템번호(6)
-                    comment:
-                      type: string
-                      example: 압구정 현대 1차 아파트
-                      description: description of the resource
-                  required:
-                    - groupId
-                    - partnerId
+                  $ref: '#/components/schemas/event-register-req'
           responses:
             '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+              description: OK
               content:
                 application/json:
                   schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        type: object
-                        properties:
-                          groupId:
-                            type: string
-                            example: k-apt-1168011000
-                            description: Group ID
+                    $ref: '#/components/schemas/event-deviceId-res'
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+              description: Bad request
             '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-      /v1/dr/groups/{groupId}:
-        get:
-          tags:
-            - DR API
-          summary: Get a Single Group
-          description: A GET request to check a group of an aggregator
-          parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
-            - in: path
-              name: groupId
-              description: a specific group ID. It could be group of users or group of end devices.
-              required: true
-              schema:
-                type: string
-                example: k-apt-1168011000
-          responses:
-            '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        type: object
-                        description: contains information of the group
-                        properties:
-                          groupId:
-                            type: string
-                            example: k-apt-1168011000
-                            description: uniquely identifiable group ID which is registered to LG DR service.
-                          groupName:
-                            type: string
-                            example: 압구정 현대 1차 아파트
-                            description: Group name
-                          partnerId:
-                            type: string
-                            example: kepco-herit-lge
-                            description: an ID of an aggregator/utility that created the group
-                          areaCode:
-                            type: string
-                            example: '1168011000'
-                            description: |-
-                              - 법정동 코드(국토교통부)
-                              - 10자리번호
-                          buildingCode:
-                            type: string
-                            example: '1168011000103690001004767'
-                            description: |-
-                              - 도로명주소건물관리번호(공간정보 오픈플랫폼)
-                              - 25자리번호
-                              - 법정동코드(10) + 산여부(1) + 지번본번(4) + 지번부번(4) + 시스템번호(6)
-                          comment:
-                            type: string
-                            example: 압구정 현대 1차 아파트
-                            description: description of the resource
-            '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-      /v1/dr/partners/{partnerId}/groups:
-        get:
-          tags:
-            - DR API
-          summary: Get Groups
-          description: A GET request to check groups of aggregator
-          parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
-            - in: path
-              name: partnerId
-              description: an ID of an aggregator/utility that created the group
-              required: true
-              schema:
-                type: string
-                example: partnerId
-          responses:
-            '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        type: array
-                        description: contains list of group
-                        items:
-                          properties:
-                            groupId:
-                              type: string
-                              example: k-apt-1168011000
-                              description: uniquely identifiable group ID which is registered to LG DR service.
-                            groupName:
-                              type: string
-                              example: 압구정 현대 1차 아파트
-                              description: Group name
-                            partnerId:
-                              type: string
-                              example: kepco-herit-lge
-                              description: an ID of an aggregator/utility that created the group
-                            areaCode:
-                              type: string
-                              example: '1168011000'
-                              description: |-
-                                - 법정동 코드(국토교통부)
-                                - 10자리번호
-                            buildingCode:
-                              type: string
-                              example: '1168011000103690001004767'
-                              description: |-
-                                - 도로명주소건물관리번호(공간정보 오픈플랫폼)
-                                - 25자리번호
-                                - 법정동코드(10) + 산여부(1) + 지번본번(4) + 지번부번(4) + 시스템번호(6)
-                            comment:
-                              type: string
-                              example: 압구정 현대 1차 아파트
-                              description: description of the resource
-                  examples:
-                    200 OK:
-                      value:
-                        code: 2000
-                        data:
-                          - groupId: k-apt-1168011000
-                            groupName: 압구정 현대 1차 아파트
-                            partnerId: kepco-herit-lge
-                            areaCode: '1168011000'
-                            buildingCode: '1168011000103690001004767'
-                            comment: 압구정 현대 1차 아파트
-                          - groupId: k-apt-1165010700
-                            groupName: 반포2동 아크로리버파크
-                            partnerId: kepco-herit-lge
-                            areaCode: '1165010700'
-                            buildingCode: '1165010700100020001017796'
-                            comment: 반포2동 아크로리버파크
-            '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-      /v1/dr/users:
-        post:
-          tags:
-            - DR API
-          summary: Create User (ThinQ app 공통)
-          description: A POST request to create or update a user
-          parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
-          requestBody:
-            description: User Infomation
-            content:
-              application/json:
-                schema:
-                  type: object
-                  properties:
-                    userNo:
-                      type: string
-                      example: US1234
-                      description: User Number issued by LG EMP service. You can use Get Profile API on EMP service to get user number of the target user. user key 값. 중복 불가
-                    mail:
-                      type: string
-                      example: saldkjb@glkd.com
-                      description: |-
-                        Uniquely identifiable userNo which should not contain personal information nor provide clue to trace the target user.
-                        User id registered to LG EMP service. You can use Get Profile API on EMP service to get user id of the target user.
-                    groupId:
-                      type: string
-                      example: lgeDR-CE-TV
-                      description: Uniquely identifiable group ID which is registered to LG DR service.
-                    accessToken:
-                      type: string
-                      example: abcd123456
-                      description: access_token issued by LG EMP service
-                    refreshToken:
-                      type: string
-                      example: qaz2wsx345
-                      description: refresh_token issued by LG EMP service
-                    partner:
-                      type: object
-                      description: Partner information
-                      properties:
-                        partnerId:
-                          type: string
-                          example: abcded
-                          description: Partner ID
-                        programId:
-                          type: string
-                          example: abc123
-                          description: DR Program Id (OC - mandatory)
-                        programName:
-                          type: string
-                          example: OC DR Program
-                          description: DR Program name (OC - mandatory)
-                        partnerUserId:
-                          type: string
-                          example: abc123@lge.com
-                          description: Partner system User ID
-                        authCodeExt:
-                          type: string
-                          example: dlksjdfkjqjl
-                          description: 3rd party OAuth 2.0 연동을 위한 Auth code
-                      required:
-                        - partnerId
-                        - authCodeExt
-                    insertTs:
-                      type: number
-                      example: 1234566000
-                      description: timestamp when this request is made (10 digits). If empty, default timestamp will be added automatically.
-                    updateTs:
-                      type: number
-                      example: 1234566000
-                      description: timestamp when this request is updated (10 digits). If empty, default timestamp will be added automatically.
-                  required:
-                    - userNo
-                    - accessToken
-                    - refreshToken
-                    - partner
-          responses:
-            '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        type: object
-                        properties:
-                          userNo:
-                            type: string
-                            example: user1234
-                            description: encrypted User No.
-            '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-      /v1/dr/users/{userNo}:
+              description: Unauthorized
+      /event/{deviceId}/unsubscribe:
         delete:
           tags:
-            - DR API
-          summary: Delete a User (ThinQ app 공통)
-          description: A DELETE request to delete a user
+            - Event API
+          summary: 기기 이벤트 구독 해제
+          description: 디바이스로부터 발생하는 상태 변경 event 전달을 해제하기 위한 요청
           parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
-            - in: path
-              name: userNo
-              description: EMP User No.
-              required: true
-              schema:
-                type: string
-                example: user1234
+            - required: true
+              $ref: '#/components/parameters/Authorization'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
           responses:
             '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+              description: OK
               content:
                 application/json:
                   schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        type: object
-                        properties:
-                          userNo:
-                            type: string
-                            example: user1234
-                            description: deleted User No.
+                    $ref: '#/components/schemas/event-deviceId-res'
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+              description: Bad request
             '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-        get:
-          tags:
-            - DR API
-          summary: Get a User
-          description: A GET request to get user information
-          parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
-            - in: path
-              name: userNo
-              description: EMP User No.
-              required: true
-              schema:
-                type: string
-                example: user1234
-          responses:
-            '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        type: object
-                        properties:
-                          userNo:
-                            type: string
-                            example: user1234
-                            description: EMP User No.
-                          drHomeId:
-                            type: string
-                            example: home-01
-                            description: ID of the ThinQ Home that the user has selected to be linked to DR Service
-                          partnerId:
-                            type: string
-                            example: ohmconnect-01
-                            description: the Partner ID (ID of the DR Service Provider that the user is enrolled to)
-                          groupId:
-                            type: string
-                            example: group-01
-                            description: the ID of the group the user is grouped to.
-            '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-      /v1/dr/users/{userNo}/devices:
-        get:
-          tags:
-            - DR API
-          summary: Get Devices (User Based, ThinQ app 공통)
-          description: A Get request to get device list of a user
-          parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
-            - in: path
-              name: userNo
-              description: EMP User No.
-              required: true
-              schema:
-                type: string
-                example: KRXXXXXY
-          responses:
-            '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        type: array
-                        items:
-                          properties:
-                            deviceId:
-                              type: string
-                              example: 111e0f0a-8d50-41f8-9120-94a8728c57e4
-                              description: Device ThinQ ID
-                            macAddress:
-                              type: string
-                              example: abcd1234
-                              description: MAC address of the device (encrypted)
-                            groupId:
-                              type: string
-                              example: k-apt-1168011000
-                              description: Group ID
-                            userNo:
-                              type: string
-                              example: KRXXXXXY
-                              description: EMP User No.
-                            homeId:
-                              type: string
-                              example: '1'
-                              description: ThinQ Home ID (ThinQ Home ID the devie is registered to)
-                            drParticipate:
-                              type: boolean
-                              example: true
-                              description: Auto-DR Selected Device or Not (true/false)
-                            opt:
-                              type: string
-                              example: IN
-                              description: Currently in DR Event Mode or not ("IN"/"OUT")
-                            deviceType:
-                              type: string
-                              example: DEVICE_AIR_CONDITIONER
-                              description: Device type
-                            modelName:
-                              type: string
-                              example: PAC_910604_US
-                              description: Model Name of the device
-                            alias:
-                              type: string
-                              example: air conditioner
-                              description: alias of the device
-                  examples:
-                    200 OK:
-                      value:
-                        code: 2000
-                        data:
-                          - deviceId: 111e0f0a-8d50-41f8-9120-94a8728c57e4
-                            macAddress: abcd1234
-                            groupId: k-apt-1168011000
-                            userNo: KRXXXXXY
-                            homeId: '1'
-                            drParticipate: true
-                            opt: IN
-                            deviceType: DEVIE_AIR_CONDITIONER
-                            modelName: PAC_910604_US
-                            alias: air conditioner
-                          - deviceId: aaaaaaaa-1234-11d3-80ae-044eaf8f70cc
-                            macAddress: bcdef2345
-                            groupId: k-apt-1165010700
-                            userNo: KRXXXXXY
-                            homeId: '2'
-                            drParticipate: true
-                            opt: OUT
-                            deviceType: DEVIE_AIR_CONDITIONER
-                            modelName: PAC_910604_US
-                            alias: air conditioner
-            '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-      /v1/dr/users/{userNo}/devices/{deviceId}:
-        get:
-          tags:
-            - DR API
-          summary: Get a Single Device (User based)
-          description: A GET request to get a single device on user based
-          parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
-            - in: path
-              name: userNo
-              description: EMP User No.
-              required: true
-              schema:
-                type: string
-                example: KRXXXXXY
-            - in: path
-              name: deviceId
-              description: Device ThinQ ID
-              required: true
-              schema:
-                type: string
-                example: 111e0f0a-8d50-41f8-9120-94a8728c57e4
-          responses:
-            '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        type: object
-                        properties:
-                          deviceId:
-                            type: string
-                            example: 111e0f0a-8d50-41f8-9120-94a8728c57e4
-                            description: Device ThinQ ID
-                          macAddress:
-                            type: string
-                            example: abcd1234
-                            description: MAC address of the device (encrypted)
-                          groupId:
-                            type: string
-                            example: k-apt-1168011000
-                            description: Group ID
-                          userNo:
-                            type: string
-                            example: KRXXXXXY
-                            description: EMP User No.
-                          homeId:
-                            type: string
-                            example: '1'
-                            description: ThinQ Home ID (ThinQ Home ID the devie is registered to)
-                          drParticipate:
-                            type: boolean
-                            example: true
-                            description: Auto-DR Selected Device or Not (true/false)
-                          opt:
-                            type: string
-                            example: IN
-                            description: Currently in DR Event Mode or not ("IN"/"OUT")
-                          deviceType:
-                            type: string
-                            example: DEVICE_AIR_CONDITIONER
-                            description: Device type
-                          modelName:
-                            type: string
-                            example: PAC_910604_US
-                            description: Model Name of the device
-                          alias:
-                            type: string
-                            example: air conditioner
-                            description: alias of the device
-            '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-      /v1/dr/events:
+              description: Unauthorized
+      /client/certificate:
         post:
           tags:
-            - DR API
-          summary: Create & update DR Event
-          description: A POST request to create a new DR request.
+            - Client API
+          summary: 클라이언트 인증서 발급
+          description: 클라이언트의 AWS IoT 인증서, 구독 가능한 MQTT Topic 확인
           parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
+            - required: true
+              $ref: '#/components/parameters/Authorization'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
           requestBody:
-            description: Event information
             content:
               application/json:
                 schema:
                   type: object
-                  properties:
-                    eventId:
-                      type: string
-                      example: 2023-04-25-dr-01
-                      description: ID of an event
-                    eventName:
-                      type: string
-                      example: 2023-04-25-dr-01
-                      description: Event Name
-                    partnerId:
-                      type: string
-                      example: herit-01
-                      description: Partner ID
-                    startTs:
-                      type: number
-                      example: 1682423399890
-                      description: milliseconds
-                    endTs:
-                      type: number
-                      example: 1682426999000
-                      description: milliseconds
-                    targets:
-                      type: array
-                      items:
-                        properties:
-                          targetType:
-                            type: string
-                            example: GROUP
-                            description: type of targets (GROUP, USER, DEVICE)
-                          targetIds:
-                            type: array
-                            items:
-                              type: string
-                              example: k-apt-1168011000
-                            description: list of ids (of GROUP, USER or DEVICE)
-                        required:
-                          - targetType
-                          - targetIds
-                    signals:
-                      type: array
-                      items:
-                        properties:
-                          signalId:
-                            type: string
-                            example: 2023-04-25-dr-01-signal-01
-                            description: Signal ID
-                          deviceType:
-                            type: string
-                            example: DEVICE_AIR_CONDITIONER
-                            description: Device Types of the target for the Signal
-                          modelNames:
-                            type: array
-                            items:
-                              type: string
-                              example: RAC_056905_WW
-                            description: Model Names of the target for the Signal
-                          signalType:
-                            type: string
-                            example: CONTROL_RESTORE
-                            description: signal Types (CONTROL, CONTROL_RESTORE)
-                          signalData:
-                            type: object
-                            properties:
-                              temperature:
-                                type: object
-                                properties:
-                                  min:
-                                    type: number
-                                    example: 26
-                                  max:
-                                    type: number
-                                    example: 32
-                                  unit:
-                                    type: string
-                                    example: C
-                            description: |-
-                              Specific control values for the Signal
-                              ex) { temerpature: { min: 26, max: 32, unit: "C } }
-                          constrolType:
-                            type: string
-                            example: Temperature
-                            description: Control Method (Temperature, TwoSetTemperature, ToU, Empty)
-                          restoreType:
-                            type: string
-                            example: Temperature
-                            description: Restore Method (Temperature, TwoSetTemperature, Empty)
-                  required:
-                    - eventId
-                    - eventName
-                    - partnerId
-                    - startTs
-                    - endTs
-                    - targets
-                examples:
-                  Create & Update Event:
-                    value:
-                      eventId: 2023-04-25-dr-01
-                      eventName: 2023-04-25-dr-01
-                      partnerId: herit-01
-                      startTs: 1682423399890
-                      endTs: 1682426999000
-                      targets:
-                        - targetType: GROUP
-                          targetIds:
-                            - k-apt-1168011000
-                            - k-apt-1165010700
-                        - targetType: USER
-                          targetIds:
-                            - USXXXXXX
-                            - KRXXXXXX
-                      signals:
-                        - signalId: 2023-04-25-dr-01-signal-01
-                          deviceType: DEVICE_AIR_CONDITIONER
-                          modelNames:
-                            - RAC_056905_WW
-                          signalType: CONTROL_RESTORE
-                          signalData:
-                            temperature:
-                              min: 26
-                              max: 32
-                              unit: C
-                          controlType: Temperature
-                          restoreType: Temperature
-                        - signalId: 2023-04-25-dr-01-signal-02
-                          deviceType: DEVICE_TV
-                          modelNames: []
-                          signalType: CONTROL
-                          signalData: {}
-                          controlType: Empty
-                          restoreType: Empty
+                  $ref: '#/components/schemas/client-certificate-req'
           responses:
             '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+              description: OK
               content:
                 application/json:
                   schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        type: object
-                        properties:
-                          eventId:
-                            type: string
-                            example: 2023-04-25-dr-01-signal-01
-                            description: event ID of DR
+                    $ref: '#/components/schemas/client-certificate-res'
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+              description: Bad request
             '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-      /v1/dr/events/{eventId}/targets:
+              description: Unauthorized
+      /client:
         post:
           tags:
-            - DR API
-          summary: Create Event Target (POST)
-          description: A POST request to create a DR Event Target
+            - Client API
+          summary: 클라이언트 등록
+          description: 클라이언트 등록
           parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
-            - in: path
-              name: eventId
-              description: Event ID
-              required: true
-              schema:
-                type: string
-                example: event-01
+            - required: true
+              $ref: '#/components/parameters/Authorization'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
           requestBody:
-            description: Event information
             content:
               application/json:
                 schema:
                   type: object
-                  properties:
-                    type:
-                      type: string
-                      example: USER
-                      description: |-
-                        type of targets
-                        - GROUP
-                        - USER
-                        - DEVICE
-                    id:
-                      type: string
-                      example: KRXXXX
-                      description: |-
-                        ids of each targets
-                        - when type is USER: userNo
-                        - when type is GROUP: groupId
-                        - when type is DEVICE: deviceId
-                    opt:
-                      type: string
-                      example: OUT
-                      description: |-
-                        Opt in / out of an event
-                        - IN: participate in the DR Event (default)
-                        - OUT: Opt out of an Event
-                  required:
-                    - type
-                    - id
-                    - opt
+                  $ref: '#/components/schemas/client-register-req'
           responses:
             '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+              description: OK
               content:
                 application/json:
                   schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        $ref: '#/components/schemas/dr-event-target-opt-res'
+                    $ref: '#/components/schemas/client-res'
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+              description: Bad request
             '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-      /v1/dr/events/{eventId}/targets/{targetId}:
-        post:
+              description: Unauthorized
+        delete:
           tags:
-            - DR API
-          summary: Update Event Target (POST)
-          description: A POST request to update a DR Event Target
+            - Client API
+          summary: 클라이언트 해제
+          description: 클라이언트 해제
           parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
-            - in: path
-              name: eventId
-              description: Event ID
-              required: true
-              schema:
-                type: string
-                example: event-01
-            - in: path
-              name: targetId
-              description: Target ID
-              required: true
-              schema:
-                type: string
-                example: KRXXXX
+            - required: true
+              $ref: '#/components/parameters/Authorization'
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-client-id'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
           requestBody:
-            description: Event information
             content:
               application/json:
                 schema:
                   type: object
-                  properties:
-                    opt:
-                      type: string
-                      example: OUT
-                      description: |-
-                        Opt in / out of an event
-                        - IN: participate in the DR Event (default)
-                        - OUT: Opt out of an Event
+                  $ref: '#/components/schemas/client-unregister-req'
           responses:
             '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+              description: OK
               content:
                 application/json:
                   schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        $ref: '#/components/schemas/dr-event-target-opt-res'
+                    $ref: '#/components/schemas/client-res'
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+              description: Bad request
             '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-      /v1/dr/events/{eventId}/targets/batch:
-        post:
-          tags:
-            - DR API
-          summary: Create & Update Event Target in a Batch
-          description: A POST request to update Targets for a DR Event
-          parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
-            - in: path
-              name: eventId
-              description: Event ID
-              required: true
-              schema:
-                type: string
-                example: event-01
-          requestBody:
-            description: DR Event를 위한 Target 업데이트 정보
-            content:
-              application/json:
-                schema:
-                  type: array
-                  items:
-                    properties:
-                      action:
-                        type: string
-                        example: create
-                        description: |-
-                          Action to be performed for each targets (path)
-                          - create
-                          - replace(or update)
-                      path:
-                        type: string
-                        example: /
-                        description: |-
-                          ID of each target
-                          - create: "/"
-                          - update: "/{targetId}"
-                          - Ex) creating: "/"
-                          - Ex) updating: "/23lk2jl1k32j1"
-                      value:
-                        type: object
-                        example:
-                          type: DEVICE
-                          id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
-                          opt: IN
-                        description: |-
-                          Opt in / out of an event
-                          - create: {id, type, opt}
-                          - update: {opt}
-                          - Ex) creating: { type: "DEVICE", id: "23lk2jl1k32j1", opt: "IN"}
-                          - Ex) updating: { opt: "IN"}
-                    required:
-                      - action
-                      - path
-                      - value
-                examples:
-                  create:
-                    value:
-                      - action: create
-                        path: /
-                        value:
-                          type: DEVICE
-                          id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
-                          opt: IN
-                  update:
-                    value:
-                      - action: update
-                        path: /KRXXX
-                        value:
-                          opt: OUT
-                  create/update:
-                    value:
-                      - action: create
-                        path: /
-                        value:
-                          type: DEVICE
-                          id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
-                          opt: IN
-                      - action: update
-                        path: /KRXXX
-                        value:
-                          opt: OUT
-                      - action: update
-                        path: /KRXXXY
-                        value:
-                          opt: IN
-          responses:
-            '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        type: object
-                        properties:
-                          action:
-                            type: string
-                            example: create
-                          path:
-                            type: string
-                            example: /
-                          value:
-                            type: object
-                            example:
-                              type: DEVICE
-                              id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
-                              opt: IN
-                          status:
-                            type: string
-                            example: success
-                  examples:
-                    create:
-                      value:
-                        code: 2000
-                        data:
-                          - action: create
-                            path: /
-                            value:
-                              type: DEVICE
-                              id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
-                              opt: IN
-                            status: success
-                    update:
-                      value:
-                        code: 2000
-                        data:
-                          - action: update
-                            path: /KRXXXX
-                            value:
-                              opt: OUT
-                            status: success
-                    create/update:
-                      value:
-                        code: 2000
-                        data:
-                          - action: create
-                            path: /
-                            value:
-                              type: DEVICE
-                              id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
-                              opt: IN
-                            status: success
-                          - action: update
-                            path: /KRXXXX
-                            value:
-                              opt: OUT
-                            status: success
-                          - action: update
-                            path: /KRXXXY
-                            value:
-                              opt: IN
-                            status: success
-            '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Device<br>
-                `4313`: Resource Already Exists: Group<br>
-                `4314`: Resource Already Exists: authCodeExt(Already connected 3rd party user)<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-      /v1/dr/data-zip/files:
-        post:
-          tags:
-            - DR API
-          summary: Create a Data Zip File
-          description: A POST Request for a creation of a zip file for DR Status data of devices during a DR Event
-          parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
-          requestBody:
-            description: DR Event & Target Information for zip file creation
-            content:
-              application/json:
-                schema:
-                  type: object
-                  properties:
-                    eventId:
-                      type: string
-                      example: 2023-04-26-01-dr-event-01
-                      description: event Id
-                    targets:
-                      type: array
-                      items:
-                        properties:
-                          targetId:
-                            type: string
-                            example: USXXXX
-                            description: ID of a target
-                          targetType:
-                            type: string
-                            example: USER
-                            description: |-
-                              Target Type
-                              - USER
-                              - DEVICE
-                              - GROUP
-                  required:
-                    - eventId
-                examples:
-                  Create a Data Zip File:
-                    value:
-                      eventId: 2023-04-26-01-dr-event-01
-                      targets:
-                        - targetType: USER
-                          targetId: USXXXX
-                        - targetType: GROUP
-                          targetId: k-apt-1168011000
-          responses:
-            '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        type: object
-                        properties:
-                          fileName:
-                            type: string
-                            example: data-zip-2023-04-26-01-dr-event-01-1548892800123.zip
-                            description: name of the zie file
-                  examples:
-                    Create a Data Zip File:
-                      value:
-                        code: 2000
-                        data:
-                          fileName: data-zip-2023-04-26-01-dr-event-01-1548892800123.zip
-            '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Device<br>
-                `4313`: Resource Already Exists: Group<br>
-                `4314`: Resource Already Exists: authCodeExt(Already connected 3rd party user)<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-      /v1/dr/data-zip/files/{filename}:
-        get:
-          tags:
-            - DR API
-          summary: Download a Data Zip File
-          description: A GET Request to get download link for zip file
-          parameters:
-            - in: header
-              name: X-Api-Key
-              description: API Key provided to the client in advance
-              required: true
-              schema:
-                type: string
-                example: x-api-key
-            - in: header
-              name: X-Api-Token
-              description: API Token obtained by the client within last 24 hours
-              required: true
-              schema:
-                type: string
-                example: x-api-token
-            - in: header
-              name: X-Message-Id
-              description: an ID generated by the client for request tracking  (UUID Version 4, url-safe-base64-no-padding, length:22)
-              required: false
-              schema:
-                type: string
-                example: x-message-id
-            - in: header
-              name: X-Country-Code
-              description: country code
-              required: true
-              schema:
-                type: string
-                example: us
-            - in: path
-              name: filename
-              description: Name of the zip file (value received as a response from Create a Data zip API)
-              required: true
-              schema:
-                type: string
-                example: data-zip-2023-04-26-01-dr-event-01-1548892800123.zip
-          responses:
-            '200':
-              description: '`2000`: Successful operation'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        example: 2000
-                      data:
-                        type: object
-                        properties:
-                          presignedUrl:
-                            type: string
-                            example: https://test-dr.s3.{region}.amazonaws.com/data-zip-2023-04-26-01-dr-event-01-1548892800123?response-content-disposition=inline&X-Amz-Security-Token=IQoJ......
-                            description: zip file download url (temporary url)
-            '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '401':
-              description: '`4201`: Invalid or Expired Token<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Device<br>
-                `4313`: Resource Already Exists: Group<br>
-                `4314`: Resource Already Exists: authCodeExt(Already connected 3rd party user)<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '500':
-              description: '`5000`: Internal Server Error'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+              description: Unauthorized
     components:
-      securitySchemes:
-        Business_Connect_API_Key:
-          type: apiKey
-          description: |
-            `API Key` obtained from **My Page**.
+      parameters:
+        Authorization:
+          name: Authorization
           in: header
-          name: X-Api-Key
+          schema:
+            type: string
+          description: |
+            https://connect-pat.lgthinq.com을 통해서 받은 PAT 토큰
+          example: Bearer 4d76546d61f01baf31c1sd8f6b4e38b110ba0a34f825b8c5d54c
+        x-message-id:
+          name: x-message-id
+          in: header
+          schema:
+            type: string
+          description: |
+            요청되는 정보를 추적하기 위한 값입니다. 특정 API의 흐름을 추적하고 에러 발생 시 원인을 찾을 수 있습니다. 생성 규칙은 아래와 같습니다.
+                url-safe-base64-no-padding (UUID Version 4) 방법으로 생성합니다.
+                길이는 22자입니다.
+          example: fNvdZ1brTn-wWKUlWGoSVw
+        x-country:
+          name: x-country
+          in: header
+          schema:
+            type: string
+          description: |
+            서비스를 제공할 국가를 지정합니다 ISO 국가코드 알파벳 두 자리(ISO 3166-1 alpha-2)를 따릅니다. (예: KR, US, GB, ...)
+          example: KR
+        x-client-id:
+          name: x-client-id
+          in: header
+          schema:
+            type: string
+          description: |
+            요청하는 클라이언트의 식별자 ID 값 입니다. unique한 값을 가질 수 있도록 생성해야 합니다.
+          example: test-client-123456
+        x-api-key:
+          name: x-api-key
+          in: header
+          schema:
+            type: string
+          description: |
+            API 호출을 위한 api key 값입니다. 아래값을 고정해서 호출해주세요 ""
+          example: 고정값
+        x-conditional-control:
+          name: x-conditional-control
+          in: header
+          schema:
+            type: boolean
+          description: |
+            기기 상태 조회 후 제어 가능한 상태에서만 제어되도록 설정
+          example: true
       schemas:
-        api-token-res:
-          type: object
-          description: Response Object that includes API Token.
-          properties:
-            access_token:
-              type: string
-              description: API Token which is represented as JWT(header.payload.signature).
-              example: eyJhbGciOiJIUzI1NiIsImtpZCI6InNpbTIifQ.eyJleHAiOjE3MDQzNDE3MDIsImlhdCI6MTcwNDI1NTMwMiwiaXNzIjoiTEcgQnVzaW5lc3MgQ29ubmVjdCIsInJvbGVzIjpbImdldEJlY29uVXNlcnMiLCJnZXREclVzZXJzIiwicG9zdFRva2VuIl0sInN1YiI6IjRkMmM2MWUxLTM0YzQtZTk2Yy05NDU2LTE1YmQ5ODNjNTAxOSJ9.plRjXmZRoXkOy_U95VXGzX-ouJyCrorEmMO8OzrEvF8
-        device-base-res:
+        base-res:
           type: object
           description: Response Object for any device
           properties:
             messageId:
               type: string
-              description: The `X-Message-Id` value included in the header is returned so that it can be checked from the outside upon request.
-              example: 2ADaRijIk8CvaSHVPeEWNw
+              description: 요청 시 헤더에 포함된 X-Message-ID 값입니다. 이 값을 응답 메시지에 포함시켜서 문제가 있을 때 확인할 수 있도록 합니다.
+              example: fNvdZ1brTn-wWKUlWGoSVw
             timestamp:
               type: string
-              description: Refers to time when the request is received. Follows the `ISO-8601` format.
-              example: '2024-10-01T06:23:20.866279'
-        device-list-item:
-          type: object
-          title: LG Device
-          properties:
-            deviceId:
-              type: string
-              description: An ID that can identify the device
-              example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
-            deviceInfo:
-              type: object
-              properties:
-                deviceType:
-                  type: string
-                  description: |
-                    Appliance type of the device https://thinq.developer.lge.com/en/cloud/docs/thinq-connect/api-reference/common-data-type//#3
-                  example: DEVICE_WASHTOWER_WASHER
-                alias:
-                  type: string
-                  description: An alias of the device
-                  example: My New WashTower Washer
-                modelName:
-                  type: string
-                  description: A model name of the device, appeared when the device is one of **ThinQ Devices**
-                  example: FAKPK21021
-                reportable:
-                  type: boolean
-                  description: Whether or not your service is subscribing to events which occur when the device status changes, appeared when the device is one of **ThinQ Devices**
-                  example: false
-                groupId:
-                  type: string
-                  description: |
-                    Group ID, appeared when the `deviceType` is `DEVICE_WASHTOWER_WASHER` or `DEVICE_WASHTOWER_DRYER`
-                  example: '171807013576723372'
-                parentId:
-                  type: string
-                  description: Device ID of the parent of this device, appeared when `deviceType` is `IDU`
-                  example: fe12ed5bca00acc0ed68ec9f632342d0822a929f377b76cbe700649a11053f23
-              required:
-                - deviceType
-          required:
-            - deviceId
-            - deviceInfo
+              description: 요청이 들어왔을 때의 시간을 의미하며 ISO 8601 Format을 따릅니다.
+              example: '2024-09-01T06:23:20.866279'
         device-list-res:
-          description: Object for device list
+          description: 기기 목록 조회 응답
           allOf:
-            - $ref: '#/components/schemas/device-base-res'
-            - type: object
-              properties:
-                response:
-                  type: array
-                  items:
-                    allOf:
-                      - $ref: '#/components/schemas/device-list-item'
-        device-profile-res:
-          description: Object for the Device Profile of a Device
-          allOf:
-            - $ref: '#/components/schemas/device-base-res'
-            - type: object
-              properties:
-                response:
-                  type: object
-                  description: 디바이스 유형별 디바이스 프로파일 메시지의 스키마는 [**디바이스 프로파일**](http://www.naver.com) 페이지를 참조해주세요.
-                  example: <<디바이스 프로파일 페이지에서 참조>>
-        device-status-res:
-          description: Object for status of devices
-          allOf:
-            - $ref: '#/components/schemas/device-base-res'
-            - type: object
-              properties:
-                response:
-                  type: object
-                  description: 디바이스 유형별 디바이스 상태 응답 메시지의 스키마는 [**디바이스 프로파일**](http://www.daum.net) 페이지를 참조해주세요.
-        device-id-list-res:
-          description: Object for Device ID list Response
-          allOf:
-            - $ref: '#/components/schemas/device-base-res'
+            - $ref: '#/components/schemas/base-res'
             - type: object
               properties:
                 response:
@@ -3970,154 +758,4319 @@ contents:
                     properties:
                       deviceId:
                         type: string
-                        description: 디바이스 식별자
+                        description: 기기를 식별할 수 있는 Id
                         example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
-        device-empty-res:
-          description: Object for Empty Response
+                      deviceInfo:
+                        type: object
+                        description: 기기에 대한 정보를 담은 객체
+                        properties:
+                          deviceType:
+                            type: string
+                            description: 기기 가전 타입
+                            example: DEVICE_AIR_CONDITIONER
+                          modelName:
+                            type: string
+                            description: 기기 모델 이름
+                            example: PAC_910604_WW
+                          alias:
+                            type: string
+                            description: 기기 닉네임
+                            example: 거실 에어컨
+                          reportable:
+                            type: boolean
+                            description: 기기 상태 변경 시 발생하는 event에 대해, event 구독 가능 여부 표시
+                            example: true
+                          groupId:
+                            type: string
+                            description: groupId, 워시타워 세탁기와 워시타워 건조기가 기기 식별 Id가 구분되어서 전달되는 워시타워 그룹값을 표시하기 위한 값
+                            example: '234506858'
+        device-profile-res:
+          description: 기기 프로파일 조회 응답
           allOf:
-            - $ref: '#/components/schemas/device-base-res'
+            - $ref: '#/components/schemas/base-res'
             - type: object
               properties:
                 response:
                   type: object
-        dr-event-target-opt-res:
+                  description: 기기 프로파일 정보
+                  example:
+                    '-$ref': ../../../device-profile/air_conditioner/air_conditioner-profile-example.yaml
+        device-state-res:
+          description: 기기 상태 조회 응답
+          allOf:
+            - $ref: '#/components/schemas/base-res'
+            - type: object
+              properties:
+                response:
+                  type: object
+                  description: 기기 상태 정보
+                  example:
+                    '-$ref': ../../../device-profile/air_conditioner/air_conditioner-profile-example.yaml
+        device-control-res:
+          description: 기기 제어 응답
+          allOf:
+            - $ref: '#/components/schemas/base-res'
+            - type: object
+              properties:
+                response:
+                  type: object
+                  description: 성공 시 빈 dict가 전달됨
+                  example: {}
+        push-list-res:
+          description: 푸쉬 목록 조회 응답
+          allOf:
+            - $ref: '#/components/schemas/base-res'
+            - type: object
+              properties:
+                response:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      deviceId:
+                        type: string
+                        description: 푸쉬를 구독한 기기 Id
+                        example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
+        push-deviceId-res:
+          description: 푸쉬 구독/해제 응답
+          allOf:
+            - $ref: '#/components/schemas/base-res'
+            - type: object
+              properties:
+                response:
+                  type: object
+                  description: 성공 시 빈 dict가 전달됨
+                  example: {}
+        push-client-list-res:
+          description: 사용자 푸쉬 clientId 목록 조회 응답
+          allOf:
+            - $ref: '#/components/schemas/base-res'
+            - type: object
+              properties:
+                response:
+                  type: array
+                  properties:
+                    description: clientId list
+                    example:
+                      - ha-connect-client-st-test-230830_1st11
+                      - ha-connect-client-st-test-230830_1st111
+        event-list-res:
+          description: 이벤트 구독 목록 조회 응답
+          allOf:
+            - $ref: '#/components/schemas/base-res'
+            - type: object
+              properties:
+                response:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      deviceId:
+                        type: string
+                        description: event를 구독한 기기 Id
+                        example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
+        event-register-req:
+          description: 이벤트 구독 body
           type: object
           properties:
-            type:
-              type: string
-              example: USER
-              description: |-
-                type of targets
-                - GROUP
-                - USER
-                - DEVICE
-            id:
-              type: string
-              example: KRXXXX
-              description: |-
-                ids of each targets
-                - when type is USER: userNo
-                - when type is GROUP: groupId
-                - when type is DEVICE: deviceId
-            opt:
-              type: string
-              example: OUT
-              description: |-
-                Opt in / out of an event
-                - IN: participate in the DR Event (default)
-                - OUT: Opt out of an Event
-      parameters:
-        X-Api-Token:
-          name: X-Api-Token
-          in: header
-          schema:
-            type: string
-          description: |
-            `API Token` obtained from **[Create a new API Token](/#tag/Token-API/operation/createAPIToken)** API.
-          example: eyJleHAiOjE3MDQzNDE3MDIsImlhdCI6MTcwNDI1NTMwMiwiaXNzIjoiTEcgQnVzaW5lc3MgQ29ubmVjdCIsInJvbGVzIjpbImdldEJlY29uVXNlcnMiLCJnZXREclVzZXJzIiwicG9zdFRva2VuIl0sInN1YiI6IjRkMmM2MWUxLTM0YzQtZTk2Yy05NDU2LTE1YmQ5ODNjNTAxOSJ9
-        X-Message-Id:
-          name: X-Message-Id
-          in: header
-          schema:
-            type: string
-          description: |
-            A value for tracking the information requested by LG ThinQ Platform that is used to track the flow of a specific API and to find the cause of an error. You must create and enter a new unique value for each API call. How to create: 
-              Must be created with the url-safe-base64-no-padding (UUID Version 4) method.
-              Up to 22 characters
-          example: 2ADaRijIk8CvaSHVPeEWNw
-        X-Use-Account:
-          name: X-Use-Account
-          in: header
-          schema:
-            type: string
-          description: |
-            API 요청 처리시 사용될 LG전자 계정의 출처를 지정합니다.
-
-              |Value|Description|
-              |-|-|
-              |REGISTERED|My Page에서 이미 등록한 계정|
-              |IN-HEADER|이 HTTP 요청의 `Authorization` 헤더에 OAuth 토큰으로 지정된 계정 (**현재 LG ThinQ 등록 가전제품에 대해서만 지원합니다.**)|
-          example: REGISTERED
-        Authorization:
-          name: Authorization
-          in: header
-          schema:
-            type: string
-          description: |
-            LG ThinQ에 가입한 LG전자 계정의 `Bearer` OAuth 토큰.  `X-Use-Account` 헤더가 HTTP 요청에 포함되어 있으면서 헤더의 값이 `IN-HEADER`인 경우, 이 헤더는 필수적으로 요청에 포함되어야 합니다.
-          example: Bearer 5a9a713f51a95c53d781addd1af0dfa4f6e1e7420a8bff3c5198308dac571aa9845832b8d29bbe1f04deec2d35229c6d
-        X-Country-Code:
-          name: X-Country-Code
-          in: header
-          schema:
-            type: string
-          description: |
-            LG전자가 지원하는 국가의 `ISO-3166 alpha-2` 국가 코드.  `X-Use-Account` 헤더가 HTTP 요청에 포함되어 있으면서 헤더의 값이 `IN-HEADER`인 경우, 이 헤더는 필수적으로 요청에 포함되어야 합니다.
-          example: KR
-        deviceId:
-          name: deviceId
-          in: path
-          schema:
-            type: string
-          description: an ID that can identify the device
-          example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
-        Authorization-2:
-          name: Authorization
-          in: header
-          schema:
-            type: string
-          description: |
-            LG ThinQ에 가입한 LG전자 계정의 `Bearer` OAuth 토큰
-          example: Bearer 5a9a713f51a95c53d781addd1af0dfa4f6e1e7420a8bff3c5198308dac571aa9845832b8d29bbe1f04deec2d35229c6d
-        X-Country-Code-2:
-          name: X-Country-Code
-          in: header
-          schema:
-            type: string
-          description: |
-            LG전자가 지원하는 국가의 `ISO-3166 alpha-2` 국가 코드
-          example: KR
+            expire:
+              type: object
+              description: API 만료 시간 설정, 구독한 이후 만료 시간을 넘으면 기존에 구독한 디바이스는 자동으로 해제됩니다. 만일 구독한 디바이스에 대해 다시 구독을 할 경우 만료시간이 현재시간으로부터 갱신됩니다.
+              properties:
+                unit:
+                  type: string
+                  description: 시간 단위 (고정값 - HOUR)
+                  example: HOUR
+                timer:
+                  type: integer
+                  description: |
+                    이벤트 구독 만료 시간을 결정합니다. (기본 1시간, 최소 1시간, 최대 24시간) 
+                  example: 1
+        event-deviceId-res:
+          description: 이벤트 구독/해제 응답
+          allOf:
+            - $ref: '#/components/schemas/base-res'
+            - type: object
+              properties:
+                response:
+                  type: object
+                  description: 성공 시 빈 dict가 전달됨
+                  example: {}
+        client-certificate-req:
+          description: 클라이언트 인증 body
+          type: object
+          properties:
+            body:
+              type: object
+              description: 사용자 정보
+              properties:
+                service-code:
+                  type: string
+                  description: 서비스 코드 (고정값 - SVC202)
+                  example: SVC202
+                csr:
+                  type: string
+                  description: 기기에서 자체 생성한 Private Key 기반의 CSR 데이터
+                  example: '===xzx'
+        client-certificate-res:
+          description: 클라이언트 인증서 등록 응답
+          allOf:
+            - $ref: '#/components/schemas/base-res'
+            - type: object
+              properties:
+                response:
+                  type: object
+                  properties:
+                    resultCode:
+                      type: string
+                      description: 결과 응답 code
+                      example: '0000'
+                    result:
+                      type: object
+                      properties:
+                        certificatePem:
+                          type: string
+                          description: AWS IoT 인증서
+                          example: |
+                            -----BEGIN CERTIFICATE-----
+                            MIIEUzCCAzugAw
+                            -----END CERTIFICATE-----
+                        subscriptions:
+                          type: array
+                          desription: 클라이언트에서 MQTT subscribe가 필요한 Topic 목록 (List)
+                          example:
+                            - app/clients/home-assistant-test-01234/push
+        client-register-req:
+          description: 클라이언트 구독 body
+          type: object
+          properties:
+            body:
+              type: object
+              description: 사용자 정보
+              properties:
+                type:
+                  type: string
+                  description: Push type (고정값 - MQTT)
+                  example: MQTT
+                service-code:
+                  type: string
+                  description: 서비스 코드 (고정값 - SVC202)
+                  example: SVC202
+                device-type:
+                  type: string
+                  description: 클라이언트 기기타입 (고정값 - 607)
+                  example: '607'
+        client-res:
+          description: 클라이언트 구독/해제 응답
+          allOf:
+            - $ref: '#/components/schemas/base-res'
+            - type: object
+              properties:
+                response:
+                  type: object
+                  description: 성공 시 빈 dict가 전달됨
+                  example: {}
+        client-unregister-req:
+          description: 클라이언트 해제 body
+          type: object
+          properties:
+            body:
+              type: object
+              description: 사용자 정보
+              properties:
+                type:
+                  type: string
+                  description: Push type (고정값 - MQTT)
+                  example: MQTT
+                service-code:
+                  type: string
+                  description: 서비스 코드 (고정값 - SVC202)
+                  example: SVC202
       examples:
-        refrigerator-object-example-res-1:
+        refrigerator-profile-example:
           value:
-            messageId: 2ADaRijIk8CvaSHVPeEWNw
-            timestamp: '2024-10-01T06:23:20.866279'
-            response:
+            property:
               temperature:
-                - targetTemperature: 5
-                  locationName: FRIDGE
-                  unit: ''
-                - targetTemperature: -23
-                  locationName: FREEZER
-                  unit: ''
+                - locationName: FRIDGE
+                  unit: C
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 7
+                        min: 0
+                        step: 1
+                      w:
+                        max: 7
+                        min: 0
+                        step: 1
+                - locationName: FREEZER
+                  unit: C
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: -16
+                        min: -21
+                        step: 1
+                      w:
+                        max: -16
+                        min: -21
+                        step: 1
               refrigeration:
-                expressMode: true
+                expressMode:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                expressModeName:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - FREEZER
+                freshAirFilter:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'OFF'
+                      - AUTO
+                    w:
+                      - 'OFF'
+                      - AUTO
+              doorStatus:
+                - doorState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - OPEN
+                        - CLOSE
+                  locationName: MAIN
+              waterFilterInfo:
+                usedTime:
+                  type: number
+                  mode:
+                    - r
+            notification:
+              push:
+                - TIME_TO_CHANGE_WATER_FILTER
+                - TIME_TO_CHANGE_FILTER
+                - DOOR_IS_OPEN
+                - FROZEN_IS_COMPLETE
+        water_purifier-profile-example:
+          value:
+            property:
+              runState:
+                cockState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - CLEANING
+                      - NORMAL
+              waterInfo:
+                waterType:
+                  mode:
+                    - r
+                  type: list
+                  value:
+                    r:
+                      - COLD
+                      - NORMAL
+                      - HOT
+                      - SODA
+        wine_cellar-profile-example:
+          value:
+            property:
+              temperature:
+                - locationName: WINE_UPPER
+                  unit: C
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 5
+                        step: 1
+                        except: []
+                - locationName: WINE_LOWER
+                  unit: C
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 5
+                        step: 1
+                        except: []
+              operation:
+                lightStatus:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 10
+                    w:
+                      max: 100
+                      min: 0
+                      step: 10
+            notification:
+              push:
+                - DOOR_IS_OPEN
+        kimchi_refrigerator-profile-example:
+          value:
+            notification:
+              push:
+                - DOOR_IS_OPEN
+            property:
+              refrigeration:
+                oneTouchFilter:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - 'OFF'
+                      - 'ON'
+              temperature:
+                - locationName: TOP
+                  targetTemperature:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - FREEZER
+                        - FRIDGE
+                        - KIMCHI
+                        - 'OFF'
+                - locationName: MIDDLE
+                  targetTemperature:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - VEGETABLE_FRUIT
+                        - KIMCHI
+                        - MEAT_FISH
+                        - 'OFF'
+                - locationName: BOTTOM
+                  targetTemperature:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - KIMCHI
+                        - STORAGE
+                        - 'OFF'
+                        - VEGETABLE_FRUIT
+                        - RICE_GRAIN
+        home_brew-profile-example:
+          value:
+            property:
+              recipe:
+                beerRemain:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                flavorInfo:
+                  mode:
+                    - r
+                  type: list
+                  value:
+                    r:
+                      - ORANGE
+                      - CORIANDER
+                      - CORIANDER_SEED
+                hopOilInfo:
+                  mode:
+                    - r
+                  type: list
+                  value:
+                    r:
+                      - FUGGLES
+                      - CASCADE
+                      - HALLERTAU
+                      - CITRUSSY
+                      - GOLDINGS
+                      - CHINOOK
+                recipeName:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - PALE_ALE
+                      - MY_RECIPE
+                      - RED_ALE
+                      - STOUT
+                      - WHEAT
+                      - PILSNER
+                      - IPA
+                wortInfo:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - DARK
+                      - HOPPY
+                      - WHEAT
+                      - DEEP_GOLD
+                yeastInfo:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ENGLISH_ALE
+                      - AMERICAN_ALE
+                      - LAGER
+                      - WEIZEN
+              runState:
+                currentState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - PREPAREING_FERMENTATION
+                      - STANDBY
+                      - DURING_FERMENTATION
+                      - TEMPERATURE_STABILIZATION
+                      - EXTRACTION_MODE
+                      - DURING_AGING
+                      - EXTRACTING_CAPSULE
+                      - MELTING
+                      - AS_POP_UP
+                      - CARBONATION
+              timer:
+                elapsedDayState:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      max: 2731
+                      min: 0
+                      step: 1
+                elapsedDayTotal:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      max: 2731
+                      min: 0
+                      step: 1
+        plant_cultivator-profile-example:
+          value:
+            property:
+              - location:
+                  locationName: UPPER
+                runState:
+                  currentState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - POWER_ON
+                        - POWER_OFF
+                  growthMode:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - STANDARD
+                        - EXT_FLOWER
+                        - EXT_HERB
+                        - EXT_LEAF
+                        - EXT_EXPERT
+                  windVolume:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 1
+                        max: 3
+                        step: 1
+                light:
+                  brightness:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 1
+                        max: 5
+                        step: 1
+                  duration:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 10
+                        max: 18
+                        step: 1
+                  startHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 23
+                        step: 1
+                  startMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 50
+                        step: 10
+                  endHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 23
+                        step: 1
+                  endMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 50
+                        step: 10
+                temperature:
+                  dayTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 22
+                        max: 29
+                        step: 1
+                  nightTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 15
+                        max: 21
+                        step: 1
+              - location:
+                  locationName: LOWER
+                runState:
+                  currentState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - POWER_ON
+                        - POWER_OFF
+                  growthMode:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - STANDARD
+                        - EXT_FLOWER
+                        - EXT_HERB
+                        - EXT_LEAF
+                        - EXT_EXPERT
+                  windVolume:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 1
+                        max: 3
+                        step: 1
+                light:
+                  brightness:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 1
+                        max: 5
+                        step: 1
+                  duration:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 10
+                        max: 18
+                        step: 1
+                  startHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 23
+                        step: 1
+                  startMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 50
+                        step: 10
+                  endHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 23
+                        step: 1
+                  endMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 50
+                        step: 10
+                temperature:
+                  dayTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 22
+                        max: 29
+                        step: 1
+                  nightTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 15
+                        max: 21
+                        step: 1
+        washer-profile-example:
+          value:
+            error:
+              - DOOR_OPEN_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+              - OUT_OF_BALANCE_ERROR
+              - WATER_LEVEL_SENSOR_ERROR
+              - LOCKED_MOTOR_ERROR
+              - WATER_DRAIN_ERROR
+              - UNABLE_TO_LOCK_ERROR
+              - OVERFILL_ERROR
+              - WATER_SUPPLY_ERROR
+            notification:
+              push:
+                - WASHING_IS_COMPLETE
+                - ERROR_DURING_WASHING
+            property:
+              - detergent:
+                  detergentSetting: NORMAL
+                location:
+                  locationName: MAIN
+                operation:
+                  washerOperationMode:
+                    mode:
+                      - w
+                    type: enum
+                    value:
+                      w:
+                        - START
+                        - STOP
+                        - POWER_OFF
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    mode:
+                      - r
+                    type: boolean
+                    value:
+                      r:
+                        - false
+                        - true
+                runState:
+                  currentState:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - RUNNING
+                        - INITIAL
+                        - RINSING
+                        - SPINNING
+                        - FIRMWARE
+                        - RESERVED
+                        - PAUSE
+                        - POWER_OFF
+                        - DETECTING
+                        - END
+                        - SOAKING
+                        - ERROR
+                timer:
+                  relativeHourToStart:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 19
+                        min: 0
+                        step: 1
+                      w:
+                        except: []
+                        max: 19
+                        min: 0
+                        step: 1
+                  relativeMinuteToStart:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 59
+                        min: 0
+                        step: 1
+                  remainHour:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 30
+                        min: 0
+                        step: 1
+                  remainMinute:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 59
+                        min: 0
+                        step: 1
+                  totalHour:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 30
+                        min: 0
+                        step: 1
+                  totalMinute:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 59
+                        min: 0
+                        step: 1
+        dryer-profile-example:
+          value:
+            error:
+              - DOOR_SENSOR_ERROR
+              - COMPRESSOR_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+              - DRAINMOTOR_ERROR
+              - EMPTY_WATER_ALERT_ERROR
+              - MOTOR_LOCK_ERROR
+              - DOOR_OPEN_ERROR
+              - HIGH_TEMPERATURE_DETECTION_ERROR
+              - DOOR_LOCK_ERROR
+              - NO_FILTER_ERROR
+            notification:
+              push:
+                - DRYING_IS_COMPLETE
+                - DRYING_FAILED
+            property:
+              operation:
+                dryerOperationMode:
+                  mode:
+                    - w
+                  type: enum
+                  value:
+                    w:
+                      - START
+                      - STOP
+                      - POWER_OFF
+                      - WAKE_UP
+              remoteControlEnable:
+                remoteControlEnabled:
+                  mode:
+                    - r
+                  type: boolean
+                  value:
+                    r:
+                      - false
+                      - true
+              runState:
+                currentState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INITIAL
+                      - ERROR
+                      - SLEEP
+                      - DETECTING
+                      - COOLING
+                      - WRINKLE_CARE
+                      - RESERVED
+                      - POWER_OFF
+                      - RUNNING
+                      - PAUSE
+                      - END
+              timer:
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: range
+                  value:
+                    r:
+                      max: 19
+                      min: 3
+                    w:
+                      max: 19
+                      min: 3
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                  type: number
+                remainHour:
+                  mode:
+                    - r
+                  type: number
+                remainMinute:
+                  mode:
+                    - r
+                  type: number
+                totalHour:
+                  mode:
+                    - r
+                  type: number
+                totalMinute:
+                  mode:
+                    - r
+                  type: number
+        styler-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - SLEEP
+                      - RUNNING
+                      - STAY
+                      - RESERVED
+                      - INITIAL
+                      - POWER_OFF
+                      - DRYING
+                      - COOLING
+                      - END_COOLING
+                      - COMPLETE
+                      - STERILIZE
+                      - PAUSE
+                      - NIGHT_DRY
+                      - RUNNING_END
+                      - PREHEAT
+                      - DIAGNOSIS
+                      - PRESTEAM
+                      - STEAM
+                      - FOTA
+                      - ERROR
+              operation:
+                stylerOperationMode:
+                  type: enum
+                  mode:
+                    - w
+                  value:
+                    w:
+                      - POWER_OFF
+                      - STOP
+                      - START
+                      - WAKE_UP
+              remoteControlEnable:
+                remoteControlEnabled:
+                  type: boolean
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - true
+                      - false
+              timer:
+                relativeHourToStop:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      min: 3
+                      max: 19
+                    w:
+                      min: 3
+                      max: 19
+                relativeMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                remainHour:
+                  type: number
+                  mode:
+                    - r
+                remainMinute:
+                  type: number
+                  mode:
+                    - r
+                totalHour:
+                  type: number
+                  mode:
+                    - r
+                totalMinute:
+                  type: number
+                  mode:
+                    - r
+            notification:
+              push:
+                - STYLING_IS_COMPLETE
+                - ERROR_HAS_OCCURRED
+            error:
+              - NEED_WATER_DRAIN
+              - DOOR_CLOSE_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+              - WATER_LEAKS_ERROR
+              - WATER_LEVEL_SENSOR_ERROR
+              - STEAM_HEAT_ERROR
+              - LE_ERROR
+              - LE2_ERROR
+              - DOOR_OPEN_ERROR
+              - NEED_WATER_REPLENISHMENT
+        dish_washer-profile-example:
+          value:
+            error:
+              - HEATER_CIRCUIT_ERROR
+              - BUBBLE_ERROR
+              - WATER_LEAKAGE_ERROR
+              - MOTOR_ERROR
+              - WATER_SUPPLY_ERROR
+              - WATER_DRAIN_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+            notification:
+              push:
+                - RINSE_IS_NOT_ENOUGH
+                - ERROR_DURING_CLEANING
+                - CLEANING_IS_COMPLETE
+                - SALT_REFILL_IS_NEEDED
+                - WATER_LEAK_HAS_OCCURRED
+            property:
+              dishWashingCourse:
+                currentDishWashingCourse:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - DELICATE
+                      - TURBO
+                      - RINSE
+                      - REFRESH
+                      - HEAVY
+                      - NORMAL
+                      - AUTO
+                      - EXPRESS
+                      - MACHINE_CLEAN
+                      - DOWNLOAD_CYCLE
+              dishWashingStatus:
+                rinseRefill:
+                  mode:
+                    - r
+                  type: boolean
+                  value:
+                    r:
+                      - false
+                      - true
+              doorStatus:
+                doorState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - CLOSE
+                      - OPEN
+              preference:
+                cleanLReminder:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - CLEANLREMINDER_OFF
+                      - CLEANLREMINDER_ON
+                mCReminder:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - MCREMINDER_ON
+                      - MCREMINDER_OFF
+                rinseLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - RINSELEVEL_4
+                      - RINSELEVEL_0
+                      - RINSELEVEL_1
+                      - RINSELEVEL_2
+                      - RINSELEVEL_3
+                signalLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - SIGNALLEVEL_ON
+                      - SIGNALLEVEL_OFF
+                softeningLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - SOFTENINGLEVEL_4
+                      - SOFTENINGLEVEL_2
+                      - SOFTENINGLEVEL_3
+                      - SOFTENINGLEVEL_1
+                      - SOFTENINGLEVEL_0
+              runState:
+                currentState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - POWER_FAIL
+                      - INITIAL
+                      - CANCEL
+                      - PAUSE
+                      - RUNNING
+                      - RESERVED
+                      - POWER_OFF
+                      - NIGHT_DRY
+                      - RINSING
+                      - END
+                      - DRYING
+                      - ERROR
+              timer:
+                relativeHourToStart:
+                  mode:
+                    - r
+                  type: number
+                relativeMinuteToStart:
+                  mode:
+                    - r
+                  type: number
+                remainHour:
+                  mode:
+                    - r
+                  type: number
+                remainMinute:
+                  mode:
+                    - r
+                  type: number
+                totalHour:
+                  mode:
+                    - r
+                  type: number
+                totalMinute:
+                  mode:
+                    - r
+                  type: number
+        washtower_washer-profile-example:
+          value:
+            error:
+              - TEMPERATURE_SENSOR_ERROR
+              - WATER_SUPPLY_ERROR
+              - LOCKED_MOTOR_ERROR
+              - DOOR_OPEN_ERROR
+              - WATER_LEVEL_SENSOR_ERROR
+              - OUT_OF_BALANCE_ERROR
+              - OVERFILL_ERROR
+              - POWER_FAIL_ERROR
+              - UNABLE_TO_LOCK_ERROR
+              - WATER_DRAIN_ERROR
+            notification:
+              push:
+                - WASHING_IS_COMPLETE
+                - ERROR_DURING_WASHING
+            property:
+              - detergent:
+                  detergentSetting: NORMAL
+                location:
+                  locationName: MAIN
+                operation:
+                  washerOperationMode:
+                    mode:
+                      - w
+                    type: enum
+                    value:
+                      w:
+                        - START
+                        - STOP
+                        - POWER_OFF
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    mode:
+                      - r
+                    type: boolean
+                    value:
+                      r:
+                        - false
+                        - true
+                runState:
+                  currentState:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - POWER_OFF
+                        - INITIAL
+                        - ADD_DRAIN
+                        - SPINNING
+                        - FROZEN_PREVENT_RUNNING
+                        - RESERVED
+                        - PAUSE
+                        - DRYING
+                        - REFRESHING
+                        - RINSING
+                        - RINSE_HOLD
+                        - FROZEN_PREVENT_INITIAL
+                        - ERROR
+                        - FROZEN_PREVENT_PAUSE
+                        - DETERGENT_AMOUNT
+                        - END
+                        - DETECTING
+                        - RUNNING
+                        - PREWASH
+                timer:
+                  relativeHourToStop:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 19
+                        min: 3
+                        step: 1
+                      w:
+                        except: []
+                        max: 19
+                        min: 3
+                        step: 1
+                  relativeMinuteToStop:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 59
+                        min: 0
+                        step: 1
+                  remainHour:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 30
+                        min: 0
+                        step: 1
+                  remainMinute:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 59
+                        min: 0
+                        step: 1
+                  totalHour:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 30
+                        min: 0
+                        step: 1
+                  totalMinute:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 59
+                        min: 0
+                        step: 1
+        washtower_dryer-profile-example:
+          value:
+            error:
+              - DRAINMOTOR_ERROR
+              - COMPRESSOR_ERROR
+              - DOOR_LOCK_ERROR
+              - MOTOR_LOCK_ERROR
+              - HIGH_TEMPERATURE_DETECTION_ERROR
+              - FAN_MOTOR_ERROR
+              - DOOR_SENSOR_ERROR
+              - DOOR_OPEN_ERROR
+              - NO_FILTER_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+              - EMPTY_WATER_ALERT_ERROR
+            notification:
+              push:
+                - DRYING_IS_COMPLETE
+                - DRYING_FAILED
+            property:
+              operation:
+                dryerOperationMode:
+                  mode:
+                    - w
+                  type: enum
+                  value:
+                    w:
+                      - START
+                      - STOP
+                      - POWER_OFF
+              remoteControlEnable:
+                remoteControlEnabled:
+                  mode:
+                    - r
+                  type: boolean
+                  value:
+                    r:
+                      - false
+                      - true
+              runState:
+                currentState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INITIAL
+                      - RESERVED
+                      - ERROR
+                      - END
+                      - PAUSE
+                      - RUNNING
+                      - DETECTING
+                      - POWER_OFF
+                      - COOLING
+                      - WRINKLE_CARE
+              timer:
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: range
+                  value:
+                    r:
+                      max: 19
+                      min: 3
+                    w:
+                      max: 19
+                      min: 3
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                  type: number
+                remainHour:
+                  mode:
+                    - r
+                  type: number
+                remainMinute:
+                  mode:
+                    - r
+                  type: number
+                totalHour:
+                  mode:
+                    - r
+                  type: number
+                totalMinute:
+                  mode:
+                    - r
+                  type: number
+        washtower-profile-example:
+          value:
+            washer:
+              error:
+                - TEMPERATURE_SENSOR_ERROR
+                - WATER_LEVEL_SENSOR_ERROR
+                - OVERFILL_ERROR
+                - LOCKED_MOTOR_ERROR
+                - DOOR_OPEN_ERROR
+                - UNABLE_TO_LOCK_ERROR
+                - WATER_DRAIN_ERROR
+                - WATER_SUPPLY_ERROR
+                - POWER_FAIL_ERROR
+                - OUT_OF_BALANCE_ERROR
+              property:
+                runState:
+                  currentState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - FROZEN_PREVENT_PAUSE
+                        - DETECTING
+                        - DETERGENT_AMOUNT
+                        - SPINNING
+                        - PREWASH
+                        - REFRESHING
+                        - STEAM_SOFTENING
+                        - DRYING
+                        - RINSE_HOLD
+                        - RESERVED
+                        - ERROR
+                        - INITIAL
+                        - DISPENSING
+                        - FROZEN_PREVENT_INITIAL
+                        - PAUSE
+                        - RUNNING
+                        - END
+                        - POWER_OFF
+                        - RINSING
+                        - FROZEN_PREVENT_RUNNING
+                        - ADD_DRAIN
+                        - SOAKING
+                operation:
+                  washerOperationMode:
+                    type: enum
+                    mode:
+                      - w
+                    value:
+                      w:
+                        - START
+                        - STOP
+                        - POWER_OFF
+                detergent:
+                  detergentSetting: AUTO
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    type: boolean
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                  remainMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                        except: []
+                  totalHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                  totalMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                        except: []
+                  relativeHourToStart:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 19
+                        min: 1
+                        step: 1
+                        except: []
+                      w:
+                        max: 19
+                        min: 1
+                        step: 1
+                        except: []
+                  relativeMinuteToStart:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+              notification:
+                push:
+                  - WASHING_IS_COMPLETE
+                  - ERROR_DURING_WASHING
+            dryer:
+              property:
+                runState:
+                  currentState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - DETECTING
+                        - ERROR
+                        - COOLING
+                        - INITIAL
+                        - POWER_OFF
+                        - RESERVED
+                        - PAUSE
+                        - RUNNING
+                        - WRINKLE_CARE
+                        - END
+                operation:
+                  dryerOperationMode:
+                    type: enum
+                    mode:
+                      - w
+                    value:
+                      w:
+                        - START
+                        - STOP
+                        - POWER_OFF
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    type: boolean
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    type: number
+                    mode:
+                      - r
+                  remainMinute:
+                    type: number
+                    mode:
+                      - r
+                  totalHour:
+                    type: number
+                    mode:
+                      - r
+                  totalMinute:
+                    type: number
+                    mode:
+                      - r
+              notification:
+                push:
+                  - DRYING_FAILED
+                  - DRYING_IS_COMPLETE
+              error:
+                - HIGH_POWER_SUPPLY_ERROR
+                - TEMPERATURE_SENSOR_ERROR
+                - POWER_CODE_CONNECTION_ERROR
+        main_washcombo-profile-example:
+          value:
+            error:
+              - TURBIDITY_SENSOR_ERROR
+              - DOOR_OPEN_ERROR
+              - WATER_DRAIN_ERROR
+              - FILTER_CLOGGING_ERROR
+              - FAN_MOTOR_LOCK_ERROR
+              - DISPENSING_ERROR
+              - LOCKED_MOTOR_ERROR
+              - WATER_LEVEL_SENSOR_ERROR
+              - OUT_OF_BALANCE_ERROR
+              - IR_SENSOR_ERROR
+              - DOOR_LOCK_ERROR
+              - FROZEN_ERROR
+              - NO_FILTER_ERROR
+              - VIBRATION_SENSOR_ERROR
+              - STEAM_HEAT_ERROR
+              - WATER_SUPPLY_ERROR
+              - OVERFILL_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+              - COMPRESSOR_ERROR
+              - HIGH_TEMPERATURE_DETECTION_ERROR
+            property:
+              - runState:
+                  currentState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - POWER_OFF
+                        - RINSING
+                        - PREWASH
+                        - DISPENSING
+                        - RESERVED
+                        - FROZEN_PREVENT_RUNNING
+                        - COOLING
+                        - DETECTING
+                        - INITIAL
+                        - END
+                        - ERROR
+                        - STEAM_SOFTENING
+                        - PAUSE
+                        - FROZEN_PREVENT_PAUSE
+                        - DRYING
+                        - FROZEN_PREVENT_INITIAL
+                        - ADD_DRAIN
+                        - SOAKING
+                        - RINSE_HOLD
+                        - SPINNING
+                        - DETERGENT_AMOUNT
+                        - RUNNING
+                        - REFRESHING
+                operation:
+                  washerOperationMode:
+                    type: enum
+                    mode:
+                      - w
+                    value:
+                      w:
+                        - START
+                        - STOP
+                        - POWER_OFF
+                detergent:
+                  detergentSetting: AUTO
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    type: boolean
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                  remainMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                        except: []
+                  totalHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                  totalMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                        except: []
+                  relativeHourToStop:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 19
+                        min: 3
+                        step: 1
+                        except: []
+                      w:
+                        max: 19
+                        min: 3
+                        step: 1
+                        except: []
+                  relativeMinuteToStop:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                location:
+                  locationName: MAIN
+            notification:
+              push:
+                - WASHING_IS_COMPLETE
+                - DRYING_IS_COMPLETE
+                - ERROR_DURING_WASHING
+                - DRYING_FAILED
+        mini_washcombo-profile-example:
+          value:
+            error:
+              - OUT_OF_BALANCE_ERROR
+              - STACK_ERROR
+              - DOOR_OPEN_ERROR
+              - LOCKED_MOTOR_ERROR
+              - DOOR_SENSOR_ERROR
+              - WATER_LEVEL_SENSOR_ERROR
+              - WATER_SUPPLY_ERROR
+              - OVERFILL_ERROR
+              - DOOR_LOCK_ERROR
+              - WATER_DRAIN_ERROR
+              - INNER_LID_OPEN_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+              - FROZEN_ERROR
+              - CLUTCH_ERROR
+            property:
+              - runState:
+                  currentState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - END
+                        - POWER_OFF
+                        - RINSING
+                        - SOAKING
+                        - ERROR
+                        - SPINNING
+                        - RESERVED
+                        - PAUSE
+                        - DETECTING
+                        - FIRMWARE
+                        - INITIAL
+                        - RUNNING
+                operation:
+                  washerOperationMode:
+                    type: enum
+                    mode:
+                      - w
+                    value:
+                      w:
+                        - START
+                        - STOP
+                        - POWER_OFF
+                detergent:
+                  detergentSetting: NORMAL
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    type: boolean
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                  remainMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                        except: []
+                  totalHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                  totalMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                        except: []
+                  relativeHourToStop:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 19
+                        min: 3
+                        step: 1
+                        except: []
+                      w:
+                        max: 19
+                        min: 3
+                        step: 1
+                        except: []
+                  relativeMinuteToStop:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                location:
+                  locationName: MINI
+            notification:
+              push:
+                - WASHING_IS_COMPLETE
+                - ERROR_DURING_WASHING
+        oven-profile-example:
+          title: Oven
+          value:
+            notification:
+              push:
+                - PREHEATING_IS_COMPLETE
+                - COOKING_IS_COMPLETE
+                - ERROR_HAS_OCCURRED
+                - TIME_TO_CLEAN
+            property:
+              - location:
+                  locationName: UPPER
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    mode:
+                      - r
+                    type: boolean
+                    value:
+                      r:
+                        - false
+                        - true
+                runState:
+                  currentState:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - COOLING
+                        - PREHEATING
+                        - INITIAL
+                        - COOKING_IN_PROGRESS
+                        - DONE
+                        - CLEANING
+                        - ERROR
+                        - CLEANING_IS_DONE
+                operation:
+                  ovenOperationMode:
+                    type: enum
+                    mode:
+                      - w
+                    value:
+                      w:
+                        - STOP
+                temperature:
+                  - targetTemperature:
+                      mode:
+                        - r
+                      type: number
+                    unit: F
+                  - targetTemperature:
+                      mode:
+                        - r
+                      type: number
+                    unit: C
+                timer:
+                  remainHour:
+                    mode:
+                      - r
+                    type: number
+                  remainMinute:
+                    mode:
+                      - r
+                    type: number
+                  remainSecond:
+                    mode:
+                      - r
+                    type: number
+            extensionProperty:
+              info:
+                type: SINGLE
+        cooktop-profile-example:
+          value:
+            extensionProperty:
+              operation:
+                operationMode:
+                  mode:
+                    - w
+                  type: enum
+                  value:
+                    w:
+                      - POWER_OFF
+            property:
+              - cookingZone:
+                  currentState:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - INITIAL
+                        - COOK
+                        - PAUSE
+                        - LOCK
+                location:
+                  locationName: LEFT_FRONT
+                power:
+                  powerLevel:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 11
+                        min: 0
+                        step: 1
+                      w:
+                        max: 11
+                        min: 0
+                        step: 1
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    mode:
+                      - r
+                    type: boolean
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 11
+                        min: 0
+                        step: 1
+                      w:
+                        max: 11
+                        min: 0
+                        step: 1
+                  remainMinute:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                      w:
+                        max: 59
+                        min: 0
+                        step: 1
+              - cookingZone:
+                  currentState:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - INITIAL
+                        - COOK
+                        - PAUSE
+                        - LOCK
+                location:
+                  locationName: RIGHT_FRONT
+                power:
+                  powerLevel:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 11
+                        min: 0
+                        step: 1
+                      w:
+                        max: 11
+                        min: 0
+                        step: 1
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    mode:
+                      - r
+                    type: boolean
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 11
+                        min: 0
+                        step: 1
+                      w:
+                        max: 11
+                        min: 0
+                        step: 1
+                  remainMinute:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                      w:
+                        max: 59
+                        min: 0
+                        step: 1
+              - cookingZone:
+                  currentState:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - INITIAL
+                        - COOK
+                        - PAUSE
+                        - LOCK
+                location:
+                  locationName: LEFT_REAR
+                power:
+                  powerLevel:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 11
+                        min: 0
+                        step: 1
+                      w:
+                        max: 11
+                        min: 0
+                        step: 1
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    mode:
+                      - r
+                    type: boolean
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 11
+                        min: 0
+                        step: 1
+                      w:
+                        max: 11
+                        min: 0
+                        step: 1
+                  remainMinute:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                      w:
+                        max: 59
+                        min: 0
+                        step: 1
+        hood-profile-example:
+          value:
+            property:
+              ventilation:
+                fanSpeed:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 5
+                      min: 0
+                      step: 1
+                    w:
+                      max: 5
+                      min: 0
+                      step: 1
+              lamp:
+                lampBrightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 2
+                      min: 0
+                      step: 1
+                    w:
+                      max: 2
+                      min: 0
+                      step: 1
+              operation:
+                hoodOperationMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - POWER_OFF
+                      - POWER_ON
+              timer:
+                remainMinute:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 59
+                      min: 0
+                      step: 1
+                remainSecond:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 59
+                      min: 0
+                      step: 1
+        microwave_oven-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  mode: r
+                  type: enum
+                  value:
+                    r:
+                      - INITIAL
+                      - PREHEAT
+                      - COOK
+                      - COOK_COMPLETE
+                      - PAUSE
+                      - PREHEAT_COMPLETE
+                      - OVEN_SETTING
+              timer:
+                remainMinute:
+                  mode: r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 59
+                      step: 1
+                remainSecond:
+                  mode: r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 59
+                      step: 1
+              ventilation:
+                fanSpeed:
+                  mode: rw
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 4
+                      step: 1
+                    w:
+                      min: 0
+                      max: 4
+                      step: 1
+              lamp:
+                lampBrightness:
+                  mode: rw
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 2
+                      step: 1
+                    w:
+                      min: 0
+                      max: 2
+                      step: 1
+            notification:
+              push:
+                - PREHEATING_IS_COMPLETE
+                - COOKING_IS_COMPLETE
+                - TIMER_IS_COMPLETE
+        air_conditioner-profile-example:
+          value:
+            notification:
+              push:
+                - WATER_IS_FULL
+            property:
+              airConJobMode:
+                currentJobMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - AIR_DRY
+                      - COOL
+                      - AIR_CLEAN
+                    w:
+                      - AIR_DRY
+                      - COOL
+                      - AIR_CLEAN
+              airFlow:
+                windStrength:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - HIGH
+                      - LOW
+                      - MID
+                    w:
+                      - HIGH
+                      - LOW
+                      - MID
+              filterInfo:
+                filterLifetime:
+                  mode:
+                    - r
+                  type: number
+                usedTime:
+                  mode:
+                    - r
+                  type: number
+              airQualitySensor:
+                PM1:
+                  mode:
+                    - r
+                  type: number
+                PM10:
+                  mode:
+                    - r
+                  type: number
+                PM2:
+                  mode:
+                    - r
+                  type: number
+                humidity:
+                  mode:
+                    - r
+                  type: number
+                totalPollution:
+                  mode:
+                    - r
+                  type: number
+                totalPollutionLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+                monitoringEnabled:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - ON_WORKING
+                      - ALWAYS
+                    w:
+                      - ON_WORKING
+                      - ALWAYS
+              operation:
+                airCleanOperationMode:
+                  mode:
+                    - w
+                  type: enum
+                  value:
+                    w:
+                      - STOP
+                      - START
+                airConOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_OFF
+                      - POWER_ON
+                    w:
+                      - POWER_OFF
+                      - POWER_ON
               powerSave:
-                powerSaveEnabled: true
-        refrigerator-object-example-req-1:
-          description: 냉장고 - 냉장실 온도를 섭씨 0도로 설정
+                powerSaveEnabled:
+                  mode:
+                    - r
+                    - w
+                  type: boolean
+                  value:
+                    r:
+                      - false
+                      - true
+                    w:
+                      - false
+                      - true
+              sleepTimer:
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              temperature:
+                coolTargetTemperature:
+                  mode:
+                    - w
+                  type: range
+                  value:
+                    w:
+                      max: 30
+                      min: 18
+                      step: 1
+                currentTemperature:
+                  mode:
+                    - r
+                  type: number
+                targetTemperature:
+                  mode:
+                    - r
+                    - w
+                  type: range
+                  value:
+                    r:
+                      max: 30
+                      min: 18
+                      step: 1
+                    w:
+                      max: 30
+                      min: 18
+                      step: 1
+                unit:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - C
+              timer:
+                relativeHourToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeMinuteToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeStartTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                relativeStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+        system_boiler-profile-example:
+          value:
+            property:
+              boilerJobMode:
+                currentJobMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - COOL
+                      - AUTO
+                      - HEAT
+                    w:
+                      - COOL
+                      - AUTO
+                      - HEAT
+              operation:
+                boilerOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+                hotWaterMode:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+              temperature:
+                currentTemperature:
+                  mode:
+                    - r
+                  type: number
+                targetTemperature:
+                  mode:
+                    - r
+                  type: number
+                heatTargetTemperature:
+                  mode:
+                    - w
+                  type: number
+                coolTargetTemperature:
+                  mode:
+                    - w
+                  type: number
+                heatMaxTemperature:
+                  mode:
+                    - r
+                  type: number
+                heatMinTemperature:
+                  mode:
+                    - r
+                  type: number
+                coolMaxTemperature:
+                  mode:
+                    - r
+                  type: number
+                coolMinTemperature:
+                  mode:
+                    - r
+                  type: number
+                unit:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - C
+        air_purifier-profile-example:
+          value:
+            notification:
+              push:
+                - TIME_TO_CHANGE_FILTER
+                - TIME_TO_CLEAN_FILTER
+                - POLLUTION_IS_HIGH
+                - LACK_OF_WATER
+            property:
+              airFlow:
+                windStrength:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - LOW
+                      - MID
+                      - HIGH
+                      - AUTO
+                      - POWER
+                    w:
+                      - LOW
+                      - MID
+                      - HIGH
+                      - AUTO
+                      - POWER
+              airPurifierJobMode:
+                currentJobMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - CLEAN
+                      - AUTO
+                      - CIRCULATOR
+                      - DUAL_CLEAN
+                    w:
+                      - CLEAN
+                      - AUTO
+                      - CIRCULATOR
+                      - DUAL_CLEAN
+              airQualitySensor:
+                PM1:
+                  mode:
+                    - r
+                  type: number
+                PM10:
+                  mode:
+                    - r
+                  type: number
+                PM2:
+                  mode:
+                    - r
+                  type: number
+                monitoringEnabled:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ON_WORKING
+                      - ALWAYS
+                oder:
+                  mode:
+                    - r
+                  type: number
+                odor:
+                  mode:
+                    - r
+                  type: number
+                odorLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INVALID
+                      - WEAK
+                      - NORMAL
+                      - STRONG
+                      - VERY_STRONG
+                totalPollution:
+                  mode:
+                    - r
+                  type: number
+                totalPollutionLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+              operation:
+                airPurifierOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              timer:
+                absoluteHourToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteStartTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              sleepTimer:
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                  type: number
+                relativeStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+        dehumidifier-profile-example:
+          value:
+            notification:
+              push:
+                - WATER_IS_FULL
+            property:
+              airFlow:
+                windStrength:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - LOW
+                      - HIGH
+                    w:
+                      - LOW
+                      - HIGH
+              dehumidifierJobMode:
+                currentJobMode:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - QUIET_HUMIDITY
+                      - CLOTHES_DRY
+                      - INTENSIVE_DRY
+                      - SMART_HUMIDITY
+                      - RAPID_HUMIDITY
+                      - AIR_CLEAN
+              humidity:
+                currentHumidity:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                targetHumidity:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 70
+                      min: 30
+                      step: 5
+                    w:
+                      max: 70
+                      min: 30
+                      step: 5
+              operation:
+                dehumidifierOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              timer:
+                absoluteHourToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteStartTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+        humidifier-profile-example:
+          title: Humidifier
+          value:
+            notification:
+              push:
+                - TIME_TO_CHANGE_FILTER
+                - LACK_OF_WATER
+            property:
+              humidifierJobMode:
+                currentJobMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - HUMIDIFY
+                      - HUMIDIFY_AND_AIR_CLEAN
+                      - AIR_CLEAN
+                    w:
+                      - HUMIDIFY
+                      - HUMIDIFY_AND_AIR_CLEAN
+                      - AIR_CLEAN
+              operation:
+                humidifierOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+                autoMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - AUTO_ON
+                      - AUTO_OFF
+                    w:
+                      - AUTO_ON
+                      - AUTO_OFF
+                sleepMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SLEEP_ON
+                      - SLEEP_OFF
+                    w:
+                      - SLEEP_ON
+                      - SLEEP_OFF
+                hygieneDryMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - FAST
+                      - SILENT
+                      - 'OFF'
+                      - NORMAL
+                    w:
+                      - FAST
+                      - SILENT
+                      - 'OFF'
+                      - NORMAL
+              timer:
+                absoluteHourToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteStartTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              sleepTimer:
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                  type: number
+                relativeStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              humidity:
+                targetHumidity:
+                  mode:
+                    - r
+                    - w
+                  type: range
+                  value:
+                    r:
+                      max: 70
+                      min: 30
+                      step: 5
+                    w:
+                      max: 70
+                      min: 30
+                      step: 5
+                warmMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - WARM_ON
+                      - WARM_OFF
+                    w:
+                      - WARM_ON
+                      - WARM_OFF
+              airFlow:
+                windStrength:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER
+                      - HIGH
+                      - MID
+                      - LOW
+                      - AUTO
+                    w:
+                      - POWER
+                      - HIGH
+                      - MID
+                      - LOW
+              airQualitySensor:
+                totalPollution:
+                  mode:
+                    - r
+                  type: number
+                totalPollutionLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+                PM1:
+                  mode:
+                    - r
+                  type: number
+                PM2:
+                  mode:
+                    - r
+                  type: number
+                PM10:
+                  mode:
+                    - r
+                  type: number
+                humidity:
+                  mode:
+                    - r
+                  type: number
+                temperature:
+                  mode:
+                    - r
+                  type: number
+                monitoringEnabled:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ON_WORKING
+                      - ALWAYS
+              display:
+                light:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - 'OFF'
+                      - LEVEL_1
+                      - LEVEL_2
+                      - LEVEL_3
+                    w:
+                      - 'OFF'
+                      - LEVEL_1
+                      - LEVEL_2
+                      - LEVEL_3
+              moodLamp:
+                moodLampState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+        water_heater-profile-example:
+          value:
+            property:
+              waterHeaterJobMode:
+                currentJobMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - HEAT_PUMP
+                      - AUTO
+                      - VACATION
+                      - TURBO
+                    w:
+                      - HEAT_PUMP
+                      - AUTO
+                      - VACATION
+                      - TURBO
+              operation:
+                waterHeaterOperationMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+              temperature:
+                currentTemperature:
+                  type: number
+                  mode:
+                    - r
+                targetTemperature:
+                  type: number
+                  mode:
+                    - r
+                    - w
+        ceiling_fan-profile-example:
+          value:
+            property:
+              airFlow:
+                windStrength:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - TURBO
+                      - HIGH
+                      - LOW
+                      - MID
+                    w:
+                      - TURBO
+                      - HIGH
+                      - LOW
+                      - MID
+              operation:
+                ceilingfanOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+        air_purifier_fan-profile-example:
+          value:
+            notification:
+              push:
+                - TIME_TO_CHANGE_FILTER
+            property:
+              airFanJobMode:
+                currentJobMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SPOT_CLEAN
+                      - SPACE_CLEAN
+                      - DIRECT_CLEAN
+                      - UP_FEATURE
+                    w:
+                      - SPOT_CLEAN
+                      - SPACE_CLEAN
+                      - DIRECT_CLEAN
+              operation:
+                airFanOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              airFlow:
+                warmMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - WARM_ON
+                      - WARM_OFF
+                    w:
+                      - WARM_ON
+                      - WARM_OFF
+                windTemperature:
+                  mode:
+                    - r
+                    - w
+                  type: range
+                  value:
+                    r:
+                      max: 30
+                      min: 16
+                      step: 1
+                    w:
+                      max: 30
+                      min: 16
+                      step: 1
+                windStrength:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - AUTO
+                      - POWER
+                      - WIND_1
+                      - WIND_2
+                      - WIND_3
+                      - WIND_4
+                      - WIND_5
+                      - WIND_6
+                      - WIND_7
+                      - WIND_8
+                      - WIND_9
+                      - WIND_10
+                    w:
+                      - AUTO
+                      - POWER
+                      - WIND_1
+                      - WIND_2
+                      - WIND_3
+                      - WIND_4
+                      - WIND_5
+                      - WIND_6
+                      - WIND_7
+                      - WIND_8
+                      - WIND_9
+                      - WIND_10
+                windAngle:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - 'OFF'
+                      - ANGLE_45
+                      - ANGLE_60
+                      - ANGLE_90
+                      - ANGLE_140
+                    w:
+                      - 'OFF'
+                      - ANGLE_45
+                      - ANGLE_60
+                      - ANGLE_90
+                      - ANGLE_140
+              timer:
+                absoluteHourToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteStartTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              sleepTimer:
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                  type: number
+                relativeStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              airQualitySensor:
+                totalPollution:
+                  mode:
+                    - r
+                  type: number
+                totalPollutionLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+                PM1:
+                  mode:
+                    - r
+                  type: number
+                PM2:
+                  mode:
+                    - r
+                  type: number
+                PM10:
+                  mode:
+                    - r
+                  type: number
+                odor:
+                  mode:
+                    - r
+                  type: number
+                odorLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INVALID
+                      - WEAK
+                      - NORMAL
+                      - STRONG
+                      - VERY_STRONG
+                temperature:
+                  mode:
+                    - r
+                  type: number
+                humidity:
+                  mode:
+                    - r
+                  type: number
+                monitoringEnabled:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ON_WORKING
+                      - ALWAYS
+              display:
+                light:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - 'OFF'
+                      - LEVEL_1
+                      - LEVEL_2
+                      - LEVEL_3
+                    w:
+                      - 'OFF'
+                      - LEVEL_1
+                      - LEVEL_2
+                      - LEVEL_3
+              misc:
+                uvNano:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+        robot_cleaner-profile-example:
+          title: Robot_Cleaner
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - CHARGING
+                      - MACROSECTOR
+                      - WORKING
+                      - SLEEP
+                      - INITIALIZING
+                      - HOMING
+                      - PAUSE
+                      - RESERVATION
+                      - STANDBY
+                      - SETDATE
+                      - DIAGNOSIS
+                      - ERROR
+              robotCleanerJobMode:
+                currentJobMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - ZIGZAG
+                      - SELECT
+                      - SECTOR_BASE
+                      - SPOT
+                      - EDGE
+                      - MACRO
+              operation:
+                cleanOperationMode:
+                  type: enum
+                  mode:
+                    - w
+                  value:
+                    w:
+                      - HOMING
+                      - WAKE_UP
+                      - PAUSE
+                      - START
+              battery:
+                level:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - MOVELESS
+                      - DOCK_LEVEL
+                      - LOW
+                      - MID
+                      - HIGH
+                      - FULL
+                      - OVER_CHARGE
+                percent:
+                  type: number
+                  mode:
+                    - r
+              timer:
+                runningHour:
+                  type: number
+                  mode:
+                    - r
+                runningMinute:
+                  type: number
+                  mode:
+                    - r
+                absoluteHourToStart:
+                  type: number
+                  mode:
+                    - r
+                absoluteMinuteToStart:
+                  type: number
+                  mode:
+                    - r
+            notification:
+              push:
+                - MOTION_IS_DETECTED
+                - HOMEGUARD_IS_STOPPED
+                - CLEANING_IS_COMPLETED
+                - SCHEDULED_CLEANING_STARTS
+                - NEED_TO_CHECK_LOCATION
+                - CLEANING_IS_FAILED
+            push:
+              - MOTION_IS_DETECTED
+              - HOMEGUARD_IS_STOPPED
+              - CLEANING_IS_COMPLETED
+              - SCHEDULED_CLEANING_STARTS
+              - NEED_TO_CHECK_LOCATION
+              - CLEANING_IS_FAILED
+            error:
+              - RIGHT_WHEEL_ERROR
+              - MOVE_ERROR
+              - UNKNOWN_ERROR
+              - NO_DUST_BIN_ERROR
+              - BLOCK_ERROR
+              - BRUSH_ERROR
+              - MOP_ERROR
+              - CLIFF_ERROR
+              - SUCTION_BLOCKED_ERROR
+        stick_cleaner-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - CHARGING
+                      - CHARGING_COMPLETE
+                      - WORKING
+                      - STANDBY
+              stickCleanerJobMode:
+                currentJobMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - 'OFF'
+                      - AUTO
+                      - HIGH
+                      - NORMAL
+                      - TURBO
+                      - MOP
+              battery:
+                level:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - WARNING
+                      - HIGH
+                      - LOW
+                      - MID
+            notification:
+              push:
+                - TIME_TO_CLEAN_FILTER
+                - CHARGING_IS_COMPLETE
+        refrigerator-object-example:
+          value:
+            doorStatus:
+              - doorState: CLOSE
+                locationName: MAIN
+            powerSave:
+              powerSaveEnabled: false
+            refrigeration:
+              expressMode: false
+              expressModeName: FREEZER
+            temperature:
+              - locationName: FRIDGE
+                targetTemperature: 8
+                unit: C
+              - locationName: FREEZER
+                targetTemperature: -13
+                unit: C
+            waterFilterInfo:
+              usedTime: 0
+        water_purifier-object-example:
+          value:
+            runState:
+              cockState: CLEANING
+            waterInfo:
+              waterType:
+                - COLD
+                - NORMAL
+                - HOT
+                - SODA
+        wine_cellar-object-example:
           value:
             temperature:
-              - targetTemperature: 0
-                locationName: FRIDGE
+              - targetTemperature: 18
                 unit: C
-        refrigerator-object-example-req-2:
+                locationName: WINE_UPPER
+              - targetTemperature: 18
+                unit: C
+                locationName: WINE_LOWER
+            operation:
+              lightStatus: 100
+        kimchi_refrigerator-object-example:
+          value:
+            refrigeration:
+              oneTouchFilter: 'OFF'
+            temperature:
+              - locationName: TOP
+                targetTemperature: KIMCHI
+              - locationName: MIDDLE
+                targetTemperature: KIMCHI
+              - locationName: BOTTOM
+                targetTemperature: KIMCHI
+        home_brew-object-example:
+          value:
+            runState:
+              currentState: STANDBY
+            recipe:
+              recipeName: MY_RECIPE
+              wortInfo: HOPPY
+              yeastInfo: AMERICAN_ALE
+              hopOilInfo:
+                - CASCADE
+              flavorInfo:
+                - CORIANDER
+                - CORIANDER_SEED
+              beerRemain: 1
+            timer:
+              elapsedDayState: 0
+              elapsedDayTotal: 0
+        plant_cultivator-object-example:
+          value:
+            - location:
+                locationName: UPPER
+              runState:
+                currentState: POWER_ON
+                growthMode: EXT_EXPERT
+                windVolume: 1
+              light:
+                brightness: 4
+                duration: 14
+                startHour: 3
+                startMinute: 0
+                endHour: 17
+                endMinute: 0
+              temperature:
+                dayTargetTemperature: 22
+                nightTargetTemperature: 21
+            - location:
+                locationName: LOWER
+              runState:
+                currentState: POWER_ON
+                growthMode: STANDARD
+                windVolume: 2
+              light:
+                brightness: 5
+                duration: 17
+                startHour: 3
+                startMinute: 0
+                endHour: 17
+                endMinute: 0
+              temperature:
+                dayTargetTemperature: 25
+                nightTargetTemperature: 18
+        washer-object-example:
+          value:
+            - location:
+                locationName: MAIN
+              remoteControlEnable:
+                remoteControlEnabled: true
+              runState:
+                currentState: INITIAL
+              timer:
+                relativeHourToStop: 3
+                relativeMinuteToStop: 0
+                remainHour: 0
+                remainMinute: 0
+                totalHour: 0
+                totalMinute: 0
+        dryer-object-example:
+          value:
+            remoteControlEnable:
+              remoteControlEnabled: false
+            runState:
+              currentState: PAUSE
+            timer:
+              relativeHourToStop: 3
+              relativeMinuteToStop: 0
+              remainHour: 0
+              remainMinute: 0
+              totalHour: 0
+              totalMinute: 0
+        styler-object-example:
+          value:
+            remoteControlEnable:
+              remoteControlEnabled: false
+            runState:
+              currentState: INITIAL
+            timer:
+              relativeHourToStop: 0
+              relativeMinuteToStop: 0
+              remainHour: 0
+              remainMinute: 0
+              totalHour: 0
+              totalMinute: 0
+        dish_washer-object-example:
+          value:
+            dishWashingStatus:
+              rinseRefill: false
+            doorStatus:
+              doorState: CLOSE
+            preference:
+              cleanLReminder: CLEANLREMINDER_OFF
+              mCReminder: MCREMINDER_OFF
+              rinseLevel: RINSELEVEL_0
+              signalLevel: SIGNALLEVEL_OFF
+              softeningLevel: SOFTENINGLEVEL_0
+            runState:
+              currentState: POWER_OFF
+            timer:
+              relativeHourToStart: 0
+              relativeMinuteToStart: 0
+              remainHour: 0
+              remainMinute: 0
+              totalHour: 0
+              totalMinute: 0
+        washtower_washer-object-example:
+          value:
+            - location:
+                locationName: MAIN
+              remoteControlEnable:
+                remoteControlEnabled: false
+              runState:
+                currentState: END
+              timer:
+                relativeHourToStop: 3
+                relativeMinuteToStop: 0
+                remainHour: 0
+                remainMinute: 0
+                totalHour: 0
+                totalMinute: 0
+        washtower_dryer-object-example:
+          value:
+            remoteControlEnable:
+              remoteControlEnabled: false
+            runState:
+              currentState: RESERVED
+            timer:
+              relativeHourToStop: 0
+              relativeMinuteToStop: 0
+              remainHour: 0
+              remainMinute: 0
+              totalHour: 0
+              totalMinute: 0
+        washtower-object-example:
+          value:
+            washer:
+              runState:
+                currentState: POWER_OFF
+              remoteControlEnable:
+                remoteControlEnabled: false
+              timer:
+                remainHour: 0
+                remainMinute: 0
+                relativeHourToStart: 0
+                relativeMinuteToStart: 0
+                totalHour: 0
+                totalMinute: 0
+            dryer:
+              runState:
+                currentState: POWER_OFF
+              remoteControlEnable:
+                remoteControlEnabled: false
+              timer:
+                remainHour: 0
+                remainMinute: 0
+                relativeHourToStop: 0
+                relativeMinuteToStop: 0
+                totalHour: 0
+                totalMinute: 0
+        main_washcombo-object-example:
+          value:
+            - runState:
+                currentState: POWER_OFF
+              remoteControlEnable:
+                remoteControlEnabled: false
+              timer:
+                remainHour: 0
+                remainMinute: 0
+                relativeHourToStop: 0
+                relativeMinuteToStop: 0
+                totalHour: 0
+                totalMinute: 0
+              location:
+                locationName: MAIN
+        mini_washcombo-object-example:
+          value:
+            - runState:
+                currentState: POWER_OFF
+              remoteControlEnable:
+                remoteControlEnabled: false
+              timer:
+                remainHour: 0
+                remainMinute: 0
+                relativeHourToStop: 0
+                relativeMinuteToStop: 0
+                totalHour: 0
+                totalMinute: 0
+              location:
+                locationName: MINI
+        oven-object-example:
+          title: Oven
+          value:
+            - runState:
+                currentState: INITIAL
+              location:
+                locationName: UPPER
+              temperature:
+                targetTemperature: 0
+                unit: F
+              timer:
+                remainHour: 0
+                remainMinute: 0
+                remainSecond: 0
+            - runState:
+                currentState: PREHEATING
+              cook:
+                cookMode: BAKE
+              location:
+                locationName: LOWER
+              temperature:
+                targetTemperature: 350
+                unit: F
+              remoteControlEnable:
+                remoteControlEnabled: true
+              timer:
+                remainHour: 0
+                remainMinute: 2
+                remainSecond: 51
+        cooktop-object-example:
+          value:
+            - location:
+                locationName: LEFT_FRONT
+              cookingZone:
+                currentState: INITIAL
+              power:
+                powerLevel: 3
+              timer:
+                remainHour: 0
+                remainMinute: 27
+              remoteControlEnable:
+                remoteControlEnabled: false
+            - location:
+                locationName: RIGHT_FRONT
+              cookingZone:
+                currentState: INITIAL
+              power:
+                powerLevel: 0
+              timer:
+                remainHour: 0
+                remainMinute: 0
+              remoteControlEnable:
+                remoteControlEnabled: false
+            - location:
+                locationName: LEFT_REAR
+              cookingZone:
+                currentState: INITIAL
+              power:
+                powerLevel: 0
+              timer:
+                remainHour: 0
+                remainMinute: 0
+              remoteControlEnable:
+                remoteControlEnabled: false
+        hood-object-example:
+          value:
+            operation:
+              hoodOperationMode: POWER_ON
+            lamp:
+              lampBrightness: 2
+            ventilation:
+              fanSpeed: 1
+            timer:
+              remainMinute: 3
+              remainSecond: 25
+        microwave_oven-object-example:
+          value:
+            runState:
+              currentState: INITIAL
+            timer:
+              remainMinute: 0
+              remainSecond: 0
+            ventilation:
+              fanSpeed: 3
+            lamp:
+              lampBrightness: 0
+        air_conditioner-object-example:
+          value:
+            airConJobMode:
+              currentJobMode: FAN
+            airFlow:
+              windStrength: HIGH
+              windStep: 5
+            operation:
+              airConOperationMode: POWER_OFF
+            powerSave:
+              powerSaveEnabled: false
+            temperature:
+              currentTemperature: 27
+              targetTemperature: 24.5
+              unit: C
+            timer:
+              absoluteStopTimer: UNSET
+              absoluteStartTimer: UNSET
+            sleepTimer:
+              relativeStopTimer: UNSET
+        system_boiler-object-example:
+          value:
+            boilerJobMode:
+              currentJobMode: COOL
+            operation:
+              boilerOperationMode: POWER_ON
+              hotWaterMode: 'ON'
+            temperature:
+              currentTemperature: 40
+              targetTemperature: 18
+              unit: C
+        air_purifier-object-example:
+          value:
+            airPurifierJobMode:
+              currentJobMode: CLEAN
+            operation:
+              airPurifierOperationMode: POWER_OFF
+            timer:
+              absoluteHourToStart: 23
+              absoluteMinuteToStart: 24
+              absoluteHourToStop: 9
+              absoluteMinuteToStop: 8
+              absoluteStartTimer: SET
+              absoluteStopTimer: SET
+            sleepTimer:
+              relativeStopTimer: UNSET
+            airFlow:
+              windStrength: HIGH
+            airQualitySensor:
+              PM1: 0
+              PM2: 0
+              PM10: 72
+              oder: 0
+              odor: 0
+              odorLevel: INVALID
+              totalPollution: 1
+              totalPollutionLevel: GOOD
+              monitoringEnabled: ON_WORKING
+        dehumidifier-object-example:
+          value:
+            airFlow:
+              windStrength: HIGH
+            dehumidifierJobMode:
+              currentJobMode: INTENSIVE_DRY
+            humidity:
+              currentHumidity: 45
+              targetHumidity: 50
+            operation:
+              dehumidifierOperationMode: POWER_ON
+            timer:
+              absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
+        humidifier-object-example:
+          title: Humidifier
+          value:
+            humidifierJobMode:
+              currentJobMode: HUMIDIFY
+            operation:
+              humidifierOperationMode: POWER_ON
+              autoMode: AUTO_ON
+              sleepMode: SLEEP_OFF
+              hygieneDryMode: SILENT
+            humidity:
+              targetHumidity: 65
+              warmMode: WARM_ON
+            airFlow:
+              windStrength: AUTO
+            airQualitySensor:
+              PM1: 4
+              PM2: 4
+              PM10: 6
+              humidity: 36
+              temperature: 24.5
+              totalPollution: 1
+              totalPollutionLevel: GOOD
+              monitoringEnabled: ON_WORKING
+            display:
+              light: LEVEL_2
+            moodLamp:
+              moodLampState: 'ON'
+            timer:
+              absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
+            sleepTimer:
+              relativeStopTimer: UNSET
+        water_heater-object-example:
+          value:
+            waterHeaterJobMode:
+              currentJobMode: VACATION
+            temperature:
+              currentTemperature: 42
+              targetTemperature: 52
+            operation:
+              waterHeaterOperationMode: POWER_ON
+        ceiling_fan-object-example:
+          value:
+            airFlow:
+              windStrength: LOW
+            operation:
+              ceilingfanOperationMode: POWER_ON
+        air_purifier_fan-object-example:
+          value:
+            airFanJobMode:
+              currentJobMode: SPOT_CLEAN
+            operation:
+              airFanOperationMode: POWER_ON
+            airFlow:
+              warmMode: WARM_OFF
+              windStrength: WIND_5
+              windTemperature: 0
+              windAngle: ANGLE_45
+            airQualitySensor:
+              PM1: 31
+              PM10: 45
+              PM2: 35
+              humidity: 30
+              temperature: 40
+              monitoringEnabled: ON_WORKING
+              odor: 1
+              odorLevel: WEAK
+              totalPollution: 2
+              totalPollutionLevel: NORMAL
+            display:
+              light: LEVEL_1
+            misc:
+              uvNano: 'OFF'
+            timer:
+              absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
+            sleepTimer:
+              relativeStopTimer: UNSET
+        robot_cleaner-object-example:
+          title: Robot_Cleaner
+          value:
+            runState:
+              currentState: CHARGING
+            robotCleanerJobMode:
+              currentJobMode: ZIGZAG
+            battery:
+              level: FULL
+        stick_cleaner-object-example:
+          value:
+            runState:
+              currentState: STANDBY
+            stickCleanerJobMode:
+              currentJobMode: 'OFF'
+            battery:
+              level: HIGH
+        refrigerator-command-example:
           description: 냉장고 - 절전 모드 설정
           value:
             powerSave:
               powerSaveEnabled: true
+        wine_cellar-command-example:
+          description: 와인셀러 - 조명 밝기
+          value:
+            operation:
+              lightStatus: 90
+        washer-command-example:
+          description: 세탁기 - 운전 시작
+          value:
+            location:
+              locationName: MAIN
+            operation:
+              washerOperationMode: START
+        dryer-command-example:
+          description: 건조기 - 세탁 시작
+          value:
+            operation:
+              dryerOperationMode: START
+        styler-command-example:
+          description: 스타일러 - 운전 모드
+          value:
+            operation:
+              stylerOperationMode: START
+        dish_washer-command-example:
+          description: 식기세척기 - 운전 모드
+          value:
+            operation:
+              dishWasherOperationMode: START
+        washtower_washer-command-example:
+          description: 워시타워 세탁기 - 세탁 시작
+          value:
+            operation:
+              washerOperationMode: START
+            location:
+              locationName: MAIN
+        washtower_dryer-command-example:
+          description: 워시타워(건조기) - 전원 POWER_OFF
+          value:
+            operation:
+              dryerOperationMode: POWER_OFF
+        washtower-command-example:
+          description: 워시타워 - 건조기 시작
+          value:
+            dryer:
+              operation:
+                dryerOperationMode: START
+        main_washcombo-command-example:
+          description: 워시콤보세탁기 메인 - 동작
+          value:
+            location:
+              locationName: MAIN
+            operation:
+              washerOperationMode: START
+        mini_washcombo-command-example:
+          description: 워시콤보세탁기 미니 - 동작
+          value:
+            location:
+              locationName: MINI
+            operation:
+              washerOperationMode: START
+        oven-command-example:
+          title: Oven
+          description: 오븐 - 오븐 동작
+          value:
+            location:
+              locationName: LOWER
+            operation:
+              ovenOperationMode: START
+        cooktop-command-example:
+          description: 쿡탑 - 전원 OFF
+          value:
+            operation:
+              operationMode: POWER_OFF
+        hood-command-example:
+          description: 후드 - 램프 밝기
+          value:
+            lamp:
+              lampBrightness: 0
+        microwave_oven-command-example:
+          description: 전자레인지
+          value:
+            lamp:
+              lampBrightness: 1
+            ventilation:
+              fanSpeed: 0
+        air_conditioner-command-example:
+          description: 에어컨 - 지정한 켜짐 예약시간
+          value:
+            timer:
+              absoluteHourToStart: 10
+              absoluteMinuteToStart: 36
+        system_boiler-command-example:
+          description: 시스템 보일러 - 전원 ON
+          value:
+            operation:
+              boilerOperationMode: POWER_ON
+        air_purifier-command-example:
+          description: 공기청정기 - 운전 모드
+          value:
+            airPurifierJobMode:
+              currentJobMode: CLEAN
+        dehumidifier-command-example:
+          description: 가습기 - 운전 모드
+          value:
+            humidifierJobMode:
+              currentJobMode: HUMIDIFY
+        humidifier-command-example:
+          title: Humidifier
+          description: 가습기 - 운전 모드
+          value:
+            humidifierJobMode:
+              currentJobMode: HUMIDIFY
+        water_heater-command-example:
+          description: 온수기 - 운전모드
+          value:
+            waterHeaterJobMode:
+              currentJobMode: AUTO
+        ceiling_fan-command-example:
+          description: 실링팬 - 운전 모드
+          value:
+            operation:
+              ceilingfanOperationMode: POWER_ON
+        air_purifier_fan-command-example:
+          description: 공기청정팬 - 운전 모드
+          value:
+            airFanJobMode:
+              currentJobMode: SPOT_CLEAN
+        robot_cleaner-command-example:
+          title: Robot_Cleaner
+          description: 로봇청소기 - 청소 모드
+          value:
+            operation:
+              cleanOperationMode: HOMING
     x-tagGroups:
-      - name: Get Started
+      - name: Token
         tags:
-          - Overview
-          - API Call Sequence
-          - Base URL
-          - Codes
+          - PAT(Personal Access Token)
       - name: APIs
         tags:
-          - Token API
           - Device API
+          - Push API
           - Event API
-          - User API
-          - DR API
+          - Client API
 ---
