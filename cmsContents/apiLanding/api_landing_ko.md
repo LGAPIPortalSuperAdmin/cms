@@ -4,7 +4,7 @@ contents: |-
 
   <body>
 
-  <h1>API Landing</h1>
+  <h1>API Landing (KO)</h1>
 
   </body>
 
