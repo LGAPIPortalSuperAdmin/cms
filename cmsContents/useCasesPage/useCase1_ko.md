@@ -35,7 +35,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
+  \    href="/api/business_connect?s=1727316475662"
 
 
   \    target="_blank"
@@ -50,7 +50,7 @@ contents: >-2
   \    </CoLink>
 
 
-  \    <CoLink className="btn-round-line btn-l" href="https://dev.openapi.developer.lge.com/ko/mypage/partner/landing?s=1728539044388" target="_blank">
+  \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388" target="_blank">
 
 
   \    파트너십 신청
@@ -455,7 +455,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
+  \    href="/api/business_connect?s=1727316475662"
 
 
   \    target="_blank"
