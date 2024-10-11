@@ -522,7 +522,7 @@ contents: >-
   \              <CoLink
 
 
-  \              href="/support/qna?s=1728373943354"
+  \              href="mailto:bizdev@lge.com?subject=제목을 입력해 주세요.&body=문의내용을 입력해 주세요.”"
 
 
   \              className="btn-round-primary btn-l">
