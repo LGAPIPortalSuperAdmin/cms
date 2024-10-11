@@ -173,7 +173,10 @@ contents: >-2
   \    </div>
 
 
-  \    
+  \    </div>
+
+
+  \    <div className="grid usecase-grid--else">
 
 
   \    <div className="col-full mt4 mb0 usecase-pick">
