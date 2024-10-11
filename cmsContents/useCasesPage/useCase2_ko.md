@@ -485,7 +485,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
+  \    href="/api/business_connect?s=1727316475662"
 
 
   \    target="_blank"
