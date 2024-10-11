@@ -35,7 +35,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/thinq_connect"
+  \    href="/api/thinq_connect"
 
 
   \    target="_blank"
@@ -173,7 +173,10 @@ contents: >-2
   \    </div>
 
 
-  \    
+  \    </div>
+
+
+  \    <div className="grid usecase-grid--else">
 
 
   \    <div className="col-full mt4 mb0 usecase-pick">
@@ -638,7 +641,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/thinq_connect"
+  \    href="/api/thinq_connect"
 
 
   \    target="_blank"
