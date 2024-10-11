@@ -6,19 +6,19 @@ contents:
 
     info:
       version: null
-      title: Business Connect API
+      title: ThinQ Business API
     servers:
-      - url: https://ap.api.lge.com/bc/v1
-      - url: https://eu.api.lge.com/bc/v1
-      - url: https://us.api.lge.com/bc/v1
-      - url: https://ap-test.api.lge.com/bc/v1
-      - url: https://eu-test.api.lge.com/bc/v1
-      - url: https://us-test.api.lge.com/bc/v1
+      - url: https://ap.api.lge.com/biz/v1
+      - url: https://eu.api.lge.com/biz/v1
+      - url: https://us.api.lge.com/biz/v1
+      - url: https://ap-test.api.lge.com/biz/v1
+      - url: https://eu-test.api.lge.com/biz/v1
+      - url: https://us-test.api.lge.com/biz/v1
     tags:
       - name: Overview
         x-displayName: 소개
         description: |
-          여러분의 서비스가 LG전자의 가전제품, 디스플레이, 공조설비에 대하여 정보를 조회하거나 제어를 수행하려면 어떻게 해야 할까요? LG전자는 LG전자의 클라우드 서비스에 등록된 디바이스의 정보를 파트너의 서비스가 획득하거나 제어할 수 있도록 Business Connect API를 제공합니다.
+          여러분의 서비스가 LG전자의 가전제품, 디스플레이, 공조설비에 대하여 정보를 조회하거나 제어를 수행하려면 어떻게 해야 할까요? LG전자는 LG전자의 클라우드 서비스에 등록된 디바이스의 정보를 파트너의 서비스가 획득하거나 제어할 수 있도록 ThinQ Business API를 제공합니다.
 
                 
 
@@ -27,7 +27,7 @@ contents:
 
 
 
-          Business Connect API는 API의 사용 목적에 따라 다음과 같이 분류됩니다.
+          ThinQ Business API는 API의 사용 목적에 따라 다음과 같이 분류됩니다.
 
 
            |API 종류|요약|
@@ -38,145 +38,272 @@ contents:
            |DR API|전력 수요반응(DR: Demand Response) 서비스 제공자로서 사용자의 디바이스를 제어하기 위한 API|
       - name: API Call Sequence
         x-displayName: API 호출 시퀀스
-        description: |
-          Business Connect API를 사용하여 서비스를 개발하는 방법을 API 호출 시퀀스을 통해 설명합니다.
-
-          ## API Token 발급
-          API Token은 모든 Business Connect API 호출의 HTTP 요청 헤더에 포함되어야 합니다. 이 API Token은 LG Open API Developer에서 사전에 발급 받은 API Key와 API Secret 쌍으로 발급될 수 있으며 24시간 동안 유효하기 때문에 만료되기 전에 Token API를 사용하여 API Token을 재발급해야 합니다.
-
-
-           - 사용 API
-              - [`POST /token`](/#tag/Token-API/operation/createAPIToken)
-
-           - 시퀀스
-
-
-           ![token sequence](../result/api-business-connect-token-sequence-en.png)
-
-
-          ## 디바이스 상태 조회
-          디바이스의 상태를 조회하기 위해 다음과 같이 Device API를 사용합니다.
-
-
-           - 사용 API
-              - [`GET /devices`](/#tag/Token-API/operation/createAPIToken)
-              - [`GET /devices/{deviceId}`](/#tag/Device-API/operation/getStatusOfDevice)
-
-           - 시퀀스
-              1. 여러분의 서비스는 디바이스 목록 조회 API (GET/bc/devices)를 이용하여, LG전자 플랫폼에 등록된 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 목록을 한 번 가져온 후에는 매번 수행할 필요는 없습니다.
-              2. 디바이스 목록에서 상태를 조회할 디바이스의 deviceId 값을 확인하고, 이 값을 이용하여 디바이스 상태 조회 API (GET /bc/devices/{deviceId})를 호출합니다.
-
-
-           ![token sequence](../result/api-business-connect-token-sequence-en.png)
-
-
-          ## 디바이스 제어
-          디바이스를 제어하기 위해 다음과 같이 Device API를 사용합니다.
-
-
-            - 사용 API
-              - [`GET /devices`](/#tag/Device-API/operation/getDevices)
-              - [`GET /devices/profile/{deviceId}`](/#tag/Device-API/operation/getProfileOfDevice)
-              - [`POST /devices/{deviceId}`](/#tag/Device-API/operation/controlDevice)
-
-            - 시퀀스
-              1. 여러분의 서비스는 디바이스 목록 조회 API (GET /bc/devices)를 이용하여, LG플랫폼에 사용자의 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 목록을 한 번 가져온 후에는 매번 수행할 필요는 없습니다.
-              2. 디바이스 목록에서 제어 대상 디바이스의 deviceId 값을 확인하고, 이 값을 이용하여 디바이스 프로파일 조회 API (GET/bc/devices/profile/{device-id})를 호출합니다.
-              3. API 호출 응답으로 받은 디바이스 프로파일을 바탕으로 해당 디바이스에 대한 제어 명령을 생성합니다. 제어 명령은 디바이스 프로파일에서 제어를 원하는 속성을 찾아 name 과 value 쌍으로 표현합니다.
-              4. deviceId와 제어 명령을 이용하여, 디바이스 제어 API (POST /bc/devices/{device-id})를 호출합니다.
-              5. API 응답으로 디바이스 제어 결과를 반환 받습니다.
-
-
-             ![token sequence](../result/api-business-connect-token-sequence-en.png)
-
-
-          ## DR 서비스에 사용자 등록
-          B2B 파트너는 사전에 LG전자의 API 관리자와 협의한 이후 DR API를 사용하여 DR 서비스를 위한 사용자를 등록할 수 있습니다. LG전자 사용자와 디바이스는 다음의 순서에 따라 DR 서비스에 등록됩니다.
-
-
-            - 사용 API
-              - [`POST /dr/users`](/#tag/Token-API/operation/createAPIToken)
-
-            - 시퀀스
-              1. LG전자 사용자는 LG ThinQ 서비스에 가입되어 있으며 파트너의 DR 서비스에 가입할 LG 가전제품을 등록한 상태여야 합니다.
-              2. LG전자 사용자는 B2B 파트너의 DR 서비스에 대한 가입을 시도합니다.
-              3. 파트너 서비스는 LMP(LGE Members Platform)의 OAuth 2.0 연동 절차에 따라 LG전자의 로그인 화면을 DR 서비스에서 제공하고 OAuth 연동 정보를 획득합니다.
-              4. LG전자의 DR 서비스는 파트너 서비스와 사전에 정의한 연동 인터페이스에 따라 파트너 서비스 측 OAuth 연동 정보를 획득한 후, 파트너 서비스의 사용자 정보 API를 조회한 결과를 저장합니다. 
-              5. LG전자 사용자가 LG ThinQ 모바일 앱에서 DR 서비스에 등록할 홈과 기기를 지정하면 LG전자의 DR 서비스가 해당 기기를 DR 대상 기기로 등록합니다.
-
-
-             ![token sequence](../result/api-business-connect-token-sequence-en.png)
-
-
-          ## DR Event 등록 및 모니터링 데이터 다운로드
-          DR Event 를 등록하고 DR 이벤트 전후의 디바이스의 모니터링 데이터를 다운로드 하는 과정을 설명합니다.
-
-
-            - 사용 API
-              - [`POST /events`](/#tag/Token-API/operation/createAPIToken)
-              - [`POST /dr/events/{eventId}/targets`](/#tag/Token-API/operation/createAPIToken)
-              - [`POST /dr/events/{eventId}/targets/{targetId}`](/#tag/Token-API/operation/createAPIToken)
-              - [`POST /dr/events/{eventId}/targets/batch`](/#tag/Token-API/operation/createAPIToken)
-              - [`POST /dr/data-zip/files`](/#tag/Token-API/operation/createAPIToken)
-              - [`POST /dr/data-zip/files/{filename}`](/#tag/Token-API/operation/createAPIToken)
-
-            - 시퀀스
-              1. LG DR 서비스 서버에 DR Request를 등록하기 위해 DR Event 등록 API (POST /bc/events)를 호출합니다.
-              2. DR Event 가 정상적으로 등록되면, DR Event ID (eventId)를 반환합니다.
-              3. 만약 DR Event 생성 후에 해당 DR Event에 참여 필요한 기기 목록 변경이 필요한 경우 DR Event Target 변경 API를 호출합니다.
-              4. DR Event가 종료된 후에 해당 Event에 참여 요청한 기기들의 Event 참여 여부를 확인하고 싶은 경우 기기 상태 정보 조회 API를 호출합니다. 
-
-
-             ![token sequence](../result/api-business-connect-token-sequence-en.png)
-            
+        description: "ThinQ Business API를 사용하여 서비스를 개발하는 방법을 API 호출 시퀀스을 통해 설명합니다.\n\n## API Token 발급\nAPI Token은 모든 ThinQ Business API 호출의 HTTP 요청 헤더에 포함되어야 합니다. 이 API Token은 LG Open API Developer에서 사전에 발급 받은 API Key와 API Secret 쌍으로 발급될 수 있으며 24시간 동안 유효하기 때문에 만료되기 전에 API Token 발급 API를 사용하여 API Token을 재발급해야 합니다.\n\n\n - 사용 API\n    - [`POST /token`](#tag/auth/operation/createAPIToken)\n\n - 시퀀스\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"447px\" preserveAspectRatio=\"none\" style=\"width:606px;height:447px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 606 447\" width=\"606px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"350\" y=\"208.7622\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"350\" y=\"306.439\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"281\" x=\"153.5\" y=\"164.9414\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"281\" x=\"153.5\" y=\"262.6182\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"46\" x2=\"46\" y1=\"84.2295\" y2=\"363.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"219.5\" x2=\"219.5\" y1=\"84.2295\" y2=\"363.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"354.5\" x2=\"354.5\" y1=\"84.2295\" y2=\"363.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"517.5\" x2=\"517.5\" y1=\"84.2295\" y2=\"363.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"5\" y=\"81.1533\">B2B Partner</text><ellipse cx=\"46.5\" cy=\"13.5\" fill=\"#E2E2F0\" rx=\"8\" ry=\"8\" style=\"stroke:#181818;stroke-width:0.5;\"/><path d=\"M46.5,21.5 L46.5,48.5 M33.5,29.5 L59.5,29.5 M46.5,48.5 L33.5,63.5 M46.5,48.5 L59.5,63.5 \" fill=\"none\" style=\"stroke:#181818;stroke-width:0.5;\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"5\" y=\"378.4482\">B2B Partner</text><ellipse cx=\"46.5\" cy=\"390.0244\" fill=\"#E2E2F0\" rx=\"8\" ry=\"8\" style=\"stroke:#181818;stroke-width:0.5;\"/><path d=\"M46.5,398.0244 L46.5,425.0244 M33.5,406.0244 L59.5,406.0244 M46.5,425.0244 L33.5,440.0244 M46.5,425.0244 L59.5,440.0244 \" fill=\"none\" style=\"stroke:#181818;stroke-width:0.5;\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"163.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"170.5\" y=\"73.1533\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"163.5\" y=\"362.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"170.5\" y=\"385.4482\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"285.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"292.5\" y=\"73.1533\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"285.5\" y=\"362.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"292.5\" y=\"385.4482\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"166\" x=\"434.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"152\" x=\"441.5\" y=\"73.1533\">LG Open API Developer</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"166\" x=\"434.5\" y=\"362.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"152\" x=\"441.5\" y=\"385.4482\">LG Open API Developer</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"350\" y=\"208.7622\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"350\" y=\"306.439\"/><polygon fill=\"#181818\" points=\"57.5,114.0854,47.5,118.0854,57.5,122.0854,53.5,118.0854\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"51.5\" x2=\"516.5\" y1=\"118.0854\" y2=\"118.0854\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"149\" x=\"63.5\" y=\"113.229\">API Key, API Secret &#51228;&#44277;</text><polygon fill=\"#181818\" points=\"207.5,145.9414,217.5,149.9414,207.5,153.9414,211.5,149.9414\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"46.5\" x2=\"213.5\" y1=\"149.9414\" y2=\"149.9414\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"149\" x=\"53.5\" y=\"145.085\">API Key, API Secret &#49444;&#51221;</text><path d=\"M153.5,164.9414 L230.5,164.9414 L230.5,174.7974 L220.5,184.7974 L153.5,184.7974 L153.5,164.9414 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"281\" x=\"153.5\" y=\"164.9414\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"28\" x=\"168.5\" y=\"180.9409\">loop</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"86\" x=\"245.5\" y=\"179.6333\">[24&#49884;&#44036; &#45236; &#48152;&#48373;]</text><polygon fill=\"#181818\" points=\"338,204.7622,348,208.7622,338,212.7622,342,208.7622\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"219.5\" x2=\"344\" y1=\"208.7622\" y2=\"208.7622\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"75\" x=\"226.5\" y=\"203.9058\">POST /token</text><polygon fill=\"#181818\" points=\"230.5,236.6182,220.5,240.6182,230.5,244.6182,226.5,240.6182\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"224.5\" x2=\"354\" y1=\"240.6182\" y2=\"240.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"60\" x=\"236.5\" y=\"235.7617\">API Token</text><path d=\"M153.5,262.6182 L214.5,262.6182 L214.5,272.4741 L204.5,282.4741 L153.5,282.4741 L153.5,262.6182 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"281\" x=\"153.5\" y=\"262.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"168.5\" y=\"278.6177\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"103\" x=\"229.5\" y=\"277.3101\">[API Token &#47564;&#47308;&#49884;]</text><polygon fill=\"#181818\" points=\"338,302.439,348,306.439,338,310.439,342,306.439\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"219.5\" x2=\"344\" y1=\"306.439\" y2=\"306.439\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"75\" x=\"226.5\" y=\"301.5825\">POST /token</text><polygon fill=\"#181818\" points=\"230.5,334.2949,220.5,338.2949,230.5,342.2949,226.5,338.2949\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"224.5\" x2=\"354\" y1=\"338.2949\" y2=\"338.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"60\" x=\"236.5\" y=\"333.4385\">API Token</text><!--SRC=[XP2_IyD05CVdt5_npE9Y4OfJ1y6WbcAnaMGJXslwj4UJk-Fk9UWgtUmgE7GeABWMQl-ffd-4bpGW7TJjyNqVFk-7dGYfkU4PZF2UvobTAadNF4FeTozwCJuIEpoWCReWuuH6y9RAAHKI6Kz86V23TW0XDoJH-C0jv1ODSqeIYT1S4lXD5o8qXKYmflGksmVZiP0t4EJMwQs5ix1NiyDa7-jtOQ1HLdqunm9JfPlP8ooi86IiAQ1rMk_JgTahV3ggYmWJWmJRnNopMhCAgC1cfL_OwSTsySeUZCerf4ffk6sVR5_cc-KKokSlA9TlvMfznxp6KWc7IGV2GHJ3CQa9IkQvZud2VR6wo7FMtEoEYEisoX7ZAVqaK7xEolUPcyBWBo_yB_u6]--></g></svg>\n\n## 디바이스 상태 조회\n디바이스의 상태를 조회하기 위해 다음과 같이 Device API를 사용합니다.\n\n\n - 사용 API\n    - [`GET /devices`](#tag/Device-API/operation/getDevices)\n    - [`GET /devices/{deviceId}`](#tag/Device-API/operation/getStatusOfDevice)\n\n - 시퀀스\n    1. 여러분의 서비스는 디바이스 목록 조회 API (GET/devices)를 이용하여, LG전자 플랫폼에 등록된 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 목록을 한 번 가져온 후에는 매번 수행할 필요는 없습니다.\n    2. 디바이스 목록에서 상태를 조회할 디바이스의 deviceId 값을 확인하고, 이 값을 이용하여 디바이스 상태 조회 API (GET /devices/{deviceId})를 호출합니다.\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"258px\" preserveAspectRatio=\"none\" style=\"width:313px;height:258px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 313 258\" width=\"313px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"223\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"223\" y=\"170.7622\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"297.5\" x=\"10\" y=\"56.2295\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"76\" x2=\"76\" y1=\"39.2295\" y2=\"220.6182\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"227.5\" x2=\"227.5\" y1=\"39.2295\" y2=\"220.6182\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"28.1533\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"219.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"242.7715\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"158.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"165.5\" y=\"28.1533\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"158.5\" y=\"219.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"165.5\" y=\"242.7715\">ThinQ Business API</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"223\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"223\" y=\"170.7622\"/><path d=\"M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"297.5\" x=\"10\" y=\"56.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"25\" y=\"72.229\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"86\" y=\"70.9214\">[&#49352; &#47785;&#47197;&#51060; &#54596;&#50836;&#54620; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"211,96.0503,221,100.0503,211,104.0503,215,100.0503\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"217\" y1=\"100.0503\" y2=\"100.0503\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"83\" y=\"95.1938\">GET /devices</text><polygon fill=\"#181818\" points=\"87,127.9063,77,131.9063,87,135.9063,83,131.9063\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"227\" y1=\"131.9063\" y2=\"131.9063\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"127.0498\">&#46356;&#48148;&#51060;&#49828; &#47785;&#47197;</text><polygon fill=\"#181818\" points=\"211,166.7622,221,170.7622,211,174.7622,215,170.7622\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"217\" y1=\"170.7622\" y2=\"170.7622\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"128\" x=\"83\" y=\"165.9058\">GET /device/{deviceId}</text><polygon fill=\"#181818\" points=\"87,198.6182,77,202.6182,87,206.6182,83,202.6182\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"227\" y1=\"202.6182\" y2=\"202.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"197.7617\">&#46356;&#48148;&#51060;&#49828; &#49345;&#53468;</text><!--SRC=[AyxEp2j8B4hCLKX9JKiipIbnoyyhyKlCJLNmSNVr34cjAE42IfTa9cSM9EQLA2W503bvgKKAmQb5PPd9gKeAYSKA1H0nL8KX6PbvWGfEfSMPUQd5nGgE0PvWjKd9N8av9GflcZiKNgzQ-NhXt3TpjoYydThoPjQKjrFdABpQjFVDh0rS2fnGCnLqxO1Qh1JSNKCKz5DIGLOM0sKJaqioon9BKa76SHQbbfGMvIcydZBbzOOfGEFUT2s1cisLcfV2XTia_Me8xPbIouLi8ZO3tpGtlcsU0m00]--></g></svg>\n\n## 디바이스 제어\n디바이스를 제어하기 위해 다음과 같이 Device API를 사용합니다.\n\n\n  - 사용 API\n    - [`GET /devices`](#tag/Device-API/operation/getDevices)\n    - [`GET /devices/profile/{deviceId}`](#tag/Device-API/operation/getProfileOfDevice)\n    - [`POST /devices/{deviceId}`](#tag/Device-API/operation/controlDevice)\n\n  - 시퀀스\n    1. 여러분의 서비스는 디바이스 목록 조회 API (GET /devices)를 이용하여, LG플랫폼에 사용자의 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 목록을 한 번 가져온 후에는 매번 수행할 필요는 없습니다.\n    2. 디바이스 목록에서 제어 대상 디바이스의 deviceId 값을 확인하고, 이 값을 이용하여 디바이스 프로파일 조회 API (GET /devices/profile/{device-id})를 호출합니다.\n    3. API 호출 응답으로 받은 디바이스 프로파일을 바탕으로 해당 디바이스에 대한 제어 명령을 생성합니다. 제어 명령은 디바이스 프로파일에서 제어를 원하는 속성을 찾아 name 과 value 쌍으로 표현합니다.\n    4. deviceId와 제어 명령을 이용하여, 디바이스 제어 API (POST /devices/{device-id})를 호출합니다.\n    5. API 응답으로 디바이스 제어 결과를 반환 받습니다.\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"397px\" preserveAspectRatio=\"none\" style=\"width:351px;height:397px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 351 397\" width=\"351px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"170.4238\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"71\" y=\"170.7622\"/><rect fill=\"#FFFFFF\" height=\"28\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"76\" y=\"242.4741\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"261\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"261\" y=\"170.7622\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"261\" y=\"309.3301\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"335.5\" x=\"10\" y=\"56.2295\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"76\" x2=\"76\" y1=\"39.2295\" y2=\"359.186\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"265.5\" x2=\"265.5\" y1=\"39.2295\" y2=\"359.186\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"28.1533\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"358.186\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"381.3394\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"196.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"203.5\" y=\"28.1533\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"196.5\" y=\"358.186\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"203.5\" y=\"381.3394\">ThinQ Business API</text><rect fill=\"#FFFFFF\" height=\"170.4238\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"71\" y=\"170.7622\"/><rect fill=\"#FFFFFF\" height=\"28\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"76\" y=\"242.4741\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"261\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"261\" y=\"170.7622\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"261\" y=\"309.3301\"/><path d=\"M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"335.5\" x=\"10\" y=\"56.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"25\" y=\"72.229\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"86\" y=\"70.9214\">[&#49352; &#47785;&#47197;&#51060; &#54596;&#50836;&#54620; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"249,96.0503,259,100.0503,249,104.0503,253,100.0503\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"255\" y1=\"100.0503\" y2=\"100.0503\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"83\" y=\"95.1938\">GET /devices</text><polygon fill=\"#181818\" points=\"87,127.9063,77,131.9063,87,135.9063,83,131.9063\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"265\" y1=\"131.9063\" y2=\"131.9063\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"127.0498\">&#46356;&#48148;&#51060;&#49828; &#47785;&#47197;</text><polygon fill=\"#181818\" points=\"249,166.7622,259,170.7622,249,174.7622,253,170.7622\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"81\" x2=\"255\" y1=\"170.7622\" y2=\"170.7622\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"166\" x=\"88\" y=\"165.9058\">GET /device/profile/{deviceId}</text><polygon fill=\"#181818\" points=\"92,198.6182,82,202.6182,92,206.6182,88,202.6182\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"86\" x2=\"265\" y1=\"202.6182\" y2=\"202.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"108\" x=\"98\" y=\"197.7617\">&#46356;&#48148;&#51060;&#49828; &#54532;&#47196;&#54028;&#51068;</text><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"128\" y1=\"234.4741\" y2=\"234.4741\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"128\" x2=\"128\" y1=\"234.4741\" y2=\"247.4741\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"87\" x2=\"128\" y1=\"247.4741\" y2=\"247.4741\"/><polygon fill=\"#181818\" points=\"97,243.4741,87,247.4741,97,251.4741,93,247.4741\" style=\"stroke:#181818;stroke-width:1.0;\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"56\" x=\"93\" y=\"229.6177\">&#47749;&#47161; &#49373;&#49457;</text><polygon fill=\"#181818\" points=\"249,305.3301,259,309.3301,249,313.3301,253,309.3301\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"81\" x2=\"255\" y1=\"309.3301\" y2=\"309.3301\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"137\" x=\"88\" y=\"304.4736\">POST /device/{deviceId}</text><polygon fill=\"#181818\" points=\"87,337.186,77,341.186,87,345.186,83,341.186\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"265\" y1=\"341.186\" y2=\"341.186\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"56\" x=\"93\" y=\"336.3296\">&#47749;&#47161; &#44208;&#44284;</text><!--SRC=[TO_DIiD054RNdQUuT2_PTo4er18GZJGlC2QtEDXEmyoa2EBA229TfflIW0KtkehLZL1VA9cyWrCJDTguc_ipvtnNdZCUK457uEE0XaDrCERgY8uG3djTsyKBHSnOCOy5b2jeEwRWAA2FOi8yR0EL49Iztulk6UCdi1zAnb5As7FipzrJZz2X0drz2_dJOxvCTF8AnIpIyxYOBI1RlUjvIg1LCM5drtpfGA_hWkNZHYdDb7gAJQZ23QubK8M2Gnx7UHeRdBvxgDW4kK_-9rc160_O4AtBihRzA_9D_Zgghceo5N6KBnV5TAgJTTrLFJicoar-_sOkJdJqlCttSQlr9x5ptF-9t1IrbgnqPQiqUrate3y0]--></g></svg>\n\n## 디바이스 푸시 구독\n디바이스의 푸쉬 알림을 구독하기 위하여 Event API를 사용합니다. (현재 LG ThinQ 등록 가전제품에 대해서만 지원합니다.)\n\n  - 사용 API\n    - [`GET /devices`](#tag/Device-API/operation/getDevices)\n    - [`POST /push/{deviceId}`](#tag/Event-API/operation/subscribePushMessages)\n\n  - 시퀀스\n    1. 여러분의 서비스는 디바이스 목록 조회 API (GET /devices)를 이용하여, LG플랫폼에 사용자의 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 목록을 한 번 가져온 후에는 매번 수행할 필요는 없습니다.\n    2. 디바이스 목록에서 푸쉬 알림을 받을 디바이스의 deviceId 값을 확인하고, 이 값를 이용하여 디바이스 알림 구독 API (POST /push/{deviceId})를 호출합니다.\n    3. API 응답으로 구독 성공/실패에 대한 결과를 반환 받습니다. \_\n    4. 디바이스로부터 푸쉬 알림이 발생하였을 때, 등록한 callback URL로 푸쉬 메시지를 전달 받습니다. 사용자에게 전달해야 하는 메시지가 있다면 적절히 처리합니다.\_\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"356px\" preserveAspectRatio=\"none\" style=\"width:381px;height:356px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 381 356\" width=\"381px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"224\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"224\" y=\"170.7622\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"298.5\" x=\"10\" y=\"56.2295\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"365.5\" x=\"10\" y=\"217.6182\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"76\" x2=\"76\" y1=\"39.2295\" y2=\"318.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"228.5\" x2=\"228.5\" y1=\"39.2295\" y2=\"318.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"336.5\" x2=\"336.5\" y1=\"39.2295\" y2=\"318.2949\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"28.1533\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"317.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"340.4482\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"159.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"166.5\" y=\"28.1533\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"159.5\" y=\"317.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"166.5\" y=\"340.4482\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"57\" x=\"308.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"43\" x=\"315.5\" y=\"28.1533\">Device</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"57\" x=\"308.5\" y=\"317.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"43\" x=\"315.5\" y=\"340.4482\">Device</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"224\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"224\" y=\"170.7622\"/><path d=\"M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"298.5\" x=\"10\" y=\"56.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"25\" y=\"72.229\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"86\" y=\"70.9214\">[&#49352; &#47785;&#47197;&#51060; &#54596;&#50836;&#54620; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"212,96.0503,222,100.0503,212,104.0503,216,100.0503\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"218\" y1=\"100.0503\" y2=\"100.0503\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"83\" y=\"95.1938\">GET /devices</text><polygon fill=\"#181818\" points=\"87,127.9063,77,131.9063,87,135.9063,83,131.9063\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"228\" y1=\"131.9063\" y2=\"131.9063\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"127.0498\">&#46356;&#48148;&#51060;&#49828; &#47785;&#47197;</text><polygon fill=\"#181818\" points=\"212,166.7622,222,170.7622,212,174.7622,216,170.7622\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"218\" y1=\"170.7622\" y2=\"170.7622\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"129\" x=\"83\" y=\"165.9058\">POST /push/{deviceId}</text><polygon fill=\"#181818\" points=\"87,198.6182,77,202.6182,87,206.6182,83,202.6182\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"228\" y1=\"202.6182\" y2=\"202.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"93\" y=\"197.7617\">result</text><path d=\"M10,217.6182 L71,217.6182 L71,227.4741 L61,237.4741 L10,237.4741 L10,217.6182 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"365.5\" x=\"10\" y=\"217.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"25\" y=\"233.6177\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"149\" x=\"86\" y=\"232.3101\">[&#54392;&#49884; &#47700;&#49884;&#51648;&#44032; &#48156;&#49373;&#54620; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"240,257.439,230,261.439,240,265.439,236,261.439\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"234\" x2=\"336\" y1=\"261.439\" y2=\"261.439\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"69\" x=\"246\" y=\"256.5825\">&#54392;&#49884; &#47700;&#49884;&#51648;</text><polygon fill=\"#181818\" points=\"87,289.2949,77,293.2949,87,297.2949,83,293.2949\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"81\" x2=\"228\" y1=\"293.2949\" y2=\"293.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"69\" x=\"93\" y=\"288.4385\">&#54392;&#49884; &#47700;&#49884;&#51648;</text><!--SRC=[RP11IyCm68RFpQ_us5rszo0epb6GMLd_G9P-ik2MbIGTWWY3UH0z2Trbj0T1a7agui6BVsX9_uDPMsKRdf9yx_izxqlKDHSnbNGC4LxHPAJF9aBtw1ZXlDlnGxpHnCcQCnvJeQ4Lk8T02NsKKywm1LH1NCzsZU6GYqiuIHGNg1GS1txb7R1Tsod-OQBgIkX8Wvq_W7bVcPVSvfzGBkxjCYqN6Qm_lkso8E0raN1mv8Y7qEs4qAxtbLCfqtnADMxIF8awaG9CcfeYTJZx-Dgm2Og8x962Yxv3nOaQjczhe1_TaMrWmvEet6zLRSldB_kKWLcbxh1litKn0rDaTfvlTVPgsc_E_Wxn1coZDNN-CRYoFm00]--></g></svg>\n\n## DR 서비스 사용자 등록\nB2B 파트너는 사전에 LG전자의 API 관리자와 협의한 이후 DR API를 사용하여 DR 서비스를 위한 사용자를 등록할 수 있습니다. LG전자 사용자와 디바이스는 다음의 순서에 따라 DR 서비스에 등록됩니다.\n\n\n  - 사용 API\n    - [`POST /dr/users`](#tag/DR-API/operation/createDrUser)\n\n  - 시퀀스\n    1. LG전자 사용자는 LG ThinQ 서비스에 가입되어 있으며 파트너의 DR 서비스에 가입할 LG 가전제품을 등록한 상태여야 합니다.\n    2. LG전자 사용자는 B2B 파트너의 DR 서비스에 대한 가입을 시도합니다.\n    3. 파트너 서비스는 LMP(LGE Members Platform)의 OAuth 2.0 연동 절차에 따라 LG전자의 로그인 화면을 DR 서비스에서 제공하고 OAuth 연동 정보를 획득합니다.\n    4. LG전자의 DR 서비스는 파트너 서비스와 사전에 정의한 연동 인터페이스에 따라 파트너 서비스 측 OAuth 연동 정보를 획득한 후, 파트너 서비스의 사용자 정보 API를 조회한 결과를 저장합니다. \n    5. LG전자 사용자가 LG ThinQ 모바일 앱에서 DR 서비스에 등록할 홈과 기기를 지정하면 LG전자의 DR 서비스가 해당 기기를 DR 대상 기기로 등록합니다.\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"698px\" preserveAspectRatio=\"none\" style=\"width:819px;height:698px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 819 698\" width=\"819px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#DDDDDD\" height=\"686.2983\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"223\" x=\"150.5\" y=\"6\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"99\" x=\"212.5\" y=\"20.9995\">Partner Service</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"266\" y=\"436.645\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"337.5\" y=\"372.9331\"/><rect fill=\"#FFFFFF\" height=\"40.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"427\" y=\"560.2129\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"574.5\" y=\"213.6533\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"574.5\" y=\"277.3652\"/><rect fill=\"#FFFFFF\" height=\"141.4238\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"739\" y=\"341.0771\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"37\" x2=\"37\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"190.5\" x2=\"190.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"270.5\" x2=\"270.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"342.5\" x2=\"342.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"431.5\" x2=\"431.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"579.5\" x2=\"579.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"743.5\" x2=\"743.5\" y1=\"84.2295\" y2=\"610.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"59\" x=\"5\" y=\"81.1533\">End-User</text><ellipse cx=\"37.5\" cy=\"13.5\" fill=\"#E2E2F0\" rx=\"8\" ry=\"8\" style=\"stroke:#181818;stroke-width:0.5;\"/><path d=\"M37.5,21.5 L37.5,48.5 M24.5,29.5 L50.5,29.5 M37.5,48.5 L24.5,63.5 M37.5,48.5 L50.5,63.5 \" fill=\"none\" style=\"stroke:#181818;stroke-width:0.5;\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"59\" x=\"5\" y=\"625.2222\">End-User</text><ellipse cx=\"37.5\" cy=\"636.7983\" fill=\"#E2E2F0\" rx=\"8\" ry=\"8\" style=\"stroke:#181818;stroke-width:0.5;\"/><path d=\"M37.5,644.7983 L37.5,671.7983 M24.5,652.7983 L50.5,652.7983 M37.5,671.7983 L24.5,686.7983 M37.5,671.7983 L50.5,686.7983 \" fill=\"none\" style=\"stroke:#181818;stroke-width:0.5;\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"72\" x=\"154.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"58\" x=\"161.5\" y=\"73.1533\">Frontend</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"72\" x=\"154.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"58\" x=\"161.5\" y=\"632.2222\">Frontend</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"69\" x=\"236.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"55\" x=\"243.5\" y=\"73.1533\">Backend</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"69\" x=\"236.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"55\" x=\"243.5\" y=\"632.2222\">Backend</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"54\" x=\"315.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"40\" x=\"322.5\" y=\"73.1533\">OAuth</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"54\" x=\"315.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"40\" x=\"322.5\" y=\"632.2222\">OAuth</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"105\" x=\"379.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"91\" x=\"386.5\" y=\"73.1533\">LG ThinQ App</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"105\" x=\"379.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"91\" x=\"386.5\" y=\"632.2222\">LG ThinQ App</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"170\" x=\"494.5\" y=\"30.7705\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"72\" x=\"543.5\" y=\"53.9238\">LMP OAuth</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"156\" x=\"501.5\" y=\"73.1533\">(LGE Members Platform)</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"170\" x=\"494.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"72\" x=\"543.5\" y=\"632.2222\">LMP OAuth</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"156\" x=\"501.5\" y=\"651.4517\">(LGE Members Platform)</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"674.5\" y=\"30.7705\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"681.5\" y=\"53.9238\">ThinQ Business API</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"81\" x=\"703.5\" y=\"73.1533\">(DR Service)</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"674.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"681.5\" y=\"632.2222\">ThinQ Business API</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"81\" x=\"703.5\" y=\"651.4517\">(DR Service)</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"266\" y=\"436.645\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"337.5\" y=\"372.9331\"/><rect fill=\"#FFFFFF\" height=\"40.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"427\" y=\"560.2129\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"574.5\" y=\"213.6533\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"574.5\" y=\"277.3652\"/><rect fill=\"#FFFFFF\" height=\"141.4238\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"739\" y=\"341.0771\"/><polygon fill=\"#181818\" points=\"420,114.0854,430,118.0854,420,122.0854,424,118.0854\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"37.5\" x2=\"426\" y1=\"118.0854\" y2=\"118.0854\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"238\" x=\"44.5\" y=\"113.229\">&#46356;&#48148;&#51060;&#49828; &#46321;&#47197; : Air Conditioner, ESS, TV</text><polygon fill=\"#181818\" points=\"178.5,145.9414,188.5,149.9414,178.5,153.9414,182.5,149.9414\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"37.5\" x2=\"184.5\" y1=\"149.9414\" y2=\"149.9414\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"104\" x=\"44.5\" y=\"145.085\">DR &#49436;&#48708;&#49828;&#50640; &#44032;&#51077;</text><polygon fill=\"#181818\" points=\"48.5,177.7974,38.5,181.7974,48.5,185.7974,44.5,181.7974\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"42.5\" x2=\"189.5\" y1=\"181.7974\" y2=\"181.7974\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"129\" x=\"54.5\" y=\"176.9409\">LG&#51204;&#51088; &#47196;&#44536;&#51064; &#54168;&#51060;&#51648;</text><polygon fill=\"#181818\" points=\"562.5,209.6533,572.5,213.6533,562.5,217.6533,566.5,213.6533\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"37.5\" x2=\"568.5\" y1=\"213.6533\" y2=\"213.6533\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"116\" x=\"44.5\" y=\"208.7969\">LG&#51204;&#51088; &#44228;&#51221; &#47196;&#44536;&#51064;</text><polygon fill=\"#181818\" points=\"282,241.5093,272,245.5093,282,249.5093,278,245.5093\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"276\" x2=\"578.5\" y1=\"245.5093\" y2=\"245.5093\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"106\" x=\"288\" y=\"240.6528\">authorization code</text><polygon fill=\"#181818\" points=\"562.5,273.3652,572.5,277.3652,562.5,281.3652,566.5,277.3652\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"271\" x2=\"568.5\" y1=\"277.3652\" y2=\"277.3652\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"108\" x=\"278\" y=\"272.5088\">access token &#50836;&#52397;</text><polygon fill=\"#181818\" points=\"282,305.2212,272,309.2212,282,313.2212,278,309.2212\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"276\" x2=\"578.5\" y1=\"309.2212\" y2=\"309.2212\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"78\" x=\"288\" y=\"304.3647\">access token</text><polygon fill=\"#181818\" points=\"727,337.0771,737,341.0771,727,345.0771,731,341.0771\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"271\" x2=\"733\" y1=\"341.0771\" y2=\"341.0771\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"171\" x=\"278\" y=\"336.2207\">&#49324;&#50857;&#51088; &#49373;&#49457; (POST /dr/users)</text><polygon fill=\"#181818\" points=\"358.5,368.9331,348.5,372.9331,358.5,376.9331,354.5,372.9331\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"352.5\" x2=\"738\" y1=\"372.9331\" y2=\"372.9331\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"151\" x=\"364.5\" y=\"368.0767\">access/refresh token &#50836;&#52397;</text><polygon fill=\"#181818\" points=\"727,400.7891,737,404.7891,727,408.7891,731,404.7891\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"342.5\" x2=\"733\" y1=\"404.7891\" y2=\"404.7891\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"121\" x=\"349.5\" y=\"399.9326\">access/refresh token</text><polygon fill=\"#181818\" points=\"287,432.645,277,436.645,287,440.645,283,436.645\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"281\" x2=\"738\" y1=\"436.645\" y2=\"436.645\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"99\" x=\"293\" y=\"431.7886\">&#49324;&#50857;&#51088; &#51221;&#48372; &#50836;&#52397;</text><polygon fill=\"#181818\" points=\"727,464.501,737,468.501,727,472.501,731,468.501\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"271\" x2=\"733\" y1=\"468.501\" y2=\"468.501\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"69\" x=\"278\" y=\"463.6445\">&#49324;&#50857;&#51088; &#51221;&#48372;</text><polygon fill=\"#181818\" points=\"282,478.501,272,482.501,282,486.501,278,482.501\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"276\" x2=\"743\" y1=\"482.501\" y2=\"482.501\"/><polygon fill=\"#181818\" points=\"201.5,492.501,191.5,496.501,201.5,500.501,197.5,496.501\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"195.5\" x2=\"270\" y1=\"496.501\" y2=\"496.501\"/><polygon fill=\"#181818\" points=\"48.5,524.3569,38.5,528.3569,48.5,532.3569,44.5,528.3569\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"42.5\" x2=\"189.5\" y1=\"528.3569\" y2=\"528.3569\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"72\" x=\"54.5\" y=\"523.5005\">LG ThinQ &#50545;</text><polygon fill=\"#181818\" points=\"415,556.2129,425,560.2129,415,564.2129,419,560.2129\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"37.5\" x2=\"421\" y1=\"560.2129\" y2=\"560.2129\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"164\" x=\"44.5\" y=\"555.3564\">DR &#45824;&#49345; &#54856;&#44284; &#46356;&#48148;&#51060;&#49828; &#49440;&#53469;</text><polygon fill=\"#181818\" points=\"732,588.0688,742,592.0688,732,596.0688,736,592.0688\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"437\" x2=\"738\" y1=\"592.0688\" y2=\"592.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"134\" x=\"444\" y=\"587.2124\">DR &#45824;&#49345; &#54856;&#44284; &#46356;&#48148;&#51060;&#49828;</text><!--SRC=[XL91QnD15BxFhtZarDA67Bpr8AIQba9hLnCzUPdiJCZGxEmoEod5KpGhY8WKJ51BKr8GH51eJC4A_gBiv3_uPj8akodeddPclkzxxttVYu-4ZAYY0J3UeEsMtWcbVaG33lkxbRqQFz64-ZfKKAX8LdmQSrK06aCRVqWzF862HvMMN46LgsFXym81_51H2rz4L6eex2YKv98vuZt56lPy5xPD_QCCgex7kw33Sbitvn1t8CW1x8JaSFkxK6iA-HZAKUJWD8e0LZ077ZY9vt8DXuK37jIvYi5hKTq8LR3kYAqWojDckjljM4WUnr3szf3_yCdSW1cBAKAiHr2yxqflGThhfLSzCxWsRxz0-c6KNWxmjYmKF0Wb4rg4wE8cLAhLJQWzMv3dVY4MQvZaFFsTe8BvU0gJguwvU4qMY2B27MqBipF3n5oSGdfvFlbrOmOtC7t_oHR_sbb8usHPw6ISc65_oR2vYsEgkRF0WekpVcmoIAJeNAZ42sfR1pzad32UuyonireR6vRa-zOq7MBKOCvwvkSFehXkAvbx8bakKuvgNdqtPzzifwOxCCa8rhp3QWrAJ9NiHF4wONF7NAgPUYN56uh7pN_KpKEMKhQ9rVB3VZg-Nb5PVRwzNywHoJ8JMIQnsuKr_L5sSrnjJ3vzrp7Tbp3z_6Oo_fDV9fCCfzq1iMlctFeVuIy0]--></g></svg>\n\n## DR 이벤트 생성 및 모니터링 데이터 다운로드\nDR 이벤트를 등록하고 DR 이벤트 전후의 디바이스의 모니터링 데이터를 다운로드 하는 과정을 설명합니다.\n\n\n  - 사용 API\n    - [`POST /dr/events`](#tag/DR-API/operation/createDrEvent)\n    - [`POST /dr/events/{eventId}/targets`](#tag/DR-API/operation/createEventTarget)\n    - [`POST /dr/events/{eventId}/targets/{targetId}`](#tag/DR-API/operation/updateEventTarget)\n    - [`POST /dr/events/{eventId}/targets/batch`](#tag/DR-API/operation/createEventTargetBatch)\n    - [`POST /dr/events/{eventId}/targets/batch`](#tag/DR-API/operation/createEventTargetBatch)\n    - [`POST /dr/data-zip/files`](#tag/DR-API/operation/createDataZipFile)\n    - [`POST /dr/data-zip/files/{filename}`](#tag/DR-API/operation/downloadDataZipFile)\n\n  - 시퀀스\n    1. LG DR 서비스 서버에 DR 이벤트를 등록하기 위해 DR 이벤트 등록 API (POST /dr/events)를 호출합니다.\n    2. DR 이벤트가 정상적으로 등록되면, DR 이벤트 ID (eventId)를 반환합니다.\n    3. 만약 DR 이벤트 생성 후에 해당 DR 이벤트에 참여 필요한 기기 목록 변경이 필요한 경우 DR 이벤트 타겟 변경 API를 호출합니다.\n    4. DR 이벤트가 종료된 후에 DR 이벤트 기간 내 대상 디바이스의 모니터링 데이터를 다운로드 받습니다.\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"760px\" preserveAspectRatio=\"none\" style=\"width:517px;height:760px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 517 760\" width=\"517px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"119.1709\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"209.8477\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"290.6685\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"371.4893\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"519.166\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"582.8779\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"463.5\" y=\"646.5898\"/><rect fill=\"none\" height=\"342.8862\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"435.5\" x=\"10\" y=\"75.459\"/><rect fill=\"none\" height=\"245.3184\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"415.5\" x=\"20\" y=\"166.0269\"/><rect fill=\"none\" height=\"210.9917\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"491.5\" x=\"20\" y=\"475.4541\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"86\" x2=\"86\" y1=\"58.459\" y2=\"425.3452\"/><line style=\"stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;\" x1=\"86\" x2=\"86\" y1=\"425.3452\" y2=\"468.4541\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"86\" x2=\"86\" y1=\"468.4541\" y2=\"703.4458\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"355.5\" x2=\"355.5\" y1=\"58.459\" y2=\"425.3452\"/><line style=\"stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;\" x1=\"355.5\" x2=\"355.5\" y1=\"425.3452\" y2=\"468.4541\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"355.5\" x2=\"355.5\" y1=\"468.4541\" y2=\"703.4458\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"468.5\" x2=\"468.5\" y1=\"58.459\" y2=\"425.3452\"/><line style=\"stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;\" x1=\"468.5\" x2=\"468.5\" y1=\"425.3452\" y2=\"468.4541\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"468.5\" x2=\"468.5\" y1=\"468.4541\" y2=\"703.4458\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"30\" y=\"24.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"37\" y=\"47.3828\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"30\" y=\"702.4458\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"37\" y=\"725.5991\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"286.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"293.5\" y=\"28.1533\">ThinQ Business API</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"81\" x=\"315.5\" y=\"47.3828\">(DR Service)</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"286.5\" y=\"702.4458\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"293.5\" y=\"725.5991\">ThinQ Business API</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"81\" x=\"315.5\" y=\"744.8286\">(DR Service)</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"66\" x=\"435.5\" y=\"24.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"52\" x=\"442.5\" y=\"47.3828\">AWS S3</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"66\" x=\"435.5\" y=\"702.4458\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"52\" x=\"442.5\" y=\"725.5991\">AWS S3</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"119.1709\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"209.8477\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"290.6685\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"371.4893\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"519.166\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"582.8779\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"463.5\" y=\"646.5898\"/><path d=\"M10,75.459 L151,75.459 L151,85.3149 L141,95.3149 L10,95.3149 L10,75.459 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"342.8862\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"435.5\" x=\"10\" y=\"75.459\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"96\" x=\"25\" y=\"91.4585\">DR &#51060;&#48292;&#53944; &#49373;&#49457;</text><polygon fill=\"#181818\" points=\"339,115.1709,349,119.1709,339,123.1709,343,119.1709\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"119.1709\" y2=\"119.1709\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"95\" x=\"93\" y=\"114.3145\">POST /dr/events</text><polygon fill=\"#181818\" points=\"97,147.0269,87,151.0269,97,155.0269,93,151.0269\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"151.0269\" y2=\"151.0269\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"103\" y=\"146.1704\">result</text><path d=\"M20,166.0269 L81,166.0269 L81,175.8828 L71,185.8828 L20,185.8828 L20,166.0269 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"245.3184\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"415.5\" x=\"20\" y=\"166.0269\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"35\" y=\"182.0264\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"200\" x=\"96\" y=\"180.7188\">[&#51060;&#48292;&#53944; &#53440;&#44191;&#51060; &#52628;&#44032;&#46104;&#50612;&#50556; &#54616;&#45716; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"339,205.8477,349,209.8477,339,213.8477,343,209.8477\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"209.8477\" y2=\"209.8477\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"191\" x=\"93\" y=\"204.9912\">POST /dr/events/{eventId}/targets</text><polygon fill=\"#181818\" points=\"97,237.7036,87,241.7036,97,245.7036,93,241.7036\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"241.7036\" y2=\"241.7036\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"103\" y=\"236.8472\">result</text><line style=\"stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"20\" x2=\"435.5\" y1=\"250.7036\" y2=\"250.7036\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"227\" x=\"25\" y=\"263.3955\">[&#53945;&#51221; &#51060;&#48292;&#53944; &#53440;&#44191;&#51060; &#49688;&#51221;&#46104;&#50612;&#50556; &#54616;&#45716; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"339,286.6685,349,290.6685,339,294.6685,343,290.6685\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"290.6685\" y2=\"290.6685\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"246\" x=\"93\" y=\"285.812\">POST /dr/events/{eventId}/targets/{targetId}</text><polygon fill=\"#181818\" points=\"97,318.5244,87,322.5244,97,326.5244,93,322.5244\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"322.5244\" y2=\"322.5244\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"103\" y=\"317.668\">result</text><line style=\"stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"20\" x2=\"435.5\" y1=\"331.5244\" y2=\"331.5244\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"227\" x=\"25\" y=\"344.2163\">[&#51060;&#48292;&#53944; &#53440;&#44191;&#51060; &#51068;&#44292; &#49373;&#49457;&#46104;&#50612;&#50556; &#54616;&#45716; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"339,367.4893,349,371.4893,339,375.4893,343,371.4893\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"371.4893\" y2=\"371.4893\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"227\" x=\"93\" y=\"366.6328\">POST /dr/events/{eventId}/targets/batch</text><polygon fill=\"#181818\" points=\"97,399.3452,87,403.3452,97,407.3452,93,403.3452\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"403.3452\" y2=\"403.3452\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"103\" y=\"398.4888\">result</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" lengthAdjust=\"spacing\" textLength=\"93\" x=\"232.25\" y=\"452.0371\">&lt; DR &#51060;&#48292;&#53944; &#49892;&#54665; &gt;</text><path d=\"M20,475.4541 L227,475.4541 L227,485.3101 L217,495.3101 L20,495.3101 L20,475.4541 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"210.9917\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"491.5\" x=\"20\" y=\"475.4541\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"162\" x=\"35\" y=\"491.4536\">&#47784;&#45768;&#53552;&#47553; &#45936;&#51060;&#53552; &#45796;&#50868;&#47196;&#46300;</text><polygon fill=\"#181818\" points=\"339,515.166,349,519.166,339,523.166,343,519.166\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"519.166\" y2=\"519.166\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"131\" x=\"93\" y=\"514.3096\">POST /dr/data-zip/files</text><polygon fill=\"#181818\" points=\"97,547.022,87,551.022,97,555.022,93,551.022\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"551.022\" y2=\"551.022\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"39\" x=\"103\" y=\"546.1655\">&#54028;&#51068;&#47749;</text><polygon fill=\"#181818\" points=\"339,578.8779,349,582.8779,339,586.8779,343,582.8779\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"582.8779\" y2=\"582.8779\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"191\" x=\"93\" y=\"578.0215\">POST /dr/data-zip/files/{filename}</text><polygon fill=\"#181818\" points=\"97,610.7339,87,614.7339,97,618.7339,93,614.7339\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"614.7339\" y2=\"614.7339\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"112\" x=\"103\" y=\"609.8774\">&#54028;&#51068; &#45796;&#50868;&#47196;&#46300; &#51221;&#48372;</text><polygon fill=\"#181818\" points=\"451.5,642.5898,461.5,646.5898,451.5,650.5898,455.5,646.5898\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"457.5\" y1=\"646.5898\" y2=\"646.5898\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"641.7334\">&#54028;&#51068; &#45796;&#50868;&#47196;&#46300;</text><polygon fill=\"#181818\" points=\"97,674.4458,87,678.4458,97,682.4458,93,678.4458\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"467.5\" y1=\"678.4458\" y2=\"678.4458\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"26\" x=\"103\" y=\"673.5894\">&#54028;&#51068;</text><!--SRC=[jLFBIiD05DtdAowk5B5PT2SYA3ueY5PJSEDcR4ORJASXCorY4HGhQ5j1i2r5B2eKbAvY3Q9GVoWp-GUdQGlM1XyB0yFDVPmpPoOdTCyW5h9H6dIyWx8cMyeGjehI65QM5sC9lCyKsMP6qh0GOJ0Mbmd1DcZOpXb9F0Q8WjMh3GycKWPPX_aiDGYc5ERYiIqolh0n04u4IFqBQ6vJ0oqQj6XKKNRjJDO22H8DbxURVl4Ln4b359uKa4z_MvYQbJoJap0DyJKj0QfkgpY72QF1b8rPrYOoK7cue89CzedGFpdoshSo1_5IyPmZVbaNDLTKE-1NwxnO0Q_zBgwT0FchNTLy46FweSgGlOlxEiArO9DYy8jluguQhkciBbl_e4dDzrvawITveReQ7SyjzB_6VyZRHYoP-auPqPNkKYAH2CnyyKYfwTVEOLQs1XxYhKTUElCB3dyu1dxXo66P02yrnRNBxs_urSrFdj8HGrC7XgNk62OUyfPVBilxuArJvMySQhuRYFpP3aVfXhH1rmJFxWW_ZGRy8OXHmk2wFW00]--></g></svg>\n"
       - name: Base URL
         description: |
-          Business Connect API는 고객의 디바이스가 위치에 따라 Base URL을 구분하고 있습니다.  따라서 고객의 디바이스가 위치하는 지역 또는 B2B 파트너의 비지니스가 진행 중인 지역을 고려하여 API 호출시 Base URL을 선택하여 적용해주십시오.  그리고 아래와 같이 Production 환경과 Simulator Testing 환경을 위한 Base URL이 구분되어 있으니 참고해주시기를 바랍니다.      
+          ThinQ Business API는 고객의 디바이스의 위치에 따라 Base URL을 구분하고 있습니다.  따라서 고객의 디바이스가 위치하는 지역 또는 B2B 파트너의 비지니스가 진행 중인 지역을 고려하여 API 호출시 Base URL을 선택하여 적용해주십시오.  그리고 아래와 같이 Production 환경과 Simulator Testing 환경을 위한 Base URL이 구분되어 있으니 참고해주시기를 바랍니다.      
           ## Production 환경
           발급 받은 Business API Key와 함께 Production 환경의 URL을 접근할 수 있습니다. 
 
             |지역|Base URL|
             |-|-|
-            |South Asia, East Asia and Pacific|https://ap.api.lge.com/bc/v1|
-            |America|https://us.api.lge.com/bc/v1|
-            |Europe, Middle East, Africa|https://eu.api.lge.com/bc/v1|
+            |South Asia, East Asia and Pacific|https://ap.api.lge.com/biz/v1|
+            |America|https://us.api.lge.com/biz/v1|
+            |Europe, Middle East, Africa|https://eu.api.lge.com/biz/v1|
 
           ## Simulator Testing 환경
           발급 받은 Test API Key와 함께 Simulator Testing 환경의 URL을 접근할 수 있습니다.
 
             |지역|Base URL|
             |-|-|
-            |South Asia, East Asia and Pacific|https://ap-test.api.lge.com/bc/v1|
-            |America|https://us-test.api.lge.com/bc/v1|
-            |Europe, Middle East, Africa|https://eu-test.api.lge.com/bc/v1|
+            |South Asia, East Asia and Pacific|https://ap-test.api.lge.com/biz/v1|
+            |America|https://us-test.api.lge.com/biz/v1|
+            |Europe, Middle East, Africa|https://eu-test.api.lge.com/biz/v1|
 
            
       - name: Codes
         x-displayName: 코드 정의
         description: |
-          # 국가 코드
-          Lorem ipsum dolor sit amet, consectetur adipiscing eit. Integer dui ligula, sodales vel elit a, dignissim congue felis. Duis tempus vulputate erat.  Vestibulum quis feugiat mi. Fusce ut auctor odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed id nulla orci.  Curabitur luctus tincidunt nibh id pretium. Fusce tempus sem eu arcu viverra tincidunt. Nullam dignissim bibendum lacinia.  Cras vestibulum augue vitae placerat finibus. Duis tristique magna elit, ac placerat lorem viverra in. In non felis non ante porttitor pharetra non ut nisi.  Suspendisse at nisi tincidunt massa suscipit imperdiet eu et felis. Aliquam sodales enim ut congue mollis. Duis tristique nulla.
+          ThinQ Business API를 활용할 때 참고할 수 있는 코드 유형에 대하여 설명합니다.  
+          ## 국가 코드
+          ThinQ Business API 호출에서 사용되는 국가 코드는 `ISO-3166 alpha-2` 규격을 지원하며 LG ThinQ 서비스가 지원하는 국가에 대하여 사용할 수 있습니다.  지원하는 국가 코드는 아래의 표와 같습니다.
 
-          # HTTP 상태 코드
-          Lorem ipsum dolor sit amet, consectetur adipiscing eit. Integer dui ligula, sodales vel elit a, dignissim congue felis. Duis tempus vulputate erat.  Vestibulum quis feugiat mi. Fusce ut auctor odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed id nulla orci.  Curabitur luctus tincidunt nibh id pretium. Fusce tempus sem eu arcu viverra tincidunt. Nullam dignissim bibendum lacinia.  Cras vestibulum augue vitae placerat finibus. Duis tristique magna elit, ac placerat lorem viverra in. In non felis non ante porttitor pharetra non ut nisi.  Suspendisse at nisi tincidunt massa suscipit imperdiet eu et felis. Aliquam sodales enim ut congue mollis. Duis tristique nulla.
 
-          # 에러 코드
-          Lorem ipsum dolor sit amet, consectetur adipiscing eit. Integer dui ligula, sodales vel elit a, dignissim congue felis. Duis tempus vulputate erat.  Vestibulum quis feugiat mi. Fusce ut auctor odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed id nulla orci.  Curabitur luctus tincidunt nibh id pretium. Fusce tempus sem eu arcu viverra tincidunt. Nullam dignissim bibendum lacinia.  Cras vestibulum augue vitae placerat finibus. Duis tristique magna elit, ac placerat lorem viverra in. In non felis non ante porttitor pharetra non ut nisi.  Suspendisse at nisi tincidunt massa suscipit imperdiet eu et felis. Aliquam sodales enim ut congue mollis. Duis tristique nulla.
+            | Code | Name          | Code | Name         | Code | Name          | Code | Name          | Code | Name           | Code | Name         | Code | Name         | Code | Name         |
+            |-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|
+            | KR        | 대한민국         | GH        | 가나             | GA        | 가봉             | GY        | 가이아나         | GM        | 감비아           | GT        | 과테말라         | GD        | 그레나다         | GR        | 그리스           |
+            | GN        | 기니             | NG        | 나이지리아       | ZA        | 남아프리카 공화국| NL        | 네덜란드         | NO        | 노르웨이         | NZ        | 뉴질랜드         | NE        | 니제르           | NI        | 니카라과         |
+            | TW        | 대만             | DK        | 덴마크           | DM        | 도미니카         | DO        | 도미니카 공화국  | DE        | 독일             | LR        | 라이베리아       | LV        | 라트비아         | RU        | 러시아           |
+            | LB        | 레바논           | RO        | 루마니아         | LU        | 룩셈부르크       | RW        | 르완다           | LY        | 리비아           | LT        | 리투아니아       | MK        | 마케도니아       | MY        | 말레이시아       |
+            | ML        | 말리             | MX        | 멕시코           | MA        | 모로코           | MU        | 모리셔스         | ME        | 몬테네그로       | MD        | 몰도바           | MT        | 몰타             | US        | 미국             |
+            | MM        | 미얀마           | BH        | 바레인           | BB        | 바베이도스       | BS        | 바하마           | BD        | 방글라데시       | BJ        | 베냉             | VE        | 베네수엘라       | VN        | 베트남           |
+            | BE        | 벨기에           | BY        | 벨라루스         | BZ        | 벨리즈           | BA        | 보스니아         | BO        | 볼리비아         | BF        | 부르키나 파소    | BG        | 불가리아         | BR        | 브라질           |
+            | SA        | 사우디아라비아   | ST        | 상투메 프린시페  | SN        | 세네갈           | RS        | 세르비아         | LC        | 세인트루시아     | VC        | 세인트빈센트 그레나딘 | KN        | 세인트키츠 네비스 | SO        | 소말리아         |
+            | SD        | 수단             | SR        | 수리남           | LK        | 스리랑카         | SE        | 스웨덴           | CH        | 스위스           | ES        | 스페인           | SK        | 슬로바키아       | SI        | 슬로베니아       |
+            | SY        | 시리아           | SL        | 시에라리온       | SG        | 싱가포르         | AE        | 아랍에미리트     | AM        | 아르메니아       | AR        | 아르헨티나       | IS        | 아이슬란드       | HT        | 아이티           |
+            | IE        | 아일랜드         | AZ        | 아제르바이잔     | AL        | 알바니아         | DZ        | 알제리           | AO        | 앙골라           | AG        | 앤티가 바부다    | EE        | 에스토니아       | EC        | 에콰도르         |
+            | SV        | 엘살바도르       | GB        | 영국             | YE        | 예멘             | OM        | 오만             | AT        | 오스트리아       | HN        | 온두라스         | JO        | 요르단           | UG        | 우간다           |
+            | UY        | 우루과이         | UZ        | 우즈베키스탄     | UA        | 우크라이나       | ET        | 이디오피아       | IQ        | 이라크           | IR        | 이란             | IL        | 이스라엘         | EG        | 이집트           |
+            | IT        | 이탈리아         | IN        | 인도             | ID        | 인도네시아       | JP        | 일본             | JM        | 자메이카         | ZM        | 잠비아           | GQ        | 적도 기니        | GE        | 조지아           |
+            | CN        | 중국             | CF        | 중앙아프리카공화국 | DJ        | 지부티           | TD        | 차드             | CZ        | 체코             | CL        | 칠레             | CM        | 카메룬           | CV        | 카보베르데       |
+            | KZ        | 카자흐스탄       | QA        | 카타르           | KH        | 캄보디아         | CA        | 캐나다           | KE        | 케냐             | XK        | 코소보           | CR        | 코스타리카       | CI        | 코트디부아르     |
+            | CO        | 콜롬비아         | CG        | 콩고             | CD        | 콩고 민주공화국  | CU        | 쿠바             | KW        | 쿠웨이트         | HR        | 크로아티아       | KG        | 키르기스스탄     | CY        | 키프로스         |
+            | TZ        | 탄자니아         | TH        | 태국             | TR        | 터키             | TG        | 토고             | TN        | 튀니지           | TT        | 트리니다드 섬    | PA        | 파나마           | PY        | 파라과이         |
+            | PK        | 파키스탄         | PS        | 팔레스타인       | PE        | 페루             | PT        | 포르투갈         | PL        | 폴란드           | PR        | 푸에르토리코     | FR        | 프랑스           | FI        | 핀란드           |
+            | PH        | 필리핀           | HU        | 헝가리           | AU        | 호주             | HK        | 홍콩             | NP        | 네팔             |           |                  |           |                  |           |                  |
+
+
+          ## 응답 코드
+          각 API를 호출하면 HTTP 상태 코드와 함께 응답의 유형을 부가적으로 설명하는 응답 코드가 함께 반환될 수 있습니다. 이 응답 코드는 HTTP 응답 헤더와 응답 바디의 메시지 내에 포함되어 있으며 API의 종류별로 그 정의는 다를 수 있습니다.  API의 종류별로 지원하는 응답 코드는 아래와 같습니다.
+          ### Device API, Event API, User API
+
+            <table>
+              <thead>
+                <tr>
+                  <th width="120">Status Code</th>
+                  <th width="250">Header : <code>X-Response-Code</code></th>
+                  <th>Body</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>200</code></td>
+                  <td><code>6200</code> : OK</td>
+                  <td>정상 응답 스키마의 데이터</td>
+                </tr>
+                <tr>
+                  <td><code>206</code></td>
+                  <td><code>6201</code> : Partial Success</td>
+                  <td>정상 응답 스키마의 데이터</td>
+                </tr>
+                <tr>
+                  <td><code>400</code></td>
+                  <td><code>6400</code> : Bad Request</td>
+                  <td>
+                      에러 응답 스키마의 <code>code</code> 필드 :<br>
+                      <code>1000</code> : 잘못된 요청 <br>
+                      <code>1101</code> : 필수 입력 항목이 누락됨 <br>
+                      <code>1102</code> : 허용하지 않는 파라미터들이 입력됨 <br>
+                      <code>1104</code> : 메시지 ID의 문법이 잘못됨 <br>
+                      <code>1216</code> : 헤더에 포함된 값이 올바르지 않음 <br>
+                      <code>1217</code> : 해당 디바이스가 삭제되었음 <br> 
+                      <code>1218</code> : 유효하지 않은 토큰임 <br> 
+                      <code>2202</code> : 지원하는 제품군이 아님 <br> 
+                      <code>2205</code> : 디바이스 상태 정보가 정상적으로 전송되지 않았거나, 전송된 정보가 정상적으로 파싱되지 않았을 경우 <br> 
+                      <code>2207</code> : 유효하지 않은 제어 명령일 때 (제어 명령에 정의되지 않은 resource, property 가 포함된 경우) <br> 
+                      <code>2208</code> : 디바이스 제어 실패 <br> 
+                      <code>2209</code> : 디바이스 응답 지연 <br> 
+                      <code>2210</code> : 상태조회 재요청 필요 <br>
+                      <code>2214</code> : 요청 실패 <br>
+                      <code>2301</code> : 지원하는 제어 명령이 없는 디바이스의 경우 (remoteControl이 false일 때)  <br>
+                      <code>2302</code> : 해당 STATE에서는 해당 제어 명령을 지원하지 않음 (ex: "Command not supported in HEAT (2302)")<br>
+                      <code>2303</code> : 디바이스가 에러 상태여서 제어가 불가능한 경우 <br>
+                      <code>2304</code> : 디바이스 전원이 꺼져있어서 제어가 불가능한 경우 <br>
+                      <code>2305</code> : 해당 MODE에서는 해당 제어 명령을 지원하지 않음 (ex: "Command not supported in STANDBY (2305)") <br>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>401</code></td>
+                  <td><code>6401</code> : Unauthorized</td>
+                  <td>
+                      에러 응답 스키마의 <code>code</code> 필드 :<br>
+                      <code>1307</code> : 지원하지 않는 국가 <br>
+                      <code>1308</code> : 디바이스 제어권 없음 (ThinQ App에서 사용중) <br>
+                      <code>1311</code> : 요청 포맷이 잘못된 경우 <br>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>403</code></td>
+                  <td><code>6403</code> : Forbidden</td>
+                  <td>
+                      N/A
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>404</code></td>
+                  <td><code>6404</code> : Not Found</td>
+                  <td>
+                      에러 응답 스키마의 <code>code</code> 필드 :<br>
+                      <code>1202</code> : 등록된 사용자가 없음 <br>
+                      <code>1204</code> : 구독된 이벤트가 없음 <br>
+                      <code>1205</code> : 등록된 디바이스가 없음 <br>
+                      <code>1206</code> : 구독된 푸쉬가 없음 <br>
+                      <code>1207</code> : 등록된 푸쉬가 있음 (동일한 푸쉬가 이미 존재함) <br>
+                      <code>1210</code> : 서비스가 허용하는 디바이스 아님 <br> 
+                      <code>1211</code> : 사용자가 등록한 디바이스가 아님 <br> 
+                      <code>1212</code> : 사용자가 가지고 있지 않은 디바이스 <br> 
+                      <code>1213</code> : 등록된 디바이스가 없음 <br> 
+                      <code>1214</code> : 구독을 허용하지 않는 디바이스 <br> 
+                      <code>1224</code> : 허용되지 않은 디바이스 ID
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>406</code></td>
+                  <td><code>6406</code> : Not Supported Resource</td>
+                  <td>
+                      에러 응답 스키마의 <code>code</code> 필드 :<br>
+                      <code>1219</code> : 지원하지 않는 제품 모델임 <br>
+                      <code>1220</code> : 해당 제품 모델에서는 지원하지 않는 기능임 <br>
+                      <code>1221</code> : 지원하지 않는 디바이스 타입임
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>416</code></td>
+                  <td><code>6416</code> : Invalid Device Status</td>
+                  <td>
+                      에러 응답 스키마의 <code>code</code> 필드 :<br>
+                      <code>1222</code> : 디바이스가 네트워크에 연결되어 있지 않음 <br>
+                      <code>1223</code> : 전달된 디바이스 상태 값이 유효하지 않음
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>429</code></td>
+                  <td><code>6429</code> : Too Many Requests</td>
+                  <td>
+                      N/A
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>500</code></td>
+                  <td><code>6516</code> : Internal Server Error</td>
+                  <td>
+                      에러 응답 스키마의 <code>code</code> 필드 :<br>
+                      <code>0000</code> : 정의되지 않은 에러 <br>
+                      <code>2000</code> : 내부 서버 에러
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          ### DR API
+          <table>
+            <thead>
+              <tr>
+                <th width="120">Status Code</th>
+                <th width="400">Header : <code>X-Response-Code</code></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>200</code></td>
+                <td><code>2000</code> : OK</td>
+              </tr>
+              <tr>
+                <td><code>400</code></td>
+                <td>
+                    <code>4000</code> : Bad Request <br>
+                    <code>4101</code> : Missing or Invalid Parameter(s) in Request Header <br>
+                    <code>4102</code> : Missing or Invalid Parameter(s) in Request Body <br>
+                    <code>4103</code> : Missing or Invalid Token
+                </td>
+              </tr>
+              <tr>
+                <td><code>401</code></td>
+                <td>
+                    <code>6401</code> : Unauthorized
+                </td>
+              </tr>
+              <tr>
+                <td><code>403</code></td>
+                <td>
+                    <code>4201</code> : Forbidden <br>
+                    <code>6403</code> : Forbidden
+                </td>
+              </tr>
+              <tr>
+                <td><code>404</code></td>
+                <td>
+                    <code>4301</code> : Resource Not Found: User <br>
+                    <code>4302</code> : Resource Not Found: Event <br>
+                    <code>4303</code> : Resource Not Found: Event Target <br>
+                    <code>4304</code> : Resource Not Found: Device <br>
+                    <code>4305</code> : Resource Not Found: Zip File task <br>
+                    <code>4306</code> : Resource Not Found: Zip File <br>
+                    <code>4307</code> : Resource Not Found: Partner <br>
+                    <code>4308</code> : Resource Not Found: Group <br>
+                    <code>4313</code> : Resource Not Found: Partner User <br>
+                    <code>6404</code> : Not Found
+                </td>
+              </tr>
+              <tr>
+                <td><code>409</code></td>
+                <td>
+                    <code>4309</code> : Resource Already Exists: User <br>
+                    <code>4310</code> : Resource Already Exists: Event <br>
+                    <code>4311</code> : Resource Already Exists: Event Target <br>
+                    <code>4312</code> : Resource Already Exists: Partner User <br>
+                    <code>4314</code> : Resource Already Exists: Group <br>
+                    <code>4315</code> : Resource Already Exists: User
+                </td>
+              </tr>          
+              <tr>
+                <td><code>429</code></td>
+                <td><code>6429</code> : Too Many Requests</td>
+              </tr>
+              <tr>
+                <td><code>500</code></td>
+                <td>
+                    <code>5000</code> : Internal Server Error
+                </td>
+              </tr>
+            </tbody>
+          </table>
       - name: auth
         x-displayName: API 인증
         description: |
-          LG Open API Developer가 B2B 파트너에게 제공한 API Key와 API Secret 쌍을 이용하여 API Token을 주기적으로 발급하기 위해 Token API가 사용됩니다.       이 API로 발급된 API Token은 모든 Business Connect API 호출 시 HTTP 요청 헤더에 포함됩니다.
+          LG Open API Developer가 B2B 파트너에게 제공한 `API Key`와 `API Secret` 쌍을 이용하여 `API Token`을 주기적으로 발급하기 위해 아래의 API가 사용됩니다.       이 API로 발급된 `API Token`은 모든 ThinQ Business API 호출 시 HTTP 요청 헤더에 포함되어야 합니다.
       - name: Device API
-        description: "등록된 디바이스의 목록을 조회하고, 특정 디바이스의 프로파일 및 상태를 조회하거나 디바이스를 제어하기 위해 Device API가 사용됩니다.       기업이 구매한 여러가지 종류의 LG전자 제품에 대하여 Device API를 사용하는 경우, 디바이스가 일괄 등록되어 있는 LG전자 계정이나 설치 현장의 정보를 LG Open API Developer에서 사전에 지정해둘 수 있습니다.       또한 가전제품에 한정하여 Device API를 호출하는 시점에 특정 LG전자 사용자를 지정하여 해당 사용자의 디바이스에 대한 접근을 수행할 수 있습니다.       Device API를 호출하기 위해서는 B2B 파트너 또는 그의 고객이 디바이스를 등록하는 과정이 선행되어야 합니다.       구매한 디바이스는 아래와 같이 디바이스 종류에 따라 해당 LG전자의 플랫폼의 서비스에 가입하여 등록해야 합니다.\n\n |디바이스 종류|LG전자 플랫폼|\n |-|-|\n |가전제품|LG ThinQ (mobile app)|\n |디스플레이|LG Business Cloud\_ (https://lgbusinesscloud.com)|\n |공조설비|LG BECON cloud\_(https://beconcloud.lge.com)|\n"
+        description: "등록된 디바이스의 목록을 조회하고, 특정 디바이스의 프로파일 및 상태를 조회하거나 디바이스를 제어하기 위해 Device API가 사용됩니다.       기업이 구매한 여러가지 종류의 LG전자 제품에 대하여 Device API를 사용하는 경우, 디바이스가 일괄 등록되어 있는 LG전자 계정이나 설치 현장의 정보를 LG Open API Developer에서 사전에 지정해둘 수 있습니다.       또한 가전제품에 한정하여 Device API를 호출하는 시점에 특정 LG전자 사용자를 지정하여 해당 사용자의 디바이스에 대한 접근을 수행할 수 있습니다.       Device API를 호출하기 위해서는 B2B 파트너 또는 그의 고객이 디바이스를 등록하는 과정이 선행되어야 합니다.       구매한 디바이스는 아래와 같이 디바이스 종류에 따라 해당 LG전자의 플랫폼의 서비스에 가입하여 등록해야 합니다.\n\n |디바이스 종류|LG전자 플랫폼|\n |-|-|\n |가전제품 및 기타 IoT 기기|LG ThinQ (mobile app)|\n |사이니지|LG Business Cloud\_ (https://lgbusinesscloud.com)|\n |상업용 HVAC|LG BECON Cloud\_(https://beconcloud.lge.com)|\n"
       - name: Event API
         description: |
           특정 디바이스의 상태 변화를 파트너의 서비스가 수신하거나 수신을 해제하기 위하여 Event API가 사용됩니다. 이 API는 현재 가전제품에 한정하여 제공되며 향후 다른 제품의 지원이 확대될 예정입니다. 파트너 서비스가 디바이스의 상태를 수신하기 위해서는 사전에 LG Open API Developer에서 파트너 서비스의 Callback 호출 정보를 등록해야 합니다.
       - name: User API
         description: |
-          파트너 서비스에 등록한 LG전자 사용자의 정보를 관리하기 위하여 User API가 사용됩니다. 이 API는 현재 가전제품에 한정하여 제공됩니다.
+          파트너 서비스에 등록한 LG전자 사용자의 정보를 관리하기 위하여 User API가 사용됩니다. <b>이 API는 현재 LG ThinQ 등록 제품에 한정하여 제공됩니다.</b>
       - name: DR API
         description: |
-          B2B파트너가 전력 수요반응(DR: Demand Response) 사업자로서 DR 서비스 가입자인 LG전자 사용자의 디바이스를 제어하기 위하여 DR API가 사용됩니다. B2B 파트너는 이 API를 활용하여 DR 가입자인 LG전자 사용자를 관리하고, 현재 전력량의 수요에 반응하여 특정 전력 피크 시간 동안 LG전자 사용자 측의 전력 사용을 줄이거나 변경시킬 수 있는 DR Event 를 등록하고, DR 대상 디바이스의 DR Event 참여 여부를 조회할 수 있습니다. DR 대상 디바이스는 현재 에어컨, TV ( ESS )에 한정하여 제공되며 향후 다른 제품의 지원이 확대될 예정입니다. 이 API를 활용한 DR 서비스는 다음의 절차에 따라 진행됩니다.
+          B2B파트너가 전력 수요반응(DR: Demand Response) 사업자로서 DR 서비스 가입자인 LG전자 사용자의 디바이스를 제어하기 위하여 DR API가 사용됩니다. B2B 파트너는 이 API를 활용하여 DR 가입자인 LG전자 사용자를 관리하고, 현재 전력량의 수요에 반응하여 특정 전력 피크 시간 동안 LG전자 사용자 측의 전력 사용을 줄이거나 변경시킬 수 있는 DR 이벤트를 등록하고, DR 대상 디바이스의 DR 이벤트 참여 여부를 조회할 수 있습니다. DR 대상 디바이스는 현재 에어컨, TV ( ESS )에 한정하여 제공되며 향후 다른 제품의 지원이 확대될 예정입니다. 이 API를 활용한 DR 서비스는 다음의 절차에 따라 진행됩니다.
+          <디자인된 이미지 들어갈 공간>
     paths:
       /token:
         post:
@@ -187,7 +314,7 @@ contents:
             Business Connect API에 속하는 모든 API를 호출할 때 `API Key`와 `API Token`이 필요합니다. 이 API는 `API Token`을 발급 받기 위해 사용되며 발급된 `API Token`은 **24 시간** 동안 유효하므로 클라이언트는 이 API를 호출하여 새 `API Token`을 획득할 수 있도록 준비되어야 합니다. `API Secret`은 `API Token`을 발급하기 위해서만 사용됩니다.
           operationId: createAPIToken
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - name: X-Api-Secret
               in: header
@@ -195,7 +322,7 @@ contents:
               schema:
                 type: string
               description: |
-                `API Secret`은 B2B파트너가 `API Key`과 한 쌍으로 획득한 비밀 문자열입니다.
+                B2B파트너가 `API Key`와 한 쌍으로 획득한 비밀 문자열인 `API Secret`
               example: 5f3c0222-cb51-4ea8-bae9-60879e8760bb
           responses:
             '200':
@@ -208,6 +335,8 @@ contents:
               description: Bad request
             '401':
               description: Unauthorized
+            '500':
+              description: Internal Server Error
       /devices:
         get:
           tags:
@@ -216,7 +345,7 @@ contents:
           description: LG전자 계정에 등록된 모든 디바이스의 목록을 조회합니다.
           operationId: getDevices
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -231,18 +360,12 @@ contents:
           responses:
             '200':
               description: OK
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/device-list-res'
-            '206':
-              description: Partial Success
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: Partial Success
-                  example: 5000
+                  description: '`6200`: Successful operation'
+                  example: 6200
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -255,60 +378,98 @@ contents:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1000`: Bad Request'
-                  example: 1000
+                  description: '`6400`: Bad Request'
+                  example: 6400
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-400'
+                    $ref: '#/components/schemas/error-res-backend'
             '401':
               description: Unauthorized
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1301`: Unauthorized'
-                  example: 1301
+                  description: '`6401`: Unauthorized'
+                  example: 6401
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
             '403':
               description: Forbidden
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1307`: Forbidden'
-                  example: 1307
+                  description: '`6403`: Forbidden'
+                  example: 6403
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-403'
-            '429':
-              description: Too Many Request
+            '404':
+              description: Not Found Resource
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`6404`: Not Found Resource'
+                  example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
+                    $ref: '#/components/schemas/error-res-backend'
+            '406':
+              description: Not Supported Resource
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6406`: Not Supported Resource'
+                  example: 6406
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '416':
+              description: Invalid Device Status
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6416`: Invalid Device Status'
+                  example: 6416
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '429':
+              description: Too Many Requests
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
             '500':
               description: Internal Server Error
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`2000`: Internal Server Error'
-                  example: 2000
+                  description: '`6500`: Internal Server Error'
+                  example: 6500
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -323,7 +484,7 @@ contents:
           description: 특정 디바이스의 프로파일을 조회합니다.
           operationId: getProfileOfDevice
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -340,56 +501,155 @@ contents:
           responses:
             '200':
               description: OK
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6200`: Successful operation'
+                  example: 6200
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
                     $ref: '#/components/schemas/device-profile-res'
+                  examples:
+                    냉장고:
+                      $ref: '#/components/examples/refrigerator-profile-example'
+                    세탁기:
+                      $ref: '#/components/examples/washer-profile-example'
+                    에어컨:
+                      $ref: '#/components/examples/air_conditioner-profile-example'
+                    공기청정기:
+                      $ref: '#/components/examples/air_purifier-profile-example'
+                    로봇청소기:
+                      $ref: '#/components/examples/robot_cleaner-profile-example'
+                    오븐:
+                      $ref: '#/components/examples/oven-profile-example'
+                    식기세척기:
+                      $ref: '#/components/examples/dish_washer-profile-example'
+                    스타일러:
+                      $ref: '#/components/examples/styler-profile-example'
+                    정수기:
+                      $ref: '#/components/examples/water_purifier-profile-example'
+                    제습기:
+                      $ref: '#/components/examples/dehumidifier-profile-example'
+                    실링팬:
+                      $ref: '#/components/examples/ceiling_fan-profile-example'
+                    와인셀러:
+                      $ref: '#/components/examples/wine_cellar-profile-example'
+                    김치냉장고:
+                      $ref: '#/components/examples/kimchi_refrigerator-profile-example'
+                    홈브루:
+                      $ref: '#/components/examples/home_brew-profile-example'
+                    식물재배기:
+                      $ref: '#/components/examples/plant_cultivator-profile-example'
+                    워시타워(세탁기):
+                      $ref: '#/components/examples/washtower_washer-profile-example'
+                    워시타워(건조기):
+                      $ref: '#/components/examples/washtower_dryer-profile-example'
+                    워시타워:
+                      $ref: '#/components/examples/washtower-profile-example'
+                    쿡탑:
+                      $ref: '#/components/examples/cooktop-profile-example'
+                    후드:
+                      $ref: '#/components/examples/hood-profile-example'
+                    전자레인지:
+                      $ref: '#/components/examples/microwave_oven-profile-example'
+                    시스템보일러:
+                      $ref: '#/components/examples/system_boiler-profile-example'
+                    공기청정팬:
+                      $ref: '#/components/examples/air_purifier_fan-profile-example'
+                    스틱청소기:
+                      $ref: '#/components/examples/stick_cleaner-profile-example'
+                    온수기:
+                      $ref: '#/components/examples/water_heater-profile-example'
+                    워시콤보(메인):
+                      $ref: '#/components/examples/main_washcombo-profile-example'
+                    워시콤보(미니):
+                      $ref: '#/components/examples/mini_washcombo-profile-example'
+                    가습기:
+                      $ref: '#/components/examples/humidifier-profile-example'
+                    BECON Cloud에 등록된 시스템 에어컨의 실외기:
+                      $ref: '#/components/examples/odu-profile-example'
+                    BECON Cloud에 등록된 시스템 에어컨의 실내기:
+                      $ref: '#/components/examples/idu-profile-example'
+                    Business Cloud에 등록된 사이니지:
+                      $ref: '#/components/examples/signage-profile-example'
             '400':
               description: Bad request
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1000`: Bad Request'
-                  example: 1000
+                  description: '`6400`: Bad Request'
+                  example: 6400
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-400'
+                    $ref: '#/components/schemas/error-res-backend'
             '401':
               description: Unauthorized
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1301`: Unauthorized'
-                  example: 1301
+                  description: '`6401`: Unauthorized'
+                  example: 6401
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
             '403':
               description: Forbidden
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1307`: Forbidden'
-                  example: 1307
+                  description: '`6403`: Forbidden'
+                  example: 6403
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '404':
+              description: Not Found Resource
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6404`: Not Found Resource'
+                  example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-403'
+                    $ref: '#/components/schemas/error-res-backend'
             '406':
               description: Not Supported Resource
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1218`: Not Supported Resource'
-                  example: 1218
+                  description: '`6406`: Not Supported Resource'
+                  example: 6406
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '416':
+              description: Invalid Device Status
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6416`: Invalid Device Status'
+                  example: 6416
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -397,27 +657,23 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '429':
-              description: Too Many Request
+              description: Too Many Requests
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
             '500':
               description: Internal Server Error
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`2000`: Internal Server Error'
-                  example: 2000
+                  description: '`6500`: Internal Server Error'
+                  example: 6500
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -432,7 +688,7 @@ contents:
           description: 특정 디바이스의 상태를 조회합니다.
           operationId: getStatusOfDevice
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -449,6 +705,14 @@ contents:
           responses:
             '200':
               description: OK
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6200`: Successful operation'
+                  example: 6200
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -456,52 +720,112 @@ contents:
                   examples:
                     냉장고:
                       $ref: '#/components/examples/refrigerator-object-example'
+                    세탁기:
+                      $ref: '#/components/examples/washer-object-example'
+                    에어컨:
+                      $ref: '#/components/examples/air_conditioner-object-example'
+                    공기청정기:
+                      $ref: '#/components/examples/air_purifier-object-example'
+                    로봇청소기:
+                      $ref: '#/components/examples/robot_cleaner-object-example'
+                    오븐:
+                      $ref: '#/components/examples/oven-object-example'
+                    식기세척기:
+                      $ref: '#/components/examples/dish_washer-object-example'
+                    스타일러:
+                      $ref: '#/components/examples/styler-object-example'
+                    정수기:
+                      $ref: '#/components/examples/water_purifier-object-example'
+                    제습기:
+                      $ref: '#/components/examples/dehumidifier-object-example'
+                    실링팬:
+                      $ref: '#/components/examples/ceiling_fan-object-example'
+                    와인셀러:
+                      $ref: '#/components/examples/wine_cellar-object-example'
+                    김치냉장고:
+                      $ref: '#/components/examples/kimchi_refrigerator-object-example'
+                    홈브루:
+                      $ref: '#/components/examples/home_brew-object-example'
+                    식물재배기:
+                      $ref: '#/components/examples/plant_cultivator-object-example'
+                    워시타워(세탁기):
+                      $ref: '#/components/examples/washtower_washer-object-example'
+                    워시타워(건조기):
+                      $ref: '#/components/examples/washtower_dryer-object-example'
+                    워시타워:
+                      $ref: '#/components/examples/washtower-object-example'
+                    쿡탑:
+                      $ref: '#/components/examples/cooktop-object-example'
+                    후드:
+                      $ref: '#/components/examples/hood-object-example'
+                    전자레인지:
+                      $ref: '#/components/examples/microwave_oven-object-example'
+                    시스템보일러:
+                      $ref: '#/components/examples/system_boiler-object-example'
+                    공기청정팬:
+                      $ref: '#/components/examples/air_purifier_fan-object-example'
+                    스틱청소기:
+                      $ref: '#/components/examples/stick_cleaner-object-example'
+                    온수기:
+                      $ref: '#/components/examples/water_heater-object-example'
+                    워시콤보(메인):
+                      $ref: '#/components/examples/main_washcombo-object-example'
+                    워시콤보(미니):
+                      $ref: '#/components/examples/mini_washcombo-object-example'
+                    가습기:
+                      $ref: '#/components/examples/humidifier-object-example'
+                    BECON Cloud에 등록된 시스템 에어컨의 실외기:
+                      $ref: '#/components/examples/odu-object-example'
+                    BECON Cloud에 등록된 시스템 에어컨의 실내기:
+                      $ref: '#/components/examples/idu-object-example'
+                    Business Cloud에 등록된 사이니지:
+                      $ref: '#/components/examples/signage-object-example'
             '400':
               description: Bad request
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1000`: Bad Request'
-                  example: 1000
+                  description: '`6400`: Bad Request'
+                  example: 6400
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-400'
+                    $ref: '#/components/schemas/error-res-backend'
             '401':
               description: Unauthorized
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1301`: Unauthorized'
-                  example: 1301
+                  description: '`6401`: Unauthorized'
+                  example: 6401
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
             '403':
               description: Forbidden
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1307`: Forbidden'
-                  example: 1307
+                  description: '`6403`: Forbidden'
+                  example: 6403
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-403'
             '404':
               description: Not Found Resource
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1202`: Not Found Resource'
-                  example: 1202
+                  description: '`6404`: Not Found Resource'
+                  example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -509,13 +833,13 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '406':
-              description: Not Supported Resource
+              description: Not Acceptable
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1218`: Not Supported Resource'
-                  example: 1218
+                  description: '`6406`: Not Supported Resource'
+                  example: 6406
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -523,13 +847,13 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '416':
-              description: Not Connected Device
+              description: Invalid Device Status
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1222`: Not Connected Device'
-                  example: 1222
+                  description: '`6416`: Invalid Device Status'
+                  example: 6416
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -537,27 +861,23 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '429':
-              description: Too Many Request
+              description: Too Many Requests
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
             '500':
               description: Internal Server Error
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`2000`: Internal Server Error'
-                  example: 2000
+                  description: '`6500`: Internal Server Error'
+                  example: 6500
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -568,10 +888,10 @@ contents:
           tags:
             - Device API
           summary: 디바이스 제어
-          description: 특정 디바이스의 상태를 제어하거나 세팅을 수행합니다.
+          description: 특정 디바이스의 상태를 제어합니다. 디바이스 프로파일에서 제어 가능한 속성이 없는 제품은 제어를 할 수 없습니다.
           operationId: controlDevice
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -592,11 +912,67 @@ contents:
                   type: object
                   description: 디바이스 유형별 제어 요청 메시지의 스키마는 [**디바이스 프로파일**](http://www.daum.net) 페이지를 참조해주세요.
                 examples:
-                  냉장고 - 절전 모드 설정:
+                  냉장고:
                     $ref: '#/components/examples/refrigerator-command-example'
+                  세탁기:
+                    $ref: '#/components/examples/washer-command-example'
+                  에어컨:
+                    $ref: '#/components/examples/air_conditioner-command-example'
+                  공기청정기:
+                    $ref: '#/components/examples/air_purifier-command-example'
+                  로봇청소기:
+                    $ref: '#/components/examples/robot_cleaner-command-example'
+                  오븐:
+                    $ref: '#/components/examples/oven-command-example'
+                  식기세척기:
+                    $ref: '#/components/examples/dish_washer-command-example'
+                  스타일러:
+                    $ref: '#/components/examples/styler-command-example'
+                  제습기:
+                    $ref: '#/components/examples/dehumidifier-command-example'
+                  실링팬:
+                    $ref: '#/components/examples/ceiling_fan-command-example'
+                  와인셀러:
+                    $ref: '#/components/examples/wine_cellar-command-example'
+                  워시타워(세탁기):
+                    $ref: '#/components/examples/washtower_washer-command-example'
+                  워시타워(건조기):
+                    $ref: '#/components/examples/washtower_dryer-command-example'
+                  워시타워:
+                    $ref: '#/components/examples/washtower-command-example'
+                  쿡탑:
+                    $ref: '#/components/examples/cooktop-command-example'
+                  후드:
+                    $ref: '#/components/examples/hood-command-example'
+                  전자레인지:
+                    $ref: '#/components/examples/microwave_oven-command-example'
+                  시스템보일러:
+                    $ref: '#/components/examples/system_boiler-command-example'
+                  공기청정팬:
+                    $ref: '#/components/examples/air_purifier_fan-command-example'
+                  온수기:
+                    $ref: '#/components/examples/water_heater-command-example'
+                  워시콤보(메인):
+                    $ref: '#/components/examples/main_washcombo-command-example'
+                  워시콤보(미니):
+                    $ref: '#/components/examples/mini_washcombo-command-example'
+                  가습기:
+                    $ref: '#/components/examples/humidifier-command-example'
+                  BECON Cloud에 등록된 시스템 에어컨의 실내기:
+                    $ref: '#/components/examples/idu-command-example'
+                  Business Cloud에 등록된 사이니지:
+                    $ref: '#/components/examples/signage-command-example'
           responses:
             '200':
               description: OK
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6200`: Successful operation'
+                  example: 6200
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -604,52 +980,100 @@ contents:
                   examples:
                     냉장고:
                       $ref: '#/components/examples/refrigerator-object-example'
+                    세탁기:
+                      $ref: '#/components/examples/washer-object-example'
+                    에어컨:
+                      $ref: '#/components/examples/air_conditioner-object-example'
+                    공기청정기:
+                      $ref: '#/components/examples/air_purifier-object-example'
+                    로봇청소기:
+                      $ref: '#/components/examples/robot_cleaner-object-example'
+                    오븐:
+                      $ref: '#/components/examples/oven-object-example'
+                    식기세척기:
+                      $ref: '#/components/examples/dish_washer-object-example'
+                    스타일러:
+                      $ref: '#/components/examples/styler-object-example'
+                    제습기:
+                      $ref: '#/components/examples/dehumidifier-object-example'
+                    실링팬:
+                      $ref: '#/components/examples/ceiling_fan-object-example'
+                    와인셀러:
+                      $ref: '#/components/examples/wine_cellar-object-example'
+                    워시타워(세탁기):
+                      $ref: '#/components/examples/washtower_washer-object-example'
+                    워시타워(건조기):
+                      $ref: '#/components/examples/washtower_dryer-object-example'
+                    워시타워:
+                      $ref: '#/components/examples/washtower-object-example'
+                    쿡탑:
+                      $ref: '#/components/examples/cooktop-object-example'
+                    후드:
+                      $ref: '#/components/examples/hood-object-example'
+                    전자레인지:
+                      $ref: '#/components/examples/microwave_oven-object-example'
+                    시스템보일러:
+                      $ref: '#/components/examples/system_boiler-object-example'
+                    공기청정팬:
+                      $ref: '#/components/examples/air_purifier_fan-object-example'
+                    온수기:
+                      $ref: '#/components/examples/water_heater-object-example'
+                    워시콤보(메인):
+                      $ref: '#/components/examples/main_washcombo-object-example'
+                    워시콤보(미니):
+                      $ref: '#/components/examples/mini_washcombo-object-example'
+                    가습기:
+                      $ref: '#/components/examples/humidifier-object-example'
+                    BECON Cloud에 등록된 시스템 에어컨의 실내기:
+                      $ref: '#/components/examples/idu-object-example'
+                    Business Cloud에 등록된 사이니지:
+                      $ref: '#/components/examples/signage-object-example'
             '400':
               description: Bad request
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1000`: Bad Request'
-                  example: 1000
+                  description: '`6400`: Bad Request'
+                  example: 6400
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-400'
+                    $ref: '#/components/schemas/error-res-backend'
             '401':
               description: Unauthorized
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1301`: Unauthorized'
-                  example: 1301
+                  description: '`6401`: Unauthorized'
+                  example: 6401
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
             '403':
               description: Forbidden
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1307`: Forbidden'
-                  example: 1307
+                  description: '`6403`: Forbidden'
+                  example: 6403
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-403'
             '404':
               description: Not Found Resource
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1202`: Not Found Resource'
-                  example: 1202
+                  description: '`6404`: Not Found Resource'
+                  example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -662,8 +1086,8 @@ contents:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1218`: Not Supported Resource'
-                  example: 1218
+                  description: '`6406`: Not Supported Resource'
+                  example: 6406
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -671,13 +1095,13 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '416':
-              description: Not Connected Device
+              description: Invalid Device Status
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1222`: Not Connected Device'
-                  example: 1222
+                  description: '`6416`: Invalid Device Status'
+                  example: 6416
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -685,27 +1109,23 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '429':
-              description: Too Many Request
+              description: Too Many Requests
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
             '500':
               description: Internal Server Error
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`2000`: Internal Server Error'
-                  example: 2000
+                  description: '`6500`: Internal Server Error'
+                  example: 6500
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -721,7 +1141,7 @@ contents:
             푸시 메시지를 구독한 디바이스의 ID 목록을 조회합니다. **(현재 LG ThinQ 등록 가전제품에 대해서만 지원합니다.)**
           operationId: listDevicesSubscribed
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -736,6 +1156,14 @@ contents:
           responses:
             '200':
               description: OK
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6200`: Successful operation'
+                  example: 6200
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -746,60 +1174,98 @@ contents:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1000`: Bad Request'
-                  example: 1000
+                  description: '`6400`: Bad Request'
+                  example: 6400
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-400'
+                    $ref: '#/components/schemas/error-res-backend'
             '401':
               description: Unauthorized
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1301`: Unauthorized'
-                  example: 1301
+                  description: '`6401`: Unauthorized'
+                  example: 6401
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
             '403':
               description: Forbidden
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1307`: Forbidden'
-                  example: 1307
+                  description: '`6403`: Forbidden'
+                  example: 6403
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-403'
-            '429':
-              description: Too Many Request
+            '404':
+              description: Not Found Resource
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`6404`: Not Found Resource'
+                  example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
+                    $ref: '#/components/schemas/error-res-backend'
+            '406':
+              description: Not Supported Resource
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6406`: Not Supported Resource'
+                  example: 6406
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '416':
+              description: Invalid Device Status
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6416`: Invalid Device Status'
+                  example: 6416
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '429':
+              description: Too Many Requests
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
             '500':
               description: Internal Server Error
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`2000`: Internal Server Error'
-                  example: 2000
+                  description: '`6500`: Internal Server Error'
+                  example: 6500
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -815,7 +1281,7 @@ contents:
             특정 디바이스에서 발생하는 푸시 메시지를 구독합니다. **(현재 LG ThinQ 등록 가전제품에 대해서만 지원합니다.)**
           operationId: subscribePushMessages
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -832,6 +1298,14 @@ contents:
           responses:
             '200':
               description: OK
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6200`: Successful operation'
+                  example: 6200
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -842,46 +1316,46 @@ contents:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1000`: Bad Request'
-                  example: 1000
+                  description: '`6400`: Bad Request'
+                  example: 6400
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-400'
+                    $ref: '#/components/schemas/error-res-backend'
             '401':
               description: Unauthorized
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1301`: Unauthorized'
-                  example: 1301
+                  description: '`6401`: Unauthorized'
+                  example: 6401
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
             '403':
               description: Forbidden
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1307`: Forbidden'
-                  example: 1307
+                  description: '`6403`: Forbidden'
+                  example: 6403
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-403'
             '406':
               description: Not Supported Resource
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1218`: Not Supported Resource'
-                  example: 1218
+                  description: '`6406`: Not Supported Resource'
+                  example: 6406
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -889,27 +1363,23 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '429':
-              description: Too Many Request
+              description: Too Many Requests
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
             '500':
               description: Internal Server Error
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`2000`: Internal Server Error'
-                  example: 2000
+                  description: '`6500`: Internal Server Error'
+                  example: 6500
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -924,7 +1394,7 @@ contents:
             특정 디바이스에서 발생하는 푸시 메시지의 구독을 해제합니다. **(현재 LG ThinQ 등록 가전제품에 대해서만 지원합니다.)**
           operationId: unsubscribePushMessages
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -951,46 +1421,74 @@ contents:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1000`: Bad Request'
-                  example: 1000
+                  description: '`6400`: Bad Request'
+                  example: 6400
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-400'
+                    $ref: '#/components/schemas/error-res-backend'
             '401':
               description: Unauthorized
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1301`: Unauthorized'
-                  example: 1301
+                  description: '`6401`: Unauthorized'
+                  example: 6401
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
             '403':
               description: Forbidden
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1307`: Forbidden'
-                  example: 1307
+                  description: '`6403`: Forbidden'
+                  example: 6403
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '404':
+              description: Not Found Resource
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6404`: Not Found Resource'
+                  example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-403'
+                    $ref: '#/components/schemas/error-res-backend'
             '406':
               description: Not Supported Resource
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1218`: Not Supported Resource'
-                  example: 1218
+                  description: '`6406`: Not Supported Resource'
+                  example: 6406
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '416':
+              description: Invalid Device Status
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6416`: Invalid Device Status'
+                  example: 6416
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -998,27 +1496,23 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '429':
-              description: Too Many Request
+              description: Too Many Requests
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
             '500':
               description: Internal Server Error
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`2000`: Internal Server Error'
-                  example: 2000
+                  description: '`6500`: Internal Server Error'
+                  example: 6500
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -1034,7 +1528,7 @@ contents:
             특정 LG ThinQ 사용자의 사용자 번호를 조회합니다.  사용자가 B2B파트너의 서비스에 가입할 때 미리 사용자 번호를 조회해두면, Callback으로 수신한 푸시 메시지의 디바이스 소유자를 식별할 수 있습니다.
           operationId: getUserNumber
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -1046,7 +1540,15 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
           responses:
             '200':
-              description: Successfully processed the request
+              description: OK
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6200`: Successful operation'
+                  example: 6200
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -1057,60 +1559,98 @@ contents:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1000`: Bad Request'
-                  example: 1000
+                  description: '`6400`: Bad Request'
+                  example: 6400
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-400'
+                    $ref: '#/components/schemas/error-res-backend'
             '401':
               description: Unauthorized
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1301`: Unauthorized'
-                  example: 1301
+                  description: '`6401`: Unauthorized'
+                  example: 6401
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
             '403':
               description: Forbidden
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1307`: Forbidden'
-                  example: 1307
+                  description: '`6403`: Forbidden'
+                  example: 6403
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-403'
-            '429':
-              description: Too Many Request
+            '404':
+              description: Not Found Resource
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`6404`: Not Found Resource'
+                  example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
+                    $ref: '#/components/schemas/error-res-backend'
+            '406':
+              description: Not Supported Resource
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6406`: Not Supported Resource'
+                  example: 6406
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '416':
+              description: Invalid Device Status
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6416`: Invalid Device Status'
+                  example: 6416
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '429':
+              description: Too Many Requests
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
             '500':
               description: Internal Server Error
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`2000`: Internal Server Error'
-                  example: 2000
+                  description: '`6500`: Internal Server Error'
+                  example: 6500
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -1125,7 +1665,7 @@ contents:
           description: B2B파트너가 더 이상 특정 LG ThinQ 사용자를 연동하지 않을 때 비활성화를 요청합니다.
           operationId: disconnectService
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -1138,6 +1678,14 @@ contents:
           responses:
             '200':
               description: OK
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6200`: Successful operation'
+                  example: 6200
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -1148,60 +1696,98 @@ contents:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1000`: Bad Request'
-                  example: 1000
+                  description: '`6400`: Bad Request'
+                  example: 6400
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-400'
+                    $ref: '#/components/schemas/error-res-backend'
             '401':
               description: Unauthorized
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1301`: Unauthorized'
-                  example: 1301
+                  description: '`6401`: Unauthorized'
+                  example: 6401
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
             '403':
               description: Forbidden
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1307`: Forbidden'
-                  example: 1307
+                  description: '`6403`: Forbidden'
+                  example: 6403
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-403'
-            '429':
-              description: Too Many Request
+            '404':
+              description: Not Found Resource
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`6404`: Not Found Resource'
+                  example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
+                    $ref: '#/components/schemas/error-res-backend'
+            '406':
+              description: Not Supported Resource
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6406`: Not Supported Resource'
+                  example: 6406
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '416':
+              description: Invalid Device Status
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6416`: Invalid Device Status'
+                  example: 6416
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '429':
+              description: Too Many Requests
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
             '500':
               description: Internal Server Error
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`2000`: Internal Server Error'
-                  example: 2000
+                  description: '`6500`: Internal Server Error'
+                  example: 6500
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
@@ -1216,7 +1802,7 @@ contents:
           description: 새 그룹을 생성하거나 기존 그룹을 갱신합니다.
           operationId: createGroup
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -1246,9 +1832,7 @@ contents:
                     areaCode:
                       type: string
                       example: '1168011000'
-                      description: |-
-                        - 법정동 코드(국토교통부)
-                        - 10자리번호
+                      description: 법정동 코드(국토교통부에서 지정한 10자리번호)
                     buildingCode:
                       type: string
                       example: '1168011000103690001004767'
@@ -1308,43 +1892,44 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
               description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`4308`: Resource Not Found: Group'
-                  example: 4308
-                X-Message-Id:
-                  $ref: '#/components/headers/X-Message-Id-response'
-            '409':
-              description: Conflict
-              headers:
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: '`4315`: Resource Already Exists: Group'
-                  example: 4315
-                X-Message-Id:
-                  $ref: '#/components/headers/X-Message-Id-response'
-            '429':
-              description: Too Many Request
-              headers:
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`4307`: Resource Not Found: Partner'
+                  example: 4307
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4307
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Partner'
+            '429':
+              description: Too Many Requests
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
             '500':
               description: Internal Server Error
               headers:
@@ -1355,6 +1940,23 @@ contents:
                   example: 5000
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/groups/{groupId}:
         get:
           tags:
@@ -1363,7 +1965,7 @@ contents:
           description: 특정 그룹을 조회합니다.
           operationId: getGroup
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -1399,26 +2001,24 @@ contents:
                         example: 2000
                       data:
                         type: object
-                        description: contains information of the group
+                        description: group에 대한 정보
                         properties:
                           groupId:
                             type: string
                             example: k-apt-1168011000
-                            description: uniquely identifiable group ID which is registered to LG DR service.
+                            description: 그룹을 구분하기 위해 DR 서비스에 등록한 고유한 group ID
                           groupName:
                             type: string
                             example: 압구정 현대 1차 아파트
-                            description: Group name
+                            description: 그룹명
                           partnerId:
                             type: string
                             example: kepco-herit-lge
-                            description: an ID of an aggregator/utility that created the group
+                            description: DR 서비스의 파트너사 ID
                           areaCode:
                             type: string
                             example: '1168011000'
-                            description: |-
-                              - 법정동 코드(국토교통부)
-                              - 10자리번호
+                            description: 법정동 코드(국토교통부에서 지정한 10자리번호)
                           buildingCode:
                             type: string
                             example: '1168011000103690001004767'
@@ -1429,7 +2029,7 @@ contents:
                           comment:
                             type: string
                             example: 압구정 현대 1차 아파트
-                            description: description of the resource
+                            description: 해당 그룹에 대한 설명
             '400':
               description: Bad Request
               headers:
@@ -1449,9 +2049,7 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
               description: Not Found
               headers:
@@ -1462,20 +2060,33 @@ contents:
                   example: 4308
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4308
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Group'
             '429':
-              description: Too Many Request
+              description: Too Many Requests
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
             '500':
               description: Internal Server Error
               headers:
@@ -1486,15 +2097,32 @@ contents:
                   example: 5000
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/partners/{partnerId}/groups:
         get:
           tags:
             - DR API
           summary: 그룹 목록 조회
-          description: 그룹 목록을 조회합니다.
+          description: 파트너의 그룹 목록을 조회합니다.
           operationId: getGroups
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -1530,21 +2158,21 @@ contents:
                         example: 2000
                       data:
                         type: array
-                        description: contains list of group
+                        description: 그룹 리스트
                         items:
                           properties:
                             groupId:
                               type: string
                               example: k-apt-1168011000
-                              description: uniquely identifiable group ID which is registered to LG DR service.
+                              description: DR 서비스에 등록된 그룹 ID
                             groupName:
                               type: string
                               example: 압구정 현대 1차 아파트
-                              description: Group name
+                              description: 그룹명
                             partnerId:
                               type: string
-                              example: kepco-herit-lge
-                              description: an ID of an aggregator/utility that created the group
+                              example: herit-01
+                              description: 파트너 ID
                             areaCode:
                               type: string
                               example: '1168011000'
@@ -1561,7 +2189,7 @@ contents:
                             comment:
                               type: string
                               example: 압구정 현대 1차 아파트
-                              description: description of the resource
+                              description: 그룹에 관한 추가 설명
                   examples:
                     200 OK:
                       value:
@@ -1598,9 +2226,7 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
               description: Not Found
               headers:
@@ -1611,20 +2237,33 @@ contents:
                   example: 4308
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4308
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Group'
             '429':
-              description: Too Many Request
+              description: Too Many Requests
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
             '500':
               description: Internal Server Error
               headers:
@@ -1635,15 +2274,32 @@ contents:
                   example: 5000
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/users:
         post:
           tags:
             - DR API
           summary: 사용자 생성
-          description: 사용자를 생성합니다. (ThinQ App 공통)
+          description: 사용자를 생성합니다. (LG ThinQ App 공통)
           operationId: createDrUser
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -1660,61 +2316,51 @@ contents:
                   properties:
                     userNo:
                       type: string
-                      example: US1234
-                      description: User Number issued by LG EMP service. You can use Get Profile API on EMP service to get user number of the target user. user key 값. 중복 불가
+                      example: KR2306146584898
+                      description: LG전자 계정의 사용자 번호
                     mail:
                       type: string
-                      example: saldkjb@glkd.com
-                      description: |-
-                        Uniquely identifiable userNo which should not contain personal information nor provide clue to trace the target user.
-                        User id registered to LG EMP service. You can use Get Profile API on EMP service to get user id of the target user.
+                      example: dr_kr_qa001@yopmail.com
+                      description: LG전자 계정의 E-mail 주소
                     groupId:
                       type: string
-                      example: lgeDR-CE-TV
-                      description: Uniquely identifiable group ID which is registered to LG DR service.
+                      example: A15721009
+                      description: 사용자를 등록할 그룹 ID
                     accessToken:
                       type: string
-                      example: abcd123456
-                      description: access_token issued by LG EMP service
+                      example: 67a184e62a412bb19b6ec2742b94695e06c1ce19d04f8d92121c6c28c99faf841150dba922da301e5617ae3942918a05
+                      description: LMP(LGE Members Platform) 시스템에서 발급된 access_token
                     refreshToken:
                       type: string
-                      example: qaz2wsx345
-                      description: refresh_token issued by LG EMP service
+                      example: 3559466b6c19e334557c277108aed936c22840672b1c2a6a8fb7597a6473f9a59fbec4a3f4e03595b8a38513ba1d8088
+                      description: LMP(LGE Members Platform) 시스템에서 발급된 refresh_token
                     partner:
                       type: object
                       description: Partner information
                       properties:
                         partnerId:
                           type: string
-                          example: abcded
-                          description: Partner ID
+                          example: herit-01
+                          description: 파트너사 ID
                         programId:
                           type: string
-                          example: abc123
-                          description: DR Program Id (OC - mandatory)
+                          example: oc-dr-001
+                          description: DR 프로그램 ID(북미지역 한정)
                         programName:
                           type: string
                           example: OC DR Program
-                          description: DR Program name (OC - mandatory)
+                          description: DR 프로그램명(북미지역 한정)
                         partnerUserId:
                           type: string
-                          example: abc123@lge.com
-                          description: Partner system User ID
+                          example: lgautodr10
+                          description: 파트너사 사용자 ID
                         authCodeExt:
                           type: string
-                          example: dlksjdfkjqjl
-                          description: 3rd party OAuth 2.0 연동을 위한 Auth code
+                          example: d778581e-14f5-4531-943b-c823beebc72f.f81a0977-a553-417e-8873-64faafa0534a.160df234-fa67-4ed2-b710-74afc12eaa12
+                          description: 3rd party OAuth 2.0 연동을 위한 Auth code(3rd party system에서 발급받으며 1회용)
                       required:
                         - partnerId
                         - authCodeExt
-                    insertTs:
-                      type: number
-                      example: 1234566000
-                      description: timestamp when this request is made (10 digits). If empty, default timestamp will be added automatically.
-                    updateTs:
-                      type: number
-                      example: 1234566000
-                      description: timestamp when this request is updated (10 digits). If empty, default timestamp will be added automatically.
                   required:
                     - userNo
                     - accessToken
@@ -1722,20 +2368,15 @@ contents:
                     - partner
           responses:
             '200':
-              description: '`2000`: Successful operation'
+              description: OK
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`2000`: Successful operation'
+                  example: 2000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -1749,27 +2390,18 @@ contents:
                         properties:
                           userNo:
                             type: string
-                            example: user1234
-                            description: encrypted User No.
+                            example: 01581c1893b95f30282d3c09d478cef7
+                            description: 생성된 사용자의 암호화된 LG전자 계정의 사용자 번호
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
+              description: Bad Request
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4000`: Bad Request'
+                  example: 4000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '401':
               description: Unauthorized
               headers:
@@ -1779,122 +2411,107 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '429':
-              description: Too Many Request
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                    description1: '`4307`: Resource Not Found: Partner'
+                    example: 4307
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
-            '500':
-              description: '`5000`: Internal Server Error<br>'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4307
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Partner'
+            '409':
+              description: Conflict
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4309`: Resource Already Exists: User'
+                  example: 4309
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4309
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Event'
+            '429':
+              description: Too Many Requests
+              headers:
+                X-Response-Code:
                   schema:
                     type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`5000`: Internal Server Error'
+                  example: 5000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/users/{userNo}:
         delete:
           tags:
             - DR API
-          summary: Delete a User (ThinQ app 공통)
-          description: A DELETE request to delete a user
+          summary: 사용자 삭제
+          description: LG전자 계정의 사용자 번호에 해당하는 특정 사용자를 삭제합니다. 사용자의 디바이스 정보도 함께 삭제됩니다.
           operationId: deleteDrUser
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -1904,27 +2521,22 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: userNo
-              description: EMP User No.
+              description: 암호화된 LG전자 계정의 사용자 번호
               required: true
               schema:
                 type: string
-                example: user1234
+                example: 01581c1893b95f30282d3c09d478cef7
           responses:
             '200':
-              description: '`2000`: Successful operation'
+              description: OK
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`2000`: Successful operation'
+                  example: 2000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -1938,27 +2550,18 @@ contents:
                         properties:
                           userNo:
                             type: string
-                            example: user1234
-                            description: deleted User No.
+                            example: 01581c1893b95f30282d3c09d478cef7
+                            description: 삭제된 사용자 LG전자 계정의 사용자 번호
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
+              description: Bad Request
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4000`: Bad Request'
+                  example: 4000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '401':
               description: Unauthorized
               headers:
@@ -1968,121 +2571,79 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '429':
-              description: Too Many Request
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`4301`: Resource Not Found: User'
+                  example: 4301
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
-            '500':
-              description: '`5000`: Internal Server Error<br>'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4301
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: User'
+            '429':
+              description: Too Many Requests
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
                   schema:
                     type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  description: '`5000`: Internal Server Error'
+                  example: 5000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
         get:
           tags:
             - DR API
-          summary: Get a User
-          description: A GET request to get user information
+          summary: 사용자 정보 조회
+          description: 암호화된 LG전자 계정의 사용자 번호에 해당하는 사용자 정보를 조회합니다.
           operationId: getDrUser
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -2092,27 +2653,22 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: userNo
-              description: EMP User No.
+              description: 암호화된 LG전자 계정의 사용자 번호
               required: true
               schema:
                 type: string
-                example: user1234
+                example: 01581c1893b95f30282d3c09d478cef7
           responses:
             '200':
-              description: '`2000`: Successful operation'
+              description: OK
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`2000`: Successful operation'
+                  example: 2000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -2126,39 +2682,30 @@ contents:
                         properties:
                           userNo:
                             type: string
-                            example: user1234
-                            description: EMP User No.
+                            example: 01581c1893b95f30282d3c09d478cef7
+                            description: 암호화된 LG전자 계정의 사용자 번호
                           drHomeId:
                             type: string
-                            example: home-01
-                            description: ID of the ThinQ Home that the user has selected to be linked to DR Service
+                            example: '171072582282622861'
+                            description: DR 서비스에 연결된 사용자의 ThinQ 홈 ID
                           partnerId:
                             type: string
-                            example: ohmconnect-01
-                            description: the Partner ID (ID of the DR Service Provider that the user is enrolled to)
+                            example: herit-01
+                            description: 사용자가 가입한 DR 서비스의 파트너 ID
                           groupId:
                             type: string
-                            example: group-01
-                            description: the ID of the group the user is grouped to.
+                            example: A15721009
+                            description: 사용자가 속한 Group ID
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
+              description: Bad Request
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4000`: Bad Request'
+                  example: 4000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '401':
               description: Unauthorized
               headers:
@@ -2168,122 +2715,80 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '429':
-              description: Too Many Request
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`4301`: Resource Not Found: User'
+                  example: 4301
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
-            '500':
-              description: '`5000`: Internal Server Error<br>'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4301
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: User'
+            '429':
+              description: Too Many Requests
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
                   schema:
                     type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  description: '`5000`: Internal Server Error'
+                  example: 5000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/users/{userNo}/devices:
         get:
           tags:
             - DR API
-          summary: Get Devices (User Based, ThinQ app 공통)
-          description: A Get request to get device list of a user
+          summary: 사용자 디바이스 목록 조회
+          description: DR 이벤트 참여 가능한 사용자의 디바이스 목록을 조회합니다.
           operationId: getDrDevices
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -2293,27 +2798,22 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: userNo
-              description: EMP User No.
+              description: 암호화된 LG전자 계정의 사용자 번호
               required: true
               schema:
                 type: string
-                example: KRXXXXXY
+                example: 01581c1893b95f30282d3c09d478cef7
           responses:
             '200':
-              description: '`2000`: Successful operation'
+              description: OK
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`2000`: Successful operation'
+                  example: 2000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -2329,11 +2829,11 @@ contents:
                             deviceId:
                               type: string
                               example: 111e0f0a-8d50-41f8-9120-94a8728c57e4
-                              description: Device ThinQ ID
+                              description: 암호화된 ThinQ 디바이스 ID
                             macAddress:
                               type: string
                               example: abcd1234
-                              description: MAC address of the device (encrypted)
+                              description: 암호화된 MAC address
                             groupId:
                               type: string
                               example: k-apt-1168011000
@@ -2341,75 +2841,66 @@ contents:
                             userNo:
                               type: string
                               example: KRXXXXXY
-                              description: EMP User No.
+                              description: 암호화된 LG전자 계정의 사용자 번호
                             homeId:
                               type: string
                               example: '1'
-                              description: ThinQ Home ID (ThinQ Home ID the devie is registered to)
+                              description: Device가 등록된 ThinQ Home ID
                             drParticipate:
                               type: boolean
                               example: true
-                              description: Auto-DR Selected Device or Not (true/false)
+                              description: DR 이벤트 참여 가능 여부(true/false)
                             opt:
                               type: string
                               example: IN
-                              description: Currently in DR Event Mode or not ("IN"/"OUT")
+                              description: 현재 DR 이벤트 참여중 여부("IN"/"OUT")
                             deviceType:
                               type: string
                               example: DEVICE_AIR_CONDITIONER
-                              description: Device type
+                              description: 디바이스 타입
                             modelName:
                               type: string
                               example: PAC_910604_US
-                              description: Model Name of the device
+                              description: 디바이스 모델명
                             alias:
                               type: string
                               example: air conditioner
-                              description: alias of the device
+                              description: 디바이스 별칭(alias)
                   examples:
                     200 OK:
                       value:
                         code: 2000
                         data:
-                          - deviceId: 111e0f0a-8d50-41f8-9120-94a8728c57e4
-                            macAddress: abcd1234
-                            groupId: k-apt-1168011000
-                            userNo: KRXXXXXY
-                            homeId: '1'
+                          - deviceId: 1f6bfb2796410a429f0015bf91f958361845888164cb0a61fefdd690513b13353f1da753095de970faba8099e2a56aa1
+                            macAddress: 66e71f19ada4fcaf5cd7aa26d49d4291
+                            groupId: A15721009
+                            userNo: 01581c1893b95f30282d3c09d478cef7
+                            homeId: '171072582282622861'
                             drParticipate: true
                             opt: IN
                             deviceType: DEVIE_AIR_CONDITIONER
                             modelName: PAC_910604_US
-                            alias: air conditioner
-                          - deviceId: aaaaaaaa-1234-11d3-80ae-044eaf8f70cc
-                            macAddress: bcdef2345
-                            groupId: k-apt-1165010700
-                            userNo: KRXXXXXY
-                            homeId: '2'
+                            alias: room air conditioner
+                          - deviceId: 2369ecd9276e62577e97692bc4b345502a2d1b46c616a1ea8d12eead4293979cf10bce3e5242da16a0d6a3afef694da3
+                            macAddress: 74d7483ebfc2d52702857244440faf8f
+                            groupId: A15721009
+                            userNo: 01581c1893b95f30282d3c09d478cef7
+                            homeId: '171072582282622861'
                             drParticipate: true
                             opt: OUT
                             deviceType: DEVIE_AIR_CONDITIONER
                             modelName: PAC_910604_US
-                            alias: air conditioner
+                            alias: living air conditioner
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
+              description: Bad Request
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4000`: Bad Request'
+                  example: 4000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '401':
               description: Unauthorized
               headers:
@@ -2419,122 +2910,80 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '429':
-              description: Too Many Request
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                    description1: '`4301`: Resource Not Found: User'
+                    example: 4301
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
-            '500':
-              description: '`5000`: Internal Server Error<br>'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4301
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: User'
+            '429':
+              description: Too Many Requests
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
                   schema:
                     type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  description: '`5000`: Internal Server Error'
+                  example: 5000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/users/{userNo}/devices/{deviceId}:
         get:
           tags:
             - DR API
-          summary: Get a Single Device (User based)
-          description: A GET request to get a single device on user based
+          summary: 사용자 디바이스 정보 조회
+          description: 사용자의 특정 디바이스 정보를 조회합니다.
           operationId: getDrDevice
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -2544,34 +2993,29 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: userNo
-              description: EMP User No.
+              description: 암호화된 LG전자 계정의 사용자 번호
               required: true
               schema:
                 type: string
-                example: KRXXXXXY
+                example: 01581c1893b95f30282d3c09d478cef7
             - in: path
               name: deviceId
-              description: Device ThinQ ID
+              description: 암호화된 ThinQ 디바이스 ID
               required: true
               schema:
                 type: string
-                example: 111e0f0a-8d50-41f8-9120-94a8728c57e4
+                example: 1f6bfb2796410a429f0015bf91f958361845888164cb0a61fefdd690513b13353f1da753095de970faba8099e2a56aa1
           responses:
             '200':
-              description: '`2000`: Successful operation'
+              description: OK
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`2000`: Successful operation'
+                  example: 2000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -2581,67 +3025,74 @@ contents:
                         type: integer
                         example: 2000
                       data:
-                        type: object
-                        properties:
-                          deviceId:
-                            type: string
-                            example: 111e0f0a-8d50-41f8-9120-94a8728c57e4
-                            description: Device ThinQ ID
-                          macAddress:
-                            type: string
-                            example: abcd1234
-                            description: MAC address of the device (encrypted)
-                          groupId:
-                            type: string
-                            example: k-apt-1168011000
-                            description: Group ID
-                          userNo:
-                            type: string
-                            example: KRXXXXXY
-                            description: EMP User No.
-                          homeId:
-                            type: string
-                            example: '1'
-                            description: ThinQ Home ID (ThinQ Home ID the devie is registered to)
-                          drParticipate:
-                            type: boolean
-                            example: true
-                            description: Auto-DR Selected Device or Not (true/false)
-                          opt:
-                            type: string
-                            example: IN
-                            description: Currently in DR Event Mode or not ("IN"/"OUT")
-                          deviceType:
-                            type: string
-                            example: DEVICE_AIR_CONDITIONER
-                            description: Device type
-                          modelName:
-                            type: string
-                            example: PAC_910604_US
-                            description: Model Name of the device
-                          alias:
-                            type: string
-                            example: air conditioner
-                            description: alias of the device
+                        type: array
+                        items:
+                          properties:
+                            deviceId:
+                              type: string
+                              example: 1f6bfb2796410a429f0015bf91f958361845888164cb0a61fefdd690513b13353f1da753095de970faba8099e2a56aa1
+                              description: 암호화된 ThinQ 디바이스 ID
+                            macAddress:
+                              type: string
+                              example: 66e71f19ada4fcaf5cd7aa26d49d4291
+                              description: 암호화된 MAC address
+                            groupId:
+                              type: string
+                              example: A15721009
+                              description: Group ID
+                            userNo:
+                              type: string
+                              example: 01581c1893b95f30282d3c09d478cef7
+                              description: 암호화된 LG전자 계정의 사용자 번호
+                            homeId:
+                              type: string
+                              example: '171072582282622861'
+                              description: Device가 등록된 ThinQ Home ID
+                            drParticipate:
+                              type: boolean
+                              example: true
+                              description: DR 이벤트 참여 가능 여부(true/false)
+                            opt:
+                              type: string
+                              example: IN
+                              description: 현재 DR 이벤트 참여중 여부("IN"/"OUT")
+                            deviceType:
+                              type: string
+                              example: DEVICE_AIR_CONDITIONER
+                              description: 디바이스 타입
+                            modelName:
+                              type: string
+                              example: PAC_910604_US
+                              description: 디바이스 모델명
+                            alias:
+                              type: string
+                              example: air conditioner
+                              description: 디바이스 별칭(alias)
+                  examples:
+                    200 OK:
+                      value:
+                        code: 2000
+                        data:
+                          - deviceId: 1f6bfb2796410a429f0015bf91f958361845888164cb0a61fefdd690513b13353f1da753095de970faba8099e2a56aa1
+                            macAddress: 66e71f19ada4fcaf5cd7aa26d49d4291
+                            groupId: A15721009
+                            userNo: 01581c1893b95f30282d3c09d478cef7
+                            homeId: '171072582282622861'
+                            drParticipate: true
+                            opt: IN
+                            deviceType: DEVIE_AIR_CONDITIONER
+                            modelName: PAC_910604_US
+                            alias: room air conditioner
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
+              description: Bad Request
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4000`: Bad Request'
+                  example: 4000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '401':
               description: Unauthorized
               headers:
@@ -2651,122 +3102,80 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '429':
-              description: Too Many Request
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`4301`: Resource Not Found: User'
+                  example: 4301
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
-            '500':
-              description: '`5000`: Internal Server Error<br>'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4301
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: User'
+            '429':
+              description: Too Many Requests
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
                   schema:
                     type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  description: '`5000`: Internal Server Error'
+                  example: 5000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/events:
         post:
           tags:
             - DR API
-          summary: Create & update DR Event
-          description: A POST request to create a new DR request.
+          summary: DR 이벤트 생성 및 갱신
+          description: DR 이벤트를 생성하거나 기존 이벤트를 갱신합니다.
           operationId: createDrEvent
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -2775,7 +3184,7 @@ contents:
             - required: true
               $ref: '#/components/parameters/X-Country-Code-2'
           requestBody:
-            description: Event information
+            description: DR 이벤트 정보
             content:
               application/json:
                 schema:
@@ -2784,23 +3193,23 @@ contents:
                     eventId:
                       type: string
                       example: 2023-04-25-dr-01
-                      description: ID of an event
+                      description: DR 이벤트 ID
                     eventName:
                       type: string
                       example: 2023-04-25-dr-01
-                      description: Event Name
+                      description: DR 이벤트 명
                     partnerId:
                       type: string
                       example: herit-01
-                      description: Partner ID
+                      description: 파트너 ID
                     startTs:
                       type: number
                       example: 1682423399890
-                      description: milliseconds
+                      description: DR 이벤트 시작 시간(milliseconds)
                     endTs:
                       type: number
                       example: 1682426999000
-                      description: milliseconds
+                      description: DR 이벤트 종료 시간(milliseconds)
                     targets:
                       type: array
                       items:
@@ -2808,13 +3217,13 @@ contents:
                           targetType:
                             type: string
                             example: GROUP
-                            description: type of targets (GROUP, USER, DEVICE)
+                            description: 이벤트 타겟 타입(GROUP, USER, DEVICE)
                           targetIds:
                             type: array
                             items:
                               type: string
                               example: k-apt-1168011000
-                            description: list of ids (of GROUP, USER or DEVICE)
+                            description: 이벤트 타겟 ID 리스트 (of GROUP, USER or DEVICE)
                         required:
                           - targetType
                           - targetIds
@@ -2825,21 +3234,21 @@ contents:
                           signalId:
                             type: string
                             example: 2023-04-25-dr-01-signal-01
-                            description: Signal ID
+                            description: DR 이벤트 시그널 ID
                           deviceType:
                             type: string
                             example: DEVICE_AIR_CONDITIONER
-                            description: Device Types of the target for the Signal
+                            description: DR 이벤트 타겟 디바이스 타입
                           modelNames:
                             type: array
                             items:
                               type: string
                               example: RAC_056905_WW
-                            description: Model Names of the target for the Signal
+                            description: DR 이벤트 타겟 디바이스 모델명
                           signalType:
                             type: string
                             example: CONTROL_RESTORE
-                            description: signal Types (CONTROL, CONTROL_RESTORE)
+                            description: DR 이벤트 시그널 타입 (CONTROL, CONTROL_RESTORE)
                           signalData:
                             type: object
                             properties:
@@ -2856,16 +3265,16 @@ contents:
                                     type: string
                                     example: C
                             description: |-
-                              Specific control values for the Signal
+                              구체적인 제어 값
                               ex) { temerpature: { min: 26, max: 32, unit: "C } }
                           constrolType:
                             type: string
                             example: Temperature
-                            description: Control Method (Temperature, TwoSetTemperature, ToU, Empty)
+                            description: 제어 방식(Temperature, TwoSetTemperature, ToU, Empty)
                           restoreType:
                             type: string
                             example: Temperature
-                            description: Restore Method (Temperature, TwoSetTemperature, Empty)
+                            description: 제어 원복 방식 (Temperature, TwoSetTemperature, Empty)
                   required:
                     - eventId
                     - eventName
@@ -2912,20 +3321,15 @@ contents:
                           restoreType: Empty
           responses:
             '200':
-              description: '`2000`: Successful operation'
+              description: OK
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`2000`: Successful operation'
+                  example: 2000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -2939,27 +3343,18 @@ contents:
                         properties:
                           eventId:
                             type: string
-                            example: 2023-04-25-dr-01-signal-01
-                            description: event ID of DR
+                            example: 2023-04-25-dr-01
+                            description: 생성된 DR 이벤트 ID
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
+              description: Bad Request
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4000`: Bad Request'
+                  example: 4000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '401':
               description: Unauthorized
               headers:
@@ -2969,122 +3364,107 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '429':
-              description: Too Many Request
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`4307`: Resource Not Found: Partner'
+                  example: 4307
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
-            '500':
-              description: '`5000`: Internal Server Error<br>'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4307
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Partner'
+            '409':
+              description: Conflict
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4311`: Resource Already Exists: Event'
+                  example: 4311
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4311
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Event'
+            '429':
+              description: Too Many Requests
+              headers:
+                X-Response-Code:
                   schema:
                     type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`5000`: Internal Server Error'
+                  example: 5000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/events/{eventId}:
         delete:
           tags:
             - DR API
-          summary: Delete DR Event
-          description: A DELETE request to delete a DR request.
+          summary: DR 이벤트 삭제
+          description: 생성한 DR 이벤트를 삭제합니다.
           operationId: deleteDrEvent
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -3100,7 +3480,15 @@ contents:
                 example: 2023-04-25-dr-01
           responses:
             '200':
-              description: '`2000` : Successful operation'
+              description: OK
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`2000`: Successful operation'
+                  example: 2000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -3112,10 +3500,20 @@ contents:
                       data:
                         type: object
                         properties:
-                          eventId:
+                          groupId:
                             type: string
-                            example: 2023-04-25-dr-01-signal-01
-                            description: event ID of DR
+                            example: 2023-04-25-dr-01
+                            description: 삭제된 DR 이벤트 ID
+            '400':
+              description: Bad Request
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`4000`: Bad Request'
+                  example: 4000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
             '401':
               description: Unauthorized
               headers:
@@ -3125,32 +3523,80 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '429':
-              description: Too Many Request
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '404':
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`4302`: Resource Not Found: Event'
+                  example: 4302
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4302
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Event'
+            '429':
+              description: Too Many Requests
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`5000`: Internal Server Error'
+                  example: 5000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/events/{eventId}/targets:
         post:
           tags:
             - DR API
-          summary: Create Event Target (POST)
-          description: A POST request to create a DR Event Target
+          summary: DR 이벤트 타겟 생성
+          description: 이미 생성된 DR 이벤트에 이벤트 타겟 정보를 추가합니다.
           operationId: createEventTarget
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -3160,13 +3606,13 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: eventId
-              description: Event ID
+              description: DR 이벤트 ID
               required: true
               schema:
                 type: string
                 example: event-01
           requestBody:
-            description: Event information
+            description: DR 이벤트 타겟 정보
             content:
               application/json:
                 schema:
@@ -3176,7 +3622,7 @@ contents:
                       type: string
                       example: USER
                       description: |-
-                        type of targets
+                        타겟 타입
                         - GROUP
                         - USER
                         - DEVICE
@@ -3184,37 +3630,32 @@ contents:
                       type: string
                       example: KRXXXX
                       description: |-
-                        ids of each targets
-                        - when type is USER: userNo
-                        - when type is GROUP: groupId
-                        - when type is DEVICE: deviceId
+                        DR 이벤트 타겟 ID
+                        - 이벤트 타겟 타입이 USER일 경우: userNo
+                        - 이벤트 타겟 타입이 GROUP일 경우: groupId
+                        - 이벤트 타겟 타입이 DEVICE일 경우: deviceId
                     opt:
                       type: string
                       example: OUT
                       description: |-
-                        Opt in / out of an event
-                        - IN: participate in the DR Event (default)
-                        - OUT: Opt out of an Event
+                        DR 이벤트 참여 여부(Opt in / out)
+                        - IN: DR 이벤트에 참여(default)
+                        - OUT: DR 이벤트에 미참여
                   required:
                     - type
                     - id
                     - opt
           responses:
             '200':
-              description: '`2000`: Successful operation'
+              description: OK
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`2000`: Successful operation'
+                  example: 2000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -3224,26 +3665,22 @@ contents:
                         type: integer
                         example: 2000
                       data:
-                        $ref: '#/components/schemas/dr-event-target-opt-res'
+                        type: object
+                        properties:
+                          groupId:
+                            type: string
+                            example: 2023-04-25-dr-01
+                            description: 생성된 DR 이벤트 타겟 ID
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
+              description: Bad Request
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4000`: Bad Request'
+                  example: 4000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '401':
               description: Unauthorized
               headers:
@@ -3253,122 +3690,80 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '429':
-              description: Too Many Request
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`4302`: Resource Not Found: Event'
+                  example: 4302
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
-            '500':
-              description: '`5000`: Internal Server Error<br>'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4302
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Event'
+            '429':
+              description: Too Many Requests
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
                   schema:
                     type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  description: '`5000`: Internal Server Error'
+                  example: 5000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/events/{eventId}/targets/{targetId}:
         post:
           tags:
             - DR API
-          summary: Update Event Target (POST)
-          description: A POST request to update a DR Event Target
+          summary: DR 이벤트 타겟 수정
+          description: 이미 생성된 DR 이벤트 타겟을 수정합니다.
           operationId: updateEventTarget
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -3378,20 +3773,20 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: eventId
-              description: Event ID
+              description: DR 이벤트 ID
               required: true
               schema:
                 type: string
                 example: event-01
             - in: path
               name: targetId
-              description: Target ID
+              description: DR 이벤트 타겟 ID
               required: true
               schema:
                 type: string
                 example: KRXXXX
           requestBody:
-            description: Event information
+            description: DR 이벤트 정보
             content:
               application/json:
                 schema:
@@ -3401,25 +3796,20 @@ contents:
                       type: string
                       example: OUT
                       description: |-
-                        Opt in / out of an event
-                        - IN: participate in the DR Event (default)
-                        - OUT: Opt out of an Event
+                        DR 이벤트 참여 여부 (Opt in / out)
+                        - IN: DR 이벤트 참여 (default)
+                        - OUT: DR 이벤트 미참여
           responses:
             '200':
-              description: '`2000`: Successful operation'
+              description: OK
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`2000`: Successful operation'
+                  example: 2000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -3431,24 +3821,32 @@ contents:
                       data:
                         $ref: '#/components/schemas/dr-event-target-opt-res'
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
+              description: Bad Request
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4102`: Bad Request'
+                  example: 4102
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
                   schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4102
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Missing or Invalid Parameter(s) in Request Body
             '401':
               description: Unauthorized
               headers:
@@ -3458,122 +3856,80 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-                `4313`: Resource Not Found: Partner User<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Partner User<br>
-                `4314`: Resource Already Exists: Device<br>
-                `4315`: Resource Already Exists: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '429':
-              description: Too Many Request
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`4302`: Resource Not Found: Event'
+                  example: 4302
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
-            '500':
-              description: '`5000`: Internal Server Error<br>'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4302
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Event'
+            '429':
+              description: Too Many Requests
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
                   schema:
                     type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  description: '`5000`: Internal Server Error'
+                  example: 5000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/events/{eventId}/targets/batch:
         post:
           tags:
             - DR API
-          summary: Create & Update Event Target in a Batch
-          description: A POST request to update Targets for a DR Event
+          summary: DR 이벤트 타겟 일괄 생성
+          description: DR 이벤트 타겟을 한번에 여러 개 생성합니다.
           operationId: createEventTargetBatch
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -3583,13 +3939,13 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: eventId
-              description: Event ID
+              description: DR 이벤트 ID
               required: true
               schema:
                 type: string
                 example: event-01
           requestBody:
-            description: DR Event를 위한 Target 업데이트 정보
+            description: DR 이벤트 타겟의 업데이트 정보
             content:
               application/json:
                 schema:
@@ -3600,30 +3956,36 @@ contents:
                         type: string
                         example: create
                         description: |-
-                          Action to be performed for each targets (path)
+                          DR 이벤트 타겟 생성/수정 여부
                           - create
-                          - replace(or update)
+                          - replace(미사용)
                       path:
                         type: string
                         example: /
                         description: |-
-                          ID of each target
+                          DR 이벤트 타겟 ID
                           - create: "/"
-                          - update: "/{targetId}"
-                          - Ex) creating: "/"
-                          - Ex) updating: "/23lk2jl1k32j1"
+                          - replace: "/{targetId}"
+                          - Ex) 생성: "/"
+                          - Ex) 수정: "/23lk2jl1k32j1"
                       value:
                         type: object
-                        example:
-                          type: DEVICE
-                          id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
-                          opt: IN
+                        properties:
+                          type:
+                            type: string
+                            example: DEVICE
+                          id:
+                            type: string
+                            example: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
+                          opt:
+                            type: string
+                            example: IN
                         description: |-
-                          Opt in / out of an event
-                          - create: {id, type, opt}
-                          - update: {opt}
-                          - Ex) creating: { type: "DEVICE", id: "23lk2jl1k32j1", opt: "IN"}
-                          - Ex) updating: { opt: "IN"}
+                          DR 이벤트 참여/미참여(Opt in / out)
+                          - create: {type, id, opt}
+                          - replace: {opt}
+                          - Ex) create: { type: "DEVICE", id: "23lk2jl1k32j1", opt: "IN"}
+                          - Ex) replace: { opt: "IN"}
                     required:
                       - action
                       - path
@@ -3661,20 +4023,15 @@ contents:
                           opt: IN
           responses:
             '200':
-              description: '`2000`: Successful operation'
+              description: OK
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`2000`: Successful operation'
+                  example: 2000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -3686,82 +4043,48 @@ contents:
                       data:
                         type: object
                         properties:
-                          action:
-                            type: string
-                            example: create
-                          path:
-                            type: string
-                            example: /
                           value:
                             type: object
-                            example:
-                              type: DEVICE
-                              id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
-                              opt: IN
-                          status:
-                            type: string
-                            example: success
-                  examples:
-                    create:
-                      value:
-                        code: 2000
-                        data:
-                          - action: create
-                            path: /
-                            value:
-                              type: DEVICE
-                              id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
-                              opt: IN
-                            status: success
-                    update:
-                      value:
-                        code: 2000
-                        data:
-                          - action: update
-                            path: /KRXXXX
-                            value:
-                              opt: OUT
-                            status: success
-                    create/update:
-                      value:
-                        code: 2000
-                        data:
-                          - action: create
-                            path: /
-                            value:
-                              type: DEVICE
-                              id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
-                              opt: IN
-                            status: success
-                          - action: update
-                            path: /KRXXXX
-                            value:
-                              opt: OUT
-                            status: success
-                          - action: update
-                            path: /KRXXXY
-                            value:
-                              opt: IN
-                            status: success
+                            properties:
+                              type:
+                                type: string
+                                example: DEVICE
+                              id:
+                                type: string
+                                example: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
+                              opt:
+                                type: string
+                                example: IN
+                              status:
+                                type: string
+                                example: success
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
+              description: Bad Request
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4102`: Missing or Invalid Parameter(s) in Request Body'
+                  example: 4102
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
                   schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4102
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Missing or Invalid Parameter(s) in Request Body
             '401':
               description: Unauthorized
               headers:
@@ -3771,122 +4094,90 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: '`4201`: Unauthorized'
-                  example: 4201
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Device<br>
-                `4313`: Resource Already Exists: Group<br>
-                `4314`: Resource Already Exists: authCodeExt(Already connected 3rd party user)<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '429':
-              description: Too Many Request
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`4302`: Resource Not Found: Event'
+                  example: 4302
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
-            '500':
-              description: '`5000`: Internal Server Error'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4302
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Event'
+            '409':
+              description: Conflict
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4315`: Resource Already Exists: Group'
+                  example: 4315
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '429':
+              description: Too Many Requests
+              headers:
+                X-Response-Code:
                   schema:
                     type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`5000`: Internal Server Error'
+                  example: 5000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/data-zip/files:
         post:
           tags:
             - DR API
-          summary: Create a Data Zip File
-          description: 'A POST Request for a creation of a zip file for DR Status data of devices during a DR Event  '
-          operationId: createGroup
+          summary: 모니터링 데이터 파일 생성
+          description: DR 이벤트 기간 내 DR 이벤트에 참여한 디바이스의 모니터링 데이터를 ZIP 파일로 생성하도록 요청합니다.
+          operationId: createDataZipFile
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -3895,7 +4186,7 @@ contents:
             - required: true
               $ref: '#/components/parameters/X-Country-Code-2'
           requestBody:
-            description: DR Event & Target Information for zip file creation
+            description: DR 이벤트 정보
             content:
               application/json:
                 schema:
@@ -3903,21 +4194,21 @@ contents:
                   properties:
                     eventId:
                       type: string
-                      example: 2023-04-26-01-dr-event-01
-                      description: event Id
+                      example: 2023-04-25-dr-01
+                      description: DR 이벤트 ID
                     targets:
                       type: array
                       items:
                         properties:
                           targetId:
                             type: string
-                            example: USXXXX
-                            description: ID of a target
+                            example: KRXXXX
+                            description: DR 이벤트 타겟 ID
                           targetType:
                             type: string
                             example: USER
                             description: |-
-                              Target Type
+                              DR 이벤트 타겟 타입
                               - USER
                               - DEVICE
                               - GROUP
@@ -3926,28 +4217,21 @@ contents:
                 examples:
                   Create a Data Zip File:
                     value:
-                      eventId: 2023-04-26-01-dr-event-01
+                      eventId: test_event_1713834322772
                       targets:
-                        - targetType: USER
-                          targetId: USXXXX
                         - targetType: GROUP
                           targetId: k-apt-1168011000
           responses:
             '200':
-              description: '`2000`: Successful operation'
+              description: OK
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`2000`: Successful operation'
+                  example: 2000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -3961,33 +4245,35 @@ contents:
                         properties:
                           fileName:
                             type: string
-                            example: data-zip-2023-04-26-01-dr-event-01-1548892800123.zip
-                            description: name of the zie file
-                  examples:
-                    Create a Data Zip File:
-                      value:
-                        code: 2000
-                        data:
-                          fileName: data-zip-2023-04-26-01-dr-event-01-1548892800123.zip
+                            example: data-zip-test_event_1713834322772-1728001286135.zip
+                            description: 생성된 ZIP 파일명
             '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
+              description: Bad Request
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`4102`: Missing or Invalid Parameter(s) in Request Body'
+                  example: 4102
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
                   schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4102
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Missing or Invalid Parameter(s) in Request Body
             '401':
               description: Unauthorized
               headers:
@@ -3997,121 +4283,80 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Device<br>
-                `4313`: Resource Already Exists: Group<br>
-                `4314`: Resource Already Exists: authCodeExt(Already connected 3rd party user)<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '429':
-              description: Too Many Request
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`4302`: Resource Not Found: Event'
+                  example: 4302
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
-            '500':
-              description: '`5000`: Internal Server Error'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4302
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Event'
+            '429':
+              description: Too Many Requests
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
                   schema:
                     type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  description: '`5000`: Internal Server Error'
+                  example: 5000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
       /dr/data-zip/files/{filename}:
         get:
           tags:
             - DR API
-          summary: Download a Data Zip File
-          description: A GET Request to get download link for zip file
+          summary: 모니터링 데이터 파일 다운로드
+          description: DR 이벤트에 참여한 디바이스의 모니터링 데이터 ZIP 파일을 다운받을 수 있는 링크를 요청합니다.
           operationId: downloadDataZipFile
           security:
-            - Business_Connect_API_Key: []
+            - ThinQ_Business_API_Key: []
           parameters:
             - required: true
               $ref: '#/components/parameters/X-Api-Token'
@@ -4121,27 +4366,22 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: filename
-              description: Name of the zip file (value received as a response from Create a Data zip API)
+              description: 생성된 ZIP 파일명
               required: true
               schema:
                 type: string
-                example: data-zip-2023-04-26-01-dr-event-01-1548892800123.zip
+                example: data-zip-test_event_1713834322772-1728001286135.zip
           responses:
             '200':
-              description: '`2000`: Successful operation'
+              description: OK
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`2000`: Successful operation'
+                  example: 2000
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
@@ -4155,29 +4395,10 @@ contents:
                         properties:
                           presignedUrl:
                             type: string
-                            example: https://test-dr.s3.{region}.amazonaws.com/data-zip-2023-04-26-01-dr-event-01-1548892800123?response-content-disposition=inline&X-Amz-Security-Token=IQoJ......
-                            description: zip file download url (temporary url)
-            '400':
-              description: |-
-                `4000`: Bad Request<br>
-                `4101`: Missing or Invalid Parameter(s) in Request Header<br>
-                `4102`: Missing or Invalid Parameter(s) in Request Body<br>
-                `4103`: Missing or Invalid Token<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                            example: https://s3-an2-tems-qa-dr-archiver.s3.ap-northeast-2.amazonaws.com/zip/data-zip-test_event_1713834322772-1728001286135.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIARU3MB3TCEDODQ2DO%2F20241004%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20241004T002817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEID%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0yIkcwRQIhALefnNnWXhAZcAcMWZA%2Bm23i5uALS%2FOI9ZwzOwUQMMQyAiACqvSExTC%2B3ErlEfOGtIXnZ450mlJRDu02kW4S2RojcyrVBQjJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDExMzUwNjM3NjkwMCIMi5fbbY%2Bs9%2FoMe2jWKqkFntfKoeTR0blrYtIPk0PdBLXhVa%2BpMgj9P0Y2%2F4c8g1IK0LOWuQrLL9bQ%2Bjg%2B4pzsgZWjdFZ8smSNqj3oQ%2FAgpHI56EltlZrnDQNPL%2FkMtj8dSgOJtxtgOE89wzYvB8hd9obkO0c%2BQN76loIX71y6MOC6JtCNlzbf0SpLkONT09IlOMhmFHB4KC87r%2Bb6V7ZIgFp56w9amawSxYK%2BCRj0yw5uXoboEUBwuqcn%2BSF6u2Xq4Z1cS018f%2F9bYtBxqz5M6rUrTup5xkf4ZEbUzFwMpFWk2WhXiu64uzKaF41C3d%2F5YUNa2K725HfWbntEAa0jr37AZtR%2BNagZGvnVnryZsmz%2Fn272kPdhdb3NLv55i1dtqWHu9HjJ2P35ujd5RadNO%2BCki9Vths6O99XDnHpCbrTWoQyCvHIq3wM38Nbbbnv%2BxXeKbzJ1PMbOmmGbqSPhGdFEwHzTiGLkiUXxREFtLLkC5xQn%2F%2FyBFmyoZBrpdVEvt6Ggyk5gh%2F%2BSxG1OvpmCcmYjRloE%2Bh%2F7QCZvboHaeD4wpre1xdRFrW%2FiPSeraR1MxurDFbf8nWqak88IQ%2B82EwOucjX6SKhdk148Vt6mBrd0Ae9MW7W4f82NksX%2FVFeDjeGmkRe4bg85B8b7gwIA8qHl3MwYhUgPm0%2BRlkzdFKYy%2B2eoBZpK0kx3tO52DIeb%2Fk41gfrxQj3lc41y7zKVxZsiftqK7bDbMt4eHkFZ5dTaf0uJlgzsU0AYanJjgZvDxlUCywCHfCTG%2Bb03dWwomJYy4cuN%2Fix8uYzYbM8TAdwFfjYKG0KH3n4W%2FDNvCiQBedoG%2Byx7e5MCr0dpAV2%2F90L9x%2Bq1HloUbqtnVqQ1MRV3PN%2FBv3brupENConWTz90ebLDCd4rJQLKmGprA0UOX2nI8yxMV6u6MLbl%2FLcGOrEBIPFbJuDYy4nYDv0IJF5FHnEM9hZFiC1s1kOPMQkUHbhXENPK4TWBPLx46Ewp%2FvT2PTdkzMVeZLVJ33YVg1V9uL%2BNT1KYs9KuwDdfCMUD22ItcGhm9DCHnp3Db%2FyyWus%2BtBVrdcIsbhtvyfVx0qsFa29MJmxdv%2FdTrOZZ8c6ZSFAOeM5RGsxTs9%2FBZrWyvHy6cbfcMlr8Utm%2BzCGxy5L87LkBhrD9wT6o1%2B3eGI333lGc&X-Amz-Signature=dcdb7b02b2350142fb4b41ab15036ac529981f7dc14d2fa2e6a4bf615b82f827&X-Amz-SignedHeaders=host&x-id=GetObject
+                            description: 생성된 DR 이벤트 ZIP 파일 다운로드 경로(1시간 유효)
             '401':
-              description: '`Unauthorized'
+              description: Unauthorized
               headers:
                 X-Response-Code:
                   schema:
@@ -4185,115 +4406,74 @@ contents:
                   description: '`4201`: Unauthorized'
                   example: 4201
                 X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '403':
-              description: '`4202`: Unauthorized request<br>'
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: |-
-                `4301`: Resource Not Found: User<br>
-                `4302`: Resource Not Found: Event<br>
-                `4303`: Resource Not Found: Event Target<br>
-                `4304`: Resource Not Found: Device<br>
-                `4305`: Resource Not Found: Zip File task<br>
-                `4306`: Resource Not Found: Zip File<br>
-                `4307`: Resource Not Found: Partner<br>
-                `4308`: Resource Not Found: Group<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '405':
-              description: Not Allowed<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '409':
-              description: |-
-                `4309`: Resource Already Exists: User<br>
-                `4310`: Resource Already Exists: Event<br>
-                `4311`: Resource Already Exists: Event Target<br>
-                `4312`: Resource Already Exists: Device<br>
-                `4313`: Resource Already Exists: Group<br>
-                `4314`: Resource Already Exists: authCodeExt(Already connected 3rd party user)<br>
-              headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
-                X-Response-Code:
-                  schema:
-                    type: string
-                  description: a response code of API service against request
-                X-Message-Id:
-                  schema:
-                    type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
-            '429':
-              description: Too Many Request
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`1306`: Too Many Request'
-                  example: 1306
+                  description: '`4306`: Resource Not Found: Zip File'
+                  example: 4306
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/error-res-krakend-429'
-            '500':
-              description: '`5000`: Internal Server Error'
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 4306
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: 'Resource Not Found: Zip File'
+            '429':
+              description: Too Many Requests
               headers:
-                X-Request-Id:
-                  schema:
-                    type: string
-                  description: an ID generated by API service for request tracking
                 X-Response-Code:
                   schema:
                     type: string
-                  description: a response code of API service against request
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
                 X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
                   schema:
                     type: string
-                  description: The value of the X-Message-Id header sent by the client during API calls
+                  description: '`5000`: Internal Server Error'
+                  example: 5000
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    description: 요청 실패 시 응답
+                    properties:
+                      code:
+                        type: number
+                        description: 상태코드
+                        example: 5000
+                      error:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            description: 에러 상세 메시지
+                            example: Internal Server Error
     components:
       securitySchemes:
-        Business_Connect_API_Key:
+        ThinQ_Business_API_Key:
           type: apiKey
           description: |
             파트너 요청이 승인된 이후 획득한 `API Key` 문자열
@@ -4367,42 +4547,6 @@ contents:
                   items:
                     allOf:
                       - $ref: '#/components/schemas/device-list-item'
-        error-res-krakend-400:
-          type: object
-          description: 요청 실패 시 응답
-          properties:
-            status:
-              type: number
-              description: 상태코드
-              example: 400
-            error:
-              type: string
-              description: 에러 상세 메시지
-              example: Unauthorized token
-        error-res-krakend-403:
-          type: object
-          description: 요청 실패 시 응답
-          properties:
-            status:
-              type: number
-              description: 상태코드
-              example: 403
-            error:
-              type: string
-              description: 에러 상세 메시지
-              example: Forbidden
-        error-res-krakend-429:
-          type: object
-          description: 요청 실패 시 응답
-          properties:
-            status:
-              type: number
-              description: 상태코드
-              example: 429
-            error:
-              type: string
-              description: 에러 상세 메시지
-              example: Too Many Requests
         error-res-backend:
           type: object
           description: 요청 실패 시 응답
@@ -4410,7 +4554,7 @@ contents:
             messageId:
               type: string
               description: 요청 헤더 X-Message-Id 의 값
-              example: vrGG/B0rTTyVVvjbVXKIvA
+              example: 2ADaRijIk8CvaSHVPeEWNw
             timestamp:
               type: datetime
               description: 현재 시간
@@ -4434,7 +4578,6 @@ contents:
                 response:
                   type: object
                   description: 디바이스 유형별 디바이스 프로파일 메시지의 스키마는 [**디바이스 프로파일**](http://www.naver.com) 페이지를 참조해주세요.
-                  example: <<디바이스 프로파일 페이지에서 참조>>
         device-status-res:
           description: 특정 디바이스의 상태 응답입
           allOf:
@@ -4474,7 +4617,7 @@ contents:
               type: string
               example: USER
               description: |-
-                type of targets
+                타겟 타입
                 - GROUP
                 - USER
                 - DEVICE
@@ -4482,17 +4625,17 @@ contents:
               type: string
               example: KRXXXX
               description: |-
-                ids of each targets
-                - when type is USER: userNo
-                - when type is GROUP: groupId
-                - when type is DEVICE: deviceId
+                타겟의 고유 ID값
+                - 타겟이 USER일 경우: userNo
+                - 타겟이 GROUP일 경우: groupId
+                - 타겟이 DEVICE일 경우: deviceId
             opt:
               type: string
               example: OUT
               description: |-
-                Opt in / out of an event
-                - IN: participate in the DR Event (default)
-                - OUT: Opt out of an Event
+                DR 이벤트 참여중 여부(Opt in / out)
+                - IN: DR 이벤트 참여 중(default)
+                - OUT: DR 이벤트 미 참여 중
       parameters:
         X-Api-Token:
           name: X-Api-Token
@@ -4500,7 +4643,7 @@ contents:
           schema:
             type: string
           description: |
-            `API Token`은 **[API Token 발급](/#tag/auth/operation/createAPIToken)** API를 통하여 사전에 발급 받은 문자열입니다.
+            **[API Token 발급](#tag/auth/operation/createAPIToken)** API를 통하여 사전에 발급 받은 문자열인 `API Token`
           example: eyJleHAiOjE3MDQzNDE3MDIsImlhdCI6MTcwNDI1NTMwMiwiaXNzIjoiTEcgQnVzaW5lc3MgQ29ubmVjdCIsInJvbGVzIjpbImdldEJlY29uVXNlcnMiLCJnZXREclVzZXJzIiwicG9zdFRva2VuIl0sInN1YiI6IjRkMmM2MWUxLTM0YzQtZTk2Yy05NDU2LTE1YmQ5ODNjNTAxOSJ9
         X-Message-Id:
           name: X-Message-Id
@@ -4508,7 +4651,7 @@ contents:
           schema:
             type: string
           description: |
-            API 호출 처리 흐름을 추적하기 위하여 API의 클라이언트가 url-safe-base64-no-padding(UUID Version 4)의 최대 22개 문자로 생성한 문자열
+            API 호출 처리 흐름을 추적하기 위하여 API의 클라이언트가 url-safe-base64-no-padding(UUID Version 4)의 22개 문자로 생성한 문자열
           example: 2ADaRijIk8CvaSHVPeEWNw
         X-Use-Account:
           name: X-Use-Account
@@ -4516,12 +4659,12 @@ contents:
           schema:
             type: string
           description: |
-            API 요청 처리시 사용될 LG전자 계정의 출처를 지정합니다.
+            API 요청 처리시 사용될 LG전자 계정의 출처
 
               |Value|Description|
               |-|-|
               |REGISTERED|파트너 요청 및 권한 업데이트를 통하여 이미 등록한 계정|
-              |IN-HEADER|이 HTTP 요청의 `Authorization` 헤더에 OAuth 토큰으로 지정된 계정 (**현재 LG ThinQ 등록 가전제품에 대해서만 지원합니다.**)|
+              |IN-HEADER|이 HTTP 요청의 `Authorization` 헤더에 OAuth 토큰으로 지정된 계정 (**현재 LG ThinQ 등록 제품에 대해서만 지원합니다.**)|
           example: REGISTERED
         Authorization:
           name: Authorization
@@ -4537,7 +4680,7 @@ contents:
           schema:
             type: string
           description: |
-            LG전자가 지원하는 국가의 `ISO-3166 alpha-2` 국가 코드.  `X-Use-Account` 헤더가 HTTP 요청에 포함되어 있으면서 헤더의 값이 `IN-HEADER`인 경우, 이 헤더는 필수적으로 요청에 포함되어야 합니다.
+            LG ThinQ가 지원하는 국가의 `ISO-3166 alpha-2` 국가 코드.  `X-Use-Account` 헤더가 HTTP 요청에 포함되어 있으면서 헤더의 값이 `IN-HEADER`인 경우, 이 헤더는 필수적으로 요청에 포함되어야 하며 `Authorization`에서 지정한 LG전자 계정의 등록 국가의 코드여야 합니다.
           example: KR
         deviceId:
           name: deviceId
@@ -4567,9 +4710,3726 @@ contents:
           schema:
             type: string
           description: |
-            API 호출 처리 흐름을 추적하기 위하여 API의 클라이언트가 url-safe-base64-no-padding(UUID Version 4)의 최대 22개 문자로 생성한 문자열
+            API 호출 처리 흐름을 추적하기 위하여 API의 클라이언트가 url-safe-base64-no-padding(UUID Version 4)의 22개 문자로 생성한 문자열
           example: 2ADaRijIk8CvaSHVPeEWNw
       examples:
+        refrigerator-profile-example:
+          value:
+            property:
+              temperature:
+                - locationName: FRIDGE
+                  unit: C
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 7
+                        min: 0
+                        step: 1
+                      w:
+                        max: 7
+                        min: 0
+                        step: 1
+                - locationName: FREEZER
+                  unit: C
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: -16
+                        min: -21
+                        step: 1
+                      w:
+                        max: -16
+                        min: -21
+                        step: 1
+              refrigeration:
+                expressMode:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                expressModeName:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - FREEZER
+                freshAirFilter:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'OFF'
+                      - AUTO
+                    w:
+                      - 'OFF'
+                      - AUTO
+              doorStatus:
+                - doorState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - OPEN
+                        - CLOSE
+                  locationName: MAIN
+              waterFilterInfo:
+                usedTime:
+                  type: number
+                  mode:
+                    - r
+            notification:
+              push:
+                - TIME_TO_CHANGE_WATER_FILTER
+                - TIME_TO_CHANGE_FILTER
+                - DOOR_IS_OPEN
+                - FROZEN_IS_COMPLETE
+        washer-profile-example:
+          value:
+            error:
+              - DOOR_OPEN_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+              - OUT_OF_BALANCE_ERROR
+              - WATER_LEVEL_SENSOR_ERROR
+              - LOCKED_MOTOR_ERROR
+              - WATER_DRAIN_ERROR
+              - UNABLE_TO_LOCK_ERROR
+              - OVERFILL_ERROR
+              - WATER_SUPPLY_ERROR
+            notification:
+              push:
+                - WASHING_IS_COMPLETE
+                - ERROR_DURING_WASHING
+            property:
+              - detergent:
+                  detergentSetting: NORMAL
+                location:
+                  locationName: MAIN
+                operation:
+                  washerOperationMode:
+                    mode:
+                      - w
+                    type: enum
+                    value:
+                      w:
+                        - START
+                        - STOP
+                        - POWER_OFF
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    mode:
+                      - r
+                    type: boolean
+                    value:
+                      r:
+                        - false
+                        - true
+                runState:
+                  currentState:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - RUNNING
+                        - INITIAL
+                        - RINSING
+                        - SPINNING
+                        - FIRMWARE
+                        - RESERVED
+                        - PAUSE
+                        - POWER_OFF
+                        - DETECTING
+                        - END
+                        - SOAKING
+                        - ERROR
+                timer:
+                  relativeHourToStart:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 19
+                        min: 0
+                        step: 1
+                      w:
+                        except: []
+                        max: 19
+                        min: 0
+                        step: 1
+                  relativeMinuteToStart:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 59
+                        min: 0
+                        step: 1
+                  remainHour:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 30
+                        min: 0
+                        step: 1
+                  remainMinute:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 59
+                        min: 0
+                        step: 1
+                  totalHour:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 30
+                        min: 0
+                        step: 1
+                  totalMinute:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 59
+                        min: 0
+                        step: 1
+        air_conditioner-profile-example:
+          value:
+            notification:
+              push:
+                - WATER_IS_FULL
+            property:
+              airConJobMode:
+                currentJobMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - AIR_DRY
+                      - COOL
+                      - AIR_CLEAN
+                    w:
+                      - AIR_DRY
+                      - COOL
+                      - AIR_CLEAN
+              airFlow:
+                windStrength:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - HIGH
+                      - LOW
+                      - MID
+                    w:
+                      - HIGH
+                      - LOW
+                      - MID
+              filterInfo:
+                filterLifetime:
+                  mode:
+                    - r
+                  type: number
+                usedTime:
+                  mode:
+                    - r
+                  type: number
+              airQualitySensor:
+                PM1:
+                  mode:
+                    - r
+                  type: number
+                PM10:
+                  mode:
+                    - r
+                  type: number
+                PM2:
+                  mode:
+                    - r
+                  type: number
+                humidity:
+                  mode:
+                    - r
+                  type: number
+                totalPollution:
+                  mode:
+                    - r
+                  type: number
+                totalPollutionLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+                monitoringEnabled:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - ON_WORKING
+                      - ALWAYS
+                    w:
+                      - ON_WORKING
+                      - ALWAYS
+              operation:
+                airCleanOperationMode:
+                  mode:
+                    - w
+                  type: enum
+                  value:
+                    w:
+                      - STOP
+                      - START
+                airConOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_OFF
+                      - POWER_ON
+                    w:
+                      - POWER_OFF
+                      - POWER_ON
+              powerSave:
+                powerSaveEnabled:
+                  mode:
+                    - r
+                    - w
+                  type: boolean
+                  value:
+                    r:
+                      - false
+                      - true
+                    w:
+                      - false
+                      - true
+              sleepTimer:
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              temperature:
+                coolTargetTemperature:
+                  mode:
+                    - w
+                  type: range
+                  value:
+                    w:
+                      max: 30
+                      min: 18
+                      step: 1
+                currentTemperature:
+                  mode:
+                    - r
+                  type: number
+                targetTemperature:
+                  mode:
+                    - r
+                    - w
+                  type: range
+                  value:
+                    r:
+                      max: 30
+                      min: 18
+                      step: 1
+                    w:
+                      max: 30
+                      min: 18
+                      step: 1
+                unit:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - C
+              timer:
+                relativeHourToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeMinuteToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeStartTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                relativeStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+        air_purifier-profile-example:
+          value:
+            notification:
+              push:
+                - TIME_TO_CHANGE_FILTER
+                - TIME_TO_CLEAN_FILTER
+                - POLLUTION_IS_HIGH
+                - LACK_OF_WATER
+            property:
+              airFlow:
+                windStrength:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - LOW
+                      - MID
+                      - HIGH
+                      - AUTO
+                      - POWER
+                    w:
+                      - LOW
+                      - MID
+                      - HIGH
+                      - AUTO
+                      - POWER
+              airPurifierJobMode:
+                currentJobMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - CLEAN
+                      - AUTO
+                      - CIRCULATOR
+                      - DUAL_CLEAN
+                    w:
+                      - CLEAN
+                      - AUTO
+                      - CIRCULATOR
+                      - DUAL_CLEAN
+              airQualitySensor:
+                PM1:
+                  mode:
+                    - r
+                  type: number
+                PM10:
+                  mode:
+                    - r
+                  type: number
+                PM2:
+                  mode:
+                    - r
+                  type: number
+                monitoringEnabled:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ON_WORKING
+                      - ALWAYS
+                oder:
+                  mode:
+                    - r
+                  type: number
+                odor:
+                  mode:
+                    - r
+                  type: number
+                odorLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INVALID
+                      - WEAK
+                      - NORMAL
+                      - STRONG
+                      - VERY_STRONG
+                totalPollution:
+                  mode:
+                    - r
+                  type: number
+                totalPollutionLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+              operation:
+                airPurifierOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              timer:
+                absoluteHourToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteStartTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              sleepTimer:
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                  type: number
+                relativeStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+        robot_cleaner-profile-example:
+          title: Robot_Cleaner
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - CHARGING
+                      - MACROSECTOR
+                      - WORKING
+                      - SLEEP
+                      - INITIALIZING
+                      - HOMING
+                      - PAUSE
+                      - RESERVATION
+                      - STANDBY
+                      - SETDATE
+                      - DIAGNOSIS
+                      - ERROR
+              robotCleanerJobMode:
+                currentJobMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - ZIGZAG
+                      - SELECT
+                      - SECTOR_BASE
+                      - SPOT
+                      - EDGE
+                      - MACRO
+              operation:
+                cleanOperationMode:
+                  type: enum
+                  mode:
+                    - w
+                  value:
+                    w:
+                      - HOMING
+                      - WAKE_UP
+                      - PAUSE
+                      - START
+              battery:
+                level:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - MOVELESS
+                      - DOCK_LEVEL
+                      - LOW
+                      - MID
+                      - HIGH
+                      - FULL
+                      - OVER_CHARGE
+                percent:
+                  type: number
+                  mode:
+                    - r
+              timer:
+                runningHour:
+                  type: number
+                  mode:
+                    - r
+                runningMinute:
+                  type: number
+                  mode:
+                    - r
+                absoluteHourToStart:
+                  type: number
+                  mode:
+                    - r
+                absoluteMinuteToStart:
+                  type: number
+                  mode:
+                    - r
+            notification:
+              push:
+                - MOTION_IS_DETECTED
+                - HOMEGUARD_IS_STOPPED
+                - CLEANING_IS_COMPLETED
+                - SCHEDULED_CLEANING_STARTS
+                - NEED_TO_CHECK_LOCATION
+                - CLEANING_IS_FAILED
+            push:
+              - MOTION_IS_DETECTED
+              - HOMEGUARD_IS_STOPPED
+              - CLEANING_IS_COMPLETED
+              - SCHEDULED_CLEANING_STARTS
+              - NEED_TO_CHECK_LOCATION
+              - CLEANING_IS_FAILED
+            error:
+              - RIGHT_WHEEL_ERROR
+              - MOVE_ERROR
+              - UNKNOWN_ERROR
+              - NO_DUST_BIN_ERROR
+              - BLOCK_ERROR
+              - BRUSH_ERROR
+              - MOP_ERROR
+              - CLIFF_ERROR
+              - SUCTION_BLOCKED_ERROR
+        oven-profile-example:
+          title: Oven
+          value:
+            notification:
+              push:
+                - PREHEATING_IS_COMPLETE
+                - COOKING_IS_COMPLETE
+                - ERROR_HAS_OCCURRED
+                - TIME_TO_CLEAN
+            property:
+              - location:
+                  locationName: UPPER
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    mode:
+                      - r
+                    type: boolean
+                    value:
+                      r:
+                        - false
+                        - true
+                runState:
+                  currentState:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - COOLING
+                        - PREHEATING
+                        - INITIAL
+                        - COOKING_IN_PROGRESS
+                        - DONE
+                        - CLEANING
+                        - ERROR
+                        - CLEANING_IS_DONE
+                operation:
+                  ovenOperationMode:
+                    type: enum
+                    mode:
+                      - w
+                    value:
+                      w:
+                        - STOP
+                temperature:
+                  - targetTemperature:
+                      mode:
+                        - r
+                      type: number
+                    unit: F
+                  - targetTemperature:
+                      mode:
+                        - r
+                      type: number
+                    unit: C
+                timer:
+                  remainHour:
+                    mode:
+                      - r
+                    type: number
+                  remainMinute:
+                    mode:
+                      - r
+                    type: number
+                  remainSecond:
+                    mode:
+                      - r
+                    type: number
+            extensionProperty:
+              info:
+                type: SINGLE
+        dish_washer-profile-example:
+          value:
+            error:
+              - HEATER_CIRCUIT_ERROR
+              - BUBBLE_ERROR
+              - WATER_LEAKAGE_ERROR
+              - MOTOR_ERROR
+              - WATER_SUPPLY_ERROR
+              - WATER_DRAIN_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+            notification:
+              push:
+                - RINSE_IS_NOT_ENOUGH
+                - ERROR_DURING_CLEANING
+                - CLEANING_IS_COMPLETE
+                - SALT_REFILL_IS_NEEDED
+                - WATER_LEAK_HAS_OCCURRED
+            property:
+              dishWashingCourse:
+                currentDishWashingCourse:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - DELICATE
+                      - TURBO
+                      - RINSE
+                      - REFRESH
+                      - HEAVY
+                      - NORMAL
+                      - AUTO
+                      - EXPRESS
+                      - MACHINE_CLEAN
+                      - DOWNLOAD_CYCLE
+              dishWashingStatus:
+                rinseRefill:
+                  mode:
+                    - r
+                  type: boolean
+                  value:
+                    r:
+                      - false
+                      - true
+              doorStatus:
+                doorState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - CLOSE
+                      - OPEN
+              preference:
+                cleanLReminder:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - CLEANLREMINDER_OFF
+                      - CLEANLREMINDER_ON
+                mCReminder:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - MCREMINDER_ON
+                      - MCREMINDER_OFF
+                rinseLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - RINSELEVEL_4
+                      - RINSELEVEL_0
+                      - RINSELEVEL_1
+                      - RINSELEVEL_2
+                      - RINSELEVEL_3
+                signalLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - SIGNALLEVEL_ON
+                      - SIGNALLEVEL_OFF
+                softeningLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - SOFTENINGLEVEL_4
+                      - SOFTENINGLEVEL_2
+                      - SOFTENINGLEVEL_3
+                      - SOFTENINGLEVEL_1
+                      - SOFTENINGLEVEL_0
+              runState:
+                currentState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - POWER_FAIL
+                      - INITIAL
+                      - CANCEL
+                      - PAUSE
+                      - RUNNING
+                      - RESERVED
+                      - POWER_OFF
+                      - NIGHT_DRY
+                      - RINSING
+                      - END
+                      - DRYING
+                      - ERROR
+              timer:
+                relativeHourToStart:
+                  mode:
+                    - r
+                  type: number
+                relativeMinuteToStart:
+                  mode:
+                    - r
+                  type: number
+                remainHour:
+                  mode:
+                    - r
+                  type: number
+                remainMinute:
+                  mode:
+                    - r
+                  type: number
+                totalHour:
+                  mode:
+                    - r
+                  type: number
+                totalMinute:
+                  mode:
+                    - r
+                  type: number
+        styler-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - SLEEP
+                      - RUNNING
+                      - STAY
+                      - RESERVED
+                      - INITIAL
+                      - POWER_OFF
+                      - DRYING
+                      - COOLING
+                      - END_COOLING
+                      - COMPLETE
+                      - STERILIZE
+                      - PAUSE
+                      - NIGHT_DRY
+                      - RUNNING_END
+                      - PREHEAT
+                      - DIAGNOSIS
+                      - PRESTEAM
+                      - STEAM
+                      - FOTA
+                      - ERROR
+              operation:
+                stylerOperationMode:
+                  type: enum
+                  mode:
+                    - w
+                  value:
+                    w:
+                      - POWER_OFF
+                      - STOP
+                      - START
+                      - WAKE_UP
+              remoteControlEnable:
+                remoteControlEnabled:
+                  type: boolean
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - true
+                      - false
+              timer:
+                relativeHourToStop:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      min: 3
+                      max: 19
+                    w:
+                      min: 3
+                      max: 19
+                relativeMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                remainHour:
+                  type: number
+                  mode:
+                    - r
+                remainMinute:
+                  type: number
+                  mode:
+                    - r
+                totalHour:
+                  type: number
+                  mode:
+                    - r
+                totalMinute:
+                  type: number
+                  mode:
+                    - r
+            notification:
+              push:
+                - STYLING_IS_COMPLETE
+                - ERROR_HAS_OCCURRED
+            error:
+              - NEED_WATER_DRAIN
+              - DOOR_CLOSE_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+              - WATER_LEAKS_ERROR
+              - WATER_LEVEL_SENSOR_ERROR
+              - STEAM_HEAT_ERROR
+              - LE_ERROR
+              - LE2_ERROR
+              - DOOR_OPEN_ERROR
+              - NEED_WATER_REPLENISHMENT
+        water_purifier-profile-example:
+          value:
+            property:
+              runState:
+                cockState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - CLEANING
+                      - NORMAL
+              waterInfo:
+                waterType:
+                  mode:
+                    - r
+                  type: list
+                  value:
+                    r:
+                      - COLD
+                      - NORMAL
+                      - HOT
+                      - SODA
+        dehumidifier-profile-example:
+          value:
+            notification:
+              push:
+                - WATER_IS_FULL
+            property:
+              airFlow:
+                windStrength:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - LOW
+                      - HIGH
+                    w:
+                      - LOW
+                      - HIGH
+              dehumidifierJobMode:
+                currentJobMode:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - QUIET_HUMIDITY
+                      - CLOTHES_DRY
+                      - INTENSIVE_DRY
+                      - SMART_HUMIDITY
+                      - RAPID_HUMIDITY
+                      - AIR_CLEAN
+              humidity:
+                currentHumidity:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                targetHumidity:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 70
+                      min: 30
+                      step: 5
+                    w:
+                      max: 70
+                      min: 30
+                      step: 5
+              operation:
+                dehumidifierOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              timer:
+                absoluteHourToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteStartTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+        ceiling_fan-profile-example:
+          value:
+            property:
+              airFlow:
+                windStrength:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - TURBO
+                      - HIGH
+                      - LOW
+                      - MID
+                    w:
+                      - TURBO
+                      - HIGH
+                      - LOW
+                      - MID
+              operation:
+                ceilingfanOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+        wine_cellar-profile-example:
+          value:
+            property:
+              temperature:
+                - locationName: WINE_UPPER
+                  unit: C
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 5
+                        step: 1
+                        except: []
+                - locationName: WINE_LOWER
+                  unit: C
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 5
+                        step: 1
+                        except: []
+              operation:
+                lightStatus:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 10
+                    w:
+                      max: 100
+                      min: 0
+                      step: 10
+            notification:
+              push:
+                - DOOR_IS_OPEN
+        kimchi_refrigerator-profile-example:
+          value:
+            notification:
+              push:
+                - DOOR_IS_OPEN
+            property:
+              refrigeration:
+                oneTouchFilter:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - 'OFF'
+                      - 'ON'
+              temperature:
+                - locationName: TOP
+                  targetTemperature:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - FREEZER
+                        - FRIDGE
+                        - KIMCHI
+                        - 'OFF'
+                - locationName: MIDDLE
+                  targetTemperature:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - VEGETABLE_FRUIT
+                        - KIMCHI
+                        - MEAT_FISH
+                        - 'OFF'
+                - locationName: BOTTOM
+                  targetTemperature:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - KIMCHI
+                        - STORAGE
+                        - 'OFF'
+                        - VEGETABLE_FRUIT
+                        - RICE_GRAIN
+        home_brew-profile-example:
+          value:
+            property:
+              recipe:
+                beerRemain:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                flavorInfo:
+                  mode:
+                    - r
+                  type: list
+                  value:
+                    r:
+                      - ORANGE
+                      - CORIANDER
+                      - CORIANDER_SEED
+                hopOilInfo:
+                  mode:
+                    - r
+                  type: list
+                  value:
+                    r:
+                      - FUGGLES
+                      - CASCADE
+                      - HALLERTAU
+                      - CITRUSSY
+                      - GOLDINGS
+                      - CHINOOK
+                recipeName:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - PALE_ALE
+                      - MY_RECIPE
+                      - RED_ALE
+                      - STOUT
+                      - WHEAT
+                      - PILSNER
+                      - IPA
+                wortInfo:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - DARK
+                      - HOPPY
+                      - WHEAT
+                      - DEEP_GOLD
+                yeastInfo:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ENGLISH_ALE
+                      - AMERICAN_ALE
+                      - LAGER
+                      - WEIZEN
+              runState:
+                currentState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - PREPAREING_FERMENTATION
+                      - STANDBY
+                      - DURING_FERMENTATION
+                      - TEMPERATURE_STABILIZATION
+                      - EXTRACTION_MODE
+                      - DURING_AGING
+                      - EXTRACTING_CAPSULE
+                      - MELTING
+                      - AS_POP_UP
+                      - CARBONATION
+              timer:
+                elapsedDayState:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      max: 2731
+                      min: 0
+                      step: 1
+                elapsedDayTotal:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      max: 2731
+                      min: 0
+                      step: 1
+        plant_cultivator-profile-example:
+          value:
+            property:
+              - location:
+                  locationName: UPPER
+                runState:
+                  currentState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - POWER_ON
+                        - POWER_OFF
+                  growthMode:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - STANDARD
+                        - EXT_FLOWER
+                        - EXT_HERB
+                        - EXT_LEAF
+                        - EXT_EXPERT
+                  windVolume:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 1
+                        max: 3
+                        step: 1
+                light:
+                  brightness:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 1
+                        max: 5
+                        step: 1
+                  duration:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 10
+                        max: 18
+                        step: 1
+                  startHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 23
+                        step: 1
+                  startMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 50
+                        step: 10
+                  endHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 23
+                        step: 1
+                  endMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 50
+                        step: 10
+                temperature:
+                  dayTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 22
+                        max: 29
+                        step: 1
+                  nightTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 15
+                        max: 21
+                        step: 1
+              - location:
+                  locationName: LOWER
+                runState:
+                  currentState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - POWER_ON
+                        - POWER_OFF
+                  growthMode:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - STANDARD
+                        - EXT_FLOWER
+                        - EXT_HERB
+                        - EXT_LEAF
+                        - EXT_EXPERT
+                  windVolume:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 1
+                        max: 3
+                        step: 1
+                light:
+                  brightness:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 1
+                        max: 5
+                        step: 1
+                  duration:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 10
+                        max: 18
+                        step: 1
+                  startHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 23
+                        step: 1
+                  startMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 50
+                        step: 10
+                  endHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 23
+                        step: 1
+                  endMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 0
+                        max: 50
+                        step: 10
+                temperature:
+                  dayTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 22
+                        max: 29
+                        step: 1
+                  nightTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        min: 15
+                        max: 21
+                        step: 1
+        washtower_washer-profile-example:
+          value:
+            error:
+              - TEMPERATURE_SENSOR_ERROR
+              - WATER_SUPPLY_ERROR
+              - LOCKED_MOTOR_ERROR
+              - DOOR_OPEN_ERROR
+              - WATER_LEVEL_SENSOR_ERROR
+              - OUT_OF_BALANCE_ERROR
+              - OVERFILL_ERROR
+              - POWER_FAIL_ERROR
+              - UNABLE_TO_LOCK_ERROR
+              - WATER_DRAIN_ERROR
+            notification:
+              push:
+                - WASHING_IS_COMPLETE
+                - ERROR_DURING_WASHING
+            property:
+              - detergent:
+                  detergentSetting: NORMAL
+                location:
+                  locationName: MAIN
+                operation:
+                  washerOperationMode:
+                    mode:
+                      - w
+                    type: enum
+                    value:
+                      w:
+                        - START
+                        - STOP
+                        - POWER_OFF
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    mode:
+                      - r
+                    type: boolean
+                    value:
+                      r:
+                        - false
+                        - true
+                runState:
+                  currentState:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - POWER_OFF
+                        - INITIAL
+                        - ADD_DRAIN
+                        - SPINNING
+                        - FROZEN_PREVENT_RUNNING
+                        - RESERVED
+                        - PAUSE
+                        - DRYING
+                        - REFRESHING
+                        - RINSING
+                        - RINSE_HOLD
+                        - FROZEN_PREVENT_INITIAL
+                        - ERROR
+                        - FROZEN_PREVENT_PAUSE
+                        - DETERGENT_AMOUNT
+                        - END
+                        - DETECTING
+                        - RUNNING
+                        - PREWASH
+                timer:
+                  relativeHourToStop:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 19
+                        min: 3
+                        step: 1
+                      w:
+                        except: []
+                        max: 19
+                        min: 3
+                        step: 1
+                  relativeMinuteToStop:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 59
+                        min: 0
+                        step: 1
+                  remainHour:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 30
+                        min: 0
+                        step: 1
+                  remainMinute:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 59
+                        min: 0
+                        step: 1
+                  totalHour:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 30
+                        min: 0
+                        step: 1
+                  totalMinute:
+                    mode:
+                      - r
+                    type: range
+                    value:
+                      r:
+                        except: []
+                        max: 59
+                        min: 0
+                        step: 1
+        washtower_dryer-profile-example:
+          value:
+            error:
+              - DRAINMOTOR_ERROR
+              - COMPRESSOR_ERROR
+              - DOOR_LOCK_ERROR
+              - MOTOR_LOCK_ERROR
+              - HIGH_TEMPERATURE_DETECTION_ERROR
+              - FAN_MOTOR_ERROR
+              - DOOR_SENSOR_ERROR
+              - DOOR_OPEN_ERROR
+              - NO_FILTER_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+              - EMPTY_WATER_ALERT_ERROR
+            notification:
+              push:
+                - DRYING_IS_COMPLETE
+                - DRYING_FAILED
+            property:
+              operation:
+                dryerOperationMode:
+                  mode:
+                    - w
+                  type: enum
+                  value:
+                    w:
+                      - START
+                      - STOP
+                      - POWER_OFF
+              remoteControlEnable:
+                remoteControlEnabled:
+                  mode:
+                    - r
+                  type: boolean
+                  value:
+                    r:
+                      - false
+                      - true
+              runState:
+                currentState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INITIAL
+                      - RESERVED
+                      - ERROR
+                      - END
+                      - PAUSE
+                      - RUNNING
+                      - DETECTING
+                      - POWER_OFF
+                      - COOLING
+                      - WRINKLE_CARE
+              timer:
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: range
+                  value:
+                    r:
+                      max: 19
+                      min: 3
+                    w:
+                      max: 19
+                      min: 3
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                  type: number
+                remainHour:
+                  mode:
+                    - r
+                  type: number
+                remainMinute:
+                  mode:
+                    - r
+                  type: number
+                totalHour:
+                  mode:
+                    - r
+                  type: number
+                totalMinute:
+                  mode:
+                    - r
+                  type: number
+        washtower-profile-example:
+          value:
+            washer:
+              error:
+                - TEMPERATURE_SENSOR_ERROR
+                - WATER_LEVEL_SENSOR_ERROR
+                - OVERFILL_ERROR
+                - LOCKED_MOTOR_ERROR
+                - DOOR_OPEN_ERROR
+                - UNABLE_TO_LOCK_ERROR
+                - WATER_DRAIN_ERROR
+                - WATER_SUPPLY_ERROR
+                - POWER_FAIL_ERROR
+                - OUT_OF_BALANCE_ERROR
+              property:
+                runState:
+                  currentState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - FROZEN_PREVENT_PAUSE
+                        - DETECTING
+                        - DETERGENT_AMOUNT
+                        - SPINNING
+                        - PREWASH
+                        - REFRESHING
+                        - STEAM_SOFTENING
+                        - DRYING
+                        - RINSE_HOLD
+                        - RESERVED
+                        - ERROR
+                        - INITIAL
+                        - DISPENSING
+                        - FROZEN_PREVENT_INITIAL
+                        - PAUSE
+                        - RUNNING
+                        - END
+                        - POWER_OFF
+                        - RINSING
+                        - FROZEN_PREVENT_RUNNING
+                        - ADD_DRAIN
+                        - SOAKING
+                operation:
+                  washerOperationMode:
+                    type: enum
+                    mode:
+                      - w
+                    value:
+                      w:
+                        - START
+                        - STOP
+                        - POWER_OFF
+                detergent:
+                  detergentSetting: AUTO
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    type: boolean
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                  remainMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                        except: []
+                  totalHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                  totalMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                        except: []
+                  relativeHourToStart:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 19
+                        min: 1
+                        step: 1
+                        except: []
+                      w:
+                        max: 19
+                        min: 1
+                        step: 1
+                        except: []
+                  relativeMinuteToStart:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+              notification:
+                push:
+                  - WASHING_IS_COMPLETE
+                  - ERROR_DURING_WASHING
+            dryer:
+              property:
+                runState:
+                  currentState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - DETECTING
+                        - ERROR
+                        - COOLING
+                        - INITIAL
+                        - POWER_OFF
+                        - RESERVED
+                        - PAUSE
+                        - RUNNING
+                        - WRINKLE_CARE
+                        - END
+                operation:
+                  dryerOperationMode:
+                    type: enum
+                    mode:
+                      - w
+                    value:
+                      w:
+                        - START
+                        - STOP
+                        - POWER_OFF
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    type: boolean
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    type: number
+                    mode:
+                      - r
+                  remainMinute:
+                    type: number
+                    mode:
+                      - r
+                  totalHour:
+                    type: number
+                    mode:
+                      - r
+                  totalMinute:
+                    type: number
+                    mode:
+                      - r
+              notification:
+                push:
+                  - DRYING_FAILED
+                  - DRYING_IS_COMPLETE
+              error:
+                - HIGH_POWER_SUPPLY_ERROR
+                - TEMPERATURE_SENSOR_ERROR
+                - POWER_CODE_CONNECTION_ERROR
+        cooktop-profile-example:
+          value:
+            extensionProperty:
+              operation:
+                operationMode:
+                  mode:
+                    - w
+                  type: enum
+                  value:
+                    w:
+                      - POWER_OFF
+            property:
+              - cookingZone:
+                  currentState:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - INITIAL
+                        - COOK
+                        - PAUSE
+                        - LOCK
+                location:
+                  locationName: LEFT_FRONT
+                power:
+                  powerLevel:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 11
+                        min: 0
+                        step: 1
+                      w:
+                        max: 11
+                        min: 0
+                        step: 1
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    mode:
+                      - r
+                    type: boolean
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 11
+                        min: 0
+                        step: 1
+                      w:
+                        max: 11
+                        min: 0
+                        step: 1
+                  remainMinute:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                      w:
+                        max: 59
+                        min: 0
+                        step: 1
+              - cookingZone:
+                  currentState:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - INITIAL
+                        - COOK
+                        - PAUSE
+                        - LOCK
+                location:
+                  locationName: RIGHT_FRONT
+                power:
+                  powerLevel:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 11
+                        min: 0
+                        step: 1
+                      w:
+                        max: 11
+                        min: 0
+                        step: 1
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    mode:
+                      - r
+                    type: boolean
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 11
+                        min: 0
+                        step: 1
+                      w:
+                        max: 11
+                        min: 0
+                        step: 1
+                  remainMinute:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                      w:
+                        max: 59
+                        min: 0
+                        step: 1
+              - cookingZone:
+                  currentState:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - INITIAL
+                        - COOK
+                        - PAUSE
+                        - LOCK
+                location:
+                  locationName: LEFT_REAR
+                power:
+                  powerLevel:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 11
+                        min: 0
+                        step: 1
+                      w:
+                        max: 11
+                        min: 0
+                        step: 1
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    mode:
+                      - r
+                    type: boolean
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 11
+                        min: 0
+                        step: 1
+                      w:
+                        max: 11
+                        min: 0
+                        step: 1
+                  remainMinute:
+                    mode:
+                      - r
+                      - w
+                    type: range
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                      w:
+                        max: 59
+                        min: 0
+                        step: 1
+        hood-profile-example:
+          value:
+            property:
+              ventilation:
+                fanSpeed:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 5
+                      min: 0
+                      step: 1
+                    w:
+                      max: 5
+                      min: 0
+                      step: 1
+              lamp:
+                lampBrightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 2
+                      min: 0
+                      step: 1
+                    w:
+                      max: 2
+                      min: 0
+                      step: 1
+              operation:
+                hoodOperationMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - POWER_OFF
+                      - POWER_ON
+              timer:
+                remainMinute:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 59
+                      min: 0
+                      step: 1
+                remainSecond:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 59
+                      min: 0
+                      step: 1
+        microwave_oven-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  mode: r
+                  type: enum
+                  value:
+                    r:
+                      - INITIAL
+                      - PREHEAT
+                      - COOK
+                      - COOK_COMPLETE
+                      - PAUSE
+                      - PREHEAT_COMPLETE
+                      - OVEN_SETTING
+              timer:
+                remainMinute:
+                  mode: r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 59
+                      step: 1
+                remainSecond:
+                  mode: r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 59
+                      step: 1
+              ventilation:
+                fanSpeed:
+                  mode: rw
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 4
+                      step: 1
+                    w:
+                      min: 0
+                      max: 4
+                      step: 1
+              lamp:
+                lampBrightness:
+                  mode: rw
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 2
+                      step: 1
+                    w:
+                      min: 0
+                      max: 2
+                      step: 1
+            notification:
+              push:
+                - PREHEATING_IS_COMPLETE
+                - COOKING_IS_COMPLETE
+                - TIMER_IS_COMPLETE
+        system_boiler-profile-example:
+          value:
+            property:
+              boilerJobMode:
+                currentJobMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - COOL
+                      - AUTO
+                      - HEAT
+                    w:
+                      - COOL
+                      - AUTO
+                      - HEAT
+              operation:
+                boilerOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+                hotWaterMode:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+              temperature:
+                currentTemperature:
+                  mode:
+                    - r
+                  type: number
+                targetTemperature:
+                  mode:
+                    - r
+                  type: number
+                heatTargetTemperature:
+                  mode:
+                    - w
+                  type: number
+                coolTargetTemperature:
+                  mode:
+                    - w
+                  type: number
+                heatMaxTemperature:
+                  mode:
+                    - r
+                  type: number
+                heatMinTemperature:
+                  mode:
+                    - r
+                  type: number
+                coolMaxTemperature:
+                  mode:
+                    - r
+                  type: number
+                coolMinTemperature:
+                  mode:
+                    - r
+                  type: number
+                unit:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - C
+        air_purifier_fan-profile-example:
+          value:
+            notification:
+              push:
+                - TIME_TO_CHANGE_FILTER
+            property:
+              airFanJobMode:
+                currentJobMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SPOT_CLEAN
+                      - SPACE_CLEAN
+                      - DIRECT_CLEAN
+                      - UP_FEATURE
+                    w:
+                      - SPOT_CLEAN
+                      - SPACE_CLEAN
+                      - DIRECT_CLEAN
+              operation:
+                airFanOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              airFlow:
+                warmMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - WARM_ON
+                      - WARM_OFF
+                    w:
+                      - WARM_ON
+                      - WARM_OFF
+                windTemperature:
+                  mode:
+                    - r
+                    - w
+                  type: range
+                  value:
+                    r:
+                      max: 30
+                      min: 16
+                      step: 1
+                    w:
+                      max: 30
+                      min: 16
+                      step: 1
+                windStrength:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - AUTO
+                      - POWER
+                      - WIND_1
+                      - WIND_2
+                      - WIND_3
+                      - WIND_4
+                      - WIND_5
+                      - WIND_6
+                      - WIND_7
+                      - WIND_8
+                      - WIND_9
+                      - WIND_10
+                    w:
+                      - AUTO
+                      - POWER
+                      - WIND_1
+                      - WIND_2
+                      - WIND_3
+                      - WIND_4
+                      - WIND_5
+                      - WIND_6
+                      - WIND_7
+                      - WIND_8
+                      - WIND_9
+                      - WIND_10
+                windAngle:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - 'OFF'
+                      - ANGLE_45
+                      - ANGLE_60
+                      - ANGLE_90
+                      - ANGLE_140
+                    w:
+                      - 'OFF'
+                      - ANGLE_45
+                      - ANGLE_60
+                      - ANGLE_90
+                      - ANGLE_140
+              timer:
+                absoluteHourToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteStartTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              sleepTimer:
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                  type: number
+                relativeStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              airQualitySensor:
+                totalPollution:
+                  mode:
+                    - r
+                  type: number
+                totalPollutionLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+                PM1:
+                  mode:
+                    - r
+                  type: number
+                PM2:
+                  mode:
+                    - r
+                  type: number
+                PM10:
+                  mode:
+                    - r
+                  type: number
+                odor:
+                  mode:
+                    - r
+                  type: number
+                odorLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INVALID
+                      - WEAK
+                      - NORMAL
+                      - STRONG
+                      - VERY_STRONG
+                temperature:
+                  mode:
+                    - r
+                  type: number
+                humidity:
+                  mode:
+                    - r
+                  type: number
+                monitoringEnabled:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ON_WORKING
+                      - ALWAYS
+              display:
+                light:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - 'OFF'
+                      - LEVEL_1
+                      - LEVEL_2
+                      - LEVEL_3
+                    w:
+                      - 'OFF'
+                      - LEVEL_1
+                      - LEVEL_2
+                      - LEVEL_3
+              misc:
+                uvNano:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+        stick_cleaner-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - CHARGING
+                      - CHARGING_COMPLETE
+                      - WORKING
+                      - STANDBY
+              stickCleanerJobMode:
+                currentJobMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - 'OFF'
+                      - AUTO
+                      - HIGH
+                      - NORMAL
+                      - TURBO
+                      - MOP
+              battery:
+                level:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - WARNING
+                      - HIGH
+                      - LOW
+                      - MID
+            notification:
+              push:
+                - TIME_TO_CLEAN_FILTER
+                - CHARGING_IS_COMPLETE
+        water_heater-profile-example:
+          value:
+            property:
+              waterHeaterJobMode:
+                currentJobMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - HEAT_PUMP
+                      - AUTO
+                      - VACATION
+                      - TURBO
+                    w:
+                      - HEAT_PUMP
+                      - AUTO
+                      - VACATION
+                      - TURBO
+              operation:
+                waterHeaterOperationMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+              temperature:
+                currentTemperature:
+                  type: number
+                  mode:
+                    - r
+                targetTemperature:
+                  type: number
+                  mode:
+                    - r
+                    - w
+        main_washcombo-profile-example:
+          value:
+            error:
+              - TURBIDITY_SENSOR_ERROR
+              - DOOR_OPEN_ERROR
+              - WATER_DRAIN_ERROR
+              - FILTER_CLOGGING_ERROR
+              - FAN_MOTOR_LOCK_ERROR
+              - DISPENSING_ERROR
+              - LOCKED_MOTOR_ERROR
+              - WATER_LEVEL_SENSOR_ERROR
+              - OUT_OF_BALANCE_ERROR
+              - IR_SENSOR_ERROR
+              - DOOR_LOCK_ERROR
+              - FROZEN_ERROR
+              - NO_FILTER_ERROR
+              - VIBRATION_SENSOR_ERROR
+              - STEAM_HEAT_ERROR
+              - WATER_SUPPLY_ERROR
+              - OVERFILL_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+              - COMPRESSOR_ERROR
+              - HIGH_TEMPERATURE_DETECTION_ERROR
+            property:
+              - runState:
+                  currentState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - POWER_OFF
+                        - RINSING
+                        - PREWASH
+                        - DISPENSING
+                        - RESERVED
+                        - FROZEN_PREVENT_RUNNING
+                        - COOLING
+                        - DETECTING
+                        - INITIAL
+                        - END
+                        - ERROR
+                        - STEAM_SOFTENING
+                        - PAUSE
+                        - FROZEN_PREVENT_PAUSE
+                        - DRYING
+                        - FROZEN_PREVENT_INITIAL
+                        - ADD_DRAIN
+                        - SOAKING
+                        - RINSE_HOLD
+                        - SPINNING
+                        - DETERGENT_AMOUNT
+                        - RUNNING
+                        - REFRESHING
+                operation:
+                  washerOperationMode:
+                    type: enum
+                    mode:
+                      - w
+                    value:
+                      w:
+                        - START
+                        - STOP
+                        - POWER_OFF
+                detergent:
+                  detergentSetting: AUTO
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    type: boolean
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                  remainMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                        except: []
+                  totalHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                  totalMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                        except: []
+                  relativeHourToStop:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 19
+                        min: 3
+                        step: 1
+                        except: []
+                      w:
+                        max: 19
+                        min: 3
+                        step: 1
+                        except: []
+                  relativeMinuteToStop:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                location:
+                  locationName: MAIN
+            notification:
+              push:
+                - WASHING_IS_COMPLETE
+                - DRYING_IS_COMPLETE
+                - ERROR_DURING_WASHING
+                - DRYING_FAILED
+        mini_washcombo-profile-example:
+          value:
+            error:
+              - OUT_OF_BALANCE_ERROR
+              - STACK_ERROR
+              - DOOR_OPEN_ERROR
+              - LOCKED_MOTOR_ERROR
+              - DOOR_SENSOR_ERROR
+              - WATER_LEVEL_SENSOR_ERROR
+              - WATER_SUPPLY_ERROR
+              - OVERFILL_ERROR
+              - DOOR_LOCK_ERROR
+              - WATER_DRAIN_ERROR
+              - INNER_LID_OPEN_ERROR
+              - TEMPERATURE_SENSOR_ERROR
+              - FROZEN_ERROR
+              - CLUTCH_ERROR
+            property:
+              - runState:
+                  currentState:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - END
+                        - POWER_OFF
+                        - RINSING
+                        - SOAKING
+                        - ERROR
+                        - SPINNING
+                        - RESERVED
+                        - PAUSE
+                        - DETECTING
+                        - FIRMWARE
+                        - INITIAL
+                        - RUNNING
+                operation:
+                  washerOperationMode:
+                    type: enum
+                    mode:
+                      - w
+                    value:
+                      w:
+                        - START
+                        - STOP
+                        - POWER_OFF
+                detergent:
+                  detergentSetting: NORMAL
+                remoteControlEnable:
+                  remoteControlEnabled:
+                    type: boolean
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - false
+                        - true
+                timer:
+                  remainHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                  remainMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                        except: []
+                  totalHour:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                  totalMinute:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 59
+                        min: 0
+                        step: 1
+                        except: []
+                  relativeHourToStop:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 19
+                        min: 3
+                        step: 1
+                        except: []
+                      w:
+                        max: 19
+                        min: 3
+                        step: 1
+                        except: []
+                  relativeMinuteToStop:
+                    type: range
+                    mode:
+                      - r
+                    value:
+                      r:
+                        max: 30
+                        min: 0
+                        step: 1
+                        except: []
+                location:
+                  locationName: MINI
+            notification:
+              push:
+                - WASHING_IS_COMPLETE
+                - ERROR_DURING_WASHING
+        humidifier-profile-example:
+          title: Humidifier
+          value:
+            notification:
+              push:
+                - TIME_TO_CHANGE_FILTER
+                - LACK_OF_WATER
+            property:
+              humidifierJobMode:
+                currentJobMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - HUMIDIFY
+                      - HUMIDIFY_AND_AIR_CLEAN
+                      - AIR_CLEAN
+                    w:
+                      - HUMIDIFY
+                      - HUMIDIFY_AND_AIR_CLEAN
+                      - AIR_CLEAN
+              operation:
+                humidifierOperationMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+                autoMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - AUTO_ON
+                      - AUTO_OFF
+                    w:
+                      - AUTO_ON
+                      - AUTO_OFF
+                sleepMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SLEEP_ON
+                      - SLEEP_OFF
+                    w:
+                      - SLEEP_ON
+                      - SLEEP_OFF
+                hygieneDryMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - FAST
+                      - SILENT
+                      - 'OFF'
+                      - NORMAL
+                    w:
+                      - FAST
+                      - SILENT
+                      - 'OFF'
+                      - NORMAL
+              timer:
+                absoluteHourToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStart:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteMinuteToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                absoluteStartTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              sleepTimer:
+                relativeHourToStop:
+                  mode:
+                    - r
+                    - w
+                  type: number
+                relativeMinuteToStop:
+                  mode:
+                    - r
+                  type: number
+                relativeStopTimer:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              humidity:
+                targetHumidity:
+                  mode:
+                    - r
+                    - w
+                  type: range
+                  value:
+                    r:
+                      max: 70
+                      min: 30
+                      step: 5
+                    w:
+                      max: 70
+                      min: 30
+                      step: 5
+                warmMode:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - WARM_ON
+                      - WARM_OFF
+                    w:
+                      - WARM_ON
+                      - WARM_OFF
+              airFlow:
+                windStrength:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - POWER
+                      - HIGH
+                      - MID
+                      - LOW
+                      - AUTO
+                    w:
+                      - POWER
+                      - HIGH
+                      - MID
+                      - LOW
+              airQualitySensor:
+                totalPollution:
+                  mode:
+                    - r
+                  type: number
+                totalPollutionLevel:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+                PM1:
+                  mode:
+                    - r
+                  type: number
+                PM2:
+                  mode:
+                    - r
+                  type: number
+                PM10:
+                  mode:
+                    - r
+                  type: number
+                humidity:
+                  mode:
+                    - r
+                  type: number
+                temperature:
+                  mode:
+                    - r
+                  type: number
+                monitoringEnabled:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ON_WORKING
+                      - ALWAYS
+              display:
+                light:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - 'OFF'
+                      - LEVEL_1
+                      - LEVEL_2
+                      - LEVEL_3
+                    w:
+                      - 'OFF'
+                      - LEVEL_1
+                      - LEVEL_2
+                      - LEVEL_3
+              moodLamp:
+                moodLampState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+        odu-profile-example:
+          value:
+            operation:
+              operationMode:
+                type: enum
+                mode:
+                  - r
+                value:
+                  r:
+                    - STOP
+                    - COOL
+                    - HEAT
+            temperature:
+              outdoorTemperature:
+                type: number
+                mode:
+                  - r
+            info:
+              modelName:
+                type: string
+                mode:
+                  - r
+              capacity:
+                type: number
+                mode:
+                  - r
+        idu-profile-example:
+          value:
+            operation:
+              airConOperationMode:
+                type: enum
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - POWER_ON
+                    - POWER_OFF
+                  w:
+                    - POWER_ON
+                    - POWER_OFF
+              heaterOperationMode:
+                type: enum
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - POWER_ON
+                    - POWER_OFF
+                  w:
+                    - POWER_ON
+                    - POWER_OFF
+            jobMode:
+              airConJobMode:
+                type: enum
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - AUTO
+                    - COOL
+                    - AIR_DRY
+                    - FAN
+                    - HEAT
+                  w:
+                    - AUTO
+                    - COOL
+                    - AIR_DRY
+                    - FAN
+                    - HEAT
+              heaterJobMode:
+                type: boolean
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - true
+                    - false
+                  w:
+                    - true
+                    - false
+            temperature:
+              currentTemperature:
+                type: number
+                mode:
+                  - r
+              targetTemperature:
+                type: range
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    max: 30
+                    min: 16
+                    step: 1
+                  w:
+                    max: 30
+                    min: 16
+                    step: 1
+              targetTemperatureLowLimit:
+                type: range
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    max: 30
+                    min: 16
+                    step: 1
+                  w:
+                    max: 30
+                    min: 16
+                    step: 1
+              targetTemperatureUpperLimit:
+                type: range
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    max: 30
+                    min: 16
+                    step: 1
+                  w:
+                    max: 30
+                    min: 16
+                    step: 1
+              outdoorTemperature1:
+                type: range
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    max: 0
+                    min: -23
+                    step: 1
+                  w:
+                    max: 0
+                    min: -23
+                    step: 1
+              outdoorTemperature2:
+                type: range
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    max: 51
+                    min: -23
+                    step: 1
+                  w:
+                    max: 51
+                    min: -23
+                    step: 1
+            powerSave:
+              powerSaveEnabled:
+                type: boolean
+                mode:
+                  - r
+                value:
+                  r:
+                    - true
+                    - false
+              powerSaveStep:
+                type: enum
+                mode:
+                  - r
+              value:
+                r:
+                  - POWERSAVE_LEVEL_1
+                  - POWERSAVE_LEVEL_2
+                  - POWERSAVE_LEVEL_3
+            airFlow:
+              windStrength:
+                type: enum
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - AUTO
+                    - HIGH
+                    - MED
+                    - LOW
+                  w:
+                    - AUTO
+                    - HIGH
+                    - MED
+                    - LOW
+              windDirectionSetting:
+                type: boolean
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - true
+                    - false
+                  w:
+                    - true
+                    - false
+            outdoor:
+              outdoorHeaterSetting:
+                type: boolean
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - true
+                    - false
+                  w:
+                    - true
+                    - false
+              outdoorHeatPumpSetting:
+                type: boolean
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - true
+                    - false
+                  w:
+                    - true
+                    - false
+            lock:
+              fullLock:
+                type: boolean
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - true
+                    - false
+                  w:
+                    - true
+                    - false
+              modeLock:
+                type: boolean
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - true
+                    - false
+                  w:
+                    - true
+                    - false
+              fanLock:
+                type: boolean
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - true
+                    - false
+                  w:
+                    - true
+                    - false
+              temperatureLock:
+                type: boolean
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - true
+                    - false
+                  w:
+                    - true
+                    - false
+            alarm:
+              filterReplacementAlarm:
+                type: boolean
+                mode:
+                  - r
+                value:
+                  r:
+                    - true
+                    - false
+            address:
+              targetAddress:
+                type: string
+                mode:
+                  - w
+                value:
+                  w:
+                    - 00~FF
+            execution:
+              executionDevice:
+                type: boolean
+                mode:
+                  - w
+                value:
+                  w:
+                    - true
+                    - false
+        signage-profile-example:
+          value:
+            power:
+              screen:
+                type: enum
+                mode:
+                  - r
+                  - w
+              value:
+                r:
+                  - SCREEN_ON
+                  - SCREEN_OFF
+                w:
+                  - SCREEN_ON
+                  - SCREEN_OFF
+            display:
+              input:
+                type: string
+                mode:
+                  - r
+                  - w
+              pictureMode:
+                type: string
+                mode:
+                  - r
+                  - w
+            audio:
+              volumeMute:
+                type: boolean
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    - true
+                    - false
+                  w:
+                    - true
+                    - false
+              volume:
+                type: range
+                mode:
+                  - r
+                  - w
+                value:
+                  r:
+                    max: 100
+                    min: 0
+                    step: 1
+                  w:
+                    max: 100
+                    min: 0
+                    step: 1
+            temperature:
+              main:
+                type: number
+                mode:
+                  - r
+            info:
+              osType:
+                type: string
+                mode:
+                  - r
         refrigerator-object-example:
           value:
             doorStatus:
@@ -4589,11 +8449,687 @@ contents:
                 unit: C
             waterFilterInfo:
               usedTime: 0
+        washer-object-example:
+          value:
+            - location:
+                locationName: MAIN
+              remoteControlEnable:
+                remoteControlEnabled: true
+              runState:
+                currentState: INITIAL
+              timer:
+                relativeHourToStop: 3
+                relativeMinuteToStop: 0
+                remainHour: 0
+                remainMinute: 0
+                totalHour: 0
+                totalMinute: 0
+        air_conditioner-object-example:
+          value:
+            airConJobMode:
+              currentJobMode: FAN
+            airFlow:
+              windStrength: HIGH
+              windStep: 5
+            operation:
+              airConOperationMode: POWER_OFF
+            powerSave:
+              powerSaveEnabled: false
+            temperature:
+              currentTemperature: 27
+              targetTemperature: 24.5
+              unit: C
+            timer:
+              absoluteStopTimer: UNSET
+              absoluteStartTimer: UNSET
+            sleepTimer:
+              relativeStopTimer: UNSET
+        air_purifier-object-example:
+          value:
+            airPurifierJobMode:
+              currentJobMode: CLEAN
+            operation:
+              airPurifierOperationMode: POWER_OFF
+            timer:
+              absoluteHourToStart: 23
+              absoluteMinuteToStart: 24
+              absoluteHourToStop: 9
+              absoluteMinuteToStop: 8
+              absoluteStartTimer: SET
+              absoluteStopTimer: SET
+            sleepTimer:
+              relativeStopTimer: UNSET
+            airFlow:
+              windStrength: HIGH
+            airQualitySensor:
+              PM1: 0
+              PM2: 0
+              PM10: 72
+              oder: 0
+              odor: 0
+              odorLevel: INVALID
+              totalPollution: 1
+              totalPollutionLevel: GOOD
+              monitoringEnabled: ON_WORKING
+        robot_cleaner-object-example:
+          title: Robot_Cleaner
+          value:
+            runState:
+              currentState: CHARGING
+            robotCleanerJobMode:
+              currentJobMode: ZIGZAG
+            battery:
+              level: FULL
+        oven-object-example:
+          title: Oven
+          value:
+            - runState:
+                currentState: INITIAL
+              location:
+                locationName: UPPER
+              temperature:
+                targetTemperature: 0
+                unit: F
+              timer:
+                remainHour: 0
+                remainMinute: 0
+                remainSecond: 0
+            - runState:
+                currentState: PREHEATING
+              cook:
+                cookMode: BAKE
+              location:
+                locationName: LOWER
+              temperature:
+                targetTemperature: 350
+                unit: F
+              remoteControlEnable:
+                remoteControlEnabled: true
+              timer:
+                remainHour: 0
+                remainMinute: 2
+                remainSecond: 51
+        dish_washer-object-example:
+          value:
+            dishWashingStatus:
+              rinseRefill: false
+            doorStatus:
+              doorState: CLOSE
+            preference:
+              cleanLReminder: CLEANLREMINDER_OFF
+              mCReminder: MCREMINDER_OFF
+              rinseLevel: RINSELEVEL_0
+              signalLevel: SIGNALLEVEL_OFF
+              softeningLevel: SOFTENINGLEVEL_0
+            runState:
+              currentState: POWER_OFF
+            timer:
+              relativeHourToStart: 0
+              relativeMinuteToStart: 0
+              remainHour: 0
+              remainMinute: 0
+              totalHour: 0
+              totalMinute: 0
+        styler-object-example:
+          value:
+            remoteControlEnable:
+              remoteControlEnabled: false
+            runState:
+              currentState: INITIAL
+            timer:
+              relativeHourToStop: 0
+              relativeMinuteToStop: 0
+              remainHour: 0
+              remainMinute: 0
+              totalHour: 0
+              totalMinute: 0
+        water_purifier-object-example:
+          value:
+            runState:
+              cockState: CLEANING
+            waterInfo:
+              waterType:
+                - COLD
+                - NORMAL
+                - HOT
+                - SODA
+        dehumidifier-object-example:
+          value:
+            airFlow:
+              windStrength: HIGH
+            dehumidifierJobMode:
+              currentJobMode: INTENSIVE_DRY
+            humidity:
+              currentHumidity: 45
+              targetHumidity: 50
+            operation:
+              dehumidifierOperationMode: POWER_ON
+            timer:
+              absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
+        ceiling_fan-object-example:
+          value:
+            airFlow:
+              windStrength: LOW
+            operation:
+              ceilingfanOperationMode: POWER_ON
+        wine_cellar-object-example:
+          value:
+            temperature:
+              - targetTemperature: 18
+                unit: C
+                locationName: WINE_UPPER
+              - targetTemperature: 18
+                unit: C
+                locationName: WINE_LOWER
+            operation:
+              lightStatus: 100
+        kimchi_refrigerator-object-example:
+          value:
+            refrigeration:
+              oneTouchFilter: 'OFF'
+            temperature:
+              - locationName: TOP
+                targetTemperature: KIMCHI
+              - locationName: MIDDLE
+                targetTemperature: KIMCHI
+              - locationName: BOTTOM
+                targetTemperature: KIMCHI
+        home_brew-object-example:
+          value:
+            runState:
+              currentState: STANDBY
+            recipe:
+              recipeName: MY_RECIPE
+              wortInfo: HOPPY
+              yeastInfo: AMERICAN_ALE
+              hopOilInfo:
+                - CASCADE
+              flavorInfo:
+                - CORIANDER
+                - CORIANDER_SEED
+              beerRemain: 1
+            timer:
+              elapsedDayState: 0
+              elapsedDayTotal: 0
+        plant_cultivator-object-example:
+          value:
+            - location:
+                locationName: UPPER
+              runState:
+                currentState: POWER_ON
+                growthMode: EXT_EXPERT
+                windVolume: 1
+              light:
+                brightness: 4
+                duration: 14
+                startHour: 3
+                startMinute: 0
+                endHour: 17
+                endMinute: 0
+              temperature:
+                dayTargetTemperature: 22
+                nightTargetTemperature: 21
+            - location:
+                locationName: LOWER
+              runState:
+                currentState: POWER_ON
+                growthMode: STANDARD
+                windVolume: 2
+              light:
+                brightness: 5
+                duration: 17
+                startHour: 3
+                startMinute: 0
+                endHour: 17
+                endMinute: 0
+              temperature:
+                dayTargetTemperature: 25
+                nightTargetTemperature: 18
+        washtower_washer-object-example:
+          value:
+            - location:
+                locationName: MAIN
+              remoteControlEnable:
+                remoteControlEnabled: false
+              runState:
+                currentState: END
+              timer:
+                relativeHourToStop: 3
+                relativeMinuteToStop: 0
+                remainHour: 0
+                remainMinute: 0
+                totalHour: 0
+                totalMinute: 0
+        washtower_dryer-object-example:
+          value:
+            remoteControlEnable:
+              remoteControlEnabled: false
+            runState:
+              currentState: RESERVED
+            timer:
+              relativeHourToStop: 0
+              relativeMinuteToStop: 0
+              remainHour: 0
+              remainMinute: 0
+              totalHour: 0
+              totalMinute: 0
+        washtower-object-example:
+          value:
+            washer:
+              runState:
+                currentState: POWER_OFF
+              remoteControlEnable:
+                remoteControlEnabled: false
+              timer:
+                remainHour: 0
+                remainMinute: 0
+                relativeHourToStart: 0
+                relativeMinuteToStart: 0
+                totalHour: 0
+                totalMinute: 0
+            dryer:
+              runState:
+                currentState: POWER_OFF
+              remoteControlEnable:
+                remoteControlEnabled: false
+              timer:
+                remainHour: 0
+                remainMinute: 0
+                relativeHourToStop: 0
+                relativeMinuteToStop: 0
+                totalHour: 0
+                totalMinute: 0
+        cooktop-object-example:
+          value:
+            - location:
+                locationName: LEFT_FRONT
+              cookingZone:
+                currentState: INITIAL
+              power:
+                powerLevel: 3
+              timer:
+                remainHour: 0
+                remainMinute: 27
+              remoteControlEnable:
+                remoteControlEnabled: false
+            - location:
+                locationName: RIGHT_FRONT
+              cookingZone:
+                currentState: INITIAL
+              power:
+                powerLevel: 0
+              timer:
+                remainHour: 0
+                remainMinute: 0
+              remoteControlEnable:
+                remoteControlEnabled: false
+            - location:
+                locationName: LEFT_REAR
+              cookingZone:
+                currentState: INITIAL
+              power:
+                powerLevel: 0
+              timer:
+                remainHour: 0
+                remainMinute: 0
+              remoteControlEnable:
+                remoteControlEnabled: false
+        hood-object-example:
+          value:
+            operation:
+              hoodOperationMode: POWER_ON
+            lamp:
+              lampBrightness: 2
+            ventilation:
+              fanSpeed: 1
+            timer:
+              remainMinute: 3
+              remainSecond: 25
+        microwave_oven-object-example:
+          value:
+            runState:
+              currentState: INITIAL
+            timer:
+              remainMinute: 0
+              remainSecond: 0
+            ventilation:
+              fanSpeed: 3
+            lamp:
+              lampBrightness: 0
+        system_boiler-object-example:
+          value:
+            boilerJobMode:
+              currentJobMode: COOL
+            operation:
+              boilerOperationMode: POWER_ON
+              hotWaterMode: 'ON'
+            temperature:
+              currentTemperature: 40
+              targetTemperature: 18
+              unit: C
+        air_purifier_fan-object-example:
+          value:
+            airFanJobMode:
+              currentJobMode: SPOT_CLEAN
+            operation:
+              airFanOperationMode: POWER_ON
+            airFlow:
+              warmMode: WARM_OFF
+              windStrength: WIND_5
+              windTemperature: 0
+              windAngle: ANGLE_45
+            airQualitySensor:
+              PM1: 31
+              PM10: 45
+              PM2: 35
+              humidity: 30
+              temperature: 40
+              monitoringEnabled: ON_WORKING
+              odor: 1
+              odorLevel: WEAK
+              totalPollution: 2
+              totalPollutionLevel: NORMAL
+            display:
+              light: LEVEL_1
+            misc:
+              uvNano: 'OFF'
+            timer:
+              absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
+            sleepTimer:
+              relativeStopTimer: UNSET
+        stick_cleaner-object-example:
+          value:
+            runState:
+              currentState: STANDBY
+            stickCleanerJobMode:
+              currentJobMode: 'OFF'
+            battery:
+              level: HIGH
+        water_heater-object-example:
+          value:
+            waterHeaterJobMode:
+              currentJobMode: VACATION
+            temperature:
+              currentTemperature: 42
+              targetTemperature: 52
+            operation:
+              waterHeaterOperationMode: POWER_ON
+        main_washcombo-object-example:
+          value:
+            - runState:
+                currentState: POWER_OFF
+              remoteControlEnable:
+                remoteControlEnabled: false
+              timer:
+                remainHour: 0
+                remainMinute: 0
+                relativeHourToStop: 0
+                relativeMinuteToStop: 0
+                totalHour: 0
+                totalMinute: 0
+              location:
+                locationName: MAIN
+        mini_washcombo-object-example:
+          value:
+            - runState:
+                currentState: POWER_OFF
+              remoteControlEnable:
+                remoteControlEnabled: false
+              timer:
+                remainHour: 0
+                remainMinute: 0
+                relativeHourToStop: 0
+                relativeMinuteToStop: 0
+                totalHour: 0
+                totalMinute: 0
+              location:
+                locationName: MINI
+        humidifier-object-example:
+          title: Humidifier
+          value:
+            humidifierJobMode:
+              currentJobMode: HUMIDIFY
+            operation:
+              humidifierOperationMode: POWER_ON
+              autoMode: AUTO_ON
+              sleepMode: SLEEP_OFF
+              hygieneDryMode: SILENT
+            humidity:
+              targetHumidity: 65
+              warmMode: WARM_ON
+            airFlow:
+              windStrength: AUTO
+            airQualitySensor:
+              PM1: 4
+              PM2: 4
+              PM10: 6
+              humidity: 36
+              temperature: 24.5
+              totalPollution: 1
+              totalPollutionLevel: GOOD
+              monitoringEnabled: ON_WORKING
+            display:
+              light: LEVEL_2
+            moodLamp:
+              moodLampState: 'ON'
+            timer:
+              absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
+            sleepTimer:
+              relativeStopTimer: UNSET
+        odu-object-example:
+          title: ODU
+          value:
+            operation:
+              operationMode: STOP
+            temperature:
+              outdoorTemperature: 20
+            info:
+              modelName: HP_SUPER5
+              capacity: 0
+        idu-object-example:
+          title: IDU
+          value:
+            operation:
+              airConOperationMode: POWER_ON
+            jobMode:
+              airConJobMode: AUTO
+            temperature:
+              currentTemperature: 23
+              targetTemperature: 20
+              targetTemperatureLowLimit: 18
+              targetTemperatureUpperLimit: 21
+            powerSave:
+              powerSaveEnabled: false
+              powerSaveStep: POWERSAVE_LEVEL_1
+            airFlow:
+              windStrength: LOW
+              windDirectionSetting: false
+            outdoor:
+              outdoorHeaterSetting: false
+              outdoorHeatPumpSetting: false
+            lock:
+              fullLock: false
+              modeLock: false
+              fanLock: false
+              temperatureLock: false
+            alarm:
+              filterReplacementAlarm: false
+            error:
+              errorCode: '0'
+        signage-object-example:
+          title: SIGNAGE
+          value:
+            power:
+              screen: SCREEN_ON
+            display:
+              input: '90'
+              pictureMode: '05'
+            audio:
+              volume: 10
+              volumeMute: false
+            temperature:
+              main: 30
+            info:
+              osType: WEBOS
         refrigerator-command-example:
           description: 냉장고 - 절전 모드 설정
           value:
             powerSave:
               powerSaveEnabled: true
+        washer-command-example:
+          description: 세탁기 - 운전 시작
+          value:
+            location:
+              locationName: MAIN
+            operation:
+              washerOperationMode: START
+        air_conditioner-command-example:
+          description: 에어컨 - 지정한 켜짐 예약시간
+          value:
+            timer:
+              absoluteHourToStart: 10
+              absoluteMinuteToStart: 36
+        air_purifier-command-example:
+          description: 공기청정기 - 운전 모드
+          value:
+            airPurifierJobMode:
+              currentJobMode: CLEAN
+        robot_cleaner-command-example:
+          title: Robot_Cleaner
+          description: 로봇청소기 - 청소 모드
+          value:
+            operation:
+              cleanOperationMode: HOMING
+        oven-command-example:
+          title: Oven
+          description: 오븐 - 오븐 동작
+          value:
+            location:
+              locationName: LOWER
+            operation:
+              ovenOperationMode: START
+        dish_washer-command-example:
+          description: 식기세척기 - 운전 모드
+          value:
+            operation:
+              dishWasherOperationMode: START
+        styler-command-example:
+          description: 스타일러 - 운전 모드
+          value:
+            operation:
+              stylerOperationMode: START
+        dehumidifier-command-example:
+          description: 가습기 - 운전 모드
+          value:
+            humidifierJobMode:
+              currentJobMode: HUMIDIFY
+        ceiling_fan-command-example:
+          description: 실링팬 - 운전 모드
+          value:
+            operation:
+              ceilingfanOperationMode: POWER_ON
+        wine_cellar-command-example:
+          description: 와인셀러 - 조명 밝기
+          value:
+            operation:
+              lightStatus: 90
+        washtower_washer-command-example:
+          description: 워시타워 세탁기 - 세탁 시작
+          value:
+            operation:
+              washerOperationMode: START
+            location:
+              locationName: MAIN
+        washtower_dryer-command-example:
+          description: 워시타워(건조기) - 전원 POWER_OFF
+          value:
+            operation:
+              dryerOperationMode: POWER_OFF
+        washtower-command-example:
+          description: 워시타워 - 건조기 시작
+          value:
+            dryer:
+              operation:
+                dryerOperationMode: START
+        cooktop-command-example:
+          description: 쿡탑 - 전원 OFF
+          value:
+            operation:
+              operationMode: POWER_OFF
+        hood-command-example:
+          description: 후드 - 램프 밝기
+          value:
+            lamp:
+              lampBrightness: 0
+        microwave_oven-command-example:
+          description: 전자레인지
+          value:
+            lamp:
+              lampBrightness: 1
+            ventilation:
+              fanSpeed: 0
+        system_boiler-command-example:
+          description: 시스템 보일러 - 전원 ON
+          value:
+            operation:
+              boilerOperationMode: POWER_ON
+        air_purifier_fan-command-example:
+          description: 공기청정팬 - 운전 모드
+          value:
+            airFanJobMode:
+              currentJobMode: SPOT_CLEAN
+        water_heater-command-example:
+          description: 온수기 - 운전모드
+          value:
+            waterHeaterJobMode:
+              currentJobMode: AUTO
+        main_washcombo-command-example:
+          description: 워시콤보세탁기 메인 - 동작
+          value:
+            location:
+              locationName: MAIN
+            operation:
+              washerOperationMode: START
+        mini_washcombo-command-example:
+          description: 워시콤보세탁기 미니 - 동작
+          value:
+            location:
+              locationName: MINI
+            operation:
+              washerOperationMode: START
+        humidifier-command-example:
+          title: Humidifier
+          description: 가습기 - 운전 모드
+          value:
+            humidifierJobMode:
+              currentJobMode: HUMIDIFY
+        idu-command-example:
+          title: IDU
+          value:
+            operation:
+              airConOperationMode: POWER_ON
+            jobMode:
+              airConJobMode: AUTO
+            airFlow:
+              windStrength: LOW
+            lock:
+              fullLock: false
+              modeLock: false
+              fanLock: false
+              temperatureLock: false
+            temperature:
+              targetTemperature: 20
+              targetTemperatureLowLimit: 18
+              targetTemperatureUpperLimit: 21
+        signage-command-example:
+          title: SIGNAGE
+          description: 사이니지 - 스크린 ON
+          value:
+            power:
+              screen: SCREEN_ON
     x-tagGroups:
       - name: Get Started
         tags:
@@ -4602,7 +9138,7 @@ contents:
           - Base URL
           - Codes
           - auth
-      - name: APIs
+      - name: ThinQ Business API
         tags:
           - Device API
           - Event API
