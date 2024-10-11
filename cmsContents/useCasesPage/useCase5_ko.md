@@ -14,16 +14,16 @@ contents: >-2
   \    <div className="box-item">
 
 
-  \    <p className="sub">에너지 관리</p>
+  \    <p className="sub">공유 라운지</p>
 
 
-  \    <p className="title lgEiText"> 공간 환경 최적화를 통한 에너지 관리</p>
+  \    <p className="title lgEiText">편안한 휴식이 있는 스마트 라운지</p>
 
 
   \    <p className="text--light mt3">
 
 
-  \     사용하지 않는 공간이나 과도한 냉난방 상태를 센싱하여 자동으로 에너지 사용을 최적화합니다.<br />이를 통해 공간 환경을 쾌적하게 유지할 뿐만 아니라 불필요한 전력 사용을 줄여 에너지 비용을 절감합니다.
+  \     라운지나 리셉션 공간은 브랜드의 컨셉과 중요한 정보를 전달하는 장소이자 입주민들의 교류와 휴식을 위한 감성적인 공간입니다.<br /> 이러한 공간에 디스플레이, 안마의자, 공기청정기를 다양한 IoT센서와 결합하여 주거 브랜드만의 차별화된 공간을 연출 할 수 있습니다.
 
 
   \    </p>
@@ -35,7 +35,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
+  \    href="/api/business_connect?s=1727316475662"
 
 
   \    target="_blank"
@@ -50,7 +50,7 @@ contents: >-2
   \    </CoLink>
 
 
-  \    <CoLink className="btn-round-line btn-l" href="https://dev.openapi.developer.lge.com/ko/mypage/partner/landing?s=1728539044388" target="_blank">
+  \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388" target="_blank">
 
 
   \    파트너십 신청
@@ -89,7 +89,7 @@ contents: >-2
   \    <p className="usecase-cont__title mb2">
 
 
-  \    <i className="usecase-cont__icon bell"></i>에너지를 절약하는 자동 전원 제어
+  \    <i className="usecase-cont__icon bell"></i>일상 속에서 화면으로 접하는 공지 사항
 
 
   \    </p>
@@ -98,7 +98,7 @@ contents: >-2
   \    <p className="usecase-cont__txt">
 
 
-  \    호텔, 기숙사, 공유하우스 등 에서 사용자가 퇴실 시 냉난방을 끄지 않아도, 재실 센서가 이를 감지하여 자동으로 전원을 끌 수 있습니다.
+  \    상업용 TV, 사이니지 화면을 통해 사용자들에게  공지 사항을 전달하고, 다양한 이벤트와 함께 시각적인 정보를 제공을 할 수 있습니다.
 
 
   \    </p>
@@ -122,7 +122,7 @@ contents: >-2
   \    <p className="usecase-cont__title mb2">
 
 
-  \    <i className="usecase-cont__icon thumb"></i>빈 공간을 감지하는 자동 절전 시스템
+  \    <i className="usecase-cont__icon thumb"></i>센서 기술을 활용한 실내 환경 모니터링 및 기기 제어
 
 
   \    </p>
@@ -131,7 +131,7 @@ contents: >-2
   \    <p className="usecase-cont__txt">
 
 
-  \    회의실, 세탁실, 휴게실 등이 비어 있을 때에는 조명이 자동으로 꺼지고 냉난방은 절전으로 동작하여 불필요한 에너지 낭비를 줄여 줍니다.
+  \    공기질/온습도/재실 센서 등을 통해 실내의 온습도 및 미세먼지를 측정하고 에어컨, 공기청정기 등이 보다 쾌적하게 동작할 수 있도록 설계할 수 있습니다.
 
 
   \    </p>
@@ -152,7 +152,7 @@ contents: >-2
   \    <p className="usecase-cont__title mb2">
 
 
-  \    <i className="usecase-cont__icon thumb"></i>체크인과 함께 시작되는 자동 냉난방 시스템
+  \    <i className="usecase-cont__icon thumb"></i>편안함을 주는 스마트 휴식 공간 조성
 
 
   \    </p>
@@ -161,7 +161,7 @@ contents: >-2
   \    <p className="usecase-cont__txt">
 
 
-  \    숙소에 체크인이 되면 자동으로 객실의 냉난방이 가동되어 사용자가 입실했을 때 쾌적함을 느끼게 합니다.
+  \    다양한 컬러 표현이 가능한 스마트 조명과 가구 디자인의 안마의자, 자동으로 식물 성장을 관리하는 틔운 등을 통해 감성적이고 편안한 휴식 공간을 구성할 수 있습니다.
 
 
   \    </p>
@@ -173,7 +173,10 @@ contents: >-2
   \    </div>
 
 
-  \    
+  \    </div>
+
+
+  \    <div className="grid usecase-grid--else">
 
 
   \    <div className="col-full mt4 mb0 usecase-pick">
@@ -212,7 +215,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">에어컨</p>
+  \    <p className="usecase-pick__txt">사이지니</p>
 
 
   \    </li>
@@ -245,7 +248,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">시스템보일러</p>
+  \    <p className="usecase-pick__txt">상업용디스플레이</p>
 
 
   \    </li>
@@ -278,7 +281,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">스마트조명</p>
+  \    <p className="usecase-pick__txt">에어컨</p>
 
 
   \    </li>
@@ -311,7 +314,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">조명스위치</p>
+  \    <p className="usecase-pick__txt">공기청정기</p>
 
 
   \    </li>
@@ -344,7 +347,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">재실센서</p>
+  \    <p className="usecase-pick__txt">안마의자</p>
 
 
   \    </li>
@@ -377,7 +380,106 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">도어센서</p>
+  \    <p className="usecase-pick__txt">틔움</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">공기질센서</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">스마트조명</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">온습도센서</p>
 
 
   \    </li>
@@ -419,7 +521,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-sensor"></i>에어컨
+  \    <i className="icon-sensor"></i>사이니지
 
 
   \    </div>
@@ -431,22 +533,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>사람을 감지하여 모드 제어 및 에너지 절감</dt>
+  \    <dt>게시물을 업로드하고 정해진 일정에 디스플레이 설정</dt>
 
 
-  \    <dd>공간 내에 있는 사람을 감지하는 기술을 활용하여 에어컨의 작동 방식을 조정하여 자동으로 에어컨을 켜고 끄거나 절전 모드로 전환하여 불필요한 에너지 소모를 줄이고, 전기 요금을 절감하여 쾌적한 환경을 유지하면서도 지속 가능한 에너지 사용을 실현하는 데 기여합니다.</dd>
-
-
-  \    </dl>
-
-
-  \    <dl>
-
-
-  \    <dt>최적의 조건을 유지하는 희망온도 자동 설정</dt>
-
-
-  \    <dd>미리 설정한 시간이나 실외 온도에 따라 목표온도와 바람세기를 자동으로 설정하여 사용자가 원하는 쾌적한 실내 환경을 준비하게 하고, 외부 온도 변화에 맞춰 자동으로 최적의 조건을 유지하여 에너지를 효율적으로 사용하면서도 편리함을 제공합니다.</dd>
+  \    <dd>관리자가 업로드한 게시물을 재생하고 정해진 일정에 디스플레이되도록 설정하여 관리의 효율성을 높일 수 있으며, 회사의 소식이나 이벤트를 효과적으로 전달할 수 있어 직원들이 중요한 정보와 소식을 쉽게 접할 수 있고 자연스럽게 소통할 수 있도록 만들어 줍니다.</dd>
 
 
   \    </dl>
@@ -500,7 +590,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-air-fresh"></i>재실센서
+  \    <i className="icon-air-fresh"></i>공기청정기
 
 
   \    </div>
@@ -512,10 +602,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>스마트한 공간 관리를 위한 재실 여부 감지 및 데이터 제공</dt>
+  \    <dt>건강한 실내환경을 유지하는 자동 공기청정 시스템</dt>
 
 
-  \    <dd>센서가 설치된 공간의 사람의 존재 여부를 감지하여 공간의 사용 현황을 실시간으로 파악하고 감지한 재실 정보는 다른 기기와 연동되어 활용할 수 있으며 또 수집된 데이터를 대시보드에서 사용자에게 제공하여 손쉽게 공간의 활용도를 확인하고, 필요에 따라 적절한 조치를 취할 수 있도록 도와 공간 관리의 효율성을 극대화할 수 있습니다.</dd>
+  \    <dd>공기청정기의 미세먼지, 온습도 관련 정보를 확인하여 현재 공기 상태를 정확히 파악하고 실내 공기질을 향상시킬 수 있게 돕습니다. 수집된 공기 정보를 기반으로 하여 공기청정기의 전원을 켜고 끌 수 있으며, 다양한 10가지 운전 모드로 작동하여 공기를 신속하게 정화할 수 있습니다. 단순히 공기를 정화하는 것뿐만 아니라, 보다 쾌적하고 건강한 실내 환경을 유지하여 개인의 생활 스타일에 맞춘 최적의 공기 관리가 가능합니다.</dd>
 
 
   \    </dl>
@@ -545,22 +635,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>사용자 환경에 맞춘 맞춤형 밝기 설정</dt>
+  \    <dt>편안한 공간 조성을 위한 스마트 조명 색상 변경</dt>
 
 
-  \    <dd>다양한 입력에 따라 전구의 밝기를 자동으로 조절할 수 있는 기능을 제공하여 사용자의 필요와 환경에 맞춰 조명을 최적화하여, 특정 시간대에 자연광의 양에 따라 밝기를 조절하거나 사용자의 설정에 맞게 조명을 변경하여 사용자에게 맞춤형 조명 경험을 제공하고, 에너지 효율성을 극대화할 수 있습니다.</dd>
-
-
-  \    </dl>
-
-
-  \    <dl>
-
-
-  \    <dt>움직임 감지에 기반한 조명 제어</dt>
-
-
-  \    <dd>공간에 있는 사람의 움직임이나 존재를 인식하여 조명의 상태를 조절하여 사용자의 편리함을 높일 뿐만 아니라, 불필요한 전력 소모를 줄여 보다 스마트하고 효율적인 생활을 가능하게 합니다.</dd>
+  \    <dd>색상 변환 기능이 있는 스마트조명의 색상값을 변경할 수 있어 다양한 색상을 통해 공간의 분위기를 조성하고 하루 중 시간대에 따라 자연광에 맞춰 색상을 자동으로 조정함으로써 더욱 쾌적하고 편안함을 느끼는 환경을 만들어 더욱 몰입감 있는 휴식 공간을 제공할 수 있습니다.</dd>
 
 
   \    </dl>
@@ -599,7 +677,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
+  \    href="/api/business_connect?s=1727316475662"
 
 
   \    target="_blank"
