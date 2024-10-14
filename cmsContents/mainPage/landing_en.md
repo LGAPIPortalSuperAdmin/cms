@@ -189,7 +189,7 @@ contents: >-
   \              className="btn-round-flat c-link p0">
 
 
-  \              자세히 보기<i className="arr-link"></i>
+  \              See More<i className="arr-link"></i>
 
 
   \              </CoLink>
