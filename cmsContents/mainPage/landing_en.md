@@ -42,19 +42,7 @@ contents: >-
   \                  <p className="tem-card__txt">
 
 
-  \                    직관적으로 설계된 RESTful API 패턴과
-
-
-  \                    <br class="pc" />
-
-
-  \                    견고한 LG의 보안체계로 쉽고 안전하게 서비스를
-
-
-  \                    <br class="pc" />
-
-
-  \                    확장해 보세요.
+  \                    Expand your service safely and easily with the help of LG's powerful security system and intuitively designed RESTful API patterns.
 
 
   \                  </p>
@@ -87,7 +75,7 @@ contents: >-
   \                  <p className="tem-card__txt">
 
 
-  \                    LG Open API 파트너십은 서비스와 기능을 차별화해 경쟁력을 확보하는데 날개를 달아드립니다.
+  \                    Business Connect partnership allows you to keep ahead of the competition with our superb services and products.
 
 
   \                  </p>
@@ -120,7 +108,7 @@ contents: >-
   \                  <p className="tem-card__txt">
 
 
-  \                    시뮬레이터를 사용해 원하는 서비스에 맞춰 다양한 시나리오의 API 동작을 검증해 보세요.
+  \                    Validate if your APIs are functioning as expected in various scenarios that best represents your needs by utilizing our simulator.
 
 
   \                  </p>
@@ -162,7 +150,7 @@ contents: >-
   \                  <p className="tem-zigzag__tit">
 
 
-  \                    <small>가정 생활을 더 편리하고 스마트하게</small>스마트 홈
+  \                    <small>Smarter and more convenient home</small>Smart Home
 
 
   \                  </p>
@@ -192,13 +180,19 @@ contents: >-
   \                  </p>
 
 
-  \                  <CoButton className="btn-round-flat c-link p0">
+  \              <CoLink
 
 
-  \                    자세히 보기 <i className="arr-link"></i>
+  \              href="/product/useCase7?s=1728382710224"
 
 
-  \                  </CoButton>
+  \              className="btn-round-flat c-link p0">
+
+
+  \              자세히 보기<i className="arr-link"></i>
+
+
+  \              </CoLink>
 
 
   \                </div>
@@ -219,7 +213,7 @@ contents: >-
   \                  <p className="tem-zigzag__tit">
 
 
-  \                    <small>스마트한 관리</small>주거용 빌딩
+  \                    <small>Smart management</small>Residential Building
 
 
   \                  </p>
@@ -228,10 +222,7 @@ contents: >-
   \                  <p className="tem-zigzag__txt">
 
 
-  \                    빌딩 관제 뿐만 아니라, 입주민들이 사용하는 앱에도 제품 상태조회 및 제어기능을 연동하여 입주자들의
-
-
-  \                    편의성을 극대화 해 보세요.
+  \                    You can not only control the building, but also maximize residents’ facility by implementing a feature that allows you to check products’ status and control them into the app used by the residents.
 
 
   \                    <br />
@@ -240,19 +231,25 @@ contents: >-
   \                    <br />
 
 
-  \                    코리빙하우스, 요양시설, 기숙사 등 주거용 빌딩 관리에 최적화 된 기능들을 제공합니다.
+  \                    Offers features optimized for managing residential buildings such as co-living houses, nursing facilities or dormitories.
 
 
   \                  </p>
 
 
-  \                  <CoButton className="btn-round-flat c-link p0">
+  \              <CoLink
 
 
-  \                    자세히 보기 <i className="arr-link"></i>
+  \              href="/product/useCase4?s=1728382660697"
 
 
-  \                  </CoButton>
+  \              className="btn-round-flat c-link p0">
+
+
+  \              See More<i className="arr-link"></i>
+
+
+  \              </CoLink>
 
 
   \                </div>
@@ -273,7 +270,7 @@ contents: >-
   \                  <p className="tem-zigzag__tit">
 
 
-  \                    <small>귀사만의 솔루션</small>오피스 빌딩
+  \                    <small>A solution, suited only for you</small>Office Buildings
 
 
   \                  </p>
@@ -282,25 +279,25 @@ contents: >-
   \                  <p className="tem-zigzag__txt">
 
 
-  \                    API를 활용해 사무용 빌딩(건축, 리모델링, 공유 오피스 등)에 최적화된 기능들과 다양한 LG전자
-
-
-  \                    제품(ThinQ앱 가전, 공조시설, 로봇 등)을 한 번에 관리할 수 있으며, BMS 솔루션 뿐만 아니라 임직원을
-
-
-  \                    위한 앱을 만들 수 있도록 제품 제어를 위한 다양한 기능을 제공합니다.
+  \                    Various features are provided, which allow you to create apps not only for BMS solutions but also for your employees. You can manage features optimized for office buildings (construction, remodeling, shared workspace, etc.) and various multiple LG Electronics devices (ThinQ app appliances, Heating Ventilation and Air Conditioning Systems, Robots, etc.) through APIs at the same time.
 
 
   \                  </p>
 
 
-  \                  <CoButton className="btn-round-flat c-link p0">
+  \              <CoLink
 
 
-  \                    자세히 보기 <i className="arr-link"></i>
+  \              href="/product/useCase1?s=1728382496802"
 
 
-  \                  </CoButton>
+  \              className="btn-round-flat c-link p0">
+
+
+  \              See More<i className="arr-link"></i>
+
+
+  \              </CoLink>
 
 
   \                </div>
@@ -324,7 +321,7 @@ contents: >-
   \              <h3 className="tem-title--t4 tem-title--light txt-center mb2.5 mb-sm-1.5">
 
 
-  \                <b>파트너 센터</b>
+  \                <b>Partner Center</b>
 
 
   \              </h3>
@@ -501,7 +498,19 @@ contents: >-
   \              <p className="tem-text__tit">LG Open API 사용을 위한 궁금한 내용을 문의해 보세요.</p>
 
 
-  \              <CoButton className="btn-round-primary btn-l">문의하기</CoButton>
+  \              <CoLink
+
+
+  \              href="mailto:bizdev@lge.com?subject=제목을 입력해 주세요.&body=문의내용을 입력해 주세요.”"
+
+
+  \              className="btn-round-primary btn-l">
+
+
+  \              문의하기
+
+
+  \              </CoLink>
 
 
   \            </div>
