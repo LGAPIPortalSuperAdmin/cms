@@ -38,9 +38,6 @@ contents: >-2
   \    href="/api/business_connect?s=1727316475662"
 
 
-  \    target="_blank"
-
-
   \    className="btn-round-black btn-l">
 
 
@@ -50,7 +47,7 @@ contents: >-2
   \    </CoLink>
 
 
-  \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388" target="_blank">
+  \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">
 
 
   \    파트너십 신청
@@ -620,9 +617,6 @@ contents: >-2
   \    href="/api/business_connect?s=1727316475662"
 
 
-  \    target="_blank"
-
-
   \    className="btn-round-primary btn-l">
 
 
@@ -645,4 +639,7 @@ contents: >-2
 
 
   \    </div>
+
+
+  >
 ---
