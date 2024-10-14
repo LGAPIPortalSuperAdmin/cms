@@ -38,9 +38,6 @@ contents: >-2
   \    href="/api/thinq_connect"
 
 
-  \    target="_blank"
-
-
   \    className="btn-round-black btn-l">
 
 
@@ -50,7 +47,7 @@ contents: >-2
   \    </CoLink>
 
 
-  \    <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank">
+  \    <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com">
 
 
   \    PAT
@@ -642,9 +639,6 @@ contents: >-2
 
 
   \    href="/api/thinq_connect"
-
-
-  \    target="_blank"
 
 
   \    className="btn-round-primary btn-l">
