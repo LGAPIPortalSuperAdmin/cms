@@ -159,13 +159,7 @@ contents: >-
   \                  <p className="tem-zigzag__txt">
 
 
-  \                    저녁에는 수면 환경으로 자동 변경되고, 아침에는 스마트 가전이 최적화합니다. 예약한 시간에 맞춰
-
-
-  \                    자동으로 세탁과 청소기능을 동작하고 귀가 시간에 맞춰 공기 청정 모드를 작동시켜 효율적인 실내 환경을
-
-
-  \                    유지합니다.
+  \                    In the evening, the environment automatically changes to a sleeping mode, and in the morning, smart appliances are optimized. Laundry and cleaning functions are automatically triggered at scheduled times, and air purification modes are activated when you return home to maintain an efficient indoor environment.
 
 
   \                    <br />
@@ -174,7 +168,7 @@ contents: >-
   \                    <br />
 
 
-  \                    사용자가 어디에 있든 보다 나은 스마트한 라이프스타일을 경험해 보세요.
+  \                    Experience a better, smarter lifestyle wherever you are.
 
 
   \                  </p>
@@ -330,7 +324,7 @@ contents: >-
   \              <p className="tem-txt--t2 txt-center mb7.5 mb-sm-3">
 
 
-  \                LG Open API Developer와 함께 비즈니스의 본질에 집중하세요.
+  \                Focus on the essence of your business with LG Open API Developer.
 
 
   \              </p>
@@ -495,19 +489,19 @@ contents: >-
   \            <div className="container">
 
 
-  \              <p className="tem-text__tit">LG Open API 사용을 위한 궁금한 내용을 문의해 보세요.</p>
+  \              <p className="tem-text__tit">Contact us with any questions you may have about using LG Open APIs.</p>
 
 
   \              <CoLink
 
 
-  \              href="mailto:bizdev@lge.com?subject=제목을 입력해 주세요.&body=문의내용을 입력해 주세요.”"
+  \              href="mailto:bizdev@lge.com?subject=Enter the subject.&body=Enter the inquiry."
 
 
   \              className="btn-round-primary btn-l">
 
 
-  \              문의하기
+  \              1:1 Q&A
 
 
   \              </CoLink>
