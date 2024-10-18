@@ -482,7 +482,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="/api/business_connect?s=1727316475662"
+  \    href="/api/thinq_connect"
 
 
   \    className="btn-round-primary btn-l">
