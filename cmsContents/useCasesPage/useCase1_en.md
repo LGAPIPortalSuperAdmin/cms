@@ -14,22 +14,16 @@ contents: >-2
   \    <div className="box-item">
 
 
-  \    <p className="sub">빌딩 관제</p>
+  \    <p className="sub">Building control</p>
 
 
-  \    <p className="title lgEiText">더 철저한 빌딩 관리</p>
+  \    <p className="title lgEiText">Intensive Building Management</p>
 
 
   \    <p className="text--light mt3">
 
 
-  \    ThinQ Business API를 통해 직접 고객사만의 관제실을 구성할 수 있습니다. <br />
-
-
-  \    설계된 맞춤 관제실을 사용해 빌딩 환경을 최적의 상태로 구성하고 시설 관리자의 <br />
-
-
-  \    운영 효율 높일 수 있습니다.
+  \    Configure a control room tailored to your needs using the ThinQ Business API. <br />With a customized control room, create an optimal building environment and improve managers' operational efficiency.
 
 
   \    </p>
@@ -41,7 +35,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
+  \    href="/api/business_connect?s=1727316475662"
 
 
   \    className="btn-round-black btn-l">
@@ -53,10 +47,10 @@ contents: >-2
   \    </CoLink>
 
 
-  \    <CoLink className="btn-round-line btn-l" href="https://dev.openapi.developer.lge.com/en/mypage/partner/landing?s=1728367164739">
+  \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">
 
 
-  \    Become a partner
+  \    파트너십 신청
 
 
   \    </CoLink>
@@ -77,13 +71,13 @@ contents: >-2
   \    <div className="container">
 
 
-  \    <div className="grid usecase-grid--1">
+  \    <div className="grid usecase-grid--3">
 
 
   \    
 
 
-  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
+  \    <div className="box box--r-1.25 box--clean usecase-box">
 
 
   \    <div className="usecase-cont">
@@ -92,7 +86,7 @@ contents: >-2
   \    <p className="usecase-cont__title mb2">
 
 
-  \    <i className="usecase-cont__icon bell"></i>알림을 통한 선제 대응
+  \    <i className="usecase-cont__icon bell"></i>Proactively respond to any issues in the building
 
 
   \    </p>
@@ -101,46 +95,7 @@ contents: >-2
   \    <p className="usecase-cont__txt">
 
 
-  \    온습도 센서를 통해 건물의 이상 상태를 파악하고, 문제가 발생하면 빌딩 운영자에게 알림을 제공하여
-
-
-  \    선제적으로 건물의 공기질 상황을 파악할 수 있도록 합니다.
-
-
-  \    </p>
-
-
-  \    </div>
-
-
-  \    </div>
-
-
-  \    
-
-
-  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
-
-
-  \    <div className="usecase-cont">
-
-
-  \    <p className="usecase-cont__title mb2">
-
-
-  \    <i className="usecase-cont__icon thumb"></i>데이터 분석을 통한 공간 집중 관리
-
-
-  \    </p>
-
-
-  \    <p className="usecase-cont__txt">
-
-
-  \    자주 이상 신호가 발생하는 공간의 설비 제어 이력을 확인하고 문제를 파악 할 수 있습니다. 분석된 정보를
-
-
-  \    통해 공간을 집중관리하여 입주인원의 만족도를 높일 수 있습니다.
+  \    Issues can be identified by the temperature and humidity sensor. An alert is sent to the managers when there are any issues detected in the building so that the managers can proactively identify them.
 
 
   \    </p>
@@ -155,7 +110,7 @@ contents: >-2
   \    
 
 
-  \    <div className="box box--r-1.25 box--clean col-4 col-md-full col-sm-full usecase-box">
+  \    <div className="box box--r-1.25 box--clean usecase-box">
 
 
   \    <div className="usecase-cont">
@@ -164,7 +119,7 @@ contents: >-2
   \    <p className="usecase-cont__title mb2">
 
 
-  \    <i className="usecase-cont__icon star"></i>냄새를 통한 공기 청결도 관리
+  \    <i className="usecase-cont__icon thumb"></i>Intensive space management through data analysis
 
 
   \    </p>
@@ -173,10 +128,7 @@ contents: >-2
   \    <p className="usecase-cont__txt">
 
 
-  \    공간의 온습도 뿐만 아니라 냄새 역시 데이터로 관리할 수 있습니다. 에어컨, 공기청정기가 제공하는 냄새
-
-
-  \    농도값을 측정해 공기의 청결도를 파악하고, 공간 내 공조 기기의 이상 여부를 확인할 수 있습니다.
+  \    Check the facility control history of the space, where issues occur frequently. Use the analysis to manage the space more thoroughly and improve tenant satisfaction.
 
 
   \    </p>
@@ -186,6 +138,42 @@ contents: >-2
 
 
   \    </div>
+
+
+  \    <div className="box box--r-1.25 box--clean usecase-box">
+
+
+  \    <div className="usecase-cont">
+
+
+  \    <p className="usecase-cont__title mb2">
+
+
+  \    <i className="usecase-cont__icon thumb"></i>Monitor the air quality by detecting odors
+
+
+  \    </p>
+
+
+  \    <p className="usecase-cont__txt">
+
+
+  \    In addition to the temperature and humidity, data can also be used to manage odors. By using the odor concentration level provided by air conditioners and air purifiers, you can monitor the air quality.
+
+
+  \    </p>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    <div className="grid usecase-grid--else">
 
 
   \    <div className="col-full mt4 mb0 usecase-pick">
@@ -332,7 +320,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-sensor"></i>온/습도 센서
+  \    <i className="icon-sensor"></i>공기질/온습도 센서
 
 
   \    </div>
@@ -344,10 +332,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>공기질 상태 확인</dt>
+  \    <dt>빌딩 내 공기질/온습도 센서를 통한 공기질 상태 확인</dt>
 
 
-  \    <dd>센서의 공기질 및 온습도 정보값을 확인 할 수 있습니다.</dd>
+  \    <dd>공기질 센서(airQualitySensor)는 극초미세먼지(PM1) 농도까지 측정할 뿐만 아니라, 습도, 온도, 오염 물질의 농도를 종합 공기 청정도로 표현하여 5단계로 나타내어 공기 청정을 자동화 합니다. 인구 밀도가 높은 오피스에서 쾌적한 청정공기 관리는 사용자의 업무효율을 높여줍니다.</dd>
 
 
   \    </dl>
@@ -377,10 +365,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>설비 상태 조회</dt>
+  \    <dt>에어컨 설비의 운전정보를 확인하여 기기 상태 점검</dt>
 
 
-  \    <dd>HVAC 설비의 현재 운전정보 등을 확인 할 수 있습니다.</dd>
+  \    <dd>사용 중인 에어컨의 상태를 확인하여 필터 막힘 또는 온도 불균형 등의 문제를 조기에 감지하고, 필요에 따라 설정을 조정하여 효율적인 에어컨 운영과 함께 쾌적한 실내 환경을 조성합니다. 이와 같은 지능형 에어컨 관리는 사용자의 편안함과 업무 집중도를 높여줍니다.</dd>
 
 
   \    </dl>
@@ -389,10 +377,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>제어 이력 조회</dt>
+  \    <dt>실내 환경 최적화를 위한 이력 조회</dt>
 
 
-  \    <dd>에어컨 설비의 제어 이력을 조회할 수 있습니다.</dd>
+  \    <dd>에어컨의 사용 이력을 조회하고 과거 사용 패턴을 분석하여 에어컨 설정을 최적화할 수 있으며, 각 공간에 맞춤형 환경을 제공하여 모두에게 생산적인 환경을 제공할 수 있습니다. 이러한 환경 최적화는 건강한 작업 공간을 조성합니다.</dd>
 
 
   \    </dl>
@@ -422,10 +410,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>냄새 농도값 확인</dt>
+  \    <dt>청정 공간을 유지하기 위한 냄새 농도값 확인</dt>
 
 
-  \    <dd>기기가 수집한 공간의 냄새 농도값을 5단계로 확인할 수 있습니다.</dd>
+  \    <dd>기기가 빌딩 내에서 발생하는 다양한 냄새를 정량적으로 측정하고 5단계로 나누어 표시함으로써 해당 공간의 냄새 상태를 보다 명확하게 이해할 수 있도록 돕습니다. 불쾌한 냄새를 효과적으로 제거하여 언제나 상쾌한 공간을 제공합니다.</dd>
 
 
   \    </dl>
@@ -464,7 +452,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="https://dev.openapi.developer.lge.com/ko/api/business_connect?s=1727316475662"
+  \    href="/api/business_connect"
 
 
   \    className="btn-round-primary btn-l">
