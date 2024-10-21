@@ -629,39 +629,6 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-air-fresh"></i>재실센서
-
-
-  \    </div>
-
-
-  \    <div className="col-8 col-sm-full">
-
-
-  \    <dl>
-
-
-  \    <dt>스마트한 공간 관리를 위한 재실 여부 감지 및 데이터 제공</dt>
-
-
-  \    <dd>센서가 설치된 공간의 사람의 존재 여부를 감지하여 공간의 사용 현황을 실시간으로 파악하고 감지한 재실 정보는 다른 기기와 연동되어 활용할 수 있으며 또 수집된 데이터를 대시보드에서 사용자에게 제공하여 손쉽게 공간의 활용도를 확인하고, 필요에 따라 적절한 조치를 취할 수 있도록 도와 공간 관리의 효율성을 극대화할 수 있습니다.</dd>
-
-
-  \    </dl>
-
-
-  \    </div>
-
-
-  \    </li>
-
-
-  \    <li className="usecase-dev__item grid">
-
-
-  \    <div className="col-4 col-sm-full">
-
-
   \    <i className="icon-air-fresh"></i>조명스위치
 
 
