@@ -72,7 +72,7 @@ contents: >-
   \    <p className="tem-zigzag__txt">
 
 
-  \    ThinQ API는 나만의 맞춤형 스마트 홈을 구성할 수 있도록 LG ThinQ <br class="pc" />
+  \    ThinQ API는 나만의 맞춤형 스마트 홈을 구성할 수 있도록 LG ThinQ <br className="pc" />
 
 
   \    가전의 제어 및 모니터링이 가능한 인터페이스입니다.
@@ -114,7 +114,7 @@ contents: >-
   \    <p className="tem-zigzag__txt">
 
 
-  \    확장 된 ThinQ 가전, 사이니지, 상업용 HVAC등 사업에 필요한 기기를 <br class="pc" />
+  \    확장 된 ThinQ 가전, 사이니지, 상업용 HVAC등 사업에 필요한 기기를 <br className="pc" />
 
 
   \    API로 조회하고 제어 할 수 있습니다. <br />
