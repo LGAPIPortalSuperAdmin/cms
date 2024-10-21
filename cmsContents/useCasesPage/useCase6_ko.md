@@ -464,42 +464,6 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-air-con"></i>공기질/온습도 센서
-
-
-  \    </div>
-
-
-  \    <div className="col-8 col-sm-full">
-
-
-  \    <dl>
-
-
-  \    <dt>쾌적한 공간 조성을 위한 라운지의 공기질/온습도 실시간 확인</dt>
-
-
-  \    <dd>라운지의 공기질과 온습도를 실시간으로 확인하고 필요시 자동으로 조절하여 최적의 환경을 제공하도록 돕습니다. 사용자의 건강과 편안함을 최우선으로 고려하여 쾌적한 환경을 조성하는 맞춤형 솔루션을 제공합니다.</dd>
-
-
-  \    </dl>
-
-
-  \    <dl>
-
-
-  \    </div>
-
-
-  \    </li>
-
-
-  \    <li className="usecase-dev__item grid">
-
-
-  \    <div className="col-4 col-sm-full">
-
-
   \    <i className="icon-air-fresh"></i>재실센서
 
 
