@@ -8,9 +8,6 @@ contents: >-2
   \    <div className="top-visual__items">
 
 
-  \    {/\* ★★★★★★ 이미지 URL ★★★★★★ \*/}
-
-
   \    <CoImage src="/assets/images/img_usecase_v2.png" isFullSize alt="이미지" className="visual-img" />
 
 
@@ -20,19 +17,10 @@ contents: >-2
   \    <div className="box-item">
 
 
-  \    {/\* ★★★★★★ 페이지 메뉴명 ★★★★★★ \*/}
-
-
   \    <p className="sub">Building control</p>
 
 
-  \    {/\* ★★★★★★ 페이지 타이틀★★★★★★ \*/}
-
-
   \    <p className="title lgEiText">Intensive Building Management</p>
-
-
-  \    {/\* ★★★★★★ 페이지 내용 요약 ★★★★★★ \*/}
 
 
   \    <p className="text--light mt3">
@@ -53,9 +41,6 @@ contents: >-2
   \    <div className="btns">
 
 
-  \    {/\* ★★★★★★ CTA 1 ★★★★★★ \*/}
-
-
   \    <CoLink href="/api/business_connect?s=1727316475662" className="btn-round-black btn-l">
 
 
@@ -63,9 +48,6 @@ contents: >-2
 
 
   \    </CoLink>
-
-
-  \    {/\* ★★★★★★ CTA 2 ★★★★★★ \*/}
 
 
   \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">
@@ -107,9 +89,6 @@ contents: >-2
   \    <div className="usecase-cont">
 
 
-  \    {/\* ★★★★★★ 주요 기능 설명 1 ★★★★★★ \*/}
-
-
   \    <p className="usecase-cont__title mb2">
 
 
@@ -146,9 +125,6 @@ contents: >-2
   \    <div className="usecase-cont">
 
 
-  \    {/\* ★★★★★★ 주요 기능 설명 2 ★★★★★★ \*/}
-
-
   \    <p className="usecase-cont__title mb2">
 
 
@@ -183,9 +159,6 @@ contents: >-2
 
 
   \    <div className="usecase-cont">
-
-
-  \    {/\* ★★★★★★ 주요 기능 설명 3 ★★★★★★ \*/}
 
 
   \    <p className="usecase-cont__title mb2">
@@ -233,9 +206,6 @@ contents: >-2
   \    <ul className="usecase-pick__list flex flex-wrap">
 
 
-  \    {/\* ★★★★★★ LG's Pick 1 ★★★★★★ \*/}
-
-
   \    <li class="usecase-pick__item">
 
 
@@ -272,9 +242,6 @@ contents: >-2
   \
 
 
-  \    {/\* ★★★★★★ LG's Pick 2 ★★★★★★ \*/}
-
-
   \    <li class="usecase-pick__item">
 
 
@@ -309,9 +276,6 @@ contents: >-2
 
 
   \
-
-
-  \    {/\* ★★★★★★ LG's Pick 3 ★★★★★★ \*/}
 
 
   \    <li class="usecase-pick__item">
@@ -401,9 +365,6 @@ contents: >-2
   \    <dl>
 
 
-  \    {/\* ★★★★★★ 사용 기기 상태 1 ★★★★★★ \*/}
-
-
   \    <dt>
 
 
@@ -414,9 +375,6 @@ contents: >-2
 
 
   \    </dt>
-
-
-  \    {/\* ★★★★★★ 사용 기기 용도 1 ★★★★★★ \*/}
 
 
   \    <dd>
@@ -467,13 +425,7 @@ contents: >-2
   \    <dl>
 
 
-  \    {/\* ★★★★★★ 사용 기기 상태 2-1 ★★★★★★ \*/}
-
-
   \    <dt>Examining the device status by checking the operational status of the air conditioning system</dt>
-
-
-  \    {/\* ★★★★★★ 사용 기기 용도 2-1 ★★★★★★ \*/}
 
 
   \    <dd>
@@ -500,13 +452,7 @@ contents: >-2
   \    <dl>
 
 
-  \    {/\* ★★★★★★ 사용 기기 상태 2-2 ★★★★★★ \*/}
-
-
   \    <dt>Displaying the usage history to optimize the indoor environment</dt>
-
-
-  \    {/\* ★★★★★★ 사용 기기 용도 2-2 ★★★★★★ \*/}
 
 
   \    <dd>
@@ -554,13 +500,7 @@ contents: >-2
   \    <dl>
 
 
-  \    {/\* ★★★★★★ 사용 기기 상태 3 ★★★★★★ \*/}
-
-
   \    <dt>Checking the odor concentration level to maintain a clean space</dt>
-
-
-  \    {/\* ★★★★★★ 사용 기기 용도 3 ★★★★★★ \*/}
 
 
   \    <dd>
