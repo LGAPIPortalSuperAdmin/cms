@@ -11,9 +11,6 @@ contents: >-2
   \    <CoImage src="/assets/images/img_usecase_v2.png" isFullSize alt="이미지" className="visual-img" />
 
 
-  \
-
-
   \    <div className="box-item">
 
 
@@ -71,16 +68,10 @@ contents: >-2
   \    </div>
 
 
-  \
-
-
   \    <div className="container">
 
 
   \    <div className="grid usecase-grid--3">
-
-
-  \
 
 
   \    <div className="box box--r-1.25 box--clean usecase-box">
@@ -116,9 +107,6 @@ contents: >-2
   \    </div>
 
 
-  \
-
-
   \    <div className="box box--r-1.25 box--clean usecase-box">
 
 
@@ -150,9 +138,6 @@ contents: >-2
 
 
   \    </div>
-
-
-  \
 
 
   \    <div className="box box--r-1.25 box--clean usecase-box">
@@ -189,9 +174,6 @@ contents: >-2
 
 
   \    </div>
-
-
-  \
 
 
   \    <div className="grid usecase-grid--else">
@@ -239,9 +221,6 @@ contents: >-2
   \    </li>
 
 
-  \
-
-
   \    <li class="usecase-pick__item">
 
 
@@ -273,9 +252,6 @@ contents: >-2
 
 
   \    </li>
-
-
-  \
 
 
   \    <li class="usecase-pick__item">
@@ -317,9 +293,6 @@ contents: >-2
   \    </div>
 
 
-  \
-
-
   \    <div className="box box--r-1.25 box--clean col-full usecase-box">
 
 
@@ -339,9 +312,6 @@ contents: >-2
 
 
   \    </p>
-
-
-  \
 
 
   \    <ul className="usecase-dev__list">
@@ -402,9 +372,6 @@ contents: >-2
 
 
   \    </li>
-
-
-  \
 
 
   \    <li className="usecase-dev__item grid">
@@ -479,9 +446,6 @@ contents: >-2
   \    </li>
 
 
-  \
-
-
   \    <li className="usecase-dev__item grid">
 
 
@@ -534,9 +498,6 @@ contents: >-2
 
 
   \    </div>
-
-
-  \
 
 
   \    <div className="box box--r-1.25 col-full usecase-box">
