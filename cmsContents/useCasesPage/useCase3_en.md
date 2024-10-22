@@ -1,3 +1,642 @@
 ---
-contents: 스마트 회의실(en)
+contents: >-2
+   <div className="main-wrap usecase-wrap mt0">
+
+  \    <div className="top-visual">
+
+
+  \    <div className="top-visual__items">
+
+
+  \    <CoImage src="/assets/images/img_usecase_v2.png" isFullSize alt="이미지" className="visual-img" />
+
+
+  \    <div className="box-item">
+
+
+  \    <p className="sub">Smart meeting room</p>
+
+
+  \    <p className="title lgEiText">Smart Meeting Room for Better Concentration</p>
+
+
+  \    <p className="text--light mt3">
+
+
+  \     With a smart meeting room, create an environment where both meeting attendees and those who reserved a meeting room can focus on their work. This can increase tenant satisfaction with the building.
+
+
+  \    </p>
+
+
+  \    <div className="btns">
+
+
+  \    <CoLink
+
+
+  \    href="/api/business_connect?s=1727316475662"
+
+
+  \    className="btn-round-black btn-l">
+
+
+  \    ThinQ Business API
+
+
+  \    </CoLink>
+
+
+  \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">
+
+
+  \    파트너십 신청
+
+
+  \    </CoLink>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    <div className="container">
+
+
+  \    <div className="grid usecase-grid--2">
+
+
+  \    
+
+
+  \    <div className="box box--r-1.25 box--clean usecase-box">
+
+
+  \    <div className="usecase-cont">
+
+
+  \    <p className="usecase-cont__title mb2">
+
+
+  \    <i className="usecase-cont__icon bell"></i>Automatic air cleaning system in smart meeting rooms
+
+
+  \    </p>
+
+
+  \    <p className="usecase-cont__txt">
+
+
+  \    Keep your meeting room clean by automatically turning on air purification modes before the meeting starts and after it ends. 
+
+
+  \    </p>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    
+
+
+  \    <div className="box box--r-1.25 box--clean usecase-box">
+
+
+  \    <div className="usecase-cont">
+
+
+  \    <p className="usecase-cont__title mb2">
+
+
+  \    <i className="usecase-cont__icon thumb"></i>Intelligent dimming reminders for a smooth meeting
+
+
+  \    </p>
+
+
+  \    <p className="usecase-cont__txt">
+
+
+  \    A dimming reminder that gradually dims the meeting room light 5 or 10 minutes before the meeting ends is provided. This can help the meeting attendees use the meeting room as planned and keep the meeting going smoothly.
+
+
+  \    </p>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    <div className="box box--r-1.25 box--clean usecase-box">
+
+
+  \    <div className="usecase-cont">
+
+
+  \    <p className="usecase-cont__title mb2">
+
+
+  \    <i className="usecase-cont__icon thumb"></i>Optimized visual experience with an automatic lighting system
+
+
+  \    </p>
+
+
+  \    <p className="usecase-cont__txt">
+
+
+  \    An all-in-one display for video conferences, a solution that automatically adjusts the lighting when the screen is in use, can be used to provide an optimal visual experience.
+
+
+  \    </p>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    <div className="box box--r-1.25 box--clean usecase-box">
+
+
+  \    <div className="usecase-cont">
+
+
+  \    <p className="usecase-cont__title mb2">
+
+
+  \    <i className="usecase-cont__icon thumb"></i>Energy savings with a recognition-based automated power saving system
+
+
+  \    </p>
+
+
+  \    <p className="usecase-cont__txt">
+
+
+  \    Save energy by automatically turning off the air conditioner, display, and light when the meeting room is not occupied.
+
+
+  \    </p>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    <div className="grid usecase-grid--else">
+
+
+  \    <div className="col-full mt4 mb0 usecase-pick">
+
+
+  \    <p className="usecase-pick__badge">LG's Pick!</p>
+
+
+  \    <ul className="usecase-pick__list flex flex-wrap">
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_temp_moi_sensor.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">시스템 에어컨</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">공기 청정기</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airpurifier.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">올인원 사이니지</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_temp_moi_sensor.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">재실 센서</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">스마트 조명</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">조명스위치</p>
+
+
+  \    </li>
+
+
+  \    </ul>
+
+
+  \    </div>
+
+
+  \    <div className="box box--r-1.25 box--clean col-full usecase-box">
+
+
+  \    <div className="usecase-dev">
+
+
+  \    <h3 className="usecase-dev__tit">ThinQ Business API를 활용하여 어플리케이션을 개발하세요</h3>
+
+
+  \    <p className="usecase-dev__txt">
+
+
+  \    스마트 가전과 IoT 제품들의 API를 활용하여 <br />
+
+
+  \    사용자 또는 관리자를 위한 어플리케이션을 구성할 수 있습니다.
+
+
+  \    </p>
+
+
+  \    <ul className="usecase-dev__list">
+
+
+  \    <li className="usecase-dev__item grid">
+
+
+  \    <div className="col-4 col-sm-full">
+
+
+  \    <i className="icon-sensor"></i>공기청정기
+
+
+  \    </div>
+
+
+  \    <div className="col-8 col-sm-full">
+
+
+  \    <dl>
+
+
+  \    <dt>Controlling the air quality by managing the indoor air quality</dt>
+
+
+  \    <dd> Regularly monitor the indoor air quality of the space, where an air purifier is installed, and show the air quality in five levels. By checking the air quality in real time and automatically turning it on only when needed, you can save energy and provide sufficient fresh air. Users can bring up more creative ideas and communicate smoothly.</dd>
+
+
+  \    </dl>
+
+
+  \    </div>
+
+
+  \    </li>
+
+
+  \    <li className="usecase-dev__item grid">
+
+
+  \    <div className="col-4 col-sm-full">
+
+
+  \    <i className="icon-air-con"></i>스마트 조명
+
+
+  \    </div>
+
+
+  \    <div className="col-8 col-sm-full">
+
+
+  \    <dl>
+
+
+  \    <dt>Controlling the lighting by detecting the status of Signage or occupancy</dt>
+
+
+  \    <dd>By detecting the status of Signage or occupancy information from the occupancy sensor, it automatically controls the lights or adjusts the brightness of the lights to reduce unnecessary power consumption for an optimal lighting environment.</dd>
+
+
+  \    </dl>
+
+
+  \    </div>
+
+
+  \    </li>
+
+
+  \    <li className="usecase-dev__item grid">
+
+
+  \    <div className="col-4 col-sm-full">
+
+
+  \    <i className="icon-air-fresh"></i>올인원 사이니지
+
+
+  \    </div>
+
+
+  \    <div className="col-8 col-sm-full">
+
+
+  \    <dl>
+
+
+  \    <dt>Sharing meeting information on Signage to improve concentration and work efficiency</dt>
+
+
+  \    <dd>Signage helps meeting attendees prepare for meetings by displaying the meeting agenda, attendee list, and topics. For more effective meetings, it shares meeting materials or the latest information instantly using a real-time data. Also, the presentation timer feature helps keep your presentation on track, creating an environment where everyone can focus.</dd>
+
+
+  \    </dl>
+
+
+  \    <dl>
+
+
+  \    <dt>Remote control/management from anywhere, anytime</dt>
+
+
+  \    <dd>The remote control feature allows you to easily adjust the display settings and power from anywhere at any time. The real-time monitoring feature allows you to check the display status, easily diagnose errors or check the brightness of the device. By monitoring the energy consumption, it helps you reduce unnecessary power consumption and electricity bills. </dd>
+
+
+  \    </dl>
+
+
+  \    </div>
+
+
+  \    </li>
+
+
+  \    <li className="usecase-dev__item grid">
+
+
+  \    <div className="col-4 col-sm-full">
+
+
+  \    <i className="icon-air-fresh"></i>재실 센서
+
+
+  \    </div>
+
+
+  \    <div className="col-8 col-sm-full">
+
+
+  \    <dl>
+
+
+  \    <dt>Providing the occupancy detection information for ventilation, displays, lighting, etc.</dt>
+
+
+  \    <dd>Detect occupancy to provide information to various systems, such as ventilation, displays, lighting, etc., enabling smarter operations by managing meeting rooms more efficiently and reducing unnecessary energy consumption. With a real-time occupancy information, keep an automated environment, where you don't have to set anything up for an optimal meeting room environment.</dd>
+
+
+  \    </dl>
+
+
+  \    </div>
+
+
+  \    </li>
+
+
+  \    </ul>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    <div className="box box--r-1.25 col-full usecase-box">
+
+
+  \    <div className="usecase-more">
+
+
+  \    <p className="usecase-more__title">
+
+
+  \    디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.
+
+
+  \    </p>
+
+
+  \    <CoLink
+
+
+  \    href="/api/business_connect?s=1727316475662"
+
+
+  \    className="btn-round-primary btn-l">
+
+
+  \    API 문서 보기
+
+
+  \    </CoLink>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
 ---
