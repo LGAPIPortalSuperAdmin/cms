@@ -8,22 +8,43 @@ contents: >-2
   \    <div className="top-visual__items">
 
 
+  \    {/\* ★★★★★★ 이미지 URL ★★★★★★ \*/}
+
+
   \    <CoImage src="/assets/images/img_usecase_v2.png" isFullSize alt="이미지" className="visual-img" />
+
+
+  \
 
 
   \    <div className="box-item">
 
 
+  \    {/\* ★★★★★★ 페이지 메뉴명 ★★★★★★ \*/}
+
+
   \    <p className="sub">Building control</p>
+
+
+  \    {/\* ★★★★★★ 페이지 타이틀★★★★★★ \*/}
 
 
   \    <p className="title lgEiText">Intensive Building Management</p>
 
 
+  \    {/\* ★★★★★★ 페이지 내용 요약 ★★★★★★ \*/}
+
+
   \    <p className="text--light mt3">
 
 
-  \    Configure a control room tailored to your needs using the ThinQ Business API. <br />With a customized control room, create an optimal building environment and improve managers' operational efficiency.
+  \    Configure a control room tailored to your needs using the ThinQ Business API. <br />
+
+
+  \    With a customized control room, create an optimal building environment and improve managers' operational
+
+
+  \    efficiency.
 
 
   \    </p>
@@ -32,19 +53,19 @@ contents: >-2
   \    <div className="btns">
 
 
-  \    <CoLink
+  \    {/\* ★★★★★★ CTA 1 ★★★★★★ \*/}
 
 
-  \    href="/api/business_connect?s=1727316475662"
-
-
-  \    className="btn-round-black btn-l">
+  \    <CoLink href="/api/business_connect?s=1727316475662" className="btn-round-black btn-l">
 
 
   \    ThinQ Business API
 
 
   \    </CoLink>
+
+
+  \    {/\* ★★★★★★ CTA 2 ★★★★★★ \*/}
 
 
   \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">
@@ -68,19 +89,25 @@ contents: >-2
   \    </div>
 
 
+  \
+
+
   \    <div className="container">
 
 
   \    <div className="grid usecase-grid--3">
 
 
-  \    
+  \
 
 
   \    <div className="box box--r-1.25 box--clean usecase-box">
 
 
   \    <div className="usecase-cont">
+
+
+  \    {/\* ★★★★★★ 주요 기능 설명 1 ★★★★★★ \*/}
 
 
   \    <p className="usecase-cont__title mb2">
@@ -95,7 +122,10 @@ contents: >-2
   \    <p className="usecase-cont__txt">
 
 
-  \    Issues can be identified by the temperature and humidity sensor. An alert is sent to the managers when there are any issues detected in the building so that the managers can proactively identify them.
+  \    Issues can be identified by the temperature and humidity sensor. An alert is sent to the managers when there
+
+
+  \    are any issues detected in the building so that the managers can proactively identify them.
 
 
   \    </p>
@@ -107,13 +137,16 @@ contents: >-2
   \    </div>
 
 
-  \    
+  \
 
 
   \    <div className="box box--r-1.25 box--clean usecase-box">
 
 
   \    <div className="usecase-cont">
+
+
+  \    {/\* ★★★★★★ 주요 기능 설명 2 ★★★★★★ \*/}
 
 
   \    <p className="usecase-cont__title mb2">
@@ -128,7 +161,10 @@ contents: >-2
   \    <p className="usecase-cont__txt">
 
 
-  \    Check the facility control history of the space, where issues occur frequently. Use the analysis to manage the space more thoroughly and improve tenant satisfaction.
+  \    Check the facility control history of the space, where issues occur frequently. Use the analysis to manage
+
+
+  \    the space more thoroughly and improve tenant satisfaction.
 
 
   \    </p>
@@ -140,10 +176,16 @@ contents: >-2
   \    </div>
 
 
+  \
+
+
   \    <div className="box box--r-1.25 box--clean usecase-box">
 
 
   \    <div className="usecase-cont">
+
+
+  \    {/\* ★★★★★★ 주요 기능 설명 3 ★★★★★★ \*/}
 
 
   \    <p className="usecase-cont__title mb2">
@@ -158,7 +200,10 @@ contents: >-2
   \    <p className="usecase-cont__txt">
 
 
-  \    In addition to the temperature and humidity, data can also be used to manage odors. By using the odor concentration level provided by air conditioners and air purifiers, you can monitor the air quality.
+  \    In addition to the temperature and humidity, data can also be used to manage odors. By using the odor
+
+
+  \    concentration level provided by air conditioners and air purifiers, you can monitor the air quality.
 
 
   \    </p>
@@ -173,6 +218,9 @@ contents: >-2
   \    </div>
 
 
+  \
+
+
   \    <div className="grid usecase-grid--else">
 
 
@@ -183,6 +231,9 @@ contents: >-2
 
 
   \    <ul className="usecase-pick__list flex flex-wrap">
+
+
+  \    {/\* ★★★★★★ LG's Pick 1 ★★★★★★ \*/}
 
 
   \    <li class="usecase-pick__item">
@@ -218,6 +269,12 @@ contents: >-2
   \    </li>
 
 
+  \
+
+
+  \    {/\* ★★★★★★ LG's Pick 2 ★★★★★★ \*/}
+
+
   \    <li class="usecase-pick__item">
 
 
@@ -249,6 +306,12 @@ contents: >-2
 
 
   \    </li>
+
+
+  \
+
+
+  \    {/\* ★★★★★★ LG's Pick 3 ★★★★★★ \*/}
 
 
   \    <li class="usecase-pick__item">
@@ -290,6 +353,9 @@ contents: >-2
   \    </div>
 
 
+  \
+
+
   \    <div className="box box--r-1.25 box--clean col-full usecase-box">
 
 
@@ -309,6 +375,9 @@ contents: >-2
 
 
   \    </p>
+
+
+  \
 
 
   \    <ul className="usecase-dev__list">
@@ -332,10 +401,40 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>Checking the air quality status through the air quality sensor and temperature and humidity sensor in the building</dt>
+  \    {/\* ★★★★★★ 사용 기기 상태 1 ★★★★★★ \*/}
 
 
-  \    <dd>An air quality sensor measures particulate matter (PM1) concentration. Not only that, it also measures humidity, temperature, and pollutant concentration and calculates them into the Comprehensive Air Quality Index in five levels. As it automatically cleans the air, it is useful in crowded offices. Maintaining a clean air quality helps employees work more efficiently.</dd>
+  \    <dt>
+
+
+  \    Checking the air quality status through the air quality sensor and temperature and humidity sensor
+
+
+  \    in the building
+
+
+  \    </dt>
+
+
+  \    {/\* ★★★★★★ 사용 기기 용도 1 ★★★★★★ \*/}
+
+
+  \    <dd>
+
+
+  \    An air quality sensor measures particulate matter (PM1) concentration. Not only that, it also
+
+
+  \    measures humidity, temperature, and pollutant concentration and calculates them into the
+
+
+  \    Comprehensive Air Quality Index in five levels. As it automatically cleans the air, it is useful in
+
+
+  \    crowded offices. Maintaining a clean air quality helps employees work more efficiently.
+
+
+  \    </dd>
 
 
   \    </dl>
@@ -345,6 +444,9 @@ contents: >-2
 
 
   \    </li>
+
+
+  \
 
 
   \    <li className="usecase-dev__item grid">
@@ -365,10 +467,31 @@ contents: >-2
   \    <dl>
 
 
+  \    {/\* ★★★★★★ 사용 기기 상태 2-1 ★★★★★★ \*/}
+
+
   \    <dt>Examining the device status by checking the operational status of the air conditioning system</dt>
 
 
-  \    <dd>Check the status of the air conditioner to proactively detect issues, such as clogged filters or poor temperature control. Adjust the settings to help the air conditioner run efficiently and create a pleasant indoor environment. Managing an intelligent air conditioner helps users feel more comfortable and focus on their work.</dd>
+  \    {/\* ★★★★★★ 사용 기기 용도 2-1 ★★★★★★ \*/}
+
+
+  \    <dd>
+
+
+  \    Check the status of the air conditioner to proactively detect issues, such as clogged filters or
+
+
+  \    poor temperature control. Adjust the settings to help the air conditioner run efficiently and create
+
+
+  \    a pleasant indoor environment. Managing an intelligent air conditioner helps users feel more
+
+
+  \    comfortable and focus on their work.
+
+
+  \    </dd>
 
 
   \    </dl>
@@ -377,10 +500,28 @@ contents: >-2
   \    <dl>
 
 
+  \    {/\* ★★★★★★ 사용 기기 상태 2-2 ★★★★★★ \*/}
+
+
   \    <dt>Displaying the usage history to optimize the indoor environment</dt>
 
 
-  \    <dd>Check the usage history of air conditioners and analyze the past usage patterns to optimize the air conditioner settings. With a customized environment for each space, it provides a productive environment for everyone and creates a healthier workspace.</dd>
+  \    {/\* ★★★★★★ 사용 기기 용도 2-2 ★★★★★★ \*/}
+
+
+  \    <dd>
+
+
+  \    Check the usage history of air conditioners and analyze the past usage patterns to optimize the air
+
+
+  \    conditioner settings. With a customized environment for each space, it provides a productive
+
+
+  \    environment for everyone and creates a healthier workspace.
+
+
+  \    </dd>
 
 
   \    </dl>
@@ -390,6 +531,9 @@ contents: >-2
 
 
   \    </li>
+
+
+  \
 
 
   \    <li className="usecase-dev__item grid">
@@ -410,10 +554,28 @@ contents: >-2
   \    <dl>
 
 
+  \    {/\* ★★★★★★ 사용 기기 상태 3 ★★★★★★ \*/}
+
+
   \    <dt>Checking the odor concentration level to maintain a clean space</dt>
 
 
-  \    <dd>The device quantitatively measures various odors in the building and shows them in 5 levels to help you better understand the current status. It removes unpleasant odors to keep the air fresh at all times.</dd>
+  \    {/\* ★★★★★★ 사용 기기 용도 3 ★★★★★★ \*/}
+
+
+  \    <dd>
+
+
+  \    The device quantitatively measures various odors in the building and shows them in 5 levels to help
+
+
+  \    you better understand the current status. It removes unpleasant odors to keep the air fresh at all
+
+
+  \    times.
+
+
+  \    </dd>
 
 
   \    </dl>
@@ -434,6 +596,9 @@ contents: >-2
   \    </div>
 
 
+  \
+
+
   \    <div className="box box--r-1.25 col-full usecase-box">
 
 
@@ -449,13 +614,7 @@ contents: >-2
   \    </p>
 
 
-  \    <CoLink
-
-
-  \    href="/api/business_connect"
-
-
-  \    className="btn-round-primary btn-l">
+  \    <CoLink href="/api/business_connect" className="btn-round-primary btn-l">
 
 
   \    API 문서 보기
@@ -477,4 +636,7 @@ contents: >-2
 
 
   \    </div>
+
+
+  \
 ---
