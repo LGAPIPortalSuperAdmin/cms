@@ -332,10 +332,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>빌딩 내 공기질/온습도 센서를 통한 공기질 상태 확인</dt>
+  \    <dt>Checking the air quality status through the air quality sensor and temperature and humidity sensor in the building</dt>
 
 
-  \    <dd>공기질 센서(airQualitySensor)는 극초미세먼지(PM1) 농도까지 측정할 뿐만 아니라, 습도, 온도, 오염 물질의 농도를 종합 공기 청정도로 표현하여 5단계로 나타내어 공기 청정을 자동화 합니다. 인구 밀도가 높은 오피스에서 쾌적한 청정공기 관리는 사용자의 업무효율을 높여줍니다.</dd>
+  \    <dd>An air quality sensor measures particulate matter (PM1) concentration. Not only that, it also measures humidity, temperature, and pollutant concentration and calculates them into the Comprehensive Air Quality Index in five levels. As it automatically cleans the air, it is useful in crowded offices. Maintaining a clean air quality helps employees work more efficiently.</dd>
 
 
   \    </dl>
@@ -365,10 +365,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>에어컨 설비의 운전정보를 확인하여 기기 상태 점검</dt>
+  \    <dt>Examining the device status by checking the operational status of the air conditioning system</dt>
 
 
-  \    <dd>사용 중인 에어컨의 상태를 확인하여 필터 막힘 또는 온도 불균형 등의 문제를 조기에 감지하고, 필요에 따라 설정을 조정하여 효율적인 에어컨 운영과 함께 쾌적한 실내 환경을 조성합니다. 이와 같은 지능형 에어컨 관리는 사용자의 편안함과 업무 집중도를 높여줍니다.</dd>
+  \    <dd>Check the status of the air conditioner to proactively detect issues, such as clogged filters or poor temperature control. Adjust the settings to help the air conditioner run efficiently and create a pleasant indoor environment. Managing an intelligent air conditioner helps users feel more comfortable and focus on their work.</dd>
 
 
   \    </dl>
@@ -377,10 +377,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>실내 환경 최적화를 위한 이력 조회</dt>
+  \    <dt>Displaying the usage history to optimize the indoor environment</dt>
 
 
-  \    <dd>에어컨의 사용 이력을 조회하고 과거 사용 패턴을 분석하여 에어컨 설정을 최적화할 수 있으며, 각 공간에 맞춤형 환경을 제공하여 모두에게 생산적인 환경을 제공할 수 있습니다. 이러한 환경 최적화는 건강한 작업 공간을 조성합니다.</dd>
+  \    <dd>Check the usage history of air conditioners and analyze the past usage patterns to optimize the air conditioner settings. With a customized environment for each space, it provides a productive environment for everyone and creates a healthier workspace.</dd>
 
 
   \    </dl>
@@ -410,10 +410,10 @@ contents: >-2
   \    <dl>
 
 
-  \    <dt>청정 공간을 유지하기 위한 냄새 농도값 확인</dt>
+  \    <dt>Checking the odor concentration level to maintain a clean space</dt>
 
 
-  \    <dd>기기가 빌딩 내에서 발생하는 다양한 냄새를 정량적으로 측정하고 5단계로 나누어 표시함으로써 해당 공간의 냄새 상태를 보다 명확하게 이해할 수 있도록 돕습니다. 불쾌한 냄새를 효과적으로 제거하여 언제나 상쾌한 공간을 제공합니다.</dd>
+  \    <dd>The device quantitatively measures various odors in the building and shows them in 5 levels to help you better understand the current status. It removes unpleasant odors to keep the air fresh at all times.</dd>
 
 
   \    </dl>
