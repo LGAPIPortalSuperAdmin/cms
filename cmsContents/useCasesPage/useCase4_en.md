@@ -1,3 +1,789 @@
 ---
-contents: 세탁 예약 시스템(en)
+contents: >-2
+   <div className="main-wrap usecase-wrap mt0">
+
+  \    <div className="top-visual">
+
+
+  \    <div className="top-visual__items">
+
+
+  \    <CoImage src="/assets/images/img_usecase_v2.png" isFullSize alt="이미지" className="visual-img" />
+
+
+  \    <div className="box-item">
+
+
+  \    <p className="sub">Laundry scheduling system</p>
+
+
+  \    <p className="title lgEiText">More Efficient Common Area</p>
+
+
+  \    <p className="text--light mt3">
+
+
+  \     Book a schedule to use washers and dryers in common areas. By sending a reminder, users can manage themselves to avoid using the home appliances while others are using them and minimize unnecessary wait times. Managers can also quickly identify issues with the home appliances and easily take the necessary actions to keep them in a good shape for a long time. <br />
+
+
+  \     <br />
+
+
+  \     *The same concept can be applied to other home appliances such as Stylers, ShoeCares, ovens, etc.
+
+
+  \    </p>
+
+
+  \    <div className="btns">
+
+
+  \    <CoLink
+
+
+  \    href="/api/business_connect?s=1727316475662"
+
+
+  \    className="btn-round-black btn-l">
+
+
+  \    ThinQ Business API
+
+
+  \    </CoLink>
+
+
+  \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">
+
+
+  \    파트너십 신청
+
+
+  \    </CoLink>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    <div className="container">
+
+
+  \    <div className="grid usecase-grid--3">
+
+
+  \    
+
+
+  \    <div className="box box--r-1.25 box--clean usecase-box">
+
+
+  \    <div className="usecase-cont">
+
+
+  \    <p className="usecase-cont__title mb2">
+
+
+  \    <i className="usecase-cont__icon bell"></i>Easy laundry room scheduling and status notifications
+
+
+  \    </p>
+
+
+  \    <p className="usecase-cont__txt">
+
+
+  \    Tenants (users) can check if the washers and dryers in the common laundry room are in use.  Users can schedule to use them or receive notifications when they are finished working and become available. 
+
+
+  \    </p>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    
+
+
+  \    <div className="box box--r-1.25 box--clean usecase-box">
+
+
+  \    <div className="usecase-cont">
+
+
+  \    <p className="usecase-cont__title mb2">
+
+
+  \    <i className="usecase-cont__icon thumb"></i>Warning system in a refrigerator for food safety
+
+
+  \    </p>
+
+
+  \    <p className="usecase-cont__txt">
+
+
+  \    Managers can be notified when a refrigerator door is left open or malfunctions to prevent food spoilage. 
+
+
+  \    </p>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    <div className="box box--r-1.25 box--clean usecase-box">
+
+
+  \    <div className="usecase-cont">
+
+
+  \    <p className="usecase-cont__title mb2">
+
+
+  \    <i className="usecase-cont__icon thumb"></i>Safety management in a shared kitchen for safe cooking practices
+
+
+  \    </p>
+
+
+  \    <p className="usecase-cont__txt">
+
+
+  \    By connecting the air quality sensor and ventilation equipment in the shared kitchen, users can prevent smoke from cooking from spreading through the space, and the smoke detection sensor keeps everyone safe. 
+
+
+  \    </p>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    <div className="grid usecase-grid--else">
+
+
+  \    <div className="col-full mt4 mb0 usecase-pick">
+
+
+  \    <p className="usecase-pick__badge">LG's Pick!</p>
+
+
+  \    <ul className="usecase-pick__list flex flex-wrap">
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_temp_moi_sensor.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">오븐</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">쿡탑</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airpurifier.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">냉장고</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_temp_moi_sensor.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">세탁기</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">건조기</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">스타일러</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">슈스케어</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">전열교환기</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">공기질 센서</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">화재감지 센서</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">허브</p>
+
+
+  \    </li>
+
+
+  \    </ul>
+
+
+  \    </div>
+
+
+  \    <div className="box box--r-1.25 box--clean col-full usecase-box">
+
+
+  \    <div className="usecase-dev">
+
+
+  \    <h3 className="usecase-dev__tit">ThinQ Business API를 활용하여 어플리케이션을 개발하세요</h3>
+
+
+  \    <p className="usecase-dev__txt">
+
+
+  \    스마트 가전과 IoT 제품들의 API를 활용하여 <br />
+
+
+  \    사용자 또는 관리자를 위한 어플리케이션을 구성할 수 있습니다.
+
+
+  \    </p>
+
+
+  \    <ul className="usecase-dev__list">
+
+
+  \    <li className="usecase-dev__item grid">
+
+
+  \    <div className="col-4 col-sm-full">
+
+
+  \    <i className="icon-sensor"></i>세탁기/건조기
+
+
+  \    </div>
+
+
+  \    <div className="col-8 col-sm-full">
+
+
+  \    <dl>
+
+
+  \    <dt>Checking the current operational status of home appliances for more efficient management</dt>
+
+
+  \    <dd>Allow managers to check the current operational status of home appliances (operation mode and remaining time) and implement it into the laundry scheduling function, enabling them to efficiently manage the usage plan for washers.</dd>
+
+
+  \    </dl>
+
+
+  \    <dl>
+
+
+  \    <dt>Checking when to operate Tub Clean according to the number of wash cycles</dt>
+
+
+  \    <dd>Check when to operate Tub Clean based on the number of wash cycles, making it easier for managers to manage the washer by sending a notification when Tub Clean is needed.<br />
+
+
+  \    It increases customer satisfaction by providing a clean and fresh laundry experience every time. </dd>
+
+
+  \    </dl>
+
+
+  \    </div>
+
+
+  \    </li>
+
+
+  \    <li className="usecase-dev__item grid">
+
+
+  \    <div className="col-4 col-sm-full">
+
+
+  \    <i className="icon-air-con"></i>냉장고
+
+
+  \    </div>
+
+
+  \    <div className="col-8 col-sm-full">
+
+
+  \    <dl>
+
+
+  \    <dt>Checking if the refrigerator is left open for a long time</dt>
+
+
+  \    <dd>냉장고의 장시간 문열림 여부를 확인할 수 있어 문이 오랫동안 열려있으면 즉시 알림을 통해 빠르게 대응할 수 있으며, 냉장고 내부의 온도를 안정적으로 유지하여 주방 운영의 효율성을 높이고 식품 안전을 더욱 강화할 수 있습니다.</dd>
+
+
+  \    </dl>
+
+
+  \    <dl>
+
+
+  \    </div>
+
+
+  \    </li>
+
+
+  \    <li className="usecase-dev__item grid">
+
+
+  \    <div className="col-4 col-sm-full">
+
+
+  \    <i className="icon-air-fresh"></i>오븐/쿡탑
+
+
+  \    </div>
+
+
+  \    <div className="col-8 col-sm-full">
+
+
+  \    <dl>
+
+
+  \    <dt>Checking the current operational status for safe cooking practices</dt>
+
+
+  \    <dd>Check the current operating mode of ovens and cooktops, making it easy to understand the status of each home appliance.<br />Manage the cooking progress more effectively, and the overheat sensor allows users to respond immediately in case of overheating or abnormal operations.</dd>
+
+
+  \    </dl>
+
+
+  \    </div>
+
+
+  \    </li>
+
+
+  \    <li className="usecase-dev__item grid">
+
+
+  \    <div className="col-4 col-sm-full">
+
+
+  \    <i className="icon-air-fresh"></i>화재감지센서
+
+
+  \    </div>
+
+
+  \    <div className="col-8 col-sm-full">
+
+
+  \    <dl>
+
+
+  \    <dt>Fire detection to ensure the safety of the kitchen</dt>
+
+
+  \    <dd>Notify users of various safety hazards that may occur in the kitchen so that they can avoid them immediately. By alerting users in real time, it helps minimize the damage caused by fires and keeps everyone safe.</dd>
+
+
+  \    </dl>
+
+
+  \    </div>
+
+
+  \    </li>
+
+
+  \    </ul>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    <div className="box box--r-1.25 col-full usecase-box">
+
+
+  \    <div className="usecase-more">
+
+
+  \    <p className="usecase-more__title">
+
+
+  \    디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.
+
+
+  \    </p>
+
+
+  \    <CoLink
+
+
+  \    href="/api/business_connect?s=1727316475662"
+
+
+  \    className="btn-round-primary btn-l">
+
+
+  \    API 문서 보기
+
+
+  \    </CoLink>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
+
+
+  \    </div>
 ---
