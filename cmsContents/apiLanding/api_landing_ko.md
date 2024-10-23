@@ -108,7 +108,7 @@ contents: >-
   \    <div className="tem-zigzag__con">
 
 
-  \    <p className="tem-zigzag__tit red">Business API</p>
+  \    <p className="tem-zigzag__tit red">ThinQ Business API</p>
 
 
   \    <p className="tem-zigzag__txt">
@@ -147,7 +147,7 @@ contents: >-
   \    <div className="tem-zigzag__con">
 
 
-  \    <p className="tem-zigzag__tit red">LG 멤버십 API</p>
+  \    <p className="tem-zigzag__tit red">LG 회원 API</p>
 
 
   \    <p className="tem-zigzag__txt">
