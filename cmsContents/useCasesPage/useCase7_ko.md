@@ -171,15 +171,15 @@ contents: >-2
 
   \    <li class="usecase-pick__item off">
 
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_smart_light.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_air_sensor.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">스마트조명</p>
+  \    <p className="usecase-pick__txt">공기질 센서</p>
 
   \    </li>
 
   \    <li class="usecase-pick__item off">
 
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_smart_plug.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_smart_plug.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
   \    <p className="usecase-pick__txt">스마트플러그</p>
 
