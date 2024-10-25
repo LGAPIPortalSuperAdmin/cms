@@ -149,7 +149,7 @@ contents: >-2
   \    <p className="usecase-cont__title mb2">
 
 
-  \    <img src="/assets/images/usecase_icons/sense/icon_cleanliness.svg" className="usecase-cont__icon thumb" /><냄새를 감지하여 공기 청결도 관리
+  \    <img src="/assets/images/usecase_icons/sense/icon_cleanliness.svg" className="usecase-cont__icon thumb" />냄새를 감지하여 공기 청결도 관리
 
 
   \    </p>
