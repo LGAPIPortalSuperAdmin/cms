@@ -31,7 +31,7 @@ contents: >-2
 
   \    <div className="usecase-cont">
 
-  \    <p className="usecase-cont__title mb2"><img src="/assets/images/usecase_icons/sense/icon_DR.svg" />전력 수요에 맞춘 전력 소모량 자동 절감</p>
+  \    <p className="usecase-cont__title mb2"><img src="/assets/images/usecase_icons/sense/icon_DR.svg" className="usecase-cont__icon" />전력 수요에 맞춘 전력 소모량 자동 절감</p>
 
   \    <p className="usecase-cont__txt">
 
