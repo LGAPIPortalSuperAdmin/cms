@@ -1,6 +1,6 @@
 ---
 contents: >-
-  > \    <div className="main-wrap usecase-wrap mt0">
+  >  <div className="main-wrap usecase-wrap mt0">
 
   >
 
