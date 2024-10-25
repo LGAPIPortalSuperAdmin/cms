@@ -1,6 +1,6 @@
 ---
 contents: >-
-  >  <div className="main-wrap usecase-wrap mt0">
+  > \    <div className="main-wrap usecase-wrap mt0">
 
   >
 
@@ -32,7 +32,11 @@ contents: >-
 
   >
 
-  > \     스마트하게 회의 환경을 조성하고 회의 참석자와 예약자 모두가 보다 업무에 몰두하도록 합니다.<br /> 특별한 회의 경험을 통해 입주사들의 만족도를 향상시킬 수 있습니다.<br />
+  > \    스마트하게 회의 환경을 조성하고 회의 참석자와 예약자 모두가 보다 업무에 몰두하도록 합니다.<br />
+
+  >
+
+  > \    특별한 회의 경험을 통해 입주사들의 만족도를 향상시킬 수 있습니다.<br />
 
   >
 
@@ -44,35 +48,11 @@ contents: >-
 
   >
 
-  > \    <CoLink
+  > \    <CoLink href="/api/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink>
 
   >
 
-  > \    href="/api/business_connect?s=1727316475662"
-
-  >
-
-  > \    className="btn-round-black btn-l">
-
-  >
-
-  > \    ThinQ Business API
-
-  >
-
-  > \    </CoLink>
-
-  >
-
-  > \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">
-
-  >
-
-  > \    파트너십 신청
-
-  >
-
-  > \    </CoLink>
+  > \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388"> 파트너십 신청 </CoLink>
 
   >
 
@@ -100,10 +80,6 @@ contents: >-
 
   >
 
-  > \    
-
-  >
-
   > \    <div className="box box--r-1.25 box--clean usecase-box">
 
   >
@@ -112,71 +88,11 @@ contents: >-
 
   >
 
-  > \    <p className="usecase-cont__title mb2">
+  > \    <p className="usecase-cont__title mb2"><img src="/assets/images/usecase_icons/sense/icon_meeting_room.svg" className="usecase-cont__icon bell" />스마트 회의실의 공기 청정 자동화 시스템</p>
 
   >
 
-  > \    <img src="/assets/images/usecase_icons/sense/icon_meeting_room.svg" className="usecase-cont__icon bell" />스마트 회의실의 공기 청정 자동화 시스템
-
-  >
-
-  > \    </p>
-
-  >
-
-  > \    <p className="usecase-cont__txt">
-
-  >
-
-  > \    회의 시작 전과 종료 후에는 자동으로 공기 청정 모드를 작동하여 회의실을 쾌적하게 유지합니다.
-
-  >
-
-  > \    </p>
-
-  >
-
-  > \    </div>
-
-  >
-
-  > \    </div>
-
-  >
-
-  > \    
-
-  >
-
-  > \    <div className="box box--r-1.25 box--clean usecase-box">
-
-  >
-
-  > \    <div className="usecase-cont">
-
-  >
-
-  > \    <p className="usecase-cont__title mb2">
-
-  >
-
-  > \    <img src="/assets/images/usecase_icons/sense/icon_dimming_alert.svg" className="usecase-cont__icon thumb" />원활한 회의를 위한 지능형 디밍 알림
-
-  >
-
-  > \    </p>
-
-  >
-
-  > \    <p className="usecase-cont__txt">
-
-  >
-
-  > \    회의 종료 5분 전 혹은 10분 전에는 조명이 서서히 어두워지는 디밍 알림을 제공해 참석자가 계획된 사용시간을 지키며 원활한 회의를 진행하도록 돕습니다.
-
-  >
-
-  > \    </p>
+  > \    <p className="usecase-cont__txt">회의 시작 전과 종료 후에는 자동으로 공기 청정 모드를 작동하여 회의실을 쾌적하게 유지합니다.</p>
 
   >
 
@@ -196,27 +112,11 @@ contents: >-
 
   >
 
-  > \    <p className="usecase-cont__title mb2">
+  > \    <p className="usecase-cont__title mb2"><img src="/assets/images/usecase_icons/sense/icon_dimming_alert.svg" className="usecase-cont__icon thumb" />원활한 회의를 위한 지능형 디밍 알림</p>
 
   >
 
-  > \    <img src="/assets/images/usecase_icons/sense/icon_light.svg" className="usecase-cont__icon thumb" />조명 자동화로 최적의 시각 환경 제공
-
-  >
-
-  > \    </p>
-
-  >
-
-  > \    <p className="usecase-cont__txt">
-
-  >
-
-  > \    올인원 디스플레이를 사용해 화상회의를 진행하고 화면을 사용할 때는 조명이 자동으로 조절되어 최적의 시각 환경을 제공하는 솔루션을 만들어 볼 수 있습니다.
-
-  >
-
-  > \    </p>
+  > \    <p className="usecase-cont__txt">회의 종료 5분 전 혹은 10분 전에는 조명이 서서히 어두워지는 디밍 알림을 제공해 참석자가 계획된 사용시간을 지키며 원활한 회의를 진행하도록 돕습니다.</p>
 
   >
 
@@ -236,27 +136,35 @@ contents: >-
 
   >
 
-  > \    <p className="usecase-cont__title mb2">
+  > \    <p className="usecase-cont__title mb2"><img src="/assets/images/usecase_icons/sense/icon_light.svg" className="usecase-cont__icon thumb" />조명 자동화로 최적의 시각 환경 제공</p>
 
   >
 
-  > \    <img src="/assets/images/usecase_icons/sense/icon_saving.svg" className="usecase-cont__icon thumb" />인식 기반 자동 절전 시스템으로 에너지 절약 
+  > \    <p className="usecase-cont__txt">올인원 디스플레이를 사용해 화상회의를 진행하고 화면을 사용할 때는 조명이 자동으로 조절되어 최적의 시각 환경을 제공하는 솔루션을 만들어 볼 수 있습니다.</p>
 
   >
 
-  > \    </p>
+  > \    </div>
 
   >
 
-  > \    <p className="usecase-cont__txt">
+  > \    </div>
 
   >
 
-  > \    회의실이 비어 있을 때는 에어컨, 디스플레이, 조명이 자동으로 꺼져 에너지를 절약할 수 있습니다.
+  > \    <div className="box box--r-1.25 box--clean usecase-box">
 
   >
 
-  > \    </p>
+  > \    <div className="usecase-cont">
+
+  >
+
+  > \    <p className="usecase-cont__title mb2"><img src="/assets/images/usecase_icons/sense/icon_saving.svg" className="usecase-cont__icon thumb" />인식 기반 자동 절전 시스템으로 에너지 절약</p>
+
+  >
+
+  > \    <p className="usecase-cont__txt">회의실이 비어 있을 때는 에어컨, 디스플레이, 조명이 자동으로 꺼져 에너지를 절약할 수 있습니다.</p>
 
   >
 
@@ -296,27 +204,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/off_temp_humid.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/off_temp_humid.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -340,27 +228,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/off_humidifier.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/off_humidifier.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -384,27 +252,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/off_air_sensor.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/off_air_sensor.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -428,27 +276,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/off_door_sensor.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/off_door_sensor.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -472,27 +300,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/on_system_ac.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/on_system_ac.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -516,27 +324,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/on_air_purifier.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/on_air_purifier.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -560,27 +348,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/on_all_in_one_display.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/on_all_in_one_display.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -604,27 +372,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/on_enterance.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/on_enterance.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -648,27 +396,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/on_smart_light.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/on_smart_light.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -692,27 +420,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/on_light_switch.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/on_light_switch.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -736,27 +444,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/off_motion_sensor.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/off_motion_sensor.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -780,27 +468,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/off_system_boiler.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/off_system_boiler.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -824,27 +492,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/off_ceiling_fan.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/off_ceiling_fan.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -868,27 +516,7 @@ contents: >-
 
   >
 
-  > \    <CoImage
-
-  >
-
-  > \    src="/assets/images/usecase_icons/lg_pick/off_fire_detection.png"
-
-  >
-
-  > \    isFullSize
-
-  >
-
-  > \    alt="아이콘"
-
-  >
-
-  > \    className="usecase-pick__img"
-
-  >
-
-  > \    />
+  > \    <CoImage src="/assets/images/usecase_icons/lg_pick/off_fire_detection.png" isFullSize alt="아이콘" className="usecase-pick__img" />
 
   >
 
@@ -948,15 +576,7 @@ contents: >-
 
   >
 
-  > \    <div className="col-4 col-sm-full">
-
-  >
-
-  > \    <img src="/assets/images/usecase_icons/product/icon_air_purifier.svg" />공기청정기
-
-  >
-
-  > \    </div>
+  > \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_air_purifier.svg" />공기청정기</div>
 
   >
 
@@ -992,15 +612,7 @@ contents: >-
 
   >
 
-  > \    <div className="col-4 col-sm-full">
-
-  >
-
-  > \    <img src="/assets/images/usecase_icons/product/icon_smart_light.svg" />스마트 조명
-
-  >
-
-  > \    </div>
+  > \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_smart_light.svg" />스마트 조명</div>
 
   >
 
@@ -1036,15 +648,7 @@ contents: >-
 
   >
 
-  > \    <div className="col-4 col-sm-full">
-
-  >
-
-  > \    <img src="/assets/images/usecase_icons/product/icon_all_in_one_signage.svg" />올인원 사이니지
-
-  >
-
-  > \    </div>
+  > \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_all_in_one_signage.svg" />올인원 사이니지</div>
 
   >
 
@@ -1096,15 +700,7 @@ contents: >-
 
   >
 
-  > \    <div className="col-4 col-sm-full">
-
-  >
-
-  > \    <img src="/assets/images/usecase_icons/product/icon_enterance_sensor.svg" />재실 센서
-
-  >
-
-  > \    </div>
+  > \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_enterance_sensor.svg" />재실 센서</div>
 
   >
 
@@ -1156,35 +752,11 @@ contents: >-
 
   >
 
-  > \    <p className="usecase-more__title">
+  > \    <p className="usecase-more__title">디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.</p>
 
   >
 
-  > \    디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.
-
-  >
-
-  > \    </p>
-
-  >
-
-  > \    <CoLink
-
-  >
-
-  > \    href="/api/business_connect?s=1727316475662"
-
-  >
-
-  > \    className="btn-round-primary btn-l">
-
-  >
-
-  > \    API 문서 보기
-
-  >
-
-  > \    </CoLink>
+  > \    <CoLink href="/api/business_connect?s=1727316475662" className="btn-round-primary btn-l"> API 문서 보기 </CoLink>
 
   >
 
@@ -1205,4 +777,8 @@ contents: >-
   >
 
   > \    </div>
+
+  >
+
+  > \
 ---
