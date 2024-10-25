@@ -293,7 +293,7 @@ contents: >-2
   \    <CoImage
 
 
-  \    src="/assets/images/img_usecase_ic_airconditioner_stand.png"
+  \    src="/assets/images/usecase_icons/lg_pick/off_smart_light.png"
 
 
   \    isFullSize
@@ -345,6 +345,303 @@ contents: >-2
 
 
   \    <p className="usecase-pick__txt">모션센서</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/usecase_icons/lg_pick/on_system_ac.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">시스템에어컨</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/usecase_icons/lg_pick/on_temp_humid.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">온습도센서</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/usecase_icons/lg_pick/on_air_purifier.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">공기청정기</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item off">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/usecase_icons/lg_pick/off_system_boiler.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">시스템 보일러</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item off">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/usecase_icons/lg_pick/off_ceiling_fan.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">실링팬</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item off">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/usecase_icons/lg_pick/off_enterance.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">재실센서</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item off">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/usecase_icons/lg_pick/off_light_switch.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">조명스위치</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item off">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/usecase_icons/lg_pick/off_fire_detection.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">화재감지 센서</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item off">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/usecase_icons/lg_pick/off_ac.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">에어컨</p>
 
 
   \    </li>
