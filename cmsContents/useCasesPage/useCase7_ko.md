@@ -295,7 +295,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><i className="icon-air-fresh"></i>시스템에어컨</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_system_ac.svg" />시스템에어컨</div>
 
   \    <div className="col-8 col-sm-full">
 
