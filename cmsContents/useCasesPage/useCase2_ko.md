@@ -656,7 +656,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-sensor"></i>에어컨
+  \    <img src="/assets/images/usecase_icons/product/icon_ac.svg" />에어컨
 
 
   \    </div>
@@ -701,7 +701,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-air-con"></i>공기청정기
+  \    <img src="/assets/images/usecase_icons/product/icon_air_purifier.svg" />공기청정기
 
 
   \    </div>
@@ -758,7 +758,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-air-fresh"></i>온습도 센서
+  \    <img src="/assets/images/usecase_icons/product/icon_temp_humid_sensor.svg" />온습도 센서
 
 
   \    </div>
