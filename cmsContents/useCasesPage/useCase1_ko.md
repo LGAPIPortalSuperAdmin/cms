@@ -8,7 +8,7 @@ contents: >-2
   \    <div className="top-visual__items">
 
 
-  \    <CoImage src="/assets/images/img_usecase_v2.png" isFullSize alt="이미지" className="visual-img" />
+  \    <CoImage src="/assets/images/usecase_banner_building_control.png" isFullSize alt="이미지" className="visual-img" />
 
 
   \    <div className="box-item">
@@ -86,7 +86,7 @@ contents: >-2
   \    <p className="usecase-cont__title mb2">
 
 
-  \    <i className="usecase-cont__icon bell"></i>빌딩 이상 상황에 대한 선제 대응
+  \    <img src="/assets/images/usecase_icons/sense/icon_building_control.svg" className="usecase-cont__icon" />빌딩 이상 상황에 대한 선제 대응
 
 
   \    </p>
@@ -119,7 +119,7 @@ contents: >-2
   \    <p className="usecase-cont__title mb2">
 
 
-  \    <i className="usecase-cont__icon thumb"></i>데이터 분석을 통한 공간 집중 관리
+  \    <img src="/assets/images/usecase_icons/sense/icon_data_analysis.svg" className="usecase-cont__icon thumb" />데이터 분석을 통한 공간 집중 관리
 
 
   \    </p>
@@ -149,7 +149,7 @@ contents: >-2
   \    <p className="usecase-cont__title mb2">
 
 
-  \    <i className="usecase-cont__icon thumb"></i>냄새를 감지하여 공기 청결도 관리
+  \    <img src="/assets/images/usecase_icons/sense/icon_cleanliness.svg" className="usecase-cont__icon thumb" /><냄새를 감지하여 공기 청결도 관리
 
 
   \    </p>
@@ -185,7 +185,106 @@ contents: >-2
   \    <ul className="usecase-pick__list flex flex-wrap">
 
 
-  \    <li class="usecase-pick__item">
+  \    <li class="usecase-pick__item off">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/usecase_icons/lg_pick/off_humidifier.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">가습기</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item off">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/usecase_icons/lg_pick/off_air_sensor.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">공기질센서</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item off">
+
+
+  \    <figure className="usecase-pick__img">
+
+
+  \    <CoImage
+
+
+  \    src="/assets/images/usecase_icons/lg_pick/off_door_sensor.png"
+
+
+  \    isFullSize
+
+
+  \    alt="아이콘"
+
+
+  \    className="usecase-pick__img"
+
+
+  \    />
+
+
+  \    </figure>
+
+
+  \    <p className="usecase-pick__txt">도어센서</p>
+
+
+  \    </li>
+
+
+  \    <li class="usecase-pick__item off">
 
 
   \    <figure className="usecase-pick__img">
@@ -212,13 +311,13 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">시스템 에어컨</p>
+  \    <p className="usecase-pick__txt">스마트조명</p>
 
 
   \    </li>
 
 
-  \    <li class="usecase-pick__item">
+  \    <li class="usecase-pick__item off">
 
 
   \    <figure className="usecase-pick__img">
@@ -227,7 +326,7 @@ contents: >-2
   \    <CoImage
 
 
-  \    src="/assets/images/img_usecase_ic_temp_moi_sensor.png"
+  \    src="/assets/images/usecase_icons/lg_pick/off_motion_sensor.png"
 
 
   \    isFullSize
@@ -245,40 +344,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">온습도센서</p>
-
-
-  \    </li>
-
-
-  \    <li class="usecase-pick__item">
-
-
-  \    <figure className="usecase-pick__img">
-
-
-  \    <CoImage
-
-
-  \    src="/assets/images/img_usecase_ic_airpurifier.png"
-
-
-  \    isFullSize
-
-
-  \    alt="아이콘"
-
-
-  \    className="usecase-pick__img"
-
-
-  \    />
-
-
-  \    </figure>
-
-
-  \    <p className="usecase-pick__txt">공기청정기</p>
+  \    <p className="usecase-pick__txt">모션센서</p>
 
 
   \    </li>
@@ -320,7 +386,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-sensor"></i>공기질/온습도 센서
+  \    <img src="/assets/images/usecase_icons/product/icon_air_temp_humid.svg" />공기질/온습도 센서
 
 
   \    </div>
@@ -353,7 +419,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-air-con"></i>에어컨
+  \    <img src="/assets/images/usecase_icons/product/icon_ac.svg" />에어컨
 
 
   \    </div>
@@ -398,7 +464,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <i className="icon-air-fresh"></i>공기청정기
+  \    <img src="/assets/images/usecase_icons/product/icon_air_purifier.svg" />공기청정기
 
 
   \    </div>
