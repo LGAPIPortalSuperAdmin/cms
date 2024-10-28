@@ -15,7 +15,7 @@ contents: >-2
 
   \    <p className="text--light mt3">In the evening, it automatically creates a sleep-friendly environment, reducing distractions to help you fall asleep. Setting up smart home appliances and IoT products can help you wake up in the morning.</p>
 
-  \    <div className="btns"><CoLink href="/api/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com"> PAT </CoLink></div>
+  \    <div className="btns"><CoLink href="/api/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink></div>
 
   \    </div>
 
