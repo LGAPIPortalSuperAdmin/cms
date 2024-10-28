@@ -50,7 +50,7 @@ contents: >-2
   \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">
 
 
-  \    파트너십 신청
+  \    Request a partnership
 
 
   \    </CoLink>
@@ -662,16 +662,16 @@ contents: >-2
   \    <div className="usecase-dev">
 
 
-  \    <h3 className="usecase-dev__tit">ThinQ Business API를 활용하여 어플리케이션을 개발하세요</h3>
+  \    <h3 className="usecase-dev__tit">Develop apps using the ThinQ Business API</h3>
 
 
   \    <p className="usecase-dev__txt">
 
 
-  \    스마트 가전과 IoT 제품들의 API를 활용하여 <br />
+  \    You can create an application for users or admin<br />
 
 
-  \    사용자 또는 관리자를 위한 어플리케이션을 구성할 수 있습니다.
+  \    by utilizing APIs of smart appliances and IoT devices.
 
 
   \    </p>
