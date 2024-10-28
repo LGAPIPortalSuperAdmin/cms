@@ -18,19 +18,19 @@ contents: >-
   \    <p className="title">
 
 
-  \    LG Open API와 만나다
+  \    Meet with LG Open API
 
 
   \    <br />
 
 
-  \    여러분의 아이디어가 새로운 가치를 창조합니다
+  \    Your ideas will create new values.
 
 
   \    </p>
 
 
-  \    <p className="text">API 문서를 통해 다양한 기능을 익히고 확장하여 더 나은 서비스를 제공하세요.</p>
+  \    <p className="text">Learn and expand your skills with the API document to provide enhanced services.</p>
 
 
   \    </div>
@@ -72,25 +72,25 @@ contents: >-
   \    <p className="tem-zigzag__txt">
 
 
-  \    ThinQ API는 나만의 맞춤형 스마트 홈을 구성할 수 있도록 LG ThinQ <br className="pc" />
+  \    ThinQ API is an interface that allows you to control and monitor LG ThinQ appliances <br className="pc" />
 
 
-  \    가전의 제어 및 모니터링이 가능한 인터페이스입니다.
-
-
-  \    <br />
+  \    so that you can create your own smart home.
 
 
   \    <br />
 
 
-  \    여러분의 라이프 스타일에 맞춘 홈 IoT 서비스를 자유롭게 만들어보세요.
+  \    <br />
+
+
+  \    Create your own home IoT service, tailored to your lifestyle.
 
 
   \    </p>
 
 
-  \    <CoLink className="btn-round-bline btn-l" href="/api/thinq_connect">API 상세 보기</CoLink>
+  \    <CoLink className="btn-round-bline btn-l" href="/api/thinq_connect">View API Details</CoLink>
 
 
   \    </div>
@@ -108,28 +108,28 @@ contents: >-
   \    <div className="tem-zigzag__con">
 
 
-  \    <p className="tem-zigzag__tit red">Business API</p>
+  \    <p className="tem-zigzag__tit red">ThinQ Business API</p>
 
 
   \    <p className="tem-zigzag__txt">
 
 
-  \    확장 된 ThinQ 가전, 사이니지, 상업용 HVAC등 사업에 필요한 기기를 <br className="pc" />
+  \    You can view and control the devices you need for your business,<br className="pc" />
 
 
-  \    API로 조회하고 제어 할 수 있습니다. <br />
+  \    such as ThinQ appliances, signages, and commercial HVACs with APIs.<br />
 
 
   \    <br />
 
 
-  \    비즈니스에 새로운 가능성을 열어줄 API를 만나보세요.
+  \    Meet API: A guide leading you to new business opportunities.
 
 
   \    </p>
 
 
-  \    <CoLink className="btn-round-bline btn-l" href="/api/business_connect">API 상세 보기</CoLink>
+  \    <CoLink className="btn-round-bline btn-l" href="/api/business_connect">View API Details</CoLink>
 
 
   \    </div>
@@ -147,34 +147,25 @@ contents: >-
   \    <div className="tem-zigzag__con">
 
 
-  \    <p className="tem-zigzag__tit red">LG 멤버십 API</p>
+  \    <p className="tem-zigzag__tit red">LG Membership API</p>
 
 
   \    <p className="tem-zigzag__txt">
 
 
-  \    LG전자의 다양한 서비스에 로그인 및 회원 통합 관리를 위해 제공하는 전사회원플랫폼 (LGE Members
-
-
-  \    Platform) 입니다. <br />
+  \    LGE Members Platform, provided for login and integrated membership management for various services of LG Electronics. <br />
 
 
   \    <br />
 
 
-  \    스마트 제품들과의 파트너십 제휴를 확대하여 개인의 Membership으로 고객의 제품과 서비스의 효율적인
-
-
-  \    이용 및 기업의 안정적인 관리를 이뤄낼 수 있도록 해주며, 다양한 서비스 유형에 맞게 아래의 플랫폼으로
-
-
-  \    분류되어 제공 됩니다.
+  \    The expansion of partnerships with smart products enables efficient use of customer products and services and reliable management of enterprises by using individual memberships. In addition, they are categorized into the following platforms to suit different types of services.
 
 
   \    </p>
 
 
-  \    <CoLink className="btn-round-bline btn-l" href="/api/lmp">API 상세 보기</CoLink>
+  \    <CoLink className="btn-round-bline btn-l" href="/api/lmp">View API Details</CoLink>
 
 
   \    </div>
