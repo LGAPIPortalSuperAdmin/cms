@@ -15,7 +15,7 @@ contents: >-2
 
   \    <p className="text--light mt3">The air quality sensor measures the air quality in a living area and can automatically trigger the air purifier and the air conditioner's air purifying mode to turn on together when air pollution is detected. If you have an energy recovery ventilator, a premium ventilation unit, you can maintain clean indoor air quality without having to open windows.</p>
 
-  \    <div className="btns"><CoLink href="/api/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com"> PAT </CoLink></div>
+  \    <div className="btns"><CoLink href="/api/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink></div>
 
   \    </div>
 
