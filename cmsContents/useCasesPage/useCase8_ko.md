@@ -15,7 +15,7 @@ contents: >-2
 
   \    <p className="text--light mt3">공기질 센서로 생활 활동 범위의 공기질을 측정 하고, 오염이 감지되면 자동으로 공기청정기와 에어컨 공기청정모드를 함께 실행할 수 있습니다.<br />프리미엄 환기장치인 전열교환기가 설치된 경우에는 창문을 열지 않고도 깨끗한 실내 공기질을 유지 할 수 있습니다.</p>
 
-  \    <div className="btns"><CoLink href="/api/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com"> PAT </CoLink></div>
+  \    <div className="btns"><CoLink href="/api/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink></div>
 
   \    </div>
 
