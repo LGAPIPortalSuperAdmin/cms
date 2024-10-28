@@ -1,5 +1,5 @@
 ---
-contents: >-2
+contents: >2
    <div className="main-wrap usecase-wrap mt0">
   \    <div className="top-visual">
 
@@ -37,7 +37,7 @@ contents: >-2
 
   \    It is the role of the demand response provider to recruit DR subscribers. Once the DR signal is delivered to LG products, devices with Auto-DR, such as air conditioners, TVs, and home appliances, will automatically reduce power consumption during the DR event. (See below for more information)<br /><br />
 
-  \    <a href="https://thinq.developer.lge.com/ko/cloud/docs/dr/overview/" class="c-link">더 알아보기</a>
+  \    <a href="https://thinq.developer.lge.com/ko/cloud/docs/dr/overview/" class="c-link" target="_blank">더 알아보기</a>
 
   \    </p>
 
