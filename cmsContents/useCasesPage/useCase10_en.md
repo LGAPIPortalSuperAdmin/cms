@@ -1,5 +1,5 @@
 ---
-contents: >2
+contents: >-2
    <div className="main-wrap usecase-wrap mt0">
   \    <div className="top-visual">
 
@@ -15,7 +15,7 @@ contents: >2
 
   \    <p className="text--light mt3">"(This feature is available to demand response providers that operate DR services).<br /><br />Auto-DR is provided to automatically reduce energy consumption of air conditioners, TVs, and home appliances in response to DR signals at peak energy times."</p>
 
-  \    <div className="btns"><CoLink href="/api/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388"> 파트너십 신청 </CoLink></div>
+  \    <div className="btns"><CoLink href="/api/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">Request a partnership</CoLink></div>
 
   \    </div>
 
@@ -37,7 +37,7 @@ contents: >2
 
   \    It is the role of the demand response provider to recruit DR subscribers. Once the DR signal is delivered to LG products, devices with Auto-DR, such as air conditioners, TVs, and home appliances, will automatically reduce power consumption during the DR event. (See below for more information)<br /><br />
 
-  \    <a href="https://thinq.developer.lge.com/ko/cloud/docs/dr/overview/" class="c-link" target="_blank">더 알아보기</a>
+  \    <a href="https://thinq.developer.lge.com/ko/cloud/docs/dr/overview/" class="c-link" target="_blank">See below for more information</a>
 
   \    </p>
 
@@ -175,13 +175,13 @@ contents: >2
 
   \    <div className="usecase-dev">
 
-  \    <h3 className="usecase-dev__tit">ThinQ Business API를 활용하여 어플리케이션을 개발하세요</h3>
+  \    <h3 className="usecase-dev__tit">Develop apps using the ThinQ Business API</h3>
 
   \    <p className="usecase-dev__txt">
 
-  \    스마트 가전과 IoT 제품들의 API를 활용하여 <br />
+  \    You can create an application for users or admin<br />
 
-  \    사용자 또는 관리자를 위한 어플리케이션을 구성할 수 있습니다.
+  \    by utilizing APIs of smart appliances and IoT devices.
 
   \    </p>
 
@@ -269,9 +269,9 @@ contents: >2
 
   \    <div className="usecase-more">
 
-  \    <p className="usecase-more__title">디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.</p>
+  \    <p className="usecase-more__title">Check out the list of APIs provided for device control and call sequence information.</p>
 
-  \    <CoLink href="/api/business_connect" className="btn-round-primary btn-l"> API 문서 보기 </CoLink>
+  \    <CoLink href="/api/business_connect" className="btn-round-primary btn-l">View API Document</CoLink>
 
   \    </div>
 
