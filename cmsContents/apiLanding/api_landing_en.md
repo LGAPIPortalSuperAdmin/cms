@@ -72,7 +72,7 @@ contents: >-
   \    <p className="tem-zigzag__txt">
 
 
-  \    ThinQ API is an interface that allows you to control and monitor LG ThinQ appliances <br className="pc" />
+  \    ThinQ API is an interface that allows you to control and monitor LG ThinQ appliances 
 
 
   \    so that you can create your own smart home.
