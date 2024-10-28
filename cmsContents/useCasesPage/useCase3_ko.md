@@ -1,6 +1,8 @@
 ---
 contents: >-2
-   <div className="top-visual">
+   <div className="main-wrap usecase-wrap mt0"></div>
+  \    <div className="top-visual">
+
   \    <div className="top-visual__items">
 
   \    <CoImage src="/assets/images/usecase_banner_smart_meeting_room.png" isFullSize alt="이미지" className="visual-img" />
@@ -314,6 +316,8 @@ contents: >-2
   \    <p className="usecase-more__title">디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.</p>
 
   \    <CoLink href="/api/business_connect?s=1727316475662" className="btn-round-primary btn-l"> API 문서 보기 </CoLink>
+
+  \    </div>
 
   \    </div>
 
