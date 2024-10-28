@@ -1,7 +1,6 @@
 ---
-contents: >-
-  \    <div className="top-visual">
-
+contents: >-2
+      <div className="top-visual">
 
   \    <div className="top-visual__items">
 
