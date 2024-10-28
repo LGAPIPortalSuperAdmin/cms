@@ -15,7 +15,7 @@ contents: >-2
 
   \    <p className="text--light mt3">저녁에는 수면을 유도하는 실내환경으로 자동 변경되고, 취침을 방해하는 요소들을 줄입니다. 그리고 아침이 되면 편안하게 일어날 수 있도록 스마트 가전과 IoT 제품을 최적의 상태로 설정 할 수 있습니다.</p>
 
-  \    <div className="btns"><CoLink href="/api/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com"> PAT </CoLink></div>
+  \    <div className="btns"><CoLink href="/api/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink></div>
 
   \    </div>
 
