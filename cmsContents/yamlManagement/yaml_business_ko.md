@@ -18,43 +18,34 @@ contents:
       - name: Overview
         x-displayName: 소개
         description: |
-          여러분의 서비스가 LG전자의 가전제품, 디스플레이, 공조설비에 대하여 정보를 조회하거나 제어를 수행하려면 어떻게 해야 할까요? LG전자는 LG전자의 클라우드 서비스에 등록된 디바이스의 정보를 파트너의 서비스가 획득하거나 제어할 수 있도록 ThinQ Business API를 제공합니다.
-
-                
-
-
-          <디자인된 이미지 들어갈 공간>
-
-
-
-          ThinQ Business API는 API의 사용 목적에 따라 다음과 같이 분류됩니다.
-
+          ThinQ Business API는 LG전자의 가전제품, 사이니지, 공조설비와 IoT 디바이스에 대한 정보를 조회하거나 제어할 수 있습니다.  B2B 파트너가 제공하는 서비스가 LG전자의 클라우드 서비스에 등록한 디바이스 정보를 제어하도록 ThinQ Business API를 제공합니다. ThinQ Business API는 API의 사용 목적에 따라 다음과 같이 분류합니다.
 
            |API 종류|요약|
            |-|-|
-           |Device API|등록된 디바이스의 목록 및 상태를 조회하고, 제어를 수행하기 위한 API|
+           |Device API|등록한 디바이스의 목록 및 상태를 조회하고, 제어를 수행하기 위한 API|
            |Event API|디바이스의 상태 변화를 수신하기 위해 대상 디바이스를 관리하기 위한 API|
-           |User API|여러분의 서비스에 등록된 사용자를 관리하기 위한 API|
-           |DR API|전력 수요반응(DR: Demand Response) 서비스 제공자로서 사용자의 디바이스를 제어하기 위한 API|
+           |User API|B2B 파트너의 서비스에 등록한 사용자를 관리하기 위한 API|
+           |DR API|B2B 파트너가 전력 수요반응(DR: Demand Response) 서비스 제공자로서 사용자의 디바이스를 제어하기 위한 API|
       - name: API Call Sequence
         x-displayName: API 호출 시퀀스
-        description: "ThinQ Business API를 사용하여 서비스를 개발하는 방법을 API 호출 시퀀스을 통해 설명합니다.\n\n## API Token 발급\nAPI Token은 모든 ThinQ Business API 호출의 HTTP 요청 헤더에 포함되어야 합니다. 이 API Token은 LG Open API Developer에서 사전에 발급 받은 API Key와 API Secret 쌍으로 발급될 수 있으며 24시간 동안 유효하기 때문에 만료되기 전에 API Token 발급 API를 사용하여 API Token을 재발급해야 합니다.\n\n\n - 사용 API\n    - [`POST /token`](#tag/auth/operation/createAPIToken)\n\n - 시퀀스\n    1. LG Open API Developer에서 발급 받은 API Key와 API Secret을 API Token을 발급 받기 위한 로직을 위해 설정합니다. (API Secret은 API Key 발행시 메일로 발송됩니다.)\n    2. API Token을 주기적으로 발급 받기 위해 API Token 발급 API (POST /token)를 호출합니다. 24시간 이내에 API Token 발급 요청을 다시 수행해야 합니다.\n    \n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"447px\" preserveAspectRatio=\"none\" style=\"width:606px;height:447px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 606 447\" width=\"606px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"350\" y=\"208.7622\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"350\" y=\"306.439\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"281\" x=\"153.5\" y=\"164.9414\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"281\" x=\"153.5\" y=\"262.6182\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"46\" x2=\"46\" y1=\"84.2295\" y2=\"363.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"219.5\" x2=\"219.5\" y1=\"84.2295\" y2=\"363.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"354.5\" x2=\"354.5\" y1=\"84.2295\" y2=\"363.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"517.5\" x2=\"517.5\" y1=\"84.2295\" y2=\"363.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"5\" y=\"81.1533\">B2B Partner</text><ellipse cx=\"46.5\" cy=\"13.5\" fill=\"#E2E2F0\" rx=\"8\" ry=\"8\" style=\"stroke:#181818;stroke-width:0.5;\"/><path d=\"M46.5,21.5 L46.5,48.5 M33.5,29.5 L59.5,29.5 M46.5,48.5 L33.5,63.5 M46.5,48.5 L59.5,63.5 \" fill=\"none\" style=\"stroke:#181818;stroke-width:0.5;\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"5\" y=\"378.4482\">B2B Partner</text><ellipse cx=\"46.5\" cy=\"390.0244\" fill=\"#E2E2F0\" rx=\"8\" ry=\"8\" style=\"stroke:#181818;stroke-width:0.5;\"/><path d=\"M46.5,398.0244 L46.5,425.0244 M33.5,406.0244 L59.5,406.0244 M46.5,425.0244 L33.5,440.0244 M46.5,425.0244 L59.5,440.0244 \" fill=\"none\" style=\"stroke:#181818;stroke-width:0.5;\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"163.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"170.5\" y=\"73.1533\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"163.5\" y=\"362.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"170.5\" y=\"385.4482\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"285.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"292.5\" y=\"73.1533\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"285.5\" y=\"362.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"292.5\" y=\"385.4482\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"166\" x=\"434.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"152\" x=\"441.5\" y=\"73.1533\">LG Open API Developer</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"166\" x=\"434.5\" y=\"362.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"152\" x=\"441.5\" y=\"385.4482\">LG Open API Developer</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"350\" y=\"208.7622\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"350\" y=\"306.439\"/><polygon fill=\"#181818\" points=\"57.5,114.0854,47.5,118.0854,57.5,122.0854,53.5,118.0854\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"51.5\" x2=\"516.5\" y1=\"118.0854\" y2=\"118.0854\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"149\" x=\"63.5\" y=\"113.229\">API Key, API Secret &#51228;&#44277;</text><polygon fill=\"#181818\" points=\"207.5,145.9414,217.5,149.9414,207.5,153.9414,211.5,149.9414\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"46.5\" x2=\"213.5\" y1=\"149.9414\" y2=\"149.9414\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"149\" x=\"53.5\" y=\"145.085\">API Key, API Secret &#49444;&#51221;</text><path d=\"M153.5,164.9414 L230.5,164.9414 L230.5,174.7974 L220.5,184.7974 L153.5,184.7974 L153.5,164.9414 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"281\" x=\"153.5\" y=\"164.9414\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"28\" x=\"168.5\" y=\"180.9409\">loop</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"86\" x=\"245.5\" y=\"179.6333\">[24&#49884;&#44036; &#45236; &#48152;&#48373;]</text><polygon fill=\"#181818\" points=\"338,204.7622,348,208.7622,338,212.7622,342,208.7622\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"219.5\" x2=\"344\" y1=\"208.7622\" y2=\"208.7622\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"75\" x=\"226.5\" y=\"203.9058\">POST /token</text><polygon fill=\"#181818\" points=\"230.5,236.6182,220.5,240.6182,230.5,244.6182,226.5,240.6182\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"224.5\" x2=\"354\" y1=\"240.6182\" y2=\"240.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"60\" x=\"236.5\" y=\"235.7617\">API Token</text><path d=\"M153.5,262.6182 L214.5,262.6182 L214.5,272.4741 L204.5,282.4741 L153.5,282.4741 L153.5,262.6182 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"281\" x=\"153.5\" y=\"262.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"168.5\" y=\"278.6177\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"103\" x=\"229.5\" y=\"277.3101\">[API Token &#47564;&#47308;&#49884;]</text><polygon fill=\"#181818\" points=\"338,302.439,348,306.439,338,310.439,342,306.439\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"219.5\" x2=\"344\" y1=\"306.439\" y2=\"306.439\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"75\" x=\"226.5\" y=\"301.5825\">POST /token</text><polygon fill=\"#181818\" points=\"230.5,334.2949,220.5,338.2949,230.5,342.2949,226.5,338.2949\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"224.5\" x2=\"354\" y1=\"338.2949\" y2=\"338.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"60\" x=\"236.5\" y=\"333.4385\">API Token</text><!--SRC=[XP2_IyD05CVdt5_npE9Y4OfJ1y6WbcAnaMGJXslwj4UJk-Fk9UWgtUmgE7GeABWMQl-ffd-4bpGW7TJjyNqVFk-7dGYfkU4PZF2UvobTAadNF4FeTozwCJuIEpoWCReWuuH6y9RAAHKI6Kz86V23TW0XDoJH-C0jv1ODSqeIYT1S4lXD5o8qXKYmflGksmVZiP0t4EJMwQs5ix1NiyDa7-jtOQ1HLdqunm9JfPlP8ooi86IiAQ1rMk_JgTahV3ggYmWJWmJRnNopMhCAgC1cfL_OwSTsySeUZCerf4ffk6sVR5_cc-KKokSlA9TlvMfznxp6KWc7IGV2GHJ3CQa9IkQvZud2VR6wo7FMtEoEYEisoX7ZAVqaK7xEolUPcyBWBo_yB_u6]--></g></svg>\n\n## 디바이스 상태 조회\n디바이스의 상태를 조회하기 위해 다음과 같이 Device API를 사용합니다.\n\n\n  - 사용 API\n    - [`GET /devices`](#tag/Device-API/operation/getDevices)\n    - [`GET /devices/{deviceId}/state`](#tag/Device-API/operation/getStatusOfDevice)\n\n  - 시퀀스\n    1. 여러분의 서비스는 디바이스 목록 조회 API(GET /devices)를 이용하여, LG전자 플랫폼에 등록된 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 추가된 디바이스가 없다면 매번 수행할 필요는 없습니다.\n    2. 디바이스 목록에서 상태를 조회할 디바이스의 deviceId 값을 확인하고, 이 값을 이용하여 디바이스 상태 조회 API (GET /devices/{deviceId}/state)를 호출합니다.\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"258px\" preserveAspectRatio=\"none\" style=\"width:346px;height:258px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 346 258\" width=\"346px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"256\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"256\" y=\"170.7622\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"330.5\" x=\"10\" y=\"56.2295\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"76\" x2=\"76\" y1=\"39.2295\" y2=\"220.6182\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"260.5\" x2=\"260.5\" y1=\"39.2295\" y2=\"220.6182\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"28.1533\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"219.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"242.7715\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"191.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"198.5\" y=\"28.1533\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"191.5\" y=\"219.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"198.5\" y=\"242.7715\">ThinQ Business API</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"256\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"256\" y=\"170.7622\"/><path d=\"M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"330.5\" x=\"10\" y=\"56.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"25\" y=\"72.229\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"86\" y=\"70.9214\">[&#49352; &#47785;&#47197;&#51060; &#54596;&#50836;&#54620; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"244,96.0503,254,100.0503,244,104.0503,248,100.0503\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"250\" y1=\"100.0503\" y2=\"100.0503\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"83\" y=\"95.1938\">GET /devices</text><polygon fill=\"#181818\" points=\"87,127.9063,77,131.9063,87,135.9063,83,131.9063\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"260\" y1=\"131.9063\" y2=\"131.9063\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"127.0498\">&#46356;&#48148;&#51060;&#49828; &#47785;&#47197;</text><polygon fill=\"#181818\" points=\"244,166.7622,254,170.7622,244,174.7622,248,170.7622\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"250\" y1=\"170.7622\" y2=\"170.7622\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"161\" x=\"83\" y=\"165.9058\">GET /device/{deviceId}/state</text><polygon fill=\"#181818\" points=\"87,198.6182,77,202.6182,87,206.6182,83,202.6182\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"260\" y1=\"202.6182\" y2=\"202.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"197.7617\">&#46356;&#48148;&#51060;&#49828; &#49345;&#53468;</text><!--SRC=[AyxEp2j8B4hCLKX9JKiipIbnoyyhyKlCJLNmSNVr34cjAE42IfTa9cSM9EQLA2W503bvgKKAmQb5PPd9gKeAYSKA1H0nL8KX6PbvWGfEfSMPUQd5nGgE0PvWjKd9N8av9GflcZiKNgzQ-NhXt3TpjoYydThoPjQKjrFdABpQjFVDh0rS2fnGCnLqxO1Qh1JSNKCKz5DIGLOM0sKJaqioon9BKa76SHQbbfGMvIcydZBbzOOfGEFUT2s1cisLcfV2XTia_Me8xPbIgrzS0ZIE2zbSRCQ-QMvyspm70000]--></g></svg>\n\n## 디바이스 제어\n디바이스를 제어하기 위해 다음과 같이 Device API를 사용합니다.\n\n  - 사용 API\n    - [`GET /devices`](#tag/Device-API/operation/getDevices)\n    - [`GET /devices/{deviceId}/profile`](#tag/Device-API/operation/getProfileOfDevice)\n    - [`POST /devices/{deviceId}/state`](#tag/Device-API/operation/controlDevice)\n\n  - 시퀀스\n    1. 여러분의 서비스는 디바이스 목록 조회 API(GET /devices)를 이용하여, LG플랫폼에 사용자의 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 추가된 디바이스가 없다면 매번 수행할 필요는 없습니다.\n    2. 디바이스 목록에서 제어 대상 디바이스의 deviceId 값을 확인하고, 이 값을 이용하여 디바이스 프로파일 조회 API (GET /devices/{device-id}/profile)를 호출합니다.\n    3. API 호출 응답으로 받은 디바이스 프로파일을 바탕으로 해당 디바이스에 대한 제어 명령을 생성합니다. 제어 명령은 디바이스 프로파일에서 제어를 원하는 속성을 찾아 name 과 value 쌍으로 표현합니다.\n    4. deviceId와 제어 명령을 이용하여, 디바이스 제어 API (POST /devices/{device-id}/state)를 호출합니다.\n    5. API 응답으로 디바이스 제어 결과를 반환 받습니다.\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"397px\" preserveAspectRatio=\"none\" style=\"width:360px;height:397px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 360 397\" width=\"360px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"170.4238\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"71\" y=\"170.7622\"/><rect fill=\"#FFFFFF\" height=\"28\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"76\" y=\"242.4741\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"270\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"270\" y=\"170.7622\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"270\" y=\"309.3301\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"344.5\" x=\"10\" y=\"56.2295\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"76\" x2=\"76\" y1=\"39.2295\" y2=\"359.186\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"274.5\" x2=\"274.5\" y1=\"39.2295\" y2=\"359.186\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"28.1533\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"358.186\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"381.3394\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"205.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"212.5\" y=\"28.1533\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"205.5\" y=\"358.186\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"212.5\" y=\"381.3394\">ThinQ Business API</text><rect fill=\"#FFFFFF\" height=\"170.4238\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"71\" y=\"170.7622\"/><rect fill=\"#FFFFFF\" height=\"28\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"76\" y=\"242.4741\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"270\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"270\" y=\"170.7622\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"270\" y=\"309.3301\"/><path d=\"M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"344.5\" x=\"10\" y=\"56.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"25\" y=\"72.229\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"86\" y=\"70.9214\">[&#49352; &#47785;&#47197;&#51060; &#54596;&#50836;&#54620; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"258,96.0503,268,100.0503,258,104.0503,262,100.0503\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"264\" y1=\"100.0503\" y2=\"100.0503\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"83\" y=\"95.1938\">GET /devices</text><polygon fill=\"#181818\" points=\"87,127.9063,77,131.9063,87,135.9063,83,131.9063\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"274\" y1=\"131.9063\" y2=\"131.9063\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"127.0498\">&#46356;&#48148;&#51060;&#49828; &#47785;&#47197;</text><polygon fill=\"#181818\" points=\"258,166.7622,268,170.7622,258,174.7622,262,170.7622\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"81\" x2=\"264\" y1=\"170.7622\" y2=\"170.7622\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"166\" x=\"88\" y=\"165.9058\">GET /device/{deviceId}/profile</text><polygon fill=\"#181818\" points=\"92,198.6182,82,202.6182,92,206.6182,88,202.6182\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"86\" x2=\"274\" y1=\"202.6182\" y2=\"202.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"108\" x=\"98\" y=\"197.7617\">&#46356;&#48148;&#51060;&#49828; &#54532;&#47196;&#54028;&#51068;</text><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"128\" y1=\"234.4741\" y2=\"234.4741\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"128\" x2=\"128\" y1=\"234.4741\" y2=\"247.4741\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"87\" x2=\"128\" y1=\"247.4741\" y2=\"247.4741\"/><polygon fill=\"#181818\" points=\"97,243.4741,87,247.4741,97,251.4741,93,247.4741\" style=\"stroke:#181818;stroke-width:1.0;\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"56\" x=\"93\" y=\"229.6177\">&#47749;&#47161; &#49373;&#49457;</text><polygon fill=\"#181818\" points=\"258,305.3301,268,309.3301,258,313.3301,262,309.3301\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"81\" x2=\"264\" y1=\"309.3301\" y2=\"309.3301\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"170\" x=\"88\" y=\"304.4736\">POST /device/{deviceId}/state</text><polygon fill=\"#181818\" points=\"87,337.186,77,341.186,87,345.186,83,341.186\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"274\" y1=\"341.186\" y2=\"341.186\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"56\" x=\"93\" y=\"336.3296\">&#47749;&#47161; &#44208;&#44284;</text><!--SRC=[TOzFIyCm68VFwwTusLrwtq5GcACWMbc_G6pVOR3BIf8EGJnPGMJ7xZ9MSE15JtNk8imlrAJVmSnMcQwUahn_dkSNSKbPH3WPGe034eVoQCJa2HaY7FUwZeTNqZ9jINqQ4IQXxPe7Gmvzv6FgOnk8WAYg_HxqBYWxWyDOK8P2m87hVCsU-nO99UZRUr0lpsgHwMm5vJJHixISpg5OVkXPRa6hPiBUlbdfGA_hWHtWHYbCb_YIZed43Qx5KSQSWKfJbQS6fn-UQhQ5BB3-9zdNrUa4DtR4HmCQelL3_lxKjgh9LAQ9MipBoKHdwsrNVUsOA7VgyTtyEDF9wou_m9tIdyJkQRynif1cgJ5VPIoMUV6sRX1y0W00]--></g></svg>\n\n## 디바이스 푸시 구독\n디바이스의 푸시 알림을 구독하기 위하여 Event API를 사용합니다. (현재 LG ThinQ 등록 가전제품에 대해서만 지원합니다.)\n\n  - 사용 API\n    - [`GET /devices`](#tag/Device-API/operation/getDevices)\n    - [`POST /push/{deviceId}/subscribe`](#tag/Event-API/operation/subscribePushMessages)\n\n  - 시퀀스\n    1. 여러분의 서비스는 디바이스 목록 조회 API (GET /devices)를 이용하여, LG플랫폼에 사용자의 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 목록을 한 번 가져온 후에는 매번 수행할 필요는 없습니다.\n    2. 디바이스 목록에서 푸시 알림을 받을 디바이스의 deviceId 값을 확인하고, 이 값를 이용하여 디바이스 알림 구독 API (POST /push/{deviceId}/subscribe)를 호출합니다.\n    3. API 응답으로 구독 성공/실패에 대한 결과를 반환 받습니다. \_\n    4. 디바이스로부터 푸시 알림이 발생하였을 때, 등록한 callback URL로 푸시 메시지를 전달 받습니다. 사용자에게 전달해야 하는 메시지가 있다면 적절히 처리합니다.\_\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"356px\" preserveAspectRatio=\"none\" style=\"width:441px;height:356px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 441 356\" width=\"441px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"284\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"284\" y=\"170.7622\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"358.5\" x=\"10\" y=\"56.2295\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"425.5\" x=\"10\" y=\"217.6182\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"76\" x2=\"76\" y1=\"39.2295\" y2=\"318.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"288.5\" x2=\"288.5\" y1=\"39.2295\" y2=\"318.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"396.5\" x2=\"396.5\" y1=\"39.2295\" y2=\"318.2949\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"28.1533\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"317.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"340.4482\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"219.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"226.5\" y=\"28.1533\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"219.5\" y=\"317.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"226.5\" y=\"340.4482\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"57\" x=\"368.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"43\" x=\"375.5\" y=\"28.1533\">Device</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"57\" x=\"368.5\" y=\"317.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"43\" x=\"375.5\" y=\"340.4482\">Device</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"284\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"284\" y=\"170.7622\"/><path d=\"M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"358.5\" x=\"10\" y=\"56.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"25\" y=\"72.229\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"86\" y=\"70.9214\">[&#49352; &#47785;&#47197;&#51060; &#54596;&#50836;&#54620; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"272,96.0503,282,100.0503,272,104.0503,276,100.0503\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"278\" y1=\"100.0503\" y2=\"100.0503\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"83\" y=\"95.1938\">GET /devices</text><polygon fill=\"#181818\" points=\"87,127.9063,77,131.9063,87,135.9063,83,131.9063\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"288\" y1=\"131.9063\" y2=\"131.9063\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"127.0498\">&#46356;&#48148;&#51060;&#49828; &#47785;&#47197;</text><polygon fill=\"#181818\" points=\"272,166.7622,282,170.7622,272,174.7622,276,170.7622\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"278\" y1=\"170.7622\" y2=\"170.7622\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"189\" x=\"83\" y=\"165.9058\">POST /push/{deviceId}/subscribe</text><polygon fill=\"#181818\" points=\"87,198.6182,77,202.6182,87,206.6182,83,202.6182\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"288\" y1=\"202.6182\" y2=\"202.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"93\" y=\"197.7617\">result</text><path d=\"M10,217.6182 L71,217.6182 L71,227.4741 L61,237.4741 L10,237.4741 L10,217.6182 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"425.5\" x=\"10\" y=\"217.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"25\" y=\"233.6177\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"149\" x=\"86\" y=\"232.3101\">[&#54392;&#49884; &#47700;&#49884;&#51648;&#44032; &#48156;&#49373;&#54620; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"300,257.439,290,261.439,300,265.439,296,261.439\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"294\" x2=\"396\" y1=\"261.439\" y2=\"261.439\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"69\" x=\"306\" y=\"256.5825\">&#54392;&#49884; &#47700;&#49884;&#51648;</text><polygon fill=\"#181818\" points=\"87,289.2949,77,293.2949,87,297.2949,83,293.2949\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"81\" x2=\"288\" y1=\"293.2949\" y2=\"293.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"69\" x=\"93\" y=\"288.4385\">&#54392;&#49884; &#47700;&#49884;&#51648;</text><!--SRC=[RP11IyCm68RFpQ_us5rwzo0epZ4GhQn_84q_MN2B9Kc78C9W7aHFGdSPxK4GP9wAUF3Y7rhI_s3MLjc6foJV-txF-n9rnKL29Hr3Z9Sq7UcJQw7Fw1ZXjDVjXtYZYPCrPpoXGaCdS0-14WOe9vnX1wY2f9bj6yCX5nTmb2ekK2au3FgrDsBRjcFymyJrbT2H1Zjx0FE-D2-5BJwXcj_RHLRDSrXzVDj5IS1h8s7lm17teTSDmM_sbLCfqtn2DQxJF8awbG9CbfaoSpZx-Dgo2OgOx922yu539QaQ-hSDi1_V-IgD59CySkqsq2rPedB_LlUkdh_iKmvccRd3larNvHHCcTjPiT7UQxY_YRixn8lOMckB_MDmjNy0]--></g></svg>\n\n## DR 서비스 사용자 등록\nB2B 파트너는 사전에 LG전자의 API 관리자와 협의한 이후 DR API를 사용하여 DR 서비스를 위한 사용자를 등록할 수 있습니다. LG전자 사용자와 디바이스는 다음의 순서에 따라 DR 서비스에 등록됩니다.\n\n\n  - 사용 API\n    - [`POST /dr/users`](#tag/DR-API/operation/createDrUser)\n\n  - 시퀀스\n    1. LG전자 사용자는 LG ThinQ 서비스에 가입되어 있으며 파트너의 DR 서비스에 가입할 LG 가전제품을 등록한 상태여야 합니다.\n    2. LG전자 사용자는 B2B 파트너의 DR 서비스에 대한 가입을 시도합니다.\n    3. 파트너 서비스는 LMP(LGE Members Platform)의 OAuth 2.0 연동 절차에 따라 LG전자의 로그인 화면을 DR 서비스에서 제공하고 OAuth 연동 정보를 획득합니다.\n    4. LG전자의 DR 서비스는 파트너 서비스와 사전에 정의한 연동 인터페이스에 따라 파트너 서비스 측 OAuth 연동 정보를 획득한 후, 파트너 서비스의 사용자 정보 API를 조회한 결과를 저장합니다. \n    5. LG전자 사용자가 LG ThinQ 모바일 앱에서 DR 서비스에 등록할 홈과 디바이스를 지정하면 LG전자의 DR 서비스가 해당 디바이스를 DR 대상 디바이스로 등록합니다.\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"698px\" preserveAspectRatio=\"none\" style=\"width:819px;height:698px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 819 698\" width=\"819px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#DDDDDD\" height=\"686.2983\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"223\" x=\"150.5\" y=\"6\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"99\" x=\"212.5\" y=\"20.9995\">Partner Service</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"266\" y=\"436.645\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"337.5\" y=\"372.9331\"/><rect fill=\"#FFFFFF\" height=\"40.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"427\" y=\"560.2129\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"574.5\" y=\"213.6533\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"574.5\" y=\"277.3652\"/><rect fill=\"#FFFFFF\" height=\"141.4238\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"739\" y=\"341.0771\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"37\" x2=\"37\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"190.5\" x2=\"190.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"270.5\" x2=\"270.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"342.5\" x2=\"342.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"431.5\" x2=\"431.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"579.5\" x2=\"579.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"743.5\" x2=\"743.5\" y1=\"84.2295\" y2=\"610.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"59\" x=\"5\" y=\"81.1533\">End-User</text><ellipse cx=\"37.5\" cy=\"13.5\" fill=\"#E2E2F0\" rx=\"8\" ry=\"8\" style=\"stroke:#181818;stroke-width:0.5;\"/><path d=\"M37.5,21.5 L37.5,48.5 M24.5,29.5 L50.5,29.5 M37.5,48.5 L24.5,63.5 M37.5,48.5 L50.5,63.5 \" fill=\"none\" style=\"stroke:#181818;stroke-width:0.5;\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"59\" x=\"5\" y=\"625.2222\">End-User</text><ellipse cx=\"37.5\" cy=\"636.7983\" fill=\"#E2E2F0\" rx=\"8\" ry=\"8\" style=\"stroke:#181818;stroke-width:0.5;\"/><path d=\"M37.5,644.7983 L37.5,671.7983 M24.5,652.7983 L50.5,652.7983 M37.5,671.7983 L24.5,686.7983 M37.5,671.7983 L50.5,686.7983 \" fill=\"none\" style=\"stroke:#181818;stroke-width:0.5;\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"72\" x=\"154.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"58\" x=\"161.5\" y=\"73.1533\">Frontend</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"72\" x=\"154.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"58\" x=\"161.5\" y=\"632.2222\">Frontend</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"69\" x=\"236.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"55\" x=\"243.5\" y=\"73.1533\">Backend</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"69\" x=\"236.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"55\" x=\"243.5\" y=\"632.2222\">Backend</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"54\" x=\"315.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"40\" x=\"322.5\" y=\"73.1533\">OAuth</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"54\" x=\"315.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"40\" x=\"322.5\" y=\"632.2222\">OAuth</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"105\" x=\"379.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"91\" x=\"386.5\" y=\"73.1533\">LG ThinQ App</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"105\" x=\"379.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"91\" x=\"386.5\" y=\"632.2222\">LG ThinQ App</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"170\" x=\"494.5\" y=\"30.7705\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"72\" x=\"543.5\" y=\"53.9238\">LMP OAuth</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"156\" x=\"501.5\" y=\"73.1533\">(LGE Members Platform)</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"170\" x=\"494.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"72\" x=\"543.5\" y=\"632.2222\">LMP OAuth</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"156\" x=\"501.5\" y=\"651.4517\">(LGE Members Platform)</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"674.5\" y=\"30.7705\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"681.5\" y=\"53.9238\">ThinQ Business API</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"81\" x=\"703.5\" y=\"73.1533\">(DR Service)</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"674.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"681.5\" y=\"632.2222\">ThinQ Business API</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"81\" x=\"703.5\" y=\"651.4517\">(DR Service)</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"266\" y=\"436.645\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"337.5\" y=\"372.9331\"/><rect fill=\"#FFFFFF\" height=\"40.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"427\" y=\"560.2129\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"574.5\" y=\"213.6533\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"574.5\" y=\"277.3652\"/><rect fill=\"#FFFFFF\" height=\"141.4238\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"739\" y=\"341.0771\"/><polygon fill=\"#181818\" points=\"420,114.0854,430,118.0854,420,122.0854,424,118.0854\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"37.5\" x2=\"426\" y1=\"118.0854\" y2=\"118.0854\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"238\" x=\"44.5\" y=\"113.229\">&#46356;&#48148;&#51060;&#49828; &#46321;&#47197; : Air Conditioner, ESS, TV</text><polygon fill=\"#181818\" points=\"178.5,145.9414,188.5,149.9414,178.5,153.9414,182.5,149.9414\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"37.5\" x2=\"184.5\" y1=\"149.9414\" y2=\"149.9414\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"104\" x=\"44.5\" y=\"145.085\">DR &#49436;&#48708;&#49828;&#50640; &#44032;&#51077;</text><polygon fill=\"#181818\" points=\"48.5,177.7974,38.5,181.7974,48.5,185.7974,44.5,181.7974\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"42.5\" x2=\"189.5\" y1=\"181.7974\" y2=\"181.7974\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"129\" x=\"54.5\" y=\"176.9409\">LG&#51204;&#51088; &#47196;&#44536;&#51064; &#54168;&#51060;&#51648;</text><polygon fill=\"#181818\" points=\"562.5,209.6533,572.5,213.6533,562.5,217.6533,566.5,213.6533\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"37.5\" x2=\"568.5\" y1=\"213.6533\" y2=\"213.6533\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"116\" x=\"44.5\" y=\"208.7969\">LG&#51204;&#51088; &#44228;&#51221; &#47196;&#44536;&#51064;</text><polygon fill=\"#181818\" points=\"282,241.5093,272,245.5093,282,249.5093,278,245.5093\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"276\" x2=\"578.5\" y1=\"245.5093\" y2=\"245.5093\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"106\" x=\"288\" y=\"240.6528\">authorization code</text><polygon fill=\"#181818\" points=\"562.5,273.3652,572.5,277.3652,562.5,281.3652,566.5,277.3652\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"271\" x2=\"568.5\" y1=\"277.3652\" y2=\"277.3652\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"108\" x=\"278\" y=\"272.5088\">access token &#50836;&#52397;</text><polygon fill=\"#181818\" points=\"282,305.2212,272,309.2212,282,313.2212,278,309.2212\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"276\" x2=\"578.5\" y1=\"309.2212\" y2=\"309.2212\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"78\" x=\"288\" y=\"304.3647\">access token</text><polygon fill=\"#181818\" points=\"727,337.0771,737,341.0771,727,345.0771,731,341.0771\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"271\" x2=\"733\" y1=\"341.0771\" y2=\"341.0771\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"171\" x=\"278\" y=\"336.2207\">&#49324;&#50857;&#51088; &#49373;&#49457; (POST /dr/users)</text><polygon fill=\"#181818\" points=\"358.5,368.9331,348.5,372.9331,358.5,376.9331,354.5,372.9331\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"352.5\" x2=\"738\" y1=\"372.9331\" y2=\"372.9331\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"151\" x=\"364.5\" y=\"368.0767\">access/refresh token &#50836;&#52397;</text><polygon fill=\"#181818\" points=\"727,400.7891,737,404.7891,727,408.7891,731,404.7891\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"342.5\" x2=\"733\" y1=\"404.7891\" y2=\"404.7891\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"121\" x=\"349.5\" y=\"399.9326\">access/refresh token</text><polygon fill=\"#181818\" points=\"287,432.645,277,436.645,287,440.645,283,436.645\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"281\" x2=\"738\" y1=\"436.645\" y2=\"436.645\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"99\" x=\"293\" y=\"431.7886\">&#49324;&#50857;&#51088; &#51221;&#48372; &#50836;&#52397;</text><polygon fill=\"#181818\" points=\"727,464.501,737,468.501,727,472.501,731,468.501\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"271\" x2=\"733\" y1=\"468.501\" y2=\"468.501\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"69\" x=\"278\" y=\"463.6445\">&#49324;&#50857;&#51088; &#51221;&#48372;</text><polygon fill=\"#181818\" points=\"282,478.501,272,482.501,282,486.501,278,482.501\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"276\" x2=\"743\" y1=\"482.501\" y2=\"482.501\"/><polygon fill=\"#181818\" points=\"201.5,492.501,191.5,496.501,201.5,500.501,197.5,496.501\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"195.5\" x2=\"270\" y1=\"496.501\" y2=\"496.501\"/><polygon fill=\"#181818\" points=\"48.5,524.3569,38.5,528.3569,48.5,532.3569,44.5,528.3569\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"42.5\" x2=\"189.5\" y1=\"528.3569\" y2=\"528.3569\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"72\" x=\"54.5\" y=\"523.5005\">LG ThinQ &#50545;</text><polygon fill=\"#181818\" points=\"415,556.2129,425,560.2129,415,564.2129,419,560.2129\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"37.5\" x2=\"421\" y1=\"560.2129\" y2=\"560.2129\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"164\" x=\"44.5\" y=\"555.3564\">DR &#45824;&#49345; &#54856;&#44284; &#46356;&#48148;&#51060;&#49828; &#49440;&#53469;</text><polygon fill=\"#181818\" points=\"732,588.0688,742,592.0688,732,596.0688,736,592.0688\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"437\" x2=\"738\" y1=\"592.0688\" y2=\"592.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"134\" x=\"444\" y=\"587.2124\">DR &#45824;&#49345; &#54856;&#44284; &#46356;&#48148;&#51060;&#49828;</text><!--SRC=[XL91QnD15BxFhtZarDA67Bpr8AIQba9hLnCzUPdiJCZGxEmoEod5KpGhY8WKJ51BKr8GH51eJC4A_gBiv3_uPj8akodeddPclkzxxttVYu-4ZAYY0J3UeEsMtWcbVaG33lkxbRqQFz64-ZfKKAX8LdmQSrK06aCRVqWzF862HvMMN46LgsFXym81_51H2rz4L6eex2YKv98vuZt56lPy5xPD_QCCgex7kw33Sbitvn1t8CW1x8JaSFkxK6iA-HZAKUJWD8e0LZ077ZY9vt8DXuK37jIvYi5hKTq8LR3kYAqWojDckjljM4WUnr3szf3_yCdSW1cBAKAiHr2yxqflGThhfLSzCxWsRxz0-c6KNWxmjYmKF0Wb4rg4wE8cLAhLJQWzMv3dVY4MQvZaFFsTe8BvU0gJguwvU4qMY2B27MqBipF3n5oSGdfvFlbrOmOtC7t_oHR_sbb8usHPw6ISc65_oR2vYsEgkRF0WekpVcmoIAJeNAZ42sfR1pzad32UuyonireR6vRa-zOq7MBKOCvwvkSFehXkAvbx8bakKuvgNdqtPzzifwOxCCa8rhp3QWrAJ9NiHF4wONF7NAgPUYN56uh7pN_KpKEMKhQ9rVB3VZg-Nb5PVRwzNywHoJ8JMIQnsuKr_L5sSrnjJ3vzrp7Tbp3z_6Oo_fDV9fCCfzq1iMlctFeVuIy0]--></g></svg>\n\n\n## DR 이벤트 생성 및 모니터링 데이터 다운로드\nDR 이벤트를 등록하고 DR 이벤트 전후의 디바이스의 모니터링 데이터를 다운로드 하는 과정을 설명합니다.\n\n  - 사용 API\n    - [`POST /dr/events`](#tag/DR-API/operation/createDrEvent)\n    - [`POST /dr/events/{eventId}/targets`](#tag/DR-API/operation/createEventTarget)\n    - [`POST /dr/events/{eventId}/targets/{targetId}`](#tag/DR-API/operation/updateEventTarget)\n    - [`POST /dr/events/{eventId}/targets/batch`](#tag/DR-API/operation/createEventTargetBatch)\n    - [`POST /dr/events/{eventId}/targets/batch`](#tag/DR-API/operation/createEventTargetBatch)\n    - [`POST /dr/data-zip/files`](#tag/DR-API/operation/createDataZipFile)\n    - [`POST /dr/data-zip/files/{filename}`](#tag/DR-API/operation/downloadDataZipFile)\n\n  - 시퀀스\n    1. LG DR 서비스 서버에 DR 이벤트를 등록하기 위해 DR 이벤트 등록 API (POST /dr/events)를 호출합니다.\n    2. DR 이벤트가 정상적으로 등록되면, DR 이벤트 ID (eventId)를 반환합니다.\n    3. 만약 DR 이벤트 생성 후에 해당 DR 이벤트에 참여 필요한 디바이스 목록 변경이 필요한 경우 DR 이벤트 타겟 변경 API를 호출합니다.\n    4. DR 이벤트가 종료된 후에 DR 이벤트 기간 내 대상 디바이스의 모니터링 데이터를 다운로드 받습니다.\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"760px\" preserveAspectRatio=\"none\" style=\"width:517px;height:760px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 517 760\" width=\"517px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"119.1709\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"209.8477\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"290.6685\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"371.4893\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"519.166\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"582.8779\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"463.5\" y=\"646.5898\"/><rect fill=\"none\" height=\"342.8862\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"435.5\" x=\"10\" y=\"75.459\"/><rect fill=\"none\" height=\"245.3184\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"415.5\" x=\"20\" y=\"166.0269\"/><rect fill=\"none\" height=\"210.9917\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"491.5\" x=\"20\" y=\"475.4541\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"86\" x2=\"86\" y1=\"58.459\" y2=\"425.3452\"/><line style=\"stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;\" x1=\"86\" x2=\"86\" y1=\"425.3452\" y2=\"468.4541\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"86\" x2=\"86\" y1=\"468.4541\" y2=\"703.4458\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"355.5\" x2=\"355.5\" y1=\"58.459\" y2=\"425.3452\"/><line style=\"stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;\" x1=\"355.5\" x2=\"355.5\" y1=\"425.3452\" y2=\"468.4541\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"355.5\" x2=\"355.5\" y1=\"468.4541\" y2=\"703.4458\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"468.5\" x2=\"468.5\" y1=\"58.459\" y2=\"425.3452\"/><line style=\"stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;\" x1=\"468.5\" x2=\"468.5\" y1=\"425.3452\" y2=\"468.4541\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"468.5\" x2=\"468.5\" y1=\"468.4541\" y2=\"703.4458\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"30\" y=\"24.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"37\" y=\"47.3828\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"30\" y=\"702.4458\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"37\" y=\"725.5991\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"286.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"293.5\" y=\"28.1533\">ThinQ Business API</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"81\" x=\"315.5\" y=\"47.3828\">(DR Service)</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"286.5\" y=\"702.4458\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"293.5\" y=\"725.5991\">ThinQ Business API</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"81\" x=\"315.5\" y=\"744.8286\">(DR Service)</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"66\" x=\"435.5\" y=\"24.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"52\" x=\"442.5\" y=\"47.3828\">AWS S3</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"66\" x=\"435.5\" y=\"702.4458\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"52\" x=\"442.5\" y=\"725.5991\">AWS S3</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"119.1709\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"209.8477\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"290.6685\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"371.4893\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"519.166\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"582.8779\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"463.5\" y=\"646.5898\"/><path d=\"M10,75.459 L151,75.459 L151,85.3149 L141,95.3149 L10,95.3149 L10,75.459 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"342.8862\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"435.5\" x=\"10\" y=\"75.459\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"96\" x=\"25\" y=\"91.4585\">DR &#51060;&#48292;&#53944; &#49373;&#49457;</text><polygon fill=\"#181818\" points=\"339,115.1709,349,119.1709,339,123.1709,343,119.1709\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"119.1709\" y2=\"119.1709\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"95\" x=\"93\" y=\"114.3145\">POST /dr/events</text><polygon fill=\"#181818\" points=\"97,147.0269,87,151.0269,97,155.0269,93,151.0269\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"151.0269\" y2=\"151.0269\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"103\" y=\"146.1704\">result</text><path d=\"M20,166.0269 L81,166.0269 L81,175.8828 L71,185.8828 L20,185.8828 L20,166.0269 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"245.3184\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"415.5\" x=\"20\" y=\"166.0269\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"35\" y=\"182.0264\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"200\" x=\"96\" y=\"180.7188\">[&#51060;&#48292;&#53944; &#53440;&#44191;&#51060; &#52628;&#44032;&#46104;&#50612;&#50556; &#54616;&#45716; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"339,205.8477,349,209.8477,339,213.8477,343,209.8477\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"209.8477\" y2=\"209.8477\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"191\" x=\"93\" y=\"204.9912\">POST /dr/events/{eventId}/targets</text><polygon fill=\"#181818\" points=\"97,237.7036,87,241.7036,97,245.7036,93,241.7036\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"241.7036\" y2=\"241.7036\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"103\" y=\"236.8472\">result</text><line style=\"stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"20\" x2=\"435.5\" y1=\"250.7036\" y2=\"250.7036\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"227\" x=\"25\" y=\"263.3955\">[&#53945;&#51221; &#51060;&#48292;&#53944; &#53440;&#44191;&#51060; &#49688;&#51221;&#46104;&#50612;&#50556; &#54616;&#45716; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"339,286.6685,349,290.6685,339,294.6685,343,290.6685\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"290.6685\" y2=\"290.6685\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"246\" x=\"93\" y=\"285.812\">POST /dr/events/{eventId}/targets/{targetId}</text><polygon fill=\"#181818\" points=\"97,318.5244,87,322.5244,97,326.5244,93,322.5244\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"322.5244\" y2=\"322.5244\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"103\" y=\"317.668\">result</text><line style=\"stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"20\" x2=\"435.5\" y1=\"331.5244\" y2=\"331.5244\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"227\" x=\"25\" y=\"344.2163\">[&#51060;&#48292;&#53944; &#53440;&#44191;&#51060; &#51068;&#44292; &#49373;&#49457;&#46104;&#50612;&#50556; &#54616;&#45716; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"339,367.4893,349,371.4893,339,375.4893,343,371.4893\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"371.4893\" y2=\"371.4893\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"227\" x=\"93\" y=\"366.6328\">POST /dr/events/{eventId}/targets/batch</text><polygon fill=\"#181818\" points=\"97,399.3452,87,403.3452,97,407.3452,93,403.3452\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"403.3452\" y2=\"403.3452\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"103\" y=\"398.4888\">result</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" lengthAdjust=\"spacing\" textLength=\"93\" x=\"232.25\" y=\"452.0371\">&lt; DR &#51060;&#48292;&#53944; &#49892;&#54665; &gt;</text><path d=\"M20,475.4541 L227,475.4541 L227,485.3101 L217,495.3101 L20,495.3101 L20,475.4541 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"210.9917\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"491.5\" x=\"20\" y=\"475.4541\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"162\" x=\"35\" y=\"491.4536\">&#47784;&#45768;&#53552;&#47553; &#45936;&#51060;&#53552; &#45796;&#50868;&#47196;&#46300;</text><polygon fill=\"#181818\" points=\"339,515.166,349,519.166,339,523.166,343,519.166\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"519.166\" y2=\"519.166\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"131\" x=\"93\" y=\"514.3096\">POST /dr/data-zip/files</text><polygon fill=\"#181818\" points=\"97,547.022,87,551.022,97,555.022,93,551.022\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"551.022\" y2=\"551.022\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"39\" x=\"103\" y=\"546.1655\">&#54028;&#51068;&#47749;</text><polygon fill=\"#181818\" points=\"339,578.8779,349,582.8779,339,586.8779,343,582.8779\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"582.8779\" y2=\"582.8779\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"191\" x=\"93\" y=\"578.0215\">POST /dr/data-zip/files/{filename}</text><polygon fill=\"#181818\" points=\"97,610.7339,87,614.7339,97,618.7339,93,614.7339\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"614.7339\" y2=\"614.7339\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"112\" x=\"103\" y=\"609.8774\">&#54028;&#51068; &#45796;&#50868;&#47196;&#46300; &#51221;&#48372;</text><polygon fill=\"#181818\" points=\"451.5,642.5898,461.5,646.5898,451.5,650.5898,455.5,646.5898\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"457.5\" y1=\"646.5898\" y2=\"646.5898\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"641.7334\">&#54028;&#51068; &#45796;&#50868;&#47196;&#46300;</text><polygon fill=\"#181818\" points=\"97,674.4458,87,678.4458,97,682.4458,93,678.4458\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"467.5\" y1=\"678.4458\" y2=\"678.4458\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"26\" x=\"103\" y=\"673.5894\">&#54028;&#51068;</text><!--SRC=[jLFBIiD05DtdAowk5B5PT2SYA3ueY5PJSEDcR4ORJASXCorY4HGhQ5j1i2r5B2eKbAvY3Q9GVoWp-GUdQGlM1XyB0yFDVPmpPoOdTCyW5h9H6dIyWx8cMyeGjehI65QM5sC9lCyKsMP6qh0GOJ0Mbmd1DcZOpXb9F0Q8WjMh3GycKWPPX_aiDGYc5ERYiIqolh0n04u4IFqBQ6vJ0oqQj6XKKNRjJDO22H8DbxURVl4Ln4b359uKa4z_MvYQbJoJap0DyJKj0QfkgpY72QF1b8rPrYOoK7cue89CzedGFpdoshSo1_5IyPmZVbaNDLTKE-1NwxnO0Q_zBgwT0FchNTLy46FweSgGlOlxEiArO9DYy8jluguQhkciBbl_e4dDzrvawITveReQ7SyjzB_6VyZRHYoP-auPqPNkKYAH2CnyyKYfwTVEOLQs1XxYhKTUElCB3dyu1dxXo66P02yrnRNBxs_urSrFdj8HGrC7XgNk62OUyfPVBilxuArJvMySQhuRYFpP3aVfXhH1rmJFxWW_ZGRy8OXHmk2wFW00]--></g></svg>\n"
+        description: "ThinQ Business API를 사용해 서비스를 개발하는 방법을 API 호출 시퀀스로 설명합니다.\n\n## API Token 발급\nAPI Token은 모든 ThinQ Business API 호출의 HTTP 요청 헤더에 포함해야 합니다. API Token은 LG Open API Developer에서 사전에 받은 API Key와 API Secret 쌍으로 발급할 수 있습니다.  또한 24시간 동안 유효하므로 만료 전에 API Token 발급 API를 사용해 API Token을 재발급해야 합니다.\n\n\n - 사용 API\n    - [`POST /token`](#tag/auth/operation/createAPIToken)\n\n - 시퀀스\n    1. LG Open API Developer에서 받은 API Key와 API Secret을 API Token 발급 로직을 위해 설정합니다.(API Secret은 API Key 발행 시 메일로 발송됩니다.)\n    2. API Token을 주기적으로 발급받기 위해 API Token 발급 API (POST /token)를 호출합니다. 24시간 이내에 API Token 발급 요청을 다시 수행해야 합니다.\n    \n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"447px\" preserveAspectRatio=\"none\" style=\"width:606px;height:447px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 606 447\" width=\"606px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"350\" y=\"208.7622\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"350\" y=\"306.439\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"281\" x=\"153.5\" y=\"164.9414\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"281\" x=\"153.5\" y=\"262.6182\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"46\" x2=\"46\" y1=\"84.2295\" y2=\"363.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"219.5\" x2=\"219.5\" y1=\"84.2295\" y2=\"363.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"354.5\" x2=\"354.5\" y1=\"84.2295\" y2=\"363.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"517.5\" x2=\"517.5\" y1=\"84.2295\" y2=\"363.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"5\" y=\"81.1533\">B2B Partner</text><ellipse cx=\"46.5\" cy=\"13.5\" fill=\"#E2E2F0\" rx=\"8\" ry=\"8\" style=\"stroke:#181818;stroke-width:0.5;\"/><path d=\"M46.5,21.5 L46.5,48.5 M33.5,29.5 L59.5,29.5 M46.5,48.5 L33.5,63.5 M46.5,48.5 L59.5,63.5 \" fill=\"none\" style=\"stroke:#181818;stroke-width:0.5;\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"5\" y=\"378.4482\">B2B Partner</text><ellipse cx=\"46.5\" cy=\"390.0244\" fill=\"#E2E2F0\" rx=\"8\" ry=\"8\" style=\"stroke:#181818;stroke-width:0.5;\"/><path d=\"M46.5,398.0244 L46.5,425.0244 M33.5,406.0244 L59.5,406.0244 M46.5,425.0244 L33.5,440.0244 M46.5,425.0244 L59.5,440.0244 \" fill=\"none\" style=\"stroke:#181818;stroke-width:0.5;\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"163.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"170.5\" y=\"73.1533\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"163.5\" y=\"362.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"170.5\" y=\"385.4482\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"285.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"292.5\" y=\"73.1533\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"285.5\" y=\"362.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"292.5\" y=\"385.4482\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"166\" x=\"434.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"152\" x=\"441.5\" y=\"73.1533\">LG Open API Developer</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"166\" x=\"434.5\" y=\"362.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"152\" x=\"441.5\" y=\"385.4482\">LG Open API Developer</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"350\" y=\"208.7622\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"350\" y=\"306.439\"/><polygon fill=\"#181818\" points=\"57.5,114.0854,47.5,118.0854,57.5,122.0854,53.5,118.0854\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"51.5\" x2=\"516.5\" y1=\"118.0854\" y2=\"118.0854\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"149\" x=\"63.5\" y=\"113.229\">API Key, API Secret &#51228;&#44277;</text><polygon fill=\"#181818\" points=\"207.5,145.9414,217.5,149.9414,207.5,153.9414,211.5,149.9414\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"46.5\" x2=\"213.5\" y1=\"149.9414\" y2=\"149.9414\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"149\" x=\"53.5\" y=\"145.085\">API Key, API Secret &#49444;&#51221;</text><path d=\"M153.5,164.9414 L230.5,164.9414 L230.5,174.7974 L220.5,184.7974 L153.5,184.7974 L153.5,164.9414 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"281\" x=\"153.5\" y=\"164.9414\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"28\" x=\"168.5\" y=\"180.9409\">loop</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"86\" x=\"245.5\" y=\"179.6333\">[24&#49884;&#44036; &#45236; &#48152;&#48373;]</text><polygon fill=\"#181818\" points=\"338,204.7622,348,208.7622,338,212.7622,342,208.7622\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"219.5\" x2=\"344\" y1=\"208.7622\" y2=\"208.7622\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"75\" x=\"226.5\" y=\"203.9058\">POST /token</text><polygon fill=\"#181818\" points=\"230.5,236.6182,220.5,240.6182,230.5,244.6182,226.5,240.6182\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"224.5\" x2=\"354\" y1=\"240.6182\" y2=\"240.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"60\" x=\"236.5\" y=\"235.7617\">API Token</text><path d=\"M153.5,262.6182 L214.5,262.6182 L214.5,272.4741 L204.5,282.4741 L153.5,282.4741 L153.5,262.6182 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"281\" x=\"153.5\" y=\"262.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"168.5\" y=\"278.6177\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"103\" x=\"229.5\" y=\"277.3101\">[API Token &#47564;&#47308;&#49884;]</text><polygon fill=\"#181818\" points=\"338,302.439,348,306.439,338,310.439,342,306.439\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"219.5\" x2=\"344\" y1=\"306.439\" y2=\"306.439\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"75\" x=\"226.5\" y=\"301.5825\">POST /token</text><polygon fill=\"#181818\" points=\"230.5,334.2949,220.5,338.2949,230.5,342.2949,226.5,338.2949\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"224.5\" x2=\"354\" y1=\"338.2949\" y2=\"338.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"60\" x=\"236.5\" y=\"333.4385\">API Token</text><!--SRC=[XP2_IyD05CVdt5_npE9Y4OfJ1y6WbcAnaMGJXslwj4UJk-Fk9UWgtUmgE7GeABWMQl-ffd-4bpGW7TJjyNqVFk-7dGYfkU4PZF2UvobTAadNF4FeTozwCJuIEpoWCReWuuH6y9RAAHKI6Kz86V23TW0XDoJH-C0jv1ODSqeIYT1S4lXD5o8qXKYmflGksmVZiP0t4EJMwQs5ix1NiyDa7-jtOQ1HLdqunm9JfPlP8ooi86IiAQ1rMk_JgTahV3ggYmWJWmJRnNopMhCAgC1cfL_OwSTsySeUZCerf4ffk6sVR5_cc-KKokSlA9TlvMfznxp6KWc7IGV2GHJ3CQa9IkQvZud2VR6wo7FMtEoEYEisoX7ZAVqaK7xEolUPcyBWBo_yB_u6]--></g></svg>\n\n## 디바이스 상태 조회\n디바이스 상태를 조회하기 위해 다음과 같이 Device API를 사용합니다.\n\n\n  - 사용 API\n    - [`GET /devices`](#tag/Device-API/operation/getDevices)\n    - [`GET /devices/{deviceId}/state`](#tag/Device-API/operation/getStatusOfDevice)\n\n  - 시퀀스\n    1. B2B 파트너의 서비스는 디바이스 목록 조회 API(GET /devices)를 이용해 LG전자 플랫폼에 등록된 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 추가되거나 삭제된 디바이스가 없다면 매번 수행할 필요는 없습니다.\n    2. 디바이스 목록에서 상태를 조회할 디바이스의 deviceId 값을 확인하고, 이 값을 이용해 디바이스 상태 조회 API (GET /devices/{deviceId}/state)를 호출합니다.\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"258px\" preserveAspectRatio=\"none\" style=\"width:346px;height:258px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 346 258\" width=\"346px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"256\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"256\" y=\"170.7622\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"330.5\" x=\"10\" y=\"56.2295\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"76\" x2=\"76\" y1=\"39.2295\" y2=\"220.6182\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"260.5\" x2=\"260.5\" y1=\"39.2295\" y2=\"220.6182\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"28.1533\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"219.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"242.7715\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"191.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"198.5\" y=\"28.1533\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"191.5\" y=\"219.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"198.5\" y=\"242.7715\">ThinQ Business API</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"256\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"256\" y=\"170.7622\"/><path d=\"M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"330.5\" x=\"10\" y=\"56.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"25\" y=\"72.229\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"86\" y=\"70.9214\">[&#49352; &#47785;&#47197;&#51060; &#54596;&#50836;&#54620; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"244,96.0503,254,100.0503,244,104.0503,248,100.0503\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"250\" y1=\"100.0503\" y2=\"100.0503\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"83\" y=\"95.1938\">GET /devices</text><polygon fill=\"#181818\" points=\"87,127.9063,77,131.9063,87,135.9063,83,131.9063\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"260\" y1=\"131.9063\" y2=\"131.9063\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"127.0498\">&#46356;&#48148;&#51060;&#49828; &#47785;&#47197;</text><polygon fill=\"#181818\" points=\"244,166.7622,254,170.7622,244,174.7622,248,170.7622\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"250\" y1=\"170.7622\" y2=\"170.7622\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"161\" x=\"83\" y=\"165.9058\">GET /device/{deviceId}/state</text><polygon fill=\"#181818\" points=\"87,198.6182,77,202.6182,87,206.6182,83,202.6182\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"260\" y1=\"202.6182\" y2=\"202.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"197.7617\">&#46356;&#48148;&#51060;&#49828; &#49345;&#53468;</text><!--SRC=[AyxEp2j8B4hCLKX9JKiipIbnoyyhyKlCJLNmSNVr34cjAE42IfTa9cSM9EQLA2W503bvgKKAmQb5PPd9gKeAYSKA1H0nL8KX6PbvWGfEfSMPUQd5nGgE0PvWjKd9N8av9GflcZiKNgzQ-NhXt3TpjoYydThoPjQKjrFdABpQjFVDh0rS2fnGCnLqxO1Qh1JSNKCKz5DIGLOM0sKJaqioon9BKa76SHQbbfGMvIcydZBbzOOfGEFUT2s1cisLcfV2XTia_Me8xPbIgrzS0ZIE2zbSRCQ-QMvyspm70000]--></g></svg>\n\n## 디바이스 제어\n디바이스 제어를 위해 다음과 같이 Device API를 사용합니다.\n\n  - 사용 API\n    - [`GET /devices`](#tag/Device-API/operation/getDevices)\n    - [`GET /devices/{deviceId}/profile`](#tag/Device-API/operation/getProfileOfDevice)\n    - [`POST /devices/{deviceId}/state`](#tag/Device-API/operation/controlDevice)\n\n  - 시퀀스\n    1. B2B 파트너의 서비스는 디바이스 목록 조회 API(GET /devices)를 이용해 LG전자 플랫폼에 등록된 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 추가되거나 삭제된 디바이스가 없다면 매번 수행할 필요는 없습니다.\n    2. 디바이스 목록에서 제어 대상 디바이스의 deviceId 값을 확인하고, 이 값을 이용해 디바이스 프로파일 조회 API (GET /devices/{device-id}/profile)를 호출합니다.\n    3. API 호출 응답으로 받은 디바이스 프로파일을 토대로 해당 디바이스에 대한 제어 명령을 생성합니다. 제어 명령은 디바이스 프로파일에서 제어를 원하는 속성을 찾아 name 과 value 쌍으로 표현합니다.\n    4. deviceId와 제어 명령을 이용해 디바이스 제어 API (POST /devices/{device-id}/state)를 호출합니다.\n    5. API 응답으로 디바이스 제어 결과를 반환받습니다.\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"397px\" preserveAspectRatio=\"none\" style=\"width:360px;height:397px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 360 397\" width=\"360px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"170.4238\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"71\" y=\"170.7622\"/><rect fill=\"#FFFFFF\" height=\"28\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"76\" y=\"242.4741\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"270\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"270\" y=\"170.7622\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"270\" y=\"309.3301\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"344.5\" x=\"10\" y=\"56.2295\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"76\" x2=\"76\" y1=\"39.2295\" y2=\"359.186\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"274.5\" x2=\"274.5\" y1=\"39.2295\" y2=\"359.186\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"28.1533\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"358.186\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"381.3394\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"205.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"212.5\" y=\"28.1533\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"205.5\" y=\"358.186\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"212.5\" y=\"381.3394\">ThinQ Business API</text><rect fill=\"#FFFFFF\" height=\"170.4238\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"71\" y=\"170.7622\"/><rect fill=\"#FFFFFF\" height=\"28\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"76\" y=\"242.4741\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"270\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"270\" y=\"170.7622\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"270\" y=\"309.3301\"/><path d=\"M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"344.5\" x=\"10\" y=\"56.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"25\" y=\"72.229\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"86\" y=\"70.9214\">[&#49352; &#47785;&#47197;&#51060; &#54596;&#50836;&#54620; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"258,96.0503,268,100.0503,258,104.0503,262,100.0503\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"264\" y1=\"100.0503\" y2=\"100.0503\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"83\" y=\"95.1938\">GET /devices</text><polygon fill=\"#181818\" points=\"87,127.9063,77,131.9063,87,135.9063,83,131.9063\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"274\" y1=\"131.9063\" y2=\"131.9063\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"127.0498\">&#46356;&#48148;&#51060;&#49828; &#47785;&#47197;</text><polygon fill=\"#181818\" points=\"258,166.7622,268,170.7622,258,174.7622,262,170.7622\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"81\" x2=\"264\" y1=\"170.7622\" y2=\"170.7622\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"166\" x=\"88\" y=\"165.9058\">GET /device/{deviceId}/profile</text><polygon fill=\"#181818\" points=\"92,198.6182,82,202.6182,92,206.6182,88,202.6182\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"86\" x2=\"274\" y1=\"202.6182\" y2=\"202.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"108\" x=\"98\" y=\"197.7617\">&#46356;&#48148;&#51060;&#49828; &#54532;&#47196;&#54028;&#51068;</text><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"128\" y1=\"234.4741\" y2=\"234.4741\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"128\" x2=\"128\" y1=\"234.4741\" y2=\"247.4741\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"87\" x2=\"128\" y1=\"247.4741\" y2=\"247.4741\"/><polygon fill=\"#181818\" points=\"97,243.4741,87,247.4741,97,251.4741,93,247.4741\" style=\"stroke:#181818;stroke-width:1.0;\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"56\" x=\"93\" y=\"229.6177\">&#47749;&#47161; &#49373;&#49457;</text><polygon fill=\"#181818\" points=\"258,305.3301,268,309.3301,258,313.3301,262,309.3301\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"81\" x2=\"264\" y1=\"309.3301\" y2=\"309.3301\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"170\" x=\"88\" y=\"304.4736\">POST /device/{deviceId}/state</text><polygon fill=\"#181818\" points=\"87,337.186,77,341.186,87,345.186,83,341.186\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"274\" y1=\"341.186\" y2=\"341.186\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"56\" x=\"93\" y=\"336.3296\">&#47749;&#47161; &#44208;&#44284;</text><!--SRC=[TOzFIyCm68VFwwTusLrwtq5GcACWMbc_G6pVOR3BIf8EGJnPGMJ7xZ9MSE15JtNk8imlrAJVmSnMcQwUahn_dkSNSKbPH3WPGe034eVoQCJa2HaY7FUwZeTNqZ9jINqQ4IQXxPe7Gmvzv6FgOnk8WAYg_HxqBYWxWyDOK8P2m87hVCsU-nO99UZRUr0lpsgHwMm5vJJHixISpg5OVkXPRa6hPiBUlbdfGA_hWHtWHYbCb_YIZed43Qx5KSQSWKfJbQS6fn-UQhQ5BB3-9zdNrUa4DtR4HmCQelL3_lxKjgh9LAQ9MipBoKHdwsrNVUsOA7VgyTtyEDF9wou_m9tIdyJkQRynif1cgJ5VPIoMUV6sRX1y0W00]--></g></svg>\n\n## 디바이스 푸시 구독\n디바이스의 푸시 알림을 구독하기 위해 Event API를 사용합니다. (현재 LG ThinQ 등록 가전제품만 지원합니다.)\n\n  - 사용 API\n    - [`GET /devices`](#tag/Device-API/operation/getDevices)\n    - [`POST /push/{deviceId}/subscribe`](#tag/Event-API/operation/subscribePushMessages)\n\n  - 시퀀스\n    1. B2B 파트너의 서비스는 디바이스 목록 조회 API(GET /devices)를 이용해 LG전자 플랫폼에 등록된 디바이스 목록을 가져와야 합니다. 이 과정은 처음 한 번만 수행하면 되고, 추가되거나 삭제된 디바이스가 없다면 매번 수행할 필요는 없습니다.\n    2. 디바이스 목록에서 푸시 알림을 받을 디바이스의 deviceId 값을 확인하고, 이 값를 이용해 디바이스 알림 구독 API (POST /push/{deviceId}/subscribe)를 호출합니다.\n    3. API 응답으로 구독 성공/실패에 대한 결과를 반환받습니다. \_\n    4. 디바이스에서 푸시 알림이 발생했을 때, 등록한 callback URL로 푸시 메시지를 전달받습니다. 사용자에게 전달해야 하는 메시지가 있다면 적절히 처리합니다.\_\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"356px\" preserveAspectRatio=\"none\" style=\"width:441px;height:356px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 441 356\" width=\"441px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"284\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"284\" y=\"170.7622\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"358.5\" x=\"10\" y=\"56.2295\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"425.5\" x=\"10\" y=\"217.6182\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"76\" x2=\"76\" y1=\"39.2295\" y2=\"318.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"288.5\" x2=\"288.5\" y1=\"39.2295\" y2=\"318.2949\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"396.5\" x2=\"396.5\" y1=\"39.2295\" y2=\"318.2949\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"28.1533\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"20\" y=\"317.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"27\" y=\"340.4482\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"219.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"226.5\" y=\"28.1533\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"219.5\" y=\"317.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"226.5\" y=\"340.4482\">ThinQ Business API</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"57\" x=\"368.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"43\" x=\"375.5\" y=\"28.1533\">Device</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"57\" x=\"368.5\" y=\"317.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"43\" x=\"375.5\" y=\"340.4482\">Device</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"284\" y=\"100.0503\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"284\" y=\"170.7622\"/><path d=\"M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"358.5\" x=\"10\" y=\"56.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"25\" y=\"72.229\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"86\" y=\"70.9214\">[&#49352; &#47785;&#47197;&#51060; &#54596;&#50836;&#54620; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"272,96.0503,282,100.0503,272,104.0503,276,100.0503\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"278\" y1=\"100.0503\" y2=\"100.0503\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"77\" x=\"83\" y=\"95.1938\">GET /devices</text><polygon fill=\"#181818\" points=\"87,127.9063,77,131.9063,87,135.9063,83,131.9063\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"288\" y1=\"131.9063\" y2=\"131.9063\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"127.0498\">&#46356;&#48148;&#51060;&#49828; &#47785;&#47197;</text><polygon fill=\"#181818\" points=\"272,166.7622,282,170.7622,272,174.7622,276,170.7622\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"76\" x2=\"278\" y1=\"170.7622\" y2=\"170.7622\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"189\" x=\"83\" y=\"165.9058\">POST /push/{deviceId}/subscribe</text><polygon fill=\"#181818\" points=\"87,198.6182,77,202.6182,87,206.6182,83,202.6182\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"81\" x2=\"288\" y1=\"202.6182\" y2=\"202.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"93\" y=\"197.7617\">result</text><path d=\"M10,217.6182 L71,217.6182 L71,227.4741 L61,237.4741 L10,237.4741 L10,217.6182 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"83.6768\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"425.5\" x=\"10\" y=\"217.6182\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"25\" y=\"233.6177\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"149\" x=\"86\" y=\"232.3101\">[&#54392;&#49884; &#47700;&#49884;&#51648;&#44032; &#48156;&#49373;&#54620; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"300,257.439,290,261.439,300,265.439,296,261.439\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"294\" x2=\"396\" y1=\"261.439\" y2=\"261.439\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"69\" x=\"306\" y=\"256.5825\">&#54392;&#49884; &#47700;&#49884;&#51648;</text><polygon fill=\"#181818\" points=\"87,289.2949,77,293.2949,87,297.2949,83,293.2949\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"81\" x2=\"288\" y1=\"293.2949\" y2=\"293.2949\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"69\" x=\"93\" y=\"288.4385\">&#54392;&#49884; &#47700;&#49884;&#51648;</text><!--SRC=[RP11IyCm68RFpQ_us5rwzo0epZ4GhQn_84q_MN2B9Kc78C9W7aHFGdSPxK4GP9wAUF3Y7rhI_s3MLjc6foJV-txF-n9rnKL29Hr3Z9Sq7UcJQw7Fw1ZXjDVjXtYZYPCrPpoXGaCdS0-14WOe9vnX1wY2f9bj6yCX5nTmb2ekK2au3FgrDsBRjcFymyJrbT2H1Zjx0FE-D2-5BJwXcj_RHLRDSrXzVDj5IS1h8s7lm17teTSDmM_sbLCfqtn2DQxJF8awbG9CbfaoSpZx-Dgo2OgOx922yu539QaQ-hSDi1_V-IgD59CySkqsq2rPedB_LlUkdh_iKmvccRd3larNvHHCcTjPiT7UQxY_YRixn8lOMckB_MDmjNy0]--></g></svg>\n\n## DR 서비스 사용자 등록\nB2B 파트너는 사전에 LG전자의 API 관리자와 협의한 이후 DR API를 사용해 DR 서비스를 위한 사용자를 등록할 수 있습니다. LG전자 사용자와 디바이스는 다음의 순서에 따라 DR 서비스에 등록됩니다.\n\n\n  - 사용 API\n    - [`POST /dr/users`](#tag/DR-API/operation/createDrUser)\n\n  - 시퀀스\n    1. LG전자 사용자는 LG ThinQ 서비스에 가입해 있으며 파트너의 DR 서비스에 가입할 LG 가전제품을 등록한 상태여야 합니다.\n    2. LG전자 사용자는 B2B 파트너의 DR 서비스에 대한 가입을 시도합니다.\n    3. 파트너 서비스는 LMP(LGE Members Platform)의 OAuth 2.0 연동 절차에 따라 LG전자의 로그인 화면을 DR 서비스에서 제공하고 OAuth 연동 정보를 획득합니다.\n    4. LG전자의 DR 서비스는 파트너 서비스와 사전에 정의한 연동 인터페이스에 따라 파트너 서비스 측 OAuth 연동 정보를 획득한 후, 파트너 서비스의 사용자 정보 API를 조회한 결과를 저장합니다. \n    5. LG전자 사용자가 LG ThinQ 모바일 앱에서 DR 서비스에 등록할 홈과 디바이스를 지정하면 LG전자의 DR 서비스가 해당 디바이스를 DR 대상 디바이스로 등록합니다.\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"698px\" preserveAspectRatio=\"none\" style=\"width:819px;height:698px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 819 698\" width=\"819px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#DDDDDD\" height=\"686.2983\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"223\" x=\"150.5\" y=\"6\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"99\" x=\"212.5\" y=\"20.9995\">Partner Service</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"266\" y=\"436.645\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"337.5\" y=\"372.9331\"/><rect fill=\"#FFFFFF\" height=\"40.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"427\" y=\"560.2129\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"574.5\" y=\"213.6533\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"574.5\" y=\"277.3652\"/><rect fill=\"#FFFFFF\" height=\"141.4238\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"739\" y=\"341.0771\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"37\" x2=\"37\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"190.5\" x2=\"190.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"270.5\" x2=\"270.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"342.5\" x2=\"342.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"431.5\" x2=\"431.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"579.5\" x2=\"579.5\" y1=\"84.2295\" y2=\"610.0688\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"743.5\" x2=\"743.5\" y1=\"84.2295\" y2=\"610.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"59\" x=\"5\" y=\"81.1533\">End-User</text><ellipse cx=\"37.5\" cy=\"13.5\" fill=\"#E2E2F0\" rx=\"8\" ry=\"8\" style=\"stroke:#181818;stroke-width:0.5;\"/><path d=\"M37.5,21.5 L37.5,48.5 M24.5,29.5 L50.5,29.5 M37.5,48.5 L24.5,63.5 M37.5,48.5 L50.5,63.5 \" fill=\"none\" style=\"stroke:#181818;stroke-width:0.5;\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"59\" x=\"5\" y=\"625.2222\">End-User</text><ellipse cx=\"37.5\" cy=\"636.7983\" fill=\"#E2E2F0\" rx=\"8\" ry=\"8\" style=\"stroke:#181818;stroke-width:0.5;\"/><path d=\"M37.5,644.7983 L37.5,671.7983 M24.5,652.7983 L50.5,652.7983 M37.5,671.7983 L24.5,686.7983 M37.5,671.7983 L50.5,686.7983 \" fill=\"none\" style=\"stroke:#181818;stroke-width:0.5;\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"72\" x=\"154.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"58\" x=\"161.5\" y=\"73.1533\">Frontend</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"72\" x=\"154.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"58\" x=\"161.5\" y=\"632.2222\">Frontend</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"69\" x=\"236.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"55\" x=\"243.5\" y=\"73.1533\">Backend</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"69\" x=\"236.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"55\" x=\"243.5\" y=\"632.2222\">Backend</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"54\" x=\"315.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"40\" x=\"322.5\" y=\"73.1533\">OAuth</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"54\" x=\"315.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"40\" x=\"322.5\" y=\"632.2222\">OAuth</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"105\" x=\"379.5\" y=\"50\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"91\" x=\"386.5\" y=\"73.1533\">LG ThinQ App</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"105\" x=\"379.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"91\" x=\"386.5\" y=\"632.2222\">LG ThinQ App</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"170\" x=\"494.5\" y=\"30.7705\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"72\" x=\"543.5\" y=\"53.9238\">LMP OAuth</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"156\" x=\"501.5\" y=\"73.1533\">(LGE Members Platform)</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"170\" x=\"494.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"72\" x=\"543.5\" y=\"632.2222\">LMP OAuth</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"156\" x=\"501.5\" y=\"651.4517\">(LGE Members Platform)</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"674.5\" y=\"30.7705\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"681.5\" y=\"53.9238\">ThinQ Business API</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"81\" x=\"703.5\" y=\"73.1533\">(DR Service)</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"674.5\" y=\"609.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"681.5\" y=\"632.2222\">ThinQ Business API</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"81\" x=\"703.5\" y=\"651.4517\">(DR Service)</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"266\" y=\"436.645\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"337.5\" y=\"372.9331\"/><rect fill=\"#FFFFFF\" height=\"40.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"427\" y=\"560.2129\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"574.5\" y=\"213.6533\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"574.5\" y=\"277.3652\"/><rect fill=\"#FFFFFF\" height=\"141.4238\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"739\" y=\"341.0771\"/><polygon fill=\"#181818\" points=\"420,114.0854,430,118.0854,420,122.0854,424,118.0854\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"37.5\" x2=\"426\" y1=\"118.0854\" y2=\"118.0854\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"238\" x=\"44.5\" y=\"113.229\">&#46356;&#48148;&#51060;&#49828; &#46321;&#47197; : Air Conditioner, ESS, TV</text><polygon fill=\"#181818\" points=\"178.5,145.9414,188.5,149.9414,178.5,153.9414,182.5,149.9414\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"37.5\" x2=\"184.5\" y1=\"149.9414\" y2=\"149.9414\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"104\" x=\"44.5\" y=\"145.085\">DR &#49436;&#48708;&#49828;&#50640; &#44032;&#51077;</text><polygon fill=\"#181818\" points=\"48.5,177.7974,38.5,181.7974,48.5,185.7974,44.5,181.7974\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"42.5\" x2=\"189.5\" y1=\"181.7974\" y2=\"181.7974\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"129\" x=\"54.5\" y=\"176.9409\">LG&#51204;&#51088; &#47196;&#44536;&#51064; &#54168;&#51060;&#51648;</text><polygon fill=\"#181818\" points=\"562.5,209.6533,572.5,213.6533,562.5,217.6533,566.5,213.6533\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"37.5\" x2=\"568.5\" y1=\"213.6533\" y2=\"213.6533\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"116\" x=\"44.5\" y=\"208.7969\">LG&#51204;&#51088; &#44228;&#51221; &#47196;&#44536;&#51064;</text><polygon fill=\"#181818\" points=\"282,241.5093,272,245.5093,282,249.5093,278,245.5093\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"276\" x2=\"578.5\" y1=\"245.5093\" y2=\"245.5093\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"106\" x=\"288\" y=\"240.6528\">authorization code</text><polygon fill=\"#181818\" points=\"562.5,273.3652,572.5,277.3652,562.5,281.3652,566.5,277.3652\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"271\" x2=\"568.5\" y1=\"277.3652\" y2=\"277.3652\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"108\" x=\"278\" y=\"272.5088\">access token &#50836;&#52397;</text><polygon fill=\"#181818\" points=\"282,305.2212,272,309.2212,282,313.2212,278,309.2212\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"276\" x2=\"578.5\" y1=\"309.2212\" y2=\"309.2212\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"78\" x=\"288\" y=\"304.3647\">access token</text><polygon fill=\"#181818\" points=\"727,337.0771,737,341.0771,727,345.0771,731,341.0771\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"271\" x2=\"733\" y1=\"341.0771\" y2=\"341.0771\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"171\" x=\"278\" y=\"336.2207\">&#49324;&#50857;&#51088; &#49373;&#49457; (POST /dr/users)</text><polygon fill=\"#181818\" points=\"358.5,368.9331,348.5,372.9331,358.5,376.9331,354.5,372.9331\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"352.5\" x2=\"738\" y1=\"372.9331\" y2=\"372.9331\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"151\" x=\"364.5\" y=\"368.0767\">access/refresh token &#50836;&#52397;</text><polygon fill=\"#181818\" points=\"727,400.7891,737,404.7891,727,408.7891,731,404.7891\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"342.5\" x2=\"733\" y1=\"404.7891\" y2=\"404.7891\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"121\" x=\"349.5\" y=\"399.9326\">access/refresh token</text><polygon fill=\"#181818\" points=\"287,432.645,277,436.645,287,440.645,283,436.645\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"281\" x2=\"738\" y1=\"436.645\" y2=\"436.645\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"99\" x=\"293\" y=\"431.7886\">&#49324;&#50857;&#51088; &#51221;&#48372; &#50836;&#52397;</text><polygon fill=\"#181818\" points=\"727,464.501,737,468.501,727,472.501,731,468.501\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"271\" x2=\"733\" y1=\"468.501\" y2=\"468.501\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"69\" x=\"278\" y=\"463.6445\">&#49324;&#50857;&#51088; &#51221;&#48372;</text><polygon fill=\"#181818\" points=\"282,478.501,272,482.501,282,486.501,278,482.501\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"276\" x2=\"743\" y1=\"482.501\" y2=\"482.501\"/><polygon fill=\"#181818\" points=\"201.5,492.501,191.5,496.501,201.5,500.501,197.5,496.501\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"195.5\" x2=\"270\" y1=\"496.501\" y2=\"496.501\"/><polygon fill=\"#181818\" points=\"48.5,524.3569,38.5,528.3569,48.5,532.3569,44.5,528.3569\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"42.5\" x2=\"189.5\" y1=\"528.3569\" y2=\"528.3569\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"72\" x=\"54.5\" y=\"523.5005\">LG ThinQ &#50545;</text><polygon fill=\"#181818\" points=\"415,556.2129,425,560.2129,415,564.2129,419,560.2129\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"37.5\" x2=\"421\" y1=\"560.2129\" y2=\"560.2129\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"164\" x=\"44.5\" y=\"555.3564\">DR &#45824;&#49345; &#54856;&#44284; &#46356;&#48148;&#51060;&#49828; &#49440;&#53469;</text><polygon fill=\"#181818\" points=\"732,588.0688,742,592.0688,732,596.0688,736,592.0688\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"437\" x2=\"738\" y1=\"592.0688\" y2=\"592.0688\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"134\" x=\"444\" y=\"587.2124\">DR &#45824;&#49345; &#54856;&#44284; &#46356;&#48148;&#51060;&#49828;</text><!--SRC=[XL91QnD15BxFhtZarDA67Bpr8AIQba9hLnCzUPdiJCZGxEmoEod5KpGhY8WKJ51BKr8GH51eJC4A_gBiv3_uPj8akodeddPclkzxxttVYu-4ZAYY0J3UeEsMtWcbVaG33lkxbRqQFz64-ZfKKAX8LdmQSrK06aCRVqWzF862HvMMN46LgsFXym81_51H2rz4L6eex2YKv98vuZt56lPy5xPD_QCCgex7kw33Sbitvn1t8CW1x8JaSFkxK6iA-HZAKUJWD8e0LZ077ZY9vt8DXuK37jIvYi5hKTq8LR3kYAqWojDckjljM4WUnr3szf3_yCdSW1cBAKAiHr2yxqflGThhfLSzCxWsRxz0-c6KNWxmjYmKF0Wb4rg4wE8cLAhLJQWzMv3dVY4MQvZaFFsTe8BvU0gJguwvU4qMY2B27MqBipF3n5oSGdfvFlbrOmOtC7t_oHR_sbb8usHPw6ISc65_oR2vYsEgkRF0WekpVcmoIAJeNAZ42sfR1pzad32UuyonireR6vRa-zOq7MBKOCvwvkSFehXkAvbx8bakKuvgNdqtPzzifwOxCCa8rhp3QWrAJ9NiHF4wONF7NAgPUYN56uh7pN_KpKEMKhQ9rVB3VZg-Nb5PVRwzNywHoJ8JMIQnsuKr_L5sSrnjJ3vzrp7Tbp3z_6Oo_fDV9fCCfzq1iMlctFeVuIy0]--></g></svg>\n\n\n## DR 이벤트 생성 및 모니터링 데이터 다운로드\nDR 이벤트를 등록하고 DR 이벤트 전후의 디바이스의 모니터링 데이터를 다운로드하는 과정을 설명합니다.\n\n  - 사용 API\n    - [`POST /dr/events`](#tag/DR-API/operation/createDrEvent)\n    - [`POST /dr/events/{eventId}/targets`](#tag/DR-API/operation/createEventTarget)\n    - [`POST /dr/events/{eventId}/targets/{targetId}`](#tag/DR-API/operation/updateEventTarget)\n    - [`POST /dr/events/{eventId}/targets/batch`](#tag/DR-API/operation/createEventTargetBatch)\n    - [`POST /dr/events/{eventId}/targets/batch`](#tag/DR-API/operation/createEventTargetBatch)\n    - [`POST /dr/data-zip/files`](#tag/DR-API/operation/createDataZipFile)\n    - [`POST /dr/data-zip/files/{filename}`](#tag/DR-API/operation/downloadDataZipFile)\n\n  - 시퀀스\n    1. LG DR 서비스 서버에 DR 이벤트를 등록하기 위해 DR 이벤트 등록 API(POST /dr/events)를 호출합니다.\n    2. DR 이벤트가 정상적으로 등록되면, DR 이벤트 ID(eventId)를 반환합니다.\n    3. 만약 DR 이벤트 생성 후에 해당 DR 이벤트에 참여 필요한 디바이스 목록 변경이 필요한 경우 DR 이벤트 타깃 변경 API를 호출합니다.\n    4. DR 이벤트가 종료된 후 DR 이벤트 기간 내 대상 디바이스의 모니터링 데이터를 다운로드 받습니다.\n\n    <?xml version=\"1.0\" encoding=\"us-ascii\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" contentStyleType=\"text/css\" height=\"760px\" preserveAspectRatio=\"none\" style=\"width:517px;height:760px;background:#FFFFFF;\" version=\"1.1\" viewBox=\"0 0 517 760\" width=\"517px\" zoomAndPan=\"magnify\"><defs/><g><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"119.1709\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"209.8477\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"290.6685\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"371.4893\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"519.166\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"582.8779\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"463.5\" y=\"646.5898\"/><rect fill=\"none\" height=\"342.8862\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"435.5\" x=\"10\" y=\"75.459\"/><rect fill=\"none\" height=\"245.3184\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"415.5\" x=\"20\" y=\"166.0269\"/><rect fill=\"none\" height=\"210.9917\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"491.5\" x=\"20\" y=\"475.4541\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"86\" x2=\"86\" y1=\"58.459\" y2=\"425.3452\"/><line style=\"stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;\" x1=\"86\" x2=\"86\" y1=\"425.3452\" y2=\"468.4541\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"86\" x2=\"86\" y1=\"468.4541\" y2=\"703.4458\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"355.5\" x2=\"355.5\" y1=\"58.459\" y2=\"425.3452\"/><line style=\"stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;\" x1=\"355.5\" x2=\"355.5\" y1=\"425.3452\" y2=\"468.4541\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"355.5\" x2=\"355.5\" y1=\"468.4541\" y2=\"703.4458\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"468.5\" x2=\"468.5\" y1=\"58.459\" y2=\"425.3452\"/><line style=\"stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;\" x1=\"468.5\" x2=\"468.5\" y1=\"425.3452\" y2=\"468.4541\"/><line style=\"stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;\" x1=\"468.5\" x2=\"468.5\" y1=\"468.4541\" y2=\"703.4458\"/><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"30\" y=\"24.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"37\" y=\"47.3828\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"112\" x=\"30\" y=\"702.4458\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"98\" x=\"37\" y=\"725.5991\">Partner Service</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"286.5\" y=\"5\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"293.5\" y=\"28.1533\">ThinQ Business API</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"81\" x=\"315.5\" y=\"47.3828\">(DR Service)</text><rect fill=\"#E2E2F0\" height=\"52.459\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"139\" x=\"286.5\" y=\"702.4458\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"125\" x=\"293.5\" y=\"725.5991\">ThinQ Business API</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"81\" x=\"315.5\" y=\"744.8286\">(DR Service)</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"66\" x=\"435.5\" y=\"24.2295\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"52\" x=\"442.5\" y=\"47.3828\">AWS S3</text><rect fill=\"#E2E2F0\" height=\"33.2295\" rx=\"2.5\" ry=\"2.5\" style=\"stroke:#181818;stroke-width:0.5;\" width=\"66\" x=\"435.5\" y=\"702.4458\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"14\" lengthAdjust=\"spacing\" textLength=\"52\" x=\"442.5\" y=\"725.5991\">AWS S3</text><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"119.1709\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"209.8477\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"290.6685\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"371.4893\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"519.166\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"351\" y=\"582.8779\"/><rect fill=\"#FFFFFF\" height=\"31.856\" style=\"stroke:#181818;stroke-width:1.0;\" width=\"10\" x=\"463.5\" y=\"646.5898\"/><path d=\"M10,75.459 L151,75.459 L151,85.3149 L141,95.3149 L10,95.3149 L10,75.459 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"342.8862\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"435.5\" x=\"10\" y=\"75.459\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"96\" x=\"25\" y=\"91.4585\">DR &#51060;&#48292;&#53944; &#49373;&#49457;</text><polygon fill=\"#181818\" points=\"339,115.1709,349,119.1709,339,123.1709,343,119.1709\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"119.1709\" y2=\"119.1709\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"95\" x=\"93\" y=\"114.3145\">POST /dr/events</text><polygon fill=\"#181818\" points=\"97,147.0269,87,151.0269,97,155.0269,93,151.0269\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"151.0269\" y2=\"151.0269\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"103\" y=\"146.1704\">result</text><path d=\"M20,166.0269 L81,166.0269 L81,175.8828 L71,185.8828 L20,185.8828 L20,166.0269 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"245.3184\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"415.5\" x=\"20\" y=\"166.0269\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"16\" x=\"35\" y=\"182.0264\">alt</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"200\" x=\"96\" y=\"180.7188\">[&#51060;&#48292;&#53944; &#53440;&#44191;&#51060; &#52628;&#44032;&#46104;&#50612;&#50556; &#54616;&#45716; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"339,205.8477,349,209.8477,339,213.8477,343,209.8477\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"209.8477\" y2=\"209.8477\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"191\" x=\"93\" y=\"204.9912\">POST /dr/events/{eventId}/targets</text><polygon fill=\"#181818\" points=\"97,237.7036,87,241.7036,97,245.7036,93,241.7036\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"241.7036\" y2=\"241.7036\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"103\" y=\"236.8472\">result</text><line style=\"stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"20\" x2=\"435.5\" y1=\"250.7036\" y2=\"250.7036\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"227\" x=\"25\" y=\"263.3955\">[&#53945;&#51221; &#51060;&#48292;&#53944; &#53440;&#44191;&#51060; &#49688;&#51221;&#46104;&#50612;&#50556; &#54616;&#45716; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"339,286.6685,349,290.6685,339,294.6685,343,290.6685\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"290.6685\" y2=\"290.6685\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"246\" x=\"93\" y=\"285.812\">POST /dr/events/{eventId}/targets/{targetId}</text><polygon fill=\"#181818\" points=\"97,318.5244,87,322.5244,97,326.5244,93,322.5244\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"322.5244\" y2=\"322.5244\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"103\" y=\"317.668\">result</text><line style=\"stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"20\" x2=\"435.5\" y1=\"331.5244\" y2=\"331.5244\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"227\" x=\"25\" y=\"344.2163\">[&#51060;&#48292;&#53944; &#53440;&#44191;&#51060; &#51068;&#44292; &#49373;&#49457;&#46104;&#50612;&#50556; &#54616;&#45716; &#44221;&#50864;]</text><polygon fill=\"#181818\" points=\"339,367.4893,349,371.4893,339,375.4893,343,371.4893\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"371.4893\" y2=\"371.4893\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"227\" x=\"93\" y=\"366.6328\">POST /dr/events/{eventId}/targets/batch</text><polygon fill=\"#181818\" points=\"97,399.3452,87,403.3452,97,407.3452,93,403.3452\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"403.3452\" y2=\"403.3452\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"32\" x=\"103\" y=\"398.4888\">result</text><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"11\" lengthAdjust=\"spacing\" textLength=\"93\" x=\"232.25\" y=\"452.0371\">&lt; DR &#51060;&#48292;&#53944; &#49892;&#54665; &gt;</text><path d=\"M20,475.4541 L227,475.4541 L227,485.3101 L217,495.3101 L20,495.3101 L20,475.4541 \" fill=\"#EEEEEE\" style=\"stroke:#000000;stroke-width:1.5;\"/><rect fill=\"none\" height=\"210.9917\" style=\"stroke:#000000;stroke-width:1.5;\" width=\"491.5\" x=\"20\" y=\"475.4541\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" font-weight=\"bold\" lengthAdjust=\"spacing\" textLength=\"162\" x=\"35\" y=\"491.4536\">&#47784;&#45768;&#53552;&#47553; &#45936;&#51060;&#53552; &#45796;&#50868;&#47196;&#46300;</text><polygon fill=\"#181818\" points=\"339,515.166,349,519.166,339,523.166,343,519.166\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"519.166\" y2=\"519.166\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"131\" x=\"93\" y=\"514.3096\">POST /dr/data-zip/files</text><polygon fill=\"#181818\" points=\"97,547.022,87,551.022,97,555.022,93,551.022\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"551.022\" y2=\"551.022\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"39\" x=\"103\" y=\"546.1655\">&#54028;&#51068;&#47749;</text><polygon fill=\"#181818\" points=\"339,578.8779,349,582.8779,339,586.8779,343,582.8779\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"345\" y1=\"582.8779\" y2=\"582.8779\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"191\" x=\"93\" y=\"578.0215\">POST /dr/data-zip/files/{filename}</text><polygon fill=\"#181818\" points=\"97,610.7339,87,614.7339,97,618.7339,93,614.7339\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"355\" y1=\"614.7339\" y2=\"614.7339\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"112\" x=\"103\" y=\"609.8774\">&#54028;&#51068; &#45796;&#50868;&#47196;&#46300; &#51221;&#48372;</text><polygon fill=\"#181818\" points=\"451.5,642.5898,461.5,646.5898,451.5,650.5898,455.5,646.5898\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;\" x1=\"86\" x2=\"457.5\" y1=\"646.5898\" y2=\"646.5898\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"82\" x=\"93\" y=\"641.7334\">&#54028;&#51068; &#45796;&#50868;&#47196;&#46300;</text><polygon fill=\"#181818\" points=\"97,674.4458,87,678.4458,97,682.4458,93,678.4458\" style=\"stroke:#181818;stroke-width:1.0;\"/><line style=\"stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;\" x1=\"91\" x2=\"467.5\" y1=\"678.4458\" y2=\"678.4458\"/><text fill=\"#000000\" font-family=\"LGEIText\" font-size=\"13\" lengthAdjust=\"spacing\" textLength=\"26\" x=\"103\" y=\"673.5894\">&#54028;&#51068;</text><!--SRC=[jLFBIiD05DtdAowk5B5PT2SYA3ueY5PJSEDcR4ORJASXCorY4HGhQ5j1i2r5B2eKbAvY3Q9GVoWp-GUdQGlM1XyB0yFDVPmpPoOdTCyW5h9H6dIyWx8cMyeGjehI65QM5sC9lCyKsMP6qh0GOJ0Mbmd1DcZOpXb9F0Q8WjMh3GycKWPPX_aiDGYc5ERYiIqolh0n04u4IFqBQ6vJ0oqQj6XKKNRjJDO22H8DbxURVl4Ln4b359uKa4z_MvYQbJoJap0DyJKj0QfkgpY72QF1b8rPrYOoK7cue89CzedGFpdoshSo1_5IyPmZVbaNDLTKE-1NwxnO0Q_zBgwT0FchNTLy46FweSgGlOlxEiArO9DYy8jluguQhkciBbl_e4dDzrvawITveReQ7SyjzB_6VyZRHYoP-auPqPNkKYAH2CnyyKYfwTVEOLQs1XxYhKTUElCB3dyu1dxXo66P02yrnRNBxs_urSrFdj8HGrC7XgNk62OUyfPVBilxuArJvMySQhuRYFpP3aVfXhH1rmJFxWW_ZGRy8OXHmk2wFW00]--></g></svg>\n"
       - name: Base URL
         description: |
-          ThinQ Business API는 고객의 디바이스의 위치에 따라 Base URL을 구분하고 있습니다.  따라서 고객의 디바이스가 위치하는 지역 또는 B2B 파트너의 비지니스가 진행 중인 지역을 고려하여 API 호출시 Base URL을 선택하여 적용해주십시오.  그리고 아래와 같이 Production 환경과 Simulator Testing 환경을 위한 Base URL이 구분되어 있으니 참고해주시기를 바랍니다.      
+          ThinQ Business API는 고객의 디바이스의 위치에 따라 Base URL을 구분하고 있습니다.  따라서 고객의 디바이스가 위치하는 지역 또는 B2B 파트너의 비지니스가 진행 중인 지역을 고려해, API 호출 시 Base URL을 선택해 적용해주십시오.  그리고 아래와 같이 Production 환경과 Simulator Testing 환경을 위한 Base URL이 구분되어 있으니 참고하시기를 바랍니다.  
           ## Production 환경
-          Production 환경에서 Business API Key를 활용하여 ThinQ Business API를 호출하기 위해 아래의 Base URL을 사용해주세요. 
+          Production 환경에서 Business API Key를 활용해 ThinQ Business API를 호출하려면 아래의 Base URL을 사용해주십시오.
 
-            |Region|API Token 발급 API Base URL|ThinQ Business API Base URL|
+            |Region|API Token 발급 API|ThinQ Business API|
             |-|-|-|
             |South Asia, East Asia and Pacific|https://ap.api.lge.com|https://ap.api.lge.com/biz/v1|
             |America|https://us.api.lge.com|https://us.api.lge.com/biz/v1|
             |Europe, Middle East, Africa|https://eu.api.lge.com|https://eu.api.lge.com/biz/v1|
 
+            
           ## Simulator Testing 환경
-          Simulator Testing 환경에서 Test API Key를 활용하여 ThinQ Business API를 호출하기 위해 아래의 Base URL을 사용해주세요.
+          Simulator Testing 환경에서 Test API Key를 활용해 ThinQ Business API를 호출하기 위해 아래의 Base URL을 사용해주십시오.
 
-            |Region|API Token 발급 API Base URL|ThinQ Business API Base URL|
+            |Region|API Token 발급 API|ThinQ Business API|
             |-|-|-|
             |South Asia, East Asia and Pacific|https://ap-test.api.lge.com|https://ap-test.api.lge.com/biz/v1|
             |America|https://us-test.api.lge.com|https://us-test.api.lge.com/biz/v1|
@@ -63,9 +54,9 @@ contents:
       - name: Codes
         x-displayName: 코드 정의
         description: |
-          ThinQ Business API를 활용할 때 참고할 수 있는 코드 유형에 대하여 설명합니다.  
+          ThinQ Business API를 활용할 때 참고할 수 있는 코드 유형을 설명합니다. 
           ## 국가 코드
-          ThinQ Business API 호출에서 사용되는 국가 코드는 `ISO-3166 alpha-2` 규격을 지원하며 LG ThinQ 서비스가 지원하는 국가에 대하여 사용할 수 있습니다.  지원하는 국가 코드는 아래의 표와 같습니다.
+          ThinQ Business API 호출에서 사용하는 국가 코드는 `ISO-3166 alpha-2` 규격을 지원하며 LG ThinQ 서비스를 지원하는 국가에서 사용할 수 있습니다.  지원하는 국가 코드는 아래 표와 같습니다.
 
 
             | Code | Name          | Code | Name         | Code | Name          | Code | Name          | Code | Name           | Code | Name         | Code | Name         | Code | Name         |
@@ -92,7 +83,8 @@ contents:
             | PH        | 필리핀           | HU        | 헝가리           | AU        | 호주             | HK        | 홍콩             | NP        | 네팔             |           |                  |           |                  |           |                  |
 
           ## 응답 코드
-          각 API를 호출하면 HTTP 상태 코드와 함께 응답의 유형을 부가적으로 설명하는 응답 코드가 함께 반환될 수 있습니다. 이 응답 코드는 HTTP 응답 헤더와 응답 바디의 메시지 내에 포함되어 있으며 API의 종류별로 그 정의는 다를 수 있습니다.  API의 종류별로 지원하는 응답 코드는 아래와 같습니다.
+          각 API를 호출하면 HTTP 상태 코드와 함께 응답 유형을 부가적으로 설명하는 응답 코드가 함께 반환될 수 있습니다.  이 응답 코드는 HTTP 응답 헤더와 응답 바디의 메시지에 포함되어 있으며 API의 종류별로 그 정의는 다를 수 있습니다.  API의 종류별로 지원하는 응답 코드는 아래와 같습니다.
+
           ### Device API, Event API, User API
 
             <table>
@@ -289,12 +281,12 @@ contents:
       - name: auth
         x-displayName: API 인증
         description: |
-          LG Open API Developer가 B2B 파트너에게 제공한 `API Key`와 `API Secret` 쌍을 이용하여 `API Token`을 주기적으로 발급하기 위해 아래의 API가 사용됩니다.       이 API로 발급된 `API Token`은 모든 ThinQ Business API 호출 시 HTTP 요청 헤더에 포함되어야 합니다.
+          LG Open API Developer가 B2B 파트너에게 제공한 API Key와 API Secret 쌍을 이용해 API Token을 주기적으로 발급하려면 아래의 API를 사용합니다.  이 API로 발급한 API Token은 모든 ThinQ Business API 호출 시 HTTP 요청 헤더에 포함해야 합니다.
       - name: Device API
-        description: "등록된 디바이스의 목록을 조회하고, 특정 디바이스의 프로파일 및 상태를 조회하거나 디바이스를 제어하기 위해 Device API가 사용됩니다.       기업이 구매한 여러가지 종류의 LG전자 제품에 대하여 Device API를 사용하는 경우, 디바이스가 일괄 등록되어 있는 LG전자 계정이나 설치 현장의 정보를 LG Open API Developer에서 사전에 지정해둘 수 있습니다.       또한 가전제품에 한정하여 Device API를 호출하는 시점에 특정 LG전자 사용자를 지정하여 해당 사용자의 디바이스에 대한 접근을 수행할 수 있습니다.       Device API를 호출하기 위해서는 B2B 파트너 또는 그의 고객이 디바이스를 등록하는 과정이 선행되어야 합니다.       구매한 디바이스는 아래와 같이 디바이스 종류에 따라 해당 LG전자의 플랫폼의 서비스에 가입하여 등록해야 합니다.\n\n |디바이스 종류|LG전자 플랫폼|\n |-|-|\n |가전제품 및 기타 IoT 디바이스|LG ThinQ (mobile app)|\n |사이니지|LG Business Cloud\_ (https://lgbusinesscloud.com)|\n |상업용 HVAC|LG BECON Cloud\_(https://beconcloud.lge.com)|\n"
+        description: "등록한 디바이스의 목록을 조회하고, 특정 디바이스의 프로파일 및 상태를 조회하거나 디바이스를 제어하기 위해 Device API를 사용합니다.  기업이 구매한 다양한 LG전자 제품의 Device API를 사용하는 경우, 디바이스가 일괄 등록되어 있는 LG전자 계정이나 설치 현장의 정보를 LG Open API Developer에서 사전에 지정할 수 있습니다.  또한 LG전자 제품의 Device API를 호출할 때 특정 LG전자 사용자를 지정해 해당 사용자의 디바이스에 대한 접근을 수행할 수 있습니다.  Device API를 호출하기 위해서는 B2B 파트너 또는 그의 고객이 디바이스를 등록하는 과정을 거쳐야 합니다.  구매한 디바이스는 아래와 같이 디바이스 종류에 따라 해당 LG전자의 플랫폼의 서비스에 가입해 등록해야 합니다.\n\n |디바이스 종류|LG전자 플랫폼|\n |-|-|\n |가전제품 및 기타 IoT 디바이스|LG ThinQ (mobile app)|\n |사이니지|LG Business Cloud\_ (https://lgbusinesscloud.com)|\n |상업용 HVAC|LG BECON Cloud\_(https://beconcloud.lge.com)|\n"
       - name: Event API
         description: |
-          특정 디바이스의 상태 변화를 B2B파트너의 서비스가 수신하거나 수신을 해제하기 위하여 Event API가 사용됩니다. 이 API는 현재 LG ThinQ에 등록된 제품에 한정하여 제공되며 향후 다른 제품의 지원이 확대될 예정입니다. B2B파트너의 서비스가 디바이스의 상태를 수신하기 위해서는 사전에 LG Open API Developer에서 B2B파트너 서비스의 Callback 호출 정보를 등록해야 합니다. Callback으로 제공되는 디바이스의 상태 변화의 종류는 아래와 같고, 종류별로 Callback 구독이 수행되는 조건이 다를 수 있습니다.
+          특정 디바이스 상태 변화를 B2B 파트너의 서비스가 수신하거나 수신을 해제하기 위해 Event API를 사용합니다.  이 API는 현재 LG ThinQ에 등록한 제품에 한해 제공되며 향후 다른 제품의 지원을 확대할 예정입니다.  B2B 파트너의 서비스가 디바이스의 상태를 수신하기 위해서는 사전에 LG Open API Developer에서 B2B 파트너 서비스의 Callback 호출 정보를 등록해야 합니다.  Callback으로 제공하는 디바이스의 상태 변화 종류는 아래와 같고, 종류별로 Callback 구독이 수행하는 조건이 다를 수 있습니다.
 
            | Category | Type | Description | Pre-Condition |
            |-|-|-|-|
@@ -304,10 +296,10 @@ contents:
            | 푸시 | DEVICE_ALIAS_CHANGED | 디바이스의 닉네임이 변경됨 | 디바이스 목록 조회 API 호출 |
       - name: User API
         description: |
-          파트너 서비스에 등록한 LG전자 사용자의 정보를 관리하기 위하여 User API가 사용됩니다. <b>이 API는 현재 LG ThinQ 등록 제품에 한정하여 제공됩니다.</b>
+          B2B 파트너의 서비스에 등록한 LG전자 사용자의 정보를 관리하기 위해 User API를 사용합니다. <b>이 API는 현재 LG ThinQ 등록 제품에 한해 제공합니다.</b>
       - name: DR API
         description: |
-          B2B파트너가 전력 수요반응(DR: Demand Response) 사업자로서 DR 서비스 가입자인 LG전자 사용자의 디바이스를 제어하기 위하여 DR API가 사용됩니다. B2B 파트너는 이 API를 활용하여 DR 가입자인 LG전자 사용자를 관리하고, 현재 전력량의 수요에 반응하여 특정 전력 피크 시간 동안 LG전자 사용자 측의 전력 사용을 줄이거나 변경시킬 수 있는 DR 이벤트를 등록하고, DR 대상 디바이스의 DR 이벤트 참여 여부를 조회할 수 있습니다. DR 대상 디바이스는 현재 에어컨, TV에 한정하여 제공되며 향후 다른 제품의 지원이 확대될 예정입니다. 이 API를 활용한 DR 서비스는 다음의 절차에 따라 진행됩니다.
+          B2B 파트너가 전력 수요반응(DR: Demand Response) 사업자로서 DR 서비스 가입자인 LG전자 사용자의 디바이스를 제어하기 위해 DR API가 사용됩니다.  B2B 파트너는 이 API를 활용해 DR 가입자인 사용자를 관리할 수 있습니다.  그리고 특정 전력 피크 시간 동안 사용자의 전력 사용을 줄이거나 바꾸는 DR 이벤트를 등록하고, DR 대상 디바이스의 DR 이벤트 참여 여부를 조회할 수 있습니다.  DR 대상 디바이스는 현재 에어컨, TV에 한해 제공하며 향후 다른 제품의 지원을 확대할 예정입니다.  이 API를 활용한 DR 서비스는 다음의 절차에 따라 진행됩니다.
           ### 1. 디바이스 등록 및 DR 서비스 가입
 
             - LG ThinQ 사용자는 LG ThinQ 앱에 DR 대상 디바이스를 등록하고, B2B 파트너의 DR 서비스에 가입합니다.
@@ -324,7 +316,7 @@ contents:
 
           ### 3. 상태 모니터링
 
-            - LG전자는 DR 이벤트를 실행하는 동안 디바이스의 상태를 모니터링하여 기록합니다.
+            - LG전자는 DR 이벤트를 실행하는 동안 디바이스의 상태를 모니터링해 기록합니다.
             - B2B 파트너는 DR API로 모니터링 데이터를 다운로드합니다. 
 
               <img src="https://dev.openapi.developer.lge.com/assets/images/img_DR_03.png" width="600"/>
@@ -344,7 +336,7 @@ contents:
             - auth
           summary: API Token 발급
           description: |
-            Business Connect API에 속하는 모든 API를 호출할 때 `API Key`와 `API Token`이 필요합니다. 이 API는 `API Token`을 발급 받기 위해 사용되며 발급된 `API Token`은 **24 시간** 동안 유효하므로 클라이언트는 이 API를 호출하여 새 `API Token`을 획득할 수 있도록 준비되어야 합니다. `API Secret`은 `API Token`을 발급하기 위해서만 사용됩니다.
+            ThinQ Business API에 속하는 모든 API를 호출할 때 'API Key'와 'API Token'이 필요합니다.  이 API는 API Token 발급을 위해 사용되며 발급된 API Token은 **24시간** 동안 유효하므로 B2B 파트너는 새 API Token을 획득하도록 준비해야 합니다.  'API Secret'은 API Token을 발급하기 위해서만 사용합니다.
           operationId: createAPIToken
           security:
             - ThinQ_Business_API_Key: []
@@ -362,7 +354,7 @@ contents:
               schema:
                 type: string
               description: |
-                B2B파트너가 `API Key`와 한 쌍으로 획득한 비밀 문자열인 `API Secret`
+                B2B 파트너가 `API Key`와 한 쌍으로 획득한 비밀 문자열인 `API Secret`입니다.
               example: 5f3c0222-cb51-4ea8-bae9-60879e8760bb
           responses:
             '200':
@@ -382,7 +374,7 @@ contents:
           tags:
             - Device API
           summary: 디바이스 목록 조회
-          description: LG전자 계정에 등록된 모든 디바이스의 목록을 조회합니다.
+          description: LG전자 계정에 등록한 모든 디바이스의 목록을 조회합니다.
           operationId: getDevices
           security:
             - ThinQ_Business_API_Key: []
@@ -932,7 +924,7 @@ contents:
           tags:
             - Device API
           summary: 디바이스 제어
-          description: 특정 디바이스의 상태를 제어합니다. 디바이스 프로파일에서 제어 가능한 속성이 없는 제품은 제어를 할 수 없습니다.
+          description: 특정 디바이스의 상태를 제어합니다. 디바이스 프로파일에서 제어 가능한 속성이 없는 제품은 제어할 수 없습니다.
           operationId: controlDevice
           security:
             - ThinQ_Business_API_Key: []
@@ -954,7 +946,7 @@ contents:
               application/json:
                 schema:
                   type: object
-                  description: 디바이스 유형별 제어 요청 메시지의 스키마는 [**디바이스 프로파일**](http://www.daum.net) 페이지를 참조해주세요.
+                  description: 디바이스 유형별 제어 요청 메시지의 스키마는 [**디바이스 프로파일**](/api/device_profile) 페이지를 참조해주십시오.
                 examples:
                   냉장고:
                     $ref: '#/components/examples/refrigerator-command-example'
@@ -1184,7 +1176,7 @@ contents:
             - Event API
           summary: 디바이스 푸시 구독 목록 조회
           description: |
-            푸시 메시지를 구독한 디바이스의 ID 목록을 조회합니다. **(현재 LG ThinQ 등록 가전제품에 대해서만 지원합니다.)**
+            푸시 메시지를 구독한 디바이스의 ID 목록을 조회합니다. **(현재 LG ThinQ 등록 가전제품만 지원합니다.)**
           operationId: listDevicesSubscribed
           security:
             - ThinQ_Business_API_Key: []
@@ -1324,7 +1316,7 @@ contents:
             - Event API
           summary: 디바이스 푸시 구독
           description: |
-            특정 디바이스에서 발생하는 푸시 메시지를 구독합니다. **(현재 LG ThinQ 등록 가전제품에 대해서만 지원합니다.)**
+            특정 디바이스에서 전달하는 푸시 메시지를 구독합니다. **(현재 LG ThinQ 등록 가전제품만 지원합니다.)**
           operationId: subscribePushMessages
           security:
             - ThinQ_Business_API_Key: []
@@ -1438,7 +1430,7 @@ contents:
             - Event API
           summary: 디바이스 푸시 해제
           description: |
-            특정 디바이스에서 발생하는 푸시 메시지의 구독을 해제합니다. **(현재 LG ThinQ 등록 가전제품에 대해서만 지원합니다.)**
+            특정 디바이스에서 전달하는 푸시 메시지의 구독을 해제합니다. **(현재 LG ThinQ 등록 가전제품만 지원합니다.)**
           operationId: unsubscribePushMessages
           security:
             - ThinQ_Business_API_Key: []
@@ -1572,7 +1564,7 @@ contents:
             - User API
           summary: 사용자 번호 조회
           description: |
-            특정 LG ThinQ 사용자의 사용자 번호를 조회합니다.  사용자가 B2B파트너의 서비스에 가입할 때 미리 사용자 번호를 조회해두면, Callback으로 수신한 푸시 메시지의 디바이스 소유자를 식별할 수 있습니다.
+            특정 LG ThinQ 사용자의 사용자 번호를 조회합니다.  사용자가 B2B 파트너의 서비스에 가입할 때 미리 사용자 번호를 조회하면, Callback으로 수신한 푸시 메시지의 디바이스 소유자를 식별합니다.
           operationId: getUserNumber
           security:
             - ThinQ_Business_API_Key: []
@@ -1709,7 +1701,7 @@ contents:
           tags:
             - User API
           summary: 사용자 비활성화
-          description: B2B파트너가 더 이상 특정 LG ThinQ 사용자를 연동하지 않을 때 비활성화를 요청합니다.
+          description: B2B 파트너가 더 이상 특정 LG ThinQ 사용자를 연동하지 않을 때 비활성화를 요청합니다.
           operationId: disconnectService
           security:
             - ThinQ_Business_API_Key: []
@@ -1867,30 +1859,30 @@ contents:
                     groupId:
                       type: string
                       example: k-apt-1168011000
-                      description: 그룹 ID
+                      description: 그룹 ID입니다.
                     groupName:
                       type: string
                       example: 압구정 현대 1차 아파트
-                      description: 그룹 명
+                      description: 그룹 명입니다.
                     partnerId:
                       type: string
                       example: kepco-herit-lge
-                      description: 그룹을 생성한 전력사/통합사 ID
+                      description: 그룹을 생성한 전력사/통합사 ID입니다.
                     areaCode:
                       type: string
                       example: '1168011000'
-                      description: 법정동 코드(국토교통부에서 지정한 10자리번호)
+                      description: 법정동 코드(국토교통부에서 지정한 10자리 번호)입니다.
                     buildingCode:
                       type: string
                       example: '1168011000103690001004767'
                       description: |-
-                        - 도로명주소건물관리번호(공간정보 오픈플랫폼)
-                        - 25자리번호
-                        - 법정동코드(10) + 산여부(1) + 지번본번(4) + 지번부번(4) + 시스템번호(6)
+                        - 도로명주소건물 관리번호(공간정보 오픈플랫폼)입니다.
+                        - 25자리 번호입니다.
+                        - 법정동코드(10) + 산여부(1) + 지번본번(4) + 지번부번(4) + 시스템번호(6)로 구성되어 있습니다.
                     comment:
                       type: string
                       example: 압구정 현대 1차 아파트
-                      description: 해당 그룹의 설명
+                      description: 해당 그룹에 대한 설명입니다.
                   required:
                     - groupId
                     - partnerId
@@ -1919,7 +1911,7 @@ contents:
                           groupId:
                             type: string
                             example: k-apt-1168011000
-                            description: 그룹 ID
+                            description: 그룹 ID입니다.
             '400':
               description: Bad Request
               headers:
@@ -1954,18 +1946,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4307
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Partner'
             '429':
               description: Too Many Requests
@@ -1991,18 +1983,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/groups/{groupId}:
         get:
@@ -2022,7 +2014,7 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: groupId
-              description: 특정 그룹의 ID. 사용자 또는 디바이스의 그룹에 해당됩니다.
+              description: 특정 그룹의 ID입니다. 사용자 또는 디바이스의 그룹에 해당됩니다.
               required: true
               schema:
                 type: string
@@ -2048,35 +2040,35 @@ contents:
                         example: 2000
                       data:
                         type: object
-                        description: group에 대한 정보
+                        description: 그룹에 대한 정보입니다.
                         properties:
                           groupId:
                             type: string
                             example: k-apt-1168011000
-                            description: 그룹을 구분하기 위해 DR 서비스에 등록한 고유한 group ID
+                            description: 그룹을 구분하기 위해 DR 서비스에 등록한 고유한 그룹 ID입니다.
                           groupName:
                             type: string
-                            example: 압구정 현대 1차 아파트
+                            example: 압구정 현대 1차 아파트입니다.
                             description: 그룹명
                           partnerId:
                             type: string
                             example: kepco-herit-lge
-                            description: DR 서비스의 파트너사 ID
+                            description: DR 서비스의 파트너사 ID입니다.
                           areaCode:
                             type: string
                             example: '1168011000'
-                            description: 법정동 코드(국토교통부에서 지정한 10자리번호)
+                            description: 법정동 코드(국토교통부에서 지정한 10자리 번호)입니다.
                           buildingCode:
                             type: string
                             example: '1168011000103690001004767'
                             description: |-
-                              - 도로명주소건물관리번호(공간정보 오픈플랫폼)
-                              - 25자리번호
-                              - 법정동코드(10) + 산여부(1) + 지번본번(4) + 지번부번(4) + 시스템번호(6)
+                              - 도로명주소건물 관리번호(공간정보 오픈플랫폼)입니다.
+                              - 25자리 번호입니다.
+                              - 법정동코드(10) + 산여부(1) + 지번본번(4) + 지번부번(4) + 시스템번호(6)로 구성되어 있습니다.
                           comment:
                             type: string
                             example: 압구정 현대 1차 아파트
-                            description: 해당 그룹에 대한 설명
+                            description: 해당 그룹에 대한 설명입니다.
             '400':
               description: Bad Request
               headers:
@@ -2111,18 +2103,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4308
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Group'
             '429':
               description: Too Many Requests
@@ -2148,18 +2140,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/partners/{partnerId}/groups:
         get:
@@ -2179,7 +2171,7 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: partnerId
-              description: 그룹을 생성한 Aggregator 또는 Utility 파트너의 ID
+              description: 그룹을 생성한 Aggregator 또는 Utility 파트너의 ID입니다.
               required: true
               schema:
                 type: string
@@ -2205,38 +2197,36 @@ contents:
                         example: 2000
                       data:
                         type: array
-                        description: 그룹 리스트
+                        description: 그룹 리스트입니다.
                         items:
                           properties:
                             groupId:
                               type: string
                               example: k-apt-1168011000
-                              description: DR 서비스에 등록된 그룹 ID
+                              description: DR 서비스에 등록된 그룹 ID입니다.
                             groupName:
                               type: string
                               example: 압구정 현대 1차 아파트
-                              description: 그룹명
+                              description: 그룹명입니다.
                             partnerId:
                               type: string
                               example: herit-01
-                              description: 파트너 ID
+                              description: 파트너 ID입니다.
                             areaCode:
                               type: string
                               example: '1168011000'
-                              description: |-
-                                - 법정동 코드(국토교통부)
-                                - 10자리번호
+                              description: '- 법정동 코드(국토교통부에서 지정한 10자리 번호)입니다.'
                             buildingCode:
                               type: string
                               example: '1168011000103690001004767'
                               description: |-
-                                - 도로명주소건물관리번호(공간정보 오픈플랫폼)
-                                - 25자리번호
-                                - 법정동코드(10) + 산여부(1) + 지번본번(4) + 지번부번(4) + 시스템번호(6)
+                                - 도로명주소건물 관리번호(공간정보 오픈플랫폼)입니다.
+                                - 25자리 번호입니다.
+                                - 법정동코드(10) + 산여부(1) + 지번본번(4) + 지번부번(4) + 시스템번호(6)로 구성되어 있습니다.
                             comment:
                               type: string
                               example: 압구정 현대 1차 아파트
-                              description: 그룹에 관한 추가 설명
+                              description: 해당 그룹에 대한 설명입니다.
                   examples:
                     200 OK:
                       value:
@@ -2288,18 +2278,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4308
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Group'
             '429':
               description: Too Many Requests
@@ -2325,18 +2315,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/users:
         post:
@@ -2364,23 +2354,23 @@ contents:
                     userNo:
                       type: string
                       example: KR2306146584898
-                      description: LG전자 계정의 사용자 번호
+                      description: LG전자 계정의 사용자 번호입니다.
                     mail:
                       type: string
                       example: dr_kr_qa001@yopmail.com
-                      description: LG전자 계정의 E-mail 주소
+                      description: LG전자 계정의 이메일 주소입니다.
                     groupId:
                       type: string
                       example: A15721009
-                      description: 사용자를 등록할 그룹 ID
+                      description: 사용자를 등록할 그룹 ID입니다.
                     accessToken:
                       type: string
                       example: 67a184e62a412bb19b6ec2742b94695e06c1ce19d04f8d92121c6c28c99faf841150dba922da301e5617ae3942918a05
-                      description: LMP(LGE Members Platform) 시스템에서 발급된 access_token
+                      description: LMP(LGE Members Platform) 시스템에서 발급된 access_token입니다.
                     refreshToken:
                       type: string
                       example: 3559466b6c19e334557c277108aed936c22840672b1c2a6a8fb7597a6473f9a59fbec4a3f4e03595b8a38513ba1d8088
-                      description: LMP(LGE Members Platform) 시스템에서 발급된 refresh_token
+                      description: LMP(LGE Members Platform) 시스템에서 발급된 refresh_token입니다.
                     partner:
                       type: object
                       description: Partner information
@@ -2388,23 +2378,23 @@ contents:
                         partnerId:
                           type: string
                           example: herit-01
-                          description: 파트너사 ID
+                          description: 파트너사 ID입니다.
                         programId:
                           type: string
                           example: oc-dr-001
-                          description: DR 프로그램 ID(북미지역 한정)
+                          description: DR 프로그램 ID(북미지역 한정)입니다.
                         programName:
                           type: string
                           example: OC DR Program
-                          description: DR 프로그램명(북미지역 한정)
+                          description: DR 프로그램명(북미지역 한정)입니다.
                         partnerUserId:
                           type: string
                           example: lgautodr10
-                          description: 파트너사 사용자 ID
+                          description: 파트너사 사용자 ID입니다.
                         authCodeExt:
                           type: string
                           example: d778581e-14f5-4531-943b-c823beebc72f.f81a0977-a553-417e-8873-64faafa0534a.160df234-fa67-4ed2-b710-74afc12eaa12
-                          description: 3rd party OAuth 2.0 연동을 위한 Auth code(3rd party system에서 발급받으며 1회용)
+                          description: 3rd party OAuth 2.0 연동을 위한 Auth code(3rd party system에서 발급받으며 1회용)입니다.
                       required:
                         - partnerId
                         - authCodeExt
@@ -2438,7 +2428,7 @@ contents:
                           userNo:
                             type: string
                             example: 01581c1893b95f30282d3c09d478cef7
-                            description: 생성된 사용자의 암호화된 LG전자 계정의 사용자 번호
+                            description: 생성된 사용자의 암호화된 LG전자 계정의 사용자 번호입니다.
             '400':
               description: Bad Request
               headers:
@@ -2473,18 +2463,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4307
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Partner'
             '409':
               description: Conflict
@@ -2500,18 +2490,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4309
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Event'
             '429':
               description: Too Many Requests
@@ -2537,18 +2527,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/users/{userNo}:
         delete:
@@ -2568,7 +2558,7 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: userNo
-              description: 암호화된 LG전자 계정의 사용자 번호
+              description: 암호화된 LG전자 계정의 사용자 번호입니다.
               required: true
               schema:
                 type: string
@@ -2598,7 +2588,7 @@ contents:
                           userNo:
                             type: string
                             example: 01581c1893b95f30282d3c09d478cef7
-                            description: 삭제된 사용자 LG전자 계정의 사용자 번호
+                            description: 삭제된 사용자 LG전자 계정의 사용자 번호입니다.
             '400':
               description: Bad Request
               headers:
@@ -2633,18 +2623,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4301
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: User'
             '429':
               description: Too Many Requests
@@ -2670,18 +2660,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
         get:
           tags:
@@ -2700,7 +2690,7 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: userNo
-              description: 암호화된 LG전자 계정의 사용자 번호
+              description: 암호화된 LG전자 계정의 사용자 번호입니다.
               required: true
               schema:
                 type: string
@@ -2730,19 +2720,19 @@ contents:
                           userNo:
                             type: string
                             example: 01581c1893b95f30282d3c09d478cef7
-                            description: 암호화된 LG전자 계정의 사용자 번호
+                            description: 암호화된 LG전자 계정의 사용자 번호입니다.
                           drHomeId:
                             type: string
                             example: '171072582282622861'
-                            description: DR 서비스에 연결된 사용자의 ThinQ 홈 ID
+                            description: DR 서비스에 연결된 사용자의 ThinQ Home ID입니다.
                           partnerId:
                             type: string
                             example: herit-01
-                            description: 사용자가 가입한 DR 서비스의 파트너 ID
+                            description: 사용자가 가입한 DR 서비스의 파트너 ID입니다.
                           groupId:
                             type: string
                             example: A15721009
-                            description: 사용자가 속한 Group ID
+                            description: 사용자가 속한 그룹 ID입니다.
             '400':
               description: Bad Request
               headers:
@@ -2777,18 +2767,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4301
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: User'
             '429':
               description: Too Many Requests
@@ -2814,18 +2804,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/users/{userNo}/devices:
         get:
@@ -2845,7 +2835,7 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: userNo
-              description: 암호화된 LG전자 계정의 사용자 번호
+              description: 암호화된 LG전자 계정의 사용자 번호입니다.
               required: true
               schema:
                 type: string
@@ -2876,43 +2866,43 @@ contents:
                             deviceId:
                               type: string
                               example: 111e0f0a-8d50-41f8-9120-94a8728c57e4
-                              description: 암호화된 ThinQ 디바이스 ID
+                              description: 암호화된 ThinQ 디바이스 ID입니다.
                             macAddress:
                               type: string
                               example: abcd1234
-                              description: 암호화된 MAC address
+                              description: 암호화된 MAC address입니다.
                             groupId:
                               type: string
                               example: k-apt-1168011000
-                              description: Group ID
+                              description: 그룹 ID입니다.
                             userNo:
                               type: string
                               example: KRXXXXXY
-                              description: 암호화된 LG전자 계정의 사용자 번호
+                              description: 암호화된 LG전자 계정의 사용자 번호입니다.
                             homeId:
                               type: string
                               example: '1'
-                              description: Device가 등록된 ThinQ Home ID
+                              description: 디바이스가 등록된 ThinQ Home ID입니다.
                             drParticipate:
                               type: boolean
                               example: true
-                              description: DR 이벤트 참여 가능 여부(true/false)
+                              description: DR 이벤트 참여 가능 여부(true/false)입니다.
                             opt:
                               type: string
                               example: IN
-                              description: 현재 DR 이벤트 참여중 여부("IN"/"OUT")
+                              description: 현재 DR 이벤트 참여중 여부("IN"/"OUT")입니다.
                             deviceType:
                               type: string
                               example: DEVICE_AIR_CONDITIONER
-                              description: 디바이스 타입
+                              description: 디바이스 타입입니다.
                             modelName:
                               type: string
                               example: PAC_910604_US
-                              description: 디바이스 모델명
+                              description: 디바이스 모델명입니다.
                             alias:
                               type: string
                               example: air conditioner
-                              description: 디바이스 별칭(alias)
+                              description: 디바이스 별칭(alias)입니다.
                   examples:
                     200 OK:
                       value:
@@ -2972,18 +2962,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4301
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: User'
             '429':
               description: Too Many Requests
@@ -3009,18 +2999,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/users/{userNo}/devices/{deviceId}:
         get:
@@ -3040,14 +3030,14 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: userNo
-              description: 암호화된 LG전자 계정의 사용자 번호
+              description: 암호화된 LG전자 계정의 사용자 번호입니다.
               required: true
               schema:
                 type: string
                 example: 01581c1893b95f30282d3c09d478cef7
             - in: path
               name: deviceId
-              description: 암호화된 ThinQ 디바이스 ID
+              description: 암호화된 ThinQ 디바이스 ID입니다.
               required: true
               schema:
                 type: string
@@ -3078,43 +3068,43 @@ contents:
                             deviceId:
                               type: string
                               example: 1f6bfb2796410a429f0015bf91f958361845888164cb0a61fefdd690513b13353f1da753095de970faba8099e2a56aa1
-                              description: 암호화된 ThinQ 디바이스 ID
+                              description: 암호화된 ThinQ 디바이스 ID입니다.
                             macAddress:
                               type: string
                               example: 66e71f19ada4fcaf5cd7aa26d49d4291
-                              description: 암호화된 MAC address
+                              description: 암호화된 MAC address입니다.
                             groupId:
                               type: string
                               example: A15721009
-                              description: Group ID
+                              description: 그룹 ID입니다.
                             userNo:
                               type: string
                               example: 01581c1893b95f30282d3c09d478cef7
-                              description: 암호화된 LG전자 계정의 사용자 번호
+                              description: 암호화된 LG전자 계정의 사용자 번호입니다.
                             homeId:
                               type: string
                               example: '171072582282622861'
-                              description: Device가 등록된 ThinQ Home ID
+                              description: 디바이스가 등록된 ThinQ Home ID입니다.
                             drParticipate:
                               type: boolean
                               example: true
-                              description: DR 이벤트 참여 가능 여부(true/false)
+                              description: DR 이벤트 참여 가능 여부(true/false)입니다.
                             opt:
                               type: string
                               example: IN
-                              description: 현재 DR 이벤트 참여중 여부("IN"/"OUT")
+                              description: 현재 DR 이벤트 참여중 여부("IN"/"OUT")입니다.
                             deviceType:
                               type: string
                               example: DEVICE_AIR_CONDITIONER
-                              description: 디바이스 타입
+                              description: 디바이스 타입입니다.
                             modelName:
                               type: string
                               example: PAC_910604_US
-                              description: 디바이스 모델명
+                              description: 디바이스 모델명입니다.
                             alias:
                               type: string
                               example: air conditioner
-                              description: 디바이스 별칭(alias)
+                              description: 디바이스 별칭(alias)입니다.
                   examples:
                     200 OK:
                       value:
@@ -3164,18 +3154,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4301
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: User'
             '429':
               description: Too Many Requests
@@ -3201,18 +3191,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/events:
         post:
@@ -3231,7 +3221,7 @@ contents:
             - required: true
               $ref: '#/components/parameters/X-Country-Code-2'
           requestBody:
-            description: DR 이벤트 정보
+            description: DR 이벤트 정보입니다.
             content:
               application/json:
                 schema:
@@ -3240,23 +3230,23 @@ contents:
                     eventId:
                       type: string
                       example: 2023-04-25-dr-01
-                      description: DR 이벤트 ID
+                      description: DR 이벤트 ID입니다.
                     eventName:
                       type: string
                       example: 2023-04-25-dr-01
-                      description: DR 이벤트 명
+                      description: DR 이벤트 명입니다.
                     partnerId:
                       type: string
                       example: herit-01
-                      description: 파트너 ID
+                      description: 파트너 ID입니다.
                     startTs:
                       type: number
                       example: 1682423399890
-                      description: DR 이벤트 시작 시간(milliseconds)
+                      description: DR 이벤트 시작 시간(milliseconds)입니다.
                     endTs:
                       type: number
                       example: 1682426999000
-                      description: DR 이벤트 종료 시간(milliseconds)
+                      description: DR 이벤트 종료 시간(milliseconds)입니다.
                     targets:
                       type: array
                       items:
@@ -3264,13 +3254,13 @@ contents:
                           targetType:
                             type: string
                             example: GROUP
-                            description: 이벤트 타겟 타입(GROUP, USER, DEVICE)
+                            description: 이벤트 타깃 타입(GROUP, USER, DEVICE)입니다.
                           targetIds:
                             type: array
                             items:
                               type: string
                               example: k-apt-1168011000
-                            description: 이벤트 타겟 ID 리스트 (of GROUP, USER or DEVICE)
+                            description: 이벤트 타깃 ID 리스트 (of GROUP, USER or DEVICE)입니다.
                         required:
                           - targetType
                           - targetIds
@@ -3281,21 +3271,21 @@ contents:
                           signalId:
                             type: string
                             example: 2023-04-25-dr-01-signal-01
-                            description: DR 이벤트 시그널 ID
+                            description: DR 이벤트 시그널 ID입니다.
                           deviceType:
                             type: string
                             example: DEVICE_AIR_CONDITIONER
-                            description: DR 이벤트 타겟 디바이스 타입
+                            description: DR 이벤트 타깃 디바이스 타입입니다.
                           modelNames:
                             type: array
                             items:
                               type: string
                               example: RAC_056905_WW
-                            description: DR 이벤트 타겟 디바이스 모델명
+                            description: DR 이벤트 타깃 디바이스 모델명입니다.
                           signalType:
                             type: string
                             example: CONTROL_RESTORE
-                            description: DR 이벤트 시그널 타입 (CONTROL, CONTROL_RESTORE)
+                            description: DR 이벤트 시그널 타입 (CONTROL, CONTROL_RESTORE)입니다.
                           signalData:
                             type: object
                             properties:
@@ -3312,16 +3302,16 @@ contents:
                                     type: string
                                     example: C
                             description: |-
-                              구체적인 제어 값
+                              구체적인 제어 값입니다.
                               ex) { temerpature: { min: 26, max: 32, unit: "C } }
                           constrolType:
                             type: string
                             example: Temperature
-                            description: 제어 방식(Temperature, TwoSetTemperature, ToU, Empty)
+                            description: 제어 방식(Temperature, TwoSetTemperature, ToU, Empty)입니다.
                           restoreType:
                             type: string
                             example: Temperature
-                            description: 제어 원복 방식 (Temperature, TwoSetTemperature, Empty)
+                            description: 제어 원복 방식 (Temperature, TwoSetTemperature, Empty)입니다.
                   required:
                     - eventId
                     - eventName
@@ -3391,7 +3381,7 @@ contents:
                           eventId:
                             type: string
                             example: 2023-04-25-dr-01
-                            description: 생성된 DR 이벤트 ID
+                            description: 생성된 DR 이벤트 ID입니다.
             '400':
               description: Bad Request
               headers:
@@ -3426,18 +3416,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4307
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Partner'
             '409':
               description: Conflict
@@ -3453,18 +3443,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4311
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Event'
             '429':
               description: Too Many Requests
@@ -3490,18 +3480,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/events/{eventId}:
         delete:
@@ -3550,7 +3540,7 @@ contents:
                           groupId:
                             type: string
                             example: 2023-04-25-dr-01
-                            description: 삭제된 DR 이벤트 ID
+                            description: 삭제된 DR 이벤트 ID입니다.
             '400':
               description: Bad Request
               headers:
@@ -3585,18 +3575,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4302
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Event'
             '429':
               description: Too Many Requests
@@ -3622,25 +3612,25 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/events/{eventId}/targets:
         post:
           tags:
             - DR API
-          summary: DR 이벤트 타겟 생성
-          description: 이미 생성된 DR 이벤트에 이벤트 타겟 정보를 추가합니다.
+          summary: DR 이벤트 타깃 생성
+          description: 이미 생성된 DR 이벤트에 이벤트 타깃 정보를 추가합니다.
           operationId: createEventTarget
           security:
             - ThinQ_Business_API_Key: []
@@ -3653,13 +3643,13 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: eventId
-              description: DR 이벤트 ID
+              description: DR 이벤트 ID입니다.
               required: true
               schema:
                 type: string
                 example: event-01
           requestBody:
-            description: DR 이벤트 타겟 정보
+            description: DR 이벤트 타깃 정보입니다.
             content:
               application/json:
                 schema:
@@ -3669,7 +3659,7 @@ contents:
                       type: string
                       example: USER
                       description: |-
-                        타겟 타입
+                        타깃 타입입니다.
                         - GROUP
                         - USER
                         - DEVICE
@@ -3677,15 +3667,15 @@ contents:
                       type: string
                       example: KRXXXX
                       description: |-
-                        DR 이벤트 타겟 ID
-                        - 이벤트 타겟 타입이 USER일 경우: userNo
-                        - 이벤트 타겟 타입이 GROUP일 경우: groupId
-                        - 이벤트 타겟 타입이 DEVICE일 경우: deviceId
+                        DR 이벤트 타깃 ID입니다.
+                        - 이벤트 타깃 타입이 USER일 경우: userNo
+                        - 이벤트 타깃 타입이 GROUP일 경우: groupId
+                        - 이벤트 타깃 타입이 DEVICE일 경우: deviceId
                     opt:
                       type: string
                       example: OUT
                       description: |-
-                        DR 이벤트 참여 여부(Opt in / out)
+                        DR 이벤트 참여 여부(Opt in / out)를 확인할 수 있습니다.
                         - IN: DR 이벤트에 참여(default)
                         - OUT: DR 이벤트에 미참여
                   required:
@@ -3717,7 +3707,7 @@ contents:
                           groupId:
                             type: string
                             example: 2023-04-25-dr-01
-                            description: 생성된 DR 이벤트 타겟 ID
+                            description: 생성된 DR 이벤트 타깃 ID입니다.
             '400':
               description: Bad Request
               headers:
@@ -3752,18 +3742,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4302
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Event'
             '429':
               description: Too Many Requests
@@ -3789,25 +3779,25 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/events/{eventId}/targets/{targetId}:
         post:
           tags:
             - DR API
-          summary: DR 이벤트 타겟 수정
-          description: 이미 생성된 DR 이벤트 타겟을 수정합니다.
+          summary: DR 이벤트 타깃 수정
+          description: 이미 생성한 DR 이벤트 타깃을 수정합니다.
           operationId: updateEventTarget
           security:
             - ThinQ_Business_API_Key: []
@@ -3820,20 +3810,20 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: eventId
-              description: DR 이벤트 ID
+              description: DR 이벤트 ID입니다.
               required: true
               schema:
                 type: string
                 example: event-01
             - in: path
               name: targetId
-              description: DR 이벤트 타겟 ID
+              description: DR 이벤트 타깃 ID입니다.
               required: true
               schema:
                 type: string
                 example: KRXXXX
           requestBody:
-            description: DR 이벤트 정보
+            description: DR 이벤트 정보입니다.
             content:
               application/json:
                 schema:
@@ -3843,7 +3833,7 @@ contents:
                       type: string
                       example: OUT
                       description: |-
-                        DR 이벤트 참여 여부 (Opt in / out)
+                        DR 이벤트 참여 여부 (Opt in / out)를 확인할 수 있습니다.
                         - IN: DR 이벤트 참여 (default)
                         - OUT: DR 이벤트 미참여
           responses:
@@ -3881,18 +3871,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4102
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Missing or Invalid Parameter(s) in Request Body
             '401':
               description: Unauthorized
@@ -3918,18 +3908,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4302
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Event'
             '429':
               description: Too Many Requests
@@ -3955,25 +3945,25 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/events/{eventId}/targets/batch:
         post:
           tags:
             - DR API
-          summary: DR 이벤트 타겟 일괄 생성
-          description: DR 이벤트 타겟을 한번에 여러 개 생성합니다.
+          summary: DR 이벤트 타깃 일괄 생성
+          description: DR 이벤트 타깃을 한 번에 여러 개 생성합니다.
           operationId: createEventTargetBatch
           security:
             - ThinQ_Business_API_Key: []
@@ -3986,13 +3976,13 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: eventId
-              description: DR 이벤트 ID
+              description: DR 이벤트 ID입니다.
               required: true
               schema:
                 type: string
                 example: event-01
           requestBody:
-            description: DR 이벤트 타겟의 업데이트 정보
+            description: DR 이벤트 타깃의 업데이트 정보입니다.
             content:
               application/json:
                 schema:
@@ -4003,14 +3993,14 @@ contents:
                         type: string
                         example: create
                         description: |-
-                          DR 이벤트 타겟 생성/수정 여부
+                          DR 이벤트 타깃 생성/수정 여부입니다.
                           - create
                           - replace(미사용)
                       path:
                         type: string
                         example: /
                         description: |-
-                          DR 이벤트 타겟 ID
+                          DR 이벤트 타깃 ID입니다.
                           - create: "/"
                           - replace: "/{targetId}"
                           - Ex) 생성: "/"
@@ -4028,7 +4018,7 @@ contents:
                             type: string
                             example: IN
                         description: |-
-                          DR 이벤트 참여/미참여(Opt in / out)
+                          DR 이벤트 참여 여부(Opt in / out)를 확인할 수 있습니다.
                           - create: {type, id, opt}
                           - replace: {opt}
                           - Ex) create: { type: "DEVICE", id: "23lk2jl1k32j1", opt: "IN"}
@@ -4119,18 +4109,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4102
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Missing or Invalid Parameter(s) in Request Body
             '401':
               description: Unauthorized
@@ -4156,18 +4146,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4302
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Event'
             '409':
               description: Conflict
@@ -4203,18 +4193,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/data-zip/files:
         post:
@@ -4233,7 +4223,7 @@ contents:
             - required: true
               $ref: '#/components/parameters/X-Country-Code-2'
           requestBody:
-            description: DR 이벤트 정보
+            description: DR 이벤트 정보입니다.
             content:
               application/json:
                 schema:
@@ -4242,7 +4232,7 @@ contents:
                     eventId:
                       type: string
                       example: 2023-04-25-dr-01
-                      description: DR 이벤트 ID
+                      description: DR 이벤트 ID입니다.
                     targets:
                       type: array
                       items:
@@ -4250,12 +4240,12 @@ contents:
                           targetId:
                             type: string
                             example: KRXXXX
-                            description: DR 이벤트 타겟 ID
+                            description: DR 이벤트 타겟 ID입니다.
                           targetType:
                             type: string
                             example: USER
                             description: |-
-                              DR 이벤트 타겟 타입
+                              DR 이벤트 타겟 타입입니다.
                               - USER
                               - DEVICE
                               - GROUP
@@ -4293,7 +4283,7 @@ contents:
                           fileName:
                             type: string
                             example: data-zip-test_event_1713834322772-1728001286135.zip
-                            description: 생성된 ZIP 파일명
+                            description: 생성된 ZIP 파일명입니다.
             '400':
               description: Bad Request
               headers:
@@ -4308,18 +4298,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4102
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Missing or Invalid Parameter(s) in Request Body
             '401':
               description: Unauthorized
@@ -4345,18 +4335,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4302
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Event'
             '429':
               description: Too Many Requests
@@ -4382,18 +4372,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
       /dr/data-zip/files/{filename}:
         get:
@@ -4413,7 +4403,7 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: filename
-              description: 생성된 ZIP 파일명
+              description: 생성된 ZIP 파일명입니다.
               required: true
               schema:
                 type: string
@@ -4443,7 +4433,7 @@ contents:
                           presignedUrl:
                             type: string
                             example: https://s3-an2-tems-qa-dr-archiver.s3.ap-northeast-2.amazonaws.com/zip/data-zip-test_event_1713834322772-1728001286135.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIARU3MB3TCEDODQ2DO%2F20241004%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20241004T002817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEID%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0yIkcwRQIhALefnNnWXhAZcAcMWZA%2Bm23i5uALS%2FOI9ZwzOwUQMMQyAiACqvSExTC%2B3ErlEfOGtIXnZ450mlJRDu02kW4S2RojcyrVBQjJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDExMzUwNjM3NjkwMCIMi5fbbY%2Bs9%2FoMe2jWKqkFntfKoeTR0blrYtIPk0PdBLXhVa%2BpMgj9P0Y2%2F4c8g1IK0LOWuQrLL9bQ%2Bjg%2B4pzsgZWjdFZ8smSNqj3oQ%2FAgpHI56EltlZrnDQNPL%2FkMtj8dSgOJtxtgOE89wzYvB8hd9obkO0c%2BQN76loIX71y6MOC6JtCNlzbf0SpLkONT09IlOMhmFHB4KC87r%2Bb6V7ZIgFp56w9amawSxYK%2BCRj0yw5uXoboEUBwuqcn%2BSF6u2Xq4Z1cS018f%2F9bYtBxqz5M6rUrTup5xkf4ZEbUzFwMpFWk2WhXiu64uzKaF41C3d%2F5YUNa2K725HfWbntEAa0jr37AZtR%2BNagZGvnVnryZsmz%2Fn272kPdhdb3NLv55i1dtqWHu9HjJ2P35ujd5RadNO%2BCki9Vths6O99XDnHpCbrTWoQyCvHIq3wM38Nbbbnv%2BxXeKbzJ1PMbOmmGbqSPhGdFEwHzTiGLkiUXxREFtLLkC5xQn%2F%2FyBFmyoZBrpdVEvt6Ggyk5gh%2F%2BSxG1OvpmCcmYjRloE%2Bh%2F7QCZvboHaeD4wpre1xdRFrW%2FiPSeraR1MxurDFbf8nWqak88IQ%2B82EwOucjX6SKhdk148Vt6mBrd0Ae9MW7W4f82NksX%2FVFeDjeGmkRe4bg85B8b7gwIA8qHl3MwYhUgPm0%2BRlkzdFKYy%2B2eoBZpK0kx3tO52DIeb%2Fk41gfrxQj3lc41y7zKVxZsiftqK7bDbMt4eHkFZ5dTaf0uJlgzsU0AYanJjgZvDxlUCywCHfCTG%2Bb03dWwomJYy4cuN%2Fix8uYzYbM8TAdwFfjYKG0KH3n4W%2FDNvCiQBedoG%2Byx7e5MCr0dpAV2%2F90L9x%2Bq1HloUbqtnVqQ1MRV3PN%2FBv3brupENConWTz90ebLDCd4rJQLKmGprA0UOX2nI8yxMV6u6MLbl%2FLcGOrEBIPFbJuDYy4nYDv0IJF5FHnEM9hZFiC1s1kOPMQkUHbhXENPK4TWBPLx46Ewp%2FvT2PTdkzMVeZLVJ33YVg1V9uL%2BNT1KYs9KuwDdfCMUD22ItcGhm9DCHnp3Db%2FyyWus%2BtBVrdcIsbhtvyfVx0qsFa29MJmxdv%2FdTrOZZ8c6ZSFAOeM5RGsxTs9%2FBZrWyvHy6cbfcMlr8Utm%2BzCGxy5L87LkBhrD9wT6o1%2B3eGI333lGc&X-Amz-Signature=dcdb7b02b2350142fb4b41ab15036ac529981f7dc14d2fa2e6a4bf615b82f827&X-Amz-SignedHeaders=host&x-id=GetObject
-                            description: 생성된 DR 이벤트 ZIP 파일 다운로드 경로(1시간 유효)
+                            description: 생성된 DR 이벤트 ZIP 파일 다운로드 경로입니다.(1시간 유효)
             '401':
               description: Unauthorized
               headers:
@@ -4468,18 +4458,18 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 4306
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: 'Resource Not Found: Zip File'
             '429':
               description: Too Many Requests
@@ -4505,31 +4495,31 @@ contents:
                 application/json:
                   schema:
                     type: object
-                    description: 요청 실패 시 응답
+                    description: 요청 실패 시 응답입니다.
                     properties:
                       code:
                         type: number
-                        description: 상태코드
+                        description: 상태 코드입니다.
                         example: 5000
                       error:
                         type: object
                         properties:
                           message:
                             type: string
-                            description: 에러 상세 메시지
+                            description: 에러 상세 메시지입니다.
                             example: Internal Server Error
     components:
       securitySchemes:
         ThinQ_Business_API_Key:
           type: apiKey
           description: |
-            파트너 요청이 승인된 이후 획득한 `API Key` 문자열
+            파트너 요청이 승인된 이후 획득한 `API Key` 문자열입니다.
           in: header
           name: X-Api-Key
       schemas:
         api-token-res:
           type: object
-          description: API Token을 포함하는 응답
+          description: API Token을 포함하는 응답입니다.
           properties:
             access_token:
               type: string
@@ -4537,23 +4527,23 @@ contents:
               example: eyJhbGciOiJIUzI1NiIsImtpZCI6InNpbTIifQ.eyJleHAiOjE3MDQzNDE3MDIsImlhdCI6MTcwNDI1NTMwMiwiaXNzIjoiTEcgQnVzaW5lc3MgQ29ubmVjdCIsInJvbGVzIjpbImdldEJlY29uVXNlcnMiLCJnZXREclVzZXJzIiwicG9zdFRva2VuIl0sInN1YiI6IjRkMmM2MWUxLTM0YzQtZTk2Yy05NDU2LTE1YmQ5ODNjNTAxOSJ9.plRjXmZRoXkOy_U95VXGzX-ouJyCrorEmMO8OzrEvF8
         device-base-res:
           type: object
-          description: 디바이스 관련 기본 응답 항목
+          description: 디바이스 관련 기본 응답 항목입니다.
           properties:
             messageId:
               type: string
-              description: API 요청 헤더에 포함되었던 `X-Message-Id`의 문자열
+              description: API 요청 헤더에 포함되었던 `X-Message-Id`의 문자열입니다.
               example: 2ADaRijIk8CvaSHVPeEWNw
             timestamp:
               type: string
-              description: API 요청이 수신된 시각. `ISO-8601` 포맷을 따릅니다.
+              description: API 요청이 수신된 시각입니다. `ISO-8601` 포맷을 따릅니다.
               example: '2024-10-01T06:23:20.866279'
         device-list-item:
           type: object
-          title: 디바이스 목록 응답
+          title: 디바이스 목록 응답입니다.
           properties:
             deviceId:
               type: string
-              description: 특정 디바이스의 ID
+              description: 특정 디바이스의 ID입니다.
               example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
             deviceInfo:
               type: object
@@ -4564,19 +4554,19 @@ contents:
                   example: DEVICE_WASHTOWER_WASHER
                 alias:
                   type: string
-                  description: 디바이스 별칭
+                  description: 디바이스 별칭입니다.
                   example: My New WashTower Washer
                 modelName:
                   type: string
-                  description: 디바이스 모델명
+                  description: 디바이스 모델명입니다.
                   example: FAKPK21021
                 groupId:
                   type: string
-                  description: 디바이스 타입이 `DEVICE_WASHTOWER_WASHER` 또는 `DEVICE_WASHTOWER_DRYER`일 때, 다른 디바이스와의 동일 그룹임을 식별하기 위한 ID
+                  description: 디바이스 타입이 `DEVICE_WASHTOWER_WASHER` 또는 `DEVICE_WASHTOWER_DRYER`일 때, 다른 디바이스와의 동일 그룹임을 식별하기 위한 입니다.
                   example: '171807013576723372'
                 parentId:
                   type: string
-                  description: 디바이스 타입이 `IDU`일 때, 상위의 `ODU` 디바이스의 ID
+                  description: 디바이스 타입이 `IDU`일 때, 상위의 `ODU` 디바이스의 ID입니다.
                   example: fe12ed5bca00acc0ed68ec9f632342d0822a929f377b76cbe700649a11053f23
               required:
                 - deviceType
@@ -4584,7 +4574,7 @@ contents:
             - deviceId
             - deviceInfo
         device-list-res:
-          description: 디바이스 목록 응답
+          description: 디바이스 목록 응답입니다.
           allOf:
             - $ref: '#/components/schemas/device-base-res'
             - type: object
@@ -4596,46 +4586,46 @@ contents:
                       - $ref: '#/components/schemas/device-list-item'
         error-res-backend:
           type: object
-          description: 요청 실패 시 응답
+          description: 요청 실패 시 응답입니다.
           properties:
             messageId:
               type: string
-              description: 요청 헤더 X-Message-Id 의 값
+              description: 요청 헤더 X-Message-Id 의 값입니다.
               example: 2ADaRijIk8CvaSHVPeEWNw
             timestamp:
               type: datetime
-              description: 현재 시간
+              description: 현재 시간입니다.
               example: '2024-09-13T06:55:58.65064'
             error:
               type: object
-              description: 상세 에러
+              description: 상세 에러입니다.
               properties:
                 message:
                   type: string
-                  description: 상세 에러 메시지
+                  description: 상세 에러 메시지입니다.
                 code:
                   type: string
-                  description: 상세 오류 코드
+                  description: 상세 오류 코드입니다.
         device-profile-res:
-          description: 특정 디바이스의 프로파일 응답
+          description: 특정 디바이스의 프로파일 응답입니다.
           allOf:
             - $ref: '#/components/schemas/device-base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: 디바이스 유형별 디바이스 프로파일 메시지의 스키마는 [**디바이스 프로파일**](http://www.naver.com) 페이지를 참조해주세요.
+                  description: 디바이스 유형별 디바이스 프로파일 메시지의 스키마는 [**디바이스 프로파일**](/api/device_profile) 페이지를 참조해주십시오.
         device-status-res:
-          description: 특정 디바이스의 상태 응답입
+          description: 특정 디바이스의 상태 응답입니다.
           allOf:
             - $ref: '#/components/schemas/device-base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: 디바이스 유형별 디바이스 상태 응답 메시지의 스키마는 [**디바이스 프로파일**](http://www.daum.net) 페이지를 참조해주세요.
+                  description: 디바이스 유형별 디바이스 상태 응답 메시지의 스키마는 [**디바이스 프로파일**](/api/device_profile) 페이지를 참조해주십시오.
         device-id-list-res:
-          description: 디바이스 ID 목록의 응답
+          description: 디바이스 ID 목록의 응답입니다.
           allOf:
             - $ref: '#/components/schemas/device-base-res'
             - type: object
@@ -4647,10 +4637,10 @@ contents:
                     properties:
                       deviceId:
                         type: string
-                        description: 특정 디바이스의 ID
+                        description: 특정 디바이스의 ID입니다.
                         example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
         device-empty-res:
-          description: 내용이 없는 응답
+          description: 내용이 없는 응답입니다.
           allOf:
             - $ref: '#/components/schemas/device-base-res'
             - type: object
@@ -4664,7 +4654,7 @@ contents:
               type: string
               example: USER
               description: |-
-                타겟 타입
+                타겟 타입입니다.
                 - GROUP
                 - USER
                 - DEVICE
@@ -4672,17 +4662,17 @@ contents:
               type: string
               example: KRXXXX
               description: |-
-                타겟의 고유 ID값
-                - 타겟이 USER일 경우: userNo
-                - 타겟이 GROUP일 경우: groupId
-                - 타겟이 DEVICE일 경우: deviceId
+                DR 이벤트 타겟 ID입니다.
+                - 이벤트 타겟 타입이 USER일 경우: userNo
+                - 이벤트 타겟 타입이 GROUP일 경우: groupId
+                - 이벤트 타겟 타입이 DEVICE일 경우: deviceId
             opt:
               type: string
               example: OUT
               description: |-
-                DR 이벤트 참여중 여부(Opt in / out)
-                - IN: DR 이벤트 참여 중(default)
-                - OUT: DR 이벤트 미 참여 중
+                DR 이벤트 참여 여부(Opt in / out)를 확인할 수 있습니다.
+                - IN: DR 이벤트에 참여(default)
+                - OUT: DR 이벤트에 미참여
       parameters:
         X-Api-Token:
           name: X-Api-Token
@@ -4690,7 +4680,7 @@ contents:
           schema:
             type: string
           description: |
-            **[API Token 발급](#tag/auth/operation/createAPIToken)** API를 통하여 사전에 발급 받은 문자열인 `API Token`
+            **[API Token 발급](#tag/auth/operation/createAPIToken)** API를 통하여 사전에 발급 받은 문자열인 `API Token`입니다.
           example: eyJleHAiOjE3MDQzNDE3MDIsImlhdCI6MTcwNDI1NTMwMiwiaXNzIjoiTEcgQnVzaW5lc3MgQ29ubmVjdCIsInJvbGVzIjpbImdldEJlY29uVXNlcnMiLCJnZXREclVzZXJzIiwicG9zdFRva2VuIl0sInN1YiI6IjRkMmM2MWUxLTM0YzQtZTk2Yy05NDU2LTE1YmQ5ODNjNTAxOSJ9
         X-Message-Id:
           name: X-Message-Id
@@ -4698,7 +4688,7 @@ contents:
           schema:
             type: string
           description: |
-            API 호출 처리 흐름을 추적하기 위하여 API의 클라이언트가 url-safe-base64-no-padding(UUID Version 4)의 22개 문자로 생성한 문자열
+            API 호출 처리 흐름을 추적하기 위해 API의 클라이언트가 url-safe-base64-no-padding(UUID Version 4)의 22개 문자로 생성한 문자열입니다.
           example: 2ADaRijIk8CvaSHVPeEWNw
         X-Use-Account:
           name: X-Use-Account
@@ -4706,12 +4696,12 @@ contents:
           schema:
             type: string
           description: |
-            API 요청 처리시 사용될 LG전자 계정의 출처
+            API 요청 처리시 사용할 LG전자 계정의 출처입니다.
 
               |Value|Description|
               |-|-|
-              |REGISTERED|파트너 요청 및 권한 업데이트를 통하여 이미 등록한 계정|
-              |IN-HEADER|이 HTTP 요청의 `Authorization` 헤더에 OAuth 토큰으로 지정된 계정 (**현재 LG ThinQ 등록 제품에 대해서만 지원합니다.**)|
+              |REGISTERED|파트너 요청 및 권한 업데이트를 통해 이미 등록한 계정입니다.|
+              |IN-HEADER|이 HTTP 요청의 `Authorization` 헤더에 OAuth 토큰(Token)으로 지정된 계정입니다. (**현재 LG ThinQ 등록 제품만 지원합니다.**)|
           example: REGISTERED
         Authorization:
           name: Authorization
@@ -4719,7 +4709,7 @@ contents:
           schema:
             type: string
           description: |
-            LG ThinQ에 가입한 LG전자 계정의 `Bearer` OAuth 토큰.  `X-Use-Account` 헤더가 HTTP 요청에 포함되어 있으면서 헤더의 값이 `IN-HEADER`인 경우, 이 헤더는 필수적으로 요청에 포함되어야 합니다.
+            LG ThinQ에 가입한 LG전자 계정의 `Bearer` OAuth 토큰(Token)입니다.  `X-Use-Account` 헤더가 HTTP 요청에 포함되어 있으면서 헤더의 값이 `IN-HEADER`인 경우, 이 헤더를 필수적으로 요청에 포함해야 합니다.
           example: Bearer 5a9a713f51a95c53d781addd1af0dfa4f6e1e7420a8bff3c5198308dac571aa9845832b8d29bbe1f04deec2d35229c6d
         X-Country-Code:
           name: X-Country-Code
@@ -4727,14 +4717,14 @@ contents:
           schema:
             type: string
           description: |
-            LG ThinQ가 지원하는 국가의 `ISO-3166 alpha-2` 국가 코드.  `X-Use-Account` 헤더가 HTTP 요청에 포함되어 있으면서 헤더의 값이 `IN-HEADER`인 경우, 이 헤더는 필수적으로 요청에 포함되어야 하며 `Authorization`에서 지정한 LG전자 계정의 등록 국가의 코드여야 합니다.
+            LG ThinQ가 지원하는 국가의 `ISO-3166 alpha-2` 국가 코드입니다.  `X-Use-Account` 헤더가 HTTP 요청에 포함되어 있으면서 헤더의 값이 `IN-HEADER`인 경우, 이 헤더를 필수적으로 요청에 포함해야 하며 `Authorization`에서 지정한 LG전자 계정의 등록 국가의 코드여야 합니다.
           example: KR
         deviceId:
           name: deviceId
           in: path
           schema:
             type: string
-          description: 특정 디바이스의 ID
+          description: 특정 디바이스의 ID입니다.
           example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
         Authorization-2:
           name: Authorization
@@ -4757,7 +4747,7 @@ contents:
           schema:
             type: string
           description: |
-            API 호출 처리 흐름을 추적하기 위하여 API의 클라이언트가 url-safe-base64-no-padding(UUID Version 4)의 22개 문자로 생성한 문자열
+            API 호출 처리 흐름을 추적하기 위해 API의 클라이언트가 url-safe-base64-no-padding(UUID Version 4)의 22개 문자로 생성한 문자열입니다.
           example: 2ADaRijIk8CvaSHVPeEWNw
       examples:
         refrigerator-profile-example:
@@ -5554,13 +5544,6 @@ contents:
                 - SCHEDULED_CLEANING_STARTS
                 - NEED_TO_CHECK_LOCATION
                 - CLEANING_IS_FAILED
-            push:
-              - MOTION_IS_DETECTED
-              - HOMEGUARD_IS_STOPPED
-              - CLEANING_IS_COMPLETED
-              - SCHEDULED_CLEANING_STARTS
-              - NEED_TO_CHECK_LOCATION
-              - CLEANING_IS_FAILED
             error:
               - RIGHT_WHEEL_ERROR
               - MOVE_ERROR
