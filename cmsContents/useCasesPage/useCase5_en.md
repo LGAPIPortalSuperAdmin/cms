@@ -81,7 +81,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">도어센서</p>
+  \    <p className="usecase-pick__txt">Door Sensor</p>
 
   \    </li>
 
@@ -93,7 +93,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">실링팬</p>
+  \    <p className="usecase-pick__txt">Ceiling Fan</p>
 
   \    </li>
 
@@ -105,7 +105,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">사이니지</p>
+  \    <p className="usecase-pick__txt">Signage</p>
 
   \    </li>
 
@@ -117,7 +117,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">상업용 디스플레이</p>
+  \    <p className="usecase-pick__txt">Commercial Display</p>
 
   \    </li>
 
@@ -129,7 +129,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">에어컨</p>
+  \    <p className="usecase-pick__txt">Air Conditioner</p>
 
   \    </li>
 
@@ -141,7 +141,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">공기청정기</p>
+  \    <p className="usecase-pick__txt">Air Purifier</p>
 
   \    </li>
 
@@ -153,7 +153,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">안마의자</p>
+  \    <p className="usecase-pick__txt">Massage Chair</p>
 
   \    </li>
 
@@ -165,7 +165,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">틔움</p>
+  \    <p className="usecase-pick__txt">Plant Cultivator</p>
 
   \    </li>
 
@@ -177,7 +177,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">공기질센서</p>
+  \    <p className="usecase-pick__txt">Air Quality Sensor</p>
 
   \    </li>
 
@@ -189,7 +189,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">스마트조명</p>
+  \    <p className="usecase-pick__txt">Smart Light Bulb</p>
 
   \    </li>
 
@@ -201,7 +201,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">온습도센서</p>
+  \    <p className="usecase-pick__txt">Temperature and Humidity sensor</p>
 
   \    </li>
 
@@ -213,7 +213,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">모션센서</p>
+  \    <p className="usecase-pick__txt">Motion Sensor</p>
 
   \    </li>
 
@@ -225,7 +225,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">화재감지 센서</p>
+  \    <p className="usecase-pick__txt">Fire Detection Sensor</p>
 
   \    </li>
 
@@ -237,7 +237,7 @@ contents: >-2
 
   \    </figure>
 
-  \    <p className="usecase-pick__txt">제습기</p>
+  \    <p className="usecase-pick__txt">Dehumidifier</p>
 
   \    </li>
 
@@ -263,7 +263,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_signage.svg" />사이니지</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_signage.svg" />Signage</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -281,7 +281,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_air_temp_humid.svg" />공기질/온습도 센서</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_air_temp_humid.svg" />Air Quality/Temperature and Humidity sensor</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -299,7 +299,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_air_purifier.svg" />공기청정기</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_air_purifier.svg" />Air Purifier</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -317,7 +317,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_smart_light.svg" />스마트조명</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_smart_light.svg" />Smart Light Bulb</div>
 
   \    <div className="col-8 col-sm-full">
 
