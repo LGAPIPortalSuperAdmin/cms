@@ -165,7 +165,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_temp_humid.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">온습도 센서</p>
+  \    <p className="usecase-pick__txt off">Temperature and Humidity sensor</p>
 
   \    </li>
 
@@ -173,7 +173,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_enterance.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">재실센서</p>
+  \    <p className="usecase-pick__txt off">Occupancy Sensor</p>
 
   \    </li>
 
@@ -181,7 +181,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_fire_detection.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">화재감지 센서</p>
+  \    <p className="usecase-pick__txt off">Fire Detection Sensor</p>
 
   \    </li>
 
@@ -207,7 +207,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_air_sensor.svg">공기질 센서</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_air_sensor.svg">Air Quality Sensor</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -225,7 +225,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_air_purifier.svg">공기청정기</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_air_purifier.svg">Air Purifier</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -259,7 +259,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_ac.svg">에어컨</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_ac.svg">Air Conditioner</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -277,7 +277,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_heat_exchanger.svg">전열교환기</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_heat_exchanger.svg">Energy Recovery Ventilator</div>
 
   \    <div className="col-8 col-sm-full">
 
