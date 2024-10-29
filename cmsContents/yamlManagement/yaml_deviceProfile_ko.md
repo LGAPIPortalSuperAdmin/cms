@@ -5,7 +5,7 @@ contents:
     openapi: 3.1.0
 
     info:
-      version: null
+      version: '1.0'
       title: 디바이스 프로파일
     servers:
       - url: https://ap.api.lge.com
@@ -14,13 +14,12 @@ contents:
         x-displayName: 개요
         x-traitTag: true
         description: |
-          **디바이스 프로파일**은 디바이스의 상태를 기술하거나 디바이스를 제어할 수 있는 속성들을 정의합니다. 디바이스 프로파일은 디바이스 타입별로 제공되며 같은 타입이라도 제품 또는 모델에 따라 내용에 차이가 있을 수 있습니다. 디바이스 프로파일에 정의된 속성을 이용하여 디바이스의 상태 조회 및 제어와 관련된 기능을 당신의 서비스에 적용하세요.
-          본 문서에서는 디바이스 타입별로 아래의 내용을 설명합니다.
+          **디바이스 프로파일**은 디바이스의 상태를 기술하거나 제어하는 속성들을 정의합니다.  디바이스 프로파일은 타입별로 제공되며 같은 타입이라도 제품 또는 모델에 따라 차이가 있을 수 있습니다.  디바이스 프로파일을 이용해 상태 조회 및 제어 기능을 적용하십시오. 본 문서에서는 디바이스 타입별로 아래의 내용을 설명합니다.
 
             - **디바이스 프로파일 스키마**
               
-              **디바이스 프로파일 조회 API**를 호출하여 수신한 디바이스 프로파일의 스키마에 대하여 설명합니다.
-              스키마와 함께 기재된 디바이스 프로파일의 메시지 예제를 참고하세요.
+              **디바이스 프로파일 조회 API**를 호출하여 수신한 디바이스 프로파일의 스키마를 대하여 설명합니다.
+              스키마와 함께 기재된 디바이스 프로파일의 메시지 예제를 참고하십시오.
               디바이스 프로파일 메시지는 아래의 항목으로 구성되며 디바이스 타입에 따라 그 구성이 다를 수 있습니다.
 
                 | Item | Description |
@@ -32,48 +31,12 @@ contents:
 
             - **요청/응답 스키마**
               
-              디바이스 프로파일을 기반으로 작성되는 **디바이스 상태 조회 API**의 응답 메시지와 **디바이스 제어 API**의 요청 메시지에 대하여 설명합니다.
+              디바이스 프로파일을 기반으로 작성하는 **디바이스 상태 조회 API**의 응답 메시지와 **디바이스 제어 API**의 요청 메시지를 설명합니다.
               
       - name: device type
         x-displayName: 디바이스 타입
         x-traitTag: true
-        description: |
-          **디바이스 타입**은 디바이스의 특성을 구분하며 **디바이스 목록 조회 API** 응답에서 디바이스의 종류를 구분할 수 있게 해줍니다. 디바이스 프로파일은 이 디바이스 타입에 따라 정의됩니다.
-
-            | Device Type | Name |
-            |-|-|
-            | DEVICE_REFRIGERATOR | 냉장고 |
-            | DEVICE_WASHER | 세탁기 |
-            | DEVICE_DRYER | 건조기 |
-            | DEVICE_AIR_CONDITIONER | 에어컨 |
-            | DEVICE_AIR_PURIFIER | 공기청정기 |
-            | DEVICE_ROBOT_CLEANER | 로봇청소기 |
-            | DEVICE_OVEN | 오븐 |
-            | DEVICE_DISH_WASHER | 식기세척기 |
-            | DEVICE_STYLER | 스타일러 |
-            | DEVICE_WATER_PURIFIER | 정수기 |
-            | DEVICE_DEHUMIDIFIER | 제습기 |
-            | DEVICE_CEILING_FAN | 실링팬 |
-            | DEVICE_WINE_CELLAR | 와인셀러 |
-            | DEVICE_KIMCHI_REFRIGERATOR | 김치냉장고 |
-            | DEVICE_HOME_BREW | 홈브루 |
-            | DEVICE_PLANT_CULTIVATOR | 식물재배기 |
-            | DEVICE_WASHTOWER_WASHER | 워시타워(세탁기) |
-            | DEVICE_WASHTOWER_DRYER | 워시타워(건조기) |
-            | DEVICE_WASHTOWER | 워시타워 |
-            | DEVICE_COOKTOP | 쿡탑 |
-            | DEVICE_HOOD | 후드 |
-            | DEVICE_MICROWAVE_OVEN | 전자레인지 |
-            | DEVICE_SYSTEM_BOILER | 시스템 보일러 |
-            | DEVICE_AIR_PURIFIER_FAN | 공기청정팬 |
-            | DEVICE_STICK_CLEANER | 스틱청소기 |
-            | DEVICE_WATER_HEATER | 온수기 |
-            | DEVICE_WASHCOMBO_MAIN | 워시콤보 (메인) |
-            | DEVICE_WASHCOMBO_MINI | 워시콤보 (미니) |
-            | DEVICE_HUMIDIFIER | 가습기 |
-            | DEVICE_ODU | LG BECON Cloud에 등록된 시스템 에어컨의 실외기 |
-            | DEVICE_IDU | LG BECON Cloud에 등록된 시스템 에어컨의 실내기 |
-            | DEVICE_SIGNAGE | 사이니지 |
+        description: "**디바이스 타입**은 디바이스의 특성을 구분하며 **디바이스 목록 조회 API** 응답에서 종류를 구분합니다. 디바이스 프로파일은 이 디바이스 타입에 따라 정의됩니다.\n\n  | Device Type | Name |\n  |-|-|\n  | DEVICE_REFRIGERATOR | 냉장고 |\n  | DEVICE_WASHER | 세탁기 |\n  | DEVICE_DRYER | 건조기 |\n  | DEVICE_AIR_CONDITIONER | 에어컨 |\n  | DEVICE_AIR_PURIFIER | 공기청정기 |\n  | DEVICE_ROBOT_CLEANER | 로봇청소기 |\n  | DEVICE_OVEN | 오븐 |\n  | DEVICE_DISH_WASHER | 식기세척기 |\n  | DEVICE_STYLER | 스타일러 |\n  | DEVICE_WATER_PURIFIER | 정수기 |\n  | DEVICE_DEHUMIDIFIER | 제습기 |\n  | DEVICE_CEILING_FAN | 실링팬 |\n  | DEVICE_WINE_CELLAR | 와인셀러 |\n  | DEVICE_KIMCHI_REFRIGERATOR | 김치냉장고 |\n  | DEVICE_HOME_BREW | 홈브루 |\n  | DEVICE_PLANT_CULTIVATOR | 식물재배기 |\n  | DEVICE_WASHTOWER_WASHER | 워시타워(세탁기) |\n  | DEVICE_WASHTOWER_DRYER | 워시타워(건조기) |\n  | DEVICE_WASHTOWER | 워시타워 |\n  | DEVICE_COOKTOP | 쿡탑 |\n  | DEVICE_HOOD | 후드 |\n  | DEVICE_MICROWAVE_OVEN | 전자레인지 |\n  | DEVICE_SYSTEM_BOILER | 시스템 보일러 |\n  | DEVICE_AIR_PURIFIER_FAN | 공기청정팬 |\n  | DEVICE_STICK_CLEANER | 스틱청소기 |\n  | DEVICE_WATER_HEATER | 온수기 |\n  | DEVICE_WASHCOMBO_MAIN | 워시콤보 (메인) |\n  | DEVICE_WASHCOMBO_MINI | 워시콤보 (미니) |\n  | DEVICE_HUMIDIFIER | 가습기 |\n  | DEVICE_ODU | LG BECON Cloud에 등록된 시스템 에어컨의 실외기 |\n  | DEVICE_IDU | LG BECON Cloud에 등록된 시스템 에어컨의 실내기 |\n  | DEVICE_SIGNAGE | 사이니지 |\n  | DEVICE_HEJ_MOTION_SENSOR | 스마트 모션 센서\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | 스마트 온습도 센서\n  | DEVICE_HEJ_DOOR_SENSOR | 스마트 도어 센서\n  | DEVICE_HEJ_BUTTON | 스마트 버튼\n  | DEVICE_HEJ_LIGHT_SWITCH | 스마트 조명 스위치\n  | DEVICE_HEJ_DOOR_LOCK | 스마트 도어락 \n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | 스마트 푸쉬풀 도어락\n  | DEVICE_HEJ_PLUG | 스마트 멀티탭\n  | DEVICE_HEJ_PLUG_MINI | 스마트 플러그 미니\n  | DEVICE_HEJ_BULB_WHITE | 스마트 전구 (화이트)\n  | DEVICE_HEJ_BULB_COLOR | 스마트 전구 (컬러)\n  | DEVICE_HEJ_LINE_LED | 스마트 라인 LED\n  | DEVICE_HEJ_CURTAIN_CTRL | 스마트 전동 커튼 컨트롤러\n  | DEVICE_HEJ_BLIND_MOTOR | 스마트 전동 블라인드\n  | DEVICE_HEJ_SWITCH_STRIP | 스위치 스트립\n  | DEVICE_HEJ_STARLIGHT | 스마트 스타 라이트\n  | DEVICE_HEJ_DOORBELL | 스마트 도어벨\n  | DEVICE_HEJ_PET_FEEDER | 스마트 펫 급식기\n  | DEVICE_HEJ_HOME_CAMERA | 스마트 홈 카메라\n  | DEVICE_HEJ_SYNC_BOX | 싱크 박스\n  | DEVICE_HEJ_SYNC_BOX_SUB | 싱크 박스 서브\n  | DEVICE_HEJ_GAS_SENSOR\t| 스마트 가스 감지 센서\n  | DEVICE_HEJ_FIRE_SENSOR | 스마트 화재 감지 센서\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | 스마트 누수 감지 센서\n  | DEVICE_HEJ_THERMO_HYGROMETER | 스마트 온습도계\n  | DEVICE_HEJ_SIREN | 스마트 사이렌\n"
       - name: refrigerator
         x-displayName: 냉장고
         description: |
@@ -89,10 +52,30 @@ contents:
             exampleRef="#/components/examples/refrigerator-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능하다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성한다.
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/refrigerator-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example 
+          Setting the refrigeration room temperature to Celsius 0 degree
+          ```json
+            { 
+              "temperature": {
+                "targetTemperature": 0,
+                "locationName": "FRIDGE",
+                "unit": "C"
+              }
+            }
+          ```
+          Setting the power saving mode
+          ```json
+            { 
+              "powerSave": {
+                "powerSaveEnabled": true
+              }
+            }
+          ```
       - name: washer
         x-displayName: 세탁기
         description: |
@@ -108,47 +91,62 @@ contents:
             exampleRef="#/components/examples/washer-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능하다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성한다.
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/washer-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example 
+          Starting the standard washing course
+            
+          ```json
+            { 
+              "operation": {
+                "washerOperationMode": "START"
+              }, 
+              "location": { 
+                "locationName": "MAIN"
+              }
+            }
+          ```
+          Stopping the washing course
+          ```json
+            { 
+              "operation": {
+                "washerOperationMode": "STOP"
+              }, 
+              "location": { 
+                "locationName": "MAIN"
+              }
+            }
+          ```
+          Washer on timer
+          ```json
+            {
+              "location": {
+                "locationName": "MAIN"
+              },
+              "timer": {
+                "relativeHourToStop": 6
+              }
+            }
+          ```
+          ```json
+            {
+              "location": {
+                "locationName": "MAIN"
+              },
+              "timer": {
+                "relativeHourToStop": 6
+              }
+            }
+          ```
       - name: dryer
         x-displayName: 건조기
-        description: |
-          ## 디바이스 프로파일 스키마
-          <SchemaDefinition
-            schemaRef="#/components/schemas/dryer-profile"
-            exampleRef="#/components/examples/dryer-profile-example" />
-
-          ## 요청/응답 스키마
-          ### 디바이스 상태 응답
-          <SchemaDefinition
-            schemaRef="#/components/schemas/dryer-object"
-            exampleRef="#/components/examples/dryer-object-example" />
-
-          ### 디바이스 제어 요청
-          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능하다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성한다.
-          <SchemaDefinition
-            schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/dryer-command-example" />
+        description: "## 디바이스 프로파일 스키마\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-profile\"\n  exampleRef=\"#/components/examples/dryer-profile-example\" />\n\n## 요청/응답 스키마\n### 디바이스 상태 응답\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-object\"\n  exampleRef=\"#/components/examples/dryer-object-example\" />\n\n### 디바이스 제어 요청\n디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n#### Example \nStarting the standard drying course\n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\nStopping the standard drying course\n```json\n  { \n    \"operation\": {\n      \"dryerOperationMode\": \"STOP\"\n    }\n  }\n```\nSetting start/stop time\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStart\": 2\n    }\n  }\n```\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStop\": 4\n    }\n  }\n```\n"
       - name: air_conditioner
         x-displayName: 에어컨
-        description: |
-          ## 디바이스 프로파일 스키마
-          <SchemaDefinition
-            schemaRef="#/components/schemas/air_conditioner-profile"
-            exampleRef="#/components/examples/air_conditioner-profile-example" />
-
-          ## 요청/응답 스키마
-          ### 디바이스 상태 응답
-          <SchemaDefinition
-            schemaRef="#/components/schemas/air_conditioner-object"
-            exampleRef="#/components/examples/air_conditioner-object-example" />
-
-          ### 디바이스 제어 요청
-          <SchemaDefinition
-            schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/air_conditioner-command-example" />
+        description: "## 디바이스 프로파일 스키마\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-profile\"\n  exampleRef=\"#/components/examples/air_conditioner-profile-example\" />\n\n## 요청/응답 스키마\n### 디바이스 상태 응답\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-object\"\n  exampleRef=\"#/components/examples/air_conditioner-object-example\" />\n\n### 디바이스 제어 요청\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n### Example \n운전 모드 제어 \n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\n에어컨 동작 제어\n```json\t\n  {\n    \"operation\":{\n      \"airConOperationMode\": \"POWER_ON\"\n    }   \n  }\n```\n공기청정 동작 제어\n```json\t\n  {\n    \"operation\": {\n      \"airCleanOperationMode\": \"START\"\n    }\n  }\n```\n냉방 온도 제어\n```json\t\n  #targetTemperature\n  {\n    \"temperature\": {\n      \"targetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\n```json\t\n  #coolTargetTemperature\n  {\n    \"temperature\":{\n      \"coolTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\n```json\t\n  #autoTargetTemperature\n  {\n    \"temperature\":{\n      \"autoTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\n난방 온도 제어\n```json\t\n  {\n    \"temperature\": {\n      \"heatTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\n절대 시간 켜짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": 1,\n      \"absoluteMinuteToStart\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": -1,\n      \"absoluteMinuteToStart\": -1\n    }\n  }\n```\n절대 시간 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": 1,\n      \"absoluteMinuteToStop\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": -1,\n      \"absoluteMinuteToStop\": -1\n    }\n  }\n```\n상대 시간 켜짐 Timer 제어/ 취소 제어 \n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 0\n    }\n  }\n```\n상대 시간 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\n슬립 타이머 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\n바람세기 제어\n```json\t\n  {\n    \"airFlow\": {\n      \"windStrength\": \"MID\"\n    }\n  }\n```\n절전 제어\n```json\t\n  {\n    \"powerSave\": {\n      \"powerSaveEnabled\": true\n    }\n  }\n```\n공기질 모니터링 설정 제어\n```json\t\n  {\n    \"airQualitySensor\": {\n      \"monitoringEnabled\": \"ALWAYS\"\n    }\n  }\n```\ntwoSet 온도 제어\n```json\t\n  {\n    \"twoSetTemperature\": {\n      \"coolTargetTemperature\": 20,\n      \"heatTargetTemperature\": 30,\n      \"unit\": \"C\"\n    }\n  }\n```\n### 에어컨 제어 예외 처리\n  \n  디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다. \n  제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다. 다음 예시를 참고로 하십시오.\n\n  #### 1. 에어컨 설정 온도 상대 제어  \n  예) 사용자 명령 : '에어컨 온도 1도 올려줘/내려줘'\n\n  1. **airConOperationMode**가 **POWER_OFF**인 경우 처리  \n    - airConOperationMode의 값이 POWER_OFF이면 디바이스 제어가 불가능합니다. \n    다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - 응답 예시:\n      - \"에어컨 전원이 꺼져있습니다.\n  \n  2. **airConOperationMode**가 **POWER_ON**인 경우 처리  \n    - airConOperationMode의 값이 POWER_ON이면 currentJobMode 값에 따라 다음과 같이 처리해주어야 합니다.\n      - **currentJobMode**: **AUTO**, **COOL** 또는 **HEAT**인 경우\n        - currentJobMode의 값이 AUTO, COOL 또는 HEAT인 경우 다음과 같이 처리합니다.\n          - 1. 요청 헤더 값을 변경합니다.\n            - **x-conditional-control**를 false로 변경합니다.\n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```\n          - 2. 요청 바디 값을 변경합니다.\n            - **currentJobMode**가 **COOL**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"coolTargetTemperature\": 희망온도±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **currentJobMode**가 **HEAT**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"heatTargetTemperature\": 희망온도±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **currentJobMode**가 **AUTO**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"autoTargetTemperature\": 희망온도,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n          - 3. 요청 결과로 Error Code 2201 - Not provided Feature가 발생하는 경우 처리\n            - 제어 가능 온도 범위를 벗어난 경우 발생하는 에러입니다. 다음 예시를 참고하여 사용자에게 적절한 응답을 제공합니다.\n            - 응답 예시\n              - \"에어컨 (냉방/난방) 온도는 x도에서 x도까지 설정이 가능합니다.\n      - **currentJobMode**가 **AUTO**, **COOL**, 또는 **HEAT**이 아닌 경우  \n        - currentJobMode의 값이 AUTO, COOL 또는 HEAT 이외의 값을 갖는 경우 온도 제어가 불가능합니다. 사용자에게 제어가 불가능함을 응답으로 제공합니다.\n        - 응답 예시\n          - \"냉방/난방 모드에서만 제어가 가능하므로 제어할 수 없습니다.\n  \n  3. 화씨 온도 제어인 경우  \n    - 화씨 온도로 제어요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.\n\n  \n  #### 2. 에어컨 설정 온도 절대 제어\n  예) 사용자 명령: \"에어컨 온도 X도로 설정해줘.\"\n\n  1. **airConOperationMode**가 **POWER_OFF**인 경우 처리  \n    airConOperationMode가 POWER_OFF이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - 응답 예시:\n      - \"에어컨이 Power Off 상태 입니다.\"\n\n  2. **airConOperationMode가 POWER_ON인 경우 처리**  \n    airConOperationMode가 POWER_ON이면 currentJobMode 값에 따라 다음과 같이 처리해주어야 합니다.  \n      - **currentJobMode: AUTO, COOL, 또는 HEAT인 경우** 다음과 같이 처리합니다.  \n        - 1. 요청 헤더 값을 변경합니다.\n          - **x-conditional-control**를 false로 변경합니다.\n            ```json\n              {\n                \"x-conditional-control\": false,\n              }\n            ```\n        - 2. 요청 바디 값을 변경합니다.\n          - **currentJobMode**가 **COOL**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"coolTargetTemperature\": 희망온도,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode**가 **HEAT**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"heatTargetTemperature\": 희망온도,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode**가 **AUTO**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"autoTargetTemperature\": 희망온도,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n        - 3. 요청 결과로 Error Code 2201 - Not provided Feature가 발생하는 경우 처리\n          - 제어 가능 온도 범위를 벗어난 경우 발생하는 에러입니다. 다음 예시를 참고하여 사용자에게 적절한 응답을 제공합니다.\n          - 응답 예시\n            - 에어컨 (냉방/난방) 온도는 x도에서 x도까지 설정이 가능합니다.  \n      - **currentJobMode**가 **AUTO**, **COOL**, 또는 **HEAT**이 아닌 경우    \n        - **currentJobMode**의 값이 **AUTO**, **COOL** 또는 **HEAT** 이외의 값을 갖는 경우 온도 제어가 불가능합니다. 사용자에게 제어가 불가능함을 응답으로 제공합니다.\n        - 응답 예시  \n          - \"냉방/난방 모드에서만 제어가 가능하므로 제어할 수 없습니다.  \n\n  3. 화씨 온도 제어인 경우  \n    - 화씨 온도로 제어 요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.\n\n  #### 3. 에어컨 풍량 상대 제어\n  예) 사용자 명령: \"에어컨 풍량 올려줘/내려줘.\"  \n\n  1. **airConOperationMode가 POWER_OFF인 경우** 처리  \n    - airConOperationMode가 POWER_OFF이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - 응답 예시:\n      - \"에어컨이 Power Off 상태 입니다.\"\n\n  2. **airConOperationMode가 POWER_ON인 경우** 처리  \n    - airConOperationMode가 POWER_ON이면 windStrength 값에 따라 다음과 같이 처리해주어야 합니다.  \n      - **windStrength : AUTO인 경우**  \n        windStrength가 AUTO인 경우 풍량이 자동으로 제어되며 수동으로 제어할 수 없습니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n        - 응답 예시:  \n          - \"에어컨 풍량이 자동으로 조절되므로 제어할 수 없습니다.\"  \n      - **windStrength : AUTO가 아닌 경우**  \n        windStrength가 AUTO 이외의 값을 가지는 경우 다음과 같이 처리합니다.  \n          1. 디바이스 프로파일을 조회하여 해당 에어컨 디바이스가 제공하는 airFlow값을 확인합니다. 제품 모델 별 지원하는 airFlow 값이 다릅니다.  \n          2. 요청 바디 값을 변경합니다.\n            - **x-conditional-control**를 **false**로 변경합니다.  \n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```   \n          3. 요청 바디 값을 변경합니다.  \n              ```json\n              {\n                \"airFlow\": {\n                  \"windStrength\": X\n                }  \n              }\n              ```\n"
       - name: air_purifier
         x-displayName: 공기청정기
         description: |
@@ -166,7 +164,46 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/air_purifier-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          ### 공기청정기 예외 처리 (풍량 제어)  
+            디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다.  
+            제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다. 다음 예시를 참고로 하십시오.  
+
+          예) 사용자 명령 : '에어컨 온도 1도 올려줘/내려줘'  
+          #### 1. **POWER_OFF인 경우 처리**  
+            - **airPurifierOperationMode**가 **POWER_OFF**이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  
+            - 응답 예시:  
+              - "에어컨 전원이 꺼져있습니다.  
+
+          #### 2. **POWER_ON인 경우 처리**  
+            - **airPurifierOperationMode**가 **POWER_ON**이면 **currentJobMode** 값에 따라 다음과 같이 처리해주어야 합니다.
+              1. **currentJobMode** 혹은 **windStrength**가 **AUTO**인 경우
+                - windStrength가 AUTO 이거나 혹은 currentJobMode가 AUTO인 경우 풍량이 자동으로 제어되며 수동으로 제어할 수 없습니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  
+                - 응답 예시:  
+                  - "공기청정기가 AUTO 모드로 동작 중이므로 제어할 수 없습니다."   
+              2. **currentJobMode**와 **windStrength** 둘 다 **AUTO**가 아닌 경우  
+                - currentJobMode의 값이 AUTO가 아니고, windStrength 값도 AUTO가 아닌 경우 다음과 같이 처리합니다.
+                  - 1. 디바이스 프로파일을 조회하여 해당 공기 청정기 디바이스에서 지원하는 **airFlow** 값을 확인합니다.  제품 모델 별로 지원하는 **airFlow** 값이 다릅니다.  
+                    - **x-conditional-control**를 **false**로 변경합니다.  
+                      ```json
+                        {
+                          "x-conditional-control": false,
+                        }
+                      ```
+                  - 2. 제어 요청 API 바디 값을 변경합니다. 
+                    - **currentJobMode**가 **COOL**인 경우
+                      ```json
+                        {
+                          "airFlow": {
+                            "windStrength": X
+                          }
+                        }
+                      ```
+                  - 3. 사용자에게 적정한 응답을 제공합니다.  
+                    - 응답 예시
+                      - 공기청정기 풍량은 power/high/low 상태로 변경 하였습니다.  
+                      - 공기청정기 풍량이 최대/최소 상태입니다. (설정하고자 하는 풍량이 최대/최소 상태인 경우)  
       - name: robot_cleaner
         x-displayName: 로봇청소기
         description: |
@@ -184,7 +221,28 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/robot_cleaner-command-example" />
+            showExample={false} showWriteOnly={false} />  
+
+          #### Example  
+          Starting the robot cleaner  
+
+            ```json
+              {
+                "operation": {
+                  "cleanOperationMode": "START"
+                }
+              }
+            ```  
+
+          Robot cleaner on timer (Timer set for 11:30)  
+            ```json
+              {
+                "timer": {
+                  "absoluteHourToStart": 11, 
+                  "absoluteMinuteToStart": 30
+                }
+              }
+            ```
       - name: oven
         x-displayName: 오븐
         description: |
@@ -202,7 +260,152 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/oven-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          operation  
+
+            ```json
+              {
+                "operation": {
+                  "ovenOperationMode": "PREHEATING"
+                },
+                "location": {
+                  "locationName": "LOWER"
+                }
+              } {
+                "operation": {
+                  "ovenOperationMode": "START"
+                },
+                "location": {
+                  "locationName": "LOWER"
+                }
+              } {
+                "operation": {
+                  "ovenOperationMode": "STOP"
+                },
+                "location": {
+                  "locationName": "LOWER"
+                }
+              }
+            ```
+
+          operation + cook mode  
+            ```json
+              {
+                "operation": {
+                  "ovenOperationMode": "START"
+                },
+                "location": {
+                  "locationName": "LOWER"
+                },
+                "cook": {
+                  "cookMode": "BAKE"
+                }
+              }
+              {
+                "operation": {
+                  "ovenOperationMode": "START"
+                },
+                "location": {
+                  "locationName": "LOWER"
+                },
+                "cook": {
+                  "cookMode": "CONVECTION_BAKE"
+                }
+              } 
+              {
+                "operation": {
+                  "ovenOperationMode": "START"
+                },
+                "location": {
+                  "locationName": "LOWER"
+                },
+                "cook": {
+                  "cookMode": "CONVECTION_ROAST"
+                }
+              }
+            ```
+
+          operation + time  
+            ```json
+              {
+                "operation": {
+                  "ovenOperationMode": "START"
+                },
+                "location": {
+                  "locationName": "LOWER"
+                },
+                "timer": {
+                  "targetHour": 1,
+                  "targetMinute": 5
+                }
+              }
+            ```  
+
+          operation + cook mode + time  
+            ```json
+              {
+                "operation": {
+                  "ovenOperationMode": "START"
+                },
+                "location": {
+                  "locationName": "LOWER"
+                },
+                "timer": {
+                  "targetHour": 1,
+                  "targetMinute": 5
+                },
+                "cook": {
+                  "cookMode": "BAKE"
+                }
+              }
+            ```
+
+          operation + temperature  
+            ```json
+              {
+                "operation": {
+                  "ovenOperationMode": "START"
+                },
+                "location": {
+                  "locationName": "LOWER"
+                },
+                "temperature": {
+                  "targetTemperature": 160,
+                  "unit": "C"
+                }
+              }
+            ```
+
+          operation + cook mode + temperature  
+            ```json
+              {
+                "operation": {
+                  "ovenOperationMode": "START"
+                },
+                "location": {
+                  "locationName": "LOWER"
+                },
+                "cook": {
+                  "cookMode": "BAKE"
+                },
+                "temperature": {
+                  "targetTemperature": 160,
+                  "unit": "C"
+                }
+              }
+            ```
+
+          timer setting  
+            ```json
+              {
+                "timer": {
+                  "timerHour": 0,
+                  "timerMinute": 5
+                }
+              }
+            ```
       - name: dish_washer
         x-displayName: 식기세척기
         description: |
@@ -220,7 +423,26 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/dish_washer-command-example" />
+            showExample={false} showWriteOnly={false} />  
+
+          #### Example  
+          제어 시작  
+            ```json
+              {
+                "operation": {
+                  "dishWasherOperationMode": "START"
+                }
+              }
+            ```
+
+          제어 멈춤  
+            ```json
+              {
+                "operation": {
+                  "dishWasherOperationMode": "STOP"
+                }
+              }
+            ```
       - name: styler
         x-displayName: 스타일러
         description: |
@@ -238,7 +460,34 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/styler-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          Starting the styler  
+            ```json
+              { 
+                "operation": {
+                  "stylerOperationMode": "START"
+                }
+              }
+            ```
+
+          Stopping the styler  
+            ```json
+              { 
+                "operation": {
+                  "stylerOperationMode ": "STOP"
+                }
+              }
+            ```
+          Setting stop time  
+            ```json
+              {
+                "timer": {
+                  "relativeHourToStop": 4
+                }
+              }
+            ```
       - name: water_purifier
         x-displayName: 정수기
         description: |
@@ -254,7 +503,7 @@ contents:
             exampleRef="#/components/examples/water_purifier-object-example" />
 
           ### 디바이스 제어 요청
-          정수기 디바이스는 제어 요청을 미지원합니다.
+          정수기 디바이스는 제어 요청을 지원하지 않습니다.
       - name: dehumidifier
         x-displayName: 제습기
         description: |
@@ -272,7 +521,43 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/dehumidifier-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          Dehumidifier power on  
+            ```json
+              {
+                "operation": {
+                  "dehumidifierOperationMode": "POWER_ON"
+                }
+              }
+            ```
+
+          Dehumidifier power off  
+            ```json
+              {
+                "operation": {
+                  "dehumidifierOperationMode": "POWER_OFF"
+                }
+              }
+            ```
+
+          Dehumidifier wind strength adjustment (Strength high)  
+            ```json
+              {
+                "airFlow": {
+                  "windStrength": "HIGH"
+                }
+              }
+            ```
+          Dehumidifier wind strength adjustment (Strength Low)  
+            ```json
+              {
+                "airFlow": {
+                  "windStrength": "LOW"
+                }
+              }
+            ```
       - name: ceiling_fan
         x-displayName: 실링팬
         description: |
@@ -290,7 +575,26 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/ceiling_fan-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          Ceiling fan power on  
+            ```json
+              {
+                "operation": {
+                  "ceilingfanOperationMode":  "POWER_ON"
+                }
+              }
+            ```
+
+          Ceiling fan wind strength adjustment  
+            ```json
+              {
+                "airFlow": {
+                  "windStrength": "HIGH"
+                }
+              }
+            ```
       - name: wine_cellar
         x-displayName: 와인셀러
         description: |
@@ -308,7 +612,38 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/wine_cellar-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          Temperature Control  
+            ```json
+              {
+                "temperature": {
+                  "locationName": "WINE_LOWER",
+                  "targetTemperature": 6,
+                  "unit": "C"
+                }
+              }
+            ```
+
+          Brightness Control  
+            ```json
+              #enum - lightBrightness
+              {
+                "operation": {
+                  "lightBrightness": "70%"
+                }
+              }
+            ```  
+
+            ```json
+              #range - lightStatus 
+              {
+                "operation": {
+                  "lightBrightness": "70%"
+                }
+              }
+            ```
       - name: kimchi_refrigerator
         x-displayName: 김치냉장고
         description: |
@@ -324,7 +659,7 @@ contents:
             exampleRef="#/components/examples/kimchi_refrigerator-object-example" />
 
           ### 디바이스 제어 요청
-          김치냉장고 디바이스는 제어 요청을 미지원합니다.
+          김치냉장고 디바이스는 제어 요청을 지원하지 않습니다.
       - name: home_brew
         x-displayName: 홈브루
         description: |
@@ -340,7 +675,7 @@ contents:
             exampleRef="#/components/examples/home_brew-object-example" />
 
           ### 디바이스 제어 요청
-          홈브루 디바이스는 제어 요청을 미지원합니다.
+          홈브루 디바이스는 제어 요청을 지원하지 않습니다.
       - name: plant_cultivator
         x-displayName: 식물재배기
         description: |
@@ -356,7 +691,7 @@ contents:
             exampleRef="#/components/examples/plant_cultivator-object-example" />
 
           ### 디바이스 제어 요청
-          식물재배기 디바이스는 제어 요청을 미지원합니다.
+          식물재배기 디바이스는 제어 요청을 지원하지 않습니다.
       - name: washtower_washer
         x-displayName: 워시타워(세탁기)
         description: |
@@ -374,7 +709,55 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/washtower_washer-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          Starting the standard washing course  
+            ```json
+              { 
+                "operation": {
+                  "washerOperationMode": "START"
+                }, 
+                "location": { 
+                  "locationName": "MAIN"
+                }
+              }
+            ```
+
+          Stopping the washing course  
+            ```json
+              { 
+                "operation": {
+                  "washerOperationMode": "START"
+                }, 
+                "location": { 
+                  "locationName": "MAIN"
+                }
+              }
+            ```
+
+          Washer on timer
+            ```json
+              {
+                "location": {
+                  "locationName": "MAIN"
+                },
+                "timer": {
+                  "relativeHourToStart": 4
+                }
+              }
+            ```
+
+            ```json
+              {
+                "location": {
+                  "locationName": "MAIN"
+                },
+                "timer": {
+                  "relativeHourToStop": 6
+                }
+              }
+            ```
       - name: washtower_dryer
         x-displayName: 워시타워(건조기)
         description: |
@@ -392,7 +775,43 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/washtower_dryer-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          Starting the standard drying course  
+            ```json
+              { 
+                "operation": {
+                  "dryerOperationMode": "START"
+                }
+              }
+            ```
+
+          Stopping the standard drying course  
+            ```json
+              { 
+                "operation": {
+                  "dryerOperationMode": "STOP"
+                }
+              }
+            ```
+
+          Setting start/stop time  
+            ```json
+              { 
+                "timer": {
+                  "relativeHourToStart": 2
+                }
+              }
+            ```
+
+            ```json
+              { 
+                "timer": {
+                  "relativeHourToStop": 4
+                }
+              }
+            ```
       - name: washtower
         x-displayName: 워시타워
         description: |
@@ -410,7 +829,30 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/washtower-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          세탁기  
+            ```json
+              {
+                "washer": {
+                  "operation": {
+                    "washerOperationMode": "START"
+                  }
+                }
+              }
+            ```
+
+          건조기  
+            ```json
+              {
+                "dryer": {
+                  "operation": {
+                    "dryerOperationMode": "START"
+                  }
+                }
+              }
+            ```
       - name: cooktop
         x-displayName: 쿡탑
         description: |
@@ -428,7 +870,33 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/cooktop-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          Power Off  
+            ```json
+              {
+                "operation": {
+                  "operationMode": "POWER_OFF"
+                }
+              }
+            ```
+
+          Setting the power to 3 and the remaining time to 10 minutes for the LEFT_FRONT burner  
+            ```json
+              {
+                "power": {
+                  "powerLevel": 3
+                },
+                "timer": {
+                  "remainHour": 0,
+                  "remainMinute": 10
+                },
+                "location": {
+                  "locationName": "LEFT_FRONT"
+                }
+              }
+            ```
       - name: hood
         x-displayName: 후드
         description: |
@@ -446,7 +914,20 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/hood-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          Setting lamp brightness and fan speed
+            ```json
+              {
+                "lamp": {
+                  "lampBrightness": 1
+                },
+                "ventilation": {
+                  "fanSpeed": 0
+                }
+              }
+            ```
       - name: microwave_oven
         x-displayName: 전자레인지
         description: |
@@ -461,10 +942,22 @@ contents:
             schemaRef="#/components/schemas/microwave_oven-object"
             exampleRef="#/components/examples/microwave_oven-object-example" />
 
-          ### 디바이스 제어 요청
+          ### 디바이스 제어 요청 제어 명령은 lampBrightness와 fanSpeed 속성을 동시에 명령해야합니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/microwave_oven-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+            ```json
+              {
+                "lamp": {
+                    "lampBrightness": 1
+                },
+                "ventilation": {
+                    "fanSpeed": 0
+                }
+              }
+            ```
       - name: system_boiler
         x-displayName: 시스템 보일러
         description: |
@@ -482,7 +975,46 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/system_boiler-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          Setting the power on
+            ```json
+              {
+                "operation": {
+                  "boilerOperationMode": "POWER_ON"
+                }
+              }
+            ```
+
+          Setting the hot water mode  
+            ```json
+              {
+                "operation": {
+                  "hotWaterMode": "ON"
+                }
+              }
+            ```
+
+          Setting the cooling target temperature  
+            ```json
+              {
+                "temperature": {
+                  "coolTargetTemperature": 18,
+                  "unit": "C"
+                }
+              }
+            ```
+
+          Setting the heating target temperature  
+            ```json
+              {
+                "temperature": {
+                  "heatTargetTemperature": 28,
+                  "unit": "C"
+                }
+              }
+            ```
       - name: air_purifier_fan
         x-displayName: 공기청정팬
         description: |
@@ -500,7 +1032,17 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/air_purifier_fan-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          Power On  
+            ```json
+              {
+                "operation": {
+                  "airFanOperationMode": "POWER_ON"
+                }
+              }
+            ```
       - name: stick_cleaner
         x-displayName: 스틱청소기
         description: |
@@ -516,7 +1058,7 @@ contents:
             exampleRef="#/components/examples/stick_cleaner-object-example" />
 
           ### 디바이스 제어 요청
-          스틱청소기 디바이스는 제어 요청을 미지원합니다. (확인 필요함)
+          스틱청소기 디바이스는 제어 요청을 지원하지 않습니다. (확인 필요함)
       - name: water_heater
         x-displayName: 온수기
         description: |
@@ -534,7 +1076,26 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/water_heater-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          온도 변경  
+            ```json
+              {
+                "temperature": {
+                  "targetTemperature": 45
+                }
+              }
+            ```
+
+          모드 변경
+            ```json
+              {
+                "waterHeaterJobMode": {
+                  "currentJobMode": "AUTO"
+                }
+              }
+            ```
       - name: main_washcombo
         x-displayName: 워시콤보 (메인)
         description: |
@@ -552,7 +1113,32 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/main_washcombo-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          세탁 시작  
+            ```json
+              {
+                "location": {
+                  "locationName": "MAIN"
+                },
+                "operation": {
+                  "washerOperationMode": "START"
+                }
+              }
+            ```
+
+          예약 설정  
+            ```json
+              {
+                "location": {
+                  "locationName": "Main"
+                },
+                "timer": {
+                  "relativeHourToStop": 4
+                }
+              }
+            ```
       - name: mini_washcombo
         x-displayName: 워시콤보 (미니)
         description: |
@@ -570,7 +1156,32 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/mini_washcombo-command-example" />
+            showExample={false} showWriteOnly={false} />  
+
+          #### Example  
+          세탁 시작  
+            ```json
+              {
+                "location": {
+                  "locationName": "MINI"
+                },
+                "operation": {
+                  "washerOperationMode": "START"
+                }
+              }
+            ```
+
+          예약 설정  
+            ```json
+              {
+                "location": {
+                  "locationName": "MINI"
+                },
+                "timer": {
+                  "relativeHourToStop": 4
+                }
+              }
+            ```
       - name: humidifier
         x-displayName: 가습기
         description: |
@@ -588,7 +1199,26 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            exampleRef="#/components/examples/humidifier-command-example" />
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          Power On  
+            ```json
+              {
+                "operation": {
+                  "humidifierOperationMode": "POWER_ON"
+                }
+              }
+            ```
+
+          Display Light  
+            ```json
+              {
+                "display": {
+                  "light": "LEVEL_2"
+                }
+              }
+            ```
       - name: odu
         x-displayName: 실외기
         description: |
@@ -604,7 +1234,7 @@ contents:
             exampleRef="#/components/examples/odu-object-example" />
 
           ### 디바이스 제어 요청
-          실외기 디바이스는 제어 요청을 미지원합니다.
+          실외기 디바이스는 제어 요청을 지원하지 않습니다.
       - name: idu
         x-displayName: 실내기
         description: |
@@ -638,7 +1268,7 @@ contents:
             exampleRef="#/components/examples/signage-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/signage-command-schema"
             exampleRef="#/components/examples/signage-command-example" />
@@ -683,6 +1313,476 @@ contents:
               }
             }
           ```
+      - name: hej_motion_sensor
+        x-displayName: 스마트 모션 센서
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/motion_sensor-profile"
+            exampleRef="#/components/examples/motion_sensor-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/motion_sensor-object"
+            exampleRef="#/components/examples/motion_sensor-object-example" />
+
+          ### 디바이스 제어 요청
+          스마트 모션 센서는 제어 가능한 속성이 없습니다.
+      - name: hej_temperature_humidity_sensor
+        x-displayName: 스마트 온습도 센서
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/temperature_humidity_sensor-profile"
+            exampleRef="#/components/examples/temperature_humidity_sensor-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/temperature_humidity_sensor-object"
+            exampleRef="#/components/examples/temperature_humidity_sensor-object-example" />
+
+          ### 디바이스 제어 요청
+          스마트 온습도 센서는 제어 가능한 속성이 없습니다.
+      - name: hej_door_sensor
+        x-displayName: 스마트 도어 센서
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/door_sensor-profile"
+            exampleRef="#/components/examples/door_sensor-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/door_sensor-object"
+            exampleRef="#/components/examples/door_sensor-object-example" />
+
+          ### 디바이스 제어 요청
+          스마트 도어 센서는 제어 가능한 속성이 없습니다.
+      - name: hej_button
+        x-displayName: 스마트 버튼
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/button-profile"
+            exampleRef="#/components/examples/button-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/button-object"
+            exampleRef="#/components/examples/button-object-example" />
+
+          ### 디바이스 제어 요청
+          스마트 버튼은 제어 가능한 속성이 없습니다.
+      - name: hej_light_switch
+        x-displayName: 스마트 조명 스위치
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/light_switch-profile"
+            exampleRef="#/components/examples/light_switch-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/light_switch-object"
+            exampleRef="#/components/examples/light_switch-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/light_switch-command-example" />
+      - name: hej_door_lock
+        x-displayName: 스마트 도어락
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/door_lock-profile"
+            exampleRef="#/components/examples/door_lock-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/door_lock-object"
+            exampleRef="#/components/examples/door_lock-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/door_lock-command-example" />
+      - name: hej_push_pull_door_lock
+        x-displayName: 스마트 푸쉬풀 도어락
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/push_pull_door_lock-profile"
+            exampleRef="#/components/examples/push_pull_door_lock-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/push_pull_door_lock-object"
+            exampleRef="#/components/examples/push_pull_door_lock-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/push_pull_door_lock-command-example" />
+      - name: hej_plug
+        x-displayName: 스마트 멀티탭
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/plug-profile"
+            exampleRef="#/components/examples/plug-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/plug-object"
+            exampleRef="#/components/examples/plug-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/plug-command-example" />
+      - name: hej_plug_mini
+        x-displayName: 스마트 플러그 미니
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/plug_mini-profile"
+            exampleRef="#/components/examples/plug_mini-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/plug_mini-object"
+            exampleRef="#/components/examples/plug_mini-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/plug_mini-command-example" />
+      - name: hej_bulb_white
+        x-displayName: 스마트 전구(화이트)
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/bulb_white-profile"
+            exampleRef="#/components/examples/bulb_white-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/bulb_white-object"
+            exampleRef="#/components/examples/bulb_white-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/bulb_white-command-example" />
+      - name: hej_bulb_color
+        x-displayName: 스마트 전구(컬러)
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/bulb_color-profile"
+            exampleRef="#/components/examples/bulb_color-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/bulb_color-object"
+            exampleRef="#/components/examples/bulb_color-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/bulb_color-command-example" />
+      - name: hej_line_led
+        x-displayName: 스마트 라인 LED
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/line_led-profile"
+            exampleRef="#/components/examples/line_led-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/line_led-object"
+            exampleRef="#/components/examples/line_led-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/line_led-command-example" />
+      - name: hej_curtain_ctrl
+        x-displayName: 스마트 전동 커튼 컨트롤러
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/curtain_ctrl-profile"
+            exampleRef="#/components/examples/curtain_ctrl-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/curtain_ctrl-object"
+            exampleRef="#/components/examples/curtain_ctrl-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/curtain_ctrl-command-example" />
+      - name: hej_blind_motor
+        x-displayName: 스마트 전동 블라인드
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/blind_motor-profile"
+            exampleRef="#/components/examples/blind_motor-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/blind_motor-object"
+            exampleRef="#/components/examples/blind_motor-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/blind_motor-command-example" />
+      - name: hej_switch_strip
+        x-displayName: 스마트 스위치 스트립
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/switch_strip-profile"
+            exampleRef="#/components/examples/switch_strip-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/switch_strip-object"
+            exampleRef="#/components/examples/switch_strip-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/switch_strip-command-example" />
+      - name: hej_starlight
+        x-displayName: 스마트 스타 라이트
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/starlight-profile"
+            exampleRef="#/components/examples/starlight-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/starlight-object"
+            exampleRef="#/components/examples/starlight-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/starlight-command-example" />
+      - name: hej_doorbell
+        x-displayName: 스마트 도어벨
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/doorbell-profile"
+            exampleRef="#/components/examples/doorbell-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/doorbell-object"
+            exampleRef="#/components/examples/doorbell-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/doorbell-command-example" />
+      - name: hej_pet_peeder
+        x-displayName: 스마트 펫 급식기
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/pet_peeder-profile"
+            exampleRef="#/components/examples/pet_peeder-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/pet_peeder-object"
+            exampleRef="#/components/examples/pet_peeder-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/pet_peeder-command-example" />
+      - name: hej_home_camera
+        x-displayName: 스마트 홈 카메라
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/home_camera-profile"
+            exampleRef="#/components/examples/home_camera-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/home_camera-object"
+            exampleRef="#/components/examples/home_camera-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/home_camera-command-example" />
+      - name: hej_sync_box
+        x-displayName: 싱크 박스
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/sync_box-profile"
+            exampleRef="#/components/examples/sync_box-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/sync_box-object"
+            exampleRef="#/components/examples/sync_box-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/sync_box-command-example" />
+      - name: hej_sync_box_sub
+        x-displayName: 싱크 박스 서브
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/sync_box_sub-profile"
+            exampleRef="#/components/examples/sync_box_sub-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/sync_box_sub-object"
+            exampleRef="#/components/examples/sync_box_sub-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/sync_box_sub-command-example" />
+      - name: hej_gas_sensor
+        x-displayName: 스마트 가스 감지 센서
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/gas_sensor-profile"
+            exampleRef="#/components/examples/gas_sensor-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/gas_sensor-object"
+            exampleRef="#/components/examples/gas_sensor-object-example" />
+
+          ### 디바이스 제어 요청
+          스마트 가스 감지 센서는 제어 가능한 속성이 없습니다.
+      - name: hej_fire_sensor
+        x-displayName: 스마트 화재 감지 센서
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/fire_sensor-profile"
+            exampleRef="#/components/examples/fire_sensor-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/fire_sensor-object"
+            exampleRef="#/components/examples/fire_sensor-object-example" />
+
+          ### 디바이스 제어 요청
+          스마트 화재 감지 센서는 제어 가능한 속성이 없습니다.
+      - name: hej_water_leak_sensor
+        x-displayName: 스마트 누수 감지 센서
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/water_leak_sensor-profile"
+            exampleRef="#/components/examples/water_leak_sensor-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/water_leak_sensor-object"
+            exampleRef="#/components/examples/water_leak_sensor-object-example" />
+
+          ### 디바이스 제어 요청
+          스마트 누수 감지 센서는 제어 가능한 속성이 없습니다.
+      - name: hej_thermo_hygrometer
+        x-displayName: 스마트 온습도계
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/thermo_hygrometer-profile"
+            exampleRef="#/components/examples/thermo_hygrometer-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/thermo_hygrometer-object"
+            exampleRef="#/components/examples/thermo_hygrometer-object-example" />
+
+          ### 디바이스 제어 요청
+          스마트 온습도계는 제어 가능한 속성이 없습니다.
+      - name: hej_siren
+        x-displayName: 스마트 사이렌
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/siren-profile"
+            exampleRef="#/components/examples/siren-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/siren-object"
+            exampleRef="#/components/examples/siren-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/siren-command-example" />
     paths:
       /device-profile:
         get:
@@ -765,6 +1865,58 @@ contents:
                       - $ref: '#/components/schemas/signage-profile'
                       - $ref: '#/components/schemas/signage-object'
                       - $ref: '#/components/schemas/signage-command-schema'
+                      - $ref: '#/components/schemas/motion_sensor-profile'
+                      - $ref: '#/components/schemas/motion_sensor-object'
+                      - $ref: '#/components/schemas/temperature_humidity_sensor-profile'
+                      - $ref: '#/components/schemas/temperature_humidity_sensor-object'
+                      - $ref: '#/components/schemas/door_sensor-profile'
+                      - $ref: '#/components/schemas/door_sensor-object'
+                      - $ref: '#/components/schemas/button-profile'
+                      - $ref: '#/components/schemas/button-object'
+                      - $ref: '#/components/schemas/light_switch-profile'
+                      - $ref: '#/components/schemas/light_switch-object'
+                      - $ref: '#/components/schemas/door_lock-profile'
+                      - $ref: '#/components/schemas/door_lock-object'
+                      - $ref: '#/components/schemas/push_pull_door_lock-profile'
+                      - $ref: '#/components/schemas/push_pull_door_lock-object'
+                      - $ref: '#/components/schemas/plug-profile'
+                      - $ref: '#/components/schemas/plug-object'
+                      - $ref: '#/components/schemas/plug_mini-profile'
+                      - $ref: '#/components/schemas/plug_mini-object'
+                      - $ref: '#/components/schemas/bulb_white-profile'
+                      - $ref: '#/components/schemas/bulb_white-object'
+                      - $ref: '#/components/schemas/bulb_color-profile'
+                      - $ref: '#/components/schemas/bulb_color-object'
+                      - $ref: '#/components/schemas/line_led-profile'
+                      - $ref: '#/components/schemas/line_led-object'
+                      - $ref: '#/components/schemas/curtain_ctrl-profile'
+                      - $ref: '#/components/schemas/curtain_ctrl-object'
+                      - $ref: '#/components/schemas/blind_motor-profile'
+                      - $ref: '#/components/schemas/blind_motor-object'
+                      - $ref: '#/components/schemas/switch_strip-profile'
+                      - $ref: '#/components/schemas/switch_strip-object'
+                      - $ref: '#/components/schemas/starlight-profile'
+                      - $ref: '#/components/schemas/starlight-object'
+                      - $ref: '#/components/schemas/doorbell-profile'
+                      - $ref: '#/components/schemas/doorbell-object'
+                      - $ref: '#/components/schemas/pet_peeder-profile'
+                      - $ref: '#/components/schemas/pet_peeder-object'
+                      - $ref: '#/components/schemas/home_camera-profile'
+                      - $ref: '#/components/schemas/home_camera-object'
+                      - $ref: '#/components/schemas/sync_box-profile'
+                      - $ref: '#/components/schemas/sync_box-object'
+                      - $ref: '#/components/schemas/sync_box_sub-profile'
+                      - $ref: '#/components/schemas/sync_box_sub-object'
+                      - $ref: '#/components/schemas/gas_sensor-profile'
+                      - $ref: '#/components/schemas/gas_sensor-object'
+                      - $ref: '#/components/schemas/fire_sensor-profile'
+                      - $ref: '#/components/schemas/fire_sensor-object'
+                      - $ref: '#/components/schemas/water_leak_sensor-profile'
+                      - $ref: '#/components/schemas/water_leak_sensor-object'
+                      - $ref: '#/components/schemas/thermo_hygrometer-profile'
+                      - $ref: '#/components/schemas/thermo_hygrometer-object'
+                      - $ref: '#/components/schemas/siren-profile'
+                      - $ref: '#/components/schemas/siren-object'
                   examples:
                     refrigerator-profile-example:
                       $ref: '#/components/examples/refrigerator-profile-example'
@@ -946,6 +2098,146 @@ contents:
                       $ref: '#/components/examples/signage-object-example'
                     signage-command-example:
                       $ref: '#/components/examples/signage-command-example'
+                    motion_sensor-profile-example:
+                      $ref: '#/components/examples/motion_sensor-profile-example'
+                    motion_sensor-object-example:
+                      $ref: '#/components/examples/motion_sensor-object-example'
+                    temperature_humidity_sensor-profile-example:
+                      $ref: '#/components/examples/temperature_humidity_sensor-profile-example'
+                    temperature_humidity_sensor-object-example:
+                      $ref: '#/components/examples/temperature_humidity_sensor-object-example'
+                    door_sensor-profile-example:
+                      $ref: '#/components/examples/door_sensor-profile-example'
+                    door_sensor-object-example:
+                      $ref: '#/components/examples/door_sensor-object-example'
+                    button-profile-example:
+                      $ref: '#/components/examples/button-profile-example'
+                    button-object-example:
+                      $ref: '#/components/examples/button-object-example'
+                    light_switch-profile-example:
+                      $ref: '#/components/examples/light_switch-profile-example'
+                    light_switch-object-example:
+                      $ref: '#/components/examples/light_switch-object-example'
+                    light_switch-command-example:
+                      $ref: '#/components/examples/light_switch-command-example'
+                    door_lock-profile-example:
+                      $ref: '#/components/examples/door_lock-profile-example'
+                    door_lock-object-example:
+                      $ref: '#/components/examples/door_lock-object-example'
+                    door_lock-command-example:
+                      $ref: '#/components/examples/door_lock-command-example'
+                    push_pull_door_lock-profile-example:
+                      $ref: '#/components/examples/push_pull_door_lock-profile-example'
+                    push_pull_door_lock-object-example:
+                      $ref: '#/components/examples/push_pull_door_lock-object-example'
+                    push_pull_door_lock-command-example:
+                      $ref: '#/components/examples/push_pull_door_lock-command-example'
+                    plug-profile-example:
+                      $ref: '#/components/examples/plug-profile-example'
+                    plug-object-example:
+                      $ref: '#/components/examples/plug-object-example'
+                    plug-command-example:
+                      $ref: '#/components/examples/plug-command-example'
+                    plug_mini-profile-example:
+                      $ref: '#/components/examples/plug_mini-profile-example'
+                    plug_mini-object-example:
+                      $ref: '#/components/examples/plug_mini-object-example'
+                    plug_mini-command-example:
+                      $ref: '#/components/examples/plug_mini-command-example'
+                    bulb_white-profile-example:
+                      $ref: '#/components/examples/bulb_white-profile-example'
+                    bulb_white-object-example:
+                      $ref: '#/components/examples/bulb_white-object-example'
+                    bulb_white-command-example:
+                      $ref: '#/components/examples/bulb_white-command-example'
+                    bulb_color-profile-example:
+                      $ref: '#/components/examples/bulb_color-profile-example'
+                    bulb_color-object-example:
+                      $ref: '#/components/examples/bulb_color-object-example'
+                    bulb_color-command-example:
+                      $ref: '#/components/examples/bulb_color-command-example'
+                    line_led-profile-example:
+                      $ref: '#/components/examples/line_led-profile-example'
+                    line_led-object-example:
+                      $ref: '#/components/examples/line_led-object-example'
+                    line_led-command-example:
+                      $ref: '#/components/examples/line_led-command-example'
+                    curtain_ctrl-profile-example:
+                      $ref: '#/components/examples/curtain_ctrl-profile-example'
+                    curtain_ctrl-object-example:
+                      $ref: '#/components/examples/curtain_ctrl-object-example'
+                    curtain_ctrl-command-example:
+                      $ref: '#/components/examples/curtain_ctrl-command-example'
+                    blind_motor-profile-example:
+                      $ref: '#/components/examples/blind_motor-profile-example'
+                    blind_motor-object-example:
+                      $ref: '#/components/examples/blind_motor-object-example'
+                    blind_motor-command-example:
+                      $ref: '#/components/examples/blind_motor-command-example'
+                    switch_strip-profile-example:
+                      $ref: '#/components/examples/switch_strip-profile-example'
+                    switch_strip-object-example:
+                      $ref: '#/components/examples/switch_strip-object-example'
+                    switch_strip-command-example:
+                      $ref: '#/components/examples/switch_strip-command-example'
+                    starlight-profile-example:
+                      $ref: '#/components/examples/starlight-profile-example'
+                    starlight-object-example:
+                      $ref: '#/components/examples/starlight-object-example'
+                    starlight-command-example:
+                      $ref: '#/components/examples/starlight-command-example'
+                    doorbell-profile-example:
+                      $ref: '#/components/examples/doorbell-profile-example'
+                    doorbell-object-example:
+                      $ref: '#/components/examples/doorbell-object-example'
+                    doorbell-command-example:
+                      $ref: '#/components/examples/doorbell-command-example'
+                    pet_peeder-profile-example:
+                      $ref: '#/components/examples/pet_peeder-profile-example'
+                    pet_peeder-object-example:
+                      $ref: '#/components/examples/pet_peeder-object-example'
+                    pet_peeder-command-example:
+                      $ref: '#/components/examples/pet_peeder-command-example'
+                    home_camera-profile-example:
+                      $ref: '#/components/examples/home_camera-profile-example'
+                    home_camera-object-example:
+                      $ref: '#/components/examples/home_camera-object-example'
+                    home_camera-command-example:
+                      $ref: '#/components/examples/home_camera-command-example'
+                    sync_box-profile-example:
+                      $ref: '#/components/examples/sync_box-profile-example'
+                    sync_box-object-example:
+                      $ref: '#/components/examples/sync_box-object-example'
+                    sync_box-command-example:
+                      $ref: '#/components/examples/sync_box-command-example'
+                    sync_box_sub-profile-example:
+                      $ref: '#/components/examples/sync_box_sub-profile-example'
+                    sync_box_sub-object-example:
+                      $ref: '#/components/examples/sync_box_sub-object-example'
+                    sync_box_sub-command-example:
+                      $ref: '#/components/examples/sync_box_sub-command-example'
+                    gas_sensor-profile-example:
+                      $ref: '#/components/examples/gas_sensor-profile-example'
+                    gas_sensor-object-example:
+                      $ref: '#/components/examples/gas_sensor-object-example'
+                    fire_sensor-profile-example:
+                      $ref: '#/components/examples/fire_sensor-profile-example'
+                    fire_sensor-object-example:
+                      $ref: '#/components/examples/fire_sensor-object-example'
+                    water_leak_sensor-profile-example:
+                      $ref: '#/components/examples/water_leak_sensor-profile-example'
+                    water_leak_sensor-object-example:
+                      $ref: '#/components/examples/water_leak_sensor-object-example'
+                    thermo_hygrometer-profile-example:
+                      $ref: '#/components/examples/thermo_hygrometer-profile-example'
+                    thermo_hygrometer-object-example:
+                      $ref: '#/components/examples/thermo_hygrometer-object-example'
+                    siren-profile-example:
+                      $ref: '#/components/examples/siren-profile-example'
+                    siren-object-example:
+                      $ref: '#/components/examples/siren-object-example'
+                    siren-command-example:
+                      $ref: '#/components/examples/siren-command-example'
             '400':
               description: device-profile
     components:
@@ -1170,7 +2462,7 @@ contents:
                                   - POWER
                     expressFridge:
                       type: object
-                      description: 특습 냉장 설정
+                      description: 특급 냉장 설정
                       properties:
                         mode:
                           type: array
@@ -3477,7 +4769,7 @@ contents:
                             - number
                     oder:
                       type: object
-                      description: 냄새 농도 값(오타)
+                      description: 냄새 농도 값
                       properties:
                         mode:
                           type: array
@@ -3865,7 +5157,7 @@ contents:
                   description: PM10 미세먼지 농도
                 oder:
                   type: number
-                  description: 냄새 농도 값(오타)
+                  description: 냄새 농도 값
                 odor:
                   type: number
                   description: 냄새 농도 값
@@ -4411,7 +5703,7 @@ contents:
                             - number
                     oder:
                       type: object
-                      description: 냄새 농도 값(오타)
+                      description: 냄새 농도 값
                       properties:
                         mode:
                           type: array
@@ -4729,7 +6021,7 @@ contents:
                   description: PM10 미세먼지 농도
                 oder:
                   type: number
-                  description: 냄새 농도 값(오타)
+                  description: 냄새 농도 값
                 odor:
                   type: number
                   description: 냄새 농도 값
@@ -7704,27 +8996,6 @@ contents:
                       - NEED_TO_CHECK_LOCATION
                       - HOMEGUARD_IS_STOPPED
                       - SCHEDULED_CLEANING_STARTS
-            push:
-              type: array
-              minItems: 1
-              description: |-
-                Push Code | Description
-                -|-
-                CLEANING_IS_COMPLETED | 청소가 완료되었습니다.
-                CLEANING_IS_FAILED | 청소를 실패하였습니다.
-                MOTION_IS_DETECTED | 홈가드 중에 움직임이 감지되어 사진을 보냈습니다.
-                NEED_TO_CHECK_LOCATION | 위치 확인이 필요합니다.
-                HOMEGUARD_IS_STOPPED | 홈가드가 중지되었습니다.
-                SCHEDULED_CLEANING_STARTS | 예약청소가 시작됩니다.
-              items:
-                type: string
-                enum:
-                  - CLEANING_IS_COMPLETED
-                  - CLEANING_IS_FAILED
-                  - MOTION_IS_DETECTED
-                  - NEED_TO_CHECK_LOCATION
-                  - HOMEGUARD_IS_STOPPED
-                  - SCHEDULED_CLEANING_STARTS
             error:
               type: array
               description: |-
@@ -18488,6 +19759,4553 @@ contents:
               properties:
                 하위 property:
                   value: value
+        motion_sensor-profile:
+          type: object
+          title: Motion_Sensor
+          properties:
+            property:
+              type: object
+              properties:
+                battery:
+                  type: object
+                  description: 배터리
+                  properties:
+                    percent:
+                      type: object
+                      description: 배터리 잔량(0-100)%
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+        motion_sensor-object:
+          type: object
+          title: Motion_Sensor
+          properties:
+            battery:
+              type: object
+              description: 배터리
+              properties:
+                percent:
+                  type: integer
+                  description: 배터리 잔여량(0-100)
+        temperature_humidity_sensor-profile:
+          type: object
+          title: Temperature_Humidity_Sensor
+          properties:
+            property:
+              type: object
+              properties:
+                battery:
+                  type: object
+                  description: 배터리
+                  properties:
+                    percent:
+                      type: object
+                      description: 배터리 잔량(0-100%)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                temperature:
+                  type: object
+                  description: 온도
+                  properties:
+                    currentTemperature:
+                      type: object
+                      description: 현재 온도
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - number
+                humidity:
+                  type: object
+                  description: 습도
+                  properties:
+                    currentHumidity:
+                      type: object
+                      description: 현재 습도
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+        temperature_humidity_sensor-object:
+          type: object
+          title: Temperature_Humidity_Sensor
+          properties:
+            battery:
+              type: object
+              description: 배터리
+              properties:
+                percent:
+                  type: integer
+                  description: 배터리 잔여량(0-100)
+            temperature:
+              type: object
+              description: 온도
+              properties:
+                currentTemperature:
+                  type: integer
+                  description: 현재 온도
+            humidity:
+              type: object
+              description: 습도
+              properties:
+                currentHumidity:
+                  type: integer
+                  description: 현재 습도
+        door_sensor-profile:
+          type: object
+          title: Door_Sensor
+          properties:
+            property:
+              type: object
+              properties:
+                doorState:
+                  type: object
+                  description: 감지 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 문열림 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                OPEN | 문 열림 상태
+                                CLOSE | 문 닫힘 상태
+                              items:
+                                type: string
+                                enum:
+                                  - OPEN
+                                  - CLOSE
+                battery:
+                  type: object
+                  description: 배터리
+                  properties:
+                    percent:
+                      type: object
+                      description: 배터리 잔량(0-100%)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+        door_sensor-object:
+          type: object
+          title: Door_Sensor
+          properties:
+            battery:
+              type: object
+              description: 배터리
+              properties:
+                percent:
+                  type: integer
+                  description: 배터리 잔여량(0-100)
+            doorState:
+              type: object
+              description: 문열림 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 감지 상태
+                  enum:
+                    - OPEN
+                    - ClOSE
+        button-profile:
+          type: object
+          title: Button
+          properties:
+            property:
+              type: object
+              properties:
+                battery:
+                  type: object
+                  description: 배터리
+                  properties:
+                    percent:
+                      type: object
+                      description: 배터리 잔량(0-100%)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+        button-object:
+          type: object
+          title: Button
+          properties:
+            battery:
+              type: object
+              description: 배터리
+              properties:
+                percent:
+                  type: integer
+                  description: 배터리 잔여량(0-100)
+        light_switch-profile:
+          type: object
+          title: Light_Switch
+          properties:
+            property:
+              type: object
+              properties:
+                switchState:
+                  type: array
+                  description: 스위치 상태
+                  items:
+                    type: object
+                    properties:
+                      currentSwitch:
+                        type: object
+                        description: 개별 전원
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - enum
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: array
+                                description: |-
+                                  Value | Description
+                                  -|-
+                                  ON | 전원 켜짐
+                                  OFF | 전원 꺼짐
+                                items:
+                                  type: string
+                                  enum:
+                                    - 'ON'
+                                    - 'OFF'
+                              w:
+                                type: array
+                                description: |-
+                                  Value | Description
+                                  -|-
+                                  ON | 전원 켜짐
+                                  OFF | 전원 꺼짐
+                                items:
+                                  type: string
+                                  enum:
+                                    - 'ON'
+                                    - 'OFF'
+                      switchName:
+                        type: object
+                        description: 위치 이름
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - enum
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: array
+                                items:
+                                  type: string
+                                  enum:
+                                    - SWITCH_1
+                                    - SWITCH_2
+                                    - SWTICH_3
+        light_switch-object:
+          type: object
+          title: Light_Switch
+          properties:
+            switchState:
+              type: array
+              description: 스위치 상태
+              items:
+                type: object
+                properties:
+                  currentSwitch:
+                    type: string
+                    description: 개별 전원
+                    enum:
+                      - 'ON'
+                      - 'OFF'
+                  switchName:
+                    type: string
+                    description: 위치 이름
+                    enum:
+                      - SWITCH_1
+                      - SWITCH_2
+                      - SWITCH_3
+        door_lock-profile:
+          type: object
+          title: Door_Sensor
+          properties:
+            property:
+              type: object
+              properties:
+                doorState:
+                  type: object
+                  description: 감지 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 문열림 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                OPEN | 문 열림 상태
+                                CLOSE | 문 닫힘 상태
+                              items:
+                                type: string
+                                enum:
+                                  - OPEN
+                                  - CLOSE
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                OPEN | 문 열림 상태
+                              items:
+                                type: string
+                                enum:
+                                  - CLOSE
+                battery:
+                  type: object
+                  description: 배터리
+                  properties:
+                    percent:
+                      type: object
+                      description: 배터리 잔량(0-100%)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+        door_lock-object:
+          type: object
+          title: Door_Sensor
+          properties:
+            battery:
+              type: object
+              description: 배터리
+              properties:
+                percent:
+                  type: integer
+                  description: 배터리 잔여량(0-100)
+            doorState:
+              type: object
+              description: 문열림 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 감지 상태
+                  enum:
+                    - OPEN
+                    - ClOSE
+        push_pull_door_lock-profile:
+          type: object
+          title: Door_Sensor
+          properties:
+            property:
+              type: object
+              properties:
+                doorState:
+                  type: object
+                  description: 감지 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 문열림 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                OPEN | 문 열림 상태
+                                CLOSE | 문 닫힘 상태
+                              items:
+                                type: string
+                                enum:
+                                  - OPEN
+                                  - CLOSE
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                OPEN | 문 열림 상태
+                              items:
+                                type: string
+                                enum:
+                                  - CLOSE
+                battery:
+                  type: object
+                  description: 배터리
+                  properties:
+                    percent:
+                      type: object
+                      description: 배터리 잔량(0-100%)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+        push_pull_door_lock-object:
+          type: object
+          title: Door_Sensor
+          properties:
+            battery:
+              type: object
+              description: 배터리
+              properties:
+                percent:
+                  type: integer
+                  description: 배터리 잔여량(0-100)
+            doorState:
+              type: object
+              description: 문열림 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 감지 상태
+                  enum:
+                    - OPEN
+                    - ClOSE
+        plug-profile:
+          type: object
+          title: Plug
+          properties:
+            property:
+              type: object
+              properties:
+                runState:
+                  type: object
+                  description: 제품 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 현재 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                electricity:
+                  type: object
+                  description: 전기 상태
+                  properties:
+                    current:
+                      type: object
+                      description: 현재 전류
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    currentUnit:
+                      type: object
+                      description: 전류 단위
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - string
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                    voltage:
+                      type: object
+                      description: 현재 전압
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    voltageUnit:
+                      type: object
+                      description: 전압 단위
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - string
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                    power:
+                      type: object
+                      description: 현재 전력
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    powerUnit:
+                      type: object
+                      description: 전력 단위
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - string
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+        plug-object:
+          type: object
+          title: Plug
+          properties:
+            runState:
+              type: object
+              description: 제품 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 현재 상태
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            electricity:
+              type: object
+              description: 전기 상태
+              properties:
+                current:
+                  type: number
+                  description: 현재 전류
+                currentUnit:
+                  type: string
+                  description: 전류 단위
+                voltage:
+                  type: number
+                  description: 현재 전압
+                voltageUnit:
+                  type: string
+                  description: 전압 단위
+                power:
+                  type: number
+                  description: 전류
+                powerUnit:
+                  type: string
+                  description: 전류 단위
+        plug_mini-profile:
+          type: object
+          title: Plug_Mini
+          properties:
+            property:
+              type: object
+              properties:
+                runState:
+                  type: object
+                  description: 제품 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 현재 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                electricity:
+                  type: object
+                  description: 전기 상태
+                  properties:
+                    current:
+                      type: object
+                      description: 현재 전류
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    currentUnit:
+                      type: object
+                      description: 전류 단위
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - string
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                    voltage:
+                      type: object
+                      description: 현재 전압
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    voltageUnit:
+                      type: object
+                      description: 전압 단위
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - string
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                    power:
+                      type: object
+                      description: 현재 전력
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    powerUnit:
+                      type: object
+                      description: 전력 단위
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - string
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                switchState:
+                  type: object
+                  description: 스위치 옵션
+                  properties:
+                    currentSwitch:
+                      type: object
+                      description: 전원 기본 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON | 켜짐
+                                OFF | 꺼짐
+                                LAST | 직전 상태 기억
+                              items:
+                                type: string
+                                enum:
+                                  - 'ON'
+                                  - 'OFF'
+                                  - LAST
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON | 켜짐
+                                OFF | 꺼짐
+                                LAST | 직전 상태 기억
+                              items:
+                                type: string
+                                enum:
+                                  - 'ON'
+                                  - 'OFF'
+                                  - LAST
+                    indicateLight:
+                      type: object
+                      description: 상태 표시 등
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON_RELAY | 전원이 켜질때
+                                ON_POS | 전원이 꺼질때
+                                OFF | 항상 끄기
+                              items:
+                                type: string
+                                enum:
+                                  - ON_RELAY
+                                  - ON_POS
+                                  - 'OFF'
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON_RELAY | 전원이 켜질때
+                                ON_POS | 전원이 꺼질때
+                                OFF | 항상 끄기
+                              items:
+                                type: string
+                                enum:
+                                  - ON_RELAY
+                                  - ON_POS
+                                  - 'OFF'
+                    kidLock:
+                      type: object
+                      description: 키즈락
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                LOCK | 키즈락 세팅
+                                UNLOCK | 키즈락 해제
+                              items:
+                                type: string
+                                enum:
+                                  - LOCK
+                                  - UNLOCK
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                LOCK | 키즈락 세팅
+                                UNLOCK | 키즈락 해제
+                              items:
+                                type: string
+                                enum:
+                                  - LOCK
+                                  - UNLOCK
+        plug_mini-object:
+          type: object
+          title: Plug_Mini
+          properties:
+            runState:
+              type: object
+              description: 제품 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 현재 상태
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            electricity:
+              type: object
+              description: 전기 상태
+              properties:
+                current:
+                  type: number
+                  description: 현재 전류
+                currentUnit:
+                  type: string
+                  description: 전류 단위
+                voltage:
+                  type: number
+                  description: 현재 전압
+                voltageUnit:
+                  type: string
+                  description: 전압 단위
+                power:
+                  type: number
+                  description: 전류
+                powerUnit:
+                  type: string
+                  description: 전류 단위
+            switchState:
+              type: object
+              description: 스위치 옵션
+              properties:
+                currentSwitch:
+                  type: string
+                  description: 전원 기본 상태
+                  enum:
+                    - 'ON'
+                    - 'OFF'
+                    - LAST
+                indicateLight:
+                  type: string
+                  description: 상태 표시 등
+                  enum:
+                    - ON_RELAY
+                    - ON_POS
+                    - 'OFF'
+                kidLock:
+                  type: string
+                  description: 키즈락
+                  enum:
+                    - LOCK
+                    - UNLOCK
+        bulb_white-profile:
+          type: object
+          title: Bulb_White
+          properties:
+            property:
+              type: object
+              properties:
+                runState:
+                  type: object
+                  description: 제품 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 현재 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                whiteLight:
+                  type: object
+                  description: 화이트 설정
+                  properties:
+                    brightness:
+                      type: object
+                      description: 현재 밝기(1-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    colorTemperature:
+                      type: object
+                      description: 현재 색온도(3000-6500)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+        bulb_white-object:
+          type: object
+          title: Bulb_White
+          properties:
+            runState:
+              type: object
+              description: 제품 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 현재 상태
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            whiteLight:
+              type: object
+              description: 전기 상태
+              properties:
+                brightness:
+                  type: number
+                  description: 현재 밝기 (1-100)
+                colorTemperature:
+                  type: number
+                  description: 현재 색온도(3000-6500)
+        bulb_color-profile:
+          type: object
+          title: Bulb_Color
+          properties:
+            property:
+              type: object
+              properties:
+                runState:
+                  type: object
+                  description: 제품 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 현재 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                mode:
+                  type: object
+                  description: 모드
+                  properties:
+                    lightMode:
+                      type: object
+                      description: 현재 모드
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                COLORED | 컬러모드
+                                WHITE | 화이트모드
+                                SCENE | 씬모드
+                              items:
+                                type: string
+                                enum:
+                                  - COLORED
+                                  - WHITE
+                                  - SCENE
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                COLORED | 컬러모드
+                                WHITE | 화이트모드
+                              items:
+                                type: string
+                                enum:
+                                  - COLORED
+                                  - WHITE
+                whiteLight:
+                  type: object
+                  description: 화이트 설정
+                  properties:
+                    brightness:
+                      type: object
+                      description: 현재 밝기(1-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                colorLight:
+                  type: object
+                  description: 컬러 설정
+                  properties:
+                    hue:
+                      type: object
+                      description: 현재 색상(0-360)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    saturation:
+                      type: object
+                      description: 현재 채도 (0-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    brightness:
+                      type: object
+                      description: 현재 밝기 (1-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+        bulb_color-object:
+          type: object
+          title: Bulb_Color
+          properties:
+            runState:
+              type: object
+              description: 제품 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 현재 상태
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            mode:
+              type: object
+              description: 모드
+              properties:
+                lightMode:
+                  type: string
+                  description: 현대 모드
+                  enum:
+                    - COLOR
+                    - WHITE
+                    - SCENE
+            whiteLight:
+              type: object
+              description: 화이트 설정
+              properties:
+                brightness:
+                  type: number
+                  description: 현재 밝기 (1-100)
+            colorLight:
+              type: object
+              description: 컬러 설정
+              properties:
+                hue:
+                  type: number
+                  description: 현재 색상 (0-360)
+                saturation:
+                  type: number
+                  description: 현재 채도(0-100)
+                brightness:
+                  type: number
+                  description: 현재 밝기(1-100)
+        line_led-profile:
+          type: object
+          title: Line_LED
+          properties:
+            property:
+              type: object
+              properties:
+                runState:
+                  type: object
+                  description: 제품 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 현재 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                mode:
+                  type: object
+                  description: 모드
+                  properties:
+                    lightMode:
+                      type: object
+                      description: 현재 모드
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                COLORED | 컬러모드
+                                WHITE | 화이트모드
+                                SCENE | 씬모드
+                              items:
+                                type: string
+                                enum:
+                                  - COLORED
+                                  - WHITE
+                                  - SCENE
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                COLORED | 컬러모드
+                                WHITE | 화이트모드
+                              items:
+                                type: string
+                                enum:
+                                  - COLORED
+                                  - WHITE
+                whiteLight:
+                  type: object
+                  description: 화이트 설정
+                  properties:
+                    brightness:
+                      type: object
+                      description: 현재 밝기(1-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                colorLight:
+                  type: object
+                  description: 컬러 설정
+                  properties:
+                    hue:
+                      type: object
+                      description: 현재 색상(0-360)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    saturation:
+                      type: object
+                      description: 현재 채도 (0-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    brightness:
+                      type: object
+                      description: 현재 밝기 (1-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+        line_led-object:
+          type: object
+          title: Line_LED
+          properties:
+            runState:
+              type: object
+              description: 제품 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 현재 상태
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            mode:
+              type: object
+              description: 모드
+              properties:
+                lightMode:
+                  type: string
+                  description: 현대 모드
+                  enum:
+                    - COLOR
+                    - WHITE
+                    - SCENE
+            whiteLight:
+              type: object
+              description: 화이트 설정
+              properties:
+                brightness:
+                  type: number
+                  description: 현재 밝기 (1-100)
+            colorLight:
+              type: object
+              description: 컬러 설정
+              properties:
+                hue:
+                  type: number
+                  description: 현재 색상 (0-360)
+                saturation:
+                  type: number
+                  description: 현재 채도(0-100)
+                brightness:
+                  type: number
+                  description: 현재 밝기(1-100)
+        curtain_ctrl-profile:
+          type: object
+          title: Curtain_Ctrl
+          properties:
+            property:
+              type: object
+              properties:
+                openCloseState:
+                  type: object
+                  description: 커튼 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 커튼 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                OPEN | 커튼 열림
+                                CLOSE | 커튼 닫힘
+                              items:
+                                type: string
+                                enum:
+                                  - OPEN
+                                  - CLOSE
+                            w:
+                              type: array
+                              description: "Value | Description\n-|-\nOPEN | 커튼 열림\nCLOSE | 커튼 닫힘\nSTOP | 커튼 동작 멈춤\t"
+                              items:
+                                type: string
+                                enum:
+                                  - OPEN
+                                  - CLOSE
+                                  - STOP
+                    level:
+                      type: object
+                      description: 닫힘 정도 (0-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                calibration:
+                  type: object
+                  description: 모터
+                  properties:
+                    railCalibration:
+                      type: object
+                      description: 레일 교정
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: "Value | Description\n-|-\nACTIVATE | 레일 교정 활성화\t\nDEACTIVATE | 레일 교정 비활성화\t"
+                              items:
+                                type: string
+                                enum:
+                                  - ACTIVATE
+                                  - DEACTIVATE
+                            w:
+                              type: array
+                              description: "Value | Description\n-|-\nACTIVATE | 레일 교정 활성화\t\nDEACTIVATE | 레일 교정 비활성화\t"
+                              items:
+                                type: string
+                                enum:
+                                  - ACTIVATE
+                                  - DEACTIVATE
+                motor:
+                  type: object
+                  description: 모터
+                  properties:
+                    motorDirection:
+                      type: object
+                      description: 모터 방향
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: "Value | Description\n-|-\nFORWARD | 모터 정방향\t\nBACKWARD | 모터 역방향\t"
+                              items:
+                                type: string
+                                enum:
+                                  - FORWARD
+                                  - BACKWARD
+                            w:
+                              type: array
+                              description: "Value | Description\n-|-\nFORWARD | 모터 정방향\t\nBACKWARD | 모터 역방향\t"
+                              items:
+                                type: string
+                                enum:
+                                  - FORWARD
+                                  - BACKWARD
+        curtain_ctrl-object:
+          type: object
+          title: Curtain_Ctrl
+          properties:
+            openCloseState:
+              type: object
+              description: 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 커튼 상태
+                  enum:
+                    - OPEN
+                    - CLOSE
+                    - STOP
+                level:
+                  type: integer
+                  description: 닫힘 정도(0-100)
+            calibration:
+              type: object
+              description: 모터
+              properties:
+                railCalibration:
+                  type: string
+                  description: 레일 교정
+                  enum:
+                    - ACTIVATE
+                    - DEACTIVATE
+            motor:
+              type: object
+              description: 모터
+              properties:
+                motorDirection:
+                  type: string
+                  description: 모터 방향
+                  enum:
+                    - FORWARD
+                    - BACKWARD
+        blind_motor-profile:
+          type: object
+          title: Blind_Motor
+          properties:
+            property:
+              type: object
+              properties:
+                openCloseState:
+                  type: object
+                  description: 커튼 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 커튼 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                OPEN | 커튼 열림
+                                CLOSE | 커튼 닫힘
+                              items:
+                                type: string
+                                enum:
+                                  - OPEN
+                                  - CLOSE
+                            w:
+                              type: array
+                              description: "Value | Description\n-|-\nOPEN | 커튼 열림\nCLOSE | 커튼 닫힘\nSTOP | 커튼 동작 멈춤\t"
+                              items:
+                                type: string
+                                enum:
+                                  - OPEN
+                                  - CLOSE
+                                  - STOP
+                    level:
+                      type: object
+                      description: 닫힘 정도 (0-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                operation:
+                  type: object
+                  description: 동작
+                  properties:
+                    operationMode:
+                      type: object
+                      description: 블라인드 동작 실행
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            w:
+                              type: array
+                              description: "Value | Description\n-|-\nOPEN | 열림\nCLOSE | 닫힘 \t\nSTOP | 멈춤"
+                              items:
+                                type: string
+                                enum:
+                                  - OPEN
+                                  - CLOSE
+                                  - STOP
+                motor:
+                  type: object
+                  description: 모터
+                  properties:
+                    motorDirection:
+                      type: object
+                      description: 모터 방향
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: "Value | Description\n-|-\nFORWARD | 모터 정방향\t\nBACKWARD | 모터 역방향\t"
+                              items:
+                                type: string
+                                enum:
+                                  - FORWARD
+                                  - BACKWARD
+                            w:
+                              type: array
+                              description: "Value | Description\n-|-\nFORWARD | 모터 정방향\t\nBACKWARD | 모터 역방향\t"
+                              items:
+                                type: string
+                                enum:
+                                  - FORWARD
+                                  - BACKWARD
+        blind_motor-object:
+          type: object
+          title: Blind_Motor
+          properties:
+            openCloseState:
+              type: object
+              description: 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 커튼 상태
+                  enum:
+                    - OPEN
+                    - CLOSE
+                    - STOP
+                level:
+                  type: integer
+                  description: 닫힘 정도(0-100)
+            motor:
+              type: object
+              description: 모터
+              properties:
+                motorDirection:
+                  type: string
+                  description: 모터 방향
+                  enum:
+                    - FORWARD
+                    - BACKWARD
+        switch_strip-profile:
+          type: object
+          title: Switch_Strip
+          properties:
+            property:
+              type: object
+              properties:
+                runState:
+                  type: object
+                  description: 제품 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 현재 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                switchState:
+                  type: array
+                  description: 스위치 상태
+                  items:
+                    type: object
+                    properties:
+                      switchName:
+                        type: string
+                        description: 위치 이름
+                        enum:
+                          - SWITCH_1
+                          - SWITCH_2
+                          - SWITCH_3
+                          - SWITCH_USB
+                      currentSwitch:
+                        type: object
+                        description: 개별 전원
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - enum
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: array
+                                description: |-
+                                  Value | Description
+                                  -|-
+                                  ON | 전원 켜짐
+                                  OFF | 전원 꺼짐
+                                items:
+                                  type: string
+                                  enum:
+                                    - 'ON'
+                                    - 'OFF'
+                              w:
+                                type: array
+                                description: |-
+                                  Value | Description
+                                  -|-
+                                  ON | 전원 켜짐
+                                  OFF | 전원 꺼짐
+                                items:
+                                  type: string
+                                  enum:
+                                    - 'ON'
+                                    - 'OFF'
+        switch_strip-object:
+          type: object
+          title: Switch_Strip
+          properties:
+            runState:
+              type: object
+              description: 제품 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 현재 상태
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            switchState:
+              type: array
+              description: 스위치 상태
+              items:
+                type: object
+                properties:
+                  currentSwitch:
+                    type: string
+                    description: 개별 전원
+                    enum:
+                      - 'ON'
+                      - 'OFF'
+                  switchName:
+                    type: string
+                    description: 위치 이름
+                    enum:
+                      - SWITCH_1
+                      - SWITCH_2
+                      - SWITCH_3
+                      - SWITCH_USB
+        starlight-profile:
+          type: object
+          title: Starlight
+          properties:
+            property:
+              type: object
+              properties:
+                runState:
+                  type: object
+                  description: 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 전체 전원
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                switchState:
+                  type: object
+                  description: 상태
+                  properties:
+                    switchLaser:
+                      type: object
+                      description: 레이저 전원
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON | 레이저 전원 켜짐
+                                OFF | 레이저 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - 'ON'
+                                  - 'OFF'
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON | 레이저 전원 켜짐
+                                OFF | 레이저 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - 'ON'
+                                  - 'OFF'
+                    switchColor:
+                      type: object
+                      description: 컬러 전원
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON | 레이저 전원 켜짐
+                                OFF | 레이저 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - 'ON'
+                                  - 'OFF'
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON | 레이저 전원 켜짐
+                                OFF | 레이저 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - 'ON'
+                                  - 'OFF'
+                mode:
+                  type: object
+                  description: 모드
+                  properties:
+                    lightMode:
+                      type: object
+                      description: 조명 모드
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                WHITE | 화이트모드 (ThinQApp 없는 기능)
+                                COLOR | 컬러모드 (ThinQApp 없는 기능)
+                                SCENE | 씬모드 (ThinQApp 없는 기능)
+                              items:
+                                type: string
+                                enum:
+                                  - WHITE
+                                  - COLOR
+                                  - SCENE
+                    sceneMode:
+                      type: object
+                      description: 씬 모드
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 씬모드 설정
+                                FALSE | 씬모드 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                laserLight:
+                  type: object
+                  description: 레이저 설정
+                  properties:
+                    brightness:
+                      type: object
+                      description: 레이저 모드의 밝기 (1-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    motorSpeed:
+                      type: object
+                      description: 레이저 모터 속도(1-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                colorLight:
+                  type: object
+                  description: 컬러 설정
+                  properties:
+                    hue:
+                      type: object
+                      description: 현재 색상(0-360)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    saturation:
+                      type: object
+                      description: 현재 채도 (0-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    brightness:
+                      type: object
+                      description: 현재 밝기 (1-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+        starlight-object:
+          type: object
+          title: Starlight
+          properties:
+            runState:
+              type: object
+              description: 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 전체 전원
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            switchState:
+              type: object
+              description: 상태
+              properties:
+                switchLaser:
+                  type: string
+                  description: 레이저 전원
+                  enum:
+                    - 'ON'
+                    - 'OFF'
+                switchColor:
+                  type: string
+                  description: 컬러 전원
+                  enum:
+                    - 'ON'
+                    - 'OFF'
+            mode:
+              type: object
+              description: 모드
+              properties:
+                lightMode:
+                  type: string
+                  description: 현재 모드
+                  enum:
+                    - WHITE
+                    - COLOR
+                    - SCENE
+                sceneMode:
+                  type: boolean
+                  description: 현재 모드
+                  enum:
+                    - true
+                    - false
+            laserLight:
+              type: object
+              description: 레이저 설정
+              properties:
+                brightness:
+                  type: integer
+                  description: 현재 밝기 (1-100)
+                motorSpeed:
+                  type: object
+                  description: 현재 모터 속도(1-100)
+            colorLight:
+              type: object
+              description: 컬러 설정
+              properties:
+                hue:
+                  type: integer
+                  description: 현재 색상(0-360)
+                saturation:
+                  type: integer
+                  description: 현재 채도(0-100)
+                brightness:
+                  type: integer
+                  description: 현재 밝기(1-100)
+        doorbell-profile:
+          type: object
+          title: Doorbell
+          properties:
+            property:
+              type: object
+              properties:
+                chime:
+                  type: object
+                  description: 차임벨
+                  properties:
+                    volume:
+                      type: object
+                      description: 볼륨 (0-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                min:
+                                  type: integer
+                                max:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                min:
+                                  type: integer
+                                max:
+                                  type: integer
+                                step:
+                                  type: integer
+        doorbell-object:
+          type: object
+          title: Doorbell
+          properties:
+            chime:
+              type: object
+              description: 차임벨
+              properties:
+                volume:
+                  type: integer
+                  description: 볼륨(0-100)
+        pet_peeder-profile:
+          type: object
+          title: Pet_Peeder
+          properties:
+            property:
+              type: object
+              properties:
+                feed:
+                  type: object
+                  description: 급식
+                  properties:
+                    amount:
+                      type: object
+                      description: 급식량 (10-200)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                min:
+                                  type: integer
+                                max:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                min:
+                                  type: integer
+                                max:
+                                  type: integer
+                                step:
+                                  type: integer
+        pet_peeder-object:
+          type: object
+          title: Pet_Peeder
+          properties:
+            feed:
+              type: object
+              description: 급식
+              properties:
+                amount:
+                  type: integer
+                  description: 급식량(10-200)
+        home_camera-profile:
+          type: object
+          title: Home_Camera
+          properties:
+            property:
+              type: object
+              properties:
+                mode:
+                  type: object
+                  description: 모드
+                  properties:
+                    privateMode:
+                      type: object
+                      description: 프라이빗 모드
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON | 프라이빗 모드 켜짐
+                                OFF | 프라이빗 모드 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - 'ON'
+                                  - 'OFF'
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON | 프라이빗 모드 켜짐
+                                OFF | 프라이빗 모드 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - 'ON'
+                                  - 'OFF'
+        home_camera-object:
+          type: object
+          title: Home_Camera
+          properties:
+            mode:
+              type: object
+              description: 모드
+              properties:
+                privateMode:
+                  type: string
+                  description: 프라이빗 모드
+                  enum:
+                    - 'ON'
+                    - 'OFF'
+        sync_box-profile:
+          type: object
+          title: Plug
+          properties:
+            property:
+              type: object
+              properties:
+                runState:
+                  type: object
+                  description: 제품 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 현재 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                mode:
+                  type: object
+                  description: 모드
+                  properties:
+                    lightMode:
+                      type: object
+                      description: 현재 모드
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                COLOR | 컬러 모드
+                                MUSIC | 뮤직 모드
+                                SCENE | 씬 모드
+                                VIDEO | 비디오 모드
+                              items:
+                                type: string
+                                enum:
+                                  - COLOR
+                                  - MUSIC
+                                  - SCENE
+                                  - VIDEO
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                COLOR | 컬러 모드
+                                MUSIC | 뮤직 모드
+                              items:
+                                type: string
+                                enum:
+                                  - COLOR
+                                  - MUSIC
+                    musicMode:
+                      type: object
+                      description: 음악 모드
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ROCK | 락 모드
+                                JAZZ | 재즈 모드
+                                CLASSIC | 클래식 모드
+                                NONE | NONE
+                              items:
+                                type: string
+                                enum:
+                                  - ROCK
+                                  - JAZZ
+                                  - CLASSIC
+                                  - NONE
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ROCK | 락 모드
+                                JAZZ | 재즈 모드
+                                CLASSIC | 클래식 모드
+                                NONE | NONE
+                              items:
+                                type: string
+                                enum:
+                                  - ROCK
+                                  - JAZZ
+                                  - CLASSIC
+                                  - NONE
+                colorLight:
+                  type: object
+                  description: 컬러 설정
+                  properties:
+                    hue:
+                      type: object
+                      description: 현재 색상(0-360)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    saturation:
+                      type: object
+                      description: 현재 채도 (0-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    brightness:
+                      type: object
+                      description: 현재 밝기 (1-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                video:
+                  type: object
+                  description: 영상 설정
+                  properties:
+                    videoScene:
+                      type: object
+                      description: 영상 모드
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                MOVIE | 영화 모드
+                                GAME | 게임 모드
+                              items:
+                                type: string
+                                enum:
+                                  - MOVIE
+                                  - GAME
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                MOVIE | 영화 모드
+                                GAME | 게임 모드
+                              items:
+                                type: string
+                                enum:
+                                  - MOVIE
+                                  - GAME
+                    intensity:
+                      type: object
+                      description: 영상 감도
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                LOW | 저화질
+                                MIDDLE | 일반화질
+                                HIGH | 고화질
+                                MUSIC | 음악 감상 모드
+                              items:
+                                type: string
+                                enum:
+                                  - LOW
+                                  - MIDDLE
+                                  - HIGH
+                                  - MUSIC
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                LOW | 저화질
+                                MIDDLE | 일반화질
+                                HIGH | 고화질
+                                MUSIC | 음악 감상 모드
+                              items:
+                                type: string
+                                enum:
+                                  - LOW
+                                  - MIDDLE
+                                  - HIGH
+                                  - MUSIC
+                    colorMode:
+                      type: object
+                      description: 영상 컬러 모드
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: null
+                              items:
+                                type: string
+                                enum:
+                                  - MULTIPLE
+                                  - SINGLE
+                                  - STOP
+                            w:
+                              type: array
+                              description: null
+                              items:
+                                type: string
+                                enum:
+                                  - MULTIPLE
+                                  - SINGLE
+                                  - STOP
+                input:
+                  type: object
+                  description: 입력
+                  properties:
+                    hdmiSwitch:
+                      type: object
+                      description: HDMI 선택(1-3)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                layout:
+                  type: object
+                  description: 설치 형태
+                  properties:
+                    lightPosition:
+                      type: object
+                      description: 설치 위치
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                LOW_LEFT | 왼쪽
+                                LOW_RIGHT | 오른쪽
+                              items:
+                                type: string
+                                enum:
+                                  - LOW_LEFT
+                                  - LOW_RIGHT
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                LOW_LEFT | 왼쪽 
+                                LOW_RIGHT | 오른쪽
+                              items:
+                                type: string
+                                enum:
+                                  - LOW_LEFT
+                                  - LOW_RIGHT
+                    lightDirection:
+                      type: object
+                      description: 설치 방향
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                CLOCKWISE | 시계방향
+                                COUNTERCLOCKWISE | 반시계방향
+                              items:
+                                type: string CLOCKWISE |
+                                enum:
+                                  - CLOCKWISE
+                                  - COUNTERCLOCKWISE
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                CLOCKWISE | 시계방향
+                                COUNTERCLOCKWISE | 반시계방향
+                              items:
+                                type: string
+                                enum:
+                                  - CLOCKWISE
+                                  - COUNTERCLOCKWISE
+        sync_box-object:
+          type: object
+          title: Plug
+          properties:
+            runState:
+              type: object
+              description: 제품 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 현재 상태
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            mode:
+              type: object
+              description: 모드
+              properties:
+                lightMode:
+                  type: string
+                  description: 현재 모드
+                  enum:
+                    - COLOR
+                    - MUSIC
+                    - SCENE
+                    - VIDEO
+                musicMode:
+                  type: string
+                  description: 음악 모드
+                  enum:
+                    - ROCK
+                    - JAZZ
+                    - CLASSIC
+                    - NONE
+            colorLight:
+              type: object
+              description: 컬러 설정
+              properties:
+                hue:
+                  type: number
+                  description: 현재 색상(0-360)
+                saturation:
+                  type: number
+                  description: 현재 채도(0-100)
+                brightness:
+                  type: number
+                  description: 현재 밝기(1-100)
+            video:
+              type: object
+              description: 영상 설정
+              properties:
+                videoScene:
+                  type: string
+                  description: 영상 모드
+                  enum:
+                    - MOVIE
+                    - GAME
+                intensity:
+                  type: string
+                  description: 영상 감도
+                  enum:
+                    - LOW
+                    - MIDDLE
+                    - HIGH
+                    - MUSIC
+                colorMode:
+                  type: string
+                  description: 영상 컬러 모드
+                  enum:
+                    - MULTIPLE
+                    - SINGLE
+                    - STOP
+            input:
+              type: object
+              description: 입력
+              properties:
+                hdmiSwitch:
+                  type: number
+                  description: HDMI 선택(1-3)
+            layout:
+              type: object
+              description: 설치 형태
+              properties:
+                lightPosition:
+                  type: string
+                  description: 설치 위치
+                  enum:
+                    - LOW_LEFT
+                    - LOW_RIGHT
+                lightDirection:
+                  type: string
+                  description: 설치 방향
+                  enum:
+                    - CLOCKWISE
+                    - COUNTERCLOCKWISE
+        sync_box_sub-profile:
+          type: object
+          title: Plug
+          properties:
+            property:
+              type: object
+              properties:
+                runState:
+                  type: object
+                  description: 제품 상태
+                  properties:
+                    currentState:
+                      type: object
+                      description: 현재 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                mode:
+                  type: object
+                  description: 모드
+                  properties:
+                    lightMode:
+                      type: object
+                      description: 현재 모드
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                WHITE | 화이트 모드
+                                COLOR | 컬러 모드
+                                MUSIC | 뮤직 모드
+                                SCENE | 씬 모드
+                              items:
+                                type: string
+                                enum:
+                                  - WHITE
+                                  - COLOR
+                                  - MUSIC
+                                  - SCENE
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                WHITE | 화이트 모드
+                                COLOR | 컬러 모드
+                                MUSIC | 뮤직 모드
+                              items:
+                                type: string
+                                enum:
+                                  - WHITE
+                                  - COLOR
+                                  - MUSIC
+                whiteLight:
+                  type: object
+                  description: 화이트 설정
+                  properties:
+                    brightness:
+                      type: object
+                      description: 현재 밝기(1-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    colorTemperature:
+                      type: object
+                      description: 현재 색온도 (1-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                colorLight:
+                  type: object
+                  description: 컬러 설정
+                  properties:
+                    hue:
+                      type: object
+                      description: 현재 색상(0-360)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    saturation:
+                      type: object
+                      description: 현재 채도 (0-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                    brightness:
+                      type: object
+                      description: 현재 밝기 (1-100)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+        sync_box_sub-object:
+          type: object
+          title: Plug
+          properties:
+            runState:
+              type: object
+              description: 제품 상태
+              properties:
+                currentState:
+                  type: string
+                  description: 현재 상태
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            mode:
+              type: object
+              description: 모드
+              properties:
+                lightMode:
+                  type: string
+                  description: 현재 모드
+                  enum:
+                    - WHITE
+                    - COLOR
+                    - MUSIC
+                    - SCENE
+            whiteLight:
+              type: object
+              description: 화이트 설정
+              properties:
+                brightness:
+                  type: number
+                  description: 현재 밝기(1-100)
+                colorTemperature:
+                  type: number
+                  description: 현재 색온도(1-100)
+            colorLight:
+              type: object
+              description: 컬러 설정
+              properties:
+                hue:
+                  type: number
+                  description: 현재 색상(0-360)
+                saturation:
+                  type: number
+                  description: 현재 채도(0-100)
+                brightness:
+                  type: number
+                  description: 현재 밝기(1-100)
+        gas_sensor-profile:
+          type: object
+          title: Gas_Sensor
+          properties:
+            property:
+              type: object
+              properties:
+                detectState:
+                  type: object
+                  description: 감지 상태
+                  properties:
+                    gasState:
+                      type: object
+                      description: 가스 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ALARM | 경보
+                                NORMAL | 정상
+                              items:
+                                type: string
+                                enum:
+                                  - ALARM
+                                  - NORMAL
+        gas_sensor-object:
+          type: object
+          title: Gas_Sensor
+          properties:
+            detectState:
+              type: object
+              description: 감지 상태
+              properties:
+                gasState:
+                  type: string
+                  description: 가스 상태
+                  enum:
+                    - ALARM
+                    - NORMAL
+        fire_sensor-profile:
+          type: object
+          title: Fire_Sensor
+          properties:
+            property:
+              type: object
+              properties:
+                detectState:
+                  type: object
+                  description: 감지 상태
+                  properties:
+                    smokeState:
+                      type: object
+                      description: 화재 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ALARM | 경보
+                                NORMAL | 정상
+                              items:
+                                type: string
+                                enum:
+                                  - ALARM
+                                  - NORMAL
+                    coverState:
+                      type: object
+                      description: 센터 덮개 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                OPEN | 덮개 열림
+                                CLOSE | 덮개 닫힘
+                              items:
+                                type: string
+                                enum:
+                                  - OPEN
+                                  - CLOSE
+                battery:
+                  type: object
+                  description: 배터리
+                  properties:
+                    percent:
+                      type: object
+                      description: 배터리 잔량(0-100)%
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+        fire_sensor-object:
+          type: object
+          title: Fire_Sensor
+          properties:
+            detectState:
+              type: object
+              description: 감지 상태
+              properties:
+                smokeState:
+                  type: string
+                  description: 가스 상태
+                  enum:
+                    - ALARM
+                    - NORMAL
+                coverState:
+                  type: string
+                  description: 센서 덮개 상태
+                  enum:
+                    - OPEN
+                    - CLOSE
+            battery:
+              type: object
+              description: 배터리
+              properties:
+                percent:
+                  type: number
+                  description: 배터리 잔량(0-100)%
+        water_leak_sensor-profile:
+          type: object
+          title: Water_Sensor
+          properties:
+            property:
+              type: object
+              properties:
+                detectState:
+                  type: object
+                  description: 감지 상태
+                  properties:
+                    leakState:
+                      type: object
+                      description: 누수 상태
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ALARM | 경보
+                                NORMAL | 정상
+                              items:
+                                type: string
+                                enum:
+                                  - ALARM
+                                  - NORMAL
+                battery:
+                  type: object
+                  description: 배터리
+                  properties:
+                    percent:
+                      type: object
+                      description: 배터리 잔량(0-100)%
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+        water_leak_sensor-object:
+          type: object
+          title: Water_Sensor
+          properties:
+            detectState:
+              type: object
+              description: 감지 상태
+              properties:
+                leakState:
+                  type: string
+                  description: 누수 상태
+                  enum:
+                    - ALARM
+                    - NORMAL
+            battery:
+              type: object
+              description: 배터리
+              properties:
+                percent:
+                  type: number
+                  description: 배터리 잔량(0-100)%
+        thermo_hygrometer-profile:
+          type: object
+          title: Thermo_Hygrometer
+          properties:
+            property:
+              type: object
+              properties:
+                temperature:
+                  type: object
+                  description: 온도
+                  properties:
+                    currentTemperature:
+                      type: object
+                      description: 현재 온도(C)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - number
+                humidity:
+                  type: object
+                  description: 습도
+                  properties:
+                    currentHumidity:
+                      type: object
+                      description: 현재 습도
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                battery:
+                  type: object
+                  description: 배터리
+                  properties:
+                    percent:
+                      type: object
+                      description: 배터리 잔량(0-100)%
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+        thermo_hygrometer-object:
+          type: object
+          title: Thermo_Hygrometer
+          properties:
+            temperature:
+              type: object
+              description: 온도
+              properties:
+                currentTemperature:
+                  type: number
+                  description: 현재 온도(C)
+            humidity:
+              type: object
+              description: 습도
+              properties:
+                currentHumidity:
+                  type: number
+                  description: 현재 습도(0-100)%
+            battery:
+              type: object
+              description: 배터리
+              properties:
+                percent:
+                  type: number
+                  description: 배터리 잔량(0-100)%
+        siren-profile:
+          type: object
+          title: Siren
+          properties:
+            property:
+              type: object
+              properties:
+                switchState:
+                  type: object
+                  description: 상태
+                  properties:
+                    currentSwitch:
+                      type: object
+                      description: 전체 전원
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON | 알람 켜짐
+                                OFF | 알람 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - 'ON'
+                                  - 'OFF'
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON | 알람 켜짐
+                                OFF | 알람 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - 'ON'
+                                  - 'OFF'
+                alarm:
+                  type: object
+                  description: 알람 설정
+                  properties:
+                    volume:
+                      type: object
+                      description: 알람 소리 크기
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                MUTE | 음소거
+                                LOW | 저음
+                                MID | 일반
+                                HIGH | 고음
+                              items:
+                                type: string
+                                enum:
+                                  - MUTE
+                                  - LOW
+                                  - MID
+                                  - HIGH
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                MUTE | 음소거
+                                LOW | 저음
+                                MID | 일반
+                                HIGH | 고음
+                              items:
+                                type: string
+                                enum:
+                                  - MUTE
+                                  - LOW
+                                  - MID
+                                  - HIGH
+                    time:
+                      type: object
+                      description: 알람 지속 시간(1-3600)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+                            w:
+                              type: object
+                              properties:
+                                max:
+                                  type: integer
+                                min:
+                                  type: integer
+                                step:
+                                  type: integer
+        siren-object:
+          type: object
+          title: Siren
+          properties:
+            switchState:
+              type: object
+              description: 상태
+              properties:
+                currentSwitch:
+                  type: string
+                  description: 전체 전원
+                  enum:
+                    - 'ON'
+                    - 'OFF'
+            alarm:
+              type: object
+              description: 알람 설정
+              properties:
+                volume:
+                  type: string
+                  description: 알람 소리 크기
+                  enum:
+                    - MUTE
+                    - LOW
+                    - MEDIUM
+                    - HIGH
+                time:
+                  type: number
+                  description: 알람 지속 시간(1-3600)
       examples:
         refrigerator-profile-example:
           value:
@@ -20135,13 +25953,6 @@ contents:
                 - SCHEDULED_CLEANING_STARTS
                 - NEED_TO_CHECK_LOCATION
                 - CLEANING_IS_FAILED
-            push:
-              - MOTION_IS_DETECTED
-              - HOMEGUARD_IS_STOPPED
-              - CLEANING_IS_COMPLETED
-              - SCHEDULED_CLEANING_STARTS
-              - NEED_TO_CHECK_LOCATION
-              - CLEANING_IS_FAILED
             error:
               - RIGHT_WHEEL_ERROR
               - MOVE_ERROR
@@ -23336,6 +29147,1573 @@ contents:
           value:
             power:
               screen: SCREEN_ON
+        motion_sensor-profile-example:
+          value:
+            property:
+              battery:
+                percent:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+        motion_sensor-object-example:
+          value:
+            battery:
+              percent: 10
+        temperature_humidity_sensor-profile-example:
+          value:
+            property:
+              battery:
+                percent:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+              temperature:
+                currentTemperature:
+                  mode:
+                    - r
+                  type: number
+              humidity:
+                currentHumidity:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+        temperature_humidity_sensor-object-example:
+          value:
+            battery:
+              percent: 10
+            temperature:
+              currentTemperature: '19'
+            humidity:
+              currentHumidity: '60'
+        door_sensor-profile-example:
+          value:
+            property:
+              battery:
+                percent:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+              doorState:
+                currentState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - OPEN
+                      - CLOSE
+        door_sensor-object-example:
+          value:
+            battery:
+              percent: 10
+            doorState:
+              currentState: OPEN
+        button-profile-example:
+          value:
+            property:
+              battery:
+                percent:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+        button-object-example:
+          value:
+            battery:
+              percent: 10
+        light_switch-profile-example:
+          value:
+            property:
+              switchState:
+                - currentSwitch:
+                    mode:
+                      - r
+                      - w
+                    type: enum
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+                - switchName:
+                    mode:
+                      - r
+                    type: enum
+                    value:
+                      r:
+                        - SWITCH_1
+                        - SWITCH_2
+                        - SWITCH_3
+        light_switch-object-example:
+          value:
+            switchState:
+              - currentSwitch: 'ON'
+              - switchName: SWITCH_1
+        light_switch-command-example:
+          value:
+            switchState:
+              - currentSwitch: 'OFF'
+        door_lock-profile-example:
+          value:
+            property:
+              battery:
+                percent:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+              doorState:
+                currentState:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - OPEN
+                      - CLOSE
+                    w:
+                      - OPEN
+        door_lock-object-example:
+          value:
+            battery:
+              percent: 10
+            doorState:
+              currentState: OPEN
+        door_lock-command-example:
+          value:
+            doorState:
+              currentState: OPEN
+        push_pull_door_lock-profile-example:
+          value:
+            property:
+              battery:
+                percent:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+              doorState:
+                currentState:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - OPEN
+                      - CLOSE
+                    w:
+                      - OPEN
+        push_pull_door_lock-object-example:
+          value:
+            battery:
+              percent: 10
+            doorState:
+              currentState: OPEN
+        push_pull_door_lock-command-example:
+          value:
+            doorState:
+              currentState: OPEN
+        plug-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              electricity:
+                current:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                currentUnit:
+                  type: string
+                  mode:
+                    - r
+                voltage:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                voltageUnit:
+                  type: string
+                  mode:
+                    - r
+                power:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                powerUnit:
+                  type: string
+                  mode:
+                    - r
+        plug-object-example:
+          value:
+            runState:
+              currentState: POWER_ON
+            electricity:
+              current: 1000
+              currentUnit: mA
+              voltage: 210
+              voltageUnit: V
+              power: 0
+              powerUnit: W
+        plug-command-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+        plug_mini-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              electricity:
+                current:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                currentUnit:
+                  type: string
+                  mode:
+                    - r
+                voltage:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                voltageUnit:
+                  type: string
+                  mode:
+                    - r
+                power:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                powerUnit:
+                  type: string
+                  mode:
+                    - r
+              switchState:
+                currentSwitch:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                      - LAST
+                    w:
+                      - 'ON'
+                      - 'OFF'
+                      - LAST
+                indicateLight:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - ON_RELAY
+                      - ON_POS
+                      - 'OFF'
+                    w:
+                      - ON_RELAY
+                      - ON_POS
+                      - 'OFF'
+                kidLock:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - LOCK
+                      - UNLOCK
+                    w:
+                      - LOCK
+                      - UNLOCK
+        plug_mini-object-example:
+          value:
+            runState:
+              currentState: POWER_ON
+            electricity:
+              current: 0
+              currentUnit: mA
+              voltage: 216.1
+              voltageUnit: V
+              power: 0
+              powerUnit: W
+            switchState:
+              currentSwitch: LAST
+              indicateLight: ON_RELAY
+              kidLock: UNLOCK
+        plug_mini-command-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+        bulb_white-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              whiteLight:
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+                colorTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 6500
+                      min: 3000
+                      step: 1
+                    w:
+                      max: 6500
+                      min: 3000
+                      step: 1
+        bulb_white-object-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+            whiteLight:
+              brightness: 7
+              colorTemperature: 4500
+        bulb_white-command-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+        bulb_color-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              mode:
+                lightMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - WHITE
+                      - COLOR
+                      - SCENE
+                    w:
+                      - WHITE
+                      - COLOR
+              whiteLight:
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+              colorLight:
+                hue:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 360
+                      min: 0
+                      step: 1
+                    w:
+                      max: 360
+                      min: 0
+                      step: 1
+                saturation:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+        bulb_color-object-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+            mode:
+              lightMode: COLOR
+            whiteLight:
+              brightness: 7
+            colorLight:
+              hue: 0
+              saturation: 100
+              brightness: 100
+        bulb_color-command-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+        line_led-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              mode:
+                lightMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - WHITE
+                      - COLOR
+                      - SCENE
+                    w:
+                      - WHITE
+                      - COLOR
+              whiteLight:
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+              colorLight:
+                hue:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 360
+                      min: 0
+                      step: 1
+                    w:
+                      max: 360
+                      min: 0
+                      step: 1
+                saturation:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+        line_led-object-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+            mode:
+              lightMode: COLOR
+            whiteLight:
+              brightness: 7
+            colorLight:
+              hue: 0
+              saturation: 100
+              brightness: 100
+        line_led-command-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+        curtain_ctrl-profile-example:
+          value:
+            property:
+              openCloseState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - OPEN
+                      - CLOSE
+                    w:
+                      - OPEN
+                      - CLOSE
+                      - STOP
+                level:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+              calibration:
+                railCalibration:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - ACTIVATE
+                      - DEACTIVATE
+                    w:
+                      - ACTIVATE
+                      - DEACTIVATE
+              motor:
+                motorDirection:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - FORWARD
+                      - BACKWARD
+                    w:
+                      - FORWARD
+                      - BACKWARD
+        curtain_ctrl-object-example:
+          value:
+            openCloseState:
+              currentState: CLOSE
+              level: 0
+            calibration:
+              railCalibration: DEACTIVATE
+            motor:
+              motorDirection: FORWARD
+        curtain_ctrl-command-example:
+          value:
+            openCloseState:
+              currentState: OPEN
+        blind_motor-profile-example:
+          value:
+            property:
+              openCloseState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - OPEN
+                      - CLOSE
+                      - STOP
+                    w:
+                      - OPEN
+                      - CLOSE
+                      - STOP
+                level:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+              operation:
+                operationMode:
+                  type: enum
+                  mode:
+                    - w
+                  value:
+                    w:
+                      - OPEN
+                      - CLOSE
+                      - STOP
+              motor:
+                motorDirection:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - FORWARD
+                      - BACKWARD
+                    w:
+                      - FORWARD
+                      - BACKWARD
+        blind_motor-object-example:
+          value:
+            openCloseState:
+              currentState: STOP
+              level: 0
+            motor:
+              motorDirection: BACKWARD
+        blind_motor-command-example:
+          value:
+            operation:
+              operationMode: CLOSE
+        switch_strip-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              switchState:
+                - switchName: SWITCH_1
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+                - switchName: SWITCH_2
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+                - switchName: SWITCH_3
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+                - switchName: SWITCH_USB
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+        switch_strip-object-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+            switchState:
+              - switchName: SWITCH_1
+                currentSwitch: 'ON'
+              - switchName: SWITCH_2
+                currentSwitch: 'OFF'
+              - switchName: SWITCH_3
+                currentSwitch: 'ON'
+              - switchName: SWITCH_USB
+                currentSwitch: 'ON'
+        switch_strip-command-example:
+          value:
+            runState:
+              currentState: POWER_ON
+        starlight-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              switchState:
+                switchLaser:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+                switchColor:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+              mode:
+                lightMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - WHITE
+                      - COLOR
+                      - SCENE
+                sceneMode:
+                  type: boolean
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - true
+                      - false
+              laserLight:
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+                motorSpeed:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+              colorLight:
+                hue:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 360
+                      min: 0
+                      step: 1
+                    w:
+                      max: 360
+                      min: 0
+                      step: 1
+                saturation:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+        starlight-object-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+            switchState:
+              switchLaser: 'OFF'
+              switchColor: 'OFF'
+            mode:
+              lightMode: COLOR
+              sceneMode: false
+            laserLight:
+              brightness: 70
+              motorSpeed: 100
+            colorLight:
+              hue: 360
+              saturation: 50
+              brightness: 100
+        starlight-command-example:
+          value:
+            runState:
+              currentState: POWER_ON
+        doorbell-profile-example:
+          value:
+            property:
+              chime:
+                volume:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+        doorbell-object-example:
+          value:
+            chime:
+              volume: 5
+        doorbell-command-example:
+          value:
+            chime:
+              volume: 0
+        pet_peeder-profile-example:
+          value:
+            property:
+              feed:
+                amount:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 200
+                      min: 10
+                      step: 10
+                    w:
+                      max: 200
+                      min: 10
+                      step: 10
+        pet_peeder-object-example:
+          value:
+            feed:
+              amount: 50
+        pet_peeder-command-example:
+          value:
+            feed:
+              amount: 30
+        home_camera-profile-example:
+          value:
+            property:
+              mode:
+                privateMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+        home_camera-object-example:
+          value:
+            mode:
+              privateMode: 'ON'
+        home_camera-command-example:
+          value:
+            mode:
+              privateMode: 'ON'
+        sync_box-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              mode:
+                lightMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - COLOR
+                      - MUSIC
+                      - SCENE
+                      - VIDEO
+                    w:
+                      - COLOR
+                      - MUSIC
+                musicMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - ROCK
+                      - JAZZ
+                      - CLASSIC
+                      - NONE
+                    w:
+                      - ROCK
+                      - JAZZ
+                      - CLASSIC
+                      - NONE
+              colorLight:
+                hue:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 360
+                      min: 0
+                      step: 1
+                    w:
+                      max: 360
+                      min: 0
+                      step: 1
+                saturation:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+              video:
+                videoScene:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - MOVIE
+                      - GAME
+                    w:
+                      - MOVIE
+                      - GAME
+                intensity:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - LOW
+                      - MIDDLE
+                      - HIGH
+                      - MUSIC
+                    w:
+                      - LOW
+                      - MIDDLE
+                      - HIGH
+                      - MUSIC
+                colorMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - MULTIPLE
+                      - SINGLE
+                      - STOP
+                    w:
+                      - MULTIPLE
+                      - SINGLE
+                      - STOP
+              input:
+                hdmiSwitch:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 3
+                      min: 1
+                      step: 1
+                    w:
+                      max: 3
+                      min: 1
+                      step: 1
+              layout:
+                lightPosition:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - LOW_LEFT
+                      - LOW_RIGHT
+                    w:
+                      - LOW_LEFT
+                      - LOW_RIGHT
+                lightDirection:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - CLOCKWISE
+                      - COUNTERCLOCKWISE
+                    w:
+                      - CLOCKWISE
+                      - COUNTERCLOCKWISE
+        sync_box-object-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+            mode:
+              lightMode: MUSIC
+              musicMode: JAZZ
+            colorLight:
+              hue: 0
+              saturation: 100
+              brightness: 100
+            video:
+              videoScene: MOVIE
+              intensity: HIGH
+              colorMode: STOP
+            input:
+              hdmiSwitch: 1
+            layout:
+              lightPosition: LOW_RIGHT
+              lightDirection: CLOCKWISE
+        sync_box-command-example:
+          value:
+            colorLight:
+              hue: 320
+              saturation: 30
+              brightness: 80
+        sync_box_sub-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              mode:
+                lightMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - WHITE
+                      - COLOR
+                      - MUSIC
+                      - SCENE
+                    w:
+                      - WHITE
+                      - COLOR
+                      - MUSIC
+              whiteLight:
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+                colorTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+              colorLight:
+                hue:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 360
+                      min: 0
+                      step: 1
+                    w:
+                      max: 360
+                      min: 0
+                      step: 1
+                saturation:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+        sync_box_sub-object-example:
+          value:
+            runState:
+              currentState: POWER_ON
+            mode:
+              lightMode: COLOR
+            whiteLight:
+              brightness: 48
+              colorTemperature: 30
+            colorLight:
+              hue: 0
+              saturation: 100
+              brightness: 100
+        sync_box_sub-command-example:
+          value:
+            mode:
+              lightMode: COLOR
+        gas_sensor-profile-example:
+          value:
+            property:
+              detectState:
+                gasState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - ALARM
+                      - NORMAL
+        gas_sensor-object-example:
+          value:
+            detectState:
+              gasState: ALARM
+        fire_sensor-profile-example:
+          value:
+            property:
+              detectState:
+                smokeState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - ALARM
+                      - NORMAL
+                coverState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - OPEN
+                      - CLOSE
+              battery:
+                percent:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+        fire_sensor-object-example:
+          value:
+            detectState:
+              smokeState: NORMAL
+              coverState: OPEN
+            battery:
+              percent: 57
+        water_leak_sensor-profile-example:
+          value:
+            property:
+              detectState:
+                leakState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - ALARM
+                      - NORMAL
+              battery:
+                percent:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+        water_leak_sensor-object-example:
+          value:
+            detectState:
+              leakState: ALARM
+            battery:
+              percent: 57
+        thermo_hygrometer-profile-example:
+          value:
+            property:
+              temperature:
+                currentTemperature:
+                  type: number
+                  mode:
+                    - r
+              humidity:
+                currentHumidity:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+              battery:
+                percent:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+        thermo_hygrometer-object-example:
+          value:
+            temperature:
+              currentTemperature: 24
+            humidity:
+              currentHumidity: 50
+            battery:
+              percent: 57
+        siren-profile-example:
+          value:
+            property:
+              switchState:
+                currentSwitch:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+              alarm:
+                volume:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - MUTE
+                      - LOW
+                      - MID
+                      - HIGH
+                    w:
+                      - MUTE
+                      - LOW
+                      - MID
+                      - HIGH
+                time:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 3600
+                      min: 1
+                      step: 1
+                    w:
+                      max: 3600
+                      min: 1
+                      step: 1
+        siren-object-example:
+          value:
+            switchState:
+              currentSwitch: 'OFF'
+            alarm:
+              volume: MUTE
+              time: 0
+        siren-command-example:
+          value:
+            switchState:
+              currentSwitch: 'ON'
     x-tagGroups:
       - name: Get Started
         tags:
@@ -23379,4 +30757,32 @@ contents:
       - name: LG Business Cloud
         tags:
           - signage
+      - name: Hejhome
+        tags:
+          - hej_motion_sensor
+          - hej_temperature_humidity_sensor
+          - hej_door_sensor
+          - hej_button
+          - hej_light_switch
+          - hej_door_lock
+          - hej_push_pull_door_lock
+          - hej_plug
+          - hej_plug_mini
+          - hej_bulb_white
+          - hej_bulb_color
+          - hej_line_led
+          - hej_curtain_ctrl
+          - hej_blind_motor
+          - hej_switch_strip
+          - hej_starlight
+          - hej_doorbell
+          - hej_pet_peeder
+          - hej_home_camera
+          - hej_sync_box
+          - hej_sync_box_sub
+          - hej_gas_sensor
+          - hej_fire_sensor
+          - hej_water_leak_sensor
+          - hej_thermo_hygrometer
+          - hej_siren
 ---
