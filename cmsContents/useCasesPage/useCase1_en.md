@@ -215,7 +215,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">가습기</p>
+  \    <p className="usecase-pick__txt">Humidifier</p>
 
 
   \    </li>
@@ -248,7 +248,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">공기질센서</p>
+  \    <p className="usecase-pick__txt">Air Quality Sensor</p>
 
 
   \    </li>
@@ -281,7 +281,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">도어센서</p>
+  \    <p className="usecase-pick__txt">Door Sensor</p>
 
 
   \    </li>
@@ -314,7 +314,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">스마트조명</p>
+  \    <p className="usecase-pick__txt">Smart Light Bulb</p>
 
 
   \    </li>
@@ -347,7 +347,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">모션센서</p>
+  \    <p className="usecase-pick__txt">Motion Sensor</p>
 
 
   \    </li>
@@ -380,7 +380,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">시스템에어컨</p>
+  \    <p className="usecase-pick__txt">System Air Conditioner</p>
 
 
   \    </li>
@@ -413,7 +413,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">온습도센서</p>
+  \    <p className="usecase-pick__txt">Temperature and Humidity sensor</p>
 
 
   \    </li>
@@ -446,7 +446,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">공기청정기</p>
+  \    <p className="usecase-pick__txt">Air Purifier</p>
 
 
   \    </li>
@@ -479,7 +479,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">시스템 보일러</p>
+  \    <p className="usecase-pick__txt">System Boiler</p>
 
 
   \    </li>
@@ -512,7 +512,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">실링팬</p>
+  \    <p className="usecase-pick__txt">Ceiling Fan</p>
 
 
   \    </li>
@@ -545,7 +545,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">재실센서</p>
+  \    <p className="usecase-pick__txt">Occupancy Sensor</p>
 
 
   \    </li>
@@ -578,7 +578,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">조명스위치</p>
+  \    <p className="usecase-pick__txt">Light Switch</p>
 
 
   \    </li>
@@ -611,7 +611,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">화재감지 센서</p>
+  \    <p className="usecase-pick__txt">Fire Detection Sensor</p>
 
 
   \    </li>
@@ -644,7 +644,7 @@ contents: >-2
   \    </figure>
 
 
-  \    <p className="usecase-pick__txt">에어컨</p>
+  \    <p className="usecase-pick__txt">Air Conditioner</p>
 
 
   \    </li>
@@ -686,7 +686,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <img src="/assets/images/usecase_icons/product/icon_air_temp_humid.svg" />공기질/온습도 센서
+  \    <img src="/assets/images/usecase_icons/product/icon_air_temp_humid.svg" />Air Quality/Temperature and Humidity sensor
 
 
   \    </div>
@@ -743,7 +743,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <img src="/assets/images/usecase_icons/product/icon_ac.svg" />에어컨
+  \    <img src="/assets/images/usecase_icons/product/icon_ac.svg" />Air Conditioner
 
 
   \    </div>
@@ -815,7 +815,7 @@ contents: >-2
   \    <div className="col-4 col-sm-full">
 
 
-  \    <img src="/assets/images/usecase_icons/product/icon_air_purifier.svg" />공기청정기
+  \    <img src="/assets/images/usecase_icons/product/icon_air_purifier.svg" />Air Purifier
 
 
   \    </div>
