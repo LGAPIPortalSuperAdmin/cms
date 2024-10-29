@@ -24,24 +24,24 @@ contents:
             7. 새로 생성된 토큰을 복사해서 사용합니다.
       - name: Device API
         description: |
-          ThinQ 기기 정보를 요청하고 제어하기 위한 API입니다.
+          ThinQ 디바이스 정보를 요청하고 제어하기 위한 API입니다.
       - name: Push API
         description: |
-          ThinQ 기기에서 발생하는 푸쉬 메시지를 구독/해제하기 위한 API입니다.
+          ThinQ 디바이스에서 발생하는 푸시 메시지를 구독/해제하기 위한 API입니다.
       - name: Event API
         description: |
-          ThinQ 기기에서 발생한 상태 변경에 대한 이벤트 메시지를 구독/해제하기 위한 API입니다.
+          ThinQ 디바이스에서 발생한 상태 변경에 대한 이벤트 메시지를 구독/해제하기 위한 API입니다.
       - name: Client API
         description: |
-          ThinQ 기기에서 전달하는 메시지를 받기 위한 사용자 기기 인증서 발급/등록을 위한 API입니다.  
+          ThinQ 디바이스에서 전달하는 메시지를 받기 위한 사용자 디바이스 인증서 발급/등록을 위한 API입니다.  
     paths:
       /devices:
         get:
           tags:
             - Device API
-          summary: 기기 목록 조회
+          summary: 디바이스 목록 조회
           description: |
-            ThinQ Platform에 등록한 기기 목록을 얻어오기 위한 API입니다. 다른 API를 사용하기 전에 반드시 한 번은 호출되어야 합니다.  해당 API가 응답한 디바이스 목록에는 디바이스를 식별할 수 있는 device-id가 포함되어 있으며, 이 값으로 대상 디바이스를 지정하여 다른 기기 API를 호출할 수 있습니다.  따라서 이 API는 반드시 최초 1번은 호출되어야 하며, 디바이스 목록을 확인 후에는 매번 호출할 필요 없습니다.
+            ThinQ Platform에 등록한 디바이스 목록을 얻어오기 위한 API입니다. 다른 API를 사용하기 전에 반드시 한 번은 호출되어야 합니다.  해당 API가 응답한 디바이스 목록에는 디바이스를 식별할 수 있는 device-id가 포함되어 있으며, 이 값으로 대상 디바이스를 지정하여 다른 디바이스 API를 호출할 수 있습니다.  따라서 이 API는 반드시 최초 1번은 호출되어야 하며, 디바이스 목록을 확인 후에는 매번 호출할 필요 없습니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -68,8 +68,8 @@ contents:
         get:
           tags:
             - Device API
-          summary: 기기 프로파일 조회
-          description: 기기 프로파일을 조회하기 위한 API입니다. > 기기 프로파일은 LG 가전의 속성을 기술한 정보로, LG ThinQ 플랫폼이 사용하는 기기 데이터입니다.
+          summary: 디바이스 프로파일 조회
+          description: 디바이스 프로파일을 조회하기 위한 API입니다. > 디바이스 프로파일은 LG 가전의 속성을 기술한 정보로, LG ThinQ 플랫폼이 사용하는 디바이스 데이터입니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -155,8 +155,8 @@ contents:
         get:
           tags:
             - Device API
-          summary: 기기 상태 조회
-          description: 기기 현재 상태를 조회하기 위한 API입니다. 지정한 device-id의 현재 상태를 얻어올 수 있습니다.
+          summary: 디바이스 상태 조회
+          description: 디바이스 현재 상태를 조회하기 위한 API입니다. 지정한 device-id의 현재 상태를 얻어올 수 있습니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -242,8 +242,8 @@ contents:
         post:
           tags:
             - Device API
-          summary: 기기 제어
-          description: 기기를 제어하기 위한 API입니다. 지정한 device-id에 제어 명령을 보낼 수 있습니다.
+          summary: 디바이스 제어
+          description: 디바이스를 제어하기 위한 API입니다. 지정한 device-id에 제어 명령을 보낼 수 있습니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -327,8 +327,8 @@ contents:
         get:
           tags:
             - Push API
-          summary: 기기 푸쉬 구독 목록 조회
-          description: 사용자가 기기 푸쉬 알림을 구독 중인 기기 목록을 조회
+          summary: 디바이스 푸시 구독 목록 조회
+          description: 사용자가 디바이스 푸시 알림을 설정한 디바이스 목록을 조회합니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -355,8 +355,8 @@ contents:
         post:
           tags:
             - Push API
-          summary: 기기 푸쉬 구독
-          description: 디바이스로부터 발생하는 푸쉬 알림을 받기 위한 구독 요청
+          summary: 디바이스 푸시 구독
+          description: 디바이스로부터 발생하는 푸시 알림을 설정합니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -383,8 +383,8 @@ contents:
         delete:
           tags:
             - Push API
-          summary: 기기 푸쉬 해제
-          description: 디바이스로부터 발생하는 푸쉬 알림 요청을 해제하기 위한 요청
+          summary: 디바이스 푸시 해제
+          description: 디바이스로부터 발생하는 푸시 알림을 해제합니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -411,8 +411,8 @@ contents:
         get:
           tags:
             - Push API
-          summary: 기기 추가/삭제 알림 구독 클라이언트 목록 조회
-          description: 사용자가 기기 추가/삭제/변경 구독을 요청한 client 목록 조회
+          summary: 디바이스 추가/삭제 알림 구독 클라이언트 목록 조회
+          description: 사용자가 디바이스 추가/삭제/변경 구독을 요청한 client 목록 조회
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -438,8 +438,8 @@ contents:
         post:
           tags:
             - Push API
-          summary: 기기 추가/삭제 알림 클라이언트 구독
-          description: 기기 추가/삭제/변경 구독을 받기 위해 client 등록 요청
+          summary: 디바이스 추가/삭제 알림 클라이언트 구독
+          description: 디바이스 추가/삭제/변경 구독을 받기 위해 client 등록 요청
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -465,8 +465,8 @@ contents:
         delete:
           tags:
             - Push API
-          summary: 기기 추가/삭제 알림 클라이언트 해제
-          description: 기기 추가/삭제/변경 구독을 받기 위해 client 등록 요청
+          summary: 디바이스 추가/삭제 알림 클라이언트 해제
+          description: 디바이스 추가/삭제/변경 구독을 받기 위해 client 등록 요청
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -493,8 +493,8 @@ contents:
         get:
           tags:
             - Event API
-          summary: 기기 이벤트 구독 목록 조회
-          description: 사용자가 기기 상태 알림을 구독 중인 기기 목록을 조회
+          summary: 디바이스 이벤트 구독 목록 조회
+          description: 디바이스 상태 변경 알림을 설정한 디바이스 목록을 조회합니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -521,8 +521,8 @@ contents:
         post:
           tags:
             - Event API
-          summary: 기기 이벤트 구독
-          description: 디바이스로부터 발생하는 상태 변경 알림을 받기 위한 구독 요청
+          summary: 디바이스 이벤트 구독
+          description: 디바이스로부터 발생하는 상태 변경 알림을 설정합니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -555,8 +555,8 @@ contents:
         delete:
           tags:
             - Event API
-          summary: 기기 이벤트 구독 해제
-          description: 디바이스로부터 발생하는 상태 변경 event 전달을 해제하기 위한 요청
+          summary: 디바이스 이벤트 구독 해제
+          description: 디바이스로부터 발생하는 상태 변경 알림을 해제합니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -584,7 +584,7 @@ contents:
           tags:
             - Client API
           summary: 클라이언트 인증서 발급
-          description: 클라이언트의 AWS IoT 인증서, 구독 가능한 MQTT Topic 확인
+          description: 클라이언트의 AWS IoT 인증서, 구독 가능한 MQTT Topic 확인합니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -618,7 +618,7 @@ contents:
           tags:
             - Client API
           summary: 클라이언트 등록
-          description: 클라이언트 등록
+          description: 클라이언트를 등록합니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -651,7 +651,7 @@ contents:
           tags:
             - Client API
           summary: 클라이언트 해제
-          description: 클라이언트 해제
+          description: 클라이언트를 해제합니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -730,7 +730,7 @@ contents:
           schema:
             type: boolean
           description: |
-            기기 상태 조회 후 제어 가능한 상태에서만 제어되도록 설정
+            디바이스 상태 조회 후 제어 가능한 상태에서만 제어되도록 설정
           example: true
       schemas:
         base-res:
@@ -746,7 +746,7 @@ contents:
               description: 요청이 들어왔을 때의 시간을 의미하며 ISO 8601 Format을 따릅니다.
               example: '2024-09-01T06:23:20.866279'
         device-list-res:
-          description: 기기 목록 조회 응답
+          description: 디바이스 목록 조회 응답
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
@@ -758,66 +758,66 @@ contents:
                     properties:
                       deviceId:
                         type: string
-                        description: 기기를 식별할 수 있는 Id
+                        description: 디바이스를 식별할 수 있는 Id
                         example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
                       deviceInfo:
                         type: object
-                        description: 기기에 대한 정보를 담은 객체
+                        description: 디바이스에 대한 정보를 담은 객체
                         properties:
                           deviceType:
                             type: string
-                            description: 기기 가전 타입
+                            description: 디바이스 가전 타입
                             example: DEVICE_AIR_CONDITIONER
                           modelName:
                             type: string
-                            description: 기기 모델 이름
+                            description: 디바이스 모델 이름
                             example: PAC_910604_WW
                           alias:
                             type: string
-                            description: 기기 닉네임
+                            description: 디바이스 닉네임
                             example: 거실 에어컨
                           reportable:
                             type: boolean
-                            description: 기기 상태 변경 시 발생하는 event에 대해, event 구독 가능 여부 표시
+                            description: 디바이스 상태 변경 시 발생하는 event에 대해, event 구독 가능 여부 표시
                             example: true
                           groupId:
                             type: string
-                            description: groupId, 워시타워 세탁기와 워시타워 건조기가 기기 식별 Id가 구분되어서 전달되는 워시타워 그룹값을 표시하기 위한 값
+                            description: groupId, 워시타워 세탁기와 워시타워 건조기가 디바이스 식별 Id가 구분되어서 전달되는 워시타워 그룹값을 표시하기 위한 값
                             example: '234506858'
         device-profile-res:
-          description: 기기 프로파일 조회 응답
+          description: 디바이스 프로파일 조회 응답
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: 기기 프로파일 정보
+                  description: 디바이스 프로파일 정보
                   example:
                     '-$ref': ../../../device-profile/air_conditioner/air_conditioner-profile-example.yaml
         device-state-res:
-          description: 기기 상태 조회 응답
+          description: 디바이스 상태 조회 응답
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: 기기 상태 정보
+                  description: 디바이스 상태 정보
                   example:
                     '-$ref': ../../../device-profile/air_conditioner/air_conditioner-profile-example.yaml
         device-control-res:
-          description: 기기 제어 응답
+          description: 디바이스 제어 응답
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: 성공 시 빈 dict가 전달됨
+                  description: 성공 시 빈 dictionary가 전달됩니다.
                   example: {}
         push-list-res:
-          description: 푸쉬 목록 조회 응답
+          description: 푸시 목록 조회 응답
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
@@ -829,20 +829,20 @@ contents:
                     properties:
                       deviceId:
                         type: string
-                        description: 푸쉬를 구독한 기기 Id
+                        description: 푸시를 구독한 디바이스 Id
                         example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
         push-deviceId-res:
-          description: 푸쉬 구독/해제 응답
+          description: 푸시 구독/해제 응답
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: 성공 시 빈 dict가 전달됨
+                  description: 성공 시 빈 dictionary가 전달됩니다.
                   example: {}
         push-client-list-res:
-          description: 사용자 푸쉬 clientId 목록 조회 응답
+          description: 사용자 푸시 clientId 목록 조회 응답
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
@@ -867,7 +867,7 @@ contents:
                     properties:
                       deviceId:
                         type: string
-                        description: event를 구독한 기기 Id
+                        description: event를 구독한 디바이스 Id
                         example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
         event-register-req:
           description: 이벤트 구독 body
@@ -894,7 +894,7 @@ contents:
               properties:
                 response:
                   type: object
-                  description: 성공 시 빈 dict가 전달됨
+                  description: 성공 시 빈 dictionary가 전달됩니다.
                   example: {}
         client-certificate-req:
           description: 클라이언트 인증 body
@@ -910,7 +910,7 @@ contents:
                   example: SVC202
                 csr:
                   type: string
-                  description: 기기에서 자체 생성한 Private Key 기반의 CSR 데이터
+                  description: 디바이스에서 자체 생성한 Private Key 기반의 CSR 데이터
                   example: '===xzx'
         client-certificate-res:
           description: 클라이언트 인증서 등록 응답
@@ -958,7 +958,7 @@ contents:
                   example: SVC202
                 device-type:
                   type: string
-                  description: 클라이언트 기기타입 (고정값 - 607)
+                  description: 클라이언트 디바이스타입 (고정값 - 607)
                   example: '607'
         client-res:
           description: 클라이언트 구독/해제 응답
@@ -968,7 +968,7 @@ contents:
               properties:
                 response:
                   type: object
-                  description: 성공 시 빈 dict가 전달됨
+                  description: 성공 시 빈 dictionary가 전달됩니다.
                   example: {}
         client-unregister-req:
           description: 클라이언트 해제 body
@@ -4365,13 +4365,6 @@ contents:
                 - SCHEDULED_CLEANING_STARTS
                 - NEED_TO_CHECK_LOCATION
                 - CLEANING_IS_FAILED
-            push:
-              - MOTION_IS_DETECTED
-              - HOMEGUARD_IS_STOPPED
-              - CLEANING_IS_COMPLETED
-              - SCHEDULED_CLEANING_STARTS
-              - NEED_TO_CHECK_LOCATION
-              - CLEANING_IS_FAILED
             error:
               - RIGHT_WHEEL_ERROR
               - MOVE_ERROR
