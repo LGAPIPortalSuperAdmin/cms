@@ -77,7 +77,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_smart_light.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">스마트조명</p>
+  \    <p className="usecase-pick__txt">Smart Light Bulb</p>
 
   \    </li>
 
@@ -85,7 +85,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_motion_sensor.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">모션센서</p>
+  \    <p className="usecase-pick__txt">Motion Sensor</p>
 
   \    </li>
 
@@ -93,7 +93,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_thinq_on.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">ThinQ</p>
+  \    <p className="usecase-pick__txt">ThinQ On</p>
 
   \    </li>
 
@@ -101,7 +101,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_brightness.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">조도센서</p>
+  \    <p className="usecase-pick__txt">Photoresistor</p>
 
   \    </li>
 
@@ -109,7 +109,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_light_switch.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">조명스위치</p>
+  \    <p className="usecase-pick__txt">Light Switch</p>
 
   \    </li>
 
@@ -117,7 +117,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_temp_humid.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">온습도센서</p>
+  \    <p className="usecase-pick__txt">Temperature and Humidity sensor</p>
 
   \    </li>
 
@@ -125,7 +125,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_curtain.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">스마트전동커튼</p>
+  \    <p className="usecase-pick__txt">Smart Motorized Curtain</p>
 
   \    </li>
 
@@ -133,7 +133,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_system_ac.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">시스템에어컨</p>
+  \    <p className="usecase-pick__txt">System Air Conditioner</p>
 
   \    </li>
 
@@ -141,7 +141,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_purifier.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">공기청정기</p>
+  \    <p className="usecase-pick__txt">Air Purifier</p>
 
   \    </li>
 
@@ -149,7 +149,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_humidifier.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">가습기</p>
+  \    <p className="usecase-pick__txt">Humidifier</p>
 
   \    </li>
 
@@ -157,7 +157,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_dehumid.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">제습기</p>
+  \    <p className="usecase-pick__txt">Dehumidifier</p>
 
   \    </li>
 
@@ -165,7 +165,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_ceiling_fan.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">실링팬</p>
+  \    <p className="usecase-pick__txt">Ceiling Fan</p>
 
   \    </li>
 
@@ -173,7 +173,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_air_sensor.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">공기질 센서</p>
+  \    <p className="usecase-pick__txt">Air Quality Sensor</p>
 
   \    </li>
 
@@ -181,7 +181,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_smart_plug.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">스마트플러그</p>
+  \    <p className="usecase-pick__txt">Smartplug</p>
 
   \    </li>
 
@@ -207,7 +207,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_Illuminance_sensor.svg" />조도 센서</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_Illuminance_sensor.svg" />Photoresistor</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -225,7 +225,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_smart_curtain.svg" />스마트전동커튼</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_smart_curtain.svg" />Smart Motorized Curtain</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -251,7 +251,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_light_switch.svg" />조명스위치</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_light_switch.svg" />Light Switch</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -269,7 +269,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_temp_humid_sensor.svg" />온습도 센서</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_temp_humid_sensor.svg" />Temperature and Humidity sensor</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -295,7 +295,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_system_ac.svg" />시스템에어컨</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_system_ac.svg" />System Air Conditioner</div>
 
   \    <div className="col-8 col-sm-full">
 
