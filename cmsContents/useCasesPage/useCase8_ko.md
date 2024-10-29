@@ -109,7 +109,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_thinq_on.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">ThinQ</p>
+  \    <p className="usecase-pick__txt off">ThinQ On</p>
 
   \    </li>
 
