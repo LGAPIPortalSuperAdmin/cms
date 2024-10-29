@@ -85,7 +85,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_dehumid.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">제습기</p>
+  \    <p className="usecase-pick__txt">Dehumidifier</p>
 
   \    </li>
 
@@ -93,7 +93,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_oven.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">오븐</p>
+  \    <p className="usecase-pick__txt">Oven</p>
 
   \    </li>
 
@@ -101,7 +101,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_cooktop.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">쿡탑</p>
+  \    <p className="usecase-pick__txt">Cooktop</p>
 
   \    </li>
 
@@ -109,7 +109,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_refridge.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">냉장고</p>
+  \    <p className="usecase-pick__txt">Refrigerator</p>
 
   \    </li>
 
@@ -117,7 +117,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_washer.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">세탁기</p>
+  \    <p className="usecase-pick__txt">Washer</p>
 
   \    </li>
 
@@ -125,7 +125,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_dryer.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">건조기</p>
+  \    <p className="usecase-pick__txt">Dryer</p>
 
   \    </li>
 
@@ -133,7 +133,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_styler.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">스타일러</p>
+  \    <p className="usecase-pick__txt">Styler</p>
 
   \    </li>
 
@@ -141,7 +141,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_shoe_care.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">슈케어</p>
+  \    <p className="usecase-pick__txt">Shoe Care</p>
 
   \    </li>
 
@@ -149,7 +149,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_heat_exchanger.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">전열교환기</p>
+  \    <p className="usecase-pick__txt">Energy Recovery Ventilator</p>
 
   \    </li>
 
@@ -157,7 +157,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_sensor.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">공기질센서</p>
+  \    <p className="usecase-pick__txt">Air Quality Sensor</p>
 
   \    </li>
 
@@ -165,7 +165,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_fire_detection.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">화재감지센서</p>
+  \    <p className="usecase-pick__txt">Fire Detection Sensor</p>
 
   \    </li>
 
@@ -173,7 +173,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_hub.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">허브</p>
+  \    <p className="usecase-pick__txt">Hub</p>
 
   \    </li>
 
@@ -181,7 +181,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_enterance.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">재실센서</p>
+  \    <p className="usecase-pick__txt">Occupancy Sensor</p>
 
   \    </li>
 
@@ -189,7 +189,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_ceiling_fan.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">실링팬</p>
+  \    <p className="usecase-pick__txt">Ceiling Fan</p>
 
   \    </li>
 
@@ -215,7 +215,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_washer_dryer.svg" />세탁기/건조기</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_washer_dryer.svg" />Washer/Dryer</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -247,7 +247,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_refridge.svg" />냉장고</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_refridge.svg" />Refrigerator</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -265,7 +265,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_oven_cooktop.svg" />오븐/쿡탑</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_oven_cooktop.svg" />Oven/Cooktop</div>
 
   \    <div className="col-8 col-sm-full">
 
@@ -283,7 +283,7 @@ contents: >-2
 
   \    <li className="usecase-dev__item grid">
 
-  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_fire_detection.svg" />화재감지센서</div>
+  \    <div className="col-4 col-sm-full"><img src="/assets/images/usecase_icons/product/icon_fire_detection.svg" />Fire Detection Sensor</div>
 
   \    <div className="col-8 col-sm-full">
 
