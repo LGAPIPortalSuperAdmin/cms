@@ -77,7 +77,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_humidifier.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">가습기</p>
+  \    <p className="usecase-pick__txt off">Humidifier</p>
 
   \    </li>
 
@@ -85,7 +85,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_dryer.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">건조기</p>
+  \    <p className="usecase-pick__txt off">Dryer</p>
 
   \    </li>
 
@@ -93,7 +93,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_robot_cleaner.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">로봇청소기</p>
+  \    <p className="usecase-pick__txt off">Robot Cleaner</p>
 
   \    </li>
 
@@ -101,7 +101,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_curtain.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">스마트전동커튼</p>
+  \    <p className="usecase-pick__txt off">Smart Motorized Curtain</p>
 
   \    </li>
 
@@ -109,7 +109,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_thinq_on.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">ThinQ</p>
+  \    <p className="usecase-pick__txt off">ThinQ On</p>
 
   \    </li>
 
@@ -117,7 +117,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_sensor.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">공기질센서</p>
+  \    <p className="usecase-pick__txt off">Air Quality Sensor</p>
 
   \    </li>
 
@@ -125,7 +125,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_purifier.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">공기청정기</p>
+  \    <p className="usecase-pick__txt off">Air Purifier</p>
 
   \    </li>
 
@@ -133,7 +133,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_ac.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">에어컨</p>
+  \    <p className="usecase-pick__txt off">Air Conditioner</p>
 
   \    </li>
 
@@ -141,7 +141,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_heat_exchanger.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">전열교환기</p>
+  \    <p className="usecase-pick__txt off">Energy Recovery Ventilator</p>
 
   \    </li> 
 
@@ -149,7 +149,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_styler.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">스타일러</p>
+  \    <p className="usecase-pick__txt off">Styler</p>
 
   \    </li>
 
@@ -157,7 +157,7 @@ contents: >-2
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_ceiling_fan.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt off">실링팬</p>
+  \    <p className="usecase-pick__txt off">Ceiling Fan</p>
 
   \    </li>
 
