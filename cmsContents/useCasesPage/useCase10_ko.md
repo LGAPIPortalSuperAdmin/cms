@@ -1,5 +1,5 @@
 ---
-contents: >2
+contents: >-2
    <div className="main-wrap usecase-wrap mt0">
   \    <div className="top-visual">
 
@@ -15,7 +15,7 @@ contents: >2
 
   \    <p className="text--light mt3">에너지 피크 시점의 수요반응(DR)신호에 맞춰 에어컨, TV 및 가전 등이 자동으로 에너지 소모를 줄이도록 동작하는 Auto-DR기능을 제공합니다.<br />*DR서비스를 운영하는 수요반응 사업자 대상으로 제공되는 기능입니다.</p>
 
-  \    <div className="btns"><CoLink href="/api/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388"> 파트너십 신청 </CoLink></div>
+  \    <div className="btns"><CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388"> 파트너십 신청 </CoLink></div>
 
   \    </div>
 
@@ -271,7 +271,7 @@ contents: >2
 
   \    <p className="usecase-more__title">디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.</p>
 
-  \    <CoLink href="/api/business_connect" className="btn-round-primary btn-l"> API 문서 보기 </CoLink>
+  \    <CoLink href="/apiManage/business_connect" className="btn-round-primary btn-l"> API 문서 보기 </CoLink>
 
   \    </div>
 
