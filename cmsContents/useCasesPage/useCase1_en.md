@@ -878,7 +878,7 @@ contents: >-2
   \    </p>
 
 
-  \    <CoLink href="/api/business_connect" className="btn-round-primary btn-l">
+  \    <CoLink href="/apiManage/business_connect" className="btn-round-primary btn-l">
 
 
   \    View API Document
