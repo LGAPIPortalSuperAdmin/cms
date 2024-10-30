@@ -15,7 +15,7 @@ contents: >-2
 
   \    <p className="text--light mt3">사용하지 않는 공간이나 과도한 냉난방 상태를 센싱하여 자동으로 에너지 사용을 최적화합니다.<br />이를 통해 공간 환경을 쾌적하게 유지할 뿐만 아니라 불필요한 전력 사용을 줄여 에너지 비용을 절감합니다.</p>
 
-  \    <div className="btns"><CoLink href="/api/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388"> 파트너십 신청 </CoLink></div>
+  \    <div className="btns"><CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388"> 파트너십 신청 </CoLink></div>
 
   \    </div>
 
@@ -287,7 +287,7 @@ contents: >-2
 
   \    <p className="usecase-more__title">디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.</p>
 
-  \    <CoLink href="/api/business_connect?s=1727316475662" className="btn-round-primary btn-l"> API 문서 보기 </CoLink>
+  \    <CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-primary btn-l"> API 문서 보기 </CoLink>
 
   \    </div>
 
