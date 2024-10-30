@@ -347,7 +347,7 @@ contents: >-2
 
   \    <p className="usecase-more__title">디바이스 제어를 위해 제공되는 API 목록과 호출 시퀀스 정보를 확인해 보세요.</p>
 
-  \    <CoLink href="/api/thinq_connect" className="btn-round-primary btn-l"> API 문서 보기 </CoLink>
+  \    <CoLink href="/apiManage/thinq_connect" className="btn-round-primary btn-l"> API 문서 보기 </CoLink>
 
   \    </div>
 
