@@ -15,7 +15,7 @@ contents: >-2
 
   \    <p className="text--light mt3">"(This feature is available to demand response providers that operate DR services).<br /><br />Auto-DR is provided to automatically reduce energy consumption of air conditioners, TVs, and home appliances in response to DR signals at peak energy times."</p>
 
-  \    <div className="btns"><CoLink href="/api/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">Request a partnership</CoLink></div>
+  \    <div className="btns"><CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">Request a partnership</CoLink></div>
 
   \    </div>
 
@@ -271,7 +271,7 @@ contents: >-2
 
   \    <p className="usecase-more__title">Check out the list of APIs provided for device control and call sequence information.</p>
 
-  \    <CoLink href="/api/business_connect" className="btn-round-primary btn-l">View API Document</CoLink>
+  \    <CoLink href="/apiManage/business_connect" className="btn-round-primary btn-l">View API Document</CoLink>
 
   \    </div>
 
