@@ -90,7 +90,7 @@ contents: >-
   \    </p>
 
 
-  \    <CoLink className="btn-round-bline btn-l" href="/api/thinq_connect">API 상세 보기</CoLink>
+  \    <CoLink className="btn-round-bline btn-l" href="/apiManage/thinq_connect">API 상세 보기</CoLink>
 
 
   \    </div>
@@ -129,7 +129,7 @@ contents: >-
   \    </p>
 
 
-  \    <CoLink className="btn-round-bline btn-l" href="/api/business_connect">API 상세 보기</CoLink>
+  \    <CoLink className="btn-round-bline btn-l" href="/apiManage/business_connect">API 상세 보기</CoLink>
 
 
   \    </div>
@@ -174,7 +174,7 @@ contents: >-
   \    </p>
 
 
-  \    <CoLink className="btn-round-bline btn-l" href="/api/lmp">API 상세 보기</CoLink>
+  \    <CoLink className="btn-round-bline btn-l" href="/apiManage/lmp">API 상세 보기</CoLink>
 
 
   \    </div>
