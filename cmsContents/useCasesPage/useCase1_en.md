@@ -38,7 +38,7 @@ contents: >-2
   \    <div className="btns">
 
 
-  \    <CoLink href="/api/business_connect?s=1727316475662" className="btn-round-black btn-l">
+  \    <CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-black btn-l">
 
 
   \    ThinQ Business API
