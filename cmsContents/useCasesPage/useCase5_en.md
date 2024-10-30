@@ -15,7 +15,7 @@ contents: >-2
 
   \    <p className="text--light mt3">A lounge or reception area is a place to communicate the brand's concept and important information, as well as a space for tenants to socialize and relax. <br /><br />By connecting displays, massage chairs, and air purifiers with IoT sensors, you can create a space that is unique to your residential brand.</p>
 
-  \    <div className="btns"><CoLink href="/api/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">Request a partnership</CoLink></div>
+  \    <div className="btns"><CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">Request a partnership</CoLink></div>
 
   \    </div>
 
@@ -345,7 +345,7 @@ contents: >-2
 
   \    <p className="usecase-more__title">Check out the list of APIs provided for device control and call sequence information.</p>
 
-  \    <CoLink href="/api/business_connect?s=1727316475662" className="btn-round-primary btn-l">View API Document</CoLink>
+  \    <CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-primary btn-l">View API Document</CoLink>
 
   \    </div>
 
