@@ -815,7 +815,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="/api/business_connect"
+  \    href="/apiManage/business_connect"
 
 
   \    className="btn-round-primary btn-l">
