@@ -35,7 +35,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="/api/business_connect?s=1727316475662"
+  \    href="/apiManage/business_connect?s=1727316475662"
 
 
   \    className="btn-round-black btn-l">
@@ -809,7 +809,7 @@ contents: >-2
   \    <CoLink
 
 
-  \    href="/api/business_connect"
+  \    href="/apiManage/business_connect"
 
 
   \    className="btn-round-primary btn-l">
