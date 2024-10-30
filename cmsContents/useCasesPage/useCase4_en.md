@@ -23,7 +23,7 @@ contents: >-2
 
   \    </p>
 
-  \    <div className="btns"><CoLink href="/api/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">Request a partnership</CoLink></div>
+  \    <div className="btns"><CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">Request a partnership</CoLink></div>
 
   \    </div>
 
@@ -311,7 +311,7 @@ contents: >-2
 
   \    <p className="usecase-more__title">Check out the list of APIs provided for device control and call sequence information.</p>
 
-  \    <CoLink href="/api/business_connect?s=1727316475662" className="btn-round-primary btn-l">View API Document</CoLink>
+  \    <CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-primary btn-l">View API Document</CoLink>
 
   \    </div>
 
