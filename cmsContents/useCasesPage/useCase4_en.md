@@ -255,7 +255,7 @@ contents: >-2
 
   \    <dt>Checking if the refrigerator is left open for a long time</dt>
 
-  \    <dd>냉장고의 장시간 문열림 여부를 확인할 수 있어 문이 오랫동안 열려있으면 즉시 알림을 통해 빠르게 대응할 수 있으며, 냉장고 내부의 온도를 안정적으로 유지하여 주방 운영의 효율성을 높이고 식품 안전을 더욱 강화할 수 있습니다.</dd>
+  \    <dd>If your refrigerator door is left open for a long time, a notification is sent immediately so you can take the appropriate action quickly. By keeping an optimal temperature inside the refrigerator, it improves the efficiency of your kitchen and keeps the food safe.</dd>
 
   \    </dl>
 
