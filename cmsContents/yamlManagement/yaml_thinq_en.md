@@ -14,35 +14,34 @@ contents:
     tags:
       - name: PAT(Personal Access Token)
         description: |
-          ThinQ API를 호출하기 위해 사용되는 개인 식별 토큰입니다.  개인적이고 비상업적 목적으로만 개인 권한 토큰을 사용할 수 있습니다. 개인 권한 토큰을 사용하여 LG전자가 허용하지 않은 추가 서비스를 개발하고자 하는 경우, LG전자와 이러한 잠재적 추가 서비스에 대해 논의하고 LG전자로부터 서면 동의를 받아야 합니다.
-            1. https://connect-pat.lgthinq.com 페이지를 방문하세요.
-            2. ThinQ 계정 로그인을 합니다.
-            3. "새 토큰 만들기" 버튼을 선택합니다.
-            4. 토큰 이름을 입력합니다.
-            5. 권한 범위에서 해당 토큰이 사용하고자 하는 기능에 대해서 선택합니다.
-            6. "토큰 만들기" 버튼을 누르면 토큰이 생성되고, PAT 페이지로 돌아갑니다.
-            7. 새로 생성된 토큰을 복사해서 사용합니다.
+          Identification tokens used to call ThinQ API. The Identification tokens can only be used for personal and non-commercial purposes. To develop additional services not sanctioned by LG Electronics, the developer must discuss the matter regarding the additional services with LG Electronics, and then acquire a written consent from LG Electronics.
+            1. Visit the website: https://connect-pat.lgthinq.com
+            2. Log in on the ThinQ account.
+            3. Select the "Create New Token" button.
+            4. Enter Token name.
+            5. Select a feature you want.
+            6. Select the "Create Token" button, and the token will be created. You will then be redirected to the PAT page.
+            7. Copy the newly generated token for use.
       - name: Device API
         description: |
-          ThinQ 기기 정보를 요청하고 제어하기 위한 API입니다.
+          API used to request ThinQ device information and control the device.
       - name: Push API
         description: |
-          ThinQ 기기에서 발생하는 푸쉬 메시지를 구독/해제하기 위한 API입니다.
+          API used to subscribe to/unsubscribe the push messages generated from the ThinQ devices.
       - name: Event API
         description: |
-          ThinQ 기기에서 발생한 상태 변경에 대한 이벤트 메시지를 구독/해제하기 위한 API입니다.
+          API used to subscribe to/unsubscribe the event messages generated from the ThinQ devices when their statuses change.
       - name: Client API
         description: |
-          ThinQ 기기에서 전달하는 메시지를 받기 위한 사용자 기기 인증서 발급/등록을 위한 API입니다.  
+          API used to issue/register user device authentication certificate for receiving messages delivered from the ThinQ devices.  
     paths:
       /devices:
         get:
           tags:
             - Device API
-          summary: 기기 목록 조회
+          summary: Get device list
           description: |
-            ThinQ Platform에 등록한 기기 목록을 얻어오기 위한 API입니다. 다른 API를 사용하기 전에 반드시 한 번은 호출되어야 합니다.  해당 API가 응답한 디바이스 목록에는 디바이스를 식별할 수 있는 device-id가 포함되어 있으며, 이 값으로 대상 디바이스를 지정하여 다른 기기 API를 호출할 수 있습니다.  따라서 이 API는 반드시 최초 1번은 호출되어야 하며, 디바이스 목록을 확인 후에는 매번 호출할 필요 없습니다.
-          parameters:
+            API for getting a list of devices that have been registered on the ThinQ Platform. It must be called at least once before using any other APIs. The list of devices returned by this API contains a device-id to identify the device, which can be used to call other device APIs by specifying the target device. Therefore, this API must be called the first time, but does not need to be called every time after the device list is resolved.      parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
             - required: true
@@ -68,8 +67,8 @@ contents:
         get:
           tags:
             - Device API
-          summary: 기기 프로파일 조회
-          description: 기기 프로파일을 조회하기 위한 API입니다. > 기기 프로파일은 LG 가전의 속성을 기술한 정보로, LG ThinQ 플랫폼이 사용하는 기기 데이터입니다.
+          summary: Get Device Profile
+          description: API for viewing device profiles > Device profiles are information describing the attributes of an LG home appliance and are the device data used by the LG ThinQ platform.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -89,63 +88,63 @@ contents:
                   schema:
                     $ref: '#/components/schemas/device-profile-res'
                   examples:
-                    냉장고:
+                    Refrigerator:
                       $ref: '#/components/examples/refrigerator-profile-example'
-                    정수기:
+                    Water Purifier:
                       $ref: '#/components/examples/water_purifier-profile-example'
-                    와인냉장고:
+                    Wine Cellar:
                       $ref: '#/components/examples/wine_cellar-profile-example'
-                    김치냉장고:
+                    Kimchi Refrigerator:
                       $ref: '#/components/examples/kimchi_refrigerator-profile-example'
-                    맥주제조기:
+                    Home Brew:
                       $ref: '#/components/examples/home_brew-profile-example'
-                    식물재배기:
+                    Plant Cultivator:
                       $ref: '#/components/examples/plant_cultivator-profile-example'
-                    세탁기:
+                    Washer:
                       $ref: '#/components/examples/washer-profile-example'
-                    건조기:
+                    Dryer:
                       $ref: '#/components/examples/dryer-profile-example'
-                    스타일러:
+                    Styler:
                       $ref: '#/components/examples/styler-profile-example'
-                    식기세척기:
+                    Dish Washer:
                       $ref: '#/components/examples/dish_washer-profile-example'
-                    워시타워(세탁기):
+                    WashTower Washer:
                       $ref: '#/components/examples/washtower_washer-profile-example'
-                    워시타워(건조기):
+                    WashTower Dryer:
                       $ref: '#/components/examples/washtower_dryer-profile-example'
-                    일체형워시타워:
+                    WashTower (Single Unit):
                       $ref: '#/components/examples/washtower-profile-example'
-                    워시콤보세탁기:
+                    Main WashCombo:
                       $ref: '#/components/examples/main_washcombo-profile-example'
-                    워시콤보미니세탁기:
+                    Mini WashCombo:
                       $ref: '#/components/examples/mini_washcombo-profile-example'
-                    오븐:
+                    Oven:
                       $ref: '#/components/examples/oven-profile-example'
-                    쿡탑:
+                    Cooktop:
                       $ref: '#/components/examples/cooktop-profile-example'
-                    후드:
+                    Hood:
                       $ref: '#/components/examples/hood-profile-example'
-                    전자레인지:
+                    Microwave Oven:
                       $ref: '#/components/examples/microwave_oven-profile-example'
-                    에어컨:
+                    Air Conditioner:
                       $ref: '#/components/examples/air_conditioner-profile-example'
-                    시스템보일러:
+                    System Boiler:
                       $ref: '#/components/examples/system_boiler-profile-example'
-                    공기청정기:
+                    Air Purifier:
                       $ref: '#/components/examples/air_purifier-profile-example'
-                    제습기:
+                    Dehumidifier:
                       $ref: '#/components/examples/dehumidifier-profile-example'
-                    가습기:
+                    Humidifier:
                       $ref: '#/components/examples/humidifier-profile-example'
-                    온수기:
+                    Water Heater:
                       $ref: '#/components/examples/water_heater-profile-example'
-                    실링팬:
+                    Ceiling Fan:
                       $ref: '#/components/examples/ceiling_fan-profile-example'
-                    공기청정팬:
+                    Air Purifier Fan:
                       $ref: '#/components/examples/air_purifier_fan-profile-example'
-                    로봇청소기:
+                    Robot Cleaner:
                       $ref: '#/components/examples/robot_cleaner-profile-example'
-                    스틱청소기:
+                    Stick Cleaner:
                       $ref: '#/components/examples/stick_cleaner-profile-example'
             '400':
               description: Bad request
@@ -155,8 +154,8 @@ contents:
         get:
           tags:
             - Device API
-          summary: 기기 상태 조회
-          description: 기기 현재 상태를 조회하기 위한 API입니다. 지정한 device-id의 현재 상태를 얻어올 수 있습니다.
+          summary: Device status inquiry
+          description: API for viewing the current status of a device. You can retrieve the current status of the specified device-id.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -176,63 +175,63 @@ contents:
                   schema:
                     $ref: '#/components/schemas/device-state-res'
                   examples:
-                    냉장고:
+                    Refrigerator:
                       $ref: '#/components/examples/refrigerator-object-example'
-                    정수기:
+                    Water Purifier:
                       $ref: '#/components/examples/water_purifier-object-example'
-                    와인냉장고:
+                    Wine Cellar:
                       $ref: '#/components/examples/wine_cellar-object-example'
-                    김치냉장고:
+                    Kimchi Refrigerator:
                       $ref: '#/components/examples/kimchi_refrigerator-object-example'
-                    맥주제조기:
+                    Home Brew:
                       $ref: '#/components/examples/home_brew-object-example'
-                    식물재배기:
+                    Plant Cultivator:
                       $ref: '#/components/examples/plant_cultivator-object-example'
-                    세탁기:
+                    Washer:
                       $ref: '#/components/examples/washer-object-example'
-                    건조기:
+                    Dryer:
                       $ref: '#/components/examples/dryer-object-example'
-                    스타일러:
+                    Styler:
                       $ref: '#/components/examples/styler-object-example'
-                    식기세척기:
+                    Dish Washer:
                       $ref: '#/components/examples/dish_washer-object-example'
-                    워시타워(세탁기):
+                    WashTower Washer(Washer):
                       $ref: '#/components/examples/washtower_washer-object-example'
-                    워시타워(건조기):
+                    WashTower Washer(Dryer):
                       $ref: '#/components/examples/washtower_dryer-object-example'
-                    일체형워시타워:
+                    WashTower (Single Unit):
                       $ref: '#/components/examples/washtower-object-example'
-                    워시콤보세탁기:
+                    Main WashCombo:
                       $ref: '#/components/examples/main_washcombo-object-example'
-                    워시콤보미니세탁기:
+                    Mini WashCombo:
                       $ref: '#/components/examples/mini_washcombo-object-example'
-                    오븐:
+                    Oven:
                       $ref: '#/components/examples/oven-object-example'
-                    쿡탑:
+                    Cooktop:
                       $ref: '#/components/examples/cooktop-object-example'
-                    후드:
+                    Hood:
                       $ref: '#/components/examples/hood-object-example'
-                    전자레인지:
+                    Microwave Oven:
                       $ref: '#/components/examples/microwave_oven-object-example'
-                    에어컨:
+                    Air Conditioner:
                       $ref: '#/components/examples/air_conditioner-object-example'
-                    시스템보일러:
+                    System Boiler:
                       $ref: '#/components/examples/system_boiler-object-example'
-                    공기청정기:
+                    Air Purifier:
                       $ref: '#/components/examples/air_purifier-object-example'
-                    제습기:
+                    Dehumidifier:
                       $ref: '#/components/examples/dehumidifier-object-example'
-                    가습기:
+                    Humidifier:
                       $ref: '#/components/examples/humidifier-object-example'
-                    온수기:
+                    Water Heater:
                       $ref: '#/components/examples/water_heater-object-example'
-                    실링팬:
+                    Ceiling Fan:
                       $ref: '#/components/examples/ceiling_fan-object-example'
-                    공기청정팬:
+                    Air Purifier Fan:
                       $ref: '#/components/examples/air_purifier_fan-object-example'
-                    로봇청소기:
+                    Robot Cleaner:
                       $ref: '#/components/examples/robot_cleaner-object-example'
-                    스틱청소기:
+                    Stick Cleaner:
                       $ref: '#/components/examples/stick_cleaner-object-example'
             '400':
               description: Bad request
@@ -242,8 +241,8 @@ contents:
         post:
           tags:
             - Device API
-          summary: 기기 제어
-          description: 기기를 제어하기 위한 API입니다. 지정한 device-id에 제어 명령을 보낼 수 있습니다.
+          summary: Control Device
+          description: API for controlling devices. You can send control commands to the specified device-id.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -262,55 +261,55 @@ contents:
               application/json:
                 schema:
                   type: object
-                  description: 디바이스 프로파일에 정의된 제어 명령
+                  description: a control command for the device based on the device profile information.
                 examples:
-                  냉장고:
+                  Refrigerator:
                     $ref: '#/components/examples/refrigerator-command-example'
-                  와인냉장고:
+                  Wine Cellar:
                     $ref: '#/components/examples/wine_cellar-command-example'
-                  세탁기:
+                  Washer:
                     $ref: '#/components/examples/washer-command-example'
-                  건조기:
+                  Dryer:
                     $ref: '#/components/examples/dryer-command-example'
-                  스타일러:
+                  Styler:
                     $ref: '#/components/examples/styler-command-example'
-                  식기세척기:
+                  Dish Washer:
                     $ref: '#/components/examples/dish_washer-command-example'
-                  워시타워(세탁기):
+                  WashTower Washer(Washer):
                     $ref: '#/components/examples/washtower_washer-command-example'
-                  워시타워(건조기):
+                  WashTower Washer(Dryer):
                     $ref: '#/components/examples/washtower_dryer-command-example'
-                  일체형워시타워:
+                  WashTower (Single Unit):
                     $ref: '#/components/examples/washtower-command-example'
-                  워시콤보세탁기:
+                  Main WashCombo:
                     $ref: '#/components/examples/main_washcombo-command-example'
-                  워시콤보미니세탁기:
+                  Mini WashCombo:
                     $ref: '#/components/examples/mini_washcombo-command-example'
-                  오븐:
+                  Oven:
                     $ref: '#/components/examples/oven-command-example'
-                  쿡탑:
+                  Cooktop:
                     $ref: '#/components/examples/cooktop-command-example'
-                  후드:
+                  Hood:
                     $ref: '#/components/examples/hood-command-example'
-                  전자레인지:
+                  Microwave Oven:
                     $ref: '#/components/examples/microwave_oven-command-example'
-                  에어컨:
+                  Air Conditioner:
                     $ref: '#/components/examples/air_conditioner-command-example'
-                  시스템보일러:
+                  System Boiler:
                     $ref: '#/components/examples/system_boiler-command-example'
-                  공기청정기:
+                  Air Purifier:
                     $ref: '#/components/examples/air_purifier-command-example'
-                  제습기:
+                  Dehumidifier:
                     $ref: '#/components/examples/dehumidifier-command-example'
-                  가습기:
+                  Humidifier:
                     $ref: '#/components/examples/humidifier-command-example'
-                  온수기:
+                  Water Heater:
                     $ref: '#/components/examples/water_heater-command-example'
-                  실링팬:
+                  Ceiling Fan:
                     $ref: '#/components/examples/ceiling_fan-command-example'
-                  공기청정팬:
+                  Air Purifier Fan:
                     $ref: '#/components/examples/air_purifier_fan-command-example'
-                  로봇청소기:
+                  Robot Cleaner:
                     $ref: '#/components/examples/robot_cleaner-command-example'
           responses:
             '200':
@@ -327,8 +326,8 @@ contents:
         get:
           tags:
             - Push API
-          summary: 기기 푸쉬 구독 목록 조회
-          description: 사용자가 기기 푸쉬 알림을 구독 중인 기기 목록을 조회
+          summary: Get Device List under Subscribtion
+          description: Gets a list of the user's devices from which the user is receiving Push notifications.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -355,8 +354,8 @@ contents:
         post:
           tags:
             - Push API
-          summary: 기기 푸쉬 구독
-          description: 디바이스로부터 발생하는 푸쉬 알림을 받기 위한 구독 요청
+          summary: Subscribed to Push notifications of the device.
+          description: Subscription requests to receive push notifications from devices
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -383,8 +382,8 @@ contents:
         delete:
           tags:
             - Push API
-          summary: 기기 푸쉬 해제
-          description: 디바이스로부터 발생하는 푸쉬 알림 요청을 해제하기 위한 요청
+          summary: Unsubscribed to Push notifications of the device
+          description: Requests to cancel subscriptions to the Push notifications of the device
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -411,8 +410,8 @@ contents:
         get:
           tags:
             - Push API
-          summary: 기기 추가/삭제 알림 구독 클라이언트 목록 조회
-          description: 사용자가 기기 추가/삭제/변경 구독을 요청한 client 목록 조회
+          summary: Get a list of clients subscribed to device add/delete notifications.
+          description: Get a list of clients where users have requested subscriptions to add/delete/change devices.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -438,8 +437,8 @@ contents:
         post:
           tags:
             - Push API
-          summary: 기기 추가/삭제 알림 클라이언트 구독
-          description: 기기 추가/삭제/변경 구독을 받기 위해 client 등록 요청
+          summary: Subscribe to the Add/Delete Device Notification Client
+          description: Request to register client to receive device add/delete/change subscription
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -465,8 +464,8 @@ contents:
         delete:
           tags:
             - Push API
-          summary: 기기 추가/삭제 알림 클라이언트 해제
-          description: 기기 추가/삭제/변경 구독을 받기 위해 client 등록 요청
+          summary: Unsubscribe to the Add/Delete Device Notification Client
+          description: Request to register client to receive device add/delete/change subscription
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -493,8 +492,8 @@ contents:
         get:
           tags:
             - Event API
-          summary: 기기 이벤트 구독 목록 조회
-          description: 사용자가 기기 상태 알림을 구독 중인 기기 목록을 조회
+          summary: Get a list of device event subscriptions.
+          description: Get a list of devices to which users are subscribed to device status notifications.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -521,8 +520,8 @@ contents:
         post:
           tags:
             - Event API
-          summary: 기기 이벤트 구독
-          description: 디바이스로부터 발생하는 상태 변경 알림을 받기 위한 구독 요청
+          summary: Subscribe to Device Events
+          description: Unsubscribes to events of the device when the device status changes
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -555,8 +554,8 @@ contents:
         delete:
           tags:
             - Event API
-          summary: 기기 이벤트 구독 해제
-          description: 디바이스로부터 발생하는 상태 변경 event 전달을 해제하기 위한 요청
+          summary: Unsubscribe to Device Events.
+          description: Unsubscribes to events of the device when the device status changes.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -583,8 +582,8 @@ contents:
         post:
           tags:
             - Client API
-          summary: 클라이언트 인증서 발급
-          description: 클라이언트의 AWS IoT 인증서, 구독 가능한 MQTT Topic 확인
+          summary: Issuing client certificates
+          description: Verify the client's AWS IoT certificate, subscribable MQTT Topic
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -617,8 +616,8 @@ contents:
         post:
           tags:
             - Client API
-          summary: 클라이언트 등록
-          description: 클라이언트 등록
+          summary: Client registration
+          description: Client registration
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -650,8 +649,8 @@ contents:
         delete:
           tags:
             - Client API
-          summary: 클라이언트 해제
-          description: 클라이언트 해제
+          summary: Client deactivation
+          description: Client deactivation
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -688,7 +687,7 @@ contents:
           schema:
             type: string
           description: |
-            https://connect-pat.lgthinq.com을 통해서 받은 PAT 토큰
+            PAT token received via https://connect-pat.lgthinq.com
           example: Bearer 4d76546d61f01baf31c1sd8f6b4e38b110ba0a34f825b8c5d54c
         x-message-id:
           name: x-message-id
@@ -696,9 +695,9 @@ contents:
           schema:
             type: string
           description: |
-            요청되는 정보를 추적하기 위한 값입니다. 특정 API의 흐름을 추적하고 에러 발생 시 원인을 찾을 수 있습니다. 생성 규칙은 아래와 같습니다.
-                url-safe-base64-no-padding (UUID Version 4) 방법으로 생성합니다.
-                길이는 22자입니다.
+            This value is for tracking the information being requested. You can track the flow of a particular API and find the cause of errors when they occur. The generation rules are as follows:
+                Generated with the url-safe-base64-no-padding (UUID Version 4) method.
+                The length is 22 characters.
           example: fNvdZ1brTn-wWKUlWGoSVw
         x-country:
           name: x-country
@@ -706,7 +705,7 @@ contents:
           schema:
             type: string
           description: |
-            서비스를 제공할 국가를 지정합니다 ISO 국가코드 알파벳 두 자리(ISO 3166-1 alpha-2)를 따릅니다. (예: KR, US, GB, ...)
+            Specify the country where you want to provide the service. Follow the two digits of the ISO country code alphabet (ISO 3166-1 alpha-2) (e.g., KR, US, GB, ...)
           example: KR
         x-client-id:
           name: x-client-id
@@ -714,7 +713,7 @@ contents:
           schema:
             type: string
           description: |
-            요청하는 클라이언트의 식별자 ID 값 입니다. unique한 값을 가질 수 있도록 생성해야 합니다.
+            The identifier ID of the requesting client. It should be generated so that it has a unique value.
           example: test-client-123456
         x-api-key:
           name: x-api-key
@@ -722,15 +721,15 @@ contents:
           schema:
             type: string
           description: |
-            API 호출을 위한 api key 값입니다. 아래값을 고정해서 호출해주세요 ""
-          example: 고정값
+            API key for making API calls. Modify the value below to make the call. ""
+          example: default value
         x-conditional-control:
           name: x-conditional-control
           in: header
           schema:
             type: boolean
           description: |
-            기기 상태 조회 후 제어 가능한 상태에서만 제어되도록 설정
+            Activate control only in controllable states after Device status inquiry
           example: true
       schemas:
         base-res:
@@ -739,14 +738,14 @@ contents:
           properties:
             messageId:
               type: string
-              description: 요청 시 헤더에 포함된 X-Message-ID 값입니다. 이 값을 응답 메시지에 포함시켜서 문제가 있을 때 확인할 수 있도록 합니다.
+              description: The X-Message-ID included in the header of the request. Include this value in the response message so that you can see if there are any problems.
               example: fNvdZ1brTn-wWKUlWGoSVw
             timestamp:
               type: string
-              description: 요청이 들어왔을 때의 시간을 의미하며 ISO 8601 Format을 따릅니다.
+              description: The time when the request came in, following the ISO 8601 format.
               example: '2024-09-01T06:23:20.866279'
         device-list-res:
-          description: 기기 목록 조회 응답
+          description: Device list inquiry response
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
@@ -758,66 +757,66 @@ contents:
                     properties:
                       deviceId:
                         type: string
-                        description: 기기를 식별할 수 있는 Id
+                        description: An ID that can identify the device
                         example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
                       deviceInfo:
                         type: object
-                        description: 기기에 대한 정보를 담은 객체
+                        description: An object containing the followings
                         properties:
                           deviceType:
                             type: string
-                            description: 기기 가전 타입
+                            description: The device type
                             example: DEVICE_AIR_CONDITIONER
                           modelName:
                             type: string
-                            description: 기기 모델 이름
+                            description: The (device) model name
                             example: PAC_910604_WW
                           alias:
                             type: string
-                            description: 기기 닉네임
-                            example: 거실 에어컨
+                            description: The device alias name
+                            example: living room Air Conditioner
                           reportable:
                             type: boolean
-                            description: 기기 상태 변경 시 발생하는 event에 대해, event 구독 가능 여부 표시
+                            description: Whether or not your service is subscribing to events which occur when the device status changes
                             example: true
                           groupId:
                             type: string
-                            description: groupId, 워시타워 세탁기와 워시타워 건조기가 기기 식별 Id가 구분되어서 전달되는 워시타워 그룹값을 표시하기 위한 값
+                            description: groupId. Value for displaying the Washtower group value where Washtower washers and Washtower dryers are separated by a device identification Id.
                             example: '234506858'
         device-profile-res:
-          description: 기기 프로파일 조회 응답
+          description: Device profile inquiry response
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: 기기 프로파일 정보
+                  description: Device Profile
                   example:
                     '-$ref': ../../../device-profile/air_conditioner/air_conditioner-profile-example.yaml
         device-state-res:
-          description: 기기 상태 조회 응답
+          description: Device status inquiry response
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: 기기 상태 정보
+                  description: Device Status
                   example:
                     '-$ref': ../../../device-profile/air_conditioner/air_conditioner-profile-example.yaml
         device-control-res:
-          description: 기기 제어 응답
+          description: Control Device response
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: 성공 시 빈 dict가 전달됨
+                  description: An empty dictionay is passed on success
                   example: {}
         push-list-res:
-          description: 푸쉬 목록 조회 응답
+          description: Push list inquiry response
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
@@ -829,20 +828,20 @@ contents:
                     properties:
                       deviceId:
                         type: string
-                        description: 푸쉬를 구독한 기기 Id
+                        description: Device id that subscribed to the push
                         example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
         push-deviceId-res:
-          description: 푸쉬 구독/해제 응답
+          description: Push subscription/unsubscription responses
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: 성공 시 빈 dict가 전달됨
+                  description: An empty dictionay is passed on success
                   example: {}
         push-client-list-res:
-          description: 사용자 푸쉬 clientId 목록 조회 응답
+          description: User push clientId list inquiry response
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
@@ -855,7 +854,7 @@ contents:
                       - ha-connect-client-st-test-230830_1st11
                       - ha-connect-client-st-test-230830_1st111
         event-list-res:
-          description: 이벤트 구독 목록 조회 응답
+          description: Event subscription list inquiry response
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
@@ -867,53 +866,53 @@ contents:
                     properties:
                       deviceId:
                         type: string
-                        description: event를 구독한 기기 Id
+                        description: Device Id that subscribed to events
                         example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
         event-register-req:
-          description: 이벤트 구독 body
+          description: Subscribe to Device Events body
           type: object
           properties:
             expire:
               type: object
-              description: API 만료 시간 설정, 구독한 이후 만료 시간을 넘으면 기존에 구독한 디바이스는 자동으로 해제됩니다. 만일 구독한 디바이스에 대해 다시 구독을 할 경우 만료시간이 현재시간으로부터 갱신됩니다.
+              description: If you set an API expiration time or subscribe to it and the expiration time passes, the previously subscribed device is automatically turned off. If you subscribe to the device again, the expiration time will be renewed.
               properties:
                 unit:
                   type: string
-                  description: 시간 단위 (고정값 - HOUR)
+                  description: unit of time (default value - HOUR)
                   example: HOUR
                 timer:
                   type: integer
                   description: |
-                    이벤트 구독 만료 시간을 결정합니다. (기본 1시간, 최소 1시간, 최대 24시간) 
+                    The expiration time of the event subscription. (min: 1, max: 24, default: 1) 
                   example: 1
         event-deviceId-res:
-          description: 이벤트 구독/해제 응답
+          description: Event subscription/unsubscription responses
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: 성공 시 빈 dict가 전달됨
+                  description: An empty dictionay is passed on success
                   example: {}
         client-certificate-req:
-          description: 클라이언트 인증 body
+          description: Client authentication body
           type: object
           properties:
             body:
               type: object
-              description: 사용자 정보
+              description: user's information
               properties:
                 service-code:
                   type: string
-                  description: 서비스 코드 (고정값 - SVC202)
+                  description: Service Code (fixed value - SVC202)
                   example: SVC202
                 csr:
                   type: string
-                  description: 기기에서 자체 생성한 Private Key 기반의 CSR 데이터
+                  description: CSR data based on the device's self-generated private key
                   example: '===xzx'
         client-certificate-res:
-          description: 클라이언트 인증서 등록 응답
+          description: Client certificate enrollment response
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
@@ -923,68 +922,68 @@ contents:
                   properties:
                     resultCode:
                       type: string
-                      description: 결과 응답 code
+                      description: Result response code
                       example: '0000'
                     result:
                       type: object
                       properties:
                         certificatePem:
                           type: string
-                          description: AWS IoT 인증서
+                          description: AWS IoT Certificate
                           example: |
                             -----BEGIN CERTIFICATE-----
                             MIIEUzCCAzugAw
                             -----END CERTIFICATE-----
                         subscriptions:
                           type: array
-                          desription: 클라이언트에서 MQTT subscribe가 필요한 Topic 목록 (List)
+                          desription: List of topics that require MQTT subscriptions on the client (List)
                           example:
                             - app/clients/home-assistant-test-01234/push
         client-register-req:
-          description: 클라이언트 구독 body
+          description: Client subscription body
           type: object
           properties:
             body:
               type: object
-              description: 사용자 정보
+              description: user's information
               properties:
                 type:
                   type: string
-                  description: Push type (고정값 - MQTT)
+                  description: Push type (fixed value - MQTT)
                   example: MQTT
                 service-code:
                   type: string
-                  description: 서비스 코드 (고정값 - SVC202)
+                  description: Service Code (fixed value - SVC202)
                   example: SVC202
                 device-type:
                   type: string
-                  description: 클라이언트 기기타입 (고정값 - 607)
+                  description: Client device type (fixed value - 607)
                   example: '607'
         client-res:
-          description: 클라이언트 구독/해제 응답
+          description: Client Subscribe/Unsubscribe Response
           allOf:
             - $ref: '#/components/schemas/base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: 성공 시 빈 dict가 전달됨
+                  description: An empty dictionay is passed on success
                   example: {}
         client-unregister-req:
-          description: 클라이언트 해제 body
+          description: Client unsubscription body
           type: object
           properties:
             body:
               type: object
-              description: 사용자 정보
+              description: user's information
               properties:
                 type:
                   type: string
-                  description: Push type (고정값 - MQTT)
+                  description: Push type (fixed value - MQTT)
                   example: MQTT
                 service-code:
                   type: string
-                  description: 서비스 코드 (고정값 - SVC202)
+                  description: Service Code (fixed value - SVC202)
                   example: SVC202
       examples:
         refrigerator-profile-example:
@@ -4927,64 +4926,64 @@ contents:
             battery:
               level: HIGH
         refrigerator-command-example:
-          description: 냉장고 - 절전 모드 설정
+          description: Refrigerator - Power Save On
           value:
             powerSave:
               powerSaveEnabled: true
         wine_cellar-command-example:
-          description: 와인셀러 - 조명 밝기
+          description: Wine Cellar - light Brightness
           value:
             operation:
               lightStatus: 90
         washer-command-example:
-          description: 세탁기 - 운전 시작
+          description: Washer - Power ON / Start washing
           value:
             location:
               locationName: MAIN
             operation:
               washerOperationMode: START
         dryer-command-example:
-          description: 건조기 - 세탁 시작
+          description: Dryer - Start drying
           value:
             operation:
               dryerOperationMode: START
         styler-command-example:
-          description: 스타일러 - 운전 모드
+          description: Styler - stylerOperationMode
           value:
             operation:
               stylerOperationMode: START
         dish_washer-command-example:
-          description: 식기세척기 - 운전 모드
+          description: Dish Washer - washerOperationMode
           value:
             operation:
               dishWasherOperationMode: START
         washtower_washer-command-example:
-          description: 워시타워 세탁기 - 세탁 시작
+          description: WashTower Washer Washer - Start washing
           value:
             operation:
               washerOperationMode: START
             location:
               locationName: MAIN
         washtower_dryer-command-example:
-          description: 워시타워(건조기) - 전원 POWER_OFF
+          description: WashTower Washer(Dryer) - POWER_OFF
           value:
             operation:
               dryerOperationMode: POWER_OFF
         washtower-command-example:
-          description: 워시타워 - 건조기 시작
+          description: WashTower Washer - Start drying
           value:
             dryer:
               operation:
                 dryerOperationMode: START
         main_washcombo-command-example:
-          description: 워시콤보세탁기 메인 - 동작
+          description: Main WashCombo - runState / operation
           value:
             location:
               locationName: MAIN
             operation:
               washerOperationMode: START
         mini_washcombo-command-example:
-          description: 워시콤보세탁기 미니 - 동작
+          description: Mini WashCombo - runState / operation
           value:
             location:
               locationName: MINI
@@ -4992,74 +4991,74 @@ contents:
               washerOperationMode: START
         oven-command-example:
           title: Oven
-          description: 오븐 - 오븐 동작
+          description: Oven -  ovenOperationMode
           value:
             location:
               locationName: LOWER
             operation:
               ovenOperationMode: START
         cooktop-command-example:
-          description: 쿡탑 - 전원 OFF
+          description: Cooktop - Power Off
           value:
             operation:
               operationMode: POWER_OFF
         hood-command-example:
-          description: 후드 - 램프 밝기
+          description: Hood - Lamp Brightness
           value:
             lamp:
               lampBrightness: 0
         microwave_oven-command-example:
-          description: 전자레인지
+          description: Microwave Oven
           value:
             lamp:
               lampBrightness: 1
             ventilation:
               fanSpeed: 0
         air_conditioner-command-example:
-          description: 에어컨 - 지정한 켜짐 예약시간
+          description: Air Conditioner - Set On Timer 
           value:
             timer:
               absoluteHourToStart: 10
               absoluteMinuteToStart: 36
         system_boiler-command-example:
-          description: 시스템 보일러 - 전원 ON
+          description: System Boiler - Power ON
           value:
             operation:
               boilerOperationMode: POWER_ON
         air_purifier-command-example:
-          description: 공기청정기 - 운전 모드
+          description: Air Purifier - Run mode
           value:
             airPurifierJobMode:
               currentJobMode: CLEAN
         dehumidifier-command-example:
-          description: 가습기 - 운전 모드
+          description: Humidifier - humidifierJobMode
           value:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
         humidifier-command-example:
           title: Humidifier
-          description: 가습기 - 운전 모드
+          description: Humidifier - humidifierJobMode
           value:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
         water_heater-command-example:
-          description: 온수기 - 운전모드
+          description: Water Heater - waterHeaterJobMode 
           value:
             waterHeaterJobMode:
               currentJobMode: AUTO
         ceiling_fan-command-example:
-          description: 실링팬 - 운전 모드
+          description: Ceiling Fan - ceilingfanOperationMode
           value:
             operation:
               ceilingfanOperationMode: POWER_ON
         air_purifier_fan-command-example:
-          description: 공기청정팬 - 운전 모드
+          description: Air Purifier Fan - airFanJobMode
           value:
             airFanJobMode:
               currentJobMode: SPOT_CLEAN
         robot_cleaner-command-example:
           title: Robot_Cleaner
-          description: 로봇청소기 - 청소 모드
+          description: Robot Cleaner - robotCleanerJobMode
           value:
             operation:
               cleanOperationMode: HOMING
