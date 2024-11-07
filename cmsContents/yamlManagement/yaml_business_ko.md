@@ -946,7 +946,7 @@ contents:
               application/json:
                 schema:
                   type: object
-                  description: 디바이스 유형별 제어 요청 메시지의 스키마는 [**디바이스 프로파일**](/api/device_profile) 페이지를 참조해주십시오.
+                  description: 디바이스 유형별 제어 요청 메시지의 스키마는 [**디바이스 프로파일**](/apiManage/device_profile) 페이지를 참조해주십시오.
                 examples:
                   냉장고:
                     $ref: '#/components/examples/refrigerator-command-example'
@@ -4614,7 +4614,7 @@ contents:
               properties:
                 response:
                   type: object
-                  description: 디바이스 유형별 디바이스 프로파일 메시지의 스키마는 [**디바이스 프로파일**](/api/device_profile) 페이지를 참조해주십시오.
+                  description: 디바이스 유형별 디바이스 프로파일 메시지의 스키마는 [**디바이스 프로파일**](/apiManage/device_profile) 페이지를 참조해주십시오.
         device-status-res:
           description: 특정 디바이스의 상태 응답입니다.
           allOf:
@@ -4623,7 +4623,7 @@ contents:
               properties:
                 response:
                   type: object
-                  description: 디바이스 유형별 디바이스 상태 응답 메시지의 스키마는 [**디바이스 프로파일**](/api/device_profile) 페이지를 참조해주십시오.
+                  description: 디바이스 유형별 디바이스 상태 응답 메시지의 스키마는 [**디바이스 프로파일**](/apiManage/device_profile) 페이지를 참조해주십시오.
         device-id-list-res:
           description: 디바이스 ID 목록의 응답입니다.
           allOf:
