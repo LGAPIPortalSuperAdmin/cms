@@ -9,7 +9,7 @@ contents:
       title: ThinQ Business API
     servers:
       - url: https://ap.api.lge.com/biz/v1
-      - url: https://eu.api.lge.com/biz/v1 
+      - url: https://eu.api.lge.com/biz/v1
       - url: https://us.api.lge.com/biz/v1
       - url: https://ap-test.api.lge.com/biz/v1
       - url: https://eu-test.api.lge.com/biz/v1
