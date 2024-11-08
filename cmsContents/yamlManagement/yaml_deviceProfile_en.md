@@ -5,23 +5,25 @@ contents:
     openapi: 3.1.0
 
     info:
-      version: '1.0'
+      version:
       title: Device Profile
     servers:
       - url: https://ap.api.lge.com
     tags:
       - name: overview
-        x-displayName: Summary
+        x-displayName: Overview
         x-traitTag: true
         description: |
           **A device profile** describes the state of a device or defines properties that allow you to control the device. 
-            evice profiles are provided per device type, and even within the same type, the content may vary depending on the product or model. Use the attributes defined in a device profile to apply functionality to your service related to viewing and controlling the state of a device. This document describes the following contents for each device type.
+          Device profiles are provided per device type, and even within the same type, the content may vary depending on the product or model. Use the attributes defined in a device profile to apply functionality to your service related to viewing and controlling the state of a device. This document describes the following contents for each device type.
 
             - **Device profile schema**
               
               **Describes the schema of the device profile received by calling the **Device Profile Viewing API*
               Refer to an example of a device profile message along with the schema.
-              The device profile message consists of the following items, which may vary depending on the type of device.            | Item | Description |
+              The device profile message consists of the following items, which may vary depending on the type of device.
+              
+                | Item | Description |
                 |-|-|
                 | property | Read/write support per property and value characteristics |
                 | notification |the type of push messages supported by your device |
@@ -34,7 +36,7 @@ contents:
       - name: device type
         x-displayName: Device Type
         x-traitTag: true
-        description: "**Device Type** characterizes the device and allows you to distinguish the kind of device in the **Device List Viewing API** response. Device profiles are defined based on device type.\n\n  | Device Type | Name |\n  |-|-|\n  | DEVICE_REFRIGERATOR | Refrigerator |\n  | DEVICE_WASHER | Washer |\n  | DEVICE_DRYER | Dryer |\n  | DEVICE_AIR_CONDITIONER | Air Conditioner |\n  | DEVICE_AIR_PURIFIER | Air Purifier |\n  | DEVICE_ROBOT_CLEANER | Robot Cleaner |\n  | DEVICE_OVEN | Oven |\n  | DEVICE_DISH_WASHER | Dish Washer |\n  | DEVICE_STYLER | Styler |\n  | DEVICE_WATER_PURIFIER | Water Purifier |\n  | DEVICE_DEHUMIDIFIER | Dehumidifier |\n  | DEVICE_CEILING_FAN | Ceiling Fan |\n  | DEVICE_WINE_CELLAR | Wine Cellar |\n  | DEVICE_KIMCHI_REFRIGERATOR | Kimchi Refrigerator |\n  | DEVICE_HOME_BREW | Home Brew |\n  | DEVICE_PLANT_CULTIVATOR | Plant Cultivator |\n  | DEVICE_WASHTOWER_WASHER | WashTower Washer(Washer) |\n  | DEVICE_WASHTOWER_DRYER | WashTower Washer(Dryer) |\n  | DEVICE_WASHTOWER | WashTower Washer |\n  | DEVICE_COOKTOP | Cooktop |\n  | DEVICE_HOOD | Hood |\n  | DEVICE_MICROWAVE_OVEN | Microwave Oven |\n  | DEVICE_SYSTEM_BOILER | System Boiler |\n  | DEVICE_AIR_PURIFIER_FAN | Air Purifier Fan |\n  | DEVICE_STICK_CLEANER | Stick Cleaner |\n  | DEVICE_WATER_HEATER | Water Heater |\n  | DEVICE_WASHCOMBO_MAIN | Main WashCombo |\n  | DEVICE_WASHCOMBO_MINI | Mini WashCombo |\n  | DEVICE_HUMIDIFIER | Humidifier |\n  | DEVICE_ODU | Outdoor unit of system Air conditioner registered in LG BECON Cloud |\n  | DEVICE_IDU | indoor unit of system air conditioner registered in LG BECON Cloud |\n  | DEVICE_SIGNAGE | Signage |\n  | DEVICE_HEJ_MOTION_SENSOR | Smart Motion Sensor\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | Smart Temperature and Humidity Sensor\n  | DEVICE_HEJ_DOOR_SENSOR | Smart door Sensor\n  | DEVICE_HEJ_BUTTON | Smart button\n  | DEVICE_HEJ_LIGHT_SWITCH | Smart light switch"\n  | DEVICE_HEJ_DOOR_LOCK | Smart door lock \n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | Smart Push Pull door lock\n  | DEVICE_HEJ_PLUG | Smart power strip\n  | DEVICE_HEJ_PLUG_MINI | Smart Plug Mini\n  | DEVICE_HEJ_BULB_WHITE | Smart light bulb (White)\n  | DEVICE_HEJ_BULB_COLOR | Smart light bulb (Multi-Color)\n  | DEVICE_HEJ_LINE_LED | Smart String Light LED\n  | DEVICE_HEJ_CURTAIN_CTRL | Smart Motorized Curtain Controller\n  | DEVICE_HEJ_BLIND_MOTOR | Smart electric blinds\n  | DEVICE_HEJ_SWITCH_STRIP | Switch strap\n  | DEVICE_HEJ_STARLIGHT | Smart Star Light\n  | DEVICE_HEJ_DOORBELL | Smart Chime Bell\n  | DEVICE_HEJ_PET_FEEDER | Smart Pet Feeder\n  | DEVICE_HEJ_HOME_CAMERA | Smart Home Camera\n  | DEVICE_HEJ_SYNC_BOX | Syc Box\n  | DEVICE_HEJ_SYNC_BOX_SUB | Synclight\n  | DEVICE_HEJ_GAS_SENSOR\t| Smart Gas sensor\n  | DEVICE_HEJ_FIRE_SENSOR | Smart fire detection sensor\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | Smart water leak detection sensor\n  | DEVICE_HEJ_THERMO_HYGROMETER | Smart thermohygrometer\n  | DEVICE_HEJ_SIREN | Smart siren\n"
+        description: "**Device Type** characterizes the device and allows you to distinguish the kind of device in the **Device List Viewing API** response. Device profiles are defined based on device type.\n\n  | Device Type | Name |\n  |-|-|\n  | DEVICE_REFRIGERATOR | Refrigerator |\n  | DEVICE_WASHER | Washer |\n  | DEVICE_DRYER | Dryer |\n  | DEVICE_AIR_CONDITIONER | Air Conditioner |\n  | DEVICE_AIR_PURIFIER | Air Purifier |\n  | DEVICE_ROBOT_CLEANER | Robot Cleaner |\n  | DEVICE_OVEN | Oven |\n  | DEVICE_DISH_WASHER | Dish Washer |\n  | DEVICE_STYLER | Styler |\n  | DEVICE_WATER_PURIFIER | Water Purifier |\n  | DEVICE_DEHUMIDIFIER | Dehumidifier |\n  | DEVICE_CEILING_FAN | Ceiling Fan |\n  | DEVICE_WINE_CELLAR | Wine Cellar |\n  | DEVICE_KIMCHI_REFRIGERATOR | Kimchi Refrigerator |\n  | DEVICE_HOME_BREW | Home Brew |\n  | DEVICE_PLANT_CULTIVATOR | Plant Cultivator |\n  | DEVICE_WASHTOWER_WASHER | WashTower Washer(Washer) |\n  | DEVICE_WASHTOWER_DRYER | WashTower Washer(Dryer) |\n  | DEVICE_WASHTOWER | WashTower Washer |\n  | DEVICE_COOKTOP | Cooktop |\n  | DEVICE_HOOD | Hood |\n  | DEVICE_MICROWAVE_OVEN | Microwave Oven |\n  | DEVICE_SYSTEM_BOILER | System Boiler |\n  | DEVICE_AIR_PURIFIER_FAN | Air Purifier Fan |\n  | DEVICE_STICK_CLEANER | Stick Cleaner |\n  | DEVICE_WATER_HEATER | Water Heater |\n  | DEVICE_WASHCOMBO_MAIN | Main WashCombo |\n  | DEVICE_WASHCOMBO_MINI | Mini WashCombo |\n  | DEVICE_HUMIDIFIER | Humidifier |\n  | DEVICE_ODU | Outdoor unit of system Air conditioner registered in LG BECON Cloud |\n  | DEVICE_IDU | indoor unit of system air conditioner registered in LG BECON Cloud |\n  | DEVICE_SIGNAGE | Signage |\n  | DEVICE_HEJ_MOTION_SENSOR | Smart Motion Sensor\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | Smart Temperature and Humidity Sensor\n  | DEVICE_HEJ_DOOR_SENSOR | Smart door Sensor\n  | DEVICE_HEJ_BUTTON | Smart button\n  | DEVICE_HEJ_LIGHT_SWITCH | Smart light switch\n  | DEVICE_HEJ_DOOR_LOCK | Smart door lock \n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | Smart Push Pull door lock\n  | DEVICE_HEJ_PLUG | Smart power strip\n  | DEVICE_HEJ_PLUG_MINI | Smart Plug Mini\n  | DEVICE_HEJ_BULB_WHITE | Smart light bulb (White)\n  | DEVICE_HEJ_BULB_COLOR | Smart light bulb (Multi-Color)\n  | DEVICE_HEJ_LINE_LED | Smart String Light LED\n  | DEVICE_HEJ_CURTAIN_CTRL | Smart Motorized Curtain Controller\n  | DEVICE_HEJ_BLIND_MOTOR | Smart electric blinds\n  | DEVICE_HEJ_SWITCH_STRIP | Switch strap\n  | DEVICE_HEJ_STARLIGHT | Smart Star Light\n  | DEVICE_HEJ_DOORBELL | Smart Chime Bell\n  | DEVICE_HEJ_PET_FEEDER | Smart Pet Feeder\n  | DEVICE_HEJ_HOME_CAMERA | Smart Home Camera\n  | DEVICE_HEJ_SYNC_BOX | Syc Box\n  | DEVICE_HEJ_SYNC_BOX_SUB | Synclight\n  | DEVICE_HEJ_GAS_SENSOR\t| Smart Gas sensor\n  | DEVICE_HEJ_FIRE_SENSOR | Smart fire detection sensor\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | Smart water leak detection sensor\n  | DEVICE_HEJ_THERMO_HYGROMETER | Smart thermohygrometer\n  | DEVICE_HEJ_SIREN | Smart siren\n"
       - name: refrigerator
         x-displayName: Refrigerator
         description: |
@@ -50,7 +52,7 @@ contents:
             exampleRef="#/components/examples/refrigerator-object-example" />
 
           ### Device control request
-          You can control properties with ‘w’ permissions in the device profile. Write a request body with the parent value and key of the property you want to control.
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
@@ -82,14 +84,14 @@ contents:
             schemaRef="#/components/schemas/washer-profile"
             exampleRef="#/components/examples/washer-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/washer-object"
             exampleRef="#/components/examples/washer-object-example" />
 
           ### Device control request
-          You can control properties with ‘w’ permissions in the device profile. Write a request body with the parent value and key of the property you want to control.
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
@@ -153,7 +155,7 @@ contents:
             schemaRef="#/components/schemas/air_purifier-profile"
             exampleRef="#/components/examples/air_purifier-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/air_purifier-object"
@@ -210,7 +212,7 @@ contents:
             schemaRef="#/components/schemas/robot_cleaner-profile"
             exampleRef="#/components/examples/robot_cleaner-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/robot_cleaner-object"
@@ -249,7 +251,7 @@ contents:
             schemaRef="#/components/schemas/oven-profile"
             exampleRef="#/components/examples/oven-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/oven-object"
@@ -412,7 +414,7 @@ contents:
             schemaRef="#/components/schemas/dish_washer-profile"
             exampleRef="#/components/examples/dish_washer-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/dish_washer-object"
@@ -449,7 +451,7 @@ contents:
             schemaRef="#/components/schemas/styler-profile"
             exampleRef="#/components/examples/styler-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/styler-object"
@@ -494,7 +496,7 @@ contents:
             schemaRef="#/components/schemas/water_purifier-profile"
             exampleRef="#/components/examples/water_purifier-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/water_purifier-object"
@@ -510,7 +512,7 @@ contents:
             schemaRef="#/components/schemas/dehumidifier-profile"
             exampleRef="#/components/examples/dehumidifier-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/dehumidifier-object"
@@ -564,7 +566,7 @@ contents:
             schemaRef="#/components/schemas/ceiling_fan-profile"
             exampleRef="#/components/examples/ceiling_fan-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/ceiling_fan-object"
@@ -601,7 +603,7 @@ contents:
             schemaRef="#/components/schemas/wine_cellar-profile"
             exampleRef="#/components/examples/wine_cellar-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/wine_cellar-object"
@@ -650,7 +652,7 @@ contents:
             schemaRef="#/components/schemas/kimchi_refrigerator-profile"
             exampleRef="#/components/examples/kimchi_refrigerator-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/kimchi_refrigerator-object"
@@ -666,7 +668,7 @@ contents:
             schemaRef="#/components/schemas/home_brew-profile"
             exampleRef="#/components/examples/home_brew-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/home_brew-object"
@@ -682,7 +684,7 @@ contents:
             schemaRef="#/components/schemas/plant_cultivator-profile"
             exampleRef="#/components/examples/plant_cultivator-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/plant_cultivator-object"
@@ -698,7 +700,7 @@ contents:
             schemaRef="#/components/schemas/washtower_washer-profile"
             exampleRef="#/components/examples/washtower_washer-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/washtower_washer-object"
@@ -764,7 +766,7 @@ contents:
             schemaRef="#/components/schemas/washtower_dryer-profile"
             exampleRef="#/components/examples/washtower_dryer-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/washtower_dryer-object"
@@ -818,7 +820,7 @@ contents:
             schemaRef="#/components/schemas/washtower-profile"
             exampleRef="#/components/examples/washtower-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/washtower-object"
@@ -859,7 +861,7 @@ contents:
             schemaRef="#/components/schemas/cooktop-profile"
             exampleRef="#/components/examples/cooktop-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/cooktop-object"
@@ -903,7 +905,7 @@ contents:
             schemaRef="#/components/schemas/hood-profile"
             exampleRef="#/components/examples/hood-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/hood-object"
@@ -934,7 +936,7 @@ contents:
             schemaRef="#/components/schemas/microwave_oven-profile"
             exampleRef="#/components/examples/microwave_oven-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/microwave_oven-object"
@@ -964,7 +966,7 @@ contents:
             schemaRef="#/components/schemas/system_boiler-profile"
             exampleRef="#/components/examples/system_boiler-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/system_boiler-object"
@@ -1021,7 +1023,7 @@ contents:
             schemaRef="#/components/schemas/air_purifier_fan-profile"
             exampleRef="#/components/examples/air_purifier_fan-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/air_purifier_fan-object"
@@ -1049,7 +1051,7 @@ contents:
             schemaRef="#/components/schemas/stick_cleaner-profile"
             exampleRef="#/components/examples/stick_cleaner-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/stick_cleaner-object"
@@ -1065,7 +1067,7 @@ contents:
             schemaRef="#/components/schemas/water_heater-profile"
             exampleRef="#/components/examples/water_heater-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/water_heater-object"
@@ -1102,7 +1104,7 @@ contents:
             schemaRef="#/components/schemas/main_washcombo-profile"
             exampleRef="#/components/examples/main_washcombo-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/main_washcombo-object"
@@ -1145,7 +1147,7 @@ contents:
             schemaRef="#/components/schemas/mini_washcombo-profile"
             exampleRef="#/components/examples/mini_washcombo-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/mini_washcombo-object"
@@ -1188,7 +1190,7 @@ contents:
             schemaRef="#/components/schemas/humidifier-profile"
             exampleRef="#/components/examples/humidifier-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/humidifier-object"
@@ -1225,7 +1227,7 @@ contents:
             schemaRef="#/components/schemas/odu-profile"
             exampleRef="#/components/examples/odu-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/odu-object"
@@ -1241,7 +1243,7 @@ contents:
             schemaRef="#/components/schemas/idu-profile"
             exampleRef="#/components/examples/idu-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/idu-object"
@@ -1259,7 +1261,7 @@ contents:
             schemaRef="#/components/schemas/signage-profile"
             exampleRef="#/components/examples/signage-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/signage-object"
@@ -1319,7 +1321,7 @@ contents:
             schemaRef="#/components/schemas/motion_sensor-profile"
             exampleRef="#/components/examples/motion_sensor-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/motion_sensor-object"
@@ -1335,7 +1337,7 @@ contents:
             schemaRef="#/components/schemas/temperature_humidity_sensor-profile"
             exampleRef="#/components/examples/temperature_humidity_sensor-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/temperature_humidity_sensor-object"
@@ -1351,7 +1353,7 @@ contents:
             schemaRef="#/components/schemas/door_sensor-profile"
             exampleRef="#/components/examples/door_sensor-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/door_sensor-object"
@@ -1367,7 +1369,7 @@ contents:
             schemaRef="#/components/schemas/button-profile"
             exampleRef="#/components/examples/button-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/button-object"
@@ -1383,7 +1385,7 @@ contents:
             schemaRef="#/components/schemas/light_switch-profile"
             exampleRef="#/components/examples/light_switch-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/light_switch-object"
@@ -1402,7 +1404,7 @@ contents:
             schemaRef="#/components/schemas/door_lock-profile"
             exampleRef="#/components/examples/door_lock-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/door_lock-object"
@@ -1421,7 +1423,7 @@ contents:
             schemaRef="#/components/schemas/push_pull_door_lock-profile"
             exampleRef="#/components/examples/push_pull_door_lock-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/push_pull_door_lock-object"
@@ -1440,7 +1442,7 @@ contents:
             schemaRef="#/components/schemas/plug-profile"
             exampleRef="#/components/examples/plug-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/plug-object"
@@ -1459,7 +1461,7 @@ contents:
             schemaRef="#/components/schemas/plug_mini-profile"
             exampleRef="#/components/examples/plug_mini-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/plug_mini-object"
@@ -1478,7 +1480,7 @@ contents:
             schemaRef="#/components/schemas/bulb_white-profile"
             exampleRef="#/components/examples/bulb_white-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/bulb_white-object"
@@ -1497,7 +1499,7 @@ contents:
             schemaRef="#/components/schemas/bulb_color-profile"
             exampleRef="#/components/examples/bulb_color-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/bulb_color-object"
@@ -1516,7 +1518,7 @@ contents:
             schemaRef="#/components/schemas/line_led-profile"
             exampleRef="#/components/examples/line_led-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/line_led-object"
@@ -1535,7 +1537,7 @@ contents:
             schemaRef="#/components/schemas/curtain_ctrl-profile"
             exampleRef="#/components/examples/curtain_ctrl-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/curtain_ctrl-object"
@@ -1554,7 +1556,7 @@ contents:
             schemaRef="#/components/schemas/blind_motor-profile"
             exampleRef="#/components/examples/blind_motor-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/blind_motor-object"
@@ -1573,7 +1575,7 @@ contents:
             schemaRef="#/components/schemas/switch_strip-profile"
             exampleRef="#/components/examples/switch_strip-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/switch_strip-object"
@@ -1592,7 +1594,7 @@ contents:
             schemaRef="#/components/schemas/starlight-profile"
             exampleRef="#/components/examples/starlight-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/starlight-object"
@@ -1611,7 +1613,7 @@ contents:
             schemaRef="#/components/schemas/doorbell-profile"
             exampleRef="#/components/examples/doorbell-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/doorbell-object"
@@ -1630,7 +1632,7 @@ contents:
             schemaRef="#/components/schemas/pet_peeder-profile"
             exampleRef="#/components/examples/pet_peeder-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/pet_peeder-object"
@@ -1649,7 +1651,7 @@ contents:
             schemaRef="#/components/schemas/home_camera-profile"
             exampleRef="#/components/examples/home_camera-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/home_camera-object"
@@ -1668,7 +1670,7 @@ contents:
             schemaRef="#/components/schemas/sync_box-profile"
             exampleRef="#/components/examples/sync_box-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/sync_box-object"
@@ -1687,7 +1689,7 @@ contents:
             schemaRef="#/components/schemas/sync_box_sub-profile"
             exampleRef="#/components/examples/sync_box_sub-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/sync_box_sub-object"
@@ -1706,7 +1708,7 @@ contents:
             schemaRef="#/components/schemas/gas_sensor-profile"
             exampleRef="#/components/examples/gas_sensor-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/gas_sensor-object"
@@ -1722,7 +1724,7 @@ contents:
             schemaRef="#/components/schemas/fire_sensor-profile"
             exampleRef="#/components/examples/fire_sensor-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/fire_sensor-object"
@@ -1738,7 +1740,7 @@ contents:
             schemaRef="#/components/schemas/water_leak_sensor-profile"
             exampleRef="#/components/examples/water_leak_sensor-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/water_leak_sensor-object"
@@ -1754,7 +1756,7 @@ contents:
             schemaRef="#/components/schemas/thermo_hygrometer-profile"
             exampleRef="#/components/examples/thermo_hygrometer-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/thermo_hygrometer-object"
@@ -1770,7 +1772,7 @@ contents:
             schemaRef="#/components/schemas/siren-profile"
             exampleRef="#/components/examples/siren-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/siren-object"
@@ -2453,7 +2455,7 @@ contents:
                                 AUTO | Auto mode
                                 POWER | Power mode
                               items:
-                                typs: string
+                                type: string
                                 enum:
                                   - 'OFF'
                                   - AUTO
@@ -2675,570 +2677,6 @@ contents:
                 waterFilterInfo:
                   type: object
                   description: water Filter Info.
-                  properties:
-                    usedTime:
-                      type: object
-                      description: Usage Time (# of Months)
-                      properties:
-                        mode:
-                          type: array
-                          items:
-                            type: string
-                            enum:
-                              - r
-                        type:
-                          type: string
-                          enum:
-                            - number
-            notification:
-              type: object
-              properties:
-                push:
-                  type: array
-                  minItems: 1
-                  description: |-
-                    Push Code | Description
-                    -|-
-                    FROZEN_IS_COMPLETE | Freezing has completed.
-                    DOOR_IS_OPEN | The door is open.
-                    TIME_TO_CHANGE_FILTER | It is time to replace the filter.
-                    TIME_TO_CHANGE_WATER_FILTER | It is time to replace the water filter.
-                  items:
-                    type: string
-                    enum:
-                      - TIME_TO_CHANGE_WATER_FILTER
-                      - FROZEN_IS_COMPLETE
-                      - DOOR_IS_OPEN
-                      - TIME_TO_CHANGE_FILTER
-        refrigerator-object:
-          title: Refrigerator
-          properties:
-            doorStatus:
-              type: array
-              items:
-                type: object
-                properties:
-                  doorState:
-                    type: string
-                    enum:
-                      - OPEN
-                      - CLOSE
-                  locationName:
-                    type: string
-                    enum:
-                      - MAIN
-            refrigeration:
-              type: object
-              properties:
-                expressMode:
-                  type: boolean
-                  enum:
-                    - true
-                    - false
-                rapidFreeze:
-                  type: boolean
-                  enum:
-                    - true
-                    - false
-                freshAirFilter:
-                  type: string
-                  enum:
-                    - 'OFF'
-                    - AUTO
-                    - POWER
-                    - REPLACE
-                    - SMART_POWER
-                    - SMART_OFF
-                    - SMART_ON
-                expressFridge:
-                  type: boolean
-                  enum:
-                    - true
-                    - false
-                expressModeName:
-                  type: string
-                  enum:
-                    - FRIDGE
-                    - FREEZER
-            temperature:
-              type: array
-              items:
-                type: object
-                properties:
-                  locationName:
-                    type: string
-                    enum:
-                      - FRIDGE
-                      - FREEZER
-                      - CONVERTIBLE
-                  targetTemperature:
-                    type: integer
-                    example: 5
-                  unit:
-                    type: string
-                    enum:
-                      - C
-                      - F
-            powerSave:
-              type: object
-              properties:
-                powerSaveEnabled:
-                  type: boolean
-                  enum:
-                    - true
-                    - false
-            waterFilterInfo:
-              type: object
-              readOnly: true
-              properties:
-                usedTime:
-                  type: number
-            ecoFriendly:
-              type: object
-              properties:
-                ecoFriendlyMode:
-                  type: boolean
-                  enum:
-                    - true
-                    - false
-            sabbath:
-              type: object
-              properties:
-                sabbathMode:
-                  type: boolean
-                  enum:
-                    - true
-                    - false
-        device-command-schema:
-          title: Refrigerator
-          properties:
-            property:
-              type: object
-              properties:
-                temperature:
-                  type: array
-                  description: Temperature
-                  items:
-                    type: object
-                    properties:
-                      locationName:
-                        type: string
-                        enum:
-                          - FRIDGE
-                          - FREEZER
-                          - CONVERTIBLE
-                        description: |-
-                          Place name
-                          Value | Description
-                          -|-
-                          FRIDGE | Fridge
-                          FREEZER | Freezer
-                          CONVERTIBLE | Convertible
-                      targetTemperature:
-                        type: object
-                        description: Desired Temperature
-                        properties:
-                          mode:
-                            type: array
-                            items:
-                              type: string
-                              enum:
-                                - r
-                                - w
-                          type:
-                            type: string
-                            enum:
-                              - range
-                          value:
-                            type: object
-                            properties:
-                              r:
-                                type: object
-                                properties:
-                                  max:
-                                    type: integer
-                                  min:
-                                    type: integer
-                                  step:
-                                    type: integer
-                              w:
-                                type: object
-                                properties:
-                                  max:
-                                    type: integer
-                                  min:
-                                    type: integer
-                                  step:
-                                    type: integer
-                      unit:
-                        type: string
-                        enum:
-                          - C
-                          - F
-                        description: |-
-                          Value | Description
-                          -|-
-                          C | Celsius
-                          F | Fahrenheit
-                refrigeration:
-                  type: object
-                  description: Features
-                  properties:
-                    expressMode:
-                      type: object
-                      description: Express Mode On
-                      properties:
-                        mode:
-                          type: array
-                          items:
-                            type: string
-                            enum:
-                              - r
-                              - w
-                        type:
-                          type: string
-                          enum:
-                            - boolean
-                        value:
-                          type: object
-                          properties:
-                            r:
-                              type: array
-                              description: |-
-                                Value | Description
-                                -|-
-                                true | Express Mode On
-                                false | Express Mode Off
-                              items:
-                                type: boolean
-                                enum:
-                                  - true
-                                  - false
-                            w:
-                              type: array
-                              description: |-
-                                Value | Description
-                                -|-
-                                true | Express Mode On
-                                false | Express Mode Off
-                              items:
-                                type: boolean
-                                enum:
-                                  - true
-                                  - false
-                    rapidFreeze:
-                      type: object
-                      description: Rapid Freeze
-                      properties:
-                        mode:
-                          type: array
-                          items:
-                            type: string
-                            enum:
-                              - r
-                              - w
-                        type:
-                          type: string
-                          enum:
-                            - boolean
-                        value:
-                          type: object
-                          properties:
-                            r:
-                              type: array
-                              description: |-
-                                Value | Description
-                                -|-
-                                true | Rapid Freeze On
-                                false | Rapid Freeze Off
-                              items:
-                                type: boolean
-                                enum:
-                                  - true
-                                  - false
-                            w:
-                              type: array
-                              description: |-
-                                Value | Description
-                                -|-
-                                true | Rapid Freeze On
-                                false | Rapid Freeze Off
-                              items:
-                                type: boolean
-                                enum:
-                                  - true
-                                  - false
-                    freshAirFilter:
-                      type: object
-                      description: freshAirFilter
-                      properties:
-                        mode:
-                          type: array
-                          items:
-                            type: string
-                            enum:
-                              - r
-                              - w
-                        type:
-                          type: string
-                          enum:
-                            - enum
-                        value:
-                          type: object
-                          properties:
-                            r:
-                              type: array
-                              description: |-
-                                Value | Description
-                                -|-
-                                OFF | Off 
-                                AUTO | Auto mode
-                                POWER | Power mode
-                                REPLACE | Replace
-                                SMART_POWER | Smart Power mode
-                                SMART_OFF | Smart mode off 
-                                SMART_ON | Smart mode on
-                              items:
-                                type: string
-                                enum:
-                                  - 'OFF'
-                                  - AUTO
-                                  - POWER
-                                  - REPLACE
-                                  - SMART_POWER
-                                  - SMART_OFF
-                                  - SMART_ON
-                            w:
-                              type: array
-                              description: |-
-                                Value | Description
-                                -|-
-                                OFF | Off 
-                                AUTO | Auto mode
-                                POWER | Power mode
-                              items:
-                                typs: string
-                                enum:
-                                  - 'OFF'
-                                  - AUTO
-                                  - POWER
-                    expressFridge:
-                      type: object
-                      description: Express Refrigeration On
-                      properties:
-                        mode:
-                          type: array
-                          items:
-                            type: string
-                            enum:
-                              - r
-                              - w
-                        type:
-                          type: string
-                          enum:
-                            - boolean
-                        value:
-                          type: object
-                          properties:
-                            r:
-                              type: array
-                              description: |-
-                                Value | Description
-                                -|-
-                                true | Express Refrigeration On
-                                false | Express Refrigeration Off
-                              items:
-                                type: boolean
-                                enum:
-                                  - true
-                                  - false
-                            w:
-                              type: array
-                              description: |-
-                                Value | Description
-                                -|-
-                                true | Express Refrigeration On
-                                false | Express Refrigeration Off
-                              items:
-                                type: boolean
-                                enum:
-                                  - true
-                                  - false
-                    expressModeName:
-                      type: object
-                      description: Express Refrigeration Mode name
-                      properties:
-                        mode:
-                          type: array
-                          items:
-                            type: string
-                            enum:
-                              - r
-                        type:
-                          type: string
-                          enum:
-                            - enum
-                        value:
-                          type: object
-                          properties:
-                            r:
-                              type: array
-                              description: |-
-                                Value | Description
-                                -|-
-                                FRIDGE | Fridge
-                                FREEZER | Freezer
-                              items:
-                                type: string
-                                enum:
-                                  - FRIDGE
-                                  - FREEZER
-                powerSave:
-                  type: object
-                  description: Power Save
-                  properties:
-                    powerSaveEnabled:
-                      type: object
-                      description: Power Save
-                      properties:
-                        mode:
-                          type: array
-                          items:
-                            type: string
-                            enum:
-                              - r
-                        type:
-                          type: string
-                          enum:
-                            - boolean
-                        value:
-                          type: object
-                          properties:
-                            r:
-                              type: array
-                              description: |-
-                                Value | Description
-                                -|-
-                                true | Power Save On
-                                false | Power Save Off
-                              items:
-                                type: boolean
-                                enum:
-                                  - true
-                                  - false
-                ecoFriendly:
-                  type: object
-                  description: Eco Friendly mode
-                  properties:
-                    ecoFriendlyMode:
-                      type: object
-                      description: Eco Friendly mode
-                      properties:
-                        mode:
-                          type: array
-                          items:
-                            type: string
-                            enum:
-                              - r
-                        type:
-                          type: string
-                          enum:
-                            - boolean
-                        value:
-                          type: object
-                          properties:
-                            r:
-                              type: array
-                              description: |-
-                                Value | Description
-                                -|-
-                                true | Eco Friendly mode 
-                                false | Eco Friendly mode Off
-                              items:
-                                type: boolean
-                                enum:
-                                  - true
-                                  - false
-                sabbath:
-                  type: object
-                  description: sabbath mode On
-                  properties:
-                    sabbathMode:
-                      type: object
-                      description: sabbath mode On
-                      properties:
-                        mode:
-                          type: array
-                          items:
-                            type: string
-                            enum:
-                              - r
-                        type:
-                          type: string
-                          enum:
-                            - boolean
-                        value:
-                          type: object
-                          properties:
-                            r:
-                              type: array
-                              description: |-
-                                Value | Description
-                                -|-
-                                true | sabbath mode On 
-                                false | sabbath mode Off
-                              items:
-                                type: boolean
-                                enum:
-                                  - true
-                                  - false
-                doorStatus:
-                  type: array
-                  description: doorStatus
-                  items:
-                    type: object
-                    properties:
-                      doorState:
-                        type: object
-                        description: doorState
-                        properties:
-                          mode:
-                            type: array
-                            items:
-                              type: string
-                              enum:
-                                - r
-                          type:
-                            type: string
-                            enum:
-                              - enum
-                          value:
-                            type: object
-                            properties:
-                              r:
-                                type: array
-                                description: |-
-                                  Value | Description
-                                  -|-
-                                  OPEN | Door Open (At least one door of the fridge/freezer/convertible is opened.)
-                                  CLOSE | Door Closed (All doors are closed.)
-                                items:
-                                  type: string
-                                  enum:
-                                    - OPEN
-                                    - CLOSE
-                      locationName:
-                        type: string
-                        enum:
-                          - MAIN
-                        description: |-
-                          Place name
-                          Value | Description
-                          -|-
-                          MAIN | Refrigerator door
-                waterFilterInfo:
-                  type: object
-                  description: waterFilterInfo
                   properties:
                     usedTime:
                       type: object
@@ -3929,7 +3367,7 @@ contents:
                 description: remoteControlEnable
                 properties:
                   remoteControlEnabled:
-                    type: bool
+                    type: boolean
                     description: remoteControlEnable
                     enum:
                       - true
@@ -4292,6 +3730,7 @@ contents:
                 HIGH_POWER_SUPPLY_ERROR | High power supply error
                 POWER_CODE_CONNECTION_ERROR | Power code connection error
                 FAN_MOTOR_ERROR | Fan motor error
+              items:
                 type: string
                 enum:
                   - TEMPERATURE_SENSOR_ERROR
@@ -5796,22 +5235,16 @@ contents:
                               description: |-
                                 Value | Description
                                 -|-
-                                CLEAN | Cleaning Mode
-                
-                                SLEEP | Sleep Mode
-                
-                                SILENT | Quiet, Low Noise Mode
-                
+                                CLEAN | Cleaning Mode            
+                                SLEEP | Sleep Mode            
+                                SILENT | Quiet, Low Noise Mode            
                                 HUMIDITY | Humidification and Cleaning
                                 CIRCULATOR | Circulation and Cleaning
                                 BABY_CARE | Baby Care
                                 DUAL_CLEAN | Dual Cleaning
-                                AUTO | Auto Mode
-                
-                                FAST | Fast Mode
-                
-                                SMART | Smart Mode
-                
+                                AUTO | Auto Mode            
+                                FAST | Fast Mode            
+                                SMART | Smart Mode            
                               items:
                                 type: string
                                 enum:
@@ -5830,22 +5263,16 @@ contents:
                               description: |-
                                 Value | Description
                                 -|-
-                                CLEAN | Cleaning Mode
-                
-                                SLEEP | Sleep Mode
-                
-                                SILENT | Quiet, Low Noise Mode
-                
+                                CLEAN | Cleaning Mode            
+                                SLEEP | Sleep Mode            
+                                SILENT | Quiet, Low Noise Mode            
                                 HUMIDITY | Humidification and Cleaning
                                 CIRCULATOR | Circulation and Cleaning
                                 BABY_CARE | Baby Care
                                 DUAL_CLEAN | Dual Cleaning
-                                AUTO | Auto Mode
-                
-                                FAST | Fast Mode
-                
-                                SMART | Smart Mode
-                
+                                AUTO | Auto Mode            
+                                FAST | Fast Mode            
+                                SMART | Smart Mode            
                               items:
                                 type: string
                                 enum:
@@ -5861,8 +5288,7 @@ contents:
                                   - SMART
                     personalizationMode:
                       type: object
-                      description: Personalization mode
-      
+                      description: Personalization mode  
                       properties:
                         mode:
                           type: array
@@ -5882,26 +5308,16 @@ contents:
                               description: |-
                                 Value | Description
                                 -|-
-                                AUTO_INSIDE | Indoor Auto Mode
-                
-                                SLEEP | Sleep Mode
-                
-                                BABY | Baby mode
-                
-                                SICK_HOUSE | New House Mode
-                
-                                AUTO_OUTSIDE | Indoor/Outdoor interactive mode
-                
-                                PET | Pet mode
-                
-                                COOKING | Cooking mode
-                
-                                SMOKE | Smoke mode
-                
-                                EXERCISE | Exercise mode
-                
-                                OTHERS | Outdoor mode
-                
+                                AUTO_INSIDE | Indoor Auto Mode            
+                                SLEEP | Sleep Mode            
+                                BABY | Baby mode            
+                                SICK_HOUSE | New House Mode            
+                                AUTO_OUTSIDE | Indoor/Outdoor interactive mode            
+                                PET | Pet mode            
+                                COOKING | Cooking mode            
+                                SMOKE | Smoke mode            
+                                EXERCISE | Exercise mode            
+                                OTHERS | Outdoor mode           
                               items:
                                 type: string
                                 enum:
@@ -6492,7 +5908,7 @@ contents:
           properties:
             airPurifierJobMode:
               type: object
-              description: mo
+              description: mode
               properties:
                 currentJobMode:
                   type: string
@@ -6690,8 +6106,7 @@ contents:
                                 SPACE_CLEAN | Space Cleaning
                                 DIRECT_CLEAN | Direct Cleaning
                                 NATURE_CLEAN | Natural Cleaning
-                                UP_FEATURE | Additional Cleaning Mode
-                
+                                UP_FEATURE | Additional Cleaning Mode            
                                 PET_CLEAN | Pet Care Cleaning Mode
                                 SILENT_CLEAN | Low Noise Cleaning Mode
                               items:
@@ -6992,8 +6407,7 @@ contents:
                   properties:
                     warmMode:
                       type: object
-                      description: windStrength
-      
+                      description: Wirm Air Mode  
                       properties:
                         mode:
                           type: array
@@ -7014,10 +6428,8 @@ contents:
                               description: |-
                                 Value | Description
                                 -|-
-                                WARM_ON | Warm Air mode
-                 ON
-                                WARM_OFF | Warm Air mode
-                 OFF
+                                WARM_ON | Warm Air mode ON
+                                WARM_OFF | Warm Air mode OFF
                               items:
                                 type: string
                                 enum:
@@ -7028,10 +6440,8 @@ contents:
                               description: |-
                                 Value | Description
                                 -|-
-                                WARM_ON | Warm Air mode
-                 ON
-                                WARM_OFF | Warm Air mode
-                 OFF
+                                WARM_ON | Warm Air mode ON
+                                WARM_OFF | Warm Air mode OFF
                               items:
                                 type: string
                                 enum:
@@ -7118,7 +6528,7 @@ contents:
                               description: |-
                                 Value | Description
                                 -|-
-                                AUTO | 지동
+                                AUTO | Auto
                                 POWER | Power mode
                                 WIND_1 | Wind Strength1
                                 WIND_2 | Wind Strength2
@@ -7147,7 +6557,7 @@ contents:
                                   - WIND_10
                     windAngle:
                       type: object
-                      description: windAngle
+                      description: Wind Angle
                       properties:
                         mode:
                           type: array
@@ -7201,7 +6611,7 @@ contents:
                                   - ANGLE_140
                 airQualitySensor:
                   type: object
-                  description: airQuality
+                  description: Air quality
                   properties:
                     PM1:
                       type: object
@@ -7533,7 +6943,7 @@ contents:
           properties:
             airFanJobMode:
               type: object
-              description: mo
+              description: mode
               properties:
                 currentJobMode:
                   type: string
@@ -7605,7 +7015,7 @@ contents:
               properties:
                 warmMode:
                   type: string
-                  description: windStrength
+                  description: Wirm Mode
                   enum:
                     - WARM_ON
                     - WARM_OFF
@@ -7630,7 +7040,7 @@ contents:
                     - WIND_10
                 windAngle:
                   type: string
-                  description: windAngle
+                  description: Wind Angle
                   enum:
                     - 'OFF'
                     - ANGLE_45
@@ -7639,7 +7049,7 @@ contents:
                     - ANGLE_140
             airQualitySensor:
               type: object
-              description: airQuality
+              description: Air Quality
               properties:
                 PM1:
                   type: number
@@ -8437,8 +7847,7 @@ contents:
                                   - SLEEP_OFF
                     hygieneDryMode:
                       type: object
-                      description: Sanitary drying mode
-      
+                      description: Sanitary drying mode  
                       properties:
                         mode:
                           type: array
@@ -8460,12 +7869,9 @@ contents:
                                 Value | Description
                                 -|-
                                 OFF | Off
-                                FAST | Rapid Mode
-                
-                                SILENT | Silent mode
-                
-                                NORMAL | Delicate mode
-                
+                                FAST | Rapid Mode            
+                                SILENT | Silent mode            
+                                NORMAL | Delicate mode            
                               items:
                                 type: string
                                 enum:
@@ -8479,12 +7885,9 @@ contents:
                                 Value | Description
                                 -|-
                                 OFF | Off
-                                FAST | Rapid Mode
-                
-                                SILENT | Silent mode
-                
-                                NORMAL | Delicate mode
-                
+                                FAST | Rapid Mode            
+                                SILENT | Silent mode            
+                                NORMAL | Delicate mode            
                               items:
                                 type: string
                                 enum:
@@ -8714,8 +8117,7 @@ contents:
                   properties:
                     warmMode:
                       type: object
-                      description: Humidify mode
-      
+                      description: Humidify mode  
                       properties:
                         mode:
                           type: array
@@ -9131,7 +8533,7 @@ contents:
           properties:
             humidifierJobMode:
               type: object
-              description: mo
+              description: mode
               properties:
                 currentJobMode:
                   type: string
@@ -9356,7 +8758,6 @@ contents:
                                 RESERVATION | Setting remote control timer
                                 SETDATE | Setting time for remote control
                                 SLEEP | powerSave mode
-                 중
                                 STANDBY | Standby runState
                                 WORKING | Cleaning
                                 ERROR | Error runState
@@ -9384,8 +8785,7 @@ contents:
                   properties:
                     currentJobMode:
                       type: object
-                      description: Cleaning mode
-      
+                      description: Cleaning mode  
                       properties:
                         mode:
                           type: array
@@ -9596,27 +8996,6 @@ contents:
                       - NEED_TO_CHECK_LOCATION
                       - HOMEGUARD_IS_STOPPED
                       - SCHEDULED_CLEANING_STARTS
-            push:
-              type: array
-              minItems: 1
-              description: |-
-                Push Code | Description
-                -|-
-                CLEANING_IS_COMPLETED | Cleaning is complete.
-                CLEANING_IS_FAILED | Cleaning has failed.
-                MOTION_IS_DETECTED | Photograph is sent as movement is detected during Home Guard.
-                NEED_TO_CHECK_LOCATION | Location check is required.
-                HOMEGUARD_IS_STOPPED | Home Guard has stopped.
-                SCHEDULED_CLEANING_STARTS | Scheduled cleaning starts.
-              items:
-                type: string
-                enum:
-                  - CLEANING_IS_COMPLETED
-                  - CLEANING_IS_FAILED
-                  - MOTION_IS_DETECTED
-                  - NEED_TO_CHECK_LOCATION
-                  - HOMEGUARD_IS_STOPPED
-                  - SCHEDULED_CLEANING_STARTS
             error:
               type: array
               description: |-
@@ -9678,7 +9057,7 @@ contents:
                     - ERROR
             robotCleanerJobMode:
               type: object
-              description: mo
+              description: mode
               properties:
                 currentJobMode:
                   type: string
@@ -9880,12 +9259,10 @@ contents:
                   cook:
                     type: object
                     description: mode
-
                     properties:
                       cookMode:
                         type: object
-                        description: cook Mode
-        
+                        description: cook Mode    
                         properties:
                           mode:
                             type: array
@@ -9911,8 +9288,7 @@ contents:
                                   CONVECTION_ROAST | Convection Roast
                                   ROAST | Roast
                                   CRISP_CONVECTION | Crisp Convection
-                                  OTHERS | Other modes
-                  
+                                  OTHERS | Other modes              
                                 items:
                                   type: array
                                   enum:
@@ -9932,8 +9308,7 @@ contents:
                                   CONVECTION_ROAST | Convection Roast
                                   ROAST | Roast
                                   CRISP_CONVECTION | Crisp Convection
-                                  OTHERS | Other modes
-                  
+                                  OTHERS | Other modes              
                                 items:
                                   type: array
                                   enum:
@@ -10230,12 +9605,11 @@ contents:
                       - STOP
               cook:
                 type: object
-                description: mod
+                description: mode
                 properties:
                   cookMode:
                     type: string
                     description: 요리 mode
-
                     enum:
                       - BAKE
                       - CONVECTION_BAKE
@@ -11087,8 +10461,7 @@ contents:
                                 STERILIZE | Sterilize (57)
                                 RUNNING_END | Complete2 (58)
                                 FOTA | Updating (98)
-                                SLEEP | powerSavemode
-                 
+                                SLEEP | powerSavemode             
                               items:
                                 type: string
                                 enum:
@@ -13670,7 +13043,6 @@ contents:
                   detergentSetting:
                     type: string
                     description: detergent mode
-
                     enum:
                       - AUTO
                       - NORMAL
@@ -14023,6 +13395,7 @@ contents:
                 HIGH_POWER_SUPPLY_ERROR | High power supply error
                 POWER_CODE_CONNECTION_ERROR | Power code connection error
                 FAN_MOTOR_ERROR | Fan motor error
+              items:
                 type: string
                 enum:
                   - TEMPERATURE_SENSOR_ERROR
@@ -15046,8 +14419,7 @@ contents:
                   properties:
                     detergentSetting:
                       type: string
-                      description: detergent mode
-      
+                      description: detergent mode  
                       enum:
                         - AUTO
                         - NORMAL
@@ -16276,7 +15648,7 @@ contents:
           properties:
             boilerJobMode:
               type: object
-              description: mo
+              description: mode
               properties:
                 currentJobMode:
                   type: string
@@ -16384,8 +15756,7 @@ contents:
                   properties:
                     currentJobMode:
                       type: object
-                      description: Cleaning mode
-      
+                      description: Cleaning mode  
                       properties:
                         mode:
                           type: array
@@ -16810,12 +16181,10 @@ contents:
                   mode:
                     type: object
                     description: mode
-
                     properties:
                       washerOperationMode:
                         type: object
-                        description: Wash mode
-        
+                        description: Wash mode    
                         properties:
                           mode:
                             type: array
@@ -16836,12 +16205,9 @@ contents:
                                 description: |-
                                   Value | Description
                                   -|-
-                                  WASHING_DRYING | Wash Dry mode
-                  
-                                  WASHING | Wash mode
-                  
-                                  DRYING | Dry mode
-                  
+                                  WASHING_DRYING | Wash Dry mode              
+                                  WASHING | Wash mode              
+                                  DRYING | Dry mode              
                                 items:
                                   type: string
                                   enum:
@@ -16853,12 +16219,9 @@ contents:
                                 description: |-
                                   Value | Description
                                   -|-
-                                  WASHING_DRYING | Wash Dry mode
-                  
-                                  WASHING | Wash mode
-                  
-                                  DRYING | Dry mode
-                  
+                                  WASHING_DRYING | Wash Dry mode              
+                                  WASHING | Wash mode              
+                                  DRYING | Dry mode              
                                 items:
                                   type: string
                                   enum:
@@ -17293,7 +16656,6 @@ contents:
                   washerOperationMode:
                     type: string
                     description: Wash mode
-
                     enum:
                       - WASHING_DRYING
                       - WASHING
@@ -17343,7 +16705,6 @@ contents:
                   detergentSetting:
                     type: string
                     description: detergent mode
-
                     enum:
                       - AUTO
                       - NORMAL
@@ -17953,7 +17314,6 @@ contents:
                   detergentSetting:
                     type: string
                     description: detergent mode
-
                     enum:
                       - AUTO
                       - NORMAL
@@ -18234,7 +17594,6 @@ contents:
                             Value | Description
                             -|-
                             AUTO | Drive Mode Auto
-             Auto mode
                             COOL | Cooling
                             AIR_DRY | Dehumidification
                             FAN | Ventilation
@@ -18253,7 +17612,6 @@ contents:
                             Value | Description
                             -|-
                             AUTO | Drive Mode Auto
-             Auto mode
                             COOL | Cooling
                             AIR_DRY | Dehumidification
                             FAN | Ventilation
@@ -18621,14 +17979,10 @@ contents:
                           description: |-
                             Value | Description
                             -|-
-                            POWERSAVE_LEVEL_0 | powerSave mode
-             0단계
-                            POWERSAVE_LEVEL_1 | powerSave mode
-             Level 1
-                            POWERSAVE_LEVEL_2 | powerSave mode
-             Level 2
-                            POWERSAVE_LEVEL_3 | powerSave mode
-             Level 3
+                            POWERSAVE_LEVEL_0 | powerSave mode Level 0
+                            POWERSAVE_LEVEL_1 | powerSave mode Level 1
+                            POWERSAVE_LEVEL_2 | powerSave mode Level 2
+                            POWERSAVE_LEVEL_3 | powerSave mode Level 3
                           items:
                             type: string
                             enum:
@@ -20089,7 +19443,7 @@ contents:
                               - '09'
                 soundBalance:
                   type: object
-                  description: Acoustic Balanc
+                  description: Acoustic Balance
                   properties:
                     mode:
                       type: array
@@ -20140,6 +19494,256 @@ contents:
                 osType:
                   type: object
                   description: OS Type
+                  properties:
+                    mode:
+                      type: array
+                      enum:
+                        - r
+                    type:
+                      type: string
+                      enum:
+                        - WEBOS
+                        - WINDOWS
+                        - ANDROID
+                        - NONE
+        signage-object:
+          title: SIGNAGE
+          minProperties: 1
+          properties:
+            power:
+              type: object
+              description: 전원
+              properties:
+                power:
+                  description: 전원 설정
+                  type: boolean
+                  enum:
+                    - true
+                    - false
+                screen:
+                  description: 화면 ON, OFF 상태
+                  type: string
+                  enum:
+                    - SCREEN_ON
+                    - SCREEN_OFF
+                noSignalPowerOff:
+                  description: 무신호 전원 꺼짐 설정
+                  type: boolean
+                  enum:
+                    - true
+                    - false
+                noIrPowerOff:
+                  description: IR 신호 없을 시 꺼짐 설정
+                  type: boolean
+                  enum:
+                    - true
+                    - false
+                pmMode:
+                  description: PM Mode 설정
+                  type: string
+                  enum:
+                    - '00'
+                    - '01'
+                    - '02'
+                    - '03'
+                    - '04'
+                    - '05'
+                powerOnStatus:
+                  description: 전원 켜기 상태
+                  type: string
+                  enum:
+                    - '00'
+                    - '01'
+                    - '02'
+                powerOnDelay:
+                  description: 전원 켜기 지연
+                  type: integer
+                  example: 0
+                energySavingMode:
+                  description: 절전 모드
+                  type: string
+                  enum:
+                    - '00'
+                    - '01'
+                    - '02'
+                    - '03'
+                    - '04'
+                wol:
+                  description: Wake On Lan 설정
+                  type: boolean
+                  enum:
+                    - true
+                    - false
+            display:
+              type: object
+              description: 디스플레이
+              properties:
+                input:
+                  description: 입력 신호 선택
+                  type: string
+                  enum:
+                    - '20'
+                    - '40'
+                    - '60'
+                    - '70'
+                    - '80'
+                    - '90'
+                    - a9
+                    - '91'
+                    - a1
+                    - '92'
+                    - a2
+                    - '95'
+                    - a5
+                    - '96'
+                    - a6
+                    - '97'
+                    - a7
+                    - '98'
+                    - a8
+                    - '99'
+                    - a9
+                    - c0
+                    - d0
+                    - c1
+                    - d1
+                    - c2
+                    - d2
+                    - c3
+                    - d3
+                    - e0
+                    - e1
+                    - e2
+                    - e3
+                    - e8
+                    - f0
+                    - f1
+                    - f2
+                    - f3
+                    - f4
+                    - f5
+                    - f6
+                    - f7
+                    - f8
+                    - f9
+                language:
+                  description: OSD 언어 설정
+                  type: string
+                  enum:
+                    - '00'
+                    - '01'
+                    - '02'
+                    - '03'
+                    - '04'
+                    - '05'
+                    - '06'
+                    - '07'
+                    - '08'
+                    - '09'
+                    - 0a
+                    - 0b
+                    - 0c
+                    - 0d
+                    - 0e
+                    - 0f
+                    - '10'
+                    - '11'
+                    - '12'
+                    - '13'
+                    - '14'
+                    - '15'
+                ism:
+                  description: 화면 잔상 방지
+                  type: string
+                  enum:
+                    - '02'
+                    - '04'
+                    - '08'
+                    - '90'
+                    - '91'
+                pictureMode:
+                  description: 영상 모드
+                  type: string
+                  enum:
+                    - '00'
+                    - '01'
+                    - '02'
+                    - '03'
+                    - '04'
+                    - '05'
+                    - '08'
+                    - '11'
+                    - '12'
+                backlight:
+                  description: 화면 백라이트
+                  type: integer
+                  example: 80
+                brightness:
+                  description: 화면 밝기
+                  type: integer
+                  example: 80
+                tint:
+                  description: 화면 색상
+                  type: integer
+                  example: 50
+                contrast:
+                  description: 화면 명암
+                  type: integer
+                  example: 30
+                sharpness:
+                  description: 화면 선명도
+                  type: integer
+                  example: 0
+                color:
+                  description: 화면 색농도
+                  type: integer
+                  example: 40
+            audio:
+              type: object
+              description: 오디오
+              properties:
+                volume:
+                  description: 오디오 볼륨
+                  type: integer
+                  example: 10
+                volumeMute:
+                  description: 음소거
+                  type: boolean
+                  enum:
+                    - true
+                    - false
+                soundMode:
+                  description: 음향 모드
+                  type: string
+                  enum:
+                    - '00'
+                    - '01'
+                    - '02'
+                    - '03'
+                    - '04'
+                    - '05'
+                    - '08'
+                    - '09'
+                soundBalance:
+                  description: 음향 밸런스
+                  type: integer
+                  example: 50
+            temperature:
+              readOnly: true
+              type: object
+              description: 온도
+              properties:
+                main:
+                  description: 디바이스 온도 (섭씨)
+                  type: integer
+                  example: 30
+            info:
+              readOnly: true
+              type: object
+              description: 디바이스 정보
+              properties:
+                osType:
+                  description: 운영체제 종류
                   type: string
                   enum:
                     - WEBOS
@@ -20816,7 +20420,6 @@ contents:
                             type: string
                             enum:
                               - r
-                              - w
                     currentUnit:
                       type: object
                       description: Current unit
@@ -20845,7 +20448,6 @@ contents:
                             type: string
                             enum:
                               - r
-                              - w
                     voltageUnit:
                       type: object
                       description: Voltage unit
@@ -20874,7 +20476,6 @@ contents:
                             type: string
                             enum:
                               - r
-                              - w
                     powerUnit:
                       type: object
                       description: Power unit
@@ -20996,7 +20597,6 @@ contents:
                             type: string
                             enum:
                               - r
-                              - w
                     currentUnit:
                       type: object
                       description: Current unit
@@ -21025,7 +20625,6 @@ contents:
                             type: string
                             enum:
                               - r
-                              - w
                     voltageUnit:
                       type: object
                       description: Voltage unit
@@ -21054,7 +20653,6 @@ contents:
                             type: string
                             enum:
                               - r
-                              - w
                     powerUnit:
                       type: object
                       description: Power unit
@@ -23696,7 +23294,7 @@ contents:
                                 CLOCKWISE | Clockwise
                                 COUNTERCLOCKWISE | Counterclockwise
                               items:
-                                type: string CLOCKWISE |
+                                type: string
                                 enum:
                                   - CLOCKWISE
                                   - COUNTERCLOCKWISE
@@ -29759,7 +29357,6 @@ contents:
                   type: number
                   mode:
                     - r
-                    - w
                 currentUnit:
                   type: string
                   mode:
@@ -29768,7 +29365,6 @@ contents:
                   type: number
                   mode:
                     - r
-                    - w
                 voltageUnit:
                   type: string
                   mode:
@@ -29777,7 +29373,6 @@ contents:
                   type: number
                   mode:
                     - r
-                    - w
                 powerUnit:
                   type: string
                   mode:
@@ -29818,7 +29413,6 @@ contents:
                   type: number
                   mode:
                     - r
-                    - w
                 currentUnit:
                   type: string
                   mode:
@@ -29827,7 +29421,6 @@ contents:
                   type: number
                   mode:
                     - r
-                    - w
                 voltageUnit:
                   type: string
                   mode:
@@ -29836,7 +29429,6 @@ contents:
                   type: number
                   mode:
                     - r
-                    - w
                 powerUnit:
                   type: string
                   mode:
