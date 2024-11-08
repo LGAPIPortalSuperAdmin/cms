@@ -546,7 +546,7 @@ contents: >-
   \              className="btn-round-primary btn-l" target="_blank">
 
 
-  \              1:1 Q&A
+  \              Inquiry
 
 
   \              </CoLink>
