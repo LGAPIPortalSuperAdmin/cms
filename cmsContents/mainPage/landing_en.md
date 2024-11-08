@@ -471,6 +471,51 @@ contents: >-
   \                  </li>
 
 
+  \                  <li className="tem-banner__item col-4 col-sm-full">
+
+
+  \                    <figure className="tem-banner__img">
+
+
+  \                      <CoImage src="/assets/images/partner_banner_10.png" isFullSize alt="Home Appliance" />
+
+
+  \                    </figure>
+
+
+  \                  </li>
+
+
+  \                  <li className="tem-banner__item col-4 col-sm-full">
+
+
+  \                    <figure className="tem-banner__img">
+
+
+  \                      <CoImage src="/assets/images/partner_banner_11.png" isFullSize alt="Home Appliance" />
+
+
+  \                    </figure>
+
+
+  \                  </li>
+
+
+  \                  <li className="tem-banner__item col-4 col-sm-full">
+
+
+  \                    <figure className="tem-banner__img">
+
+
+  \                      <CoImage src="/assets/images/partner_banner_12.png" isFullSize alt="Home Appliance" />
+
+
+  \                    </figure>
+
+
+  \                  </li>
+
+
   \                </ul>
 
 
