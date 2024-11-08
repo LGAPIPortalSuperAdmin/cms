@@ -543,7 +543,7 @@ contents: >-
   \              href="mailto:bizdev@lge.com?subject=Enter the subject.&body=Enter the inquiry."
 
 
-  \              className="btn-round-primary btn-l">
+  \              className="btn-round-primary btn-l" target="_blank">
 
 
   \              1:1 Q&A
