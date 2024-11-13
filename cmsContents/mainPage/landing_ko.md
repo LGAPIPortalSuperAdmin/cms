@@ -369,7 +369,7 @@ contents: >-
   \                    <figure className="tem-banner__img">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_01.png" isFullSize alt="Home Appliance" />
+  \                      <CoImage src="/assets/images/partner_banner_10.png" isFullSize alt="ALEXA" />
 
 
   \                    </figure>
@@ -384,7 +384,7 @@ contents: >-
   \                    <figure className="tem-banner__img">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_02.png" isFullSize alt="Home Appliance" />
+  \                      <CoImage src="/assets/images/partner_banner_07.png" isFullSize alt="POSCO E&C" />
 
 
   \                    </figure>
@@ -399,7 +399,7 @@ contents: >-
   \                    <figure className="tem-banner__img">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_03.png" isFullSize alt="Home Appliance" />
+  \                      <CoImage src="/assets/images/partner_banner_09.png" isFullSize alt="GS E&C" />
 
 
   \                    </figure>
@@ -414,7 +414,7 @@ contents: >-
   \                    <figure className="tem-banner__img">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_04.png" isFullSize alt="Home Appliance" />
+  \                      <CoImage src="/assets/images/partner_banner_06.png" isFullSize alt="DAEWOO E&C" />
 
 
   \                    </figure>
@@ -429,7 +429,7 @@ contents: >-
   \                    <figure className="tem-banner__img">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_05.png" isFullSize alt="Home Appliance" />
+  \                      <CoImage src="/assets/images/partner_banner_08.png" isFullSize alt="HDC" />
 
 
   \                    </figure>
@@ -444,7 +444,7 @@ contents: >-
   \                    <figure className="tem-banner__img">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_06.png" isFullSize alt="Home Appliance" />
+  \                      <CoImage src="/assets/images/partner_banner_11.png" isFullSize alt="LX HAUSYS" />
 
 
   \                    </figure>
@@ -459,7 +459,7 @@ contents: >-
   \                    <figure className="tem-banner__img">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_07.png" isFullSize alt="Home Appliance" />
+  \                      <CoImage src="/assets/images/partner_banner_05.png" isFullSize alt="RENEW HOME" />
 
 
   \                    </figure>
@@ -474,7 +474,7 @@ contents: >-
   \                    <figure className="tem-banner__img">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_08.png" isFullSize alt="Home Appliance" />
+  \                      <CoImage src="/assets/images/partner_banner_13.png" isFullSize alt="Bearwash" />
 
 
   \                    </figure>
@@ -489,7 +489,7 @@ contents: >-
   \                    <figure className="tem-banner__img">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_09.png" isFullSize alt="Home Appliance" />
+  \                      <CoImage src="/assets/images/partner_banner_02.png" isFullSize alt="HERIT" />
 
 
   \                    </figure>
@@ -504,7 +504,7 @@ contents: >-
   \                    <figure className="tem-banner__img">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_10.png" isFullSize alt="Home Appliance" />
+  \                      <CoImage src="/assets/images/partner_banner_01.png" isFullSize alt="SEOUL METRO POLITAN OFFICE OF EDUCATION" />
 
 
   \                    </figure>
@@ -519,7 +519,7 @@ contents: >-
   \                    <figure className="tem-banner__img">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_11.png" isFullSize alt="Home Appliance" />
+  \                      <CoImage src="/assets/images/partner_banner_12.png" isFullSize alt="SIDE CHEF" />
 
 
   \                    </figure>
@@ -534,7 +534,22 @@ contents: >-
   \                    <figure className="tem-banner__img">
 
 
-  \                      <CoImage src="/assets/images/partner_banner_12.png" isFullSize alt="Home Appliance" />
+  \                      <CoImage src="/assets/images/partner_banner_03.png" isFullSize alt="TLC" />
+
+
+  \                    </figure>
+
+
+  \                  </li>
+
+
+  \                  <li className="tem-banner__item col-4 col-sm-full">
+
+
+  \                    <figure className="tem-banner__img">
+
+
+  \                      <CoImage src="/assets/images/partner_banner_04.png" isFullSize alt="YAP" />
 
 
   \                    </figure>
