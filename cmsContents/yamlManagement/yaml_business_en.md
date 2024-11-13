@@ -5,7 +5,7 @@ contents:
     openapi: 3.1.0
 
     info:
-      version: null
+      version: v1
       title: ThinQ Business API
     servers:
       - url: https://ap.api.lge.com/biz/v1
@@ -19,16 +19,22 @@ contents:
         x-displayName: Overview
         description: |
           To search or control information about LG Electronics' home appliances, displays, and air conditioners with your service, you can utilize the ThinQ Business API. LG Electronics provides the ThinQ Business API so that a partner's service can obtain or control information about devices registered in LG Electronics' cloud service. ThinQ Business APIs are categorized as follows, depending on the usage purpose of the API.
-          |API Type|Summary| |-|-| |Device API|API to get a list and status of enrolled devices and perform controls| |Push API|API for managing target devices to receive status changes on devices| |User API|API for managing users registered with B2B partner's service| |DR API|API for B2B partners to control a user's device as an electricity demand response (DR) service provider|
+
+            |API Type|Summary|
+            |-|-|
+            |Device API|API to get a list and status of enrolled devices and perform controls|
+            |Push API|API for managing target devices to receive status changes on devices|
+            |User API|API for managing users registered with B2B partner's service|
+            |DR API|API for B2B partners to control a user's device as an electricity demand response (DR) service provider|
       - name: API Call Sequence
         x-displayName: API Call Sequence
         description: |
           Describes how to develop a service using the ThinQ Business API through a sequence of API calls.
 
-          ## API Token Issuance
+          ## Issue API Token
           An API Token must be included in the HTTP request header of all ThinQ Business API calls. This API Token can be issued with a pair of pre-issued API Key and API Secret from LG Open API Developer and is valid for 24 hours.      
 
-            - API Usage
+            - API to Use
               - [`POST /token`](#tag/auth/operation/createAPIToken)
               
             - Sequence
@@ -37,55 +43,55 @@ contents:
               
               <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="447px" preserveAspectRatio="none" style="width:623px;height:447px;background:#FFFFFF;" version="1.1" viewBox="0 0 623 447" width="623px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="208.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="306.439"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="164.9414"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="262.6182"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="46" x2="46" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="236.5" x2="236.5" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="371.5" x2="371.5" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="534.5" x2="534.5" y1="84.2295" y2="363.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="77" x="5" y="81.1533">B2B Partner</text><ellipse cx="46.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M46.5,21.5 L46.5,48.5 M33.5,29.5 L59.5,29.5 M46.5,48.5 L33.5,63.5 M46.5,48.5 L59.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="77" x="5" y="378.4482">B2B Partner</text><ellipse cx="46.5" cy="390.0244" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M46.5,398.0244 L46.5,425.0244 M33.5,406.0244 L59.5,406.0244 M46.5,425.0244 L33.5,440.0244 M46.5,425.0244 L59.5,440.0244 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="180.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="187.5" y="73.1533">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="180.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="187.5" y="385.4482">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="302.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="309.5" y="73.1533">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="302.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="309.5" y="385.4482">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="451.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="152" x="458.5" y="73.1533">LG Open API Developer</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="451.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="152" x="458.5" y="385.4482">LG Open API Developer</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="208.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="306.439"/><polygon fill="#181818" points="57.5,114.0854,47.5,118.0854,57.5,122.0854,53.5,118.0854" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="51.5" x2="533.5" y1="118.0854" y2="118.0854"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="188" x="63.5" y="113.229">provide API Key, API Secret pair</text><polygon fill="#181818" points="224.5,145.9414,234.5,149.9414,224.5,153.9414,228.5,149.9414" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="46.5" x2="230.5" y1="149.9414" y2="149.9414"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="166" x="53.5" y="145.085">set API Key, API Secret pair</text><path d="M170.5,164.9414 L247.5,164.9414 L247.5,174.7974 L237.5,184.7974 L170.5,184.7974 L170.5,164.9414 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="164.9414"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="185.5" y="180.9409">loop</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="93" x="262.5" y="179.6333">[within 24 hours]</text><polygon fill="#181818" points="355,204.7622,365,208.7622,355,212.7622,359,208.7622" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="236.5" x2="361" y1="208.7622" y2="208.7622"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="75" x="243.5" y="203.9058">POST /token</text><polygon fill="#181818" points="247.5,236.6182,237.5,240.6182,247.5,244.6182,243.5,240.6182" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="241.5" x2="371" y1="240.6182" y2="240.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="60" x="253.5" y="235.7617">API Token</text><path d="M170.5,262.6182 L231.5,262.6182 L231.5,272.4741 L221.5,282.4741 L170.5,282.4741 L170.5,262.6182 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="262.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="185.5" y="278.6177">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="109" x="246.5" y="277.3101">[API Token expired]</text><polygon fill="#181818" points="355,302.439,365,306.439,355,310.439,359,306.439" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="236.5" x2="361" y1="306.439" y2="306.439"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="75" x="243.5" y="301.5825">POST /token</text><polygon fill="#181818" points="247.5,334.2949,237.5,338.2949,247.5,342.2949,243.5,338.2949" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="241.5" x2="371" y1="338.2949" y2="338.2949"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="60" x="253.5" y="333.4385">API Token</text><!--SRC=[XP11JyCm38NFpQ-mUWOXJPnwGAA2JHCJAsflY4EM6cQjIoB7AUFVasQLq0x0pVBx_FpiS23hDUiZzFYkuo1BP-LP7n4sgyTrXoTHseXZAEj53OrciSWbw00n8AiqAcJ8QojGpYgqo2CPp9G_zox1Ra_s1UeOo688SD-iCxipbzXc1LkFTjBX0KSSd9ztzpW64bHgBk3wBkUfmBCRgSSyyuHVLxbeqJ1AoaAi9cp2vs0LXAJyId-mYnu6vpoyVfAatB2uXRsB7DvKCNjCTZjJGRDjExWHTq2hYlGr6dMAbgugab_ayo5Tbj7sIW_oqm4yUMBi5Vpb2l_RVWC0]--></g></svg>
               
-          ## Device Status Search
+          ## Get Device Status
           To search the status of a device, the following Device API is used.      
 
-            - API Usage
+            - API to Use
               - [`GET /devices`](#tag/Device-API/operation/getDevices)
               - [`GET /devices/{deviceId}/state`](#tag/Device-API/operation/getStatusOfDevice)
               
             - Sequence
-              1. Your service needs to use the Device List Search API(GET /devices) to retrieve the device list registered on the LG platform. This process only needs to be done once and does not need to be done every time after the list is retrieved.
-              2. Check the deviceId value of the device whose status you want to get from the device list, and call the Device Status Search API (GET /devices/{deviceId}/state) using this value.
+              1. Your service needs to use Get Device List API (GET /devices) to retrieve the device list registered on the LG platform. This process only needs to be done once and does not need to be done every time after the list is retrieved.
+              2. Check the deviceId value of the device whose status you want to get from the device list, and call Get Device Status API (GET /devices/{deviceId}/state) using this value.
 
               <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="258px" preserveAspectRatio="none" style="width:346px;height:258px;background:#FFFFFF;" version="1.1" viewBox="0 0 346 258" width="346px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="256" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="256" y="170.7622"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="330.5" x="10" y="56.2295"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="76" x2="76" y1="39.2295" y2="220.6182"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="260.5" x2="260.5" y1="39.2295" y2="220.6182"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="28.1533">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="219.6182"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="242.7715">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="191.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="198.5" y="28.1533">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="191.5" y="219.6182"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="198.5" y="242.7715">ThinQ Business API</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="256" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="256" y="170.7622"/><path d="M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="330.5" x="10" y="56.2295"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="72.229">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="125" x="86" y="70.9214">[If you need a new list]</text><polygon fill="#181818" points="244,96.0503,254,100.0503,244,104.0503,248,100.0503" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="76" x2="250" y1="100.0503" y2="100.0503"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="77" x="83" y="95.1938">GET /devices</text><polygon fill="#181818" points="87,127.9063,77,131.9063,87,135.9063,83,131.9063" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="260" y1="131.9063" y2="131.9063"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="57" x="93" y="127.0498">device list</text><polygon fill="#181818" points="244,166.7622,254,170.7622,244,174.7622,248,170.7622" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="76" x2="250" y1="170.7622" y2="170.7622"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="161" x="83" y="165.9058">GET /device/{deviceId}/state</text><polygon fill="#181818" points="87,198.6182,77,202.6182,87,206.6182,83,202.6182" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="260" y1="202.6182" y2="202.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="69" x="93" y="197.7617">device state</text><!--SRC=[TOtB2i9034NNdQ-uk9VkNGWAjHH45Fi3iPFYO1lBJEe3yT-TMXUwS7L9pir9E3dfo5CBopNrZQxEeXjg6UiyAqg-gObONUKw4iLa6mTXZptxYwju0WhenjrliJmwsM7P1oSS0XRRujqzL8OQHL7ZVkuXp1OKuuh61JL8FYvCvx4wGvwLI2qFhqAaLAcxaFAWIJnhxmKZ7UzPhFblI1zZ5lQP1eqQy-txrRtv2m00]--></g></svg>
               
-          ## Device Control
+          ## Control Device
           To control devices, the following Device API is used.
 
-            - API Usage
+            - API to Use
               - [`GET /devices`](#tag/Device-API/operation/getDevices)
               - [`GET /devices/{deviceId}/profile`](#tag/Device-API/operation/getProfileOfDevice)
               - [`POST /devices/{deviceId}/state`](#tag/Device-API/operation/controlDevice)
               
             - Sequence
-              1. Your service needs to use the Device List Search API(GET /devices) to retrieve the device list registered on the LG platform. This process only needs to be done once and does not need to be done every time after the list is retrieved.
-              2. Check the deviceId value of the device to be controlled in the device list, and call the Device Profile Search API (GET /devices/{device-id}/profile) using this value.
+              1. Your service needs to use Get Device List API (GET /devices) to retrieve the device list registered on the LG platform. This process only needs to be done once and does not need to be done every time after the list is retrieved.
+              2. Check the deviceId value of the device to be controlled in the device list, and call Get Device Profile API (GET /devices/{device-id}/profile) using this value.
               3. Generate control commands for the device based on the device profile received in the API call response. The control command finds the attributes in the device profile that you want to control and expresses them as names and values.
-              4. Using the deviceId and the control command, call the Device Control API (POST /devices/{device-id}/state).
+              4. Using the deviceId and the control command, call Control Device API (POST /devices/{device-id}/state).
               5. Get the device control result back as an API response.
 
               <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="397px" preserveAspectRatio="none" style="width:360px;height:397px;background:#FFFFFF;" version="1.1" viewBox="0 0 360 397" width="360px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="170.4238" style="stroke:#181818;stroke-width:1.0;" width="10" x="71" y="170.7622"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="76" y="242.4741"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="270" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="270" y="170.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="270" y="309.3301"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="344.5" x="10" y="56.2295"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="76" x2="76" y1="39.2295" y2="359.186"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="274.5" x2="274.5" y1="39.2295" y2="359.186"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="28.1533">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="358.186"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="381.3394">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="205.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="212.5" y="28.1533">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="205.5" y="358.186"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="212.5" y="381.3394">ThinQ Business API</text><rect fill="#FFFFFF" height="170.4238" style="stroke:#181818;stroke-width:1.0;" width="10" x="71" y="170.7622"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="76" y="242.4741"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="270" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="270" y="170.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="270" y="309.3301"/><path d="M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="344.5" x="10" y="56.2295"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="72.229">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="125" x="86" y="70.9214">[If you need a new list]</text><polygon fill="#181818" points="258,96.0503,268,100.0503,258,104.0503,262,100.0503" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="76" x2="264" y1="100.0503" y2="100.0503"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="77" x="83" y="95.1938">GET /devices</text><polygon fill="#181818" points="87,127.9063,77,131.9063,87,135.9063,83,131.9063" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="274" y1="131.9063" y2="131.9063"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="57" x="93" y="127.0498">device list</text><polygon fill="#181818" points="258,166.7622,268,170.7622,258,174.7622,262,170.7622" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="81" x2="264" y1="170.7622" y2="170.7622"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="166" x="88" y="165.9058">GET /device/{deviceId}/profile</text><polygon fill="#181818" points="92,198.6182,82,202.6182,92,206.6182,88,202.6182" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="274" y1="202.6182" y2="202.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="74" x="98" y="197.7617">device profile</text><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="128" y1="234.4741" y2="234.4741"/><line style="stroke:#181818;stroke-width:1.0;" x1="128" x2="128" y1="234.4741" y2="247.4741"/><line style="stroke:#181818;stroke-width:1.0;" x1="87" x2="128" y1="247.4741" y2="247.4741"/><polygon fill="#181818" points="97,243.4741,87,247.4741,97,251.4741,93,247.4741" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="97" x="93" y="229.6177">create command</text><polygon fill="#181818" points="258,305.3301,268,309.3301,258,313.3301,262,309.3301" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="81" x2="264" y1="309.3301" y2="309.3301"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="170" x="88" y="304.4736">POST /device/{deviceId}/state</text><polygon fill="#181818" points="87,337.186,77,341.186,87,345.186,83,341.186" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="274" y1="341.186" y2="341.186"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="93" x="93" y="336.3296">command result</text><!--SRC=[TL7DIiD043vtd-AZTycz1q6XBG7HIFC2u-u45vDDs9bKHVhktJIfj3QUPdU-tsNbmuUE8ZLmN55VwwOD-amDuscxpal-KfDWzTPt51JB8bq2H-muxhtb9KZGZRjhOldkmoiUU_61HV1Gv2VkcpLKA_8AtssFmEn0QNoYzg86YyaBT_U9ki9sNI9pF4H9GicgtvFoOBE8h7qC6D5Hpy6P_nsodt7cxf1riQrypURNyVo8ouZhXBFa8c0whc0Z3nhRDWsb3ZUkZczMVteMBxlPeg99DDTgoa9aITysat04]--></g></svg>
               
-          ## Device Push Subscription
+          ## Subscribe to Device Push
           Uses the Push API to subscribe to push notifications on a device (Currently, only home appliances registered on LG ThinQ are supported.)
 
-            - API Usage
+            - API to Use
               - [`GET /devices`](#tag/Device-API/operation/getDevices)
               - [`POST /push/{deviceId}/subscribe`](#tag/Event-API/operation/subscribePushMessages)
               
             - Sequence
-              1. Your service needs to use the Device List Search API(GET /devices) to retrieve the device list registered on the LG platform. This process only needs to be done once and does not need to be done every time after the list is retrieved.
-              2. Check the deviceId value of the device you want to receive push notifications for from the device list, and call the Device Push Subscription API (POST /push/{deviceId}/subscribe) using this value.
-              3. API 응답으로 구독 성공/실패에 대한 결과를 반환받습니다.
-              4. 디바이스에서 푸시 알림이 발생했을 때, 등록한 callback URL로 푸시 메시지를 전달받습니다. 사용자에게 전달해야 하는 메시지가 있다면 적절히 처리합니다.
+              1. Your service needs to use Get Device List API (GET /devices) to retrieve the device list registered on the LG platform. This process only needs to be done once and does not need to be done every time after the list is retrieved.
+              2. Check the deviceId value of the device you want to receive push notifications for from the device list, and call Subscribe to Device Push API (POST /push/{deviceId}/subscribe) using this value.
+              3. In the API response, you get a result for the subscription success/failure.
+              4. When a push notification occurs on your device, you'll receive a push message to the callback URL you registered. If there's a message you need to deliver to the user, you will handle it accordingly.
 
               <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="356px" preserveAspectRatio="none" style="width:442px;height:356px;background:#FFFFFF;" version="1.1" viewBox="0 0 442 356" width="442px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="284" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="284" y="170.7622"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="358.5" x="10" y="56.2295"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="426.5" x="10" y="217.6182"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="76" x2="76" y1="39.2295" y2="318.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="288.5" x2="288.5" y1="39.2295" y2="318.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="397.5" x2="397.5" y1="39.2295" y2="318.2949"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="28.1533">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="317.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="340.4482">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="219.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="226.5" y="28.1533">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="219.5" y="317.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="226.5" y="340.4482">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="57" x="369.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="43" x="376.5" y="28.1533">Device</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="57" x="369.5" y="317.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="43" x="376.5" y="340.4482">Device</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="284" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="284" y="170.7622"/><path d="M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="358.5" x="10" y="56.2295"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="72.229">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="125" x="86" y="70.9214">[If you need a new list]</text><polygon fill="#181818" points="272,96.0503,282,100.0503,272,104.0503,276,100.0503" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="76" x2="278" y1="100.0503" y2="100.0503"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="77" x="83" y="95.1938">GET /devices</text><polygon fill="#181818" points="87,127.9063,77,131.9063,87,135.9063,83,131.9063" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="288" y1="131.9063" y2="131.9063"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="57" x="93" y="127.0498">device list</text><polygon fill="#181818" points="272,166.7622,282,170.7622,272,174.7622,276,170.7622" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="76" x2="278" y1="170.7622" y2="170.7622"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="189" x="83" y="165.9058">POST /push/{deviceId}/subscribe</text><polygon fill="#181818" points="87,198.6182,77,202.6182,87,206.6182,83,202.6182" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="288" y1="202.6182" y2="202.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="93" y="197.7617">result</text><path d="M10,217.6182 L71,217.6182 L71,227.4741 L61,237.4741 L10,237.4741 L10,217.6182 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="426.5" x="10" y="217.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="233.6177">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="91" x="86" y="232.3101">[if push created]</text><polygon fill="#181818" points="300,257.439,290,261.439,300,265.439,296,261.439" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="294" x2="397" y1="261.439" y2="261.439"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="85" x="306" y="256.5825">push message</text><polygon fill="#181818" points="87,289.2949,77,293.2949,87,297.2949,83,293.2949" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="81" x2="288" y1="293.2949" y2="293.2949"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="85" x="93" y="288.4385">push message</text><!--SRC=[NP31JiCm38RFpLDOkq-zSq02RKoLfb6qle2RkCnQcrLnCa28TyTj8yHsIkB_z_VRaJFx4GCEuAZ3rCUNYuy770ZskstLq6SqAaUsFAAFiAhruId0aSALBQq01SQbTcjiJkpVu3a9UnA1fxgQlQszjMte3-Fcgy4-GjN1roM19tA0Udn0pn8D53aArezAUe3Tje5owHDLqKQ-OgGffGWKK_2PklIJT-QEKByU5J4cEPNVYxLoFwMaLcpWLgVvXyp4GAB_DC_97KojO0EfnvaYfsNuh0swFhwJALexrNF-dQYJ_G80]--></g></svg>
               
-          ## Registering users for the DR service
+          ## Register for DR service
           After consulting with LG Electronics' API manager in advance, B2B partners can register users for the DR service using a DR API.
 
-            - API Usage
+            - API to Use
               - [`POST /dr/users`](#tag/DR-API/operation/createDrUser)
 
             - Sequence
@@ -97,10 +103,10 @@ contents:
 
               <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="698px" preserveAspectRatio="none" style="width:851px;height:698px;background:#FFFFFF;" version="1.1" viewBox="0 0 851 698" width="851px" zoomAndPan="magnify"><defs/><g><rect fill="#DDDDDD" height="686.2983" style="stroke:#181818;stroke-width:0.5;" width="223" x="182.5" y="6"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="99" x="244.5" y="20.9995">Partner Service</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="298" y="436.645"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="369.5" y="372.9331"/><rect fill="#FFFFFF" height="40.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="459" y="560.2129"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="606.5" y="213.6533"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="606.5" y="277.3652"/><rect fill="#FFFFFF" height="141.4238" style="stroke:#181818;stroke-width:1.0;" width="10" x="771" y="341.0771"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="37" x2="37" y1="84.2295" y2="610.0688"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="222.5" x2="222.5" y1="84.2295" y2="610.0688"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="302.5" x2="302.5" y1="84.2295" y2="610.0688"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="374.5" x2="374.5" y1="84.2295" y2="610.0688"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="463.5" x2="463.5" y1="84.2295" y2="610.0688"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="611.5" x2="611.5" y1="84.2295" y2="610.0688"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="775.5" x2="775.5" y1="84.2295" y2="610.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="59" x="5" y="81.1533">End-User</text><ellipse cx="37.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M37.5,21.5 L37.5,48.5 M24.5,29.5 L50.5,29.5 M37.5,48.5 L24.5,63.5 M37.5,48.5 L50.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="59" x="5" y="625.2222">End-User</text><ellipse cx="37.5" cy="636.7983" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M37.5,644.7983 L37.5,671.7983 M24.5,652.7983 L50.5,652.7983 M37.5,671.7983 L24.5,686.7983 M37.5,671.7983 L50.5,686.7983 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="72" x="186.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="58" x="193.5" y="73.1533">Frontend</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="72" x="186.5" y="609.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="58" x="193.5" y="632.2222">Frontend</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="69" x="268.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="55" x="275.5" y="73.1533">Backend</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="69" x="268.5" y="609.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="55" x="275.5" y="632.2222">Backend</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="54" x="347.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="40" x="354.5" y="73.1533">OAuth</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="54" x="347.5" y="609.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="40" x="354.5" y="632.2222">OAuth</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="411.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="91" x="418.5" y="73.1533">LG ThinQ App</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="411.5" y="609.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="91" x="418.5" y="632.2222">LG ThinQ App</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="170" x="526.5" y="30.7705"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="72" x="575.5" y="53.9238">LMP OAuth</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="156" x="533.5" y="73.1533">(LGE Members Platform)</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="170" x="526.5" y="609.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="72" x="575.5" y="632.2222">LMP OAuth</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="156" x="533.5" y="651.4517">(LGE Members Platform)</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="706.5" y="30.7705"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="713.5" y="53.9238">ThinQ Business API</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="81" x="735.5" y="73.1533">(DR Service)</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="706.5" y="609.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="713.5" y="632.2222">ThinQ Business API</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="81" x="735.5" y="651.4517">(DR Service)</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="298" y="436.645"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="369.5" y="372.9331"/><rect fill="#FFFFFF" height="40.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="459" y="560.2129"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="606.5" y="213.6533"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="606.5" y="277.3652"/><rect fill="#FFFFFF" height="141.4238" style="stroke:#181818;stroke-width:1.0;" width="10" x="771" y="341.0771"/><polygon fill="#181818" points="452,114.0854,462,118.0854,452,122.0854,456,118.0854" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="37.5" x2="458" y1="118.0854" y2="118.0854"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="246" x="44.5" y="113.229">register devices : Air Conditioner, ESS, TV</text><polygon fill="#181818" points="210.5,145.9414,220.5,149.9414,210.5,153.9414,214.5,149.9414" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="37.5" x2="216.5" y1="149.9414" y2="149.9414"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="161" x="44.5" y="145.085">sign up partner's DR service</text><polygon fill="#181818" points="48.5,177.7974,38.5,181.7974,48.5,185.7974,44.5,181.7974" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="42.5" x2="221.5" y1="181.7974" y2="181.7974"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="140" x="54.5" y="176.9409">direct to LGE login page</text><polygon fill="#181818" points="594.5,209.6533,604.5,213.6533,594.5,217.6533,598.5,213.6533" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="37.5" x2="600.5" y1="213.6533" y2="213.6533"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="76" x="44.5" y="208.7969">log in to LGE</text><polygon fill="#181818" points="314,241.5093,304,245.5093,314,249.5093,310,245.5093" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="308" x2="610.5" y1="245.5093" y2="245.5093"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="106" x="320" y="240.6528">authorization code</text><polygon fill="#181818" points="594.5,273.3652,604.5,277.3652,594.5,281.3652,598.5,277.3652" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="303" x2="600.5" y1="277.3652" y2="277.3652"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="125" x="310" y="272.5088">request access token</text><polygon fill="#181818" points="314,305.2212,304,309.2212,314,313.2212,310,309.2212" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="308" x2="610.5" y1="309.2212" y2="309.2212"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="78" x="320" y="304.3647">access token</text><polygon fill="#181818" points="759,337.0771,769,341.0771,759,345.0771,763,341.0771" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="303" x2="765" y1="341.0771" y2="341.0771"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="196" x="310" y="336.2207">register the user (POST /dr/users)</text><polygon fill="#181818" points="390.5,368.9331,380.5,372.9331,390.5,376.9331,386.5,372.9331" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="384.5" x2="770" y1="372.9331" y2="372.9331"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="168" x="396.5" y="368.0767">request access/refresh token</text><polygon fill="#181818" points="759,400.7891,769,404.7891,759,408.7891,763,404.7891" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="374.5" x2="765" y1="404.7891" y2="404.7891"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="121" x="381.5" y="399.9326">access/refresh token</text><polygon fill="#181818" points="319,432.645,309,436.645,319,440.645,315,436.645" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="313" x2="770" y1="436.645" y2="436.645"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="96" x="325" y="431.7886">request user info</text><polygon fill="#181818" points="759,464.501,769,468.501,759,472.501,763,468.501" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="303" x2="765" y1="468.501" y2="468.501"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="49" x="310" y="463.6445">user info</text><polygon fill="#181818" points="314,478.501,304,482.501,314,486.501,310,482.501" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="308" x2="775" y1="482.501" y2="482.501"/><polygon fill="#181818" points="233.5,492.501,223.5,496.501,233.5,500.501,229.5,496.501" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="227.5" x2="302" y1="496.501" y2="496.501"/><polygon fill="#181818" points="48.5,524.3569,38.5,528.3569,48.5,532.3569,44.5,528.3569" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="42.5" x2="221.5" y1="528.3569" y2="528.3569"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="133" x="54.5" y="523.5005">direct to LG ThinQ App</text><polygon fill="#181818" points="447,556.2129,457,560.2129,447,564.2129,451,560.2129" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="37.5" x2="453" y1="560.2129" y2="560.2129"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="190" x="44.5" y="555.3564">choose home and devices for DR</text><polygon fill="#181818" points="764,588.0688,774,592.0688,764,596.0688,768,592.0688" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="469" x2="770" y1="592.0688" y2="592.0688"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="182" x="476" y="587.2124">send chosen home and devices</text><!--SRC=[RLDDJ-Cm4BtxLunoMH1KFUoDmqe52aA29RljxcalhZrfB1exEvuWnAzdx92IjCqb6Vkz-NXl4b-SRpNf1YnMkjlnNV3yKpS8Z_VBXpM-iTA60q6nz7Rs9o8Le2Dqyg4suGsAKXDx95WXlJg3XG9v92Cxurhj6OexafJeRIP-9rkb-1XshStB2BMHy1ZqlEYu7Y0vKC81wKHDS8_tiAwT_mMBjirmtRO01vYd4dAAV_vCXeKdR3P84SgTvYfGSvw9kwQTqlgyrrrq7cE4HVaW_DlVWm0zov9IIIEO_SYbhu1mwoBBYSK4YtAqS0GtmLl7BeY4bx1ShIvX_NVF7CGIR7HR3rsRrH3ijmXIClObrHut4r8cNu5rX8Q1Gp8ITc7hl92tk4ykWmbCBa1kUbYoshrgnZnr0ipwBf8P0jOYLY3thbF3O895PN726R1z_ekBFFZ_3YE3DYRfnK5SLeJSaP-UZScMFhcVed6D_M1dvVDg3NDBynJ6SsK7fRAL9ohE2Il2M9-gV72tpvNQcAJAjPslmi0_FFXgVkJRo9YJldpjw7XPSc5JXn0HwY1_efOD7xP65bESLscdianfDT8V87Xv7-4_0000]--></g></svg>
               
-          ## Creating a DR event and downloading monitoring data
+          ## Create DR Event and Get Data
           Describes the process of registering a DR event and downloading monitoring data for a device before and after the DR event.
 
-            - API Usage
+            - API to Use
               - [`POST /dr/events`](#tag/DR-API/operation/createDrEvent)
               - [`POST /dr/events/{eventId}/targets`](#tag/DR-API/operation/createEventTarget)
               - [`POST /dr/events/{eventId}/targets/{targetId}`](#tag/DR-API/operation/updateEventTarget)
@@ -110,10 +116,10 @@ contents:
               - [`POST /dr/data-zip/files/{filename}`](#tag/DR-API/operation/downloadDataZipFile)
               
             - Sequence
-              1. Call the DR Event Registration API (POST /dr/events) to register DR events on the LG DR service server.
-              2. When the DR event is successfully registered, the DR event ID (eventId) is retrieved.
-              3. If the list of the devices that need to be participated in the DR event needs to be modified after the DR event has been created, call the DR Event Target Modification API.
-              4. After the DR event ends, download the monitoring data of the device within the DR event period.
+              1. Call Create DR Event API (POST /dr/events) to register DR events on the LG DR service server.
+              2. When the DR event is successfully registered, the DR Event ID (eventId) is retrieved.
+              3. If the list of the devices that need to be participated in the DR event needs to be modified after the DR event has been created, call Modify DR Event target API.
+              4. After the DR Event ends, download the monitoring data of the device within the DR event period.
 
               <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="760px" preserveAspectRatio="none" style="width:517px;height:760px;background:#FFFFFF;" version="1.1" viewBox="0 0 517 760" width="517px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="119.1709"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="209.8477"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="290.6685"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="371.4893"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="519.166"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="582.8779"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="463.5" y="646.5898"/><rect fill="none" height="342.8862" style="stroke:#000000;stroke-width:1.5;" width="435.5" x="10" y="75.459"/><rect fill="none" height="245.3184" style="stroke:#000000;stroke-width:1.5;" width="415.5" x="20" y="166.0269"/><rect fill="none" height="210.9917" style="stroke:#000000;stroke-width:1.5;" width="491.5" x="20" y="475.4541"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="86" x2="86" y1="58.459" y2="425.3452"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;" x1="86" x2="86" y1="425.3452" y2="468.4541"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="86" x2="86" y1="468.4541" y2="703.4458"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="355.5" x2="355.5" y1="58.459" y2="425.3452"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;" x1="355.5" x2="355.5" y1="425.3452" y2="468.4541"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="355.5" x2="355.5" y1="468.4541" y2="703.4458"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="468.5" x2="468.5" y1="58.459" y2="425.3452"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;" x1="468.5" x2="468.5" y1="425.3452" y2="468.4541"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="468.5" x2="468.5" y1="468.4541" y2="703.4458"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="30" y="24.2295"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="37" y="47.3828">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="30" y="702.4458"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="37" y="725.5991">Partner Service</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="286.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="293.5" y="28.1533">ThinQ Business API</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="81" x="315.5" y="47.3828">(DR Service)</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="286.5" y="702.4458"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="293.5" y="725.5991">ThinQ Business API</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="81" x="315.5" y="744.8286">(DR Service)</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="66" x="435.5" y="24.2295"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="52" x="442.5" y="47.3828">AWS S3</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="66" x="435.5" y="702.4458"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="52" x="442.5" y="725.5991">AWS S3</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="119.1709"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="209.8477"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="290.6685"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="371.4893"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="519.166"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="582.8779"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="463.5" y="646.5898"/><path d="M10,75.459 L217,75.459 L217,85.3149 L207,95.3149 L10,95.3149 L10,75.459 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="342.8862" style="stroke:#000000;stroke-width:1.5;" width="435.5" x="10" y="75.459"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="162" x="25" y="91.4585">Create a new DR Request</text><polygon fill="#181818" points="339,115.1709,349,119.1709,339,123.1709,343,119.1709" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="119.1709" y2="119.1709"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="95" x="93" y="114.3145">POST /dr/events</text><polygon fill="#181818" points="97,147.0269,87,151.0269,97,155.0269,93,151.0269" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="151.0269" y2="151.0269"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="103" y="146.1704">result</text><path d="M20,166.0269 L81,166.0269 L81,175.8828 L71,185.8828 L20,185.8828 L20,166.0269 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="245.3184" style="stroke:#000000;stroke-width:1.5;" width="415.5" x="20" y="166.0269"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="35" y="182.0264">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="157" x="96" y="180.7188">[if targets need to be added]</text><polygon fill="#181818" points="339,205.8477,349,209.8477,339,213.8477,343,209.8477" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="209.8477" y2="209.8477"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="191" x="93" y="204.9912">POST /dr/events/{eventId}/targets</text><polygon fill="#181818" points="97,237.7036,87,241.7036,97,245.7036,93,241.7036" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="241.7036" y2="241.7036"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="103" y="236.8472">result</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="435.5" y1="250.7036" y2="250.7036"/><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="223" x="25" y="263.3955">[if a specific target needs to be updated]</text><polygon fill="#181818" points="339,286.6685,349,290.6685,339,294.6685,343,290.6685" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="290.6685" y2="290.6685"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="246" x="93" y="285.812">POST /dr/events/{eventId}/targets/{targetId}</text><polygon fill="#181818" points="97,318.5244,87,322.5244,97,326.5244,93,322.5244" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="322.5244" y2="322.5244"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="103" y="317.668">result</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="435.5" y1="331.5244" y2="331.5244"/><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="175" x="25" y="344.2163">[if targets needs to be updated]</text><polygon fill="#181818" points="339,367.4893,349,371.4893,339,375.4893,343,371.4893" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="371.4893" y2="371.4893"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="227" x="93" y="366.6328">POST /dr/events/{eventId}/targets/batch</text><polygon fill="#181818" points="97,399.3452,87,403.3452,97,407.3452,93,403.3452" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="403.3452" y2="403.3452"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="103" y="398.4888">result</text><text fill="#000000" font-family="LGEIText" font-size="11" lengthAdjust="spacing" textLength="112" x="222.75" y="452.0371">&lt; DR Event execution &gt;</text><path d="M20,475.4541 L234,475.4541 L234,485.3101 L224,495.3101 L20,495.3101 L20,475.4541 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="210.9917" style="stroke:#000000;stroke-width:1.5;" width="491.5" x="20" y="475.4541"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="169" x="35" y="491.4536">Download monitoring data</text><polygon fill="#181818" points="339,515.166,349,519.166,339,523.166,343,519.166" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="519.166" y2="519.166"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="131" x="93" y="514.3096">POST /dr/data-zip/files</text><polygon fill="#181818" points="97,547.022,87,551.022,97,555.022,93,551.022" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="551.022" y2="551.022"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="48" x="103" y="546.1655">filename</text><polygon fill="#181818" points="339,578.8779,349,582.8779,339,586.8779,343,582.8779" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="582.8779" y2="582.8779"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="191" x="93" y="578.0215">POST /dr/data-zip/files/{filename}</text><polygon fill="#181818" points="97,610.7339,87,614.7339,97,618.7339,93,614.7339" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="614.7339" y2="614.7339"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="78" x="103" y="609.8774">download info</text><polygon fill="#181818" points="451.5,642.5898,461.5,646.5898,451.5,650.5898,455.5,646.5898" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="457.5" y1="646.5898" y2="646.5898"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="96" x="93" y="641.7334">download the file</text><polygon fill="#181818" points="97,674.4458,87,678.4458,97,682.4458,93,678.4458" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="467.5" y1="678.4458" y2="678.4458"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="16" x="103" y="673.5894">file</text><!--SRC=[hLBTQy8m47_lNt7uj26Q1z_64DnqGnYRiy9UzXARguRLIvTSLIR-xqjZAtx0FjWA9UdTxolfkJTDkRHo0GfJMMHyPuWVvGBXuNumdE2Q8zzcdUXS4aDZv3y8BSHebph11aW7-Qvs39pCDJt3JU4qeNFG6mrVwQ8_hecNWQbEIBsN6E9EQBbE5CsiANAujIWPGGBX2hp26DyBT1o1VofhQ7MzLhC9Lp1wYYSWb1MuH68NK1QviEGNvmyOAZ9Zq2cmj3DavvLH0HkOUXkbK0NCZ_J59gn3jHMLs9vxxegPmz9MWiinqQbEgWGXWAiI5Bdov_rJ1h7PRNpf1t4ER-4_Gqmb9_El_4b5vHkrsssuBd_je9G0N6DIi3O4NT-fnw1lLfGPgM1XIBEnccRWCyhlvg34j3vqBbATuT4yb0NoenxzJa9iQkBsK4tL-JIbvapITOBa7iHp3FwdUSA5V080]--></g></svg>
               
@@ -121,9 +127,9 @@ contents:
         description: |
           The ThinQ Business API distinguishes the Base URL according to the location of the customer's device. Therefore, please select and apply the Base URL when calling the API by considering the region where the customer's device is located or the region where the B2B partner's business is located. Also, please note that the Base URLs for the Production environment and Simulator Testing environment are different, as follows. 
           ## Production Environment
-          Use the Base URL below to call the ThinQ Business API by utilizing the Business API Key in the production environment.  
+          Use the Base URL below to call ThinQ Business API by utilizing **Business API Key** in the production environment.  
 
-            |Region|API Token Issuance API|ThinQ Business API|
+            |Region|Issue API Token API|ThinQ Business API|
             |-|-|-|
             |South Asia, East Asia and Pacific|https://ap.api.lge.com|https://ap.api.lge.com/biz/v1|
             |America|https://us.api.lge.com|https://us.api.lge.com/biz/v1|
@@ -131,16 +137,16 @@ contents:
 
             
           ## Simulator Testing Environment
-          Use the Base URL below to call the ThinQ Business API by utilizing the Test API Key in the Simulator Testing environment.
+          Use the Base URL below to call ThinQ Business API by utilizing the **Test API Key** in the Simulator Testing environment.
 
-            |Region|API Token Issuance API|ThinQ Business API|
+            |Region|Issue API Token API|ThinQ Business API|
             |-|-|-|
             |South Asia, East Asia and Pacific|https://ap-test.api.lge.com|https://ap-test.api.lge.com/biz/v1|
             |America|https://us-test.api.lge.com|https://us-test.api.lge.com/biz/v1|
             |Europe, Middle East, Africa|https://eu-test.api.lge.com|https://eu-test.api.lge.com/biz/v1|   
            
       - name: Codes
-        x-displayName: Define the code
+        x-displayName: Code Definition
         description: |
           Describes the types of code you can refer to when utilizing the ThinQ Business API.
           ## Country Code
@@ -811,8 +817,8 @@ contents:
         get:
           tags:
             - Device API
-          summary: Device status inquiry
-          description: Retrieve the device status.
+          summary: Get Device Status
+          description: Get status of a specific device.
           operationId: getStatusOfDevice
           security:
             - ThinQ_Business_API_Key: []
@@ -1039,7 +1045,7 @@ contents:
               application/json:
                 schema:
                   type: object
-                  description: For a schema of control request messages by device type, see the [**Device Profiles**](/api/device_profile) page.
+                  description: For a schema of control request messages by device type, see the [**Device Profiles**](/en/apiManage/device_profile) page.
                 examples:
                   Refrigerator:
                     $ref: '#/components/examples/refrigerator-command-example'
@@ -4702,25 +4708,25 @@ contents:
                   type: string
                   description: Detailed error code
         device-profile-res:
-          description: Profile responses for a specific device
+          description: Response for profile of a specific device
           allOf:
             - $ref: '#/components/schemas/device-base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: For a schema of device profile messages by device type, see the [**Device Profile**](/api/device_profile) page.
+                  description: For a schema of device profile messages by device type, see the [**Device Profile**](/en/apiManage/device_profile) page.
         device-status-res:
-          description: Status responses for a specific device
+          description: Response for statas of a specific device
           allOf:
             - $ref: '#/components/schemas/device-base-res'
             - type: object
               properties:
                 response:
                   type: object
-                  description: For a schema of device status response messages by device type, see the [**Device Profile**](/api/device_profile) page.
+                  description: For a schema of device status response messages by device type, see the [**Device Profile**](/en/apiManage/device_profile) page.
         device-id-list-res:
-          description: Response from the device ID list
+          description: Response for Device ID list
           allOf:
             - $ref: '#/components/schemas/device-base-res'
             - type: object
@@ -9526,131 +9532,131 @@ contents:
             info:
               osType: WEBOS
         refrigerator-command-example:
-          description: 냉장고 - 절전 모드 설정
+          description: Refrigerator - Power Save On
           value:
             powerSave:
               powerSaveEnabled: true
         washer-command-example:
-          description: 세탁기 - 운전 시작
+          description: Washer - Power ON / Start washing
           value:
             location:
               locationName: MAIN
             operation:
               washerOperationMode: START
         dryer-command-example:
-          description: 건조기 - 세탁 시작
+          description: Dryer - Start drying
           value:
             operation:
               dryerOperationMode: START
         air_conditioner-command-example:
-          description: 에어컨 - 지정한 켜짐 예약시간
+          description: Air Conditioner - Set On Timer
           value:
             timer:
               absoluteHourToStart: 10
               absoluteMinuteToStart: 36
         air_purifier-command-example:
-          description: 공기청정기 - 운전 모드
+          description: Air Purifier - Run mode
           value:
             airPurifierJobMode:
               currentJobMode: CLEAN
         robot_cleaner-command-example:
           title: Robot_Cleaner
-          description: 로봇청소기 - 청소 모드
+          description: Robot Cleaner - Run mode
           value:
             operation:
               cleanOperationMode: HOMING
         oven-command-example:
           title: Oven
-          description: 오븐 - 오븐 동작
+          description: Oven - Oven operation Mode
           value:
             location:
               locationName: LOWER
             operation:
               ovenOperationMode: START
         dish_washer-command-example:
-          description: 식기세척기 - 운전 모드
+          description: Dish Washer - Run mode
           value:
             operation:
               dishWasherOperationMode: START
         styler-command-example:
-          description: 스타일러 - 운전 모드
+          description: Styler - Run mode
           value:
             operation:
               stylerOperationMode: START
         dehumidifier-command-example:
-          description: 가습기 - 운전 모드
+          description: Dehumidifier - Run mode
           value:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
         ceiling_fan-command-example:
-          description: 실링팬 - 운전 모드
+          description: Ceiling Fan - Run mode
           value:
             operation:
               ceilingfanOperationMode: POWER_ON
         wine_cellar-command-example:
-          description: 와인셀러 - 조명 밝기
+          description: Wine Cellar - light Brightness
           value:
             operation:
               lightStatus: 90
         washtower_washer-command-example:
-          description: 워시타워 세탁기 - 세탁 시작
+          description: WashTower(Washer) - Start washing
           value:
             operation:
               washerOperationMode: START
             location:
               locationName: MAIN
         washtower_dryer-command-example:
-          description: 워시타워(건조기) - 전원 POWER_OFF
+          description: WashTower(Dryer) - Power OFF
           value:
             operation:
               dryerOperationMode: POWER_OFF
         washtower-command-example:
-          description: 워시타워 - 건조기 시작
+          description: WashTower(Single Unit) - Start drying
           value:
             dryer:
               operation:
                 dryerOperationMode: START
         cooktop-command-example:
-          description: 쿡탑 - 전원 OFF
+          description: Cooktop - Power Off
           value:
             operation:
               operationMode: POWER_OFF
         hood-command-example:
-          description: 후드 - 램프 밝기
+          description: Hood - Lamp Brightness
           value:
             lamp:
               lampBrightness: 0
         microwave_oven-command-example:
-          description: 전자레인지
+          description: Microwave Oven
           value:
             lamp:
               lampBrightness: 1
             ventilation:
               fanSpeed: 0
         system_boiler-command-example:
-          description: 시스템 보일러 - 전원 ON
+          description: System Boiler - Power ON
           value:
             operation:
               boilerOperationMode: POWER_ON
         air_purifier_fan-command-example:
-          description: 공기청정팬 - 운전 모드
+          description: Air Purifier Fan - Run mode
           value:
             airFanJobMode:
               currentJobMode: SPOT_CLEAN
         water_heater-command-example:
-          description: 온수기 - 운전모드
+          description: Water Heater - Run mode
           value:
             waterHeaterJobMode:
               currentJobMode: AUTO
         main_washcombo-command-example:
-          description: 워시콤보세탁기 메인 - 동작
+          description: Main WashCombo - operation
           value:
             location:
               locationName: MAIN
             operation:
               washerOperationMode: START
         mini_washcombo-command-example:
-          description: 워시콤보세탁기 미니 - 동작
+          description: Mini WashCombo - operation
           value:
             location:
               locationName: MINI
@@ -9658,7 +9664,7 @@ contents:
               washerOperationMode: START
         humidifier-command-example:
           title: Humidifier
-          description: 가습기 - 운전 모드
+          description: Humidifier - Run mode
           value:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
