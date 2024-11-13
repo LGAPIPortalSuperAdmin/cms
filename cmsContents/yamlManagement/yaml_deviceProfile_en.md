@@ -5,7 +5,7 @@ contents:
     openapi: 3.1.0
 
     info:
-      version:
+      version: v1
       title: Device Profile
     servers:
       - url: https://ap.api.lge.com
@@ -14,12 +14,12 @@ contents:
         x-displayName: Overview
         x-traitTag: true
         description: |
-          **A device profile** describes the state of a device or defines properties that allow you to control the device. 
+          **Device Profile** describes the state of a device or defines properties that allow you to control the device. 
           Device profiles are provided per device type, and even within the same type, the content may vary depending on the product or model. Use the attributes defined in a device profile to apply functionality to your service related to viewing and controlling the state of a device. This document describes the following contents for each device type.
 
-            - **Device profile schema**
+            - **Device Profile Schema**
               
-              **Describes the schema of the device profile received by calling the **Device Profile Viewing API*
+              Describes the schema of the device profile received by calling the **Get Device Profile API**
               Refer to an example of a device profile message along with the schema.
               The device profile message consists of the following items, which may vary depending on the type of device.
               
@@ -28,15 +28,15 @@ contents:
                 | property | Read/write support per property and value characteristics |
                 | notification |the type of push messages supported by your device |
                 | error |the type of push messages supported by your device |
-                | extensonProperty | AExpanded properties |
+                | extensonProperty | expanded properties |
 
             - **Request/Response Schema**
               
-              Describes the response messages of the **Device Status Viewing API** and the request messages of the **Device Control API** that are built based on device profiles.  - name: device type
+              Describes the response messages of the **Get Device Status API** and the request messages of the **Control Device API** that are built based on device profiles.
       - name: device type
         x-displayName: Device Type
         x-traitTag: true
-        description: "**Device Type** characterizes the device and allows you to distinguish the kind of device in the **Device List Viewing API** response. Device profiles are defined based on device type.\n\n  | Device Type | Name |\n  |-|-|\n  | DEVICE_REFRIGERATOR | Refrigerator |\n  | DEVICE_WASHER | Washer |\n  | DEVICE_DRYER | Dryer |\n  | DEVICE_AIR_CONDITIONER | Air Conditioner |\n  | DEVICE_AIR_PURIFIER | Air Purifier |\n  | DEVICE_ROBOT_CLEANER | Robot Cleaner |\n  | DEVICE_OVEN | Oven |\n  | DEVICE_DISH_WASHER | Dish Washer |\n  | DEVICE_STYLER | Styler |\n  | DEVICE_WATER_PURIFIER | Water Purifier |\n  | DEVICE_DEHUMIDIFIER | Dehumidifier |\n  | DEVICE_CEILING_FAN | Ceiling Fan |\n  | DEVICE_WINE_CELLAR | Wine Cellar |\n  | DEVICE_KIMCHI_REFRIGERATOR | Kimchi Refrigerator |\n  | DEVICE_HOME_BREW | Home Brew |\n  | DEVICE_PLANT_CULTIVATOR | Plant Cultivator |\n  | DEVICE_WASHTOWER_WASHER | WashTower Washer(Washer) |\n  | DEVICE_WASHTOWER_DRYER | WashTower Washer(Dryer) |\n  | DEVICE_WASHTOWER | WashTower Washer |\n  | DEVICE_COOKTOP | Cooktop |\n  | DEVICE_HOOD | Hood |\n  | DEVICE_MICROWAVE_OVEN | Microwave Oven |\n  | DEVICE_SYSTEM_BOILER | System Boiler |\n  | DEVICE_AIR_PURIFIER_FAN | Air Purifier Fan |\n  | DEVICE_STICK_CLEANER | Stick Cleaner |\n  | DEVICE_WATER_HEATER | Water Heater |\n  | DEVICE_WASHCOMBO_MAIN | Main WashCombo |\n  | DEVICE_WASHCOMBO_MINI | Mini WashCombo |\n  | DEVICE_HUMIDIFIER | Humidifier |\n  | DEVICE_ODU | Outdoor unit of system Air conditioner registered in LG BECON Cloud |\n  | DEVICE_IDU | indoor unit of system air conditioner registered in LG BECON Cloud |\n  | DEVICE_SIGNAGE | Signage |\n  | DEVICE_HEJ_MOTION_SENSOR | Smart Motion Sensor\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | Smart Temperature and Humidity Sensor\n  | DEVICE_HEJ_DOOR_SENSOR | Smart door Sensor\n  | DEVICE_HEJ_BUTTON | Smart button\n  | DEVICE_HEJ_LIGHT_SWITCH | Smart light switch\n  | DEVICE_HEJ_DOOR_LOCK | Smart door lock \n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | Smart Push Pull door lock\n  | DEVICE_HEJ_PLUG | Smart power strip\n  | DEVICE_HEJ_PLUG_MINI | Smart Plug Mini\n  | DEVICE_HEJ_BULB_WHITE | Smart light bulb (White)\n  | DEVICE_HEJ_BULB_COLOR | Smart light bulb (Multi-Color)\n  | DEVICE_HEJ_LINE_LED | Smart String Light LED\n  | DEVICE_HEJ_CURTAIN_CTRL | Smart Motorized Curtain Controller\n  | DEVICE_HEJ_BLIND_MOTOR | Smart electric blinds\n  | DEVICE_HEJ_SWITCH_STRIP | Switch strap\n  | DEVICE_HEJ_STARLIGHT | Smart Star Light\n  | DEVICE_HEJ_DOORBELL | Smart Chime Bell\n  | DEVICE_HEJ_PET_FEEDER | Smart Pet Feeder\n  | DEVICE_HEJ_HOME_CAMERA | Smart Home Camera\n  | DEVICE_HEJ_SYNC_BOX | Syc Box\n  | DEVICE_HEJ_SYNC_BOX_SUB | Synclight\n  | DEVICE_HEJ_GAS_SENSOR\t| Smart Gas sensor\n  | DEVICE_HEJ_FIRE_SENSOR | Smart fire detection sensor\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | Smart water leak detection sensor\n  | DEVICE_HEJ_THERMO_HYGROMETER | Smart thermohygrometer\n  | DEVICE_HEJ_SIREN | Smart siren\n"
+        description: "**Device Type** characterizes the device and allows you to distinguish the kind of device in the **Get Device List API** response. Device profiles are defined based on device type.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | Refrigerator | O | O |\n  | DEVICE_WASHER | Washer | O | O |\n  | DEVICE_DRYER | Dryer | O | O |\n  | DEVICE_AIR_CONDITIONER | Air Conditioner | O | O |\n  | DEVICE_AIR_PURIFIER | Air Purifier | O | O |\n  | DEVICE_ROBOT_CLEANER | Robot Cleaner | O | O |\n  | DEVICE_OVEN | Oven | O | O |\n  | DEVICE_DISH_WASHER | Dish Washer | O | O |\n  | DEVICE_STYLER | Styler | O | O |\n  | DEVICE_WATER_PURIFIER | Water Purifier | O | O |\n  | DEVICE_DEHUMIDIFIER | Dehumidifier | O | O |\n  | DEVICE_CEILING_FAN | Ceiling Fan | O | O |\n  | DEVICE_WINE_CELLAR | Wine Cellar | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | Kimchi Refrigerator | O | O |\n  | DEVICE_HOME_BREW | Home Brew | O | O |\n  | DEVICE_PLANT_CULTIVATOR | Plant Cultivator | O | O |\n  | DEVICE_WASHTOWER_WASHER | WashTower Washer(Washer) | O | O |\n  | DEVICE_WASHTOWER_DRYER | WashTower Washer(Dryer) | O | O |\n  | DEVICE_WASHTOWER | WashTower Washer | O | O |\n  | DEVICE_COOKTOP | Cooktop | O | O |\n  | DEVICE_HOOD | Hood | O | O |\n  | DEVICE_MICROWAVE_OVEN | Microwave Oven | O | O |\n  | DEVICE_SYSTEM_BOILER | System Boiler | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | Air Purifier Fan | O | O |\n  | DEVICE_STICK_CLEANER | Stick Cleaner | O | O |\n  | DEVICE_WATER_HEATER | Water Heater | O | O |\n  | DEVICE_WASHCOMBO_MAIN | Main WashCombo | O | O |\n  | DEVICE_WASHCOMBO_MINI | Mini WashCombo | O | O |\n  | DEVICE_HUMIDIFIER | Humidifier | O | O |\n  | DEVICE_ODU | Outdoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_IDU | Indoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_SIGNAGE | Signage registered in Business Cloud | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | Smart Motion Sensor | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | Smart Temperature and Humidity Sensor | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | Smart door Sensor | X | O |\n  | DEVICE_HEJ_BUTTON | Smart button | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | Smart light switch | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | Smart door lock | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | Smart Push Pull door lock | X | O |\n  | DEVICE_HEJ_PLUG | Smart power strip | X | O |\n  | DEVICE_HEJ_PLUG_MINI | Smart Plug Mini | X | O |\n  | DEVICE_HEJ_BULB_WHITE | Smart light bulb (White) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | Smart light bulb (Multi-Color) | X | O |\n  | DEVICE_HEJ_LINE_LED | Smart String Light LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | Smart Motorized Curtain Controller | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | Smart electric blinds | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | Switch strap | X | O |\n  | DEVICE_HEJ_STARLIGHT | Smart Star Light | X | O |\n  | DEVICE_HEJ_DOORBELL | Smart Chime Bell | X | O |\n  | DEVICE_HEJ_PET_FEEDER | Smart Pet Feeder | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | Smart Home Camera | X | O |\n  | DEVICE_HEJ_SYNC_BOX | Syc Box | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | Synclight | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| Smart Gas sensor | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | Smart fire detection sensor | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | Smart water leak detection sensor | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | Smart thermohygrometer | X | O |\n  | DEVICE_HEJ_SIREN | Smart siren | X | O |\n"
       - name: refrigerator
         x-displayName: Refrigerator
         description: |
@@ -143,10 +143,10 @@ contents:
           ```
       - name: dryer
         x-displayName: Dryer
-        description: "## Device profile schema\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-profile\"\n  exampleRef=\"#/components/examples/dryer-profile-example\" />\n\n## equest/Response Schema\n### Device status response\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-object\"\n  exampleRef=\"#/components/examples/dryer-object-example\" />\n\n### Device control request\n디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n#### Example \nStarting the standard drying course\n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\nStopping the standard drying course\n```json\n  { \n    \"operation\": {\n      \"dryerOperationMode\": \"STOP\"\n    }\n  }\n```\nSetting start/stop time\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStart\": 2\n    }\n  }\n```\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStop\": 4\n    }\n  }\n```\n"
+        description: "## Device profile schema\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-profile\"\n  exampleRef=\"#/components/examples/dryer-profile-example\" />\n\n## equest/Response Schema\n### Device status response\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-object\"\n  exampleRef=\"#/components/examples/dryer-object-example\" />\n\n### Device control request\nYou can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n#### Example \nStarting the standard drying course\n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\nStopping the standard drying course\n```json\n  { \n    \"operation\": {\n      \"dryerOperationMode\": \"STOP\"\n    }\n  }\n```\nSetting start/stop time\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStart\": 2\n    }\n  }\n```\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStop\": 4\n    }\n  }\n```\n"
       - name: air_conditioner
         x-displayName: Air Conditioner
-        description: "## Device profile schema\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-profile\"\n  exampleRef=\"#/components/examples/air_conditioner-profile-example\" />\n\n## equest/Response Schema\n### Device status response\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-object\"\n  exampleRef=\"#/components/examples/air_conditioner-object-example\" />\n\n### Device control request\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n### Example \n운전 mode 제어 \n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\nAir Conditioner 동작 제어\n```json\t\n  {\n    \"operation\":{\n      \"airConOperationMode\": \"POWER_ON\"\n    }   \n  }\n```\nAir Purifier Fan동작 제어\n```json\t\n  {\n    \"operation\": {\n      \"airCleanOperationMode\": \"START\"\n    }\n  }\n```\n냉방 Temperature 제어\n```json\t\n  #targetTemperature\n  {\n    \"temperature\": {\n      \"targetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\n```json\t\n  #coolTargetTemperature\n  {\n    \"temperature\":{\n      \"coolTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\n```json\t\n  #autoTargetTemperature\n  {\n    \"temperature\":{\n      \"autoTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\n난방 Temperature 제어\n```json\t\n  {\n    \"temperature\": {\n      \"heatTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\n절대 시간 켜짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": 1,\n      \"absoluteMinuteToStart\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": -1,\n      \"absoluteMinuteToStart\": -1\n    }\n  }\n```\n절대 시간 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": 1,\n      \"absoluteMinuteToStop\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": -1,\n      \"absoluteMinuteToStop\": -1\n    }\n  }\n```\n상대 시간 켜짐 Timer 제어/ 취소 제어 \n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 0\n    }\n  }\n```\n상대 시간 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\n슬립 타이머 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\n바람세기 제어\n```json\t\n  {\n    \"airFlow\": {\n      \"windStrength\": \"MID\"\n    }\n  }\n```\n절전 제어\n```json\t\n  {\n    \"powerSave\": {\n      \"powerSaveEnabled\": true\n    }\n  }\n```\n공기질 모니터링 설정 제어\n```json\t\n  {\n    \"airQualitySensor\": {\n      \"monitoringEnabled\": \"ALWAYS\"\n    }\n  }\n```\ntwoSet Temperature 제어\n```json\t\n  {\n    \"twoSetTemperature\": {\n      \"coolTargetTemperature\": 20,\n      \"heatTargetTemperature\": 30,\n      \"unit\": \"C\"\n    }\n  }\n```\n### Air Conditioner 제어 예외 처리\n  \n  디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다. \n  제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다. 다음 예시를 참고로 하십시오.\n\n  #### 1. Air Conditioner 설정 Temperature 상대 제어  \n  예) 사용자 명령 : 'Air Conditioner Temperature 1도 올려줘/내려줘'\n\n  1. **airConOperationMode**가 **POWER_OFF**인 경우 처리  \n    - airConOperationMode의 값이 POWER_OFF이면 디바이스 제어가 불가능합니다. \n    다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - Response example:\n      - \"Air Conditioner 전원이 꺼져있습니다.\n  \n  2. **airConOperationMode**가 **POWER_ON**인 경우 처리  \n    - airConOperationMode의 값이 POWER_ON이면 currentJobMode 값에 따라 다음과 같이 처리해주어야 합니다.\n      - **currentJobMode**: **AUTO**, **COOL** 또는 **HEAT**인 경우\n        - currentJobMode의 값이 AUTO, COOL 또는 HEAT인 경우 다음과 같이 처리합니다.\n          - 1. 요청 헤더 값을 변경합니다.\n            - **x-conditional-control**를 false로 변경합니다.\n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```\n          - 2. 요청 바디 값을 변경합니다.\n            - **currentJobMode**가 **COOL**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"coolTargetTemperature\": Desired Temperature±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **currentJobMode**가 **HEAT**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"heatTargetTemperature\": Desired Temperature±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **currentJobMode**가 **AUTO**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"autoTargetTemperature\": Desired Temperature,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n          - 3. 요청 결과로 Error Code 2201 - Not provided Feature가 발생하는 경우 처리\n            - 제어 가능 Temperature 범위를 벗어난 경우 발생하는 에러입니다. 다음 예시를 참고하여 사용자에게 적절한 응답을 제공합니다.\n            - Response example\n              - \"Air Conditioner (냉방/난방) Temperature는 x도에서 x도까지 설정이 가능합니다.\n      - **currentJobMode**가 **AUTO**, **COOL**, 또는 **HEAT**이 아닌 경우  \n        - currentJobMode의 값이 AUTO, COOL 또는 HEAT 이외의 값을 갖는 경우 Temperature 제어가 불가능합니다. 사용자에게 제어가 불가능함을 응답으로 제공합니다.\n        - Response example\n          - \"냉방/난방 mode에서만 제어가 가능하므로 제어할 수 없습니다.\n  \n  3. Fahrenheit Temperature 제어인 경우  \n    - Fahrenheit Temperature로 제어요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.\n\n  \n  #### 2. Air Conditioner 설정 Temperature 절대 제어\n  예) 사용자 명령: \"Air Conditioner Temperature X도로 설정해줘.\"\n\n  1. **airConOperationMode**가 **POWER_OFF**인 경우 처리  \n    airConOperationMode가 POWER_OFF이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - Response example:\n      - \"Air Conditioner이 Power Off 상태 입니다.\"\n\n  2. **airConOperationMode가 POWER_ON인 경우 처리**  \n    airConOperationMode가 POWER_ON이면 currentJobMode 값에 따라 다음과 같이 처리해주어야 합니다.  \n      - **currentJobMode: AUTO, COOL, 또는 HEAT인 경우** 다음과 같이 처리합니다.  \n        - 1. 요청 헤더 값을 변경합니다.\n          - **x-conditional-control**를 false로 변경합니다.\n            ```json\n              {\n                \"x-conditional-control\": false,\n              }\n            ```\n        - 2. 요청 바디 값을 변경합니다.\n          - **currentJobMode**가 **COOL**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"coolTargetTemperature\": Desired Temperature,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode**가 **HEAT**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"heatTargetTemperature\": Desired Temperature,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode**가 **AUTO**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"autoTargetTemperature\": Desired Temperature,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n        - 3. 요청 결과로 Error Code 2201 - Not provided Feature가 발생하는 경우 처리\n          - 제어 가능 Temperature 범위를 벗어난 경우 발생하는 에러입니다. 다음 예시를 참고하여 사용자에게 적절한 응답을 제공합니다.\n          - Response example\n            - Air Conditioner (냉방/난방) Temperature는 x도에서 x도까지 설정이 가능합니다.  \n      - **currentJobMode**가 **AUTO**, **COOL**, 또는 **HEAT**이 아닌 경우    \n        - **currentJobMode**의 값이 **AUTO**, **COOL** 또는 **HEAT** 이외의 값을 갖는 경우 Temperature 제어가 불가능합니다. 사용자에게 제어가 불가능함을 응답으로 제공합니다.\n        - Response example  \n          - \"냉방/난방 mode에서만 제어가 가능하므로 제어할 수 없습니다.  \n\n  3. Fahrenheit Temperature 제어인 경우  \n    - Fahrenheit Temperature로 제어 요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.\n\n  #### 3. Air Conditioner 풍량 상대 제어\n  예) 사용자 명령: \"Air Conditioner 풍량 올려줘/내려줘.\"  \n\n  1. **airConOperationMode가 POWER_OFF인 경우** 처리  \n    - airConOperationMode가 POWER_OFF이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - Response example:\n      - \"Air Conditioner이 Power Off 상태 입니다.\"\n\n  2. **airConOperationMode가 POWER_ON인 경우** 처리  \n    - airConOperationMode가 POWER_ON이면 windStrength 값에 따라 다음과 같이 처리해주어야 합니다.  \n      - **windStrength : AUTO인 경우**  \n        windStrength가 AUTO인 경우 풍량이 Auto mode으로 제어되며 수동으로 제어할 수 없습니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n        - Response example:  \n          - \"Air Conditioner 풍량이 Auto mode으로 조절되므로 제어할 수 없습니다.\"  \n      - **windStrength : AUTO가 아닌 경우**  \n        windStrength가 AUTO 이외의 값을 가지는 경우 다음과 같이 처리합니다.  \n          1. 디바이스 프로파일을 조회하여 해당 Air Conditioner 디바이스가 제공하는 airFlow값을 확인합니다. 제품 모델 별 지원하는 airFlow 값이 다릅니다.  \n          2. 요청 바디 값을 변경합니다.\n            - **x-conditional-control**를 **false**로 변경합니다.  \n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```   \n          3. 요청 바디 값을 변경합니다.  \n              ```json\n              {\n                \"airFlow\": {\n                  \"windStrength\": X\n                }  \n              }\n              ```\n"
+        description: "## Device profile schema\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-profile\"\n  exampleRef=\"#/components/examples/air_conditioner-profile-example\" />\n\n## equest/Response Schema\n### Device status response\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-object\"\n  exampleRef=\"#/components/examples/air_conditioner-object-example\" />\n\n### Device control request\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n### Example \nControl run mode \n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\nControl the operation of the air conditioner\n```json\t\n  {\n    \"operation\":{\n      \"airConOperationMode\": \"POWER_ON\"\n    }   \n  }\n```\nControl the operation of the air purifier\n```json\t\n  {\n    \"operation\": {\n      \"airCleanOperationMode\": \"START\"\n    }\n  }\n```\nControl cooling temperature\n```json\t\n  #targetTemperature\n  {\n    \"temperature\": {\n      \"targetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\n```json\t\n  #coolTargetTemperature\n  {\n    \"temperature\":{\n      \"coolTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\n```json\t\n  #autoTargetTemperature\n  {\n    \"temperature\":{\n      \"autoTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\nControl heating temperature\n```json\t\n  {\n    \"temperature\": {\n      \"heatTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\nControl Absolute Time On Timer / Control cancel\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": 1,\n      \"absoluteMinuteToStart\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": -1,\n      \"absoluteMinuteToStart\": -1\n    }\n  }\n```\nControl Absolute Time Off Timer/ Control cancel\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": 1,\n      \"absoluteMinuteToStop\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": -1,\n      \"absoluteMinuteToStop\": -1\n    }\n  }\n```\nControl Relative Time On Timer/ Control cancel \n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 0\n    }\n  }\n```\nControl Relative Time Off Timer/ Control cancel\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\nControl Sleep Timer Off Timer/ Control cancel\n```json\t\n  #Timer On\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\nControl wind strengt\n```json\t\n  {\n    \"airFlow\": {\n      \"windStrength\": \"MID\"\n    }\n  }\n```\nControl power save\n```json\t\n  {\n    \"powerSave\": {\n      \"powerSaveEnabled\": true\n    }\n  }\n```\nControl air quality monitoring settings\n```json\t\n  {\n    \"airQualitySensor\": {\n      \"monitoringEnabled\": \"ALWAYS\"\n    }\n  }\n```\nControl twoSet Temperature\n```json\t\n  {\n    \"twoSetTemperature\": {\n      \"coolTargetTemperature\": 20,\n      \"heatTargetTemperature\": 30,\n      \"unit\": \"C\"\n    }\n  }\n```\n###Control exception handling the Air Conditioner\n  \n  The device might not be controllable depending on the state of the device. \nWhen using the Control Request API, you must first query the device status and handle any exceptions appropriately if control is not possible. Use the following examples as a guide.\n\n  #### 1. Control Air Conditioner Settings Temperature Relative \n  e.g.) User commands : 'Air Conditioner Temperature 1 degree up/down'\n\n  1. handle when **airConOperationMode** is **POWER_OFF  \n    - If airConOperationMode has a value of POWER_OFF, the device is uncontrollable. \nProcess the user to respond, as shown in the following example. \n    - Response example:\n      - \"The air conditioner is powered off.\n  \n  2. **Handle if **airConOperationMode** is **POWER_ON  \n    - If the value of airConOperationMode is POWER_ON, then depending on the value of currentJobMode, you should handle it as follows.\n      - **currentJobMode**: **AUTO**, **COOL** or **HEAT**\n        - If the value of currentJobMode is AUTO, COOL, or HEAT, handle it as follows.\n          - 1. change the request header value.\n            - **Change **x-conditional-control** to false.\n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```\n          - 2. Change the request body value.\n            - **CurrentJobMode** is **COOL**, then\n              ```json\n                {\n                  \"temperature\": {\n                    \"coolTargetTemperature\": Desired Temperature±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **CurrentJobMode** is **HEAT**, then\n              ```json\n                {\n                  \"temperature\": {\n                    \"heatTargetTemperature\": Desired Temperature±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **CurrentJobMode** is **Then**, then\n              ```json\n                {\n                  \"temperature\": {\n                    \"autoTargetTemperature\": Desired Temperature,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n          - 3. Handle when a request results in Error Code 2201 - Not provided Feature\n            - An error that occurs when the controllable temperature range is exceeded. Use the following examples to help you provide an appropriate response to your users.\n            - Response example\n              - \"Air Conditioner (Cooling/Heating) Temperature can be set from x degrees to x degrees.\n      - **currentJobMode**is not **AUTO**, **COOL** or **HEAT**,then  \n        - If the value of currentJobMode has a value other than AUTO, COOL, or HEAT, Temperature control is not possible. Provide the user with an out-of-control response.\n        - Response example\n          - \"It is not controllable as it can only be controlled in cooling/heating mode.\n  \n  3. If you control Fahrenheit temperatures  \n    - If you're requesting in Fahrenheit, you'll need a separate conversion table. Please contact your LG representative.\n\n  \n  #### 2. set the Air Conditioner temperature to absolute control\n  e.g) User commands: \"Set the Air Conditioner Temperature to N degrees.\"\n\n  1. **airConOperationMode**is **POWER_OFF**, then \n    If airConOperationMode is POWER_OFF, the device is uncontrollable. Process the user to respond, as shown in the following example.  \n    - Response example:\n      - \"Air Conditioner is in Power Off state.\"\n\n  2. Handle when airConOperationMode is POWER_ON  \n    If airConOperationMode is POWER_ON, then depending on the currentJobMode value, you should handle it as follows  \n      - **currentJobMode**: is **AUTO**, **COOL** or **HEAT** then,  Process as follows  \n        - 1. Change the request header value.\n          - Change **x-conditional-control** to false.\n            ```json\n              {\n                \"x-conditional-control\": false,\n              }\n            ```\n        - 2. Change the request body value.\n          - **currentJobMode** is **COOL** then, \n            ```json\n              {\n                \"temperature\": {\n                  \"coolTargetTemperature\": Desired Temperature,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode**is **HEAT** then,\n            ```json\n              {\n                \"temperature\": {\n                  \"heatTargetTemperature\": Desired Temperature,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode** is **AUTO** then,\n            ```json\n              {\n                \"temperature\": {\n                  \"autoTargetTemperature\": Desired Temperature,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n        - 3. Handle when a request results in Error Code 2201 - Not provided Feature\n          - This error occurs when the controllable temperature range is exceeded. Use the following examples to help you provide an appropriate response to your users.\n          - Response example\n            - Air Conditioner (Cooling/Heating) Temperaturecan be set from N degrees to N degrees.  \n      - **currentJobMode** is not **AUTO**, **COOL** or **HEAT** then,  \n        - If **currentJobMode** has a value other than **AUTO**, **COOL** or **HEAT**, Temperature control is not possible. Provide the user with an out-of-control response.\n        - Response example  \n          - \"It is not controllable as it can only be controlled in cooling/heating mode.  \n\n  3. If you control Fahrenheit temperatures  \n    - If you're requesting control in Fahrenheit, you'll need a separate conversion table. Please ask your LG representative.\n\n  #### 3.  Relative control of Air Conditioner Airflow Control\n  e.g.) User command: \"Air Conditioner Airflow Increase/Decrease.\"  \n\n  1. **airConOperationMode is **POWER_OFF** then, \n    - If airConOperationMode is **POWER_OFF**, device control is not possible. Process the user to respond as shown in the following example.  \n    - Response example:\n      - \"Air Conditioner is **Power Off**.\"\n\n  2. **airConOperationMode** is **POWER_ON** then, \n    - If airConOperationMode is POWER_ON, then depending on the windStrength value, you should handle it as follows  \n      - **windStrength**: is **AUTO** then, \n        If windStrength is AUTO, the wind strength is controlled in auto mode and cannot be manually controlled. Process the user to respond, as shown in the following example. \n        - Response example:  \n          - \"The air conditioner airflow is adjusted in auto mode and cannot be controlled.\"  \n      - **windStrength**: is not **AUTO** then, \n        If windStrength has a value other than AUTO, it is handled as follows  \n          1. Check the device profile to see the airFlow values provided by that Air Conditioner device. Each device model has different supported airFlow values.  \n          2. Change the request body value.\n            - Change **x-conditional-control** to **false**.  \n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```   \n          3. Change the request body value.  \n              ```json\n              {\n                \"airFlow\": {\n                  \"windStrength\": X\n                }  \n              }\n              ```\n"
       - name: air_purifier
         x-displayName: Air Purifier
         description: |
@@ -1058,7 +1058,7 @@ contents:
             exampleRef="#/components/examples/stick_cleaner-object-example" />
 
           ### Device control request
-          Stick Cleaner doesn't support control requests. (확인 필요함)
+          Stick Cleaner doesn't support control requests. (Confirmation required)
       - name: water_heater
         x-displayName: Water Heater
         description: |
@@ -1079,7 +1079,7 @@ contents:
             showExample={false} showWriteOnly={false} />
 
           #### Example  
-          Temperature 변경  
+          Temperature change  
             ```json
               {
                 "temperature": {
@@ -1088,7 +1088,7 @@ contents:
               }
             ```
 
-          mode 변경
+          Mode change
             ```json
               {
                 "waterHeaterJobMode": {
@@ -1116,7 +1116,7 @@ contents:
             showExample={false} showWriteOnly={false} />
 
           #### Example  
-          세탁 시작  
+          Start a wash  
             ```json
               {
                 "location": {
@@ -1128,7 +1128,7 @@ contents:
               }
             ```
 
-          예약 설정  
+          Set up schedules  
             ```json
               {
                 "location": {
@@ -1159,7 +1159,7 @@ contents:
             showExample={false} showWriteOnly={false} />  
 
           #### Example  
-          세탁 시작  
+          Start a wash  
             ```json
               {
                 "location": {
@@ -1171,7 +1171,7 @@ contents:
               }
             ```
 
-          예약 설정  
+          Set up schedules  
             ```json
               {
                 "location": {
@@ -1220,7 +1220,7 @@ contents:
               }
             ```
       - name: odu
-        x-displayName: 실외기
+        x-displayName: Outdoor unit
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1234,9 +1234,9 @@ contents:
             exampleRef="#/components/examples/odu-object-example" />
 
           ### Device control request
-          실외기 doesn't support control requests.
+          Outdoor unit doesn't support control requests.
       - name: idu
-        x-displayName: 실내기
+        x-displayName: Indoor unit
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -2435,7 +2435,7 @@ contents:
                                 REPLACE | Replace
                                 SMART_POWER | Smart Power mode
                                 SMART_OFF | Smart mode off
-                                SMART_ON | 스마트 오드 설정
+                                SMART_ON | Smart mode on
                               items:
                                 type: string
                                 enum:
@@ -2815,10 +2815,10 @@ contents:
           title: Refrigerator
           minProperties: 1
           properties:
-            상위 property:
+            Parent property:
               type: object
               properties:
-                하위 property:
+                Child property:
                   value: value
         washer-profile:
           type: object
@@ -3285,7 +3285,7 @@ contents:
             error:
               type: array
               minProperties: 1
-              description: "Push Code | Description\n-|-\nWATER_SUPPLY_ERROR | The error on water supply\nWATER_DRAIN_ERROR | The error on water drainage\nOUT_OF_BALANCE_ERROR | The error on dehydrating\nLOCKED_MOTOR_ERROR\t | The error on driver motor\nCHILD_LOCK_ACTIVE_ERROR | The error on child lock\nTIME_TO_RUN_THE_TUB_CLEAN_CYCLE_ERROR | The error on washing the tub clean\nUNBALANCED_LOAD_ERROR | The error on unbalanced load\nDOOR_OPEN_ERROR\t| The error on the door opening\nUNABLE_TO_LOCK_ERROR | The error of unable to lock the door\nOVERFILL_ERROR | 물 수위 Error\nWATER_LEVEL_SENSOR_ERROR | The error on overfilling the water\nPOWER_FAIL_ERROR | The error on power\nTEMPERATURE_SENSOR_ERROR | The error on the temperature sensor\nTIMEOUT_ERROR | The timeout error\nPART_MALFUNCTION_ERROR | The error on the part malfunction"
+              description: "Push Code | Description\n-|-\nWATER_SUPPLY_ERROR | The error on water supply\nWATER_DRAIN_ERROR | The error on water drainage\nOUT_OF_BALANCE_ERROR | The error on dehydrating\nLOCKED_MOTOR_ERROR\t | The error on driver motor\nCHILD_LOCK_ACTIVE_ERROR | The error on child lock\nTIME_TO_RUN_THE_TUB_CLEAN_CYCLE_ERROR | The error on washing the tub clean\nUNBALANCED_LOAD_ERROR | The error on unbalanced load\nDOOR_OPEN_ERROR\t| The error on the door opening\nUNABLE_TO_LOCK_ERROR | The error of unable to lock the door\nOVERFILL_ERROR | The error on overfilling the water\nWATER_LEVEL_SENSOR_ERROR | The error on overfilling the water\nPOWER_FAIL_ERROR | The error on power\nTEMPERATURE_SENSOR_ERROR | The error on the temperature sensor\nTIMEOUT_ERROR | The timeout error\nPART_MALFUNCTION_ERROR | The error on the part malfunction"
               items:
                 type: string
                 enum:
@@ -4769,7 +4769,7 @@ contents:
                             - number
                     oder:
                       type: object
-                      description: Odor concentration value(Typos)
+                      description: Odor concentration value(Typo)
                       properties:
                         mode:
                           type: array
@@ -5703,7 +5703,7 @@ contents:
                             - number
                     oder:
                       type: object
-                      description: Odor concentration value(오타)
+                      description: Odor concentration value(Typos)
                       properties:
                         mode:
                           type: array
@@ -6021,7 +6021,7 @@ contents:
                   description: PM10 (Coarse particulate matter concentration)
                 oder:
                   type: number
-                  description: Odor concentration value(오타)
+                  description: Odor concentration value(Typo)
                 odor:
                   type: number
                   description: Odor concentration value
@@ -8808,7 +8808,7 @@ contents:
                                 ZIGZAG | ZigZag Clean
                                 SECTOR_BASE | Thorough cleaning
                                 SPOT | Focused cleaning
-                                EDGE | Edge cleaning (LG CordZero R9: Edge Mode) 
+                                EDGE | Edge cleaning (LG CordZero R9: Edge Mode)
                                 MACRO | Macro mode (assign area with remote control for cleaning)
                                 SELECT | My Space clean
                               items:
@@ -9004,7 +9004,7 @@ contents:
                 BRUSH_ERROR | The error on the brush
                 NO_BATTERY_ERROR | No battery
                 DUST_FULL_ERROR | The error that the dust bin is full
-                NO_DUST_BIN_ERROR | No dust bin 
+                NO_DUST_BIN_ERROR | No dust bin
                 MOVE_ERROR | The error of unable to move
                 BLOCK_ERROR | The error on movement blockage
                 RIGHT_WHEEL_ERROR | The error on the right wheel
@@ -9206,7 +9206,7 @@ contents:
                                   INITIAL | Standby
                                   PREFERENCE | Setting
                                   ERROR | Error
-                                  CLEANING_IS_DONE | Cleaning completed
+                                  CLEANING_IS_DONE | Cleaning completed
                                 items:
                                   type: string
                                   enum:
@@ -9540,8 +9540,8 @@ contents:
                         -|-
                         SINGLE | Single ovens
                         COMBI | Combination ovens
-                        DOUBLE_UL | Double ovens (UpperLower, Upper, Lower)
-                        DOUBLE_LR | Double ovens (LeftRight), Left, Right)
+                        DOUBLE_UL | Double ovens (UpperLower, Upper, Lower)
+                        DOUBLE_LR | Double ovens (LeftRight, Left, Right)
                       enum:
                         - SINGLE
                         - COMBI
@@ -9609,7 +9609,7 @@ contents:
                 properties:
                   cookMode:
                     type: string
-                    description: 요리 mode
+                    description: Cooking mode
                     enum:
                       - BAKE
                       - CONVECTION_BAKE
@@ -10216,7 +10216,7 @@ contents:
                 HEATER_CIRCUIT_ERROR | The error on the heater circuit
                 WATER_SUPPLY_ERROR | The error on water supply
                 MOTOR_ERROR | The error on motor
-                WATER_DRAIN_ERROR | The error on water drainage
+                WATER_DRAIN_ERROR | The error on water drainage
                 TEMPERATURE_SENSOR_ERROR | Temperature sensor error
               items:
                 type: string
@@ -10701,10 +10701,10 @@ contents:
                 WATER_LEAKS_ERROR | The error on water leakage
                 DOOR_CLOSE_ERROR | Door Closed Error
                 DOOR_OPEN_ERROR | Door open error
-                NEED_WATER_DRAIN | The error on water drainage
+                NEED_WATER_DRAIN | The error on water drainage
                 STEAM_HEAT_ERROR | The error on steam heat
                 NEED_WATER_REPLENISHMENT | The error on refilling water
-                WATER_LEVEL_SENSOR_ERROR | The error on the water level sensor
+                WATER_LEVEL_SENSOR_ERROR | The error on the water level sensor
                 LE_ERROR | LE Error
                 LE2_ERROR | LE2 Error
                 TEMPERATURE_SENSOR_ERROR | Temperature sensor error
@@ -12348,7 +12348,7 @@ contents:
                                     type: integer
                       temperatureState:
                         type: object
-                        description: 재배 Temperature runState
+                        description: Grow Temperature State
                         properties:
                           mode:
                             type: array
@@ -12500,7 +12500,7 @@ contents:
                             properties:
                               r:
                                 type: array
-                                description: "Value | Description\n-|-\nPOWER_OFF | Power OFF\nINITIAL | Standby runState\nPAUSE | Pause\nDETECTING | Detecting load\nSOAKING | Soaking\nRUNNING\t|\tRunning\nRINSING\t|\tRinsing\nSPINNING | Spinning\nEND\t| Washing completed\nRESERVED | Reserved\nFIRMWARE | Updating firmware\nDRYING | Drying\nCOOL_DOWN\t| 구Wrinkle Care 1\nRINSE_HOLD | Pausing after rinsing\nREFRESHING | Wrinkle Care 2 FRESHCARE\nSTEAM_SOFTENING | Steam Softening\nERROR\t| Error\nSMART_GRID_RUN | Running Smart Grid\nADD_DRAIN\t| Draining added\nDETERGENT_AMOUNT | Displaying detergent amount\nPREWASH | Pre-washing\nSHOES_MODULE | Drying shoes\nPROOFING | Proofing \nDISPENSING | Auto-dispensing detergen\nSOFTENING | Checking the amount of softener\nCHECKING_TURBIDITY | turbidity detection(G+Best모델 AUTOWASH 코스 사용 시)\nCHANGE_CONDITION | Displays after automatically changing options based on the turbidity detection results\nDISPLAY_LOADSIZE | Displays load detection results\nFROZEN_PREVENT_INITIAL | Anti-freeze mode standby\nFROZEN_PREVENT_RUNNING | Running anti-freeze\nFROZEN_PREVENT_PAUSE | Pausing anti-freeze\nSLEEP | Sleep runState"
+                                description: "Value | Description\n-|-\nPOWER_OFF | Power OFF\nINITIAL | Standby runState\nPAUSE | Pause\nDETECTING | Detecting load\nSOAKING | Soaking\nRUNNING\t|\tRunning\nRINSING\t|\tRinsing\nSPINNING | Spinning\nEND\t| Washing completed\nRESERVED | Reserved\nFIRMWARE | Updating firmware\nDRYING | Drying\nCOOL_DOWN\t| Wrinkle Care 1\nRINSE_HOLD | Pausing after rinsing\nREFRESHING | Wrinkle Care 2 FRESHCARE\nSTEAM_SOFTENING | Steam Softening\nERROR\t| Error\nSMART_GRID_RUN | Running Smart Grid\nADD_DRAIN\t| Draining added\nDETERGENT_AMOUNT | Displaying detergent amount\nPREWASH | Pre-washing\nSHOES_MODULE | Drying shoes\nPROOFING | Proofing \nDISPENSING | Auto-dispensing detergen\nSOFTENING | Checking the amount of softener\nCHECKING_TURBIDITY | Detecting turbidity (when using AUTOWASH course of G+Best model)\nCHANGE_CONDITION | Displays after automatically changing options based on the turbidity detection results\nDISPLAY_LOADSIZE | Displays load detection results\nFROZEN_PREVENT_INITIAL | Anti-freeze mode standby\nFROZEN_PREVENT_RUNNING | Running anti-freeze\nFROZEN_PREVENT_PAUSE | Pausing anti-freeze\nSLEEP | Sleep runState"
                                 items:
                                   type: string
                                   enum:
@@ -12908,20 +12908,20 @@ contents:
                 Push Code | Description
                 -|-
                 WATER_SUPPLY_ERROR | The error on water supply
-                WATER_DRAIN_ERROR | The error on water drainage
-                OUT_OF_BALANCE_ERROR | 탈수 Error
-                LOCKED_MOTOR_ERROR | 드라이버 The error on motor
-                CHILD_LOCK_ACTIVE_ERROR | childlock Error
-                TIME_TO_RUN_THE_TUB_CLEAN_CYCLE_ERROR | 통세척 Error
-                UNBALANCED_LOAD_ERROR | 수평 Error
-                DOOR_OPEN_ERROR | Door open error
-                UNABLE_TO_LOCK_ERROR | 잠김 불가 Error
-                OVERFILL_ERROR | 물 수위 Error
-                WATER_LEVEL_SENSOR_ERROR | 물 The error on the water level sensor
-                POWER_FAIL_ERROR | 전력 Error
-                TEMPERATURE_SENSOR_ERROR | Temperature sensor error
-                TIMEOUT_ERROR | 타임아웃 Error
-                PART_MALFUNCTION_ERROR | 기기 부품 Error
+                WATER_DRAIN_ERROR | The error on water drainage
+                OUT_OF_BALANCE_ERROR | The error on dehydrating
+                LOCKED_MOTOR_ERROR | The error on driver motor
+                CHILD_LOCK_ACTIVE_ERROR | The error on child lock
+                TIME_TO_RUN_THE_TUB_CLEAN_CYCLE_ERROR | The error on washing the cylinder
+                UNBALANCED_LOAD_ERROR | The error on unbalanced load
+                DOOR_OPEN_ERROR | The error on the door opening
+                UNABLE_TO_LOCK_ERROR | The error of unable to lock the door
+                OVERFILL_ERROR | The error on overfilling the water
+                WATER_LEVEL_SENSOR_ERROR | The error on water level sensor
+                POWER_FAIL_ERROR | The error on power
+                TEMPERATURE_SENSOR_ERROR | The error on the temperature sensor
+                TIMEOUT_ERROR | The timeout error
+                PART_MALFUNCTION_ERROR | The error on the part malfunction
               items:
                 type: string
                 enum:
@@ -13119,8 +13119,8 @@ contents:
                                 PAUSE | Pause
                                 DETECTING | Detecting load
                                 COOLING | Cooling
-                                RUNNING | 실행중
-                                WRINKLE_CARE | 주름방지실행중
+                                RUNNING | Running
+                                WRINKLE_CARE | Wrinkle-care running
                                 END | DryComplete
                                 RESERVED | Reserved
                                 ERROR | Error
@@ -13384,8 +13384,8 @@ contents:
                 TEMPERATURE_SENSOR_ERROR | Temperature sensor error
                 COMPRESSOR_ERROR | Compressor error
                 DRAINMOTOR_ERROR | Drain motor error
-                EMPTY_WATER_ALERT_ERROR | 물 비우기 알림 Error
-                HIGH_TEMPERATURE_DETECTION_ERROR | 고온감지 Error
+                EMPTY_WATER_ALERT_ERROR | Empty water alert error Error
+                HIGH_TEMPERATURE_DETECTION_ERROR | High-temperature detection error Error
                 MOTOR_LOCK_ERROR | Motor lock error
                 DOOR_SENSOR_ERROR | Door sensor error
                 DOOR_OPEN_ERROR | Door open error
@@ -13544,7 +13544,7 @@ contents:
                                 properties:
                                   r:
                                     type: array
-                                    description: "Value | Description\n-|-\nPOWER_OFF | Power OFF\nINITIAL | Standby runState\nPAUSE | Pause\nDETECTING | Detecting load\nSOAKING | Soaking\nRUNNING\t|\tRunning\nRINSING\t|\tRinsing\nSPINNING | Spinning\nEND\t| Washing completed\nRESERVED | Reserved\nFIRMWARE | Updating firmware\nDRYING | Drying\nCOOL_DOWN\t| 구Wrinkle Care 1\nRINSE_HOLD | Pausing after rinsing\nREFRESHING | Wrinkle Care 2 FRESHCARE\nSTEAM_SOFTENING | Steam Softening\nERROR\t| Error\nSMART_GRID_RUN | Running Smart Grid\nADD_DRAIN\t| Draining added\nDETERGENT_AMOUNT | Displaying detergent amount\nPREWASH | Pre-washing\nSHOES_MODULE | Drying shoes\nPROOFING | Proofing \nDISPENSING | Auto-dispensing detergen\nSOFTENING | Checking the amount of softener\nCHECKING_TURBIDITY | turbidity detection(G+Best모델 AUTOWASH 코스 사용 시)\nCHANGE_CONDITION | Displays after automatically changing options based on the turbidity detection results\nDISPLAY_LOADSIZE | Displays load detection results\nFROZEN_PREVENT_INITIAL | Anti-freeze mode standby\nFROZEN_PREVENT_RUNNING | Running anti-freeze\nFROZEN_PREVENT_PAUSE | Pausing anti-freeze\nSLEEP | Sleep runState"
+                                    description: "Value | Description\n-|-\nPOWER_OFF | Power OFF\nINITIAL | Standby runState\nPAUSE | Pause\nDETECTING | Detecting load\nSOAKING | Soaking\nRUNNING\t|\tRunning\nRINSING\t|\tRinsing\nSPINNING | Spinning\nEND\t| Washing completed\nRESERVED | Reserved\nFIRMWARE | Updating firmware\nDRYING | Drying\nCOOL_DOWN\t| Wrinkle Care 1\nRINSE_HOLD | Pausing after rinsing\nREFRESHING | Wrinkle Care 2 FRESHCARE\nSTEAM_SOFTENING | Steam Softening\nERROR\t| Error\nSMART_GRID_RUN | Running Smart Grid\nADD_DRAIN\t| Draining added\nDETERGENT_AMOUNT | Displaying detergent amount\nPREWASH | Pre-washing\nSHOES_MODULE | Drying shoes\nPROOFING | Proofing \nDISPENSING | Auto-dispensing detergen\nSOFTENING | Checking the amount of softener\nCHECKING_TURBIDITY | Detecting turbidity (when using AUTOWASH course of G+Best model)\nCHANGE_CONDITION | Displays after automatically changing options based on the turbidity detection results\nDISPLAY_LOADSIZE | Displays load detection results\nFROZEN_PREVENT_INITIAL | Anti-freeze mode standby\nFROZEN_PREVENT_RUNNING | Running anti-freeze\nFROZEN_PREVENT_PAUSE | Pausing anti-freeze\nSLEEP | Sleep runState"
                                     items:
                                       type: string
                                       enum:
@@ -13952,7 +13952,7 @@ contents:
                     Push Code | Description
                     -|-
                     WATER_SUPPLY_ERROR | The error on water supply
-                    WATER_DRAIN_ERROR | The error on water drainage
+                    WATER_DRAIN_ERROR | The error on water drainage
                     OUT_OF_BALANCE_ERROR | Spinning Error
                     LOCKED_MOTOR_ERROR | The error on driver motor
                     CHILD_LOCK_ACTIVE_ERROR | The error on child lock
@@ -14296,7 +14296,7 @@ contents:
                     FILTER_CLOGGING_ERROR | Filter clogging error
                     HIGH_POWER_SUPPLY_ERROR | High power supply error
                     POWER_CODE_CONNECTION_ERROR | Power code connection error
-                    FAN_MOTOR_ERROR | 팬 The error on motor
+                    FAN_MOTOR_ERROR | Fan motor error
                   items:
                     type: string
                     enum:
@@ -14796,7 +14796,7 @@ contents:
                                   BURNER_8 | Burner 8
                                   INDUCTION_1 | Induction 1
                                   INDUCTION_2 | Induction 2
-                                  SOUSVIDE_1 | 수비드 1
+                                  SOUSVIDE_1 | Sousvide 1
                                 items:
                                   type: string
                                   enum:
@@ -14884,7 +14884,7 @@ contents:
                     description: Remaining Time - Minutes
               power:
                 type: object
-                description: 화력
+                description: Fire power
                 properties:
                   powerLevel:
                     type: integer
@@ -16023,7 +16023,7 @@ contents:
                             - number
                     targetTemperature:
                       type: object
-                      description: 설정 Temperature
+                      description: Desired temperature
                       properties:
                         mode:
                           type: array
@@ -16104,7 +16104,7 @@ contents:
                             properties:
                               r:
                                 type: array
-                                description: "Value | Description\n-|-\nPOWER_OFF | Power OFF\nINITIAL | Standby runState\nPAUSE | Pause\nDETECTING | Detecting load\nSOAKING | Soaking\nRUNNING\t|\tRunning\nRINSING\t|\tRinsing\nSPINNING | Spinning\nEND\t| Washing completed\nRESERVED | Reserved\nFIRMWARE | Updating firmware\nDRYING | Drying\nCOOL_DOWN\t| 구Wrinkle Care 1\nRINSE_HOLD | Pausing after rinsing\nREFRESHING | Wrinkle Care 2 FRESHCARE\nSTEAM_SOFTENING | Steam Softening\nERROR\t| Error\nSMART_GRID_RUN | Running Smart Grid\nADD_DRAIN\t| Draining added\nDETERGENT_AMOUNT | Displaying detergent amount\nPREWASH | Pre-washing\nSHOES_MODULE | Drying shoes\nPROOFING | Proofing \nDISPENSING | Auto-dispensing detergen\nSOFTENING | Checking the amount of softener\nCHECKING_TURBIDITY | turbidity detection(G+Best모델 AUTOWASH 코스 사용 시)\nCHANGE_CONDITION | Displays after automatically changing options based on the turbidity detection results\nDISPLAY_LOADSIZE | Displays load detection results\nFROZEN_PREVENT_INITIAL | Anti-freeze mode standby\nFROZEN_PREVENT_RUNNING | Running anti-freeze\nFROZEN_PREVENT_PAUSE | Pausing anti-freeze\nCOOLING | Cooling\nSLEEP | Sleep runState"
+                                description: "Value | Description\n-|-\nPOWER_OFF | Power OFF\nINITIAL | Standby runState\nPAUSE | Pause\nDETECTING | Detecting load\nSOAKING | Soaking\nRUNNING\t|\tRunning\nRINSING\t|\tRinsing\nSPINNING | Spinning\nEND\t| Washing completed\nRESERVED | Reserved\nFIRMWARE | Updating firmware\nDRYING | Drying\nCOOL_DOWN\t| Wrinkle Care 1\nRINSE_HOLD | Pausing after rinsing\nREFRESHING | Wrinkle Care 2 FRESHCARE\nSTEAM_SOFTENING | Steam Softening\nERROR\t| Error\nSMART_GRID_RUN | Running Smart Grid\nADD_DRAIN\t| Draining added\nDETERGENT_AMOUNT | Displaying detergent amount\nPREWASH | Pre-washing\nSHOES_MODULE | Drying shoes\nPROOFING | Proofing \nDISPENSING | Auto-dispensing detergen\nSOFTENING | Checking the amount of softener\nCHECKING_TURBIDITY | Detecting turbidity (when using AUTOWASH course of G+Best model)\nCHANGE_CONDITION | Displays after automatically changing options based on the turbidity detection results\nDISPLAY_LOADSIZE | Displays load detection results\nFROZEN_PREVENT_INITIAL | Anti-freeze mode standby\nFROZEN_PREVENT_RUNNING | Running anti-freeze\nFROZEN_PREVENT_PAUSE | Pausing anti-freeze\nCOOLING | Cooling\nSLEEP | Sleep runState"
                                 items:
                                   type: string
                                   enum:
@@ -16561,7 +16561,7 @@ contents:
                       - DRYING_FAILED
             error:
               type: array
-              description: "Push Code | Description\n-|-\nWATER_SUPPLY_ERROR | The error on water supply\nWATER_DRAIN_ERROR | The error on water drainage\nOUT_OF_BALANCE_ERROR | 탈수 Error\nLOCKED_MOTOR_ERROR | 드라이버 The error on motor\nCHILD_LOCK_ACTIVE_ERROR | childlock Error\nTIME_TO_RUN_THE_TUB_CLEAN_CYCLE_ERROR | 통세척 Error\nUNBALANCED_LOAD_ERROR | 수평 Error\nDOOR_OPEN_ERROR | Door open error\nUNABLE_TO_LOCK_ERROR | 잠김 불가 Error\nOVERFILL_ERROR | 물 수위 Error\nWATER_LEVEL_SENSOR_ERROR | 물 The error on the water level sensor\nPOWER_FAIL_ERROR | 전력 Error\nTEMPERATURE_SENSOR_ERROR | Temperature sensor error\nTIMEOUT_ERROR | 타임아웃 Error\nPART_MALFUNCTION_ERROR | 기기 부품 Error\nFROZEN_ERROR | 동결 감지 Error\nVIBRATION_SENSOR_ERROR | 진동 센서 Error\nDISPENSING_ERROR | 세제 및 Softener 투입 Error\nTURBIDITY_SENSOR_ERROR | 탁도 센서 Error\nSTEAM_HEAT_ERROR | 스팀 operation 안함\nIR_SENSOR_ERROR | 적외선 센서 Error\nDOOR_SENSOR_ERROR | 도어 센서 Error\nCLUTCH_ERROR | 클러치 Error\t\nINNER_LID_OPEN_ERROR | 안쪽 LID 오픈 Error\nSTACK_ERROR | 스택 Error"
+              description: "Push Code | Description\n-|-\nWATER_SUPPLY_ERROR | The error on water supply\nWATER_DRAIN_ERROR | The error on water drainage\nOUT_OF_BALANCE_ERROR | The error on dehydrating\nLOCKED_MOTOR_ERROR | The error on driver motor\nCHILD_LOCK_ACTIVE_ERROR | The error on child lock\nTIME_TO_RUN_THE_TUB_CLEAN_CYCLE_ERROR | The error on washing the cylinder\nUNBALANCED_LOAD_ERROR | The error on unbalanced load\nDOOR_OPEN_ERROR | The error on the door opening\nUNABLE_TO_LOCK_ERROR | The error of unable to lock the door\nOVERFILL_ERROR | The error on overfilling the water\nWATER_LEVEL_SENSOR_ERROR | The error on water level sensor\nPOWER_FAIL_ERROR | The error on power\nTEMPERATURE_SENSOR_ERROR | The error on the temperature sensor\nTIMEOUT_ERROR | The timeout error\nPART_MALFUNCTION_ERROR | The error on the part malfunction\nFROZEN_ERROR | The error on the frozen \nVIBRATION_SENSOR_ERROR | The error on the vibration sensor  \nDISPENSING_ERROR | The error on the dispensing\nTURBIDITY_SENSOR_ERROR | The error on the turbidity sensor \nSTEAM_HEAT_ERROR | The error on the steam heat\nIR_SENSOR_ERROR | The error on the ir sensor\nDOOR_SENSOR_ERROR | The error on the door sensorr\nCLUTCH_ERROR | The error on the clutch\t\nINNER_LID_OPEN_ERROR | The error on the inner LID open\nSTACK_ERROR | The error on the stack"
               items:
                 type: string
                 enum:
@@ -16778,7 +16778,7 @@ contents:
                             properties:
                               r:
                                 type: array
-                                description: "Value | Description\n-|-\nPOWER_OFF | Power OFF\nINITIAL | Standby runState\nPAUSE | Pause\nDETECTING | Detecting load\nSOAKING | Soaking\nRUNNING\t|\tRunning\nRINSING\t|\tRinsing\nSPINNING | Spinning\nEND\t| Washing completed\nRESERVED | Reserved\nFIRMWARE | Updating firmware\nDRYING | Drying\nCOOL_DOWN\t| 구Wrinkle Care 1\nRINSE_HOLD | Pausing after rinsing\nREFRESHING | Wrinkle Care 2 FRESHCARE\nSTEAM_SOFTENING | Steam Softening\nERROR\t| Error\nSMART_GRID_RUN | Running Smart Grid\nADD_DRAIN\t| Draining added\nDETERGENT_AMOUNT | Displaying detergent amount\nPREWASH | Pre-washing\nSHOES_MODULE | Drying shoes\nPROOFING | Proofing \nDISPENSING | Auto-dispensing detergen\nSOFTENING | Checking the amount of softener\nCHECKING_TURBIDITY | turbidity detection(G+Best모델 AUTOWASH 코스 사용 시)\nCHANGE_CONDITION | Displays after automatically changing options based on the turbidity detection results\nDISPLAY_LOADSIZE | Displays load detection results\nFROZEN_PREVENT_INITIAL | Anti-freeze mode standby\nFROZEN_PREVENT_RUNNING | Running anti-freeze\nFROZEN_PREVENT_PAUSE | Pausing anti-freeze\nCOOLING | Cooling\nSLEEP | Sleep runState"
+                                description: "Value | Description\n-|-\nPOWER_OFF | Power OFF\nINITIAL | Standby runState\nPAUSE | Pause\nDETECTING | Detecting load\nSOAKING | Soaking\nRUNNING\t|\tRunning\nRINSING\t|\tRinsing\nSPINNING | Spinning\nEND\t| Washing completed\nRESERVED | Reserved\nFIRMWARE | Updating firmware\nDRYING | Drying\nCOOL_DOWN\t| Wrinkle Care 1\nRINSE_HOLD | Pausing after rinsing\nREFRESHING | Wrinkle Care 2 FRESHCARE\nSTEAM_SOFTENING | Steam Softening\nERROR\t| Error\nSMART_GRID_RUN | Running Smart Grid\nADD_DRAIN\t| Draining added\nDETERGENT_AMOUNT | Displaying detergent amount\nPREWASH | Pre-washing\nSHOES_MODULE | Drying shoes\nPROOFING | Proofing \nDISPENSING | Auto-dispensing detergen\nSOFTENING | Checking the amount of softener\nCHECKING_TURBIDITY | Detecting turbidity (when using AUTOWASH course of G+Best model)\nCHANGE_CONDITION | Displays after automatically changing options based on the turbidity detection results\nDISPLAY_LOADSIZE | Displays load detection results\nFROZEN_PREVENT_INITIAL | Anti-freeze mode standby\nFROZEN_PREVENT_RUNNING | Running anti-freeze\nFROZEN_PREVENT_PAUSE | Pausing anti-freeze\nCOOLING | Cooling\nSLEEP | Sleep runState"
                                 items:
                                   type: string
                                   enum:
@@ -17181,7 +17181,7 @@ contents:
                       - ERROR_DURING_WASHING
             error:
               type: array
-              description: "Push Code | Description\n-|-\nWATER_SUPPLY_ERROR | The error on water supply\nWATER_DRAIN_ERROR | The error on water drainage\nOUT_OF_BALANCE_ERROR | 탈수 Error\nLOCKED_MOTOR_ERROR | 드라이버 The error on motor\nCHILD_LOCK_ACTIVE_ERROR | childlock Error\nTIME_TO_RUN_THE_TUB_CLEAN_CYCLE_ERROR | 통세척 Error\nUNBALANCED_LOAD_ERROR | 수평 Error\nDOOR_OPEN_ERROR | Door open error\nUNABLE_TO_LOCK_ERROR | 잠김 불가 Error\nOVERFILL_ERROR | 물 수위 Error\nWATER_LEVEL_SENSOR_ERROR | 물 The error on the water level sensor\nPOWER_FAIL_ERROR | 전력 Error\nTEMPERATURE_SENSOR_ERROR | Temperature sensor error\nTIMEOUT_ERROR | 타임아웃 Error\nPART_MALFUNCTION_ERROR | 기기 부품 Error\nFROZEN_ERROR | 동결 감지 Error\nVIBRATION_SENSOR_ERROR | 진동 센서 Error\nDISPENSING_ERROR | 세제 및 Softener 투입 Error\nTURBIDITY_SENSOR_ERROR | 탁도 센서 Error\nSTEAM_HEAT_ERROR | 스팀 operation 안함\nIR_SENSOR_ERROR | 적외선 센서 Error\nDOOR_SENSOR_ERROR | 도어 센서 Error\nCLUTCH_ERROR | 클러치 Error\t\nINNER_LID_OPEN_ERROR | 안쪽 LID 오픈 Error\nSTACK_ERROR | 스택 Error"
+              description: "Push Code | Description\n-|-\nWATER_SUPPLY_ERROR | The error on water supply\nWATER_DRAIN_ERROR | The error on water drainage\nOUT_OF_BALANCE_ERROR | The error on dehydrating\nLOCKED_MOTOR_ERROR | The error on driver motor\nCHILD_LOCK_ACTIVE_ERROR | childlock Error\nTIME_TO_RUN_THE_TUB_CLEAN_CYCLE_ERROR | Tub clean error\nUNBALANCED_LOAD_ERROR | unbalanced load error\nDOOR_OPEN_ERROR | Door open error\nUNABLE_TO_LOCK_ERROR | Unable to lock Error\nOVERFILL_ERROR | overfilling the water Error\nWATER_LEVEL_SENSOR_ERROR | water level sensor error\nPOWER_FAIL_ERROR | power Error\nTEMPERATURE_SENSOR_ERROR | Temperature sensor error\nTIMEOUT_ERROR | timeout Error\nPART_MALFUNCTION_ERROR | part malfunction Error\nFROZEN_ERROR | Anti-freeze sensor Error\nVIBRATION_SENSOR_ERROR | Vibration Sensor Error\nDISPENSING_ERROR | Detergent and softener dosing errors\nTURBIDITY_SENSOR_ERROR | Turbidity Sensor Error\nSTEAM_HEAT_ERROR | Disable Steam behavior\nIR_SENSOR_ERROR | Infrared Sensor Error\nDOOR_SENSOR_ERROR | Door Sensor Errors\nCLUTCH_ERROR | Clutch errors\t\nINNER_LID_OPEN_ERROR | Inner LID open error\nSTACK_ERROR | Stack errors"
               items:
                 type: string
                 enum:
@@ -17526,7 +17526,7 @@ contents:
                               - POWER_OFF
                 heaterOperationMode:
                   type: object
-                  description: 히터operation runState
+                  description: Heater operation runState
                   properties:
                     mode:
                       type: array
@@ -19512,34 +19512,34 @@ contents:
           properties:
             power:
               type: object
-              description: 전원
+              description: Power
               properties:
                 power:
-                  description: 전원 설정
+                  description: Power Setup
                   type: boolean
                   enum:
                     - true
                     - false
                 screen:
-                  description: 화면 ON, OFF 상태
+                  description: Screen ON, OFF status
                   type: string
                   enum:
                     - SCREEN_ON
                     - SCREEN_OFF
                 noSignalPowerOff:
-                  description: 무신호 전원 꺼짐 설정
+                  description: Set a no-signal power off
                   type: boolean
                   enum:
                     - true
                     - false
                 noIrPowerOff:
-                  description: IR 신호 없을 시 꺼짐 설정
+                  description: Power off when there is no IR signal
                   type: boolean
                   enum:
                     - true
                     - false
                 pmMode:
-                  description: PM Mode 설정
+                  description: Set PM Mode
                   type: string
                   enum:
                     - '00'
@@ -19549,18 +19549,18 @@ contents:
                     - '04'
                     - '05'
                 powerOnStatus:
-                  description: 전원 켜기 상태
+                  description: Power on status
                   type: string
                   enum:
                     - '00'
                     - '01'
                     - '02'
                 powerOnDelay:
-                  description: 전원 켜기 지연
+                  description: Power-on delay
                   type: integer
                   example: 0
                 energySavingMode:
-                  description: 절전 모드
+                  description: Power saving mode
                   type: string
                   enum:
                     - '00'
@@ -19569,17 +19569,17 @@ contents:
                     - '03'
                     - '04'
                 wol:
-                  description: Wake On Lan 설정
+                  description: Set aWake On Lan
                   type: boolean
                   enum:
                     - true
                     - false
             display:
               type: object
-              description: 디스플레이
+              description: Dispaly
               properties:
                 input:
-                  description: 입력 신호 선택
+                  description: Select an input signal
                   type: string
                   enum:
                     - '20'
@@ -19627,7 +19627,7 @@ contents:
                     - f8
                     - f9
                 language:
-                  description: OSD 언어 설정
+                  description: OSD Language settings
                   type: string
                   enum:
                     - '00'
@@ -19653,7 +19653,7 @@ contents:
                     - '14'
                     - '15'
                 ism:
-                  description: 화면 잔상 방지
+                  description: Preventing screen ghosting
                   type: string
                   enum:
                     - '02'
@@ -19662,7 +19662,7 @@ contents:
                     - '90'
                     - '91'
                 pictureMode:
-                  description: 영상 모드
+                  description: videos mode
                   type: string
                   enum:
                     - '00'
@@ -19675,45 +19675,45 @@ contents:
                     - '11'
                     - '12'
                 backlight:
-                  description: 화면 백라이트
+                  description: Screen backlight
                   type: integer
                   example: 80
                 brightness:
-                  description: 화면 밝기
+                  description: Screen Brightness 
                   type: integer
                   example: 80
                 tint:
-                  description: 화면 색상
+                  description: Screen Color
                   type: integer
                   example: 50
                 contrast:
-                  description: 화면 명암
+                  description: Screen Contrast
                   type: integer
                   example: 30
                 sharpness:
-                  description: 화면 선명도
+                  description: Screen sharpness
                   type: integer
                   example: 0
                 color:
-                  description: 화면 색농도
+                  description: Screen Color saturation
                   type: integer
                   example: 40
             audio:
               type: object
-              description: 오디오
+              description: Audio
               properties:
                 volume:
-                  description: 오디오 볼륨
+                  description: Audio Volume
                   type: integer
                   example: 10
                 volumeMute:
-                  description: 음소거
+                  description: Mute
                   type: boolean
                   enum:
                     - true
                     - false
                 soundMode:
-                  description: 음향 모드
+                  description: Acoustic Mod
                   type: string
                   enum:
                     - '00'
@@ -19725,25 +19725,25 @@ contents:
                     - '08'
                     - '09'
                 soundBalance:
-                  description: 음향 밸런스
+                  description: Acoustic Balance
                   type: integer
                   example: 50
             temperature:
               readOnly: true
               type: object
-              description: 온도
+              description: Temperature
               properties:
                 main:
-                  description: 디바이스 온도 (섭씨)
+                  description: Device info (Celsius)
                   type: integer
                   example: 30
             info:
               readOnly: true
               type: object
-              description: 디바이스 정보
+              description: Device info.
               properties:
                 osType:
-                  description: 운영체제 종류
+                  description: OS Type
                   type: string
                   enum:
                     - WEBOS
@@ -19754,10 +19754,10 @@ contents:
           title: IDU
           minProperties: 1
           properties:
-            상위 property:
+            Parent property:
               type: object
               properties:
-                하위 property:
+                Child property:
                   value: value
         motion_sensor-profile:
           type: object
