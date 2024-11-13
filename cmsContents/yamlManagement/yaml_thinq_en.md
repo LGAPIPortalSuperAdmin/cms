@@ -17,20 +17,20 @@ contents:
           Identification tokens used to call ThinQ API. The Identification tokens can only be used for personal and non-commercial purposes. To develop additional services not sanctioned by LG Electronics, the developer must discuss the matter regarding the additional services with LG Electronics, and then acquire a written consent from LG Electronics.
             1. Visit the website: https://connect-pat.lgthinq.com
             2. Log in on the ThinQ account.
-            3. Select the "Create New Token" button.
+            3. Select the "ADD NEW TOkEN" button.
             4. Enter Token name.
             5. Select a feature you want.
-            6. Select the "Create Token" button, and the token will be created. You will then be redirected to the PAT page.
+            6. Select the "CREATE TOKEN" button, and the token will be created. You will then be redirected to the PAT page.
             7. Copy the newly generated token for use.
       - name: Device API
         description: |
           API used to request ThinQ device information and control the device.
       - name: Push API
         description: |
-          API used to subscribe to/unsubscribe the push messages generated from the ThinQ devices.
+          API used to subscribe/unsubscribe the push messages generated from the ThinQ devices.
       - name: Event API
         description: |
-          API used to subscribe to/unsubscribe the event messages generated from the ThinQ devices when their statuses change.
+          API used to subscribe/unsubscribe the event messages generated from the ThinQ devices when their statuses change.
       - name: Client API
         description: |
           API used to issue/register user device authentication certificate for receiving messages delivered from the ThinQ devices.  
@@ -326,7 +326,7 @@ contents:
         get:
           tags:
             - Push API
-          summary: Get Device List under Subscribtion
+          summary: Get Device List under Subscription
           description: Gets a list of the user's devices from which the user is receiving Push notifications.
           parameters:
             - required: true
@@ -354,7 +354,7 @@ contents:
         post:
           tags:
             - Push API
-          summary: Subscribed to Push notifications of the device.
+          summary: Subscribed to Push notifications of the device.
           description: Subscription requests to receive push notifications from devices
           parameters:
             - required: true
@@ -582,7 +582,7 @@ contents:
         post:
           tags:
             - Client API
-          summary: Issuing client certificates
+          summary: Issue a client certificate
           description: Verify the client's AWS IoT certificate, subscribable MQTT Topic
           parameters:
             - required: true
@@ -616,7 +616,7 @@ contents:
         post:
           tags:
             - Client API
-          summary: Client registration
+          summary: Register a customer
           description: Client registration
           parameters:
             - required: true
@@ -649,7 +649,7 @@ contents:
         delete:
           tags:
             - Client API
-          summary: Client deactivation
+          summary: Unregister a client
           description: Client deactivation
           parameters:
             - required: true
@@ -813,7 +813,7 @@ contents:
               properties:
                 response:
                   type: object
-                  description: An empty dictionay is passed on success
+                  description: An empty dictionary is passed on success
                   example: {}
         push-list-res:
           description: Push list inquiry response
@@ -838,7 +838,7 @@ contents:
               properties:
                 response:
                   type: object
-                  description: An empty dictionay is passed on success
+                  description: An empty dictionary is passed on success
                   example: {}
         push-client-list-res:
           description: User push clientId list inquiry response
@@ -893,7 +893,7 @@ contents:
               properties:
                 response:
                   type: object
-                  description: An empty dictionay is passed on success
+                  description: An empty dictionary is passed on success
                   example: {}
         client-certificate-req:
           description: Client authentication body
@@ -967,7 +967,7 @@ contents:
               properties:
                 response:
                   type: object
-                  description: An empty dictionay is passed on success
+                  description: An empty dictionary is passed on success
                   example: {}
         client-unregister-req:
           description: Client unsubscription body
