@@ -5,7 +5,7 @@ contents:
     openapi: 3.1.0
 
     info:
-      version: '1.0'
+      version: v1
       title: 디바이스 프로파일
     servers:
       - url: https://ap.api.lge.com
@@ -36,7 +36,7 @@ contents:
       - name: device type
         x-displayName: 디바이스 타입
         x-traitTag: true
-        description: "**디바이스 타입**은 디바이스의 특성을 구분하며 **디바이스 목록 조회 API** 응답에서 종류를 구분합니다. 디바이스 프로파일은 이 디바이스 타입에 따라 정의됩니다.\n\n  | Device Type | Name |\n  |-|-|\n  | DEVICE_REFRIGERATOR | 냉장고 |\n  | DEVICE_WASHER | 세탁기 |\n  | DEVICE_DRYER | 건조기 |\n  | DEVICE_AIR_CONDITIONER | 에어컨 |\n  | DEVICE_AIR_PURIFIER | 공기청정기 |\n  | DEVICE_ROBOT_CLEANER | 로봇청소기 |\n  | DEVICE_OVEN | 오븐 |\n  | DEVICE_DISH_WASHER | 식기세척기 |\n  | DEVICE_STYLER | 스타일러 |\n  | DEVICE_WATER_PURIFIER | 정수기 |\n  | DEVICE_DEHUMIDIFIER | 제습기 |\n  | DEVICE_CEILING_FAN | 실링팬 |\n  | DEVICE_WINE_CELLAR | 와인셀러 |\n  | DEVICE_KIMCHI_REFRIGERATOR | 김치냉장고 |\n  | DEVICE_HOME_BREW | 홈브루 |\n  | DEVICE_PLANT_CULTIVATOR | 식물재배기 |\n  | DEVICE_WASHTOWER_WASHER | 워시타워(세탁기) |\n  | DEVICE_WASHTOWER_DRYER | 워시타워(건조기) |\n  | DEVICE_WASHTOWER | 워시타워 |\n  | DEVICE_COOKTOP | 쿡탑 |\n  | DEVICE_HOOD | 후드 |\n  | DEVICE_MICROWAVE_OVEN | 전자레인지 |\n  | DEVICE_SYSTEM_BOILER | 시스템 보일러 |\n  | DEVICE_AIR_PURIFIER_FAN | 공기청정팬 |\n  | DEVICE_STICK_CLEANER | 스틱청소기 |\n  | DEVICE_WATER_HEATER | 온수기 |\n  | DEVICE_WASHCOMBO_MAIN | 워시콤보 (메인) |\n  | DEVICE_WASHCOMBO_MINI | 워시콤보 (미니) |\n  | DEVICE_HUMIDIFIER | 가습기 |\n  | DEVICE_ODU | LG BECON Cloud에 등록된 시스템 에어컨의 실외기 |\n  | DEVICE_IDU | LG BECON Cloud에 등록된 시스템 에어컨의 실내기 |\n  | DEVICE_SIGNAGE | 사이니지 |\n  | DEVICE_HEJ_MOTION_SENSOR | 스마트 모션 센서\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | 스마트 온습도 센서\n  | DEVICE_HEJ_DOOR_SENSOR | 스마트 도어 센서\n  | DEVICE_HEJ_BUTTON | 스마트 버튼\n  | DEVICE_HEJ_LIGHT_SWITCH | 스마트 조명 스위치\n  | DEVICE_HEJ_DOOR_LOCK | 스마트 도어락 \n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | 스마트 푸쉬풀 도어락\n  | DEVICE_HEJ_PLUG | 스마트 멀티탭\n  | DEVICE_HEJ_PLUG_MINI | 스마트 플러그 미니\n  | DEVICE_HEJ_BULB_WHITE | 스마트 전구 (화이트)\n  | DEVICE_HEJ_BULB_COLOR | 스마트 전구 (컬러)\n  | DEVICE_HEJ_LINE_LED | 스마트 라인 LED\n  | DEVICE_HEJ_CURTAIN_CTRL | 스마트 전동 커튼 컨트롤러\n  | DEVICE_HEJ_BLIND_MOTOR | 스마트 전동 블라인드\n  | DEVICE_HEJ_SWITCH_STRIP | 스위치 스트립\n  | DEVICE_HEJ_STARLIGHT | 스마트 스타 라이트\n  | DEVICE_HEJ_DOORBELL | 스마트 도어벨\n  | DEVICE_HEJ_PET_FEEDER | 스마트 펫 급식기\n  | DEVICE_HEJ_HOME_CAMERA | 스마트 홈 카메라\n  | DEVICE_HEJ_SYNC_BOX | 싱크 박스\n  | DEVICE_HEJ_SYNC_BOX_SUB | 싱크 박스 서브\n  | DEVICE_HEJ_GAS_SENSOR\t| 스마트 가스 감지 센서\n  | DEVICE_HEJ_FIRE_SENSOR | 스마트 화재 감지 센서\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | 스마트 누수 감지 센서\n  | DEVICE_HEJ_THERMO_HYGROMETER | 스마트 온습도계\n  | DEVICE_HEJ_SIREN | 스마트 사이렌\n"
+        description: "**디바이스 타입**은 디바이스의 특성을 구분하며 **디바이스 목록 조회 API** 응답에서 종류를 구분합니다. 디바이스 프로파일은 이 디바이스 타입에 따라 정의됩니다.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | 냉장고 | O | O |\n  | DEVICE_WASHER | 세탁기 | O | O |\n  | DEVICE_DRYER | 건조기 | O | O |\n  | DEVICE_AIR_CONDITIONER | 에어컨 | O | O |\n  | DEVICE_AIR_PURIFIER | 공기청정기 | O | O |\n  | DEVICE_ROBOT_CLEANER | 로봇청소기 | O | O |\n  | DEVICE_OVEN | 오븐 | O | O |\n  | DEVICE_DISH_WASHER | 식기세척기 | O | O |\n  | DEVICE_STYLER | 스타일러 | O | O |\n  | DEVICE_WATER_PURIFIER | 정수기 | O | O |\n  | DEVICE_DEHUMIDIFIER | 제습기 | O | O |\n  | DEVICE_CEILING_FAN | 실링팬 | O | O |\n  | DEVICE_WINE_CELLAR | 와인셀러 | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | 김치냉장고 | O | O |\n  | DEVICE_HOME_BREW | 홈브루 | O | O |\n  | DEVICE_PLANT_CULTIVATOR | 식물재배기 | O | O |\n  | DEVICE_WASHTOWER_WASHER | 워시타워(세탁기) | O | O |\n  | DEVICE_WASHTOWER_DRYER | 워시타워(건조기) | O | O |\n  | DEVICE_WASHTOWER | 워시타워 | O | O |\n  | DEVICE_COOKTOP | 쿡탑 | O | O |\n  | DEVICE_HOOD | 후드 | O | O |\n  | DEVICE_MICROWAVE_OVEN | 전자레인지 | O | O |\n  | DEVICE_SYSTEM_BOILER | 시스템 보일러 | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | 공기청정팬 | O | O |\n  | DEVICE_STICK_CLEANER | 스틱청소기 | O | O |\n  | DEVICE_WATER_HEATER | 온수기 | O | O |\n  | DEVICE_WASHCOMBO_MAIN | 워시콤보 (메인) | O | O |\n  | DEVICE_WASHCOMBO_MINI | 워시콤보 (미니) | O | O |\n  | DEVICE_HUMIDIFIER | 가습기 | O | O |\n  | DEVICE_ODU | BECON Cloud에 등록된 SAC 실외기 | X | O |\n  | DEVICE_IDU | BECON Cloud에 등록된 SAC 실내기 | X | O |\n  | DEVICE_SIGNAGE | Business Cloud에 등록된 사이니지 | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | 스마트 모션 센서 | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | 스마트 온습도 센서 | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | 스마트 도어 센서 | X | O |\n  | DEVICE_HEJ_BUTTON | 스마트 버튼 | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | 스마트 조명 스위치 | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | 스마트 도어락  | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | 스마트 푸쉬풀 도어락 | X | O |\n  | DEVICE_HEJ_PLUG | 스마트 멀티탭 | X | O |\n  | DEVICE_HEJ_PLUG_MINI | 스마트 플러그 미니 | X | O |\n  | DEVICE_HEJ_BULB_WHITE | 스마트 전구 (화이트) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | 스마트 전구 (컬러) | X | O |\n  | DEVICE_HEJ_LINE_LED | 스마트 라인 LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | 스마트 전동 커튼 컨트롤러 | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | 스마트 전동 블라인드 | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | 스위치 스트립 | X | O |\n  | DEVICE_HEJ_STARLIGHT | 스마트 스타 라이트 | X | O |\n  | DEVICE_HEJ_DOORBELL | 스마트 도어벨 | X | O |\n  | DEVICE_HEJ_PET_FEEDER | 스마트 펫 급식기 | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | 스마트 홈 카메라 | X | O |\n  | DEVICE_HEJ_SYNC_BOX | 싱크 박스 | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | 싱크 박스 서브 | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| 스마트 가스 감지 센서 | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | 스마트 화재 감지 센서 | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | 스마트 누수 감지 센서 | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | 스마트 온습도계 | X | O |\n  | DEVICE_HEJ_SIREN | 스마트 사이렌 | X | O |\n"
       - name: refrigerator
         x-displayName: 냉장고
         description: |
@@ -2455,7 +2455,7 @@ contents:
                                 AUTO | 자동
                                 POWER | 파워
                               items:
-                                typs: string
+                                type: string
                                 enum:
                                   - 'OFF'
                                   - AUTO
@@ -19676,27 +19676,27 @@ contents:
                     - '12'
                 backlight:
                   description: 화면 백라이트
-                  type: ingeger
+                  type: integer
                   example: 80
                 brightness:
                   description: 화면 밝기
-                  type: ingeger
+                  type: integer
                   example: 80
                 tint:
                   description: 화면 색상
-                  type: ingeger
+                  type: integer
                   example: 50
                 contrast:
                   description: 화면 명암
-                  type: ingeger
+                  type: integer
                   example: 30
                 sharpness:
                   description: 화면 선명도
-                  type: ingeger
+                  type: integer
                   example: 0
                 color:
                   description: 화면 색농도
-                  type: ingeger
+                  type: integer
                   example: 40
             audio:
               type: object
@@ -19726,7 +19726,7 @@ contents:
                     - '09'
                 soundBalance:
                   description: 음향 밸런스
-                  type: ingeger
+                  type: integer
                   example: 50
             temperature:
               readOnly: true
@@ -19735,7 +19735,7 @@ contents:
               properties:
                 main:
                   description: 디바이스 온도 (섭씨)
-                  type: ingeger
+                  type: integer
                   example: 30
             info:
               readOnly: true
@@ -20420,7 +20420,6 @@ contents:
                             type: string
                             enum:
                               - r
-                              - w
                     currentUnit:
                       type: object
                       description: 전류 단위
@@ -20449,7 +20448,6 @@ contents:
                             type: string
                             enum:
                               - r
-                              - w
                     voltageUnit:
                       type: object
                       description: 전압 단위
@@ -20478,7 +20476,6 @@ contents:
                             type: string
                             enum:
                               - r
-                              - w
                     powerUnit:
                       type: object
                       description: 전력 단위
@@ -20600,7 +20597,6 @@ contents:
                             type: string
                             enum:
                               - r
-                              - w
                     currentUnit:
                       type: object
                       description: 전류 단위
@@ -20629,7 +20625,6 @@ contents:
                             type: string
                             enum:
                               - r
-                              - w
                     voltageUnit:
                       type: object
                       description: 전압 단위
@@ -20658,7 +20653,6 @@ contents:
                             type: string
                             enum:
                               - r
-                              - w
                     powerUnit:
                       type: object
                       description: 전력 단위
@@ -29363,7 +29357,6 @@ contents:
                   type: number
                   mode:
                     - r
-                    - w
                 currentUnit:
                   type: string
                   mode:
@@ -29372,7 +29365,6 @@ contents:
                   type: number
                   mode:
                     - r
-                    - w
                 voltageUnit:
                   type: string
                   mode:
@@ -29381,7 +29373,6 @@ contents:
                   type: number
                   mode:
                     - r
-                    - w
                 powerUnit:
                   type: string
                   mode:
@@ -29422,7 +29413,6 @@ contents:
                   type: number
                   mode:
                     - r
-                    - w
                 currentUnit:
                   type: string
                   mode:
@@ -29431,7 +29421,6 @@ contents:
                   type: number
                   mode:
                     - r
-                    - w
                 voltageUnit:
                   type: string
                   mode:
@@ -29440,7 +29429,6 @@ contents:
                   type: number
                   mode:
                     - r
-                    - w
                 powerUnit:
                   type: string
                   mode:
