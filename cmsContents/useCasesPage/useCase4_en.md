@@ -9,7 +9,7 @@ contents: >-2
 
   \    <div className="box-item">
 
-  \    <p className="sub">Laundry scheduling system</p>
+  \    <p className="sub">Common Area Management and Reservation System</p>
 
   \    <p className="title lgEiText">More Efficient Common Area</p>
 
