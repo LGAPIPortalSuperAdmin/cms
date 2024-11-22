@@ -12,7 +12,7 @@ contents: >-
   \              <b>Start</b> with <br class="mo" />
 
 
-  \              <b>LG Open API</b>
+  \              <b>LGE Smart Solution API</b>
 
 
   \            </h3>
@@ -87,7 +87,7 @@ contents: >-
   \                  <p className="tem-card__txt">
 
 
-  \                    LG Open API 파트너십은 서비스와 기능을 차별화해 경쟁력을 확보하는데 날개를 달아드립니다.
+  \                    LGE Smart Solution API 파트너십은 서비스와 기능을 차별화해 경쟁력을 확보하는데 날개를 달아드립니다.
 
 
   \                  </p>
@@ -351,7 +351,7 @@ contents: >-
   \              <p className="tem-txt--t2 txt-center mb7.5 mb-sm-3">
 
 
-  \                LG Open API Developer와 함께 비즈니스의 본질에 집중하세요.
+  \                LGE Smart Solution API Developer와 함께 비즈니스의 본질에 집중하세요.
 
 
   \              </p>
@@ -576,7 +576,7 @@ contents: >-
   \            <div className="container">
 
 
-  \              <p className="tem-text__tit">LG Open API 사용을 위한 궁금한 내용을 문의해 보세요.</p>
+  \              <p className="tem-text__tit">LGE Smart Solution API 사용을 위한 궁금한 내용을 문의해 보세요.</p>
 
 
   \              <CoLink
