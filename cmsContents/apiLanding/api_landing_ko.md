@@ -18,7 +18,7 @@ contents: >-
   \    <p className="title">
 
 
-  \    LG Open API와 만나다
+  \    LGE Smart Solution API와 만나다
 
 
   \    <br />
