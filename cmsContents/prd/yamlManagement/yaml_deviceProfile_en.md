@@ -8,7 +8,7 @@ contents:
       version: v1
       title: Device Profile
     servers:
-      - url: https://ap.api.lge.com
+      - url: https://ap.biz.api.lge.com
     tags:
       - name: overview
         x-displayName: Overview
