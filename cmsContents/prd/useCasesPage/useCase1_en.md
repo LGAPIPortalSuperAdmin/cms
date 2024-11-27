@@ -14,7 +14,7 @@ contents: >-2
   \    <div className="box-item">
 
 
-  \    <p className="sub">Building control (운영서버)</p>
+  \    <p className="sub">Building control</p>
 
 
   \    <p className="title lgEiText">Intensive Building Management</p>
