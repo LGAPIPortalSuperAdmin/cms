@@ -9,7 +9,7 @@ contents: >-2
 
   \    <div className="box-item">
 
-  \    <p className="sub">세탁 예약 시스템</p>
+  \    <p className="sub">공유 시설 관리 및 예약 시스템</p>
 
   \    <p className="title lgEiText">효율적인 사용을 위한 공유 시설</p>
 
