@@ -1,19 +1,19 @@
 ---
 contents:
   lang: yaml
-  code: >+
+  code: >
     openapi: 3.1.0
 
     info:
       version: v1
       title: ThinQ Business API
     servers:
-      - url: https://ap.api.lge.com/biz/v1
-      - url: https://eu.api.lge.com/biz/v1
-      - url: https://us.api.lge.com/biz/v1
-      - url: https://ap-test.api.lge.com/biz/v1
-      - url: https://eu-test.api.lge.com/biz/v1
-      - url: https://us-test.api.lge.com/biz/v1
+      - url: https://ap.biz.api.lge.com/v1
+      - url: https://eu.biz.api.lge.com/v1
+      - url: https://us.biz.api.lge.com/v1
+      - url: https://ap-test.biz.api.lge.com/v1
+      - url: https://eu-test.biz.api.lge.com/v1
+      - url: https://us-test.biz.api.lge.com/v1
     tags:
       - name: Overview
         x-displayName: Overview
@@ -32,16 +32,16 @@ contents:
           Describes how to develop a service using the ThinQ Business API through a sequence of API calls.
 
           ## Issue API Token
-          An API Token must be included in the HTTP request header of all ThinQ Business API calls. This API Token can be issued with a pair of pre-issued API Key and API Secret from LG Open API Developer and is valid for 24 hours.      
+          An API Token must be included in the HTTP request header of all ThinQ Business API calls. This API Token can be issued with a pair of pre-issued API Key and API Secret from LGE Smart Solution API Developer and is valid for 24 hours.      
 
             - API to Use
               - [`POST /token`](#tag/auth/operation/createAPIToken)
               
             - Sequence
-              1. Set the API Key and API Secret received from LG Open API Developer for the API Token issuance logic (API Secret will be sent via email when the API Key is issued).
+              1. Set the API Key and API Secret received from LGE Smart Solution API Developer for the API Token issuance logic (API Secret will be sent via email when the API Key is issued).
               2. Call the Issue API Token API (POST /token) to get an API Token periodically. You'll need to make another API Token issuance request within 24 hours.  
               
-              <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="447px" preserveAspectRatio="none" style="width:623px;height:447px;background:#FFFFFF;" version="1.1" viewBox="0 0 623 447" width="623px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="208.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="306.439"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="164.9414"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="262.6182"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="46" x2="46" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="236.5" x2="236.5" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="371.5" x2="371.5" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="534.5" x2="534.5" y1="84.2295" y2="363.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="77" x="5" y="81.1533">B2B Partner</text><ellipse cx="46.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M46.5,21.5 L46.5,48.5 M33.5,29.5 L59.5,29.5 M46.5,48.5 L33.5,63.5 M46.5,48.5 L59.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="77" x="5" y="378.4482">B2B Partner</text><ellipse cx="46.5" cy="390.0244" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M46.5,398.0244 L46.5,425.0244 M33.5,406.0244 L59.5,406.0244 M46.5,425.0244 L33.5,440.0244 M46.5,425.0244 L59.5,440.0244 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="180.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="187.5" y="73.1533">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="180.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="187.5" y="385.4482">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="302.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="309.5" y="73.1533">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="302.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="309.5" y="385.4482">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="451.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="152" x="458.5" y="73.1533">LG Open API Developer</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="451.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="152" x="458.5" y="385.4482">LG Open API Developer</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="208.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="306.439"/><polygon fill="#181818" points="57.5,114.0854,47.5,118.0854,57.5,122.0854,53.5,118.0854" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="51.5" x2="533.5" y1="118.0854" y2="118.0854"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="188" x="63.5" y="113.229">provide API Key, API Secret pair</text><polygon fill="#181818" points="224.5,145.9414,234.5,149.9414,224.5,153.9414,228.5,149.9414" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="46.5" x2="230.5" y1="149.9414" y2="149.9414"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="166" x="53.5" y="145.085">set API Key, API Secret pair</text><path d="M170.5,164.9414 L247.5,164.9414 L247.5,174.7974 L237.5,184.7974 L170.5,184.7974 L170.5,164.9414 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="164.9414"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="185.5" y="180.9409">loop</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="93" x="262.5" y="179.6333">[within 24 hours]</text><polygon fill="#181818" points="355,204.7622,365,208.7622,355,212.7622,359,208.7622" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="236.5" x2="361" y1="208.7622" y2="208.7622"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="75" x="243.5" y="203.9058">POST /token</text><polygon fill="#181818" points="247.5,236.6182,237.5,240.6182,247.5,244.6182,243.5,240.6182" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="241.5" x2="371" y1="240.6182" y2="240.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="60" x="253.5" y="235.7617">API Token</text><path d="M170.5,262.6182 L231.5,262.6182 L231.5,272.4741 L221.5,282.4741 L170.5,282.4741 L170.5,262.6182 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="262.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="185.5" y="278.6177">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="109" x="246.5" y="277.3101">[API Token expired]</text><polygon fill="#181818" points="355,302.439,365,306.439,355,310.439,359,306.439" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="236.5" x2="361" y1="306.439" y2="306.439"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="75" x="243.5" y="301.5825">POST /token</text><polygon fill="#181818" points="247.5,334.2949,237.5,338.2949,247.5,342.2949,243.5,338.2949" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="241.5" x2="371" y1="338.2949" y2="338.2949"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="60" x="253.5" y="333.4385">API Token</text><!--SRC=[XP11JyCm38NFpQ-mUWOXJPnwGAA2JHCJAsflY4EM6cQjIoB7AUFVasQLq0x0pVBx_FpiS23hDUiZzFYkuo1BP-LP7n4sgyTrXoTHseXZAEj53OrciSWbw00n8AiqAcJ8QojGpYgqo2CPp9G_zox1Ra_s1UeOo688SD-iCxipbzXc1LkFTjBX0KSSd9ztzpW64bHgBk3wBkUfmBCRgSSyyuHVLxbeqJ1AoaAi9cp2vs0LXAJyId-mYnu6vpoyVfAatB2uXRsB7DvKCNjCTZjJGRDjExWHTq2hYlGr6dMAbgugab_ayo5Tbj7sIW_oqm4yUMBi5Vpb2l_RVWC0]--></g></svg>
+              <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="447px" preserveAspectRatio="none" style="width:623px;height:447px;background:#FFFFFF;" version="1.1" viewBox="0 0 623 447" width="623px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="208.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="306.439"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="164.9414"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="262.6182"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="46" x2="46" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="236.5" x2="236.5" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="371.5" x2="371.5" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="534.5" x2="534.5" y1="84.2295" y2="363.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="77" x="5" y="81.1533">B2B Partner</text><ellipse cx="46.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M46.5,21.5 L46.5,48.5 M33.5,29.5 L59.5,29.5 M46.5,48.5 L33.5,63.5 M46.5,48.5 L59.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="77" x="5" y="378.4482">B2B Partner</text><ellipse cx="46.5" cy="390.0244" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M46.5,398.0244 L46.5,425.0244 M33.5,406.0244 L59.5,406.0244 M46.5,425.0244 L33.5,440.0244 M46.5,425.0244 L59.5,440.0244 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="180.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="187.5" y="73.1533">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="180.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="187.5" y="385.4482">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="302.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="309.5" y="73.1533">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="302.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="309.5" y="385.4482">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="451.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="152" x="458.5" y="73.1533">LGE Smart Solution API Developer</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="451.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="152" x="458.5" y="385.4482">LGE Smart Solution API Developer</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="208.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="306.439"/><polygon fill="#181818" points="57.5,114.0854,47.5,118.0854,57.5,122.0854,53.5,118.0854" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="51.5" x2="533.5" y1="118.0854" y2="118.0854"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="188" x="63.5" y="113.229">provide API Key, API Secret pair</text><polygon fill="#181818" points="224.5,145.9414,234.5,149.9414,224.5,153.9414,228.5,149.9414" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="46.5" x2="230.5" y1="149.9414" y2="149.9414"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="166" x="53.5" y="145.085">set API Key, API Secret pair</text><path d="M170.5,164.9414 L247.5,164.9414 L247.5,174.7974 L237.5,184.7974 L170.5,184.7974 L170.5,164.9414 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="164.9414"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="185.5" y="180.9409">loop</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="93" x="262.5" y="179.6333">[within 24 hours]</text><polygon fill="#181818" points="355,204.7622,365,208.7622,355,212.7622,359,208.7622" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="236.5" x2="361" y1="208.7622" y2="208.7622"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="75" x="243.5" y="203.9058">POST /token</text><polygon fill="#181818" points="247.5,236.6182,237.5,240.6182,247.5,244.6182,243.5,240.6182" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="241.5" x2="371" y1="240.6182" y2="240.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="60" x="253.5" y="235.7617">API Token</text><path d="M170.5,262.6182 L231.5,262.6182 L231.5,272.4741 L221.5,282.4741 L170.5,282.4741 L170.5,262.6182 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="262.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="185.5" y="278.6177">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="109" x="246.5" y="277.3101">[API Token expired]</text><polygon fill="#181818" points="355,302.439,365,306.439,355,310.439,359,306.439" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="236.5" x2="361" y1="306.439" y2="306.439"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="75" x="243.5" y="301.5825">POST /token</text><polygon fill="#181818" points="247.5,334.2949,237.5,338.2949,247.5,342.2949,243.5,338.2949" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="241.5" x2="371" y1="338.2949" y2="338.2949"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="60" x="253.5" y="333.4385">API Token</text><!--SRC=[XP11JyCm38NFpQ-mUWOXJPnwGAA2JHCJAsflY4EM6cQjIoB7AUFVasQLq0x0pVBx_FpiS23hDUiZzFYkuo1BP-LP7n4sgyTrXoTHseXZAEj53OrciSWbw00n8AiqAcJ8QojGpYgqo2CPp9G_zox1Ra_s1UeOo688SD-iCxipbzXc1LkFTjBX0KSSd9ztzpW64bHgBk3wBkUfmBCRgSSyyuHVLxbeqJ1AoaAi9cp2vs0LXAJyId-mYnu6vpoyVfAatB2uXRsB7DvKCNjCTZjJGRDjExWHTq2hYlGr6dMAbgugab_ayo5Tbj7sIW_oqm4yUMBi5Vpb2l_RVWC0]--></g></svg>
               
           ## Get Device Status
           To search the status of a device, the following Device API is used.      
@@ -131,9 +131,9 @@ contents:
 
             |Region|Issue API Token API|ThinQ Business API|
             |-|-|-|
-            |South Asia, East Asia and Pacific|https://ap.api.lge.com|https://ap.api.lge.com/biz/v1|
-            |America|https://us.api.lge.com|https://us.api.lge.com/biz/v1|
-            |Europe, Middle East, Africa|https://eu.api.lge.com|https://eu.api.lge.com/biz/v1|
+            |South Asia, East Asia and Pacific|https://ap.biz.api.lge.com|https://ap.biz.api.lge.com/v1|
+            |America|https://us.biz.api.lge.com|https://us.biz.api.lge.com/v1|
+            |Europe, Middle East, Africa|https://eu.biz.api.lge.com|https://eu.biz.api.lge.com/v1|
 
             
           ## Simulator Testing Environment
@@ -141,9 +141,9 @@ contents:
 
             |Region|Issue API Token API|ThinQ Business API|
             |-|-|-|
-            |South Asia, East Asia and Pacific|https://ap-test.api.lge.com|https://ap-test.api.lge.com/biz/v1|
-            |America|https://us-test.api.lge.com|https://us-test.api.lge.com/biz/v1|
-            |Europe, Middle East, Africa|https://eu-test.api.lge.com|https://eu-test.api.lge.com/biz/v1|   
+            |South Asia, East Asia and Pacific|https://ap-test.biz.api.lge.com|https://ap-test.biz.api.lge.com/v1|
+            |America|https://us-test.biz.api.lge.com|https://us-test.biz.api.lge.com/v1|
+            |Europe, Middle East, Africa|https://eu-test.biz.api.lge.com|https://eu-test.biz.api.lge.com/v1|   
            
       - name: Codes
         x-displayName: Code Definition
@@ -374,10 +374,10 @@ contents:
       - name: auth
         x-displayName: API Authentication
         description: |
-          The following API is used to perodically issue an `API Token` using a pair of `API Key` and `API Secret`, which is provided by LG Open API Developer to B2B partners. The `API Token` issued by this API must be included in the HTTP request header when calling the ThinQ Business API.
+          The following API is used to perodically issue an `API Token` using a pair of `API Key` and `API Secret`, which is provided by LGE Smart Solution API Developer to B2B partners. The `API Token` issued by this API must be included in the HTTP request header when calling the ThinQ Business API.
       - name: Device API
         description: |
-          The Device API is used to search a list of registered devices, search the profile and status of specific devices, or control devices. If the Device API for multiple types of LG Electronics products purchased by a company is used, the LG Electronics account on which the products are registered or the location information can be assigned in the LG Open API Developer in advance. For home appliances only, it's possible to assign a specific LG Electronics user when calling the Device API to access the devices of that user. Before calling the Device API, the B2B partner or the partner's customer must register the device. As shown below, the purchased device must be registered and signed up for the service on the appropriate LG Electronics platform, depending on the type of device.
+          The Device API is used to search a list of registered devices, search the profile and status of specific devices, or control devices. If the Device API for multiple types of LG Electronics products purchased by a company is used, the LG Electronics account on which the products are registered or the location information can be assigned in the LGE Smart Solution API Developer in advance. For home appliances only, it's possible to assign a specific LG Electronics user when calling the Device API to access the devices of that user. Before calling the Device API, the B2B partner or the partner's customer must register the device. As shown below, the purchased device must be registered and signed up for the service on the appropriate LG Electronics platform, depending on the type of device.
 
             |Device Type|LG Electronics Platform|
             |-|-|
@@ -386,7 +386,7 @@ contents:
             |Commercial HVAC|LG BECON Cloud (https://beconcloud.lge.com)|
       - name: Push API
         description: |
-          The Push API is used to allow B2B partners' services to receive or stop receiving messages whenever there is a change in the status of a specific device. This API is currently available to products registered on LG ThinQ only, but more products will be supported in the future. In order for the B2B partner service to receive the device status, the Callback call information of the B2B partner service must be registered in the LG Open API Developer in advance. The types of device status changes provided by Callback are as follows. The conditions for the Callback subscription may differ by type.
+          The Push API is used to allow B2B partners' services to receive or stop receiving messages whenever there is a change in the status of a specific device. This API is currently available to products registered on LG ThinQ only, but more products will be supported in the future. In order for the B2B partner service to receive the device status, the Callback call information of the B2B partner service must be registered in the LGE Smart Solution API Developer in advance. The types of device status changes provided by Callback are as follows. The conditions for the Callback subscription may differ by type.
 
             | Type | Description | Pre-Condition |
             |-|-|-|
@@ -440,12 +440,12 @@ contents:
           security:
             - ThinQ_Business_API_Key: []
           servers:
-            - url: https://ap.api.lge.com
-            - url: https://us.api.lge.com
-            - url: https://eu.api.lge.com
-            - url: https://ap-test.api.lge.com
-            - url: https://us-test.api.lge.com
-            - url: https://eu-test.api.lge.com
+            - url: https://ap.biz.api.lge.com
+            - url: https://us.biz.api.lge.com
+            - url: https://eu.biz.api.lge.com
+            - url: https://ap-test.biz.api.lge.com
+            - url: https://us-test.biz.api.lge.com
+            - url: https://eu-test.biz.api.lge.com
           parameters:
             - name: X-Api-Secret
               in: header
@@ -1959,7 +1959,7 @@ contents:
                   properties:
                     groupId:
                       type: string
-                      example: k-apt-1168011000
+                      example: k-apt-1234567890
                       description: Group ID
                     groupName:
                       type: string
@@ -1967,7 +1967,7 @@ contents:
                       description: Group Name
                     partnerId:
                       type: string
-                      example: kepco-herit-lge
+                      example: partner-1
                       description: The utility/integrator ID that created the group
                     areaCode:
                       type: string
@@ -2011,7 +2011,7 @@ contents:
                         properties:
                           groupId:
                             type: string
-                            example: k-apt-1168011000
+                            example: k-apt-1234567890
                             description: Group ID
             '400':
               description: Bad Request
@@ -2119,7 +2119,7 @@ contents:
               required: true
               schema:
                 type: string
-                example: k-apt-1168011000
+                example: k-apt-1234567890
           responses:
             '200':
               description: OK
@@ -2145,7 +2145,7 @@ contents:
                         properties:
                           groupId:
                             type: string
-                            example: k-apt-1168011000
+                            example: k-apt-1234567890
                             description: The unique group ID that you registered with the DR service to distinguish between groups.
                           groupName:
                             type: string
@@ -2153,7 +2153,7 @@ contents:
                             description: Group Name
                           partnerId:
                             type: string
-                            example: kepco-herit-lge
+                            example: partner-1
                             description: Partner ID of the DR service
                           areaCode:
                             type: string
@@ -2303,7 +2303,7 @@ contents:
                           properties:
                             groupId:
                               type: string
-                              example: k-apt-1168011000
+                              example: k-apt-1234567890
                               description: Group ID registered with DR service
                             groupName:
                               type: string
@@ -2311,7 +2311,7 @@ contents:
                               description: Group Name
                             partnerId:
                               type: string
-                              example: herit-01
+                              example: partner-1
                               description: Partner ID
                             areaCode:
                               type: string
@@ -2333,15 +2333,15 @@ contents:
                       value:
                         code: 2000
                         data:
-                          - groupId: k-apt-1168011000
+                          - groupId: k-apt-1234567890
                             groupName: Apgujeong Hyundai 1st Apartment
-                            partnerId: kepco-herit-lge
+                            partnerId: partner-1
                             areaCode: '1168011000'
                             buildingCode: '1168011000103690001004767'
                             comment: Apgujeong Hyundai 1st Apartment
-                          - groupId: k-apt-1165010700
+                          - groupId: k-apt-1234567899
                             groupName: Banpo 2-dong Acroriver Park
-                            partnerId: kepco-herit-lge
+                            partnerId: partner-1
                             areaCode: '1165010700'
                             buildingCode: '1165010700100020001017796'
                             comment: Banpo 2-dong Acroriver Park
@@ -2454,23 +2454,23 @@ contents:
                   properties:
                     userNo:
                       type: string
-                      example: KR2306146584898
+                      example: KR1234567890123
                       description: User number of the LG Electronics account
                     mail:
                       type: string
-                      example: dr_kr_qa001@yopmail.com
+                      example: test_mail@lge.com
                       description: E-mail address of the LG Electronics account
                     groupId:
                       type: string
-                      example: A15721009
+                      example: A12345678
                       description: Group ID to enroll users in
                     accessToken:
                       type: string
-                      example: 67a184e62a412bb19b6ec2742b94695e06c1ce19d04f8d92121c6c28c99faf841150dba922da301e5617ae3942918a05
+                      example: 67a184e62a412bb19b6ec2742b94695e06c1ce19d04f8d92121c6c28c99faf841150dba911da301e5617ae3945218a05
                       description: An access_token value issued by the LMP(LGE Members Platform)
                     refreshToken:
                       type: string
-                      example: 3559466b6c19e334557c277108aed936c22840672b1c2a6a8fb7597a6473f9a59fbec4a3f4e03595b8a38513ba1d8088
+                      example: 3559466b6c19e312357c277108aed936c22840672b1c2a6a8fb7597a6473f9a59fbec4a3f4e03595b8358413ba1d8088
                       description: A refresh_token value issued by the LMP(LGE Members Platform)
                     partner:
                       type: object
@@ -2478,23 +2478,23 @@ contents:
                       properties:
                         partnerId:
                           type: string
-                          example: herit-01
+                          example: partner-1
                           description: Partner ID
                         programId:
                           type: string
-                          example: oc-dr-001
+                          example: test-dr-1
                           description: DR Program ID (North America only)
                         programName:
                           type: string
-                          example: OC DR Program
+                          example: test DR Program
                           description: DR Program Name (North America only)
                         partnerUserId:
                           type: string
-                          example: lgautodr10
+                          example: partnerId-1
                           description: Partner user ID
                         authCodeExt:
                           type: string
-                          example: d778581e-14f5-4531-943b-c823beebc72f.f81a0977-a553-417e-8873-64faafa0534a.160df234-fa67-4ed2-b710-74afc12eaa12
+                          example: d778581e-4431-2531-1315-c823beebc72f.f81a0977-a553-417e-8873-64faafa0534a.160df234-7s14-4ed2-b710-74afc12eaa12
                           description: Auth code for 3rd party OAuth 2.0 integration (issued by 3rd party system, one-time use)
                       required:
                         - partnerId
@@ -2528,7 +2528,7 @@ contents:
                         properties:
                           userNo:
                             type: string
-                            example: 01581c1893b95f30282d3c09d478cef7
+                            example: 01581c1135488770282d3c09d478cef7
                             description: The user number of the created user's encrypted LG Electronics account.
             '400':
               description: Bad Request
@@ -2663,7 +2663,7 @@ contents:
               required: true
               schema:
                 type: string
-                example: 01581c1893b95f30282d3c09d478cef7
+                example: 01581c1135488770282d3c09d478cef7
           responses:
             '200':
               description: OK
@@ -2688,7 +2688,7 @@ contents:
                         properties:
                           userNo:
                             type: string
-                            example: 01581c1893b95f30282d3c09d478cef7
+                            example: 01581c1135488770282d3c09d478cef7
                             description: Deleted User number of the LG Electronics account
             '400':
               description: Bad Request
@@ -2795,7 +2795,7 @@ contents:
               required: true
               schema:
                 type: string
-                example: 01581c1893b95f30282d3c09d478cef7
+                example: 01581c1135488770282d3c09d478cef7
           responses:
             '200':
               description: OK
@@ -2820,19 +2820,19 @@ contents:
                         properties:
                           userNo:
                             type: string
-                            example: 01581c1893b95f30282d3c09d478cef7
+                            example: 01581c1135488770282d3c09d478cef7
                             description: The encrypted user number of the LG Electronics account
                           drHomeId:
                             type: string
-                            example: '171072582282622861'
+                            example: '123456789012345678'
                             description: ThinQ Home ID of the user connected to the DR service
                           partnerId:
                             type: string
-                            example: herit-01
+                            example: partner-1
                             description: Partner ID of the DR service to which the user is subscribed
                           groupId:
                             type: string
-                            example: A15721009
+                            example: A12345678
                             description: Group ID of the user
             '400':
               description: Bad Request
@@ -2940,7 +2940,7 @@ contents:
               required: true
               schema:
                 type: string
-                example: 01581c1893b95f30282d3c09d478cef7
+                example: 01581c1135488770282d3c09d478cef7
           responses:
             '200':
               description: OK
@@ -2966,23 +2966,23 @@ contents:
                           properties:
                             deviceId:
                               type: string
-                              example: 111e0f0a-8d50-41f8-9120-94a8728c57e4
+                              example: 1f6bfb2796410a429f0015bf91f9583618458881645497851352d690513b13353f1da753095de970faba8099e2a56aa1
                               description: The encrypted ThinQ device ID
                             macAddress:
                               type: string
-                              example: abcd1234
+                              example: 66e71f19ada4fcaf3156aa26d49d4291
                               description: The encrypted MAC address
                             groupId:
                               type: string
-                              example: k-apt-1168011000
+                              example: k-apt-1234567890
                               description: Group ID
                             userNo:
                               type: string
-                              example: KRXXXXXY
+                              example: 01581c1135488770282d3c09d478cef7
                               description: The encrypted user number of the LG Electronics account
                             homeId:
                               type: string
-                              example: '1'
+                              example: '123456789012345678'
                               description: ThinQ Home ID where the device is registered
                             drParticipate:
                               type: boolean
@@ -3009,21 +3009,21 @@ contents:
                       value:
                         code: 2000
                         data:
-                          - deviceId: 1f6bfb2796410a429f0015bf91f958361845888164cb0a61fefdd690513b13353f1da753095de970faba8099e2a56aa1
-                            macAddress: 66e71f19ada4fcaf5cd7aa26d49d4291
-                            groupId: A15721009
-                            userNo: 01581c1893b95f30282d3c09d478cef7
-                            homeId: '171072582282622861'
+                          - deviceId: 1f6bfb2796410a429f0015bf91f9583618458881645497851352d690513b13353f1da753095de970faba8099e2a56aa1
+                            macAddress: 66e71f19ada4fcaf3156aa26d49d4291
+                            groupId: A12345678
+                            userNo: 01581c1135488770282d3c09d478cef7
+                            homeId: '123456789012345678'
                             drParticipate: true
                             opt: IN
                             deviceType: DEVIE_AIR_CONDITIONER
                             modelName: PAC_910604_US
                             alias: room air conditioner
-                          - deviceId: 2369ecd9276e62577e97692bc4b345502a2d1b46c616a1ea8d12eead4293979cf10bce3e5242da16a0d6a3afef694da3
-                            macAddress: 74d7483ebfc2d52702857244440faf8f
-                            groupId: A15721009
-                            userNo: 01581c1893b95f30282d3c09d478cef7
-                            homeId: '171072582282622861'
+                          - deviceId: 1f6bfb2796410a429f0015bf91f9583618458881645497851352d690513b13353f1da75309885740faba8099e2a56aa1
+                            macAddress: 66e78259ada4fcaf3114aa26d49d4291
+                            groupId: A12345678
+                            userNo: 01581c1135488770282d3c09d478cef7
+                            homeId: '123456789012345678'
                             drParticipate: true
                             opt: OUT
                             deviceType: DEVIE_AIR_CONDITIONER
@@ -3135,14 +3135,14 @@ contents:
               required: true
               schema:
                 type: string
-                example: 01581c1893b95f30282d3c09d478cef7
+                example: 01581c1135488770282d3c09d478cef7
             - in: path
               name: deviceId
               description: The encrypted ThinQ device ID
               required: true
               schema:
                 type: string
-                example: 1f6bfb2796410a429f0015bf91f958361845888164cb0a61fefdd690513b13353f1da753095de970faba8099e2a56aa1
+                example: 1f6bfb2796410a429f0015bf91f9583618458881645497851352d690513b13353f1da753095de970faba8099e2a56aa1
           responses:
             '200':
               description: OK
@@ -3168,23 +3168,23 @@ contents:
                           properties:
                             deviceId:
                               type: string
-                              example: 1f6bfb2796410a429f0015bf91f958361845888164cb0a61fefdd690513b13353f1da753095de970faba8099e2a56aa1
+                              example: 1f6bfb2796410a429f0015bf91f9583618458881645497851352d690513b13353f1da753095de970faba8099e2a56aa1
                               description: The encrypted ThinQ device ID
                             macAddress:
                               type: string
-                              example: 66e71f19ada4fcaf5cd7aa26d49d4291
+                              example: 66e71f19ada4fcaf3156aa26d49d4291
                               description: The encrypted MAC address
                             groupId:
                               type: string
-                              example: A15721009
+                              example: A12345678
                               description: Group ID
                             userNo:
                               type: string
-                              example: 01581c1893b95f30282d3c09d478cef7
+                              example: 01581c1135488770282d3c09d478cef7
                               description: The encrypted user number of the LG Electronics account
                             homeId:
                               type: string
-                              example: '171072582282622861'
+                              example: '123456789012345678'
                               description: ThinQ Home ID where the device is registered
                             drParticipate:
                               type: boolean
@@ -3211,11 +3211,11 @@ contents:
                       value:
                         code: 2000
                         data:
-                          - deviceId: 1f6bfb2796410a429f0015bf91f958361845888164cb0a61fefdd690513b13353f1da753095de970faba8099e2a56aa1
-                            macAddress: 66e71f19ada4fcaf5cd7aa26d49d4291
-                            groupId: A15721009
-                            userNo: 01581c1893b95f30282d3c09d478cef7
-                            homeId: '171072582282622861'
+                          - deviceId: 1f6bfb2796410a429f0015bf91f9583618458881645497851352d690513b13353f1da753095de970faba8099e2a56aa1
+                            macAddress: 66e71f19ada4fcaf3156aa26d49d4291
+                            groupId: A12345678
+                            userNo: 01581c1135488770282d3c09d478cef7
+                            homeId: '123456789012345678'
                             drParticipate: true
                             opt: IN
                             deviceType: DEVIE_AIR_CONDITIONER
@@ -3330,23 +3330,23 @@ contents:
                   properties:
                     eventId:
                       type: string
-                      example: 2023-04-25-dr-01
+                      example: 2024-04-25-dr-01
                       description: DR Event ID
                     eventName:
                       type: string
-                      example: 2023-04-25-dr-01
-                      description: DR Event ID
+                      example: 2024-04-25 test DR event
+                      description: DR Event Name
                     partnerId:
                       type: string
-                      example: herit-01
+                      example: partner-1
                       description: Partner ID
                     startTs:
                       type: number
-                      example: 1682423399890
+                      example: 1714024800000
                       description: DR Event start time(milliseconds)
                     endTs:
                       type: number
-                      example: 1682426999000
+                      example: 1714028400000
                       description: DR end time(milliseconds)
                     targets:
                       type: array
@@ -3360,7 +3360,7 @@ contents:
                             type: array
                             items:
                               type: string
-                              example: k-apt-1168011000
+                              example: k-apt-1234567890
                             description: A list of event target ID (of GROUP, USER or DEVICE)
                         required:
                           - targetType
@@ -3371,7 +3371,7 @@ contents:
                         properties:
                           signalId:
                             type: string
-                            example: 2023-04-25-dr-01-signal-01
+                            example: 2024-04-25-dr-01-signal-01
                             description: The event signal ID
                           deviceType:
                             type: string
@@ -3404,7 +3404,7 @@ contents:
                                     example: C
                             description: |-
                               The specific control value
-                              ex) { temerpature: { min: 26, max: 32, unit: "C } }
+                              ex) { temerpature: { min: 20, max: 26, unit: "C } }
                           constrolType:
                             type: string
                             example: Temperature
@@ -3423,34 +3423,34 @@ contents:
                 examples:
                   Create & Update Event:
                     value:
-                      eventId: 2023-04-25-dr-01
-                      eventName: 2023-04-25-dr-01
-                      partnerId: herit-01
-                      startTs: 1682423399890
-                      endTs: 1682426999000
+                      eventId: 2024-04-25-dr-01
+                      eventName: 2024-04-25 test DR event
+                      partnerId: partner-1
+                      startTs: 1714024800000
+                      endTs: 1714028400000
                       targets:
                         - targetType: GROUP
                           targetIds:
-                            - k-apt-1168011000
-                            - k-apt-1165010700
+                            - k-apt-1234567890
+                            - k-apt-1234567899
                         - targetType: USER
                           targetIds:
-                            - USXXXXXX
-                            - KRXXXXXX
+                            - US1234567890123
+                            - KR1234567890123
                       signals:
-                        - signalId: 2023-04-25-dr-01-signal-01
+                        - signalId: 2024-04-25-dr-01-signal-01
                           deviceType: DEVICE_AIR_CONDITIONER
                           modelNames:
                             - RAC_056905_WW
                           signalType: CONTROL_RESTORE
                           signalData:
                             temperature:
-                              min: 26
-                              max: 32
+                              min: 20
+                              max: 26
                               unit: C
                           controlType: Temperature
                           restoreType: Temperature
-                        - signalId: 2023-04-25-dr-01-signal-02
+                        - signalId: 2024-04-25-dr-01-signal-02
                           deviceType: DEVICE_TV
                           modelNames: []
                           signalType: CONTROL
@@ -3481,7 +3481,7 @@ contents:
                         properties:
                           eventId:
                             type: string
-                            example: 2023-04-25-dr-01
+                            example: 2024-04-25-dr-01
                             description: The generated DR Event ID
             '400':
               description: Bad Request
@@ -3615,7 +3615,7 @@ contents:
               required: true
               schema:
                 type: string
-                example: 2023-04-25-dr-01
+                example: 2024-04-25-dr-01
           responses:
             '200':
               description: OK
@@ -3640,7 +3640,7 @@ contents:
                         properties:
                           groupId:
                             type: string
-                            example: 2023-04-25-dr-01
+                            example: 2024-04-25-dr-01
                             description: Deleted DR Evnet ID
             '400':
               description: Bad Request
@@ -3766,7 +3766,7 @@ contents:
                         - DEVICE
                     id:
                       type: string
-                      example: KRXXXX
+                      example: KR1234567890123
                       description: |-
                         DR Event target ID
                         - If the event target type is USER: userNo
@@ -3807,7 +3807,7 @@ contents:
                         properties:
                           groupId:
                             type: string
-                            example: 2023-04-25-dr-01
+                            example: 2024-04-25-dr-01
                             description: Generated DR Event target ID
             '400':
               description: Bad Request
@@ -3922,7 +3922,7 @@ contents:
               required: true
               schema:
                 type: string
-                example: KRXXXX
+                example: KR1234567890123
           requestBody:
             description: DR Event information
             content:
@@ -4105,7 +4105,7 @@ contents:
                           - create: "/"
                           - replace: "/{targetId}"
                           - Ex) Create: "/"
-                          - Ex) Modify: "/23lk2jl1k32j1"
+                          - Ex) Modify: "/2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf"
                       value:
                         type: object
                         properties:
@@ -4114,7 +4114,7 @@ contents:
                             example: DEVICE
                           id:
                             type: string
-                            example: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
+                            example: 2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
                           opt:
                             type: string
                             example: IN
@@ -4122,7 +4122,7 @@ contents:
                           You can check whether you are opted in or out of DR Event.
                           - create: {type, id, opt}
                           - replace: {opt}
-                          - Ex) create: { type: "DEVICE", id: "23lk2jl1k32j1", opt: "IN"}
+                          - Ex) create: { type: "DEVICE", id: "2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf", opt: "IN"}
                           - Ex) replace: { opt: "IN"}
                     required:
                       - action
@@ -4135,7 +4135,7 @@ contents:
                         path: /
                         value:
                           type: DEVICE
-                          id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
+                          id: 2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
                           opt: IN
                   update:
                     value:
@@ -4149,7 +4149,7 @@ contents:
                         path: /
                         value:
                           type: DEVICE
-                          id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
+                          id: 2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
                           opt: IN
                       - action: update
                         path: /KRXXX
@@ -4189,7 +4189,7 @@ contents:
                                 example: DEVICE
                               id:
                                 type: string
-                                example: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
+                                example: 2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
                               opt:
                                 type: string
                                 example: IN
@@ -4332,7 +4332,7 @@ contents:
                   properties:
                     eventId:
                       type: string
-                      example: 2023-04-25-dr-01
+                      example: 2024-04-25-dr-01
                       description: DR Event ID
                     targets:
                       type: array
@@ -4340,7 +4340,7 @@ contents:
                         properties:
                           targetId:
                             type: string
-                            example: KRXXXX
+                            example: KR1234567890123
                             description: DR Event target ID
                           targetType:
                             type: string
@@ -4358,7 +4358,7 @@ contents:
                       eventId: test_event_1713834322772
                       targets:
                         - targetType: GROUP
-                          targetId: k-apt-1168011000
+                          targetId: k-apt-1234567890
           responses:
             '200':
               description: OK
@@ -4383,7 +4383,7 @@ contents:
                         properties:
                           fileName:
                             type: string
-                            example: data-zip-test_event_1713834322772-1728001286135.zip
+                            example: data-zip-test_event_1234567890123-2345678901234.zip
                             description: generated ZIP file name
             '400':
               description: Bad Request
@@ -4508,7 +4508,7 @@ contents:
               required: true
               schema:
                 type: string
-                example: data-zip-test_event_1713834322772-1728001286135.zip
+                example: data-zip-test_event_1234567890123-2345678901234.zip
           responses:
             '200':
               description: OK
@@ -4533,7 +4533,7 @@ contents:
                         properties:
                           presignedUrl:
                             type: string
-                            example: https://s3-an2-tems-qa-dr-archiver.s3.ap-northeast-2.amazonaws.com/zip/data-zip-test_event_1713834322772-1728001286135.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIARU3MB3TCEDODQ2DO%2F20241004%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20241004T002817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEID%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0yIkcwRQIhALefnNnWXhAZcAcMWZA%2Bm23i5uALS%2FOI9ZwzOwUQMMQyAiACqvSExTC%2B3ErlEfOGtIXnZ450mlJRDu02kW4S2RojcyrVBQjJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDExMzUwNjM3NjkwMCIMi5fbbY%2Bs9%2FoMe2jWKqkFntfKoeTR0blrYtIPk0PdBLXhVa%2BpMgj9P0Y2%2F4c8g1IK0LOWuQrLL9bQ%2Bjg%2B4pzsgZWjdFZ8smSNqj3oQ%2FAgpHI56EltlZrnDQNPL%2FkMtj8dSgOJtxtgOE89wzYvB8hd9obkO0c%2BQN76loIX71y6MOC6JtCNlzbf0SpLkONT09IlOMhmFHB4KC87r%2Bb6V7ZIgFp56w9amawSxYK%2BCRj0yw5uXoboEUBwuqcn%2BSF6u2Xq4Z1cS018f%2F9bYtBxqz5M6rUrTup5xkf4ZEbUzFwMpFWk2WhXiu64uzKaF41C3d%2F5YUNa2K725HfWbntEAa0jr37AZtR%2BNagZGvnVnryZsmz%2Fn272kPdhdb3NLv55i1dtqWHu9HjJ2P35ujd5RadNO%2BCki9Vths6O99XDnHpCbrTWoQyCvHIq3wM38Nbbbnv%2BxXeKbzJ1PMbOmmGbqSPhGdFEwHzTiGLkiUXxREFtLLkC5xQn%2F%2FyBFmyoZBrpdVEvt6Ggyk5gh%2F%2BSxG1OvpmCcmYjRloE%2Bh%2F7QCZvboHaeD4wpre1xdRFrW%2FiPSeraR1MxurDFbf8nWqak88IQ%2B82EwOucjX6SKhdk148Vt6mBrd0Ae9MW7W4f82NksX%2FVFeDjeGmkRe4bg85B8b7gwIA8qHl3MwYhUgPm0%2BRlkzdFKYy%2B2eoBZpK0kx3tO52DIeb%2Fk41gfrxQj3lc41y7zKVxZsiftqK7bDbMt4eHkFZ5dTaf0uJlgzsU0AYanJjgZvDxlUCywCHfCTG%2Bb03dWwomJYy4cuN%2Fix8uYzYbM8TAdwFfjYKG0KH3n4W%2FDNvCiQBedoG%2Byx7e5MCr0dpAV2%2F90L9x%2Bq1HloUbqtnVqQ1MRV3PN%2FBv3brupENConWTz90ebLDCd4rJQLKmGprA0UOX2nI8yxMV6u6MLbl%2FLcGOrEBIPFbJuDYy4nYDv0IJF5FHnEM9hZFiC1s1kOPMQkUHbhXENPK4TWBPLx46Ewp%2FvT2PTdkzMVeZLVJ33YVg1V9uL%2BNT1KYs9KuwDdfCMUD22ItcGhm9DCHnp3Db%2FyyWus%2BtBVrdcIsbhtvyfVx0qsFa29MJmxdv%2FdTrOZZ8c6ZSFAOeM5RGsxTs9%2FBZrWyvHy6cbfcMlr8Utm%2BzCGxy5L87LkBhrD9wT6o1%2B3eGI333lGc&X-Amz-Signature=dcdb7b02b2350142fb4b41ab15036ac529981f7dc14d2fa2e6a4bf615b82f827&X-Amz-SignedHeaders=host&x-id=GetObject
+                            example: https://s3-an2-tems-qa-dr-archiver.s3.ap-northeast-2.amazonaws.com/zip/data-zip-test_event_1234567890123-2345678901234?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIARU3MB3TCEDODQ2DO%2F20241004%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20241004T002817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEID%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0yIkcwRQIhALefnNnWXhAZcAcMWZA%2Bm23i5uALS%2FOI9ZwzOwUQMMQyAiACqvSExTC%2B3ErlEfOGtIXnZ450mlJRDu02kW4S2RojcyrVBQjJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDExMzUwNjM3NjkwMCIMi5fbbY%2Bs9%2FoMe2jWKqkFntfKoeTR0blrYtIPk0PdBLXhVa%2BpMgj9P0Y2%2F4c8g1IK0LOWuQrLL9bQ%2Bjg%2B4pzsgZWjdFZ8smSNqj3oQ%2FAgpHI56EltlZrnDQNPL%2FkMtj8dSgOJtxtgOE89wzYvB8hd9obkO0c%2BQN76loIX71y6MOC6JtCNlzbf0SpLkONT09IlOMhmFHB4KC87r%2Bb6V7ZIgFp56w9amawSxYK%2BCRj0yw5uXoboEUBwuqcn%2BSF6u2Xq4Z1cS018f%2F9bYtBxqz5M6rUrTup5xkf4ZEbUzFwMpFWk2WhXiu64uzKaF41C3d%2F5YUNa2K725HfWbntEAa0jr37AZtR%2BNagZGvnVnryZsmz%2Fn272kPdhdb3NLv55i1dtqWHu9HjJ2P35ujd5RadNO%2BCki9Vths6O99XDnHpCbrTWoQyCvHIq3wM38Nbbbnv%2BxXeKbzJ1PMbOmmGbqSPhGdFEwHzTiGLkiUXxREFtLLkC5xQn%2F%2FyBFmyoZBrpdVEvt6Ggyk5gh%2F%2BSxG1OvpmCcmYjRloE%2Bh%2F7QCZvboHaeD4wpre1xdRFrW%2FiPSeraR1MxurDFbf8nWqak88IQ%2B82EwOucjX6SKhdk148Vt6mBrd0Ae9MW7W4f82NksX%2FVFeDjeGmkRe4bg85B8b7gwIA8qHl3MwYhUgPm0%2BRlkzdFKYy%2B2eoBZpK0kx3tO52DIeb%2Fk41gfrxQj3lc41y7zKVxZsiftqK7bDbMt4eHkFZ5dTaf0uJlgzsU0AYanJjgZvDxlUCywCHfCTG%2Bb03dWwomJYy4cuN%2Fix8uYzYbM8TAdwFfjYKG0KH3n4W%2FDNvCiQBedoG%2Byx7e5MCr0dpAV2%2F90L9x%2Bq1HloUbqtnVqQ1MRV3PN%2FBv3brupENConWTz90ebLDCd4rJQLKmGprA0UOX2nI8yxMV6u6MLbl%2FLcGOrEBIPFbJuDYy4nYDv0IJF5FHnEM9hZFiC1s1kOPMQkUHbhXENPK4TWBPLx46Ewp%2FvT2PTdkzMVeZLVJ33YVg1V9uL%2BNT1KYs9KuwDdfCMUD22ItcGhm9DCHnp3Db%2FyyWus%2BtBVrdcIsbhtvyfVx0qsFa29MJmxdv%2FdTrOZZ8c6ZSFAOeM5RGsxTs9%2FBZrWyvHy6cbfcMlr8Utm%2BzCGxy5L87LkBhrD9wT6o1%2B3eGI333lGc&X-Amz-Signature=dcdb7b02b2350142fb4b41ab15036ac529981f7dc14d2fa2e6a4bf615b82f827&X-Amz-SignedHeaders=host&x-id=GetObject
                             description: Download path for generated DR Event ZIP file (valid for 1 hour)
             '401':
               description: Unauthorized
@@ -4761,7 +4761,7 @@ contents:
                 - DEVICE
             id:
               type: string
-              example: KRXXXX
+              example: KR1234567890123
               description: |-
                 DR Event target ID
                 - If the event target type is USER: userNo
@@ -4782,7 +4782,7 @@ contents:
             type: string
           description: |
             `API Token`, a string that is issued in advance through the **[Issue API Token](#tag/auth/operation/createAPIToken)** API.
-          example: eyJleHAiOjE3MDQzNDE3MDIsImlhdCI6MTcwNDI1NTMwMiwiaXNzIjoiTEcgQnVzaW5lc3MgQ29ubmVjdCIsInJvbGVzIjpbImdldEJlY29uVXNlcnMiLCJnZXREclVzZXJzIiwicG9zdFRva2VuIl0sInN1YiI6IjRkMmM2MWUxLTM0YzQtZTk2Yy05NDU2LTE1YmQ5ODNjNTAxOSJ9
+          example: eyJhbGciOiJIUzI1NiIsImtpZCI6InNpbTIifQ.eyJleHAiOjE3MDQzNDE3MDIsImlhdCI6MTcwNDI1NTMwMiwiaXNzIjoiTEcgQnVzaW5lc3MgQ29ubmVjdCIsInJvbGVzIjpbImdldEJlY29uVXNlcnMiLCJnZXREclVzZXJzIiwicG9zdFRva2VuIl0sInN1YiI6IjRkMmM2MWUxLTM0YzQtZTk2Yy05NDU2LTE1YmQ5ODNjNTAxOSJ9.plRjXmZRoXkOy_U95VXGzX-ouJyCrorEmMO8OzrEvF8
         X-Message-Id:
           name: X-Message-Id
           in: header
