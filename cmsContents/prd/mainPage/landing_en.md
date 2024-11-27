@@ -1,8 +1,5 @@
 ---
 contents: >-
-  
-
-
   \    <div className="main-content">
 
 
@@ -337,6 +334,20 @@ contents: >-
 
 
   \                <ul className="tem-banner__list grid m0">
+
+  \                  <li className="tem-banner__item col-4 col-sm-full">
+
+
+  \                    <figure className="tem-banner__img">
+
+
+  \                      <CoImage src="/assets/images/partner_banner_10.png" isFullSize alt="ALEXA" />
+
+
+  \                    </figure>
+
+
+  \                  </li>
 
 
   \                  <li className="tem-banner__item col-4 col-sm-full">
