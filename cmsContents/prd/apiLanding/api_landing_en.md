@@ -1,5 +1,8 @@
 ---
 contents: >-
+  
+
+
   <div className="landing-wrap">
 
 
@@ -18,7 +21,7 @@ contents: >-
   \    <p className="title">
 
 
-  \    Meet with LG Open API
+  \    Meet with LGE Smart Solution API
 
 
   \    <br />
