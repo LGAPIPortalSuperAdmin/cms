@@ -1,12 +1,12 @@
 ---
 contents:
   lang: yaml
-  code: >+
+  code: >
     openapi: 3.1.0
 
     info:
       version: null
-      title: ThinQ Connect API
+      title: ThinQ API
     servers:
       - url: https://api-kic.lgthinq.com
       - url: https://api-aic.lgthinq.com
