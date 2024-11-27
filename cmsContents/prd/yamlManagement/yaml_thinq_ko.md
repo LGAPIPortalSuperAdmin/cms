@@ -6,7 +6,7 @@ contents:
 
     info:
       version: null
-      title: ThinQ Connect API
+      title: ThinQ API
     servers:
       - url: https://api-kic.lgthinq.com
       - url: https://api-aic.lgthinq.com
