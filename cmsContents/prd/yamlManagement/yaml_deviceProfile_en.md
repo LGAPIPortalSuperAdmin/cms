@@ -36,7 +36,7 @@ contents:
       - name: device type
         x-displayName: Device Type
         x-traitTag: true
-        description: "**Device Type** characterizes the device and allows you to distinguish the kind of device in the **Get Device List API** response. Device profiles are defined based on device type.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | Refrigerator | O | O |\n  | DEVICE_WASHER | Washer | O | O |\n  | DEVICE_DRYER | Dryer | O | O |\n  | DEVICE_AIR_CONDITIONER | Air Conditioner | O | O |\n  | DEVICE_AIR_PURIFIER | Air Purifier | O | O |\n  | DEVICE_ROBOT_CLEANER | Robot Cleaner | O | O |\n  | DEVICE_OVEN | Oven | O | O |\n  | DEVICE_DISH_WASHER | Dish Washer | O | O |\n  | DEVICE_STYLER | Styler | O | O |\n  | DEVICE_WATER_PURIFIER | Water Purifier | O | O |\n  | DEVICE_DEHUMIDIFIER | Dehumidifier | O | O |\n  | DEVICE_CEILING_FAN | Ceiling Fan | O | O |\n  | DEVICE_WINE_CELLAR | Wine Cellar | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | Kimchi Refrigerator | O | O |\n  | DEVICE_HOME_BREW | Home Brew | O | O |\n  | DEVICE_PLANT_CULTIVATOR | Plant Cultivator | O | O |\n  | DEVICE_WASHTOWER_WASHER | WashTower Washer(Washer) | O | O |\n  | DEVICE_WASHTOWER_DRYER | WashTower Washer(Dryer) | O | O |\n  | DEVICE_WASHTOWER | WashTower Washer | O | O |\n  | DEVICE_COOKTOP | Cooktop | O | O |\n  | DEVICE_HOOD | Hood | O | O |\n  | DEVICE_MICROWAVE_OVEN | Microwave Oven | O | O |\n  | DEVICE_SYSTEM_BOILER | System Boiler | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | Air Purifier Fan | O | O |\n  | DEVICE_STICK_CLEANER | Stick Cleaner | O | O |\n  | DEVICE_WATER_HEATER | Water Heater | O | O |\n  | DEVICE_WASHCOMBO_MAIN | Main WashCombo | O | O |\n  | DEVICE_WASHCOMBO_MINI | Mini WashCombo | O | O |\n  | DEVICE_HUMIDIFIER | Humidifier | O | O |\n  | DEVICE_ODU | Outdoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_IDU | Indoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_SIGNAGE | Signage registered in Business Cloud | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | Smart Motion Sensor | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | Smart Temperature and Humidity Sensor | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | Smart door Sensor | X | O |\n  | DEVICE_HEJ_BUTTON | Smart button | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | Smart light switch | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | Smart door lock | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | Smart Push Pull door lock | X | O |\n  | DEVICE_HEJ_PLUG | Smart power strip | X | O |\n  | DEVICE_HEJ_PLUG_MINI | Smart Plug Mini | X | O |\n  | DEVICE_HEJ_BULB_WHITE | Smart light bulb (White) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | Smart light bulb (Multi-Color) | X | O |\n  | DEVICE_HEJ_LINE_LED | Smart String Light LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | Smart Motorized Curtain Controller | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | Smart electric blinds | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | Switch strap | X | O |\n  | DEVICE_HEJ_STARLIGHT | Smart Star Light | X | O |\n  | DEVICE_HEJ_DOORBELL | Smart Chime Bell | X | O |\n  | DEVICE_HEJ_PET_FEEDER | Smart Pet Feeder | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | Smart Home Camera | X | O |\n  | DEVICE_HEJ_SYNC_BOX | Syc Box | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | Synclight | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| Smart Gas sensor | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | Smart fire detection sensor | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | Smart water leak detection sensor | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | Smart thermohygrometer | X | O |\n  | DEVICE_HEJ_SIREN | Smart siren | X | O |\n"
+        description: "**Device Type** characterizes the device and allows you to distinguish the kind of device in the **Get Device List API** response. Device profiles are defined based on device type.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | Refrigerator | O | O |\n  | DEVICE_WASHER | Washer | O | O |\n  | DEVICE_DRYER | Dryer | O | O |\n  | DEVICE_AIR_CONDITIONER | Air Conditioner | O | O |\n  | DEVICE_AIR_PURIFIER | Air Purifier | O | O |\n  | DEVICE_ROBOT_CLEANER | Robot Cleaner | O | O |\n  | DEVICE_OVEN | Oven | O | O |\n  | DEVICE_DISH_WASHER | Dish Washer | O | O |\n  | DEVICE_STYLER | Styler | O | O |\n  | DEVICE_WATER_PURIFIER | Water Purifier | O | O |\n  | DEVICE_DEHUMIDIFIER | Dehumidifier | O | O |\n  | DEVICE_CEILING_FAN | Ceiling Fan | O | O |\n  | DEVICE_WINE_CELLAR | Wine Cellar | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | Kimchi Refrigerator | O | O |\n  | DEVICE_HOME_BREW | Home Brew | O | O |\n  | DEVICE_PLANT_CULTIVATOR | Plant Cultivator | O | O |\n  | DEVICE_WASHTOWER_WASHER | WashTower Washer(Washer) | O | O |\n  | DEVICE_WASHTOWER_DRYER | WashTower Washer(Dryer) | O | O |\n  | DEVICE_WASHTOWER | WashTower Washer | O | O |\n  | DEVICE_COOKTOP | Cooktop | O | O |\n  | DEVICE_HOOD | Hood | O | O |\n  | DEVICE_MICROWAVE_OVEN | Microwave Oven | O | O |\n  | DEVICE_SYSTEM_BOILER | System Boiler | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | Air Purifier Fan | O | O |\n  | DEVICE_STICK_CLEANER | Stick Cleaner | O | O |\n  | DEVICE_WATER_HEATER | Water Heater | O | O |\n  | DEVICE_WASHCOMBO_MAIN | Main WashCombo | O | O |\n  | DEVICE_WASHCOMBO_MINI | Mini WashCombo | O | O |\n  | DEVICE_HUMIDIFIER | Humidifier | O | O |\n  | DEVICE_ODU | Outdoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_IDU | Indoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_SIGNAGE | Signage registered in Business Cloud | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | Smart Motion Sensor | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | Smart Temperature and Humidity Sensor | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | Smart door Sensor | X | O |\n  | DEVICE_HEJ_BUTTON | Smart button | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | Smart light switch | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | Smart door lock | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | Smart Push Pull door lock | X | O |\n  | DEVICE_HEJ_PLUG | Smart Plug | X | O |\n  | DEVICE_HEJ_PLUG_MINI | Smart Plug Mini | X | O |\n  | DEVICE_HEJ_BULB_WHITE | Smart light bulb (White) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | Smart light bulb (Multi-Color) | X | O |\n  | DEVICE_HEJ_LINE_LED | Smart String Light LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | Smart Motorized Curtain Controller | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | Smart electric blinds | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | Switch strap | X | O |\n  | DEVICE_HEJ_STARLIGHT | Smart Star Light | X | O |\n  | DEVICE_HEJ_DOORBELL | Smart Chime Bell | X | O |\n  | DEVICE_HEJ_PET_FEEDER | Smart Pet Feeder | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | Smart Home Camera | X | O |\n  | DEVICE_HEJ_SYNC_BOX | Syc Box | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | Synclight | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| Smart Gas sensor | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | Smart fire detection sensor | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | Smart water leak detection sensor | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | Smart thermohygrometer | X | O |\n  | DEVICE_HEJ_SIREN | Smart siren | X | O |\n"
       - name: refrigerator
         x-displayName: Refrigerator
         description: |
@@ -1058,7 +1058,7 @@ contents:
             exampleRef="#/components/examples/stick_cleaner-object-example" />
 
           ### Device control request
-          Stick Cleaner doesn't support control requests. (Confirmation required)
+          Stick Cleaner doesn't support control requests.
       - name: water_heater
         x-displayName: Water Heater
         description: |
@@ -1392,9 +1392,9 @@ contents:
             exampleRef="#/components/examples/light_switch-object-example" />
 
           ### Device control request
-          You can control values in the device profile schema that have 'w' permission. Only one value can be controlled per API call.
+          You can control values in the device profile schema that have 'w' permission. Smart lighting switches transmit the name and status of the switch to be controlled.
           <SchemaDefinition
-            schemaRef="#/components/schemas/device-command-schema"
+            schemaRef="#/components/schemas/light_switch-command"
             exampleRef="#/components/examples/light_switch-command-example" />
       - name: hej_door_lock
         x-displayName: Smart door lock
@@ -1435,7 +1435,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/push_pull_door_lock-command-example" />
       - name: hej_plug
-        x-displayName: Smart Multitap
+        x-displayName: Smart Plug
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1582,10 +1582,15 @@ contents:
             exampleRef="#/components/examples/switch_strip-object-example" />
 
           ### Device control request
-          You can control values in the device profile schema that have 'w' permission. Only one value can be controlled per API call.
+          You can control values in the device profile schema that have 'w' permission. To control the product status of the smart switch strap, follow the schema below.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/switch_strip-command-example" />
+          
+          If you want to control a specific switch on a smart switch strap, follow the schema below.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/light_switch-command"
+            exampleRef="#/components/examples/switch_strip-command-example-1" />
       - name: hej_starlight
         x-displayName: Smart Star Light
         description: |
@@ -1875,6 +1880,7 @@ contents:
                       - $ref: '#/components/schemas/button-object'
                       - $ref: '#/components/schemas/light_switch-profile'
                       - $ref: '#/components/schemas/light_switch-object'
+                      - $ref: '#/components/schemas/light_switch-command'
                       - $ref: '#/components/schemas/door_lock-profile'
                       - $ref: '#/components/schemas/door_lock-object'
                       - $ref: '#/components/schemas/push_pull_door_lock-profile'
@@ -2180,6 +2186,8 @@ contents:
                       $ref: '#/components/examples/switch_strip-object-example'
                     switch_strip-command-example:
                       $ref: '#/components/examples/switch_strip-command-example'
+                    switch_strip-command-example-1:
+                      $ref: '#/components/examples/switch_strip-command-example-1'
                     starlight-profile-example:
                       $ref: '#/components/examples/starlight-profile-example'
                     starlight-object-example:
@@ -20102,30 +20110,12 @@ contents:
                                     - 'ON'
                                     - 'OFF'
                       switchName:
-                        type: object
+                        type: string
+                        enum:
+                          - SWITCH_1
+                          - SWITCH_2
+                          - SWITCH_3
                         description: Location Name
-                        properties:
-                          mode:
-                            type: array
-                            items:
-                              type: string
-                              enum:
-                                - r
-                          type:
-                            type: string
-                            enum:
-                              - enum
-                          value:
-                            type: object
-                            properties:
-                              r:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - SWITCH_1
-                                    - SWITCH_2
-                                    - SWTICH_3
         light_switch-object:
           type: object
           title: Light_Switch
@@ -20149,6 +20139,24 @@ contents:
                       - SWITCH_1
                       - SWITCH_2
                       - SWITCH_3
+        light_switch-command:
+          title: Light_Switch
+          minProperties: 1
+          properties:
+            switchState:
+              type: object
+              properties:
+                switchName:
+                  type: string
+                  enum:
+                    - SWITCH_1
+                    - SWITCH_2
+                    - SWITCH_3
+                currentSwitch:
+                  type: string
+                  enum:
+                    - 'ON'
+                    - 'OFF'
         door_lock-profile:
           type: object
           title: Door_Sensor
@@ -29238,11 +29246,12 @@ contents:
           value:
             property:
               switchState:
-                - currentSwitch:
+                - switchName: SWITCH_1
+                  currentSwitch:
+                    type: enum
                     mode:
                       - r
                       - w
-                    type: enum
                     value:
                       r:
                         - 'ON'
@@ -29250,24 +29259,46 @@ contents:
                       w:
                         - 'ON'
                         - 'OFF'
-                - switchName:
+                - switchName: SWITCH_2
+                  currentSwitch:
+                    type: enum
                     mode:
                       - r
-                    type: enum
+                      - w
                     value:
                       r:
-                        - SWITCH_1
-                        - SWITCH_2
-                        - SWITCH_3
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+                - switchName: SWITCH_3
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
         light_switch-object-example:
           value:
             switchState:
-              - currentSwitch: 'ON'
               - switchName: SWITCH_1
+                currentSwitch: 'ON'
+              - switchName: SWITCH_2
+                currentSwitch: 'OFF'
+              - switchName: SWITCH_3
+                currentSwitch: 'ON'
         light_switch-command-example:
           value:
             switchState:
-              - currentSwitch: 'OFF'
+              switchName: SWITCH_1
+              currentSwitch: 'ON'
         door_lock-profile-example:
           value:
             property:
@@ -29979,6 +30010,11 @@ contents:
           value:
             runState:
               currentState: POWER_ON
+        switch_strip-command-example-1:
+          value:
+            switchState:
+              switchName: SWITCH_1
+              currentSwitch: 'ON'
         starlight-profile-example:
           value:
             property:
