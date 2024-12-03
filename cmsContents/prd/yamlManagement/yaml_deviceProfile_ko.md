@@ -36,7 +36,7 @@ contents:
       - name: device type
         x-displayName: 디바이스 타입
         x-traitTag: true
-        description: "**디바이스 타입**은 디바이스의 특성을 구분하며 **디바이스 목록 조회 API** 응답에서 종류를 구분합니다. 디바이스 프로파일은 이 디바이스 타입에 따라 정의됩니다.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | 냉장고 | O | O |\n  | DEVICE_WASHER | 세탁기 | O | O |\n  | DEVICE_DRYER | 건조기 | O | O |\n  | DEVICE_AIR_CONDITIONER | 에어컨 | O | O |\n  | DEVICE_AIR_PURIFIER | 공기청정기 | O | O |\n  | DEVICE_ROBOT_CLEANER | 로봇청소기 | O | O |\n  | DEVICE_OVEN | 오븐 | O | O |\n  | DEVICE_DISH_WASHER | 식기세척기 | O | O |\n  | DEVICE_STYLER | 스타일러 | O | O |\n  | DEVICE_WATER_PURIFIER | 정수기 | O | O |\n  | DEVICE_DEHUMIDIFIER | 제습기 | O | O |\n  | DEVICE_CEILING_FAN | 실링팬 | O | O |\n  | DEVICE_WINE_CELLAR | 와인셀러 | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | 김치냉장고 | O | O |\n  | DEVICE_HOME_BREW | 홈브루 | O | O |\n  | DEVICE_PLANT_CULTIVATOR | 식물재배기 | O | O |\n  | DEVICE_WASHTOWER_WASHER | 워시타워(세탁기) | O | O |\n  | DEVICE_WASHTOWER_DRYER | 워시타워(건조기) | O | O |\n  | DEVICE_WASHTOWER | 워시타워 | O | O |\n  | DEVICE_COOKTOP | 쿡탑 | O | O |\n  | DEVICE_HOOD | 후드 | O | O |\n  | DEVICE_MICROWAVE_OVEN | 전자레인지 | O | O |\n  | DEVICE_SYSTEM_BOILER | 시스템 보일러 | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | 공기청정팬 | O | O |\n  | DEVICE_STICK_CLEANER | 스틱청소기 | O | O |\n  | DEVICE_WATER_HEATER | 온수기 | O | O |\n  | DEVICE_WASHCOMBO_MAIN | 워시콤보 (메인) | O | O |\n  | DEVICE_WASHCOMBO_MINI | 워시콤보 (미니) | O | O |\n  | DEVICE_HUMIDIFIER | 가습기 | O | O |\n  | DEVICE_ODU | BECON Cloud에 등록된 SAC 실외기 | X | O |\n  | DEVICE_IDU | BECON Cloud에 등록된 SAC 실내기 | X | O |\n  | DEVICE_SIGNAGE | Business Cloud에 등록된 사이니지 | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | 스마트 모션 센서 | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | 스마트 온습도 센서 | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | 스마트 도어 센서 | X | O |\n  | DEVICE_HEJ_BUTTON | 스마트 버튼 | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | 스마트 조명 스위치 | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | 스마트 도어락  | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | 스마트 푸쉬풀 도어락 | X | O |\n  | DEVICE_HEJ_PLUG | 스마트 멀티탭 | X | O |\n  | DEVICE_HEJ_PLUG_MINI | 스마트 플러그 미니 | X | O |\n  | DEVICE_HEJ_BULB_WHITE | 스마트 전구 (화이트) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | 스마트 전구 (컬러) | X | O |\n  | DEVICE_HEJ_LINE_LED | 스마트 라인 LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | 스마트 전동 커튼 컨트롤러 | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | 스마트 전동 블라인드 | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | 스위치 스트립 | X | O |\n  | DEVICE_HEJ_STARLIGHT | 스마트 스타 라이트 | X | O |\n  | DEVICE_HEJ_DOORBELL | 스마트 도어벨 | X | O |\n  | DEVICE_HEJ_PET_FEEDER | 스마트 펫 급식기 | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | 스마트 홈 카메라 | X | O |\n  | DEVICE_HEJ_SYNC_BOX | 싱크 박스 | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | 싱크 박스 서브 | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| 스마트 가스 감지 센서 | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | 스마트 화재 감지 센서 | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | 스마트 누수 감지 센서 | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | 스마트 온습도계 | X | O |\n  | DEVICE_HEJ_SIREN | 스마트 사이렌 | X | O |\n"
+        description: "**디바이스 타입**은 디바이스의 특성을 구분하며 **디바이스 목록 조회 API** 응답에서 종류를 구분합니다. 디바이스 프로파일은 이 디바이스 타입에 따라 정의됩니다.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | 냉장고 | O | O |\n  | DEVICE_WASHER | 세탁기 | O | O |\n  | DEVICE_DRYER | 건조기 | O | O |\n  | DEVICE_AIR_CONDITIONER | 에어컨 | O | O |\n  | DEVICE_AIR_PURIFIER | 공기청정기 | O | O |\n  | DEVICE_ROBOT_CLEANER | 로봇청소기 | O | O |\n  | DEVICE_OVEN | 오븐 | O | O |\n  | DEVICE_DISH_WASHER | 식기세척기 | O | O |\n  | DEVICE_STYLER | 스타일러 | O | O |\n  | DEVICE_WATER_PURIFIER | 정수기 | O | O |\n  | DEVICE_DEHUMIDIFIER | 제습기 | O | O |\n  | DEVICE_CEILING_FAN | 실링팬 | O | O |\n  | DEVICE_WINE_CELLAR | 와인셀러 | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | 김치냉장고 | O | O |\n  | DEVICE_HOME_BREW | 홈브루 | O | O |\n  | DEVICE_PLANT_CULTIVATOR | 식물재배기 | O | O |\n  | DEVICE_WASHTOWER_WASHER | 워시타워(세탁기) | O | O |\n  | DEVICE_WASHTOWER_DRYER | 워시타워(건조기) | O | O |\n  | DEVICE_WASHTOWER | 워시타워 | O | O |\n  | DEVICE_COOKTOP | 쿡탑 | O | O |\n  | DEVICE_HOOD | 후드 | O | O |\n  | DEVICE_MICROWAVE_OVEN | 전자레인지 | O | O |\n  | DEVICE_SYSTEM_BOILER | 시스템 보일러 | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | 공기청정팬 | O | O |\n  | DEVICE_STICK_CLEANER | 스틱청소기 | O | O |\n  | DEVICE_WATER_HEATER | 온수기 | O | O |\n  | DEVICE_WASHCOMBO_MAIN | 워시콤보 (메인) | O | O |\n  | DEVICE_WASHCOMBO_MINI | 워시콤보 (미니) | O | O |\n  | DEVICE_HUMIDIFIER | 가습기 | O | O |\n  | DEVICE_ODU | BECON Cloud에 등록된 SAC 실외기 | X | O |\n  | DEVICE_IDU | BECON Cloud에 등록된 SAC 실내기 | X | O |\n  | DEVICE_SIGNAGE | Business Cloud에 등록된 사이니지 | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | 스마트 모션 센서 | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | 스마트 온습도 센서 | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | 스마트 도어 센서 | X | O |\n  | DEVICE_HEJ_BUTTON | 스마트 버튼 | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | 스마트 조명 스위치 | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | 스마트 도어락  | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | 스마트 푸쉬풀 도어락 | X | O |\n  | DEVICE_HEJ_PLUG | 스마트 플러그 | X | O |\n  | DEVICE_HEJ_PLUG_MINI | 스마트 플러그 미니 | X | O |\n  | DEVICE_HEJ_BULB_WHITE | 스마트 전구 (화이트) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | 스마트 전구 (컬러) | X | O |\n  | DEVICE_HEJ_LINE_LED | 스마트 라인 LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | 스마트 전동 커튼 컨트롤러 | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | 스마트 전동 블라인드 | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | 스위치 스트립 | X | O |\n  | DEVICE_HEJ_STARLIGHT | 스마트 스타 라이트 | X | O |\n  | DEVICE_HEJ_DOORBELL | 스마트 도어벨 | X | O |\n  | DEVICE_HEJ_PET_FEEDER | 스마트 펫 급식기 | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | 스마트 홈 카메라 | X | O |\n  | DEVICE_HEJ_SYNC_BOX | 싱크 박스 | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | 싱크 박스 서브 | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| 스마트 가스 감지 센서 | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | 스마트 화재 감지 센서 | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | 스마트 누수 감지 센서 | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | 스마트 온습도계 | X | O |\n  | DEVICE_HEJ_SIREN | 스마트 사이렌 | X | O |\n"
       - name: refrigerator
         x-displayName: 냉장고
         description: |
@@ -1058,7 +1058,7 @@ contents:
             exampleRef="#/components/examples/stick_cleaner-object-example" />
 
           ### 디바이스 제어 요청
-          스틱청소기 디바이스는 제어 요청을 지원하지 않습니다. (확인 필요함)
+          스틱청소기 디바이스는 제어 요청을 지원하지 않습니다.
       - name: water_heater
         x-displayName: 온수기
         description: |
@@ -1392,9 +1392,9 @@ contents:
             exampleRef="#/components/examples/light_switch-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 스마트 조명 스위치는 제어할 스위치 이름과 상태값을 함께 전달합니다
           <SchemaDefinition
-            schemaRef="#/components/schemas/device-command-schema"
+            schemaRef="#/components/schemas/light_switch-command"
             exampleRef="#/components/examples/light_switch-command-example" />
       - name: hej_door_lock
         x-displayName: 스마트 도어락
@@ -1411,7 +1411,7 @@ contents:
             exampleRef="#/components/examples/door_lock-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/door_lock-command-example" />
@@ -1430,12 +1430,12 @@ contents:
             exampleRef="#/components/examples/push_pull_door_lock-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/push_pull_door_lock-command-example" />
       - name: hej_plug
-        x-displayName: 스마트 멀티탭
+        x-displayName: 스마트 플러그
         description: |
           ## 디바이스 프로파일 스키마
           <SchemaDefinition
@@ -1449,7 +1449,7 @@ contents:
             exampleRef="#/components/examples/plug-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/plug-command-example" />
@@ -1468,7 +1468,7 @@ contents:
             exampleRef="#/components/examples/plug_mini-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/plug_mini-command-example" />
@@ -1487,7 +1487,7 @@ contents:
             exampleRef="#/components/examples/bulb_white-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/bulb_white-command-example" />
@@ -1506,7 +1506,7 @@ contents:
             exampleRef="#/components/examples/bulb_color-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/bulb_color-command-example" />
@@ -1525,7 +1525,7 @@ contents:
             exampleRef="#/components/examples/line_led-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/line_led-command-example" />
@@ -1544,7 +1544,7 @@ contents:
             exampleRef="#/components/examples/curtain_ctrl-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/curtain_ctrl-command-example" />
@@ -1563,7 +1563,7 @@ contents:
             exampleRef="#/components/examples/blind_motor-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/blind_motor-command-example" />
@@ -1582,10 +1582,15 @@ contents:
             exampleRef="#/components/examples/switch_strip-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. 스마트 스위치 스트립 제품은 아래 스키마에 따라 제어됩니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/switch_strip-command-example" />
+
+          스마트 스위치 스트립의 특정 스위치는 아래 스키마에 따라 제어됩니다.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/light_switch-command"
+            exampleRef="#/components/examples/switch_strip-command-example-1" />
       - name: hej_starlight
         x-displayName: 스마트 스타 라이트
         description: |
@@ -1601,7 +1606,7 @@ contents:
             exampleRef="#/components/examples/starlight-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/starlight-command-example" />
@@ -1620,7 +1625,7 @@ contents:
             exampleRef="#/components/examples/doorbell-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/doorbell-command-example" />
@@ -1639,7 +1644,7 @@ contents:
             exampleRef="#/components/examples/pet_peeder-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/pet_peeder-command-example" />
@@ -1658,7 +1663,7 @@ contents:
             exampleRef="#/components/examples/home_camera-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/home_camera-command-example" />
@@ -1677,7 +1682,7 @@ contents:
             exampleRef="#/components/examples/sync_box-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/sync_box-command-example" />
@@ -1696,7 +1701,7 @@ contents:
             exampleRef="#/components/examples/sync_box_sub-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/sync_box_sub-command-example" />
@@ -1779,7 +1784,7 @@ contents:
             exampleRef="#/components/examples/siren-object-example" />
 
           ### 디바이스 제어 요청
-          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능하다. API호출 1회에 하나의 값만 제어할 수 있다.
+          디바이스 프로파일 스키마에서 'w' 권한이 있는 값은 제어가 가능합니다. API호출 1회에 하나의 값만 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/siren-command-example" />
@@ -1875,6 +1880,7 @@ contents:
                       - $ref: '#/components/schemas/button-object'
                       - $ref: '#/components/schemas/light_switch-profile'
                       - $ref: '#/components/schemas/light_switch-object'
+                      - $ref: '#/components/schemas/light_switch-command'
                       - $ref: '#/components/schemas/door_lock-profile'
                       - $ref: '#/components/schemas/door_lock-object'
                       - $ref: '#/components/schemas/push_pull_door_lock-profile'
@@ -2180,6 +2186,8 @@ contents:
                       $ref: '#/components/examples/switch_strip-object-example'
                     switch_strip-command-example:
                       $ref: '#/components/examples/switch_strip-command-example'
+                    switch_strip-command-example-1:
+                      $ref: '#/components/examples/switch_strip-command-example-1'
                     starlight-profile-example:
                       $ref: '#/components/examples/starlight-profile-example'
                     starlight-object-example:
@@ -20102,30 +20110,12 @@ contents:
                                     - 'ON'
                                     - 'OFF'
                       switchName:
-                        type: object
+                        type: string
+                        enum:
+                          - SWITCH_1
+                          - SWITCH_2
+                          - SWITCH_3
                         description: 위치 이름
-                        properties:
-                          mode:
-                            type: array
-                            items:
-                              type: string
-                              enum:
-                                - r
-                          type:
-                            type: string
-                            enum:
-                              - enum
-                          value:
-                            type: object
-                            properties:
-                              r:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - SWITCH_1
-                                    - SWITCH_2
-                                    - SWTICH_3
         light_switch-object:
           type: object
           title: Light_Switch
@@ -20149,6 +20139,24 @@ contents:
                       - SWITCH_1
                       - SWITCH_2
                       - SWITCH_3
+        light_switch-command:
+          title: Light_Switch
+          minProperties: 1
+          properties:
+            switchState:
+              type: object
+              properties:
+                switchName:
+                  type: string
+                  enum:
+                    - SWITCH_1
+                    - SWITCH_2
+                    - SWITCH_3
+                currentSwitch:
+                  type: string
+                  enum:
+                    - 'ON'
+                    - 'OFF'
         door_lock-profile:
           type: object
           title: Door_Sensor
@@ -29238,11 +29246,12 @@ contents:
           value:
             property:
               switchState:
-                - currentSwitch:
+                - switchName: SWITCH_1
+                  currentSwitch:
+                    type: enum
                     mode:
                       - r
                       - w
-                    type: enum
                     value:
                       r:
                         - 'ON'
@@ -29250,24 +29259,46 @@ contents:
                       w:
                         - 'ON'
                         - 'OFF'
-                - switchName:
+                - switchName: SWITCH_2
+                  currentSwitch:
+                    type: enum
                     mode:
                       - r
-                    type: enum
+                      - w
                     value:
                       r:
-                        - SWITCH_1
-                        - SWITCH_2
-                        - SWITCH_3
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+                - switchName: SWITCH_3
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
         light_switch-object-example:
           value:
             switchState:
-              - currentSwitch: 'ON'
               - switchName: SWITCH_1
+                currentSwitch: 'ON'
+              - switchName: SWITCH_2
+                currentSwitch: 'OFF'
+              - switchName: SWITCH_3
+                currentSwitch: 'ON'
         light_switch-command-example:
           value:
             switchState:
-              - currentSwitch: 'OFF'
+              switchName: SWITCH_1
+              currentSwitch: 'ON'
         door_lock-profile-example:
           value:
             property:
@@ -29979,6 +30010,11 @@ contents:
           value:
             runState:
               currentState: POWER_ON
+        switch_strip-command-example-1:
+          value:
+            switchState:
+              switchName: SWITCH_1
+              currentSwitch: 'ON'
         starlight-profile-example:
           value:
             property:
