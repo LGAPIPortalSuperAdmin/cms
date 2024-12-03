@@ -69,7 +69,8 @@ contents:
           tags:
             - Device API
           summary: 디바이스 프로파일 조회
-          description: 디바이스 프로파일을 조회하기 위한 API입니다. > 디바이스 프로파일은 LG 가전의 속성을 기술한 정보로, LG ThinQ 플랫폼이 사용하는 디바이스 데이터입니다.
+          description: |
+            디바이스 프로파일을 조회하기 위한 API입니다. 디바이스 프로파일은 LG 가전의 속성을 기술한 정보로, LG ThinQ 플랫폼이 사용하는 디바이스 데이터입니다.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
@@ -688,7 +689,7 @@ contents:
           schema:
             type: string
           description: |
-            https://connect-pat.lgthinq.com을 통해서 받은 PAT 토큰
+            https://connect-pat.lgthinq.com 을 통해서 받은 PAT 토큰
           example: Bearer 4d76546d61f01baf31c1sd8f6b4e38b110ba0a34f825b8c5d54c
         x-message-id:
           name: x-message-id
