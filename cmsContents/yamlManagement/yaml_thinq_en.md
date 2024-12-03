@@ -68,7 +68,8 @@ contents:
           tags:
             - Device API
           summary: Get Device Profile
-          description: API for viewing device profiles > Device profiles are information describing the attributes of an LG home appliance and are the device data used by the LG ThinQ platform.
+          description: |
+            API for viewing device profiles. Device profiles are information describing the attributes of an LG home appliance and are the device data used by the LG ThinQ platform.
           parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
