@@ -614,6 +614,58 @@ contents:
                       $ref: '#/components/examples/idu-profile-example'
                     Business Cloud에 등록된 사이니지:
                       $ref: '#/components/examples/signage-profile-example'
+                    스마트 모션 센서:
+                      $ref: '#/components/examples/motion_sensor-profile-example'
+                    스마트 온습도 센서:
+                      $ref: '#/components/examples/temperature_humidity_sensor-profile-example'
+                    스마트 도어 센서:
+                      $ref: '#/components/examples/door_sensor-profile-example'
+                    스마트 버튼:
+                      $ref: '#/components/examples/button-profile-example'
+                    스마트 조명 스위치:
+                      $ref: '#/components/examples/light_switch-profile-example'
+                    스마트 도어락:
+                      $ref: '#/components/examples/door_lock-profile-example'
+                    스마트 푸시풀 도어락:
+                      $ref: '#/components/examples/push_pull_door_lock-profile-example'
+                    스마트 플러그:
+                      $ref: '#/components/examples/plug-profile-example'
+                    스마트 플러그 미니:
+                      $ref: '#/components/examples/plug_mini-profile-example'
+                    스마트 전구(화이트):
+                      $ref: '#/components/examples/bulb_white-profile-example'
+                    스마트 전구(컬러):
+                      $ref: '#/components/examples/bulb_color-profile-example'
+                    스마트 라인 LED:
+                      $ref: '#/components/examples/line_led-profile-example'
+                    스마트 전동 커튼 컨트롤러:
+                      $ref: '#/components/examples/curtain_ctrl-profile-example'
+                    스마트 전동 블라인드:
+                      $ref: '#/components/examples/blind_motor-profile-example'
+                    스마트 스위치 스트립:
+                      $ref: '#/components/examples/switch_strip-profile-example'
+                    스마트 스타 라이트:
+                      $ref: '#/components/examples/starlight-profile-example'
+                    스마트 도어벨:
+                      $ref: '#/components/examples/doorbell-profile-example'
+                    스마트 펫 급식기:
+                      $ref: '#/components/examples/pet_peeder-profile-example'
+                    스마트 홈 카메라:
+                      $ref: '#/components/examples/home_camera-profile-example'
+                    싱크 박스:
+                      $ref: '#/components/examples/sync_box-profile-example'
+                    싱크 박스 서브:
+                      $ref: '#/components/examples/sync_box_sub-profile-example'
+                    스마트 가스 감지 센서:
+                      $ref: '#/components/examples/gas_sensor-profile-example'
+                    스마트 화재 감지 센서:
+                      $ref: '#/components/examples/fire_sensor-profile-example'
+                    스마트 누수 감지 센서:
+                      $ref: '#/components/examples/water_leak_sensor-profile-example'
+                    스마트 온습도계:
+                      $ref: '#/components/examples/thermo_hygrometer-profile-example'
+                    스마트 사이렌:
+                      $ref: '#/components/examples/siren-profile-example'
             '400':
               description: Bad request
               headers:
@@ -820,6 +872,58 @@ contents:
                       $ref: '#/components/examples/idu-object-example'
                     Business Cloud에 등록된 사이니지:
                       $ref: '#/components/examples/signage-object-example'
+                    스마트 모션 센서:
+                      $ref: '#/components/examples/motion_sensor-object-example'
+                    스마트 온습도 센서:
+                      $ref: '#/components/examples/temperature_humidity_sensor-object-example'
+                    스마트 도어 센서:
+                      $ref: '#/components/examples/door_sensor-object-example'
+                    스마트 버튼:
+                      $ref: '#/components/examples/button-object-example'
+                    스마트 조명 스위치:
+                      $ref: '#/components/examples/light_switch-object-example'
+                    스마트 도어락:
+                      $ref: '#/components/examples/door_lock-object-example'
+                    스마트 푸시풀 도어락:
+                      $ref: '#/components/examples/push_pull_door_lock-object-example'
+                    스마트 플러그:
+                      $ref: '#/components/examples/plug-object-example'
+                    스마트 플러그 미니:
+                      $ref: '#/components/examples/plug_mini-object-example'
+                    스마트 전구(화이트):
+                      $ref: '#/components/examples/bulb_white-object-example'
+                    스마트 전구(컬러):
+                      $ref: '#/components/examples/bulb_color-object-example'
+                    스마트 라인 LED:
+                      $ref: '#/components/examples/line_led-object-example'
+                    스마트 전동 커튼 컨트롤러:
+                      $ref: '#/components/examples/curtain_ctrl-object-example'
+                    스마트 전동 블라인드:
+                      $ref: '#/components/examples/blind_motor-object-example'
+                    스마트 스위치 스트립:
+                      $ref: '#/components/examples/switch_strip-object-example'
+                    스마트 스타 라이트:
+                      $ref: '#/components/examples/starlight-object-example'
+                    스마트 도어벨:
+                      $ref: '#/components/examples/doorbell-object-example'
+                    스마트 펫 급식기:
+                      $ref: '#/components/examples/pet_peeder-object-example'
+                    스마트 홈 카메라:
+                      $ref: '#/components/examples/home_camera-object-example'
+                    싱크 박스:
+                      $ref: '#/components/examples/sync_box-object-example'
+                    싱크 박스 서브:
+                      $ref: '#/components/examples/sync_box_sub-object-example'
+                    스마트 가스 감지 센서:
+                      $ref: '#/components/examples/gas_sensor-object-example'
+                    스마트 화재 감지 센서:
+                      $ref: '#/components/examples/fire_sensor-object-example'
+                    스마트 누수 감지 센서:
+                      $ref: '#/components/examples/water_leak_sensor-object-example'
+                    스마트 온습도계:
+                      $ref: '#/components/examples/thermo_hygrometer-object-example'
+                    스마트 사이렌:
+                      $ref: '#/components/examples/siren-object-example'
             '400':
               description: Bad request
               headers:
@@ -1004,6 +1108,42 @@ contents:
                     $ref: '#/components/examples/idu-command-example'
                   Business Cloud에 등록된 사이니지:
                     $ref: '#/components/examples/signage-command-example'
+                  스마트 조명 스위치:
+                    $ref: '#/components/examples/light_switch-command-example'
+                  스마트 도어락:
+                    $ref: '#/components/examples/door_lock-command-example'
+                  스마트 푸시풀 도어락:
+                    $ref: '#/components/examples/push_pull_door_lock-command-example'
+                  스마트 플러그:
+                    $ref: '#/components/examples/plug-command-example'
+                  스마트 플러그 미니:
+                    $ref: '#/components/examples/plug_mini-command-example'
+                  스마트 전구(화이트):
+                    $ref: '#/components/examples/bulb_white-command-example'
+                  스마트 전구(컬러):
+                    $ref: '#/components/examples/bulb_color-command-example'
+                  스마트 라인 LED:
+                    $ref: '#/components/examples/line_led-command-example'
+                  스마트 전동 커튼 컨트롤러:
+                    $ref: '#/components/examples/curtain_ctrl-command-example'
+                  스마트 전동 블라인드:
+                    $ref: '#/components/examples/blind_motor-command-example'
+                  스마트 스위치 스트립:
+                    $ref: '#/components/examples/switch_strip-command-example'
+                  스마트 스타 라이트:
+                    $ref: '#/components/examples/starlight-command-example'
+                  스마트 도어벨:
+                    $ref: '#/components/examples/doorbell-command-example'
+                  스마트 펫 급식기:
+                    $ref: '#/components/examples/pet_peeder-command-example'
+                  스마트 홈 카메라:
+                    $ref: '#/components/examples/home_camera-command-example'
+                  싱크 박스:
+                    $ref: '#/components/examples/sync_box-command-example'
+                  싱크 박스 서브:
+                    $ref: '#/components/examples/sync_box_sub-command-example'
+                  스마트 사이렌:
+                    $ref: '#/components/examples/siren-command-example'
           responses:
             '200':
               description: OK
@@ -1024,6 +1164,8 @@ contents:
                       $ref: '#/components/examples/refrigerator-object-example'
                     세탁기:
                       $ref: '#/components/examples/washer-object-example'
+                    건조기:
+                      $ref: '#/components/examples/dryer-object-example'
                     에어컨:
                       $ref: '#/components/examples/air_conditioner-object-example'
                     공기청정기:
@@ -1070,6 +1212,42 @@ contents:
                       $ref: '#/components/examples/idu-object-example'
                     Business Cloud에 등록된 사이니지:
                       $ref: '#/components/examples/signage-object-example'
+                    스마트 조명 스위치:
+                      $ref: '#/components/examples/light_switch-object-example'
+                    스마트 도어락:
+                      $ref: '#/components/examples/door_lock-object-example'
+                    스마트 푸시풀 도어락:
+                      $ref: '#/components/examples/push_pull_door_lock-object-example'
+                    스마트 플러그:
+                      $ref: '#/components/examples/plug-object-example'
+                    스마트 플러그 미니:
+                      $ref: '#/components/examples/plug_mini-object-example'
+                    스마트 전구(화이트):
+                      $ref: '#/components/examples/bulb_white-object-example'
+                    스마트 전구(컬러):
+                      $ref: '#/components/examples/bulb_color-object-example'
+                    스마트 라인 LED:
+                      $ref: '#/components/examples/line_led-object-example'
+                    스마트 전동 커튼 컨트롤러:
+                      $ref: '#/components/examples/curtain_ctrl-object-example'
+                    스마트 전동 블라인드:
+                      $ref: '#/components/examples/blind_motor-object-example'
+                    스마트 스위치 스트립:
+                      $ref: '#/components/examples/switch_strip-object-example'
+                    스마트 스타 라이트:
+                      $ref: '#/components/examples/starlight-object-example'
+                    스마트 도어벨:
+                      $ref: '#/components/examples/doorbell-object-example'
+                    스마트 펫 급식기:
+                      $ref: '#/components/examples/pet_peeder-object-example'
+                    스마트 홈 카메라:
+                      $ref: '#/components/examples/home_camera-object-example'
+                    싱크 박스:
+                      $ref: '#/components/examples/sync_box-object-example'
+                    싱크 박스 서브:
+                      $ref: '#/components/examples/sync_box_sub-object-example'
+                    스마트 사이렌:
+                      $ref: '#/components/examples/siren-object-example'
             '400':
               description: Bad request
               headers:
@@ -8859,6 +9037,1292 @@ contents:
                     - WINDOWS
                     - ANDROID
                     - NONE
+        motion_sensor-profile-example:
+          value:
+            property:
+              battery:
+                percent:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+        temperature_humidity_sensor-profile-example:
+          value:
+            property:
+              battery:
+                percent:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+              temperature:
+                currentTemperature:
+                  mode:
+                    - r
+                  type: number
+              humidity:
+                currentHumidity:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+        door_sensor-profile-example:
+          value:
+            property:
+              battery:
+                percent:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+              doorState:
+                currentState:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - OPEN
+                      - CLOSE
+        button-profile-example:
+          value:
+            property:
+              battery:
+                percent:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+        light_switch-profile-example:
+          value:
+            property:
+              switchState:
+                - switchName: SWITCH_1
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+                - switchName: SWITCH_2
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+                - switchName: SWITCH_3
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+        door_lock-profile-example:
+          value:
+            property:
+              battery:
+                percent:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+              doorState:
+                currentState:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - OPEN
+                      - CLOSE
+                    w:
+                      - OPEN
+        push_pull_door_lock-profile-example:
+          value:
+            property:
+              battery:
+                percent:
+                  mode:
+                    - r
+                  type: range
+                  value:
+                    r:
+                      min: 0
+                      max: 100
+              doorState:
+                currentState:
+                  mode:
+                    - r
+                    - w
+                  type: enum
+                  value:
+                    r:
+                      - OPEN
+                      - CLOSE
+                    w:
+                      - OPEN
+        plug-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              electricity:
+                current:
+                  type: number
+                  mode:
+                    - r
+                currentUnit:
+                  type: string
+                  mode:
+                    - r
+                voltage:
+                  type: number
+                  mode:
+                    - r
+                voltageUnit:
+                  type: string
+                  mode:
+                    - r
+                power:
+                  type: number
+                  mode:
+                    - r
+                powerUnit:
+                  type: string
+                  mode:
+                    - r
+        plug_mini-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              electricity:
+                current:
+                  type: number
+                  mode:
+                    - r
+                currentUnit:
+                  type: string
+                  mode:
+                    - r
+                voltage:
+                  type: number
+                  mode:
+                    - r
+                voltageUnit:
+                  type: string
+                  mode:
+                    - r
+                power:
+                  type: number
+                  mode:
+                    - r
+                powerUnit:
+                  type: string
+                  mode:
+                    - r
+              switchState:
+                currentSwitch:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                      - LAST
+                    w:
+                      - 'ON'
+                      - 'OFF'
+                      - LAST
+                indicateLight:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - ON_RELAY
+                      - ON_POS
+                      - 'OFF'
+                    w:
+                      - ON_RELAY
+                      - ON_POS
+                      - 'OFF'
+                kidLock:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - LOCK
+                      - UNLOCK
+                    w:
+                      - LOCK
+                      - UNLOCK
+        bulb_white-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              whiteLight:
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+                colorTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 6500
+                      min: 3000
+                      step: 1
+                    w:
+                      max: 6500
+                      min: 3000
+                      step: 1
+        bulb_color-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              mode:
+                lightMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - WHITE
+                      - COLOR
+                      - SCENE
+                    w:
+                      - WHITE
+                      - COLOR
+              whiteLight:
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+              colorLight:
+                hue:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 360
+                      min: 0
+                      step: 1
+                    w:
+                      max: 360
+                      min: 0
+                      step: 1
+                saturation:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+        line_led-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              mode:
+                lightMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - WHITE
+                      - COLOR
+                      - SCENE
+                    w:
+                      - WHITE
+                      - COLOR
+              whiteLight:
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+              colorLight:
+                hue:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 360
+                      min: 0
+                      step: 1
+                    w:
+                      max: 360
+                      min: 0
+                      step: 1
+                saturation:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+        curtain_ctrl-profile-example:
+          value:
+            property:
+              openCloseState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - OPEN
+                      - CLOSE
+                    w:
+                      - OPEN
+                      - CLOSE
+                      - STOP
+                level:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+              calibration:
+                railCalibration:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - ACTIVATE
+                      - DEACTIVATE
+                    w:
+                      - ACTIVATE
+                      - DEACTIVATE
+              motor:
+                motorDirection:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - FORWARD
+                      - BACKWARD
+                    w:
+                      - FORWARD
+                      - BACKWARD
+        blind_motor-profile-example:
+          value:
+            property:
+              openCloseState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - OPEN
+                      - CLOSE
+                      - STOP
+                    w:
+                      - OPEN
+                      - CLOSE
+                      - STOP
+                level:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+              operation:
+                operationMode:
+                  type: enum
+                  mode:
+                    - w
+                  value:
+                    w:
+                      - OPEN
+                      - CLOSE
+                      - STOP
+              motor:
+                motorDirection:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - FORWARD
+                      - BACKWARD
+                    w:
+                      - FORWARD
+                      - BACKWARD
+        switch_strip-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              switchState:
+                - switchName: SWITCH_1
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+                - switchName: SWITCH_2
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+                - switchName: SWITCH_3
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+                - switchName: SWITCH_USB
+                  currentSwitch:
+                    type: enum
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        - 'ON'
+                        - 'OFF'
+                      w:
+                        - 'ON'
+                        - 'OFF'
+        starlight-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              switchState:
+                switchLaser:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+                switchColor:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+              mode:
+                lightMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - WHITE
+                      - COLOR
+                      - SCENE
+                sceneMode:
+                  type: boolean
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - true
+                      - false
+              laserLight:
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+                motorSpeed:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+              colorLight:
+                hue:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 360
+                      min: 0
+                      step: 1
+                    w:
+                      max: 360
+                      min: 0
+                      step: 1
+                saturation:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+        doorbell-profile-example:
+          value:
+            property:
+              chime:
+                volume:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+        pet_peeder-profile-example:
+          value:
+            property:
+              feed:
+                amount:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 200
+                      min: 10
+                      step: 10
+                    w:
+                      max: 200
+                      min: 10
+                      step: 10
+        home_camera-profile-example:
+          value:
+            property:
+              mode:
+                privateMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+        sync_box-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              mode:
+                lightMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - COLOR
+                      - MUSIC
+                      - SCENE
+                      - VIDEO
+                    w:
+                      - COLOR
+                      - MUSIC
+                musicMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - ROCK
+                      - JAZZ
+                      - CLASSIC
+                      - NONE
+                    w:
+                      - ROCK
+                      - JAZZ
+                      - CLASSIC
+                      - NONE
+              colorLight:
+                hue:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 360
+                      min: 0
+                      step: 1
+                    w:
+                      max: 360
+                      min: 0
+                      step: 1
+                saturation:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+              video:
+                videoScene:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - MOVIE
+                      - GAME
+                    w:
+                      - MOVIE
+                      - GAME
+                intensity:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - LOW
+                      - MIDDLE
+                      - HIGH
+                      - MUSIC
+                    w:
+                      - LOW
+                      - MIDDLE
+                      - HIGH
+                      - MUSIC
+                colorMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - MULTIPLE
+                      - SINGLE
+                      - STOP
+                    w:
+                      - MULTIPLE
+                      - SINGLE
+                      - STOP
+              input:
+                hdmiSwitch:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 3
+                      min: 1
+                      step: 1
+                    w:
+                      max: 3
+                      min: 1
+                      step: 1
+              layout:
+                lightPosition:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - LOW_LEFT
+                      - LOW_RIGHT
+                    w:
+                      - LOW_LEFT
+                      - LOW_RIGHT
+                lightDirection:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - CLOCKWISE
+                      - COUNTERCLOCKWISE
+                    w:
+                      - CLOCKWISE
+                      - COUNTERCLOCKWISE
+        sync_box_sub-profile-example:
+          value:
+            property:
+              runState:
+                currentState:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              mode:
+                lightMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - WHITE
+                      - COLOR
+                      - MUSIC
+                      - SCENE
+                    w:
+                      - WHITE
+                      - COLOR
+                      - MUSIC
+              whiteLight:
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+                colorTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+              colorLight:
+                hue:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 360
+                      min: 0
+                      step: 1
+                    w:
+                      max: 360
+                      min: 0
+                      step: 1
+                saturation:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+                    w:
+                      max: 100
+                      min: 0
+                      step: 1
+                brightness:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 100
+                      min: 1
+                      step: 1
+                    w:
+                      max: 100
+                      min: 1
+                      step: 1
+        gas_sensor-profile-example:
+          value:
+            property:
+              detectState:
+                gasState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - ALARM
+                      - NORMAL
+        fire_sensor-profile-example:
+          value:
+            property:
+              detectState:
+                smokeState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - ALARM
+                      - NORMAL
+                coverState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - OPEN
+                      - CLOSE
+              battery:
+                percent:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+        water_leak_sensor-profile-example:
+          value:
+            property:
+              detectState:
+                leakState:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - ALARM
+                      - NORMAL
+              battery:
+                percent:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+        thermo_hygrometer-profile-example:
+          value:
+            property:
+              temperature:
+                currentTemperature:
+                  type: number
+                  mode:
+                    - r
+              humidity:
+                currentHumidity:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+              battery:
+                percent:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 100
+                      min: 0
+                      step: 1
+        siren-profile-example:
+          value:
+            property:
+              switchState:
+                currentSwitch:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+              alarm:
+                volume:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - MUTE
+                      - LOW
+                      - MID
+                      - HIGH
+                    w:
+                      - MUTE
+                      - LOW
+                      - MID
+                      - HIGH
+                time:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 3600
+                      min: 1
+                      step: 1
+                    w:
+                      max: 3600
+                      min: 1
+                      step: 1
         refrigerator-object-example:
           value:
             doorStatus:
@@ -9434,6 +10898,229 @@ contents:
               main: 39
             info:
               osType: WEBOS
+        motion_sensor-object-example:
+          value:
+            battery:
+              percent: 10
+        temperature_humidity_sensor-object-example:
+          value:
+            battery:
+              percent: 10
+            temperature:
+              currentTemperature: '19'
+            humidity:
+              currentHumidity: '60'
+        door_sensor-object-example:
+          value:
+            battery:
+              percent: 10
+            doorState:
+              currentState: OPEN
+        button-object-example:
+          value:
+            battery:
+              percent: 10
+        light_switch-object-example:
+          value:
+            switchState:
+              - switchName: SWITCH_1
+                currentSwitch: 'ON'
+              - switchName: SWITCH_2
+                currentSwitch: 'OFF'
+              - switchName: SWITCH_3
+                currentSwitch: 'ON'
+        door_lock-object-example:
+          value:
+            battery:
+              percent: 10
+            doorState:
+              currentState: OPEN
+        push_pull_door_lock-object-example:
+          value:
+            battery:
+              percent: 10
+            doorState:
+              currentState: OPEN
+        plug-object-example:
+          value:
+            runState:
+              currentState: POWER_ON
+            electricity:
+              current: 1000
+              currentUnit: mA
+              voltage: 210
+              voltageUnit: V
+              power: 0
+              powerUnit: W
+        plug_mini-object-example:
+          value:
+            runState:
+              currentState: POWER_ON
+            electricity:
+              current: 0
+              currentUnit: mA
+              voltage: 216.1
+              voltageUnit: V
+              power: 0
+              powerUnit: W
+            switchState:
+              currentSwitch: LAST
+              indicateLight: ON_RELAY
+              kidLock: UNLOCK
+        bulb_white-object-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+            whiteLight:
+              brightness: 7
+              colorTemperature: 4500
+        bulb_color-object-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+            mode:
+              lightMode: COLOR
+            whiteLight:
+              brightness: 7
+            colorLight:
+              hue: 0
+              saturation: 100
+              brightness: 100
+        line_led-object-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+            mode:
+              lightMode: COLOR
+            whiteLight:
+              brightness: 7
+            colorLight:
+              hue: 0
+              saturation: 100
+              brightness: 100
+        curtain_ctrl-object-example:
+          value:
+            openCloseState:
+              currentState: CLOSE
+              level: 0
+            calibration:
+              railCalibration: DEACTIVATE
+            motor:
+              motorDirection: FORWARD
+        blind_motor-object-example:
+          value:
+            openCloseState:
+              currentState: STOP
+              level: 0
+            motor:
+              motorDirection: BACKWARD
+        switch_strip-object-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+            switchState:
+              - switchName: SWITCH_1
+                currentSwitch: 'ON'
+              - switchName: SWITCH_2
+                currentSwitch: 'OFF'
+              - switchName: SWITCH_3
+                currentSwitch: 'ON'
+              - switchName: SWITCH_USB
+                currentSwitch: 'ON'
+        starlight-object-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+            switchState:
+              switchLaser: 'OFF'
+              switchColor: 'OFF'
+            mode:
+              lightMode: COLOR
+              sceneMode: false
+            laserLight:
+              brightness: 70
+              motorSpeed: 100
+            colorLight:
+              hue: 360
+              saturation: 50
+              brightness: 100
+        doorbell-object-example:
+          value:
+            chime:
+              volume: 5
+        pet_peeder-object-example:
+          value:
+            feed:
+              amount: 50
+        home_camera-object-example:
+          value:
+            mode:
+              privateMode: 'ON'
+        sync_box-object-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+            mode:
+              lightMode: MUSIC
+              musicMode: JAZZ
+            colorLight:
+              hue: 0
+              saturation: 100
+              brightness: 100
+            video:
+              videoScene: MOVIE
+              intensity: HIGH
+              colorMode: STOP
+            input:
+              hdmiSwitch: 1
+            layout:
+              lightPosition: LOW_RIGHT
+              lightDirection: CLOCKWISE
+        sync_box_sub-object-example:
+          value:
+            runState:
+              currentState: POWER_ON
+            mode:
+              lightMode: COLOR
+            whiteLight:
+              brightness: 48
+              colorTemperature: 30
+            colorLight:
+              hue: 0
+              saturation: 100
+              brightness: 100
+        gas_sensor-object-example:
+          value:
+            detectState:
+              gasState: ALARM
+        fire_sensor-object-example:
+          value:
+            detectState:
+              smokeState: NORMAL
+              coverState: OPEN
+            battery:
+              percent: 57
+        water_leak_sensor-object-example:
+          value:
+            detectState:
+              leakState: ALARM
+            battery:
+              percent: 57
+        thermo_hygrometer-object-example:
+          value:
+            temperature:
+              currentTemperature: 24
+            humidity:
+              currentHumidity: 50
+            battery:
+              percent: 57
+        siren-object-example:
+          value:
+            switchState:
+              currentSwitch: 'OFF'
+            alarm:
+              volume: MUTE
+              time: 0
         refrigerator-command-example:
           description: 냉장고 - 절전 모드 설정
           value:
@@ -9594,6 +11281,81 @@ contents:
           value:
             power:
               screen: SCREEN_ON
+        light_switch-command-example:
+          value:
+            switchState:
+              switchName: SWITCH_1
+              currentSwitch: 'ON'
+        door_lock-command-example:
+          value:
+            doorState:
+              currentState: OPEN
+        push_pull_door_lock-command-example:
+          value:
+            doorState:
+              currentState: OPEN
+        plug-command-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+        plug_mini-command-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+        bulb_white-command-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+        bulb_color-command-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+        line_led-command-example:
+          value:
+            runState:
+              currentState: POWER_OFF
+        curtain_ctrl-command-example:
+          value:
+            openCloseState:
+              currentState: OPEN
+        blind_motor-command-example:
+          value:
+            operation:
+              operationMode: CLOSE
+        switch_strip-command-example:
+          value:
+            runState:
+              currentState: POWER_ON
+        starlight-command-example:
+          value:
+            runState:
+              currentState: POWER_ON
+        doorbell-command-example:
+          value:
+            chime:
+              volume: 0
+        pet_peeder-command-example:
+          value:
+            feed:
+              amount: 30
+        home_camera-command-example:
+          value:
+            mode:
+              privateMode: 'ON'
+        sync_box-command-example:
+          value:
+            colorLight:
+              hue: 320
+              saturation: 30
+              brightness: 80
+        sync_box_sub-command-example:
+          value:
+            mode:
+              lightMode: COLOR
+        siren-command-example:
+          value:
+            switchState:
+              currentSwitch: 'ON'
     x-tagGroups:
       - name: Get Started
         tags:
