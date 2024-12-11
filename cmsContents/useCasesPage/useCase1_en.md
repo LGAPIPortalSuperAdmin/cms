@@ -62,10 +62,7 @@ contents: >-2
   \    Request a partnership
 
 
-  \    </CoLink>
-
-
-  \   <p className="bu-ex-g">Learn about APIs that can expand your business's potential.</p>
+  \    </CoLink><p className="bu-ex-g">Learn about APIs that can expand your business's potential.</p>
 
   \    </div>
 
