@@ -210,6 +210,14 @@ contents: >-
 
   \    <li class="usecase-pick__item">
 
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_ac.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">에어컨</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_styler.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
   \    <p className="usecase-pick__txt">스타일러</p>
