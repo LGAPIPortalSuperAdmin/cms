@@ -47,7 +47,7 @@ contents: >-2
   \    ThinQ Business API
 
 
-  \    </CoLink>
+  \    </CoLink><p className="bu-ex-g">Learn about APIs that can expand your business's potential.</p>
 
 
   \    </div>
@@ -65,8 +65,6 @@ contents: >-2
   \    </CoLink><p className="bu-ex-g">Learn about APIs that can expand your business's potential.</p>
 
   \    </div>
-
-
 
 
   \    </div>
