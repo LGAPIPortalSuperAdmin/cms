@@ -15,7 +15,7 @@ contents: >-2
 
   \    <p className="text--light mt3">공기질 센서로 생활 활동 범위의 공기질을 측정 하고, 오염이 감지되면 자동으로 공기청정기와 에어컨 공기청정모드를 함께 실행할 수 있습니다.<br />프리미엄 환기장치인 전열교환기가 설치된 경우에는 창문을 열지 않고도 깨끗한 실내 공기질을 유지 할 수 있습니다.</p>
 
-  \    <div className="btns"><CoLink href="/apiManage/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink></div>
+  \    <div className="btns"><div><CoLink href="/apiManage/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink><p className="bu-ex-g">여러분의 라이프스타일에 맞춘 홈 IoT 서비스를 <br /> 자유롭게 만들어줄 API를 만나보세요.</p></div><div> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink><p className="bu-ex-g">개인 액세스 토큰(PAT)으로 <br /> ThinQ API를 자유롭게 테스트 해보세요.</p></div></div>
 
   \    </div>
 
