@@ -374,7 +374,7 @@ contents: >-
   \    <div className="usecase-more">
 
 
-  \    <a className="btn-round-primary btn-l" href="#" style="margin:0;">PAT 발급</a>
+  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">PAT 발급</a>
 
 
   \    </div>
@@ -419,7 +419,7 @@ contents: >-
   \    <div className="usecase-more">
 
 
-  \    <a className="btn-round-primary btn-l" href="#" style="margin:0;">Route API</a>
+  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">Route API</a>
 
 
   \    </div>
@@ -464,7 +464,7 @@ contents: >-
   \    <div className="usecase-more">
 
 
-  \    <a className="btn-round-primary btn-l" href="#" style="margin:0;">Devices API</a>
+  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">Devices API</a>
 
 
   \    </div>
@@ -506,7 +506,7 @@ contents: >-
   \    <div className="usecase-more">
 
 
-  \    <a className="btn-round-primary btn-l" href="#" style="margin:0;">Client API</a>
+  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">Client API</a>
 
 
   \    </div>
@@ -551,10 +551,10 @@ contents: >-
   \    <div className="usecase-more" style="@media screen and (max-width: 640px) {.usecase-more {flex-direction: inherit;}}">
 
 
-  \    <a className="btn-round-primary btn-l" href="#" style="margin:0;">Push API</a>
+  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">Push API</a>
 
 
-  \    <a className="btn-round-primary btn-l" href="#">Event API</a>
+  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">Event API</a>
 
 
   \    </div>
@@ -646,10 +646,10 @@ contents: >-
   \    <p className="usecase-more__title">LG에서 제공하는 공식 Home Assistant를 확인해 보세요.</p> 
 
 
-  \    <a className="btn-round-primary btn-m" href="#">Home Assistant Ingetration</a>
+  \    <a className="btn-round-primary btn-m" href="#" style="margin: 0 0.3rem;">Home Assistant Ingetration</a>
 
 
-  \    <a className="btn-round-primary btn-m" href="#">Python Open API SDK</a>
+  \    <a className="btn-round-primary btn-m" href="#" style="margin: 0 0.3rem;">Python Open API SDK</a>
 
 
   \    </div>
