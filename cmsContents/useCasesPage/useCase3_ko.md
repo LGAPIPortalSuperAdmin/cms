@@ -21,34 +21,7 @@ contents: >-2
 
   \    </p>
 
-  \    <div className="btns">
-
-
-  <div>
-
-
-  <CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> 
-
-
-  <p className="bu-ex-g">비즈니스에 새로운 가능성을 열어줄 API를 만나보세요.	</p>
-
-
-  </div>
-
-
-  <div>
-
-
-  <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388"> 파트너십 신청 </CoLink>
-
-
-  <p className="bu-ex-g">파트너십을 통해 차별화된 서비스와 기능으로, / 한층 더 강력한 경쟁력을 확보해보세요.	</p>
-
-
-  <div>
-
-
-  </div>
+  \    <div className="btns"><div><CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink> <p className="bu-ex-g">비즈니스에 새로운 가능성을 열어줄 API를 만나보세요.	</p></div><div><CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388"> 파트너십 신청 </CoLink><p className="bu-ex-g">파트너십을 통해 차별화된 서비스와 기능으로, / 한층 더 강력한 경쟁력을 확보해보세요.	</p><div></div>
 
   \    </div>
 
