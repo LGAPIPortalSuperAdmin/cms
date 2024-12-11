@@ -12,13 +12,40 @@ contents: >-
 
   .tab_content.current{    display: block;}
 
-  .tab_content .tabMenuCont_title {    font-size: 2rem;    font-weight: bold;    line-height: 4.75rem;    margin-bottom: 1.125rem;}.tab_content .tabMenuCont_title img {    vertical-align: middle;    position:relative;    top: -0.1rem;    margin-right: 20px;}.tab_content dl {    min-height: 11.625rem;    color:#5A5A5E;}.tab_content dl dt {     color: #C00A3E;    font-weight: bold;    font-size: 1.25rem;    margin-bottom: 1.5rem;}.tab_content .usecase-more a:first-child {    margin-left: 0;}</style><script>    $(document).ready(function(){
+  .tab_content .tabMenuCont_title {    font-size: 2rem;    font-weight: bold;    line-height: 4.75rem;    margin-bottom: 1.125rem;}.tab_content .tabMenuCont_title img {    vertical-align: middle;    position:relative;    top: -0.1rem;    margin-right: 20px;}.tab_content dl {    min-height: 11.625rem;    color:#5A5A5E;}.tab_content dl dt {     color: #C00A3E;    font-weight: bold;    font-size: 1.25rem;    margin-bottom: 1.5rem;}.tab_content .usecase-more a:first-child {    margin-left: 0;}</style>
 
-      $('ul.tabMenu li').click(function(){        var tab_id = $(this).attr('data-tab');
 
-          $('ul.tabMenu li').removeClass('current');        $('.tab_content').removeClass('current');
+  <script>
 
-          $(this).addClass('current');            $("#"+tab_id).addClass('current');        })    })</script>
+
+  $(document).ready(function(){
+
+
+      $('ul.tabMenu li').click(function(){
+
+
+          var tab_id = $(this).attr('data-tab');
+
+
+          $('ul.tabMenu li').removeClass('current');
+
+
+          $('.tab_content').removeClass('current');
+
+
+          $(this).addClass('current');
+
+
+              $("#"+tab_id).addClass('current');
+
+
+          })
+
+
+      })
+
+
+  </script>
 
 
 
