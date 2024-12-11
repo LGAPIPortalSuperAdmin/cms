@@ -15,7 +15,7 @@ contents: >-2
 
   \    <p className="text--light mt3">When the occupancy sensor confirms that no one is home, it can turn off lights and power to reduce energy waste, and the robot vacuum can start cleaning automatically. Door sensors can alert you when motion is detected, so you can make sure your home is safe while you're away.</p>
 
-  \    <div className="btns"><CoLink href="/apiManage/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink></div>
+  \    <div className="btns"><div><CoLink href="/apiManage/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink><p className="bu-ex-g">Learn about APIs that allow you to freely create <br /> home IoT services tailored to your lifestyle.</p></div><div> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink><p className="bu-ex-g">Freely test the ThinQ API <br /> with a personal access token (PAT).</p></div></div>
 
   \    </div>
 
