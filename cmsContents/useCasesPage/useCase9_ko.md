@@ -15,7 +15,7 @@ contents: >-2
 
   \    <p className="text--light mt3">재실센서로 집안에 아무도 없는 것이 확인되면, 조명과 전원을 끄고 에너지 낭비를 줄이며 로봇청소기는 자동으로 청소를 시작할 수 있습니다.<br />도어센서를 통해 동작이 감지되면 알림이 전달되도록 하여 외출중에도 집안의 안전을 확인 할 수 있습니다.</p>
 
-  \    <div className="btns"><CoLink href="/apiManage/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink></div>
+  \    <div className="btns"><div><CoLink href="/apiManage/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink><p className="bu-ex-g">여러분의 라이프스타일에 맞춘 홈 IoT 서비스를 <br /> 자유롭게 만들어줄 API를 만나보세요.</p></div><div> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink><p className="bu-ex-g">개인 액세스 토큰(PAT)으로 <br /> ThinQ API를 자유롭게 테스트 해보세요.</p></div></div>
 
   \    </div>
 
