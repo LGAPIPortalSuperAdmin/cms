@@ -162,7 +162,7 @@ contents: >-
 
   \    <li class="usecase-pick__item off">
 
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_dehumid.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_dehumid.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
   \    <p className="usecase-pick__txt">제습기</p>
 
