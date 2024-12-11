@@ -548,7 +548,7 @@ contents: >-
   \    <dd style="margin-top:40px;">
 
 
-  \    <div className="usecase-more" style="@media screen and (max-width: 640px) {.usecase-more {flex-direction: inherit;}}">
+  \    <div className="usecase-more" style="grid-gap: 0.2rem;">
 
 
   \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">Push API</a>
@@ -640,7 +640,7 @@ contents: >-
   \    <div className="box box--r-1.25 col-full usecase-box">
 
 
-  \    <div className="usecase-more">
+  \    <div className="usecase-more"  style="grid-gap: 0.2rem;">
 
 
   \    <p className="usecase-more__title">LG에서 제공하는 공식 Home Assistant를 확인해 보세요.</p> 
