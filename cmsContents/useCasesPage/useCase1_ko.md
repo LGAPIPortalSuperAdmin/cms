@@ -153,7 +153,128 @@ contents: >-
   \    <div className="grid usecase-grid--else">
 
 
-  \    
+
+  \    <div className="col-full mt4 mb0 usecase-pick">
+
+  \    <p className="usecase-pick__badge">LG's Pick!</p>
+
+  \    <ul className="usecase-pick__list flex flex-wrap">
+
+  \    <li class="usecase-pick__item off">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_dehumid.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">제습기</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_oven.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">오븐</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_cooktop.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">쿡탑</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_refridge.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">냉장고</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_washer.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">세탁기</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_dryer.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">건조기</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_styler.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">스타일러</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_shoe_care.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">슈케어</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_heat_exchanger.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">전열교환기</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_sensor.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">공기질센서</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_fire_detection.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">화재감지센서</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_hub.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">허브</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item off">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_enterance.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">재실센서</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item off">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_ceiling_fan.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">실링팬</p>
+
+  \    </li>
+
+  \    </ul>
+
+  \    </div>
 
 
   \    <div className="box box--r-1.25 box--clean col-full usecase-box">
