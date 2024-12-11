@@ -23,7 +23,7 @@ contents: >-2
 
   \    </p>
 
-  \    <div className="btns"><div><CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink><p className="bu-ex-g">Learn about APIs that can expand your business's potential.</p></div><div> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">Request a partnership</CoLink><p className="bu-ex-g">By partnering with us, maximize your competitiveness / with differentiated services and features.</p></div></div>
+  \    <div className="btns"><div><CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink><p className="bu-ex-g">Learn about APIs that can expand your business's potential.</p></div><div> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">Request a partnership</CoLink><p className="bu-ex-g">By partnering with us, maximize your competitiveness <br /> with differentiated services and features.</p></div></div>
 
   \    </div>
 
