@@ -133,7 +133,7 @@ contents: >-
   \    
 
 
-  \    <div className="box box--r-1.25 box--clean usecase-box" style="margin-top:1.5rem !important;">
+  \    <div className="box box--r-1.25 box--clean usecase-box" style="margin-top:20px !important;">
 
 
   \    <div className="usecase-cont">
