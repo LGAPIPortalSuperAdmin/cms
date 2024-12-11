@@ -18,10 +18,10 @@ contents: >-
   \    <p className="sub">마이 커넥트(개인 API)</p>
 
 
-  \    <p className="title lgEiText">ThinQ Connect Open API 를 통한 스마트홈 통합</p>
+  \    <p className="title lgEiText">ThinQ API로 스마트 홈 통합</p>
 
 
-  \    <p className="text--light mt3">마이 커넥트(개인 API)LG의 ThinQ Connect Open API는 스마트홈 경험을 혁신적으로 변화시키는 강력한 도구입니다. 이 API를 통해 Home Assistant와 같은 인기 있는 오픈소스 스마트홈 플랫폼에서 쉽게 통합할 수 있습니다. 선호하는 플랫폼에서 LG ThinQ 가전를 쉽게 연결하고 관리해 보세요.<br> </p>
+  \    <p className="text--light mt3">LG의 ThinQ API는 스마트홈 경험을 혁신적으로 변화시킵니다. 이 API로 Home Assistant와 같은 인기 있는 오픈소스 스마트홈 플랫폼을 쉽게 통합할 수 있습니다. 선호하는 플랫폼에서 LG ThinQ 가전을 쉽게 연결하고 관리해보세요.<br> </p>
 
 
   \    </div>
@@ -39,8 +39,6 @@ contents: >-
   \    <div className="container">
 
 
-
-
   \    <div className="grid usecase-grid--2">
 
 
@@ -50,10 +48,10 @@ contents: >-
   \    <div className="usecase-cont">
 
 
-  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_call.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">PAT 기반 API 호출</p>
+  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_call.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">안전하고 편리한 PAT API 호출</p>
 
 
-  \    <p className="usecase-cont__txt">안전하고 편리한 PAT(Personal Access Token) 를 발급받고 RESTful API 를 통해 LG 가전을 자유롭게 제어하세요.</p>
+  \    <p className="usecase-cont__txt">안전하고 편리한 PAT(Personal Access Token)를 발급받고 RESTful API로 LG 가전을 자유롭게 제어해보세요.</p>
 
 
   \    </div>
@@ -74,7 +72,7 @@ contents: >-
   \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_smarthomefree.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">스마트홈 경험의 자유도 향상</p>
 
 
-  \    <p className="usecase-cont__txt">ThinQ 가전와 스마트홈 플랫폼 연동을 위한 RESTful API 규격을 이용해어플리케이션을 만들어 보세요.</p>
+  \    <p className="usecase-cont__txt">ThinQ 가전와 스마트홈 플랫폼 연동을 위한 RESTful API 규격을 이용해 어플리케이션을 만들어보세요.</p>
 
 
   \    </div>
@@ -84,8 +82,6 @@ contents: >-
 
 
   \    </div>
-
-
 
 
   \    <div className="grid usecase-grid--3">
@@ -97,10 +93,10 @@ contents: >-
   \    <div className="usecase-cont">
 
 
-  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_develControl.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Devices API로 편리한 가전 제어</p>
+  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_develControl.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Devices API로 가전을 편리하게 제어</p>
 
 
-  \    <p className="usecase-cont__txt">가전목록을 조회하고, 상태조회하고 제어가 가능합니다.</p>
+  \    <p className="usecase-cont__txt">가전 목록과 상태를 조회하고 제어합니다.</p>
 
 
   \    </div>
@@ -118,10 +114,10 @@ contents: >-
   \    <div className="usecase-cont">
 
 
-  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_pushEvent.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">기기를 말해주는 Push API/Event API</p>
+  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_pushEvent.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Push API/Event API로 확인하는 가전 상태</p>
 
 
-  \    <p className="usecase-cont__txt">ThinQ 가전에서 보내는 Push 메세지와 상태 변경 시 발송되는 Event 메시지를 수신하세요.</p>
+  \    <p className="usecase-cont__txt">ThinQ 가전에서 보내는 Push 메시지와 상태 변경 시 발송되는 Event 메시지를 받아보세요.</p>
 
 
   \    </div>
@@ -142,7 +138,7 @@ contents: >-
   \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_mqttProtocol.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Client API - MQTT Protocol</p>
 
 
-  \    <p className="usecase-cont__txt">Client 등록 후, 등록한 Client 계정의 Push/Event 메시지를 확인 할 수 있습니다.</p>
+  \    <p className="usecase-cont__txt">Client 등록 후 등록한 Client 계정의 Push/Event 메시지를 확인할 수 있습니다.</p>
 
 
   \    </div>
@@ -152,8 +148,6 @@ contents: >-
 
 
   \    </div>
-
-
 
 
   \    <div className="grid usecase-grid--else">
@@ -168,10 +162,10 @@ contents: >-
   \    <div className="usecase-dev">
 
 
-  \    <h3 class="usecase-dev__tit">지금 바로, 사용중인 스마트홈 플랫폼과 통합하세요</h3>
+  \    <h3 class="usecase-dev__tit">당신의 스마트홈 플랫폼과 통합해보세요</h3>
 
 
-  \    <p className="usecase-dev__txt">ThinQ Open API 를 활용하여 기존 사용하고 있는 스마트홈 플랫폼에 통합할 수 있습니다.<br>ThinQ Open API 서비스를 통해 여러 스마트홈 플랫폼에 기여하고, ThinQ 가전을 연동하세요.</p>
+  \    <p className="usecase-dev__txt">ThinQ API로 이용 중인 ThinQ 기기를 스마트홈 플랫폼에 통합할 수 있습니다.<br>LGE Smart Solution API Developer가 제공하는 서비스와 당신의 설계로 다양한 스마트홈 플랫폼에 기여해보세요.</p>
 
 
   \    <ul className="usecase-dev__list">
@@ -189,10 +183,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>ThinQ API 이해 및 사용법 익히기</dt>
+  \    <dt>ThinQ API 사용 가이드</dt>
 
 
-  \    <dd>ThinQ API 문서를 읽고, 예제 코드를 따라 연습합니다. <br> API 호출 순서와 필요한 인증 정보를 숙지해야 합니다.</dd>
+  \    <dd>ThinQ API 문서를 읽고, 예제 코드를 따라 연습합니다. <br> API 호출 순서와 필요한 인증 정보를 숙지할 수 있어요.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -261,7 +255,7 @@ contents: >-
   \    <dt>ThinQ API를 활용한 기능 구현</dt>
 
 
-  \    <dd>LG 가전제품과의 통신을 위한 ThinQ API 함수를 작성합니다. <br> Home Assistant와의 통합을 위해 필요한 데이터 구조를 설계합니다.</dd>
+  \    <dd>LG 가전과의 통신을 위한 ThinQ API 함수를 작성합니다. <br> Home Assistant와의 통합을 위해 필요한 데이터 구조를 설계합니다.</dd>
 
 
   \    </dl>
@@ -312,10 +306,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>프로젝트에 기여</dt>
+  \    <dt>스마트 홈 프로젝트에 기여</dt>
 
 
-  \    <dd>GitHub나 다른 버전 관리 시스템을 통해 코드를 제출합니다. <br> 프로젝트 관리자와 상의하여 기여 내용을 반영시킵니다.</dd>
+  \    <dd>GitHub나 다른 버전 관리 시스템을 통해 코드를 제출합니다. <br> 프로젝트 관리자와 상의해 기여 내용을 반영합니다.</dd>
 
 
   \    </dl>
@@ -334,8 +328,6 @@ contents: >-
 
 
   \    </div>
-
-
 
 
   \    <div className="box box--r-1.25 box--clean col-full usecase-box">
@@ -365,7 +357,7 @@ contents: >-
   \    <dt>RESTful API 호출을 위한 PAT (Personal Access Token) 획득</dt>
 
 
-  \    <dd>PAT 발급과 API 호출을 위한 준비를 시작합니다.<br>사용하고자 하는 API에 따라 Scopes를 지정하며, 최대 10개까지 생성 가능합니다.</dd>
+  \    <dd>PAT 발급과 API 호출을 위한 준비를 시작합니다. <br> 사용하고자 하는 API에 따라 Scopes를 지정하며, 최대 10개까지 생성 가능합니다.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -407,10 +399,7 @@ contents: >-
   \    <dt>Route API 를 통해 Endpoint 확인</dt>
 
 
-  \    <dd>Route API 를 호출하여 Endpoint 를 확인하세요. 이용하시는 국가별로 Endpoint 가 다를 수 있습니다.<br>
-
-
-  \    Route API 를 통해 호출하는 API 서버의 Endpoint는 물론, MQTT Protocol 을 위한 MQTT 주소도 확인할 수 있습니다.</dd>
+  \    <dd>Route API 를 호출하여 Endpoint 를 확인하세요. 이용하시는 국가별로 Endpoint 가 다를 수 있습니다. <br> Route API 를 통해 호출하는 API 서버의 Endpoint는 물론, MQTT Protocol 을 위한 MQTT 주소도 확인할 수 있습니다.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -452,10 +441,7 @@ contents: >-
   \    <dt>Devices API</dt>
 
 
-  \    <dd>Devices API 를 활용하여 ThinQ 가전 목록을 조회 합니다.<br>
-
-
-  \    가전이 정상적으로 연결되어 있다면, 가전 목록을 바탕으로 Device ID 활용하여 상태를 조회하거나 제어를 할 수 있습니다.</dd>
+  \    <dd>Devices API 를 활용하여 ThinQ 가전 목록을 조회 합니다. <br> 가전이 정상적으로 연결되어 있다면, 가전 목록을 바탕으로 Device ID 활용하여 상태를 조회하거나 제어를 할 수 있습니다.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -497,7 +483,7 @@ contents: >-
   \    <dt>Client 등록</dt>
 
 
-  \    <dd>ThinQ 가전으로부터 오는 상태 변화나, Push 메시지들을 수신하기 위해서는, MQTT Protocol 을 통한 접속이 필요 합니다. 메시지를 받을 주체를 개별 Client 로 등록하여 받아 보세요.</dd>
+  \    <dd>ThinQ 가전으로부터 오는 상태 변화나, Push 메시지들을 수신하기 위해서는, MQTT Protocol 을 통한 접속이 필요 합니다. <br> 메시지를 받을 주체를 개별 Client 로 등록하여 받아 보세요.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -527,7 +513,7 @@ contents: >-
   \    <li className="usecase-dev__item grid">
 
 
-  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_push_event.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Push, Event 구독</div>
+  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_push_event.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Push/Event 구독</div>
 
 
   \    <div className="col-8 col-sm-full">
@@ -539,10 +525,7 @@ contents: >-
   \    <dt>ThinQ 가전으로부터 알림과 상태 변화와 실시간 수신</dt>
 
 
-  \    <dd>Push API, Event API 를 활용하여 ThinQ 가전의 알림을 실시간으로 수신할 수 있습니다.<br>
-
-
-  \    Push, Event 구독 처리 후 등록한 Client 로 MQTT 수신을 받아보세요.</dd>
+  \    <dd>Push API, Event API 를 활용하여 ThinQ 가전의 알림을 실시간으로 수신할 수 있습니다. <br> Push, Event 구독 처리 후 등록한 Client 로 MQTT 수신을 받아보세요.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -633,8 +616,6 @@ contents: >-
 
 
   \    </div>
-
-
 
 
   \    <div className="box box--r-1.25 col-full usecase-box">
