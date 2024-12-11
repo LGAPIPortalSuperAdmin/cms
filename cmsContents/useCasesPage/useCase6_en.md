@@ -15,7 +15,7 @@ contents: >-2
 
   \    <p className="text--light mt3">Automatically reduce energy use by detecting vacant spaces or spaces with excessive heating and cooling. This not only keeps a space at the right temperature, but also reduces unnecessary power consumption, saving energy costs.</p>
 
-  \    <div className="btns"><div><CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink><p className="bu-ex-g">Learn about APIs that can expand your business's potential.</p></div><div> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">Request a partnership</CoLink><p className="bu-ex-g">By partnering with us, maximize your competitiveness / with differentiated services and features.</p></div></div>
+  \    <div className="btns"><div><CoLink href="/apiManage/business_connect?s=1727316475662" className="btn-round-black btn-l"> ThinQ Business API </CoLink><p className="bu-ex-g">Learn about APIs that can expand your business's potential.</p></div><div> <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">Request a partnership</CoLink><p className="bu-ex-g">By partnering with us, maximize your competitiveness <br /> with differentiated services and features.</p></div></div>
 
   \    </div>
 
