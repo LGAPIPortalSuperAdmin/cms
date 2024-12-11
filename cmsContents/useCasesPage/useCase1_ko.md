@@ -226,6 +226,14 @@ contents: >-
 
   \    <li class="usecase-pick__item">
 
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_purifier.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">공기청정기</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_shoe_care.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
   \    <p className="usecase-pick__txt">슈케어</p>
@@ -261,22 +269,6 @@ contents: >-
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_hub.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
   \    <p className="usecase-pick__txt">허브</p>
-
-  \    </li>
-
-  \    <li class="usecase-pick__item off">
-
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_enterance.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
-
-  \    <p className="usecase-pick__txt">재실센서</p>
-
-  \    </li>
-
-  \    <li class="usecase-pick__item off">
-
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/off_ceiling_fan.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
-
-  \    <p className="usecase-pick__txt">실링팬</p>
 
   \    </li>
 
