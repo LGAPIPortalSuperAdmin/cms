@@ -160,7 +160,7 @@ contents: >-
 
   \    <ul className="usecase-pick__list flex flex-wrap">
 
-  \    <li class="usecase-pick__item off">
+  \    <li class="usecase-pick__item">
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_dehumid.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
