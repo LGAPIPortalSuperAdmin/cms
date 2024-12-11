@@ -52,6 +52,7 @@ contents: >-2
 
   \    
 
+
   <div>
 
 
@@ -64,11 +65,9 @@ contents: >-2
   \    </CoLink>
 
 
-  <p className="bu-ex-g">By partnering with us, maximize your competitiveness / with differentiated services and features.</p>
+  <p className="bu-ex-g">By partnering with us, maximize your competitiveness <br /> with differentiated services and features.</p>
 
   </div>
-
-
 
 
   \    </div>
