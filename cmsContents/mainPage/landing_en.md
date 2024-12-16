@@ -12,7 +12,7 @@ contents: >-
   \              <b>Start</b> with <br class="mo" />
 
 
-  \              <b>LGE Smart Solution API</b>
+  \              <b>LG Smart Solution API</b>
 
 
   \            </h3>
@@ -324,7 +324,7 @@ contents: >-
   \              <p className="tem-txt--t2 txt-center mb7.5 mb-sm-3">
 
 
-  \                Focus on the essence of your business with LGE Smart Solution API Developer.
+  \                Focus on the essence of your business with LG Smart Solution API Developer.
 
 
   \              </p>
@@ -534,7 +534,7 @@ contents: >-
   \            <div className="container">
 
 
-  \              <p className="tem-text__tit">Contact us with any questions you may have about using LGE Smart Solution APIs.</p>
+  \              <p className="tem-text__tit">Contact us with any questions you may have about using LG Smart Solution APIs.</p>
 
 
   \              <CoLink
