@@ -153,7 +153,6 @@ contents: >-
   \    <div className="grid usecase-grid--else">
 
 
-
   \    <div className="col-full mt4 mb0 usecase-pick">
 
   \    <p className="usecase-pick__badge">LG's Pick!</p>
@@ -718,7 +717,7 @@ contents: >-
   \    <dt>Overall Sequence Diagram</dt>
 
 
-  \    <dd><img src="/assets/images/img_new_Overall_Sequence.png" alt="" style="width: 100% !important; height:100% !important;"></dd>
+  \    <dd class="usecase-new-myconnect"><img src="/assets/images/img_new_Overall_Sequence.png" alt="" style="width: 100% !important; height:100% !important;"></dd>
 
 
   \    </dl>
