@@ -23,6 +23,8 @@ contents: >-
 
   \    <p className="text--light mt3">LG의 ThinQ API는 스마트홈 경험을 혁신적으로 변화시킵니다. 이 API로 Home Assistant와 같은 인기 있는 오픈소스 스마트홈 플랫폼을 쉽게 통합할 수 있습니다. 선호하는 플랫폼에서 LG ThinQ 가전을 쉽게 연결하고 관리해보세요.<br> </p>
 
+  \    <div className="btns"><div><CoLink href="/apiManage/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink><p className="bu-ex-g">여러분의 라이프스타일에 맞춘 홈 IoT 서비스를 <br /> 자유롭게 만들어줄 API를 만나보세요.</p></div><div> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink><p className="bu-ex-g">개인 액세스 토큰(PAT)으로 <br /> ThinQ API를 자유롭게 테스트 해보세요.</p></div></div>
+
 
   \    </div>
 
