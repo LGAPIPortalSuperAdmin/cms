@@ -15,13 +15,13 @@ contents: >-
   \    <div className="box-item">
 
 
-  \    <p className="sub">마이 커넥트(개인 API)</p>
+  \    <p className="sub">My Connect (Personal API)</p>
 
 
-  \    <p className="title lgEiText">ThinQ API로 스마트 홈 통합</p>
+  \    <p className="title lgEiText">Smart Home Integration with ThinQ APIs</p>
 
 
-  \    <p className="text--light mt3">LG의 ThinQ API는 스마트홈 경험을 혁신적으로 변화시킵니다. 이 API로 Home Assistant와 같은 인기 있는 오픈소스 스마트홈 플랫폼을 쉽게 통합할 수 있습니다. 선호하는 플랫폼에서 LG ThinQ 가전을 쉽게 연결하고 관리해보세요.<br> </p>
+  \    <p className="text--light mt3">LG's ThinQ API is a powerful tool that transforms your smart home experience. With ThinQ APIs, integrate your ThinQ home appliances on popular open-source smart home platforms like Home Assistant. Easily connect and control your LG ThinQ home appliances on the platform of your choice.<br> </p>
 
 
   \    </div>
@@ -48,10 +48,10 @@ contents: >-
   \    <div className="usecase-cont">
 
 
-  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_call.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">안전하고 편리한 PAT API 호출</p>
+  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_call.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">PAT (Personal Access Token)-based API calls</p>
 
 
-  \    <p className="usecase-cont__txt">안전하고 편리한 PAT(Personal Access Token)를 발급받고 RESTful API로 LG 가전을 자유롭게 제어해보세요.</p>
+  \    <p className="usecase-cont__txt">Obtain a secure and convenient PAT and use the RESTful API to control LG home appliances with ease.</p>
 
 
   \    </div>
@@ -69,10 +69,10 @@ contents: >-
   \    <div className="usecase-cont">
 
 
-  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_smarthomefree.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">스마트홈 경험의 자유도 향상</p>
+  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_smarthomefree.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Expand the smart home experience</p>
 
 
-  \    <p className="usecase-cont__txt">ThinQ 가전와 스마트홈 플랫폼 연동을 위한 RESTful API 규격을 이용해 어플리케이션을 만들어보세요.</p>
+  \    <p className="usecase-cont__txt">Utilize the RESTful API standard, which helps integrate ThinQ home appliances and smart home platforms, to create an application.</p>
 
 
   \    </div>
@@ -93,10 +93,10 @@ contents: >-
   \    <div className="usecase-cont">
 
 
-  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_develControl.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Devices API로 가전을 편리하게 제어</p>
+  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_develControl.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Easily control home appliances with the Devices API</p>
 
 
-  \    <p className="usecase-cont__txt">가전 목록과 상태를 조회하고 제어합니다.</p>
+  \    <p className="usecase-cont__txt">View, control, and check the status of home appliances.</p>
 
 
   \    </div>
@@ -114,10 +114,10 @@ contents: >-
   \    <div className="usecase-cont">
 
 
-  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_pushEvent.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Push API/Event API로 확인하는 가전 상태</p>
+  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_pushEvent.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Push API/Event API for notifying the real-time device status</p>
 
 
-  \    <p className="usecase-cont__txt">ThinQ 가전에서 보내는 Push 메시지와 상태 변경 시 발송되는 Event 메시지를 받아보세요.</p>
+  \    <p className="usecase-cont__txt">Receive push notifications sent from ThinQ home appliances. Get event messages as soon as the status of home appliances changes.</p>
 
 
   \    </div>
@@ -138,7 +138,7 @@ contents: >-
   \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_mqttProtocol.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Client API - MQTT Protocol</p>
 
 
-  \    <p className="usecase-cont__txt">Client 등록 후 등록한 Client 계정의 Push/Event 메시지를 확인할 수 있습니다.</p>
+  \    <p className="usecase-cont__txt">Once a client has been registered, the Push/Event messages associated with the client account can be checked.</p>
 
 
   \    </div>
