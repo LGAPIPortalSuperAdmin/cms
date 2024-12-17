@@ -673,10 +673,20 @@ contents: >-
   \    <div className="usecase-more" style="grid-gap: 0.2rem;">
 
 
-  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">Push API</a>
+  \    <a className="btn-round-primary btn-l" href="
+
+  https://smartsolution.developer.lge.com/en/apiManage/thinq_connect?s=1734386839990#tag/Push-API
 
 
-  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">Event API</a>
+  " style="margin: 0 0.3rem;">Push API</a>
+
+
+  \    <a className="btn-round-primary btn-l" href="
+
+  https://smartsolution.developer.lge.com/en/apiManage/thinq_connect?s=1734386839990#tag/Event-API
+
+
+  " style="margin: 0 0.3rem;">Event API</a>
 
 
   \    </div>
