@@ -319,7 +319,10 @@ contents: >-
   \    <div className="usecase-more">
 
 
-  \    <a className="btn-round-primary btn-l" href="https://dev.openapi.developer.lge.com/ko/apiManage/business_connect?s=1727316475662" style="margin: 0 0.3rem;"> API 문서 보기 </a>
+  \    <a className="btn-round-primary btn-l" href="
+
+
+  https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1734386839990" style="margin: 0 0.3rem;"> API 문서 보기 </a>
 
 
   \    </div>
@@ -487,7 +490,13 @@ contents: >-
   \    <div className="usecase-more">
 
 
-  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">PAT 발급</a>
+  \    <a className="btn-round-primary btn-l" href="
+
+
+  https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1734386839990#tag/PAT(Personal-Access-Token)
+
+
+  " style="margin: 0 0.3rem;">PAT 발급</a>
 
 
   \    </div>
