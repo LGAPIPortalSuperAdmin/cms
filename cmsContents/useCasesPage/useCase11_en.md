@@ -161,9 +161,11 @@ contents: >-
 
   \    <li class="usecase-pick__item">
 
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_dehumid.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/
 
-  \    <p className="usecase-pick__txt">제습기</p>
+  on_humidifier.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">가습기</p>
 
   \    </li>
 
