@@ -464,7 +464,7 @@ contents: >-
   \    <li className="usecase-dev__item grid">
 
 
-  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_PAT.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">PAT 생성</div>
+  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_PAT.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Create PAT</div>
 
 
   \    <div className="col-8 col-sm-full">
@@ -473,10 +473,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>RESTful API 호출을 위한 PAT (Personal Access Token) 획득</dt>
+  \    <dt>Acquire PAT (Personal Access Token) for calling RESTful API</dt>
 
 
-  \    <dd>PAT 발급과 API 호출을 위한 준비를 시작합니다. <br> 사용하고자 하는 API에 따라 Scopes를 지정하며, 최대 10개까지 생성 가능합니다.</dd>
+  \    <dd>Start preparation for issuing PAT and calling API<br>You can designate scopes depending on which API you intend to use.<br>(maximum generation limit: 10)</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -485,7 +485,7 @@ contents: >-
   \    <div className="usecase-more">
 
 
-  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">PAT 발급</a>
+  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">PAT issuance</a>
 
 
   \    </div>
@@ -506,7 +506,7 @@ contents: >-
   \    <li className="usecase-dev__item grid">
 
 
-  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_Endpoint.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Endpoint 확인</div>
+  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_Endpoint.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Verify Endpoint</div>
 
 
   \    <div className="col-8 col-sm-full">
@@ -515,10 +515,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>Route API 를 통해 Endpoint 확인</dt>
+  \    <dt>Verify Endpoint via Route API</dt>
 
 
-  \    <dd>Route API 를 호출하여 Endpoint 를 확인하세요. 이용하시는 국가별로 Endpoint 가 다를 수 있습니다. <br> Route API 를 통해 호출하는 API 서버의 Endpoint는 물론, MQTT Protocol 을 위한 MQTT 주소도 확인할 수 있습니다.</dd>
+  \    <dd>Verify Endpoint by calling Route API. Endpoint may vary by your country setting.<br>You can perform Endpoint verification for the API server which you would be calling via Route API, and also find the MQTT address for the MQTT Protocol.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -548,7 +548,7 @@ contents: >-
   \    <li className="usecase-dev__item grid">
 
 
-  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_ThinQ.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">ThinQ 가전 조회, 상태 확인, 제어</div>
+  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_ThinQ.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">View, Check status, and Control ThinQ Home Appliances</div>
 
 
   \    <div className="col-8 col-sm-full">
@@ -560,7 +560,7 @@ contents: >-
   \    <dt>Devices API</dt>
 
 
-  \    <dd>Devices API 를 활용하여 ThinQ 가전 목록을 조회 합니다. <br> 가전이 정상적으로 연결되어 있다면, 가전 목록을 바탕으로 Device ID 활용하여 상태를 조회하거나 제어를 할 수 있습니다.</dd>
+  \    <dd>Check the list of ThinQ home appliances via Devices API.<br>If the home appliances are connected properly, you can control them or view their status by utilizing the Device ID based on the list of home appliances.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -590,7 +590,7 @@ contents: >-
   \    <li className="usecase-dev__item grid">
 
 
-  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_client.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Client 등록/인증서 발급</div>
+  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_client.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Register Client/Issue Certificate</div>
 
 
   \    <div className="col-8 col-sm-full">
@@ -599,10 +599,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>Client 등록</dt>
+  \    <dt>Register Client</dt>
 
 
-  \    <dd>ThinQ 가전으로부터 오는 상태 변화나, Push 메시지들을 수신하기 위해서는, MQTT Protocol 을 통한 접속이 필요 합니다. <br> 메시지를 받을 주체를 개별 Client 로 등록하여 받아 보세요.</dd>
+  \    <dd>To receive status updates or Push messages from ThinQ home appliances, you need access via MQTT Protocol.<br>Register entities that would receive the messages as Clients and receive them.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -632,7 +632,7 @@ contents: >-
   \    <li className="usecase-dev__item grid">
 
 
-  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_push_event.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Push/Event 구독</div>
+  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_push_event.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Push/Event Subscription</div>
 
 
   \    <div className="col-8 col-sm-full">
@@ -641,10 +641,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>ThinQ 가전으로부터 알림과 상태 변화와 실시간 수신</dt>
+  \    <dt>Receive real-time notifications and status updates from ThinQ home appliances.</dt>
 
 
-  \    <dd>Push API, Event API 를 활용하여 ThinQ 가전의 알림을 실시간으로 수신할 수 있습니다. <br> Push, Event 구독 처리 후 등록한 Client 로 MQTT 수신을 받아보세요.</dd>
+  \    <dd>You can receive real-time notifications from ThinQ home appliances by utilizing Push API, Event API.<br>Receive MQTT with the client you registered after processing the Push, Event subscription.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -686,10 +686,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>MQTT Protocol 을 활용한 실시간 알림 수신</dt>
+  \    <dt>Real-time notification reception by utilizing MQTT Protocol</dt>
 
 
-  \    <dd>Route API 로 받은 MQTT 주소를 통해, MQTT 를 접속한 다음, Push, Event API 로 구독 처리를 하면 ThinQ 가전으로부터 상태 변화, 알림 메시지를 받을 수 있습니다.</dd>
+  \    <dd>Access MQTT with the MQTT address you received from the Route API and process subscription with the Push, Event API, then you can receive status updates and notifications from ThinQ home appliances.</dd>
 
 
   \    </dl>
@@ -743,7 +743,7 @@ contents: >-
   \    <div className="usecase-more"  style="grid-gap: 0.2rem;">
 
 
-  \    <p className="usecase-more__title">LG에서 제공하는 공식 Home Assistant를 확인해 보세요.</p> 
+  \    <p className="usecase-more__title">Check out the official Home Assistant from LG</p> 
 
 
   \    <a className="btn-round-primary btn-m" href="#" style="margin: 0 0.3rem;">Home Assistant Ingetration</a>
