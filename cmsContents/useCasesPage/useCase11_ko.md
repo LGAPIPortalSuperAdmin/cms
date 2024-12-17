@@ -674,10 +674,20 @@ contents: >-
   \    <div className="usecase-more" style="grid-gap: 0.2rem;">
 
 
-  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">Push API</a>
+  \    <a className="btn-round-primary btn-l" href="
+
+  https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1734386839990#tag/Push-API
 
 
-  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">Event API</a>
+  " style="margin: 0 0.3rem;">Push API</a>
+
+
+  \    <a className="btn-round-primary btn-l" href="
+
+  https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1734386839990#tag/Event-API
+
+
+  " style="margin: 0 0.3rem;">Event API</a>
 
 
   \    </div>
@@ -767,10 +777,20 @@ contents: >-
   \    <p className="usecase-more__title">LG에서 제공하는 공식 Home Assistant를 확인해 보세요.</p> 
 
 
-  \    <a className="btn-round-primary btn-m" href="#" style="margin: 0 0.3rem;">Home Assistant Integration</a>
+  \    <a className="btn-round-primary btn-m" href="
+
+  https://www.home-assistant.io/integrations/lg_thinq/
 
 
-  \    <a className="btn-round-primary btn-m" href="#" style="margin: 0 0.3rem;">Python Open API SDK</a>
+  " style="margin: 0 0.3rem;">Home Assistant Integration</a>
+
+
+  \    <a className="btn-round-primary btn-m" href="
+
+  https://github.com/thinq-connect/pythinqconnect
+
+
+  " style="margin: 0 0.3rem;">Python Open API SDK</a>
 
 
   \    </div>
