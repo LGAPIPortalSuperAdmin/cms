@@ -317,7 +317,7 @@ contents: >-
   \    <div className="usecase-more">
 
 
-  \    <a className="btn-round-primary btn-l" href="https://dev.openapi.developer.lge.com/ko/apiManage/business_connect?s=1727316475662" style="margin: 0 0.3rem;">View API guide</a>
+  \    <a className="btn-round-primary btn-l" href="https://dev.openapi.developer.lge.com/ko/apiManage/business_connect?s=1727316475662" style="margin: 0 0.3rem;">View API Document</a>
 
 
   \    </div>
