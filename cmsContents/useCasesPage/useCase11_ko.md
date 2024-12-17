@@ -458,9 +458,6 @@ contents: >-
   \    <div className="usecase-dev">
 
 
-  \    <h3 class="usecase-dev__tit">활용가능한 ThinQ Open API 상세 설명</h3>
-
-
   \    <ul className="usecase-dev__list">
 
 
