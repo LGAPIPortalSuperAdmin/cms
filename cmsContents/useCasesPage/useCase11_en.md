@@ -581,7 +581,7 @@ contents: >-
 
   \    <a className="btn-round-primary btn-l" href="
 
-  https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1734386839990#tag/Device-API
+  https://smartsolution.developer.lge.com/en/apiManage/thinq_connect?s=1734386839990#tag/Device-API
 
 
   " style="margin: 0 0.3rem;">Devices API</a>
