@@ -746,7 +746,7 @@ contents: >-
   \    <p className="usecase-more__title">LG에서 제공하는 공식 Home Assistant를 확인해 보세요.</p> 
 
 
-  \    <a className="btn-round-primary btn-m" href="#" style="margin: 0 0.3rem;">Home Assistant Ingetration</a>
+  \    <a className="btn-round-primary btn-m" href="#" style="margin: 0 0.3rem;">Home Assistant Integration</a>
 
 
   \    <a className="btn-round-primary btn-m" href="#" style="margin: 0 0.3rem;">Python Open API SDK</a>
