@@ -24,6 +24,9 @@ contents: >-
   \    <p className="text--light mt3">LG's ThinQ API is a powerful tool that transforms your smart home experience. With ThinQ APIs, integrate your ThinQ home appliances on popular open-source smart home platforms like Home Assistant. Easily connect and control your LG ThinQ home appliances on the platform of your choice.<br> </p>
 
 
+  \    <div className="btns"><div><CoLink href="/apiManage/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink><p className="bu-ex-g">Learn about APIs that allow you to freely create <br /> home IoT services tailored to your lifestyle.</p></div><div> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink><p className="bu-ex-g">Freely test the ThinQ API <br /> with a personal access token (PAT).</p></div></div>
+
+
   \    </div>
 
 
