@@ -716,7 +716,7 @@ contents: >-
   \    <dt>Overall Sequence Diagram</dt>
 
 
-  \    <dd class="usecase-new-myconnect"><img src="/assets/images/img_new_Overall_Sequence.png" alt="" style="width: 100% !important; height:100% !important;"></dd>
+  \    <dd class="usecase-new-myconnect"><img src="/assets/images/img_new_Overall_Sequence_en.png" alt="" style="width: 100% !important; height:100% !important;"></dd>
 
 
   \    </dl>
