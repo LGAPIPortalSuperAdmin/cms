@@ -776,10 +776,20 @@ contents: >-
   \    <p className="usecase-more__title">Check out the official Home Assistant from LG</p> 
 
 
-  \    <a className="btn-round-primary btn-m" href="#" style="margin: 0 0.3rem;">Home Assistant Integration</a>
+  \    <a className="btn-round-primary btn-m" href="
+
+  https://www.home-assistant.io/integrations/lg_thinq/
 
 
-  \    <a className="btn-round-primary btn-m" href="#" style="margin: 0 0.3rem;">Python Open API SDK</a>
+  " style="margin: 0 0.3rem;">Home Assistant Integration</a>
+
+
+  \    <a className="btn-round-primary btn-m" href="
+
+  https://github.com/thinq-connect/pythinqconnect
+
+
+  " style="margin: 0 0.3rem;">Python Open API SDK</a>
 
 
   \    </div>
