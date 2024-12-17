@@ -163,113 +163,113 @@ contents: >-
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/
 
-  on_humidifier.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+  on_humidifier.png" isFullSize alt="Dehumidifier Icon" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">가습기</p>
-
-  \    </li>
-
-  \    <li class="usecase-pick__item">
-
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_oven.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
-
-  \    <p className="usecase-pick__txt">오븐</p>
+  \    <p className="usecase-pick__txt">Dehumidifier</p>
 
   \    </li>
 
   \    <li class="usecase-pick__item">
 
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_cooktop.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_oven.png" isFullSize alt="Oven Icon" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">쿡탑</p>
-
-  \    </li>
-
-  \    <li class="usecase-pick__item">
-
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_refridge.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
-
-  \    <p className="usecase-pick__txt">냉장고</p>
+  \    <p className="usecase-pick__txt">Oven</p>
 
   \    </li>
 
   \    <li class="usecase-pick__item">
 
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_washer.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_cooktop.png" isFullSize alt="Cooktop Icon" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">세탁기</p>
-
-  \    </li>
-
-  \    <li class="usecase-pick__item">
-
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_dryer.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
-
-  \    <p className="usecase-pick__txt">건조기</p>
+  \    <p className="usecase-pick__txt">Cooktop</p>
 
   \    </li>
 
   \    <li class="usecase-pick__item">
 
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_ac.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_refridge.png" isFullSize alt="Refrigerator Icon" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">에어컨</p>
-
-  \    </li>
-
-  \    <li class="usecase-pick__item">
-
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_styler.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
-
-  \    <p className="usecase-pick__txt">스타일러</p>
+  \    <p className="usecase-pick__txt">Refrigerator</p>
 
   \    </li>
 
   \    <li class="usecase-pick__item">
 
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_purifier.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_washer.png" isFullSize alt="Washer Icon" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">공기청정기</p>
-
-  \    </li>
-
-  \    <li class="usecase-pick__item">
-
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_shoe_care.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
-
-  \    <p className="usecase-pick__txt">슈케어</p>
+  \    <p className="usecase-pick__txt">Washer</p>
 
   \    </li>
 
   \    <li class="usecase-pick__item">
 
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_heat_exchanger.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_dryer.png" isFullSize alt="Dryer Icon" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">전열교환기</p>
-
-  \    </li>
-
-  \    <li class="usecase-pick__item">
-
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_sensor.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
-
-  \    <p className="usecase-pick__txt">공기질센서</p>
+  \    <p className="usecase-pick__txt">Dryer</p>
 
   \    </li>
 
   \    <li class="usecase-pick__item">
 
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_fire_detection.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_ac.png" isFullSize alt="Air Conditioner Icon" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">화재감지센서</p>
+  \    <p className="usecase-pick__txt">Air Conditioner</p>
 
   \    </li>
 
   \    <li class="usecase-pick__item">
 
-  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_hub.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_styler.png" isFullSize alt="Styler Icon" className="usecase-pick__img" /></figure>
 
-  \    <p className="usecase-pick__txt">허브</p>
+  \    <p className="usecase-pick__txt">Styler</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_purifier.png" isFullSize alt="Air Purifier Icon" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">Air Purifier</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_shoe_care.png" isFullSize alt="Shoecare Icon" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">Shoecare</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_heat_exchanger.png" isFullSize alt="Heat Recovery Ventilator Icon" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">Heat Recovery Ventilator</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_sensor.png" isFullSize alt="Air Quality Sensor Icon" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">Air Quality Sensor</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_fire_detection.png" isFullSize alt="Fire detection sensor Icon" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">Fire detection sensor</p>
+
+  \    </li>
+
+  \    <li class="usecase-pick__item">
+
+  \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_hub.png" isFullSize alt="Herbs Icon" className="usecase-pick__img" /></figure>
+
+  \    <p className="usecase-pick__txt">Herbs</p>
 
   \    </li>
 
@@ -284,10 +284,10 @@ contents: >-
   \    <div className="usecase-dev">
 
 
-  \    <h3 class="usecase-dev__tit">당신의 스마트홈 플랫폼과 통합해보세요</h3>
+  \    <h3 class="usecase-dev__tit">Integrate with your favorite smart home platform today.</h3>
 
 
-  \    <p className="usecase-dev__txt">ThinQ API로 이용 중인 ThinQ 기기를 스마트홈 플랫폼에 통합할 수 있습니다.<br>LGE Smart Solution API Developer가 제공하는 서비스와 당신의 설계로 다양한 스마트홈 플랫폼에 기여해보세요.</p>
+  \    <p className="usecase-dev__txt">Integrate ThinQ home appliances into a smart home platform using ThinQ APIs.<br>Contribute to various smart home platforms with the services provided by LGE Smart Solution API Developer and your own designs.</p>
 
 
   \    <ul className="usecase-dev__list">
@@ -305,10 +305,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>ThinQ API 사용 가이드</dt>
+  \    <dt>Understanding and familiarizing with ThinQ API</dt>
 
 
-  \    <dd>ThinQ API 문서를 읽고, 예제 코드를 따라 연습합니다. <br> API 호출 순서와 필요한 인증 정보를 숙지할 수 있어요.</dd>
+  \    <dd>Open the ThinQ API guide below and practice with the test code.<br>Familiarize yourself with the order of API calls and the required authentication information.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -317,7 +317,7 @@ contents: >-
   \    <div className="usecase-more">
 
 
-  \    <a className="btn-round-primary btn-l" href="https://dev.openapi.developer.lge.com/ko/apiManage/business_connect?s=1727316475662" style="margin: 0 0.3rem;"> API 문서 보기 </a>
+  \    <a className="btn-round-primary btn-l" href="https://dev.openapi.developer.lge.com/ko/apiManage/business_connect?s=1727316475662" style="margin: 0 0.3rem;">View API guide</a>
 
 
   \    </div>
@@ -338,7 +338,7 @@ contents: >-
   \    <li className="usecase-dev__item grid">
 
 
-  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_smartflatform.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">스마트 플랫폼</div>
+  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_smartflatform.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Smart Platform</div>
 
 
   \    <div className="col-8 col-sm-full">
@@ -347,10 +347,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>선택한 오픈 소스 프로젝트 분석</dt>
+  \    <dt>Analyze the selected open source project</dt>
 
 
-  \    <dd>Home Assistant와 같은 인기 있는 오픈 소스 허브 제품을 선택합니다. <br> 해당 프로젝트의 기여 방식과 요구사항을 파악합니다.</dd>
+  \    <dd>Select an open source hub product that is in high demand such as "Home Assistant".<br>How to contribute to the project and the requirements</dd>
 
 
   \    </dl>
@@ -365,7 +365,7 @@ contents: >-
   \    <li className="usecase-dev__item grid">
 
 
-  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_datasetting.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">데이터 구조 설계</div>
+  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_datasetting.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Designing Data Structure</div>
 
 
   \    <div className="col-8 col-sm-full">
@@ -374,10 +374,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>ThinQ API를 활용한 기능 구현</dt>
+  \    <dt>Actualizing features using ThinQ API</dt>
 
 
-  \    <dd>LG 가전과의 통신을 위한 ThinQ API 함수를 작성합니다. <br> Home Assistant와의 통합을 위해 필요한 데이터 구조를 설계합니다.</dd>
+  \    <dd>Write ThinQ API functions to communicate with LG home appliances.<br>Design data structure needed for the integration with the Home Assistant.</dd>
 
 
   \    </dl>
@@ -392,7 +392,7 @@ contents: >-
   \    <li className="usecase-dev__item grid">
 
 
-  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_testSave.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">테스트 및 안정화</div>
+  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_testSave.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Test and Stabilization</div>
 
 
   \    <div className="col-8 col-sm-full">
@@ -401,10 +401,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>코드 리뷰 및 테스트</dt>
+  \    <dt>Code reviews and tests</dt>
 
 
-  \    <dd>작성한 코드를 다른 개발자들과 공유합니다. <br> 충분한 테스트를 거쳐 안정성을 확보합니다.</dd>
+  \    <dd>Share your codes with other developers.<br>Acquire stability through sufficient rounds of tests.</dd>
 
 
   \    </dl>
@@ -419,7 +419,7 @@ contents: >-
   \    <li className="usecase-dev__item grid">
 
 
-  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_project.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">프로젝트 기여</div>
+  \    <div className="col-4 col-sm-full"><img loading="lazy" decoding="async" data-nimg="fill" src="/assets/images/usecase_icons/product/icon_new_project.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Contributing to Projects</div>
 
 
   \    <div className="col-8 col-sm-full">
@@ -428,10 +428,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>스마트 홈 프로젝트에 기여</dt>
+  \    <dt>Contribute to the Smart Home project</dt>
 
 
-  \    <dd>GitHub나 다른 버전 관리 시스템을 통해 코드를 제출합니다. <br> 프로젝트 관리자와 상의해 기여 내용을 반영합니다.</dd>
+  \    <dd>Submit codes via GitHub or other version control systems.<br>Apply the contributions after discussing the matter with the project manager.</dd>
 
 
   \    </dl>
@@ -456,9 +456,6 @@ contents: >-
 
 
   \    <div className="usecase-dev">
-
-
-  \    <h3 class="usecase-dev__tit">활용가능한 ThinQ Open API 상세 설명</h3>
 
 
   \    <ul className="usecase-dev__list">
