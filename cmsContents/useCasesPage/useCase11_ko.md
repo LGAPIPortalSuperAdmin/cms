@@ -95,7 +95,7 @@ contents: >-
   \    <div className="usecase-cont">
 
 
-  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_develControl.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Devices API로 가전을 편리하게 제어</p>
+  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_develControl.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Device API로 가전을 편리하게 제어</p>
 
 
   \    <p className="usecase-cont__txt">가전 목록과 상태를 조회하고 제어합니다.</p>
@@ -568,10 +568,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>Devices API</dt>
+  \    <dt>Device API</dt>
 
 
-  \    <dd>Devices API 를 활용하여 ThinQ 가전 목록을 조회 합니다. <br> 가전이 정상적으로 연결되어 있다면, 가전 목록을 바탕으로 Device ID 활용하여 상태를 조회하거나 제어를 할 수 있습니다.</dd>
+  \    <dd>Device API 를 활용하여 ThinQ 가전 목록을 조회 합니다. <br> 가전이 정상적으로 연결되어 있다면, 가전 목록을 바탕으로 Device ID 활용하여 상태를 조회하거나 제어를 할 수 있습니다.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -585,7 +585,7 @@ contents: >-
   https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1734386839990#tag/Device-API
 
 
-  " style="margin: 0 0.3rem;">Devices API</a>
+  " style="margin: 0 0.3rem;">Device API</a>
 
 
   \    </div>
