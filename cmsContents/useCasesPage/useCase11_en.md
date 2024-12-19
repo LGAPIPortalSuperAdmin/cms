@@ -96,7 +96,7 @@ contents: >-
   \    <div className="usecase-cont">
 
 
-  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_develControl.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Easily control home appliances with the Devices API</p>
+  \    <p className="usecase-cont__title mb2"><img loading="lazy" decoding="async" data-nimg="fill" className="usecase-cont__icon" src="/assets/images/usecase_icons/sense/icon_new_develControl.svg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">Easily control home appliances with the Device API</p>
 
 
   \    <p className="usecase-cont__txt">View, control, and check the status of home appliances.</p>
@@ -567,10 +567,10 @@ contents: >-
   \    <dl>
 
 
-  \    <dt>Devices API</dt>
+  \    <dt>Device API</dt>
 
 
-  \    <dd>Check the list of ThinQ home appliances via Devices API.<br>If the home appliances are connected properly, you can control them or view their status by utilizing the Device ID based on the list of home appliances.</dd>
+  \    <dd>Check the list of ThinQ home appliances via Device API.<br>If the home appliances are connected properly, you can control them or view their status by utilizing the Device ID based on the list of home appliances.</dd>
 
 
   \    <dd style="margin-top:40px;">
@@ -584,7 +584,7 @@ contents: >-
   https://smartsolution.developer.lge.com/en/apiManage/thinq_connect?s=1734386839990#tag/Device-API
 
 
-  " style="margin: 0 0.3rem;">Devices API</a>
+  " style="margin: 0 0.3rem;">Device API</a>
 
 
   \    </div>
