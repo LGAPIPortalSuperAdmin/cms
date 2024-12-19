@@ -1,8 +1,5 @@
 ---
 contents: >-2
-  
-
-
    <div className="main-wrap usecase-wrap mt0">
 
   \    <div className="top-visual">
@@ -50,6 +47,9 @@ contents: >-2
   \    </CoLink>
 
 
+  <p className="bu-ex-g">비즈니스에 새로운 가능성을 열어줄 API를 만나보세요.	</p></div>
+
+
   \    <CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388">
 
 
@@ -57,6 +57,9 @@ contents: >-2
 
 
   \    </CoLink>
+
+
+  <p className="bu-ex-g">파트너십을 통해 차별화된 서비스와 기능으로, <br /> 한층 더 강력한 경쟁력을 확보해보세요.	</p></div>
 
 
   \    </div>
