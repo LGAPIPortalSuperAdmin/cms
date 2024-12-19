@@ -143,10 +143,416 @@ contents:
           ```
       - name: dryer
         x-displayName: Dryer
-        description: "## Device profile schema\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-profile\"\n  exampleRef=\"#/components/examples/dryer-profile-example\" />\n\n## equest/Response Schema\n### Device status response\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-object\"\n  exampleRef=\"#/components/examples/dryer-object-example\" />\n\n### Device control request\nYou can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n#### Example \nStarting the standard drying course\n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\nStopping the standard drying course\n```json\n  { \n    \"operation\": {\n      \"dryerOperationMode\": \"STOP\"\n    }\n  }\n```\nSetting start/stop time\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStart\": 2\n    }\n  }\n```\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStop\": 4\n    }\n  }\n```\n"
+        description: |
+          ## Device profile schema
+          <SchemaDefinition
+            schemaRef="#/components/schemas/dryer-profile"
+            exampleRef="#/components/examples/dryer-profile-example" />
+
+          ## equest/Response Schema
+          ### Device status response
+          <SchemaDefinition
+            schemaRef="#/components/schemas/dryer-object"
+            exampleRef="#/components/examples/dryer-object-example" />
+
+          ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            showExample={false} showWriteOnly={false} />
+
+          #### Example 
+          Starting the standard drying course
+          ```json
+            {
+              "operation": {
+                "dryerOperationMode": "START"
+              }
+            }
+          ```
+          Stopping the standard drying course
+          ```json
+            { 
+              "operation": {
+                "dryerOperationMode": "STOP"
+              }
+            }
+          ```
+          Setting start/stop time
+          ```json
+            { 
+              "timer": {
+                "relativeHourToStart": 2
+              }
+            }
+          ```
+          ```json
+            { 
+              "timer": {
+                "relativeHourToStop": 4
+              }
+            }
+          ```
       - name: air_conditioner
         x-displayName: Air Conditioner
-        description: "## Device profile schema\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-profile\"\n  exampleRef=\"#/components/examples/air_conditioner-profile-example\" />\n\n## equest/Response Schema\n### Device status response\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-object\"\n  exampleRef=\"#/components/examples/air_conditioner-object-example\" />\n\n### Device control request\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n### Example \nControl run mode \n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\nControl the operation of the air conditioner\n```json\t\n  {\n    \"operation\":{\n      \"airConOperationMode\": \"POWER_ON\"\n    }   \n  }\n```\nControl the operation of the air purifier\n```json\t\n  {\n    \"operation\": {\n      \"airCleanOperationMode\": \"START\"\n    }\n  }\n```\nControl cooling temperature\n```json\t\n  #targetTemperature\n  {\n    \"temperature\": {\n      \"targetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\n```json\t\n  #coolTargetTemperature\n  {\n    \"temperature\":{\n      \"coolTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\n```json\t\n  #autoTargetTemperature\n  {\n    \"temperature\":{\n      \"autoTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\nControl heating temperature\n```json\t\n  {\n    \"temperature\": {\n      \"heatTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\nControl Absolute Time On Timer / Control cancel\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": 1,\n      \"absoluteMinuteToStart\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": -1,\n      \"absoluteMinuteToStart\": -1\n    }\n  }\n```\nControl Absolute Time Off Timer/ Control cancel\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": 1,\n      \"absoluteMinuteToStop\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": -1,\n      \"absoluteMinuteToStop\": -1\n    }\n  }\n```\nControl Relative Time On Timer/ Control cancel \n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 0\n    }\n  }\n```\nControl Relative Time Off Timer/ Control cancel\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\nControl Sleep Timer Off Timer/ Control cancel\n```json\t\n  #Timer On\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\nControl wind strengt\n```json\t\n  {\n    \"airFlow\": {\n      \"windStrength\": \"MID\"\n    }\n  }\n```\nControl power save\n```json\t\n  {\n    \"powerSave\": {\n      \"powerSaveEnabled\": true\n    }\n  }\n```\nControl air quality monitoring settings\n```json\t\n  {\n    \"airQualitySensor\": {\n      \"monitoringEnabled\": \"ALWAYS\"\n    }\n  }\n```\nControl twoSet Temperature\n```json\t\n  {\n    \"twoSetTemperature\": {\n      \"coolTargetTemperature\": 20,\n      \"heatTargetTemperature\": 30,\n      \"unit\": \"C\"\n    }\n  }\n```\n###Control exception handling the Air Conditioner\n  \n  The device might not be controllable depending on the state of the device. \nWhen using the Control Request API, you must first query the device status and handle any exceptions appropriately if control is not possible. Use the following examples as a guide.\n\n  #### 1. Control Air Conditioner Settings Temperature Relative \n  e.g.) User commands : 'Air Conditioner Temperature 1 degree up/down'\n\n  1. handle when **airConOperationMode** is **POWER_OFF  \n    - If airConOperationMode has a value of POWER_OFF, the device is uncontrollable. \nProcess the user to respond, as shown in the following example. \n    - Response example:\n      - \"The air conditioner is powered off.\n  \n  2. **Handle if **airConOperationMode** is **POWER_ON  \n    - If the value of airConOperationMode is POWER_ON, then depending on the value of currentJobMode, you should handle it as follows.\n      - **currentJobMode**: **AUTO**, **COOL** or **HEAT**\n        - If the value of currentJobMode is AUTO, COOL, or HEAT, handle it as follows.\n          - 1. change the request header value.\n            - **Change **x-conditional-control** to false.\n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```\n          - 2. Change the request body value.\n            - **CurrentJobMode** is **COOL**, then\n              ```json\n                {\n                  \"temperature\": {\n                    \"coolTargetTemperature\": Desired Temperature±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **CurrentJobMode** is **HEAT**, then\n              ```json\n                {\n                  \"temperature\": {\n                    \"heatTargetTemperature\": Desired Temperature±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **CurrentJobMode** is **Then**, then\n              ```json\n                {\n                  \"temperature\": {\n                    \"autoTargetTemperature\": Desired Temperature,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n          - 3. Handle when a request results in Error Code 2201 - Not provided Feature\n            - An error that occurs when the controllable temperature range is exceeded. Use the following examples to help you provide an appropriate response to your users.\n            - Response example\n              - \"Air Conditioner (Cooling/Heating) Temperature can be set from x degrees to x degrees.\n      - **currentJobMode**is not **AUTO**, **COOL** or **HEAT**,then  \n        - If the value of currentJobMode has a value other than AUTO, COOL, or HEAT, Temperature control is not possible. Provide the user with an out-of-control response.\n        - Response example\n          - \"It is not controllable as it can only be controlled in cooling/heating mode.\n  \n  3. If you control Fahrenheit temperatures  \n    - If you're requesting in Fahrenheit, you'll need a separate conversion table. Please contact your LG representative.\n\n  \n  #### 2. set the Air Conditioner temperature to absolute control\n  e.g) User commands: \"Set the Air Conditioner Temperature to N degrees.\"\n\n  1. **airConOperationMode**is **POWER_OFF**, then \n    If airConOperationMode is POWER_OFF, the device is uncontrollable. Process the user to respond, as shown in the following example.  \n    - Response example:\n      - \"Air Conditioner is in Power Off state.\"\n\n  2. Handle when airConOperationMode is POWER_ON  \n    If airConOperationMode is POWER_ON, then depending on the currentJobMode value, you should handle it as follows  \n      - **currentJobMode**: is **AUTO**, **COOL** or **HEAT** then,  Process as follows  \n        - 1. Change the request header value.\n          - Change **x-conditional-control** to false.\n            ```json\n              {\n                \"x-conditional-control\": false,\n              }\n            ```\n        - 2. Change the request body value.\n          - **currentJobMode** is **COOL** then, \n            ```json\n              {\n                \"temperature\": {\n                  \"coolTargetTemperature\": Desired Temperature,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode**is **HEAT** then,\n            ```json\n              {\n                \"temperature\": {\n                  \"heatTargetTemperature\": Desired Temperature,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode** is **AUTO** then,\n            ```json\n              {\n                \"temperature\": {\n                  \"autoTargetTemperature\": Desired Temperature,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n        - 3. Handle when a request results in Error Code 2201 - Not provided Feature\n          - This error occurs when the controllable temperature range is exceeded. Use the following examples to help you provide an appropriate response to your users.\n          - Response example\n            - Air Conditioner (Cooling/Heating) Temperaturecan be set from N degrees to N degrees.  \n      - **currentJobMode** is not **AUTO**, **COOL** or **HEAT** then,  \n        - If **currentJobMode** has a value other than **AUTO**, **COOL** or **HEAT**, Temperature control is not possible. Provide the user with an out-of-control response.\n        - Response example  \n          - \"It is not controllable as it can only be controlled in cooling/heating mode.  \n\n  3. If you control Fahrenheit temperatures  \n    - If you're requesting control in Fahrenheit, you'll need a separate conversion table. Please ask your LG representative.\n\n  #### 3.  Relative control of Air Conditioner Airflow Control\n  e.g.) User command: \"Air Conditioner Airflow Increase/Decrease.\"  \n\n  1. **airConOperationMode is **POWER_OFF** then, \n    - If airConOperationMode is **POWER_OFF**, device control is not possible. Process the user to respond as shown in the following example.  \n    - Response example:\n      - \"Air Conditioner is **Power Off**.\"\n\n  2. **airConOperationMode** is **POWER_ON** then, \n    - If airConOperationMode is POWER_ON, then depending on the windStrength value, you should handle it as follows  \n      - **windStrength**: is **AUTO** then, \n        If windStrength is AUTO, the wind strength is controlled in auto mode and cannot be manually controlled. Process the user to respond, as shown in the following example. \n        - Response example:  \n          - \"The air conditioner airflow is adjusted in auto mode and cannot be controlled.\"  \n      - **windStrength**: is not **AUTO** then, \n        If windStrength has a value other than AUTO, it is handled as follows  \n          1. Check the device profile to see the airFlow values provided by that Air Conditioner device. Each device model has different supported airFlow values.  \n          2. Change the request body value.\n            - Change **x-conditional-control** to **false**.  \n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```   \n          3. Change the request body value.  \n              ```json\n              {\n                \"airFlow\": {\n                  \"windStrength\": X\n                }  \n              }\n              ```\n"
+        description: |
+          ## Device profile schema
+          <SchemaDefinition
+            schemaRef="#/components/schemas/air_conditioner-profile"
+            exampleRef="#/components/examples/air_conditioner-profile-example" />
+
+          ## equest/Response Schema
+          ### Device status response
+          <SchemaDefinition
+            schemaRef="#/components/schemas/air_conditioner-object"
+            exampleRef="#/components/examples/air_conditioner-object-example" />
+
+          ### Device control request
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            showExample={false} showWriteOnly={false} />
+
+          ### Example 
+          Control run mode 
+          ```json
+            {
+              "operation": {
+                "dryerOperationMode": "START"
+              }
+            }
+          ```
+          Control the operation of the air conditioner
+          ```json
+            {
+              "operation":{
+                "airConOperationMode": "POWER_ON"
+              }   
+            }
+          ```
+          Control the operation of the air purifier
+          ```json
+            {
+              "operation": {
+                "airCleanOperationMode": "START"
+              }
+            }
+          ```
+          Control cooling temperature
+          ```json
+            #targetTemperature
+            {
+              "temperature": {
+                "targetTemperature": 18,
+                "unit": "C"
+              }
+            }
+          ```
+          ```json
+            #coolTargetTemperature
+            {
+              "temperature":{
+                "coolTargetTemperature": 18,
+                "unit": "C"
+              }   
+            }
+          ```
+          ```json
+            #autoTargetTemperature
+            {
+              "temperature":{
+                "autoTargetTemperature": 18,
+                "unit": "C"
+              }   
+            }
+          ```
+          Control heating temperature
+          ```json
+            {
+              "temperature": {
+                "heatTargetTemperature": 18,
+                "unit": "C"
+              }
+            }
+          ```
+          Control Absolute Time On Timer / Control cancel
+          ```json
+            #Timer On
+            {
+              "timer": {
+                "absoluteHourToStart": 1,
+                "absoluteMinuteToStart": 30
+              }
+            }
+          ```
+          ```json
+            #Timer Off
+            {
+              "timer": {
+                "absoluteHourToStart": -1,
+                "absoluteMinuteToStart": -1
+              }
+            }
+          ```
+          Control Absolute Time Off Timer/ Control cancel
+          ```json
+            #Timer On
+            {
+              "timer": {
+                "absoluteHourToStop": 1,
+                "absoluteMinuteToStop": 30
+              }
+            }
+          ```
+          ```json
+            #Timer Off
+            {
+              "timer": {
+                "absoluteHourToStop": -1,
+                "absoluteMinuteToStop": -1
+              }
+            }
+          ```
+          Control Relative Time On Timer/ Control cancel 
+          ```json
+            #Timer On
+            {
+              "timer": {
+                "relativeHourToStart": 1
+              }
+            }
+          ```
+          ```json
+            #Timer Off
+            {
+              "timer": {
+                "relativeHourToStart": 0
+              }
+            }
+          ```
+          Control Relative Time Off Timer/ Control cancel
+          ```json
+            #Timer On
+            {
+              "timer": {
+                "relativeHourToStop": 1
+              }
+            }
+          ```
+          ```json
+            #Timer Off
+            {
+              "timer": {
+                "relativeHourToStop": 0
+              }
+            }
+          ```
+          Control Sleep Timer Off Timer/ Control cancel
+          ```json
+            #Timer On
+            {
+              "sleepTimer": {
+                "relativeHourToStop": 1
+              }
+            }
+          ```
+          ```json
+            #Timer Off
+            {
+              "sleepTimer": {
+                "relativeHourToStop": 0
+              }
+            }
+          ```
+          Control wind strengt
+          ```json
+            {
+              "airFlow": {
+                "windStrength": "MID"
+              }
+            }
+          ```
+          Control power save
+          ```json
+            {
+              "powerSave": {
+                "powerSaveEnabled": true
+              }
+            }
+          ```
+          Control air quality monitoring settings
+          ```json
+            {
+              "airQualitySensor": {
+                "monitoringEnabled": "ALWAYS"
+              }
+            }
+          ```
+          Control twoSet Temperature
+          ```json
+            {
+              "twoSetTemperature": {
+                "coolTargetTemperature": 20,
+                "heatTargetTemperature": 30,
+                "unit": "C"
+              }
+            }
+          ```
+          ###Control exception handling the Air Conditioner
+            
+            The device might not be controllable depending on the state of the device. 
+          When using the Control Request API, you must first query the device status and handle any exceptions appropriately if control is not possible. Use the following examples as a guide.
+
+            #### 1. Control Air Conditioner Settings Temperature Relative 
+            e.g.) User commands : 'Air Conditioner Temperature 1 degree up/down'
+
+            1. handle when **airConOperationMode** is **POWER_OFF  
+              - If airConOperationMode has a value of POWER_OFF, the device is uncontrollable. 
+              Process the user to respond, as shown in the following example. 
+              - Response example:
+                - "The air conditioner is powered off.
+
+            2. **Handle if **airConOperationMode** is **POWER_ON  
+              - If the value of airConOperationMode is POWER_ON, then depending on the value of currentJobMode, you should handle it as follows.
+                - **currentJobMode**: **AUTO**, **COOL** or **HEAT**
+                  - If the value of currentJobMode is AUTO, COOL, or HEAT, handle it as follows.
+                    - 1. change the request header value.
+                      - **Change **x-conditional-control** to false.
+                        ```json
+                          {
+                            "x-conditional-control": false,
+                          }
+                        ```
+                    - 2. Change the request body value.
+                      - **CurrentJobMode** is **COOL**, then
+                        ```json
+                          {
+                            "temperature": {
+                              "coolTargetTemperature": Desired Temperature±1,
+                              "unit": "C"
+                            }
+                          }
+                        ```
+                      - **CurrentJobMode** is **HEAT**, then
+                        ```json
+                          {
+                            "temperature": {
+                              "heatTargetTemperature": Desired Temperature±1,
+                              "unit": "C"
+                            }
+                          }
+                        ```
+                      - **CurrentJobMode** is **Then**, then
+                        ```json
+                          {
+                            "temperature": {
+                              "autoTargetTemperature": Desired Temperature,
+                              "unit": "C"
+                            }
+                          }
+                        ```
+                    - 3. Handle when a request results in Error Code 2201 - Not provided Feature
+                      - An error that occurs when the controllable temperature range is exceeded. Use the following examples to help you provide an appropriate response to your users.
+                      - Response example
+                        - "Air Conditioner (Cooling/Heating) Temperature can be set from x degrees to x degrees.
+                - **currentJobMode**is not **AUTO**, **COOL** or **HEAT**,then  
+                  - If the value of currentJobMode has a value other than AUTO, COOL, or HEAT, Temperature control is not possible. Provide the user with an out-of-control response.
+                  - Response example
+                    - "It is not controllable as it can only be controlled in cooling/heating mode.
+
+            3. If you control Fahrenheit temperatures  
+              - If you're requesting in Fahrenheit, you'll need a separate conversion table. Please contact your LG representative.
+
+
+            #### 2. set the Air Conditioner temperature to absolute control
+            e.g) User commands: "Set the Air Conditioner Temperature to N degrees."
+
+            1. **airConOperationMode**is **POWER_OFF**, then 
+              If airConOperationMode is POWER_OFF, the device is uncontrollable. Process the user to respond, as shown in the following example.  
+              - Response example:
+                - "Air Conditioner is in Power Off state."
+
+            2. Handle when airConOperationMode is POWER_ON  
+              If airConOperationMode is POWER_ON, then depending on the currentJobMode value, you should handle it as follows  
+                - **currentJobMode**: is **AUTO**, **COOL** or **HEAT** then,  Process as follows  
+                  - 1. Change the request header value.
+                    - Change **x-conditional-control** to false.
+                      ```json
+                        {
+                          "x-conditional-control": false,
+                        }
+                      ```
+                  - 2. Change the request body value.
+                    - **currentJobMode** is **COOL** then, 
+                      ```json
+                        {
+                          "temperature": {
+                            "coolTargetTemperature": Desired Temperature,
+                            "unit": "C"
+                          }
+                        }
+                      ```
+                    - **currentJobMode**is **HEAT** then,
+                      ```json
+                        {
+                          "temperature": {
+                            "heatTargetTemperature": Desired Temperature,
+                            "unit": "C"
+                          }
+                        }
+                      ```
+                    - **currentJobMode** is **AUTO** then,
+                      ```json
+                        {
+                          "temperature": {
+                            "autoTargetTemperature": Desired Temperature,
+                            "unit": "C"
+                          }
+                        }
+                      ```
+                  - 3. Handle when a request results in Error Code 2201 - Not provided Feature
+                    - This error occurs when the controllable temperature range is exceeded. Use the following examples to help you provide an appropriate response to your users.
+                    - Response example
+                      - Air Conditioner (Cooling/Heating) Temperaturecan be set from N degrees to N degrees.  
+                - **currentJobMode** is not **AUTO**, **COOL** or **HEAT** then,  
+                  - If **currentJobMode** has a value other than **AUTO**, **COOL** or **HEAT**, Temperature control is not possible. Provide the user with an out-of-control response.
+                  - Response example  
+                    - "It is not controllable as it can only be controlled in cooling/heating mode.  
+
+            3. If you control Fahrenheit temperatures  
+              - If you're requesting control in Fahrenheit, you'll need a separate conversion table. Please ask your LG representative.
+
+            #### 3.  Relative control of Air Conditioner Airflow Control
+            e.g.) User command: "Air Conditioner Airflow Increase/Decrease."  
+
+            1. **airConOperationMode is **POWER_OFF** then, 
+              - If airConOperationMode is **POWER_OFF**, device control is not possible. Process the user to respond as shown in the following example.  
+              - Response example:
+                - "Air Conditioner is **Power Off**."
+
+            2. **airConOperationMode** is **POWER_ON** then, 
+              - If airConOperationMode is POWER_ON, then depending on the windStrength value, you should handle it as follows  
+                - **windStrength**: is **AUTO** then, 
+                  If windStrength is AUTO, the wind strength is controlled in auto mode and cannot be manually controlled. Process the user to respond, as shown in the following example. 
+                  - Response example:  
+                    - "The air conditioner airflow is adjusted in auto mode and cannot be controlled."  
+                - **windStrength**: is not **AUTO** then, 
+                  If windStrength has a value other than AUTO, it is handled as follows  
+                    1. Check the device profile to see the airFlow values provided by that Air Conditioner device. Each device model has different supported airFlow values.  
+                    2. Change the request body value.
+                      - Change **x-conditional-control** to **false**.  
+                        ```json
+                          {
+                            "x-conditional-control": false,
+                          }
+                        ```   
+                    3. Change the request body value.  
+                        ```json
+                        {
+                          "airFlow": {
+                            "windStrength": X
+                          }
+                        }
+                        ```
       - name: air_purifier
         x-displayName: Air Purifier
         description: |
@@ -423,9 +829,9 @@ contents:
           ### Device control request
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />  
+            showExample={false} showWriteOnly={false} />
 
-          #### Example  
+          #### Example
           Start control  
             ```json
               {
@@ -462,25 +868,25 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example  
-          Starting the styler  
+          #### Example
+          Starting the styler
             ```json
-              { 
+              {
                 "operation": {
                   "stylerOperationMode": "START"
                 }
               }
             ```
 
-          Stopping the styler  
+          Stopping the styler
             ```json
-              { 
+              {
                 "operation": {
                   "stylerOperationMode ": "STOP"
                 }
               }
             ```
-          Setting stop time  
+          Setting stop time
             ```json
               {
                 "timer": {
@@ -523,8 +929,8 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example  
-          Dehumidifier power on  
+          #### Example
+          Dehumidifier power on
             ```json
               {
                 "operation": {
@@ -533,7 +939,7 @@ contents:
               }
             ```
 
-          Dehumidifier power off  
+          Dehumidifier power off
             ```json
               {
                 "operation": {
@@ -542,7 +948,7 @@ contents:
               }
             ```
 
-          Dehumidifier wind strength adjustment (Strength high)  
+          Dehumidifier wind strength adjustment (Strength high)
             ```json
               {
                 "airFlow": {
@@ -550,7 +956,7 @@ contents:
                 }
               }
             ```
-          Dehumidifier wind strength adjustment (Strength Low)  
+          Dehumidifier wind strength adjustment (Strength Low)
             ```json
               {
                 "airFlow": {
@@ -1302,14 +1708,6 @@ contents:
             {
               "audio": {
                 "volume": 10
-              }
-            }
-          ```
-          Mute audio
-          ```json
-            {
-              "audio": {
-                "volumeMute": true
               }
             }
           ```
@@ -19377,7 +19775,6 @@ contents:
                         type: string
                         enum:
                           - r
-                          - w
                     type:
                       type: string
                       enum:
@@ -19386,18 +19783,6 @@ contents:
                       type: object
                       properties:
                         r:
-                          type: array
-                          description: |-
-                            Value | Description
-                            -|-
-                            true | Mute
-                            false | Mute Off 
-                          items:
-                            type: boolean
-                            enum:
-                              - true
-                              - false
-                        w:
                           type: array
                           description: |-
                             Value | Description
@@ -29065,12 +29450,8 @@ contents:
                 type: boolean
                 mode:
                   - r
-                  - w
                 value:
                   r:
-                    - true
-                    - false
-                  w:
                     - true
                     - false
               soundMode:
