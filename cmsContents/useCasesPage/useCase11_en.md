@@ -158,125 +158,186 @@ contents: >-
 
   \    <div className="col-full mt4 mb0 usecase-pick">
 
+
   \    <p className="usecase-pick__badge">LG's Pick!</p>
+
 
   \    <ul className="usecase-pick__list flex flex-wrap">
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/
 
+
   on_humidifier.png" isFullSize alt="Dehumidifier Icon" className="usecase-pick__img" /></figure>
+
 
   \    <p className="usecase-pick__txt">Dehumidifier</p>
 
+
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_oven.png" isFullSize alt="Oven Icon" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">Oven</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_cooktop.png" isFullSize alt="Cooktop Icon" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">Cooktop</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_refridge.png" isFullSize alt="Refrigerator Icon" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">Refrigerator</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_washer.png" isFullSize alt="Washer Icon" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">Washer</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_dryer.png" isFullSize alt="Dryer Icon" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">Dryer</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_ac.png" isFullSize alt="Air Conditioner Icon" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">Air Conditioner</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_styler.png" isFullSize alt="Styler Icon" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">Styler</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_purifier.png" isFullSize alt="Air Purifier Icon" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">Air Purifier</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_shoe_care.png" isFullSize alt="Shoecare Icon" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">Shoecare</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_heat_exchanger.png" isFullSize alt="Heat Recovery Ventilator Icon" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">Heat Recovery Ventilator</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_sensor.png" isFullSize alt="Air Quality Sensor Icon" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">Air Quality Sensor</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_fire_detection.png" isFullSize alt="Fire detection sensor Icon" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">Fire detection sensor</p>
 
+
   \    </li>
+
 
   \    <li class="usecase-pick__item">
 
+
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_hub.png" isFullSize alt="Herbs Icon" className="usecase-pick__img" /></figure>
+
 
   \    <p className="usecase-pick__txt">Herbs</p>
 
+
   \    </li>
 
+
   \    </ul>
+
 
   \    </div>
 
@@ -322,7 +383,8 @@ contents: >-
 
   \    <a className="btn-round-primary btn-l" href="
 
-  https://smartsolution.developer.lge.com/en/apiManage/thinq_connect?s=1734386839990" style="margin: 0 0.3rem;">View API Document</a>
+
+  /apiManage/thinq_connect?s=1734386839990" style="margin: 0 0.3rem;">View API Document</a>
 
 
   \    </div>
@@ -492,7 +554,8 @@ contents: >-
 
   \    <a className="btn-round-primary btn-l" href="
 
-  https://smartsolution.developer.lge.com/en/apiManage/thinq_connect?s=1734386839990#tag/PAT(Personal-Access-Token)
+
+  /apiManage/thinq_connect?s=1734386839990#tag/PAT(Personal-Access-Token)
 
 
   " style="margin: 0 0.3rem;">PAT issuance</a>
@@ -581,7 +644,8 @@ contents: >-
 
   \    <a className="btn-round-primary btn-l" href="
 
-  https://smartsolution.developer.lge.com/en/apiManage/thinq_connect?s=1734386839990#tag/Device-API
+
+  /apiManage/thinq_connect?s=1734386839990#tag/Device-API
 
 
   " style="margin: 0 0.3rem;">Device API</a>
@@ -628,7 +692,8 @@ contents: >-
 
   \    <a className="btn-round-primary btn-l" href="
 
-  https://smartsolution.developer.lge.com/en/apiManage/thinq_connect?s=1734386839990#tag/Client-API
+
+  /apiManage/thinq_connect?s=1734386839990#tag/Client-API
 
 
   " style="margin: 0 0.3rem;">Client API</a>
@@ -675,7 +740,8 @@ contents: >-
 
   \    <a className="btn-round-primary btn-l" href="
 
-  https://smartsolution.developer.lge.com/en/apiManage/thinq_connect?s=1734386839990#tag/Push-API
+
+  /apiManage/thinq_connect?s=1734386839990#tag/Push-API
 
 
   " style="margin: 0 0.3rem;">Push API</a>
@@ -683,7 +749,8 @@ contents: >-
 
   \    <a className="btn-round-primary btn-l" href="
 
-  https://smartsolution.developer.lge.com/en/apiManage/thinq_connect?s=1734386839990#tag/Event-API
+
+  /apiManage/thinq_connect?s=1734386839990#tag/Event-API
 
 
   " style="margin: 0 0.3rem;">Event API</a>
@@ -778,18 +845,20 @@ contents: >-
 
   \    <a className="btn-round-primary btn-m" href="
 
+
   https://www.home-assistant.io/integrations/lg_thinq/
 
 
-  " style="margin: 0 0.3rem;">Home Assistant Integration</a>
+  " style="margin: 0 0.3rem;" target="_blank">Home Assistant Integration</a>
 
 
   \    <a className="btn-round-primary btn-m" href="
 
+
   https://github.com/thinq-connect/pythinqconnect
 
 
-  " style="margin: 0 0.3rem;">Python Open API SDK</a>
+  " style="margin: 0 0.3rem;" target="_blank">Python Open API SDK</a>
 
 
   \    </div>
