@@ -23,6 +23,7 @@ contents: >-
 
   \    <p className="text--light mt3">LG의 ThinQ API는 스마트홈 경험을 혁신적으로 변화시킵니다. 이 API로 Home Assistant와 같은 인기 있는 오픈소스 스마트홈 플랫폼을 쉽게 통합할 수 있습니다. 선호하는 플랫폼에서 LG ThinQ 가전을 쉽게 연결하고 관리해보세요.<br> </p>
 
+
   \    <div className="btns"><div><CoLink href="/apiManage/thinq_connect" className="btn-round-black btn-l"> ThinQ API </CoLink><p className="bu-ex-g">여러분의 라이프스타일에 맞춘 홈 IoT 서비스를 <br /> 자유롭게 만들어줄 API를 만나보세요.</p></div><div> <CoLink className="btn-round-line btn-l" href="https://connect-pat.lgthinq.com" target="_blank"> PAT </CoLink><p className="bu-ex-g">개인 액세스 토큰(PAT)으로 <br /> ThinQ API를 자유롭게 테스트 해보세요.</p></div></div>
 
 
@@ -157,125 +158,186 @@ contents: >-
 
   \    <div className="col-full mt4 mb0 usecase-pick">
 
+
   \    <p className="usecase-pick__badge">LG's Pick!</p>
+
 
   \    <ul className="usecase-pick__list flex flex-wrap">
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/
 
+
   on_humidifier.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
 
   \    <p className="usecase-pick__txt">가습기</p>
 
+
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_oven.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">오븐</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_cooktop.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">쿡탑</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_refridge.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">냉장고</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_washer.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">세탁기</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_dryer.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">건조기</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_ac.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">에어컨</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_styler.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">스타일러</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_purifier.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">공기청정기</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_shoe_care.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">슈케어</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_heat_exchanger.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">전열교환기</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_air_sensor.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">공기질센서</p>
+
 
   \    </li>
 
+
   \    <li class="usecase-pick__item">
+
 
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_fire_detection.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
 
+
   \    <p className="usecase-pick__txt">화재감지센서</p>
 
+
   \    </li>
+
 
   \    <li class="usecase-pick__item">
 
+
   \    <figure className="usecase-pick__img"><CoImage src="/assets/images/usecase_icons/lg_pick/on_hub.png" isFullSize alt="아이콘" className="usecase-pick__img" /></figure>
+
 
   \    <p className="usecase-pick__txt">허브</p>
 
+
   \    </li>
 
+
   \    </ul>
+
 
   \    </div>
 
@@ -322,7 +384,7 @@ contents: >-
   \    <a className="btn-round-primary btn-l" href="
 
 
-  https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1734386839990" style="margin: 0 0.3rem;"> API 문서 보기 </a>
+  /apiManage/thinq_connect?s=1734386839990" style="margin: 0 0.3rem;"> API 문서 보기 </a>
 
 
   \    </div>
@@ -493,7 +555,7 @@ contents: >-
   \    <a className="btn-round-primary btn-l" href="
 
 
-  https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1734386839990#tag/PAT(Personal-Access-Token)
+  /apiManage/thinq_connect?s=1734386839990#tag/PAT(Personal-Access-Token)
 
 
   " style="margin: 0 0.3rem;">PAT 발급</a>
@@ -582,7 +644,8 @@ contents: >-
 
   \    <a className="btn-round-primary btn-l" href="
 
-  https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1734386839990#tag/Device-API
+
+  /apiManage/thinq_connect?s=1734386839990#tag/Device-API
 
 
   " style="margin: 0 0.3rem;">Device API</a>
@@ -629,7 +692,8 @@ contents: >-
 
   \    <a className="btn-round-primary btn-l" href="
 
-  https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1734386839990#tag/Client-API
+
+  /apiManage/thinq_connect?s=1734386839990#tag/Client-API
 
 
   " style="margin: 0 0.3rem;">Client API</a>
@@ -676,7 +740,8 @@ contents: >-
 
   \    <a className="btn-round-primary btn-l" href="
 
-  https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1734386839990#tag/Push-API
+
+  /apiManage/thinq_connect?s=1734386839990#tag/Push-API
 
 
   " style="margin: 0 0.3rem;">Push API</a>
@@ -684,7 +749,8 @@ contents: >-
 
   \    <a className="btn-round-primary btn-l" href="
 
-  https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1734386839990#tag/Event-API
+
+  /apiManage/thinq_connect?s=1734386839990#tag/Event-API
 
 
   " style="margin: 0 0.3rem;">Event API</a>
@@ -779,6 +845,7 @@ contents: >-
 
   \    <a className="btn-round-primary btn-m" href="
 
+
   https://www.home-assistant.io/integrations/lg_thinq/
 
 
@@ -786,6 +853,7 @@ contents: >-
 
 
   \    <a className="btn-round-primary btn-m" href="
+
 
   https://github.com/thinq-connect/pythinqconnect
 
