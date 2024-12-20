@@ -849,7 +849,7 @@ contents: >-
   https://www.home-assistant.io/integrations/lg_thinq/
 
 
-  " style="margin: 0 0.3rem;">Home Assistant Integration</a>
+  " style="margin: 0 0.3rem;" target="_blank">Home Assistant Integration</a>
 
 
   \    <a className="btn-round-primary btn-m" href="
@@ -858,7 +858,7 @@ contents: >-
   https://github.com/thinq-connect/pythinqconnect
 
 
-  " style="margin: 0 0.3rem;">Python Open API SDK</a>
+  " style="margin: 0 0.3rem;" target="_blank">Python Open API SDK</a>
 
 
   \    </div>
