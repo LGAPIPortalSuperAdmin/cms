@@ -600,7 +600,12 @@ contents: >-
   \    <div className="usecase-more">
 
 
-  \    <a className="btn-round-primary btn-l" href="#" style="margin: 0 0.3rem;">Route API</a>
+  \    <a className="btn-round-primary btn-l" href="
+
+  https://dev.smartsolution.developer.lge.com/en/apiManage/thinq_connect?s=1735256432459#tag/Route-API
+
+
+  " style="margin: 0 0.3rem;">Route API</a>
 
 
   \    </div>
