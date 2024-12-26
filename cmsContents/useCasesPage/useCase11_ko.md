@@ -602,7 +602,7 @@ contents: >-
 
   \    <a className="btn-round-primary btn-l" href="
 
-  https://smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1735256432459#tag/Route-API" style="margin: 0 0.3rem;">Route API</a>
+  https://dev.smartsolution.developer.lge.com/ko/apiManage/thinq_connect?s=1735256432459#tag/Route-API" style="margin: 0 0.3rem;">Route API</a>
 
 
   \    </div>
