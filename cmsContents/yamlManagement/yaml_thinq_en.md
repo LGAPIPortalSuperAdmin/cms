@@ -22,6 +22,9 @@ contents:
             5. Select a feature you want.
             6. Select the "CREATE TOKEN" button, and the token will be created. You will then be redirected to the PAT page.
             7. Copy the newly generated token for use.
+      - name: Route API
+        description: |
+          An API to view the domain name of ThinQ Backend.
       - name: Device API
         description: |
           API used to request ThinQ device information and control the device.
@@ -35,13 +38,37 @@ contents:
         description: |
           API used to issue/register user device authentication certificate for receiving messages delivered from the ThinQ devices.  
     paths:
+      /route:
+        get:
+          tags:
+            - Route API
+          summary: View domain name
+          description: |
+            An API to get the Backend address for the ThinQ Platform. Views the domain name by region and configuration.
+          parameters:
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-service-phase'
+          responses:
+            '200':
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/route-res'
+            '400':
+              description: Bad request
       /devices:
         get:
           tags:
             - Device API
           summary: Get device list
           description: |
-            API for getting a list of devices that have been registered on the ThinQ Platform. It must be called at least once before using any other APIs. The list of devices returned by this API contains a device-id to identify the device, which can be used to call other device APIs by specifying the target device. Therefore, this API must be called the first time, but does not need to be called every time after the device list is resolved.      parameters:
+            API for getting a list of devices that have been registered on the ThinQ Platform. It must be called at least once before using any other APIs. The list of devices returned by this API contains a device-id to identify the device, which can be used to call other device APIs by specifying the target device. Therefore, this API must be called the first time, but does not need to be called every time after the device list is resolved.
+          parameters:
             - required: true
               $ref: '#/components/parameters/Authorization'
             - required: true
@@ -708,6 +735,14 @@ contents:
           description: |
             Specify the country where you want to provide the service. Follow the two digits of the ISO country code alphabet (ISO 3166-1 alpha-2) (e.g., KR, US, GB, ...)
           example: KR
+        x-service-phase:
+          name: x-service-phase
+          in: header
+          schema:
+            type: string
+          description: |
+            You can designate the configuration for service provision.
+          example: OP
         x-client-id:
           name: x-client-id
           in: header
@@ -722,8 +757,8 @@ contents:
           schema:
             type: string
           description: |
-            API key for making API calls. Modify the value below to make the call. ""
-          example: default value
+            API key for making API calls. Modify the value below to make the call.<br> "v6GFvkweNo7DK7yD3ylIZ9w52aKBU0eJ7wLXkSR3"
+          example: v6GFvkweNo7DK7yD3ylIZ9w52aKBU0eJ7wLXkSR3
         x-conditional-control:
           name: x-conditional-control
           in: header
@@ -745,6 +780,27 @@ contents:
               type: string
               description: The time when the request came in, following the ISO 8601 format.
               example: '2024-09-01T06:23:20.866279'
+        route-res:
+          description: Response to the domain name search request
+          allOf:
+            - $ref: '#/components/schemas/base-res'
+            - type: object
+              properties:
+                response:
+                  type: object
+                  properties:
+                    apiServer:
+                      type: string
+                      description: API server domain name
+                      example: https://kic-connect-client.lgthinq.com
+                    mqttServer:
+                      type: string
+                      description: MQTT domain name
+                      example: mqtts://a3phael99lf879-ats.iot.ap-northeast-2.amazonaws.com:8883
+                    webSocketServer:
+                      type: string
+                      description: WebSocket domain name
+                      example: wss://a3phael99lf879-ats.iot.ap-northeast-2.amazonaws.com:443/mqtt
         device-list-res:
           description: Device list inquiry response
           allOf:
