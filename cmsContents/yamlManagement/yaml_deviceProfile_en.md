@@ -28,7 +28,7 @@ contents:
                 | property | Read/write support per property and value characteristics |
                 | notification |the type of push messages supported by your device |
                 | error |the type of push messages supported by your device |
-                | extensonProperty | expanded properties |
+                | extensionProperty | expanded properties |
 
             - **Request/Response Schema**
               
@@ -149,7 +149,7 @@ contents:
             schemaRef="#/components/schemas/dryer-profile"
             exampleRef="#/components/examples/dryer-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/dryer-object"
@@ -201,7 +201,7 @@ contents:
             schemaRef="#/components/schemas/air_conditioner-profile"
             exampleRef="#/components/examples/air_conditioner-profile-example" />
 
-          ## equest/Response Schema
+          ## Request/Response Schema
           ### Device status response
           <SchemaDefinition
             schemaRef="#/components/schemas/air_conditioner-object"
@@ -363,7 +363,7 @@ contents:
               }
             }
           ```
-          Control wind strengt
+          Control wind strength
           ```json
             {
               "airFlow": {
@@ -512,7 +512,7 @@ contents:
                   - 3. Handle when a request results in Error Code 2201 - Not provided Feature
                     - This error occurs when the controllable temperature range is exceeded. Use the following examples to help you provide an appropriate response to your users.
                     - Response example
-                      - Air Conditioner (Cooling/Heating) Temperaturecan be set from N degrees to N degrees.  
+                      - Air Conditioner (Cooling/Heating) Temperature can be set from N degrees to N degrees.  
                 - **currentJobMode** is not **AUTO**, **COOL** or **HEAT** then,  
                   - If **currentJobMode** has a value other than **AUTO**, **COOL** or **HEAT**, Temperature control is not possible. Provide the user with an out-of-control response.
                   - Response example  
@@ -1776,7 +1776,7 @@ contents:
           ### Device control request
           Smart buttons don't have controllable properties.
       - name: hej_light_switch
-        x-displayName: Smart light switche
+        x-displayName: Smart light switch
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1833,7 +1833,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/push_pull_door_lock-command-example" />
       - name: hej_plug
-        x-displayName: Smart Plug
+        x-displayName: Smart plug
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1852,7 +1852,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/plug-command-example" />
       - name: hej_plug_mini
-        x-displayName: Smart Plug Mini
+        x-displayName: Smart plug mini
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1871,7 +1871,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/plug_mini-command-example" />
       - name: hej_bulb_white
-        x-displayName: Smart Bulb (White)
+        x-displayName: Smart bulb (white)
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1909,7 +1909,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/bulb_color-command-example" />
       - name: hej_line_led
-        x-displayName: Smart String Light LED
+        x-displayName: Smart string light LED
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1928,7 +1928,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/line_led-command-example" />
       - name: hej_curtain_ctrl
-        x-displayName: Smart Motorized Curtain Controlle
+        x-displayName: Smart motorized curtain control
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1966,7 +1966,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/blind_motor-command-example" />
       - name: hej_switch_strip
-        x-displayName: Smart Switch strap
+        x-displayName: Smart switch strap
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1990,7 +1990,7 @@ contents:
             schemaRef="#/components/schemas/light_switch-command"
             exampleRef="#/components/examples/switch_strip-command-example-1" />
       - name: hej_starlight
-        x-displayName: Smart Star Light
+        x-displayName: Smart star light
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -2009,7 +2009,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/starlight-command-example" />
       - name: hej_doorbell
-        x-displayName: Smart Chime Bell
+        x-displayName: Smart chime bell
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -2028,7 +2028,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/doorbell-command-example" />
       - name: hej_pet_peeder
-        x-displayName: Smart Pet Feeder
+        x-displayName: Smart pet feeder
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -2047,7 +2047,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/pet_peeder-command-example" />
       - name: hej_home_camera
-        x-displayName: Smart Home Camera
+        x-displayName: Smart home camera
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -2066,7 +2066,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/home_camera-command-example" />
       - name: hej_sync_box
-        x-displayName: Syc Box
+        x-displayName: Sync box
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -2085,7 +2085,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/sync_box-command-example" />
       - name: hej_sync_box_sub
-        x-displayName : Synclight
+        x-displayName : Sync light
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -2104,7 +2104,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             exampleRef="#/components/examples/sync_box_sub-command-example" />
       - name: hej_gas_sensor
-        x-displayName: Smart Gas sensor
+        x-displayName: Smart gas sensor
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -2136,7 +2136,7 @@ contents:
           ### Device control request
           Smart fire detection sensor have no controllable properties.
       - name: hej_water_leak_sensor
-        x-displayName: Smart water leak detection senso
+        x-displayName: Smart water leak detection sensor
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -2150,9 +2150,9 @@ contents:
             exampleRef="#/components/examples/water_leak_sensor-object-example" />
 
           ### Device control request
-          Smart water leak detection senso have no controllable properties.
+          Smart water leak detection sensor have no controllable properties.
       - name: hej_thermo_hygrometer
-        x-displayName: Smart thermohygrometer
+        x-displayName: Smart thermo hygrometer
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -2166,7 +2166,7 @@ contents:
             exampleRef="#/components/examples/thermo_hygrometer-object-example" />
 
           ### Device control request
-          Smart thermohygrometer have no controllable properties.
+          Smart thermo hygrometer have no controllable properties.
       - name: hej_siren
         x-displayName:  Smart siren
         description: |
@@ -3284,7 +3284,7 @@ contents:
                                   PREWASH | Pre-washing
                                   SHOES_MODULE | Drying shoes
                                   PROOFING | Proofing
-                                  DISPENSING | Auto-dispensing detergen
+                                  DISPENSING | Auto-dispensing detergent
                                   SOFTENING | Checking the amount of softener
                                   CHECKING_TURBIDITY | Detecting turbidity (when using AUTOWASH course of G+Best model)
                                   CHANGE_CONDITION | Displays after automatically changing options based on the turbidity detection results
@@ -3925,7 +3925,7 @@ contents:
                   properties:
                     remoteControlEnabled:
                       type: object
-                      description: rremoteControlEnabled
+                      description: remoteControlEnabled
                       properties:
                         mode:
                           type: array
@@ -6813,7 +6813,7 @@ contents:
                   properties:
                     warmMode:
                       type: object
-                      description: Wirm Air Mode  
+                      description: Warm Air Mode  
                       properties:
                         mode:
                           type: array
@@ -7421,7 +7421,7 @@ contents:
               properties:
                 warmMode:
                   type: string
-                  description: Wirm Mode
+                  description: Warm Mode
                   enum:
                     - WARM_ON
                     - WARM_OFF
@@ -9256,7 +9256,7 @@ contents:
                                 RESUME | Resume Cleaning
                                 PAUSE | Pause while cleaning
                                 HOMING | Go to the charging terminal
-                                WAKE_UP | wake up (powerSavemode Off )
+                                WAKE_UP | Wake up (power save mode off)
                               items:
                                 type: string
                                 enum:
@@ -20187,6 +20187,22 @@ contents:
                                   type: integer
                                 min:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | Battery is low.
+                    MOTION_IS_DETECTED | Motion is detected.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
+                      - MOTION_IS_DETECTED
         motion_sensor-object:
           type: object
           title: Motion_Sensor
@@ -20279,6 +20295,20 @@ contents:
                                   type: integer
                                 min:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | Battery is low.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
         temperature_humidity_sensor-object:
           type: object
           title: Temperature_Humidity_Sensor
@@ -20372,6 +20402,24 @@ contents:
                                   type: integer
                                 min:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | Battery is low.
+                    DOOR_IS_OPENED | A door is open.
+                    DOOR_IS_CLOSED | A door is closed.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
+                      - DOOR_IS_OPENED
+                      - DOOR_IS_CLOSED
         door_sensor-object:
           type: object
           title: Door_Sensor
@@ -20428,6 +20476,20 @@ contents:
                                   type: integer
                                 min:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | Battery is low.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
         button-object:
           type: object
           title: Button
@@ -20883,6 +20945,22 @@ contents:
                             type: string
                             enum:
                               - r
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | Battery is low.
+                    POWER_IS_OVERLOADED | Power is overloaded.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
+                      - POWER_IS_OVERLOADED
         plug-object:
           type: object
           title: Plug
@@ -21198,6 +21276,22 @@ contents:
                                 enum:
                                   - LOCK
                                   - UNLOCK
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | Battery is low.
+                    POWER_IS_OVERLOADED | System overloaded.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
+                      - POWER_IS_OVERLOADED
         plug_mini-object:
           type: object
           title: Plug_Mini
@@ -23042,6 +23136,24 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | Battery is low.
+                    MOTION_IS_DETECTED | Motion is detected.
+                    DOORBELL_RING | Someone rang the doorbell.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
+                      - MOTION_IS_DETECTED
+                      - DOORBELL_RING
         doorbell-object:
           type: object
           title: Doorbell
@@ -23100,6 +23212,22 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    MOTION_IS_DETECTED | Motion is detected.
+                    FEEDING_IS_COMPLETE | Pet feeding is complete.
+                  items:
+                    type: string
+                    enum:
+                      - MOTION_IS_DETECTED
+                      - FEEDING_IS_COMPLETE
         pet_peeder-object:
           type: object
           title: Pet_Peeder
@@ -23164,6 +23292,22 @@ contents:
                                 enum:
                                   - 'ON'
                                   - 'OFF'
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    MOTION_IS_DETECTED | Motion is detected.
+                    SOUND_IS_DETECTED | Sound is detected.
+                  items:
+                    type: string
+                    enum:
+                      - MOTION_IS_DETECTED
+                      - SOUND_IS_DETECTED
         home_camera-object:
           type: object
           title: Home_Camera
@@ -24180,6 +24324,20 @@ contents:
                                 enum:
                                   - ALARM
                                   - NORMAL
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    GAS_IS_DETECTED | Gas is detected.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
         gas_sensor-object:
           type: object
           title: Gas_Sensor
@@ -24293,6 +24451,24 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    FIRE_IS_DETECTED | Fire is detected.
+                    COVER_IS_SEPARATED | Sensor cover is open.
+                    BATTERY_IS_LOW | Battery is low.
+                  items:
+                    type: string
+                    enum:
+                      - FIRE_IS_DETECTED
+                      - COVER_IS_SEPARATED
+                      - BATTERY_IS_LOW
         fire_sensor-object:
           type: object
           title: Fire_Sensor
@@ -24390,6 +24566,22 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    WATER_LEAK_IS_DETECTED | Leakage is detected.
+                    BATTERY_IS_LOW | Battery is low.
+                  items:
+                    type: string
+                    enum:
+                      - WATER_LEAK_IS_DETECTED
+                      - BATTERY_IS_LOW
         water_leak_sensor-object:
           type: object
           title: Water_Sensor
@@ -24496,6 +24688,20 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | Battery is low.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
         thermo_hygrometer-object:
           type: object
           title: Thermo_Hygrometer
@@ -24664,6 +24870,22 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    ALARM_IS_DETECTED | Alert detected.
+                    BATTERY_IS_LOW | Battery is low.
+                  items:
+                    type: string
+                    enum:
+                      - ALARM_IS_DETECTED
+                      - BATTERY_IS_LOW
         siren-object:
           type: object
           title: Siren
@@ -29542,6 +29764,10 @@ contents:
                     r:
                       min: 0
                       max: 100
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - MOTION_IS_DETECTED
         motion_sensor-object-example:
           value:
             battery:
@@ -29572,6 +29798,9 @@ contents:
                     r:
                       min: 0
                       max: 100
+            notification:
+              push:
+                - BATTERY_IS_LOW
         temperature_humidity_sensor-object-example:
           value:
             battery:
@@ -29601,6 +29830,11 @@ contents:
                     r:
                       - OPEN
                       - CLOSE
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - DOOR_WINDOW_IS_OPENED
+                - DOOR_WINDOW_IS_CLOSED
         door_sensor-object-example:
           value:
             battery:
@@ -29619,6 +29853,9 @@ contents:
                     r:
                       min: 0
                       max: 100
+            notification:
+              push:
+                - BATTERY_IS_LOW
         button-object-example:
           value:
             battery:
@@ -29789,6 +30026,10 @@ contents:
                   type: string
                   mode:
                     - r
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - POWER_IS_OVERLOADED
         plug-object-example:
           value:
             runState:
@@ -29886,6 +30127,10 @@ contents:
                     w:
                       - LOCK
                       - UNLOCK
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - POWER_IS_OVERLOADED
         plug_mini-object-example:
           value:
             runState:
@@ -30566,6 +30811,11 @@ contents:
                       max: 100
                       min: 0
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - MOTION_IS_DETECTED
+                - DOORBELL_RING
         doorbell-object-example:
           value:
             chime:
@@ -30592,6 +30842,10 @@ contents:
                       max: 200
                       min: 10
                       step: 10
+            notification:
+              push:
+                - MOTION_IS_DETECTED
+                - FEEDING_IS_COMPLETE
         pet_peeder-object-example:
           value:
             feed:
@@ -30616,6 +30870,10 @@ contents:
                     w:
                       - 'ON'
                       - 'OFF'
+            notification:
+              push:
+                - MOTION_IS_DETECTED
+                - SOUND_IS_DETECTED
         home_camera-object-example:
           value:
             mode:
@@ -30956,6 +31214,9 @@ contents:
                     r:
                       - ALARM
                       - NORMAL
+            notification:
+              push:
+                - GAS_IS_DETECTED
         gas_sensor-object-example:
           value:
             detectState:
@@ -30990,6 +31251,11 @@ contents:
                       max: 100
                       min: 0
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - FIRE_IS_DETECTED
+                - COVER_IS_SEPARATED
         fire_sensor-object-example:
           value:
             detectState:
@@ -31019,6 +31285,10 @@ contents:
                       max: 100
                       min: 0
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - WATER_LEAK_IS_DETECTED
         water_leak_sensor-object-example:
           value:
             detectState:
@@ -31053,6 +31323,9 @@ contents:
                       max: 100
                       min: 0
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
         thermo_hygrometer-object-example:
           value:
             temperature:
@@ -31108,6 +31381,10 @@ contents:
                       max: 3600
                       min: 1
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - ALARM_IS_DETECTED
         siren-object-example:
           value:
             switchState:
