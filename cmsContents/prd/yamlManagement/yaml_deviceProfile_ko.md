@@ -14,10 +14,10 @@ contents:
         x-displayName: 개요
         x-traitTag: true
         description: |
-          **디바이스 프로파일**은 디바이스의 상태를 기술하거나 제어하는 속성들을 정의합니다. 디바이스 프로파일은 타입별로 제공되며 같은 타입이라도 제품 또는 모델에 따라 차이가 있을 수 있습니다. 디바이스 프로파일을 이용해 상태 조회 및 제어 기능을 적용하십시오. 본 문서에서는 디바이스 타입별로 아래의 내용을 설명합니다.
+          **디바이스 프로파일**은 디바이스의 상태를 기술하거나 제어하는 속성들을 정의합니다.  디바이스 프로파일은 타입별로 제공되며 같은 타입이라도 제품 또는 모델에 따라 차이가 있을 수 있습니다.  디바이스 프로파일을 이용해 상태 조회 및 제어 기능을 적용하십시오. 본 문서에서는 디바이스 타입별로 아래의 내용을 설명합니다.
 
             - **디바이스 프로파일 스키마**
-
+              
               **디바이스 프로파일 조회 API**를 호출하여 수신한 디바이스 프로파일의 스키마를 대하여 설명합니다.
               스키마와 함께 기재된 디바이스 프로파일의 메시지 예제를 참고하십시오.
               디바이스 프로파일 메시지는 아래의 항목으로 구성되며 디바이스 타입에 따라 그 구성이 다를 수 있습니다.
@@ -30,8 +30,9 @@ contents:
                 | extensonProperty | 확장된 속성 |
 
             - **요청/응답 스키마**
-
+              
               디바이스 프로파일을 기반으로 작성하는 **디바이스 상태 조회 API**의 응답 메시지와 **디바이스 제어 API**의 요청 메시지를 설명합니다.
+              
       - name: device type
         x-displayName: 디바이스 타입
         x-traitTag: true
@@ -56,10 +57,10 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
+          #### Example 
           Setting the refrigeration room temperature to Celsius 0 degree
           ```json
-            {
+            { 
               "temperature": {
                 "targetTemperature": 0,
                 "locationName": "FRIDGE",
@@ -69,7 +70,7 @@ contents:
           ```
           Setting the power saving mode
           ```json
-            {
+            { 
               "powerSave": {
                 "powerSaveEnabled": true
               }
@@ -95,25 +96,26 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
+          #### Example 
           Starting the standard washing course
+            
           ```json
-            {
+            { 
               "operation": {
                 "washerOperationMode": "START"
-              },
-              "location": {
+              }, 
+              "location": { 
                 "locationName": "MAIN"
               }
             }
           ```
           Stopping the washing course
           ```json
-            {
+            { 
               "operation": {
                 "washerOperationMode": "STOP"
-              },
-              "location": {
+              }, 
+              "location": { 
                 "locationName": "MAIN"
               }
             }
@@ -141,416 +143,10 @@ contents:
           ```
       - name: dryer
         x-displayName: 건조기
-        description: |
-          ## 디바이스 프로파일 스키마
-          <SchemaDefinition
-            schemaRef="#/components/schemas/dryer-profile"
-            exampleRef="#/components/examples/dryer-profile-example" />
-
-          ## 요청/응답 스키마
-          ### 디바이스 상태 응답
-          <SchemaDefinition
-            schemaRef="#/components/schemas/dryer-object"
-            exampleRef="#/components/examples/dryer-object-example" />
-
-          ### 디바이스 제어 요청
-          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
-          <SchemaDefinition
-            schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example
-          Starting the standard drying course
-          ```json
-            {
-              "operation": {
-                "dryerOperationMode": "START"
-              }
-            }
-          ```
-          Stopping the standard drying course
-          ```json
-            {
-              "operation": {
-                "dryerOperationMode": "STOP"
-              }
-            }
-          ```
-          Setting start/stop time
-          ```json
-            {
-              "timer": {
-                "relativeHourToStart": 2
-              }
-            }
-          ```
-          ```json
-            {
-              "timer": {
-                "relativeHourToStop": 4
-              }
-            }
-          ```
+        description: "## 디바이스 프로파일 스키마\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-profile\"\n  exampleRef=\"#/components/examples/dryer-profile-example\" />\n\n## 요청/응답 스키마\n### 디바이스 상태 응답\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-object\"\n  exampleRef=\"#/components/examples/dryer-object-example\" />\n\n### 디바이스 제어 요청\n디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n#### Example \nStarting the standard drying course\n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\nStopping the standard drying course\n```json\n  { \n    \"operation\": {\n      \"dryerOperationMode\": \"STOP\"\n    }\n  }\n```\nSetting start/stop time\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStart\": 2\n    }\n  }\n```\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStop\": 4\n    }\n  }\n```\n"
       - name: air_conditioner
         x-displayName: 에어컨
-        description: |
-          ## 디바이스 프로파일 스키마
-          <SchemaDefinition
-            schemaRef="#/components/schemas/air_conditioner-profile"
-            exampleRef="#/components/examples/air_conditioner-profile-example" />
-
-          ## 요청/응답 스키마
-          ### 디바이스 상태 응답
-          <SchemaDefinition
-            schemaRef="#/components/schemas/air_conditioner-object"
-            exampleRef="#/components/examples/air_conditioner-object-example" />
-
-          ### 디바이스 제어 요청
-          <SchemaDefinition
-            schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          ### Example
-          운전 모드 제어
-          ```json
-            {
-              "operation": {
-                "dryerOperationMode": "START"
-              }
-            }
-          ```
-          에어컨 동작 제어
-          ```json
-            {
-              "operation":{
-                "airConOperationMode": "POWER_ON"
-              }
-            }
-          ```
-          공기청정 동작 제어
-          ```json
-            {
-              "operation": {
-                "airCleanOperationMode": "START"
-              }
-            }
-          ```
-          냉방 온도 제어
-          ```json
-            #targetTemperature
-            {
-              "temperature": {
-                "targetTemperature": 18,
-                "unit": "C"
-              }
-            }
-          ```
-          ```json
-            #coolTargetTemperature
-            {
-              "temperature":{
-                "coolTargetTemperature": 18,
-                "unit": "C"
-              }
-            }
-          ```
-          ```json
-            #autoTargetTemperature
-            {
-              "temperature":{
-                "autoTargetTemperature": 18,
-                "unit": "C"
-              }
-            }
-          ```
-          난방 온도 제어
-          ```json
-            {
-              "temperature": {
-                "heatTargetTemperature": 18,
-                "unit": "C"
-              }
-            }
-          ```
-          절대 시간 켜짐 Timer 제어/ 취소 제어
-          ```json
-            #Timer On
-            {
-              "timer": {
-                "absoluteHourToStart": 1,
-                "absoluteMinuteToStart": 30
-              }
-            }
-          ```
-          ```json
-            #Timer Off
-            {
-              "timer": {
-                "absoluteHourToStart": -1,
-                "absoluteMinuteToStart": -1
-              }
-            }
-          ```
-          절대 시간 꺼짐 Timer 제어/ 취소 제어
-          ```json
-            #Timer On
-            {
-              "timer": {
-                "absoluteHourToStop": 1,
-                "absoluteMinuteToStop": 30
-              }
-            }
-          ```
-          ```json
-            #Timer Off
-            {
-              "timer": {
-                "absoluteHourToStop": -1,
-                "absoluteMinuteToStop": -1
-              }
-            }
-          ```
-          상대 시간 켜짐 Timer 제어/ 취소 제어
-          ```json
-            #Timer On
-            {
-              "timer": {
-                "relativeHourToStart": 1
-              }
-            }
-          ```
-          ```json
-            #Timer Off
-            {
-              "timer": {
-                "relativeHourToStart": 0
-              }
-            }
-          ```
-          상대 시간 꺼짐 Timer 제어/ 취소 제어
-          ```json
-            #Timer On
-            {
-              "timer": {
-                "relativeHourToStop": 1
-              }
-            }
-          ```
-          ```json
-            #Timer Off
-            {
-              "timer": {
-                "relativeHourToStop": 0
-              }
-            }
-          ```
-          슬립 타이머 꺼짐 Timer 제어/ 취소 제어
-          ```json
-            #Timer On
-            {
-              "sleepTimer": {
-                "relativeHourToStop": 1
-              }
-            }
-          ```
-          ```json
-            #Timer Off
-            {
-              "sleepTimer": {
-                "relativeHourToStop": 0
-              }
-            }
-          ```
-          바람세기 제어
-          ```json
-            {
-              "airFlow": {
-                "windStrength": "MID"
-              }
-            }
-          ```
-          절전 제어
-          ```json
-            {
-              "powerSave": {
-                "powerSaveEnabled": true
-              }
-            }
-          ```
-          공기질 모니터링 설정 제어
-          ```json
-            {
-              "airQualitySensor": {
-                "monitoringEnabled": "ALWAYS"
-              }
-            }
-          ```
-          twoSet 온도 제어
-          ```json
-            {
-              "twoSetTemperature": {
-                "coolTargetTemperature": 20,
-                "heatTargetTemperature": 30,
-                "unit": "C"
-              }
-            }
-          ```
-          ### 에어컨 제어 예외 처리
-
-            디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다.
-            제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다. 다음 예시를 참고로 하십시오.
-
-            #### 1. 에어컨 설정 온도 상대 제어
-            예) 사용자 명령 : '에어컨 온도 1도 올려줘/내려줘'
-
-            1. **airConOperationMode**가 **POWER_OFF**인 경우 처리
-              - airConOperationMode의 값이 POWER_OFF이면 디바이스 제어가 불가능합니다.
-              다음 예시와 같이 사용자에게 응답하도록 처리합니다.
-              - 응답 예시:
-                - "에어컨 전원이 꺼져있습니다.
-
-            2. **airConOperationMode**가 **POWER_ON**인 경우 처리
-              - airConOperationMode의 값이 POWER_ON이면 currentJobMode 값에 따라 다음과 같이 처리해주어야 합니다.
-                - **currentJobMode**: **AUTO**, **COOL** 또는 **HEAT**인 경우
-                  - currentJobMode의 값이 AUTO, COOL 또는 HEAT인 경우 다음과 같이 처리합니다.
-                    - 1. 요청 헤더 값을 변경합니다.
-                      - **x-conditional-control**를 false로 변경합니다.
-                        ```json
-                          {
-                            "x-conditional-control": false,
-                          }
-                        ```
-                    - 2. 요청 바디 값을 변경합니다.
-                      - **currentJobMode**가 **COOL**인 경우
-                        ```json
-                          {
-                            "temperature": {
-                              "coolTargetTemperature": 희망온도±1,
-                              "unit": "C"
-                            }
-                          }
-                        ```
-                      - **currentJobMode**가 **HEAT**인 경우
-                        ```json
-                          {
-                            "temperature": {
-                              "heatTargetTemperature": 희망온도±1,
-                              "unit": "C"
-                            }
-                          }
-                        ```
-                      - **currentJobMode**가 **AUTO**인 경우
-                        ```json
-                          {
-                            "temperature": {
-                              "autoTargetTemperature": 희망온도,
-                              "unit": "C"
-                            }
-                          }
-                        ```
-                    - 3. 요청 결과로 Error Code 2201 - Not provided Feature가 발생하는 경우 처리
-                      - 제어 가능 온도 범위를 벗어난 경우 발생하는 에러입니다. 다음 예시를 참고하여 사용자에게 적절한 응답을 제공합니다.
-                      - 응답 예시
-                        - "에어컨 (냉방/난방) 온도는 x도에서 x도까지 설정이 가능합니다.
-                - **currentJobMode**가 **AUTO**, **COOL**, 또는 **HEAT**이 아닌 경우
-                  - currentJobMode의 값이 AUTO, COOL 또는 HEAT 이외의 값을 갖는 경우 온도 제어가 불가능합니다. 사용자에게 제어가 불가능함을 응답으로 제공합니다.
-                  - 응답 예시
-                    - "냉방/난방 모드에서만 제어가 가능하므로 제어할 수 없습니다.
-
-            3. 화씨 온도 제어인 경우
-              - 화씨 온도로 제어요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.
-
-
-            #### 2. 에어컨 설정 온도 절대 제어
-            예) 사용자 명령: "에어컨 온도 X도로 설정해줘."
-
-            1. **airConOperationMode**가 **POWER_OFF**인 경우 처리
-              airConOperationMode가 POWER_OFF이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.
-              - 응답 예시:
-                - "에어컨이 Power Off 상태 입니다."
-
-            2. **airConOperationMode가 POWER_ON인 경우 처리**
-              airConOperationMode가 POWER_ON이면 currentJobMode 값에 따라 다음과 같이 처리해주어야 합니다.
-                - **currentJobMode: AUTO, COOL, 또는 HEAT인 경우** 다음과 같이 처리합니다.
-                  - 1. 요청 헤더 값을 변경합니다.
-                    - **x-conditional-control**를 false로 변경합니다.
-                      ```json
-                        {
-                          "x-conditional-control": false,
-                        }
-                      ```
-                  - 2. 요청 바디 값을 변경합니다.
-                    - **currentJobMode**가 **COOL**인 경우
-                      ```json
-                        {
-                          "temperature": {
-                            "coolTargetTemperature": 희망온도,
-                            "unit": "C"
-                          }
-                        }
-                      ```
-                    - **currentJobMode**가 **HEAT**인 경우
-                      ```json
-                        {
-                          "temperature": {
-                            "heatTargetTemperature": 희망온도,
-                            "unit": "C"
-                          }
-                        }
-                      ```
-                    - **currentJobMode**가 **AUTO**인 경우
-                      ```json
-                        {
-                          "temperature": {
-                            "autoTargetTemperature": 희망온도,
-                            "unit": "C"
-                          }
-                        }
-                      ```
-                  - 3. 요청 결과로 Error Code 2201 - Not provided Feature가 발생하는 경우 처리
-                    - 제어 가능 온도 범위를 벗어난 경우 발생하는 에러입니다. 다음 예시를 참고하여 사용자에게 적절한 응답을 제공합니다.
-                    - 응답 예시
-                      - 에어컨 (냉방/난방) 온도는 x도에서 x도까지 설정이 가능합니다.
-                - **currentJobMode**가 **AUTO**, **COOL**, 또는 **HEAT**이 아닌 경우
-                  - **currentJobMode**의 값이 **AUTO**, **COOL** 또는 **HEAT** 이외의 값을 갖는 경우 온도 제어가 불가능합니다. 사용자에게 제어가 불가능함을 응답으로 제공합니다.
-                  - 응답 예시
-                    - "냉방/난방 모드에서만 제어가 가능하므로 제어할 수 없습니다.
-
-            3. 화씨 온도 제어인 경우
-              - 화씨 온도로 제어 요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.
-
-            #### 3. 에어컨 풍량 상대 제어
-            예) 사용자 명령: "에어컨 풍량 올려줘/내려줘."
-
-            1. **airConOperationMode가 POWER_OFF인 경우** 처리
-              - airConOperationMode가 POWER_OFF이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.
-              - 응답 예시:
-                - "에어컨이 Power Off 상태 입니다."
-
-            2. **airConOperationMode가 POWER_ON인 경우** 처리
-              - airConOperationMode가 POWER_ON이면 windStrength 값에 따라 다음과 같이 처리해주어야 합니다.
-                - **windStrength : AUTO인 경우**
-                  windStrength가 AUTO인 경우 풍량이 자동으로 제어되며 수동으로 제어할 수 없습니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.
-                  - 응답 예시:
-                    - "에어컨 풍량이 자동으로 조절되므로 제어할 수 없습니다."
-                - **windStrength : AUTO가 아닌 경우**
-                  windStrength가 AUTO 이외의 값을 가지는 경우 다음과 같이 처리합니다.
-                    1. 디바이스 프로파일을 조회하여 해당 에어컨 디바이스가 제공하는 airFlow값을 확인합니다. 제품 모델 별 지원하는 airFlow 값이 다릅니다.
-                    2. 요청 바디 값을 변경합니다.
-                      - **x-conditional-control**를 **false**로 변경합니다.
-                        ```json
-                          {
-                            "x-conditional-control": false,
-                          }
-                        ```
-                    3. 요청 바디 값을 변경합니다.
-                        ```json
-                        {
-                          "airFlow": {
-                            "windStrength": X
-                          }
-                        }
-                        ```
+        description: "## 디바이스 프로파일 스키마\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-profile\"\n  exampleRef=\"#/components/examples/air_conditioner-profile-example\" />\n\n## 요청/응답 스키마\n### 디바이스 상태 응답\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-object\"\n  exampleRef=\"#/components/examples/air_conditioner-object-example\" />\n\n### 디바이스 제어 요청\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n### Example \n운전 모드 제어 \n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\n에어컨 동작 제어\n```json\t\n  {\n    \"operation\":{\n      \"airConOperationMode\": \"POWER_ON\"\n    }   \n  }\n```\n공기청정 동작 제어\n```json\t\n  {\n    \"operation\": {\n      \"airCleanOperationMode\": \"START\"\n    }\n  }\n```\n냉방 온도 제어\n```json\t\n  #targetTemperature\n  {\n    \"temperature\": {\n      \"targetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\n```json\t\n  #coolTargetTemperature\n  {\n    \"temperature\":{\n      \"coolTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\n```json\t\n  #autoTargetTemperature\n  {\n    \"temperature\":{\n      \"autoTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\n난방 온도 제어\n```json\t\n  {\n    \"temperature\": {\n      \"heatTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\n절대 시간 켜짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": 1,\n      \"absoluteMinuteToStart\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": -1,\n      \"absoluteMinuteToStart\": -1\n    }\n  }\n```\n절대 시간 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": 1,\n      \"absoluteMinuteToStop\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": -1,\n      \"absoluteMinuteToStop\": -1\n    }\n  }\n```\n상대 시간 켜짐 Timer 제어/ 취소 제어 \n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 0\n    }\n  }\n```\n상대 시간 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\n슬립 타이머 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\n바람세기 제어\n```json\t\n  {\n    \"airFlow\": {\n      \"windStrength\": \"MID\"\n    }\n  }\n```\n절전 제어\n```json\t\n  {\n    \"powerSave\": {\n      \"powerSaveEnabled\": true\n    }\n  }\n```\n공기질 모니터링 설정 제어\n```json\t\n  {\n    \"airQualitySensor\": {\n      \"monitoringEnabled\": \"ALWAYS\"\n    }\n  }\n```\ntwoSet 온도 제어\n```json\t\n  {\n    \"twoSetTemperature\": {\n      \"coolTargetTemperature\": 20,\n      \"heatTargetTemperature\": 30,\n      \"unit\": \"C\"\n    }\n  }\n```\n### 에어컨 제어 예외 처리\n  \n  디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다. \n  제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다. 다음 예시를 참고로 하십시오.\n\n  #### 1. 에어컨 설정 온도 상대 제어  \n  예) 사용자 명령 : '에어컨 온도 1도 올려줘/내려줘'\n\n  1. **airConOperationMode**가 **POWER_OFF**인 경우 처리  \n    - airConOperationMode의 값이 POWER_OFF이면 디바이스 제어가 불가능합니다. \n    다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - 응답 예시:\n      - \"에어컨 전원이 꺼져있습니다.\n  \n  2. **airConOperationMode**가 **POWER_ON**인 경우 처리  \n    - airConOperationMode의 값이 POWER_ON이면 currentJobMode 값에 따라 다음과 같이 처리해주어야 합니다.\n      - **currentJobMode**: **AUTO**, **COOL** 또는 **HEAT**인 경우\n        - currentJobMode의 값이 AUTO, COOL 또는 HEAT인 경우 다음과 같이 처리합니다.\n          - 1. 요청 헤더 값을 변경합니다.\n            - **x-conditional-control**를 false로 변경합니다.\n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```\n          - 2. 요청 바디 값을 변경합니다.\n            - **currentJobMode**가 **COOL**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"coolTargetTemperature\": 희망온도±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **currentJobMode**가 **HEAT**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"heatTargetTemperature\": 희망온도±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **currentJobMode**가 **AUTO**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"autoTargetTemperature\": 희망온도,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n          - 3. 요청 결과로 Error Code 2201 - Not provided Feature가 발생하는 경우 처리\n            - 제어 가능 온도 범위를 벗어난 경우 발생하는 에러입니다. 다음 예시를 참고하여 사용자에게 적절한 응답을 제공합니다.\n            - 응답 예시\n              - \"에어컨 (냉방/난방) 온도는 x도에서 x도까지 설정이 가능합니다.\n      - **currentJobMode**가 **AUTO**, **COOL**, 또는 **HEAT**이 아닌 경우  \n        - currentJobMode의 값이 AUTO, COOL 또는 HEAT 이외의 값을 갖는 경우 온도 제어가 불가능합니다. 사용자에게 제어가 불가능함을 응답으로 제공합니다.\n        - 응답 예시\n          - \"냉방/난방 모드에서만 제어가 가능하므로 제어할 수 없습니다.\n  \n  3. 화씨 온도 제어인 경우  \n    - 화씨 온도로 제어요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.\n\n  \n  #### 2. 에어컨 설정 온도 절대 제어\n  예) 사용자 명령: \"에어컨 온도 X도로 설정해줘.\"\n\n  1. **airConOperationMode**가 **POWER_OFF**인 경우 처리  \n    airConOperationMode가 POWER_OFF이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - 응답 예시:\n      - \"에어컨이 Power Off 상태 입니다.\"\n\n  2. **airConOperationMode가 POWER_ON인 경우 처리**  \n    airConOperationMode가 POWER_ON이면 currentJobMode 값에 따라 다음과 같이 처리해주어야 합니다.  \n      - **currentJobMode: AUTO, COOL, 또는 HEAT인 경우** 다음과 같이 처리합니다.  \n        - 1. 요청 헤더 값을 변경합니다.\n          - **x-conditional-control**를 false로 변경합니다.\n            ```json\n              {\n                \"x-conditional-control\": false,\n              }\n            ```\n        - 2. 요청 바디 값을 변경합니다.\n          - **currentJobMode**가 **COOL**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"coolTargetTemperature\": 희망온도,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode**가 **HEAT**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"heatTargetTemperature\": 희망온도,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode**가 **AUTO**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"autoTargetTemperature\": 희망온도,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n        - 3. 요청 결과로 Error Code 2201 - Not provided Feature가 발생하는 경우 처리\n          - 제어 가능 온도 범위를 벗어난 경우 발생하는 에러입니다. 다음 예시를 참고하여 사용자에게 적절한 응답을 제공합니다.\n          - 응답 예시\n            - 에어컨 (냉방/난방) 온도는 x도에서 x도까지 설정이 가능합니다.  \n      - **currentJobMode**가 **AUTO**, **COOL**, 또는 **HEAT**이 아닌 경우    \n        - **currentJobMode**의 값이 **AUTO**, **COOL** 또는 **HEAT** 이외의 값을 갖는 경우 온도 제어가 불가능합니다. 사용자에게 제어가 불가능함을 응답으로 제공합니다.\n        - 응답 예시  \n          - \"냉방/난방 모드에서만 제어가 가능하므로 제어할 수 없습니다.  \n\n  3. 화씨 온도 제어인 경우  \n    - 화씨 온도로 제어 요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.\n\n  #### 3. 에어컨 풍량 상대 제어\n  예) 사용자 명령: \"에어컨 풍량 올려줘/내려줘.\"  \n\n  1. **airConOperationMode가 POWER_OFF인 경우** 처리  \n    - airConOperationMode가 POWER_OFF이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - 응답 예시:\n      - \"에어컨이 Power Off 상태 입니다.\"\n\n  2. **airConOperationMode가 POWER_ON인 경우** 처리  \n    - airConOperationMode가 POWER_ON이면 windStrength 값에 따라 다음과 같이 처리해주어야 합니다.  \n      - **windStrength : AUTO인 경우**  \n        windStrength가 AUTO인 경우 풍량이 자동으로 제어되며 수동으로 제어할 수 없습니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n        - 응답 예시:  \n          - \"에어컨 풍량이 자동으로 조절되므로 제어할 수 없습니다.\"  \n      - **windStrength : AUTO가 아닌 경우**  \n        windStrength가 AUTO 이외의 값을 가지는 경우 다음과 같이 처리합니다.  \n          1. 디바이스 프로파일을 조회하여 해당 에어컨 디바이스가 제공하는 airFlow값을 확인합니다. 제품 모델 별 지원하는 airFlow 값이 다릅니다.  \n          2. 요청 바디 값을 변경합니다.\n            - **x-conditional-control**를 **false**로 변경합니다.  \n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```   \n          3. 요청 바디 값을 변경합니다.  \n              ```json\n              {\n                \"airFlow\": {\n                  \"windStrength\": X\n                }  \n              }\n              ```\n"
       - name: air_purifier
         x-displayName: 공기청정기
         description: |
@@ -570,32 +166,32 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          ### 공기청정기 예외 처리 (풍량 제어)
-            디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다.
-            제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다. 다음 예시를 참고로 하십시오.
+          ### 공기청정기 예외 처리 (풍량 제어)  
+            디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다.  
+            제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다. 다음 예시를 참고로 하십시오.  
 
-          예) 사용자 명령 : '에어컨 온도 1도 올려줘/내려줘'
-          #### 1. **POWER_OFF인 경우 처리**
-            - **airPurifierOperationMode**가 **POWER_OFF**이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.
-            - 응답 예시:
-              - "에어컨 전원이 꺼져있습니다.
+          예) 사용자 명령 : '에어컨 온도 1도 올려줘/내려줘'  
+          #### 1. **POWER_OFF인 경우 처리**  
+            - **airPurifierOperationMode**가 **POWER_OFF**이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  
+            - 응답 예시:  
+              - "에어컨 전원이 꺼져있습니다.  
 
-          #### 2. **POWER_ON인 경우 처리**
+          #### 2. **POWER_ON인 경우 처리**  
             - **airPurifierOperationMode**가 **POWER_ON**이면 **currentJobMode** 값에 따라 다음과 같이 처리해주어야 합니다.
               1. **currentJobMode** 혹은 **windStrength**가 **AUTO**인 경우
-                - windStrength가 AUTO 이거나 혹은 currentJobMode가 AUTO인 경우 풍량이 자동으로 제어되며 수동으로 제어할 수 없습니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.
-                - 응답 예시:
-                  - "공기청정기가 AUTO 모드로 동작 중이므로 제어할 수 없습니다."
-              2. **currentJobMode**와 **windStrength** 둘 다 **AUTO**가 아닌 경우
+                - windStrength가 AUTO 이거나 혹은 currentJobMode가 AUTO인 경우 풍량이 자동으로 제어되며 수동으로 제어할 수 없습니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  
+                - 응답 예시:  
+                  - "공기청정기가 AUTO 모드로 동작 중이므로 제어할 수 없습니다."   
+              2. **currentJobMode**와 **windStrength** 둘 다 **AUTO**가 아닌 경우  
                 - currentJobMode의 값이 AUTO가 아니고, windStrength 값도 AUTO가 아닌 경우 다음과 같이 처리합니다.
-                  - 1. 디바이스 프로파일을 조회하여 해당 공기 청정기 디바이스에서 지원하는 **airFlow** 값을 확인합니다.  제품 모델 별로 지원하는 **airFlow** 값이 다릅니다.
-                    - **x-conditional-control**를 **false**로 변경합니다.
+                  - 1. 디바이스 프로파일을 조회하여 해당 공기 청정기 디바이스에서 지원하는 **airFlow** 값을 확인합니다.  제품 모델 별로 지원하는 **airFlow** 값이 다릅니다.  
+                    - **x-conditional-control**를 **false**로 변경합니다.  
                       ```json
                         {
                           "x-conditional-control": false,
                         }
                       ```
-                  - 2. 제어 요청 API 바디 값을 변경합니다.
+                  - 2. 제어 요청 API 바디 값을 변경합니다. 
                     - **currentJobMode**가 **COOL**인 경우
                       ```json
                         {
@@ -604,10 +200,10 @@ contents:
                           }
                         }
                       ```
-                  - 3. 사용자에게 적정한 응답을 제공합니다.
+                  - 3. 사용자에게 적정한 응답을 제공합니다.  
                     - 응답 예시
-                      - 공기청정기 풍량은 power/high/low 상태로 변경 하였습니다.
-                      - 공기청정기 풍량이 최대/최소 상태입니다. (설정하고자 하는 풍량이 최대/최소 상태인 경우)
+                      - 공기청정기 풍량은 power/high/low 상태로 변경 하였습니다.  
+                      - 공기청정기 풍량이 최대/최소 상태입니다. (설정하고자 하는 풍량이 최대/최소 상태인 경우)  
       - name: robot_cleaner
         x-displayName: 로봇청소기
         description: |
@@ -625,10 +221,10 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
+            showExample={false} showWriteOnly={false} />  
 
-          #### Example
-          Starting the robot cleaner
+          #### Example  
+          Starting the robot cleaner  
 
             ```json
               {
@@ -636,13 +232,13 @@ contents:
                   "cleanOperationMode": "START"
                 }
               }
-            ```
+            ```  
 
-          Robot cleaner on timer (Timer set for 11:30)
+          Robot cleaner on timer (Timer set for 11:30)  
             ```json
               {
                 "timer": {
-                  "absoluteHourToStart": 11,
+                  "absoluteHourToStart": 11, 
                   "absoluteMinuteToStart": 30
                 }
               }
@@ -666,8 +262,8 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          operation
+          #### Example  
+          operation  
 
             ```json
               {
@@ -694,7 +290,7 @@ contents:
               }
             ```
 
-          operation + cook mode
+          operation + cook mode  
             ```json
               {
                 "operation": {
@@ -717,7 +313,7 @@ contents:
                 "cook": {
                   "cookMode": "CONVECTION_BAKE"
                 }
-              }
+              } 
               {
                 "operation": {
                   "ovenOperationMode": "START"
@@ -731,7 +327,7 @@ contents:
               }
             ```
 
-          operation + time
+          operation + time  
             ```json
               {
                 "operation": {
@@ -745,9 +341,9 @@ contents:
                   "targetMinute": 5
                 }
               }
-            ```
+            ```  
 
-          operation + cook mode + time
+          operation + cook mode + time  
             ```json
               {
                 "operation": {
@@ -766,7 +362,7 @@ contents:
               }
             ```
 
-          operation + temperature
+          operation + temperature  
             ```json
               {
                 "operation": {
@@ -782,7 +378,7 @@ contents:
               }
             ```
 
-          operation + cook mode + temperature
+          operation + cook mode + temperature  
             ```json
               {
                 "operation": {
@@ -801,7 +397,7 @@ contents:
               }
             ```
 
-          timer setting
+          timer setting  
             ```json
               {
                 "timer": {
@@ -827,10 +423,10 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
+            showExample={false} showWriteOnly={false} />  
 
-          #### Example
-          제어 시작
+          #### Example  
+          제어 시작  
             ```json
               {
                 "operation": {
@@ -839,7 +435,7 @@ contents:
               }
             ```
 
-          제어 멈춤
+          제어 멈춤  
             ```json
               {
                 "operation": {
@@ -866,25 +462,25 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          Starting the styler
+          #### Example  
+          Starting the styler  
             ```json
-              {
+              { 
                 "operation": {
                   "stylerOperationMode": "START"
                 }
               }
             ```
 
-          Stopping the styler
+          Stopping the styler  
             ```json
-              {
+              { 
                 "operation": {
                   "stylerOperationMode ": "STOP"
                 }
               }
             ```
-          Setting stop time
+          Setting stop time  
             ```json
               {
                 "timer": {
@@ -927,8 +523,8 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          Dehumidifier power on
+          #### Example  
+          Dehumidifier power on  
             ```json
               {
                 "operation": {
@@ -937,7 +533,7 @@ contents:
               }
             ```
 
-          Dehumidifier power off
+          Dehumidifier power off  
             ```json
               {
                 "operation": {
@@ -946,7 +542,7 @@ contents:
               }
             ```
 
-          Dehumidifier wind strength adjustment (Strength high)
+          Dehumidifier wind strength adjustment (Strength high)  
             ```json
               {
                 "airFlow": {
@@ -954,7 +550,7 @@ contents:
                 }
               }
             ```
-          Dehumidifier wind strength adjustment (Strength Low)
+          Dehumidifier wind strength adjustment (Strength Low)  
             ```json
               {
                 "airFlow": {
@@ -981,8 +577,8 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          Ceiling fan power on
+          #### Example  
+          Ceiling fan power on  
             ```json
               {
                 "operation": {
@@ -991,7 +587,7 @@ contents:
               }
             ```
 
-          Ceiling fan wind strength adjustment
+          Ceiling fan wind strength adjustment  
             ```json
               {
                 "airFlow": {
@@ -1018,8 +614,8 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          Temperature Control
+          #### Example  
+          Temperature Control  
             ```json
               {
                 "temperature": {
@@ -1030,7 +626,7 @@ contents:
               }
             ```
 
-          Brightness Control
+          Brightness Control  
             ```json
               #enum - lightBrightness
               {
@@ -1038,10 +634,10 @@ contents:
                   "lightBrightness": "70%"
                 }
               }
-            ```
+            ```  
 
             ```json
-              #range - lightStatus
+              #range - lightStatus 
               {
                 "operation": {
                   "lightBrightness": "70%"
@@ -1115,26 +711,26 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          Starting the standard washing course
+          #### Example  
+          Starting the standard washing course  
             ```json
-              {
+              { 
                 "operation": {
                   "washerOperationMode": "START"
-                },
-                "location": {
+                }, 
+                "location": { 
                   "locationName": "MAIN"
                 }
               }
             ```
 
-          Stopping the washing course
+          Stopping the washing course  
             ```json
-              {
+              { 
                 "operation": {
                   "washerOperationMode": "START"
-                },
-                "location": {
+                }, 
+                "location": { 
                   "locationName": "MAIN"
                 }
               }
@@ -1181,28 +777,28 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          Starting the standard drying course
+          #### Example  
+          Starting the standard drying course  
             ```json
-              {
+              { 
                 "operation": {
                   "dryerOperationMode": "START"
                 }
               }
             ```
 
-          Stopping the standard drying course
+          Stopping the standard drying course  
             ```json
-              {
+              { 
                 "operation": {
                   "dryerOperationMode": "STOP"
                 }
               }
             ```
 
-          Setting start/stop time
+          Setting start/stop time  
             ```json
-              {
+              { 
                 "timer": {
                   "relativeHourToStart": 2
                 }
@@ -1210,7 +806,7 @@ contents:
             ```
 
             ```json
-              {
+              { 
                 "timer": {
                   "relativeHourToStop": 4
                 }
@@ -1235,8 +831,8 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          세탁기
+          #### Example  
+          세탁기  
             ```json
               {
                 "washer": {
@@ -1247,7 +843,7 @@ contents:
               }
             ```
 
-          건조기
+          건조기  
             ```json
               {
                 "dryer": {
@@ -1276,8 +872,8 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          Power Off
+          #### Example  
+          Power Off  
             ```json
               {
                 "operation": {
@@ -1286,7 +882,7 @@ contents:
               }
             ```
 
-          Setting the power to 3 and the remaining time to 10 minutes for the LEFT_FRONT burner
+          Setting the power to 3 and the remaining time to 10 minutes for the LEFT_FRONT burner  
             ```json
               {
                 "power": {
@@ -1320,7 +916,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
+          #### Example  
           Setting lamp brightness and fan speed
             ```json
               {
@@ -1351,7 +947,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
+          #### Example  
             ```json
               {
                 "lamp": {
@@ -1381,7 +977,7 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
+          #### Example  
           Setting the power on
             ```json
               {
@@ -1391,7 +987,7 @@ contents:
               }
             ```
 
-          Setting the hot water mode
+          Setting the hot water mode  
             ```json
               {
                 "operation": {
@@ -1400,7 +996,7 @@ contents:
               }
             ```
 
-          Setting the cooling target temperature
+          Setting the cooling target temperature  
             ```json
               {
                 "temperature": {
@@ -1410,7 +1006,7 @@ contents:
               }
             ```
 
-          Setting the heating target temperature
+          Setting the heating target temperature  
             ```json
               {
                 "temperature": {
@@ -1438,8 +1034,8 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          Power On
+          #### Example  
+          Power On  
             ```json
               {
                 "operation": {
@@ -1482,8 +1078,8 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          온도 변경
+          #### Example  
+          온도 변경  
             ```json
               {
                 "temperature": {
@@ -1519,8 +1115,8 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          세탁 시작
+          #### Example  
+          세탁 시작  
             ```json
               {
                 "location": {
@@ -1532,7 +1128,7 @@ contents:
               }
             ```
 
-          예약 설정
+          예약 설정  
             ```json
               {
                 "location": {
@@ -1560,10 +1156,10 @@ contents:
           ### 디바이스 제어 요청
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
+            showExample={false} showWriteOnly={false} />  
 
-          #### Example
-          세탁 시작
+          #### Example  
+          세탁 시작  
             ```json
               {
                 "location": {
@@ -1575,7 +1171,7 @@ contents:
               }
             ```
 
-          예약 설정
+          예약 설정  
             ```json
               {
                 "location": {
@@ -1605,8 +1201,8 @@ contents:
             schemaRef="#/components/schemas/device-command-schema"
             showExample={false} showWriteOnly={false} />
 
-          #### Example
-          Power On
+          #### Example  
+          Power On  
             ```json
               {
                 "operation": {
@@ -1615,7 +1211,7 @@ contents:
               }
             ```
 
-          Display Light
+          Display Light  
             ```json
               {
                 "display": {
@@ -4226,9 +3822,6 @@ contents:
                 totalMinute:
                   description: 건조 전체 시간(분)
                   type: integer
-            notification:
-              type: string
-              description: Push Message
             error:
               type: string
               description: Error Message
@@ -6469,9 +6062,6 @@ contents:
                 filterLifetime:
                   type: number
                   description: 필터 잔여 시간
-            notification:
-              type: string
-              description: Push Message
         air_purifier_fan-profile:
           type: object
           title: Air_Purifier_Fan
@@ -7522,9 +7112,6 @@ contents:
                   enum:
                     - 'ON'
                     - 'OFF'
-            notification:
-              type: string
-              description: Push Message
         dehumidifier-profile:
           type: object
           title: Dehumidifier
@@ -8059,9 +7646,6 @@ contents:
                     - MID
                     - HIGH
                     - AUTO
-            notification:
-              type: string
-              description: Push Message
         humidifier-profile:
           type: object
           title: Humidifier
@@ -9111,12 +8695,6 @@ contents:
                   enum:
                     - 'ON'
                     - 'OFF'
-            notification:
-              type: string
-              description: Push Message
-              enum:
-                - TIME_TO_CHANGE_FILTER
-                - LACK_OF_WATER
         robot_cleaner-profile:
           type: object
           title: Robot_Cleaner
@@ -9529,26 +9107,6 @@ contents:
                 runningMinute:
                   type: number
                   description: 진행 시간(분)
-            notification:
-              type: string
-              description: push message
-              enum:
-                - CLEANING_IS_COMPLETED
-                - CLEANING_IS_FAILED
-                - MOTION_IS_DETECTED
-                - NEED_TO_CHECK_LOCATION
-                - HOMEGUARD_IS_STOPPED
-                - SCHEDULED_CLEANING_STARTS
-            push:
-              type: string
-              description: push message
-              enum:
-                - CLEANING_IS_COMPLETED
-                - CLEANING_IS_FAILED
-                - MOTION_IS_DETECTED
-                - NEED_TO_CHECK_LOCATION
-                - HOMEGUARD_IS_STOPPED
-                - SCHEDULED_CLEANING_STARTS
             error:
               type: string
               description: error message
@@ -10793,15 +10351,6 @@ contents:
                     - STEAM
                     - SPRAY
                     - ECO
-            notification:
-              type: string
-              description: Push Message
-              enum:
-                - CLEANING_IS_COMPLETE
-                - ERROR_DURING_CLEANING
-                - WATER_LEAK_HAS_OCCURRED
-                - RINSE_IS_NOT_ENOUGH
-                - SALT_REFILL_IS_NEEDED
             error:
               type: string
               description: 에러 메시지
@@ -11221,12 +10770,6 @@ contents:
                   description: 건조 전체 시간(분)
                   enum:
                     - integer
-            notification:
-              type: string
-              description: Push Message
-              enum:
-                - STYLING_IS_COMPLETE
-                - ERROR_HAS_OCCURRED
             error:
               type: string
               description: Error Message
@@ -12018,11 +11561,6 @@ contents:
                           - MIDDLE
                           - BOTTOM
                           - SINGLE
-            notification:
-              type: string
-              description: Push Message
-              enum:
-                - DOOR_IS_OPEN
         home_brew-profile:
           type: object
           title: Home_Brew
@@ -13460,12 +12998,6 @@ contents:
                     enum:
                       - MAIN
                       - MINI
-              notification:
-                type: string
-                description: Error Message
-                enum:
-                  - WASHING_IS_COMPLETE
-                  - ERROR_DURING_WASHING
               error:
                 type: string
                 description: Error Message
@@ -13889,12 +13421,6 @@ contents:
                 totalMinute:
                   type: integer
                   description: 건조 전체 시간(분)
-            notification:
-              type: object
-              description: Push Message
-              enum:
-                - DRYING_FAILED
-                - DRYING_IS_COMPLETE
             error:
               type: object
               description: Error Message
@@ -14856,12 +14382,6 @@ contents:
                     - TEMPERATURE_SENSOR_ERROR
                     - TIMEOUT_ERROR
                     - PART_MALFUNCTION_ERROR
-                notification:
-                  type: string
-                  description: Error Message
-                  enum:
-                    - WASHING_IS_COMPLETE
-                    - ERROR_DURING_WASHING
             dryer:
               type: object
               properties:
@@ -14934,12 +14454,6 @@ contents:
                     totalMinute:
                       type: integer
                       description: 건조 전체 시간(분)
-                notification:
-                  type: object
-                  description: Push Message
-                  enum:
-                    - DRYING_FAILED
-                    - DRYING_IS_COMPLETE
                 error:
                   type: object
                   description: Error Message
@@ -15764,13 +15278,6 @@ contents:
                     remainSecond:
                       type: integer
                       description: 남은 시간(초)
-            notification:
-              type: string
-              description: Push Message
-              enum:
-                - PREHEATING_IS_COMPLETE
-                - COOKING_IS_COMPLETE
-                - TIMER_IS_COMPLETE
         system_boiler-profile:
           type: object
           title: System_Boiler
@@ -16307,12 +15814,6 @@ contents:
                 percent:
                   type: number
                   description: 배터리 퍼센트
-            notification:
-              type: string
-              description: Push Message
-              enum:
-                - CHARGING_IS_COMPLETE
-                - TIME_TO_CLEAN_FILTER
         water_heater-profile:
           type: object
           title: Water_Heater
@@ -20185,6 +19686,22 @@ contents:
                                   type: integer
                                 min:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | 베터리가 약합니다.
+                    MOTION_IS_DETECTED | 움직임이 감지되었습니다.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
+                      - MOTION_IS_DETECTED
         motion_sensor-object:
           type: object
           title: Motion_Sensor
@@ -20277,6 +19794,20 @@ contents:
                                   type: integer
                                 min:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | 베터리가 약합니다.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
         temperature_humidity_sensor-object:
           type: object
           title: Temperature_Humidity_Sensor
@@ -20370,6 +19901,26 @@ contents:
                                   type: integer
                                 min:
                                   type: integer
+                                step:
+                                  type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | 베터리가 약합니다.
+                    DOOR_IS_OPENED | 문이 열렸습니다.
+                    DOOR_IS_CLOSED | 문이 닫혔습니다.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
+                      - DOOR_IS_OPENED
+                      - DOOR_IS_CLOSED
         door_sensor-object:
           type: object
           title: Door_Sensor
@@ -20426,6 +19977,22 @@ contents:
                                   type: integer
                                 min:
                                   type: integer
+                                step:
+                                  type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | 베터리가 약합니다.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
         button-object:
           type: object
           title: Button
@@ -20881,6 +20448,22 @@ contents:
                             type: string
                             enum:
                               - r
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | 베터리가 약합니다.
+                    POWER_IS_OVERLOADED | 과부하 상태입니다. 
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
+                      - POWER_IS_OVERLOADED
         plug-object:
           type: object
           title: Plug
@@ -21196,6 +20779,22 @@ contents:
                                 enum:
                                   - LOCK
                                   - UNLOCK
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | 베터리가 약합니다.
+                    POWER_IS_OVERLOADED | 과부하 상태입니다. 
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
+                      - POWER_IS_OVERLOADED
         plug_mini-object:
           type: object
           title: Plug_Mini
@@ -23040,6 +22639,24 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | 베터리가 약합니다.
+                    MOTION_IS_DETECTED | 움직임이 감지되었습니다.
+                    DOORBELL_RING | 초인종이 울렸습니다.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
+                      - MOTION_IS_DETECTED
+                      - DOORBELL_RING
         doorbell-object:
           type: object
           title: Doorbell
@@ -23098,6 +22715,22 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    MOTION_IS_DETECTED | 움직임이 감지되었습니다.
+                    FEEDING_IS_COMPLETE | 급여가 완료되었습니다.
+                  items:
+                    type: string
+                    enum:
+                      - MOTION_IS_DETECTED
+                      - FEEDING_IS_COMPLETE
         pet_peeder-object:
           type: object
           title: Pet_Peeder
@@ -23162,6 +22795,22 @@ contents:
                                 enum:
                                   - 'ON'
                                   - 'OFF'
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    MOTION_IS_DETECTED | 움직임이 감지되었습니다.
+                    SOUND_IS_DETECTED | 소리가 감지되었습니다.
+                  items:
+                    type: string
+                    enum:
+                      - MOTION_IS_DETECTED
+                      - SOUND_IS_DETECTED
         home_camera-object:
           type: object
           title: Home_Camera
@@ -24178,6 +23827,20 @@ contents:
                                 enum:
                                   - ALARM
                                   - NORMAL
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    GAS_IS_DETECTED | 가스가 감지되었습니다.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
         gas_sensor-object:
           type: object
           title: Gas_Sensor
@@ -24291,6 +23954,24 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    FIRE_IS_DETECTED | 화재가 감지되었습니다.
+                    COVER_IS_SEPARATED | 센서 덮개가 열렸습니다.
+                    BATTERY_IS_LOW | 베터리가 약합니다.
+                  items:
+                    type: string
+                    enum:
+                      - FIRE_IS_DETECTED
+                      - COVER_IS_SEPARATED
+                      - BATTERY_IS_LOW
         fire_sensor-object:
           type: object
           title: Fire_Sensor
@@ -24388,6 +24069,22 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    WATER_LEAK_IS_DETECTED | 누수가 감지되었습니다.
+                    BATTERY_IS_LOW | 베터리가 약합니다.
+                  items:
+                    type: string
+                    enum:
+                      - WATER_LEAK_IS_DETECTED
+                      - BATTERY_IS_LOW
         water_leak_sensor-object:
           type: object
           title: Water_Sensor
@@ -24494,6 +24191,20 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    BATTERY_IS_LOW | 베터리가 약합니다.
+                  items:
+                    type: string
+                    enum:
+                      - BATTERY_IS_LOW
         thermo_hygrometer-object:
           type: object
           title: Thermo_Hygrometer
@@ -24662,6 +24373,22 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+            notification:
+              type: object
+              properties:
+                push:
+                  type: array
+                  minItems: 1
+                  description: |-
+                    Push Code | Description
+                    -|-
+                    ALARM_IS_DETECTED | 경보가 감지되었습니다.
+                    BATTERY_IS_LOW | 베터리가 약합니다. 
+                  items:
+                    type: string
+                    enum:
+                      - ALARM_IS_DETECTED
+                      - BATTERY_IS_LOW
         siren-object:
           type: object
           title: Siren
@@ -29540,6 +29267,10 @@ contents:
                     r:
                       min: 0
                       max: 100
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - MOTION_IS_DETECTED
         motion_sensor-object-example:
           value:
             battery:
@@ -29570,6 +29301,9 @@ contents:
                     r:
                       min: 0
                       max: 100
+            notification:
+              push:
+                - BATTERY_IS_LOW
         temperature_humidity_sensor-object-example:
           value:
             battery:
@@ -29590,6 +29324,7 @@ contents:
                     r:
                       min: 0
                       max: 100
+                      step: 1
               doorState:
                 currentState:
                   mode:
@@ -29599,6 +29334,11 @@ contents:
                     r:
                       - OPEN
                       - CLOSE
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - DOOR_WINDOW_IS_OPENED
+                - DOOR_WINDOW_IS_CLOSED
         door_sensor-object-example:
           value:
             battery:
@@ -29610,13 +29350,17 @@ contents:
             property:
               battery:
                 percent:
+                  type: range
                   mode:
                     - r
-                  type: range
                   value:
                     r:
-                      min: 0
                       max: 100
+                      min: 0
+                      step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
         button-object-example:
           value:
             battery:
@@ -29787,6 +29531,10 @@ contents:
                   type: string
                   mode:
                     - r
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - POWER_IS_OVERLOADED
         plug-object-example:
           value:
             runState:
@@ -29884,6 +29632,10 @@ contents:
                     w:
                       - LOCK
                       - UNLOCK
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - POWER_IS_OVERLOADED
         plug_mini-object-example:
           value:
             runState:
@@ -30564,6 +30316,11 @@ contents:
                       max: 100
                       min: 0
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - MOTION_IS_DETECTED
+                - DOORBELL_RING
         doorbell-object-example:
           value:
             chime:
@@ -30590,6 +30347,10 @@ contents:
                       max: 200
                       min: 10
                       step: 10
+            notification:
+              push:
+                - MOTION_IS_DETECTED
+                - FEEDING_IS_COMPLETE
         pet_peeder-object-example:
           value:
             feed:
@@ -30614,6 +30375,10 @@ contents:
                     w:
                       - 'ON'
                       - 'OFF'
+            notification:
+              push:
+                - MOTION_IS_DETECTED
+                - SOUND_IS_DETECTED
         home_camera-object-example:
           value:
             mode:
@@ -30954,6 +30719,9 @@ contents:
                     r:
                       - ALARM
                       - NORMAL
+            notification:
+              push:
+                - GAS_IS_DETECTED
         gas_sensor-object-example:
           value:
             detectState:
@@ -30988,6 +30756,11 @@ contents:
                       max: 100
                       min: 0
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - FIRE_IS_DETECTED
+                - COVER_IS_SEPARATED
         fire_sensor-object-example:
           value:
             detectState:
@@ -31017,6 +30790,10 @@ contents:
                       max: 100
                       min: 0
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - WATER_LEAK_IS_DETECTED
         water_leak_sensor-object-example:
           value:
             detectState:
@@ -31051,6 +30828,9 @@ contents:
                       max: 100
                       min: 0
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
         thermo_hygrometer-object-example:
           value:
             temperature:
@@ -31106,6 +30886,10 @@ contents:
                       max: 3600
                       min: 1
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - ALARM_IS_DETECTED
         siren-object-example:
           value:
             switchState:
