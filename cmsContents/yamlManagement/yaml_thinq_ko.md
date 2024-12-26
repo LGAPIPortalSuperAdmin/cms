@@ -22,6 +22,18 @@ contents:
             5. 권한 범위에서 해당 토큰이 사용하고자 하는 기능에 대해서 선택합니다.
             6. "토큰 만들기" 버튼을 누르면 토큰이 생성되고, PAT 페이지로 돌아갑니다.
             7. 새로 생성된 토큰을 복사해서 사용합니다.
+      - name: Base URL
+        description: |
+          ThinQ API는 고객의 디바이스의 위치에 따라 Base URL을 구분하고 있습니다. <br>  따라서 고객의 디바이스가 위치하는 지역을 고려해, ThinQ API 호출 시 아래 Base URL을 선택하여 적용해주십시오. 
+
+            |Region|ThinQ API|
+            |-|-|
+            |South Asia, East Asia and Pacific|https://api-kic.lgthinq.com|
+            |America|https://api-aic.lgthinq.com|
+            |Europe, Middle East, Africa|https://api-eic.lgthinq.com|
+      - name: Route API
+        description: |
+          ThinQ Backend 도메인 이름을 조회하기 위한 API입니다.
       - name: Device API
         description: |
           ThinQ 디바이스 정보를 요청하고 제어하기 위한 API입니다.
@@ -35,6 +47,29 @@ contents:
         description: |
           ThinQ 디바이스에서 전달하는 메시지를 받기 위한 사용자 디바이스 인증서 발급/등록을 위한 API입니다.  
     paths:
+      /route:
+        get:
+          tags:
+            - Route API
+          summary: 도메인 이름 조회
+          description: |
+            ThinQ Platform에 Backend 주소를 얻어오기 위한 API입니다. 리전 별, 형상 별 도메인 이름을 조회합니다.
+          parameters:
+            - required: true
+              $ref: '#/components/parameters/x-message-id'
+            - required: true
+              $ref: '#/components/parameters/x-country'
+            - required: true
+              $ref: '#/components/parameters/x-service-phase'
+          responses:
+            '200':
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/route-res'
+            '400':
+              description: Bad request
       /devices:
         get:
           tags:
@@ -683,14 +718,6 @@ contents:
               description: Unauthorized
     components:
       parameters:
-        Authorization:
-          name: Authorization
-          in: header
-          schema:
-            type: string
-          description: |
-            https://connect-pat.lgthinq.com 을 통해서 받은 PAT 토큰
-          example: Bearer 4d76546d61f01baf31c1sd8f6b4e38b110ba0a34f825b8c5d54c
         x-message-id:
           name: x-message-id
           in: header
@@ -709,6 +736,22 @@ contents:
           description: |
             서비스를 제공할 국가를 지정합니다 ISO 국가코드 알파벳 두 자리(ISO 3166-1 alpha-2)를 따릅니다. (예: KR, US, GB, ...)
           example: KR
+        x-service-phase:
+          name: x-service-phase
+          in: header
+          schema:
+            type: string
+          description: |
+            서비스를 제공할 형상을 지정할 수 있습니다.
+          example: OP
+        Authorization:
+          name: Authorization
+          in: header
+          schema:
+            type: string
+          description: |
+            https://connect-pat.lgthinq.com 을 통해서 받은 PAT 토큰
+          example: Bearer 4d76546d61f01baf31c1sd8f6b4e38b110ba0a34f825b8c5d54c
         x-client-id:
           name: x-client-id
           in: header
@@ -723,8 +766,8 @@ contents:
           schema:
             type: string
           description: |
-            API 호출을 위한 api key 값입니다. 아래값을 고정해서 호출해주세요 ""
-          example: 고정값
+            API 호출을 위한 api key 값입니다. 아래값을 고정해서 호출해주세요.<br> "v6GFvkweNo7DK7yD3ylIZ9w52aKBU0eJ7wLXkSR3"
+          example: v6GFvkweNo7DK7yD3ylIZ9w52aKBU0eJ7wLXkSR3
         x-conditional-control:
           name: x-conditional-control
           in: header
@@ -746,6 +789,27 @@ contents:
               type: string
               description: 요청이 들어왔을 때의 시간을 의미하며 ISO 8601 Format을 따릅니다.
               example: '2024-09-01T06:23:20.866279'
+        route-res:
+          description: 도메인 이름 조회 응답
+          allOf:
+            - $ref: '#/components/schemas/base-res'
+            - type: object
+              properties:
+                response:
+                  type: object
+                  properties:
+                    apiServer:
+                      type: string
+                      description: API 서버 도메인 이름
+                      example: https://kic-connect-client.lgthinq.com
+                    mqttServer:
+                      type: string
+                      description: MQTT 도메인 이름
+                      example: mqtts://a3phael99lf879-ats.iot.ap-northeast-2.amazonaws.com:8883
+                    webSocketServer:
+                      type: string
+                      description: 웹소켓 도메인 이름
+                      example: wss://a3phael99lf879-ats.iot.ap-northeast-2.amazonaws.com:443/mqtt
         device-list-res:
           description: 디바이스 목록 조회 응답
           allOf:
@@ -5061,8 +5125,12 @@ contents:
       - name: Token
         tags:
           - PAT(Personal Access Token)
+      - name: Base URL
+        tags:
+          - Base URL
       - name: APIs
         tags:
+          - Route API
           - Device API
           - Push API
           - Event API
