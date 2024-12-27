@@ -5125,6 +5125,7 @@ contents:
           - PAT(Personal Access Token)
       - name: APIs
         tags:
+          - Route API
           - Device API
           - Push API
           - Event API
