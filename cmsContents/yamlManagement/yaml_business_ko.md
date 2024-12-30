@@ -287,7 +287,7 @@ contents:
         description: |
           LG Smart Solution API Developer가 B2B 파트너에게 제공한 API Key와 API Secret 쌍을 이용해 API Token을 주기적으로 발급하려면 아래의 API를 사용합니다.  이 API로 발급한 API Token은 모든 ThinQ Business API 호출 시 HTTP 요청 헤더에 포함해야 합니다.
       - name: Device API
-        description: "등록한 디바이스의 목록을 조회하고, 특정 디바이스의 프로파일 및 상태를 조회하거나 디바이스를 제어하기 위해 Device API를 사용합니다.  기업이 구매한 다양한 LG전자 제품의 Device API를 사용하는 경우, 디바이스가 일괄 등록되어 있는 LG전자 계정이나 설치 현장의 정보를 LG Smart Solution API Developer에서 사전에 지정할 수 있습니다.  또한 LG전자 제품의 Device API를 호출할 때 특정 LG전자 사용자를 지정해 해당 사용자의 디바이스에 대한 접근을 수행할 수 있습니다.  Device API를 호출하기 위해서는 B2B 파트너 또는 그의 고객이 디바이스를 등록하는 과정을 거쳐야 합니다.  구매한 디바이스는 아래와 같이 디바이스 종류에 따라 해당 LG전자의 플랫폼의 서비스에 가입해 등록해야 합니다.\n\n |디바이스 종류|LG전자 플랫폼|\n |-|-|\n |가전제품 및 기타 IoT 디바이스|LG ThinQ (mobile app)|\n |사이니지|LG Business Cloud\_ (https://lgbusinesscloud.com)|\n |상업용 HVAC|LG BECON Cloud\_(https://beconcloud.lge.com)|\n"
+        description: "등록한 디바이스의 목록을 조회하고, 특정 디바이스의 프로파일 및 상태를 조회하거나 디바이스를 제어하기 위해 Device API를 사용합니다.  기업이 구매한 다양한 LG전자 제품의 Device API를 사용하는 경우, 디바이스가 일괄 등록되어 있는 LG전자 계정이나 설치 현장의 정보를 LG Smart Solution API Developer에서 사전에 지정할 수 있습니다.  또한 LG전자 제품의 Device API를 호출할 때 특정 LG전자 사용자를 지정해 해당 사용자의 디바이스에 대한 접근을 수행할 수 있습니다.  Device API를 호출하기 위해서는 B2B 파트너 또는 그의 고객이 디바이스를 등록하는 과정을 거쳐야 합니다.  구매한 디바이스는 아래와 같이 디바이스 종류에 따라 해당 LG전자의 플랫폼의 서비스에 가입해 등록해야 합니다.\n\n |디바이스 종류|LG전자 플랫폼|\n |-|-|\n |가전제품 및 기타 IoT 디바이스|LG ThinQ (mobile app)|\n |사이니지|LG Business Cloud\_(https://lgbusinesscloud.com)|\n |상업용 HVAC|LG BECON Cloud\_(https://beconcloud.lge.com)|\n"
       - name: Push API
         description: |
           특정 디바이스 상태 변화를 B2B 파트너의 서비스가 수신하거나 수신을 해제하기 위해 Push API를 사용합니다.  이 API는 현재 LG ThinQ에 등록한 제품에 한해 제공되며 향후 다른 제품의 지원을 확대할 예정입니다.  B2B 파트너의 서비스가 디바이스의 상태를 수신하기 위해서는 사전에 LG Smart Solution API Developer에서 B2B 파트너 서비스의 Callback 호출 정보를 등록해야 합니다.  Callback으로 제공하는 디바이스의 상태 변화 종류는 아래와 같고, 종류별로 Callback 구독이 수행하는 조건이 다를 수 있습니다.
@@ -300,7 +300,7 @@ contents:
            | DEVICE_ALIAS_CHANGED | 디바이스의 닉네임이 변경됨 | 디바이스 목록 조회 API 호출 |
       - name: User API
         description: |
-          B2B 파트너의 서비스에 등록한 LG전자 사용자의 정보를 관리하기 위해 User API를 사용합니다. <b>이 API는 현재 LG ThinQ 등록 제품에 한해 제공합니다.</b>
+          B2B 파트너의 서비스에 등록한 LG전자 사용자의 정보를 관리하기 위해 User API를 사용합니다. <b>이 API는 현재 LG ThinQ 등록 디바이스에 한해 제공합니다.</b>
       - name: DR API
         description: |
           B2B 파트너가 전력 수요반응(DR: Demand Response) 사업자로서 DR 서비스 가입자인 LG전자 사용자의 디바이스를 제어하기 위해 DR API가 사용됩니다.  B2B 파트너는 이 API를 활용해 DR 가입자인 사용자를 관리할 수 있습니다.  그리고 특정 전력 피크 시간 동안 사용자의 전력 사용을 줄이거나 바꾸는 DR 이벤트를 등록하고, DR 대상 디바이스의 DR 이벤트 참여 여부를 조회할 수 있습니다.  DR 대상 디바이스는 현재 에어컨, TV에 한해 제공하며 향후 다른 제품의 지원을 확대할 예정입니다.  이 API를 활용한 DR 서비스는 다음의 절차에 따라 진행됩니다.
@@ -308,7 +308,7 @@ contents:
 
             - LG ThinQ 사용자는 LG ThinQ 앱에 DR 대상 디바이스를 등록하고, B2B 파트너의 DR 서비스에 가입합니다.
             
-            <img src="https://dev.openapi.developer.lge.com/assets/images/img_DR_01.png" width="600"/>
+            <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_01.png" width="600"/>
 
           ### 2. DR Request 발령
 
@@ -316,20 +316,20 @@ contents:
             - LG전자는 등록된 DR 이벤트를 지정된 시작 시간에 대상 디바이스에 전달합니다.
             - LG ThinQ 사용자는 DR 이벤트 시작 전에 LG ThinQ 앱에서 알림을 수신합니다. 
 
-              <img src="https://dev.openapi.developer.lge.com/assets/images/img_DR_02.png" width="600"/>
+              <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_02.png" width="600"/>
 
           ### 3. 상태 모니터링
 
             - LG전자는 DR 이벤트를 실행하는 동안 디바이스의 상태를 모니터링해 기록합니다.
             - B2B 파트너는 DR API로 모니터링 데이터를 다운로드합니다. 
 
-              <img src="https://dev.openapi.developer.lge.com/assets/images/img_DR_03.png" width="600"/>
+              <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_03.png" width="600"/>
 
           ### 4. DR 서비스 정산
 
             - B2B 파트너는 DR API가 제공한 데이터를 기반으로 DR 가입자의 DR 참여율에 따라 정산을 실시하고 가입자들에게 정산 내역을 제공합니다.
 
-              <img src="https://dev.openapi.developer.lge.com/assets/images/img_DR_04.png" width="600"/>
+              <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_04.png" width="600"/>
 
 
             
@@ -1358,7 +1358,7 @@ contents:
             - Push API
           summary: 디바이스 푸시 구독 목록 조회
           description: |
-            푸시 메시지를 구독한 디바이스의 ID 목록을 조회합니다. **(현재 LG ThinQ 등록 가전제품만 지원합니다.)**
+            푸시 메시지를 구독한 디바이스의 ID 목록을 조회합니다. **(현재 LG ThinQ 등록 디바이스만 지원합니다.)**
           operationId: listDevicesSubscribed
           security:
             - ThinQ_Business_API_Key: []
@@ -1498,7 +1498,7 @@ contents:
             - Push API
           summary: 디바이스 푸시 구독
           description: |
-            특정 디바이스에서 전달하는 푸시 메시지를 구독합니다. **(현재 LG ThinQ 등록 가전제품만 지원합니다.)**
+            특정 디바이스에서 전달하는 푸시 메시지를 구독합니다. **(현재 LG ThinQ 등록 디바이스만 지원합니다.)**
           operationId: subscribePushMessages
           security:
             - ThinQ_Business_API_Key: []
@@ -1612,7 +1612,7 @@ contents:
             - Push API
           summary: 디바이스 푸시 해제
           description: |
-            특정 디바이스에서 전달하는 푸시 메시지의 구독을 해제합니다. **(현재 LG ThinQ 등록 가전제품만 지원합니다.)**
+            특정 디바이스에서 전달하는 푸시 메시지의 구독을 해제합니다. **(현재 LG ThinQ 등록 디바이스만 지원합니다.)**
           operationId: unsubscribePushMessages
           security:
             - ThinQ_Business_API_Key: []
@@ -4883,7 +4883,7 @@ contents:
               |Value|Description|
               |-|-|
               |REGISTERED|파트너 요청 및 권한 업데이트를 통해 이미 등록한 계정입니다.|
-              |IN-HEADER|이 HTTP 요청의 `Authorization` 헤더에 OAuth 토큰(Token)으로 지정된 계정입니다. (**현재 LG ThinQ 등록 제품만 지원합니다.**)|
+              |IN-HEADER|이 HTTP 요청의 `Authorization` 헤더에 OAuth 토큰(Token)으로 지정된 계정입니다. (**현재 LG ThinQ 등록 디바이스만 지원합니다.**)|
           example: REGISTERED
         Authorization:
           name: Authorization
