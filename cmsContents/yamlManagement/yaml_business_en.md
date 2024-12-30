@@ -396,7 +396,7 @@ contents:
             | DEVICE_ALIAS_CHANGED | Device's alias changed | Get Device List API called|
       - name: User API
         description: |
-          The User API is used to manage the information of LG Electronics users who have registered for partner services. <b> Currently, the API is only available to products registered on LG ThinQ only.</b>
+          The User API is used to manage the information of LG Electronics users who have registered for partner services. <b> Currently, the API is only available to devices registered on LG ThinQ.</b>
       - name: DR API
         description: |
           With B2B partners as demand response (DR) providers, the DR API is used to control the devices of LG Electronics users, who are DR service users. B2B partners can utilize this API to manage LG Electronics users who are DR service users, register DR events that may reduce or change the power consumption of LG Electronics users during certain power peak hours in response to the electricity demand, and search whether the DR target device participates in DR events. The DR target devices are currently limited to air conditioners and TVs, but more products will be supported in the future. The DR service using this API follows the following procedure.
@@ -404,7 +404,7 @@ contents:
 
             - LG ThinQ users register their DR devices on the LG ThinQ app and sign up for a B2B partner's DR service.
             
-            <img src="https://dev.openapi.developer.lge.com/assets/images/img_DR_01.png" width="600"/>
+            <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_01.png" width="600"/>
 
           ### 2. DR request issuance
 
@@ -412,20 +412,20 @@ contents:
             - LG Electronics delivers the registered DR event to the target device before a specified start time.
             - LG ThinQ users receive a notification on the LG ThinQ app before the DR event starts.
 
-              <img src="https://dev.openapi.developer.lge.com/assets/images/img_DR_02.png" width="600"/>
+              <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_02.png" width="600"/>
 
           ### 3. Status monitoring
 
             - LG Electronics monitors and records the status of the device while the DR event takes place. 
             - the B2B partners download monitoring data using the DR API.
 
-              <img src="https://dev.openapi.developer.lge.com/assets/images/img_DR_03.png" width="600"/>
+              <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_03.png" width="600"/>
 
           ### 4. DR service billing
 
             - Based on the data provided by the DR API, the B2B partner calculates a bill based on the DR participation rate of the DR service users and provides the bill details to the users.
 
-            <img src="https://dev.openapi.developer.lge.com/assets/images/img_DR_04.png" width="600"/>        
+            <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_04.png" width="600"/>        
     paths:
       /token:
         post:
@@ -1401,7 +1401,7 @@ contents:
             - Push API
           summary: Get Device Push Subscription List
           description: |
-            Get ID list of devices that have subscribed to push messages. **(Currently, only LG ThinQ registered appliances are supported.)**
+            Get ID list of devices that have subscribed to push messages. **(Currently, only LG ThinQ registered devices are supported.)**
           operationId: listDevicesSubscribed
           security:
             - ThinQ_Business_API_Key: []
@@ -1541,7 +1541,7 @@ contents:
             - Push API
           summary: Subscribe to Device Push
           description: |
-            Subscribe to push notifications from the target device. **(Currently, only LG ThinQ registered appliances are supported.)**
+            Subscribe to push notifications from the target device. **(Currently, only LG ThinQ registered devices are supported.)**
           operationId: subscribePushMessages
           security:
             - ThinQ_Business_API_Key: []
@@ -1655,7 +1655,7 @@ contents:
             - Push API
           summary: Unsubscribe to Device Push
           description: |
-            Unsubscribed to push notifications of the target device. **(Currently, only LG ThinQ registered appliances are supported.)**
+            Unsubscribed to push notifications of the target device. **(Currently, only LG ThinQ registered devices are supported.)**
           operationId: unsubscribePushMessages
           security:
             - ThinQ_Business_API_Key: []
@@ -4926,7 +4926,7 @@ contents:
               |Value|Description|
               |-|-|
               |REGISTERED|The account that have already registered through partner requests or permission updates.|
-              |IN-HEADER|The account specified as the OAuth token in the `Authorization` header of this HTTP request. (**Currently, only LG ThinQ registered appliances are supported.**)|
+              |IN-HEADER|The account specified as the OAuth token in the `Authorization` header of this HTTP request. (**Currently, only LG ThinQ registered devices are supported.**)|
           example: REGISTERED
         Authorization:
           name: Authorization
