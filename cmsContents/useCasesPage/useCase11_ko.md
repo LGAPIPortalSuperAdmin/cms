@@ -9,7 +9,7 @@ contents: >-
   \    <div className="top-visual__items">
 
 
-  \    <img alt="이미지" isfullsize="" loading="lazy" decoding="async" data-nimg="fill" className="visual-img" src="/assets/images/usecase_new_banner_myconnect.png" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+  \    <img alt="이미지" isfullsize="" loading="lazy" decoding="async" data-nimg="fill" className="visual-img" src="/assets/images/vincent-van-gogh-starry-night_1920x1080.jpg" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
 
 
   \    <div className="box-item">
