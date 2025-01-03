@@ -9,7 +9,7 @@ contents: >-
   \    <div className="top-visual__items">
 
 
-  \    <CoImage src="assets/images/usecase_new_banner_myconnect.png" isFullSize alt="이미지" className="visual-img" />
+  \    <CoImage src="/assets/images/usecase_new_banner_myconnect.png" isFullSize alt="이미지" className="visual-img" />
 
 
   \    <div className="box-item">
