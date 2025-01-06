@@ -1,12 +1,6 @@
 ---
-contents: >-
-  텍스트 테스트
-
-
-
-
-  <div className="main-wrap usecase-wrap mt0">
-
+contents: >-2
+   <div className="main-wrap usecase-wrap mt0">
 
   \    <div className="top-visual">
 
