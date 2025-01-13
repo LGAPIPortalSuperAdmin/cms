@@ -17,7 +17,7 @@ contents: >-2
   \    <p className="sub">빌딩 관제</p>
 
 
-  \    <p className="title lgEiText">더 철저한 빌딩 관리</p>
+  \    <p className="title lgEiText">더 철저한 빌딩 관리wwww</p>
 
 
   \    <p className="text--light mt3">
