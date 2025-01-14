@@ -1,4 +1,6 @@
 ---
+thumbnail:
+  - https://raw.githubusercontent.com/LGAPIPortalSuperAdmin/cms/refs/heads/main/cmsPublic/assets/images/dhum_056905_kr.jpg
 contents: >-2
    <div className="main-wrap usecase-wrap mt0">
 
