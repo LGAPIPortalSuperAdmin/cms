@@ -8,7 +8,7 @@ contents: >-2
   \    <div className="top-visual__items">
 
 
-  \    <CoImage src="/assets/images/usecase_banner_building_control.png" isFullSize alt="이미지" className="visual-img" />
+  \    <CoImage src="https://github.com/LGAPIPortalSuperAdmin/cms/blob/main/cmsPublic/assets/images/dhum_056905_kr.jpg" isFullSize alt="이미지" className="visual-img" />
 
 
   \    <div className="box-item">
