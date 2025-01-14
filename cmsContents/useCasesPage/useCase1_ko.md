@@ -14,7 +14,7 @@ contents: >-2
   \    <div className="box-item">
 
 
-  \    <p className="sub">빌딩 관제2</p>
+  \    <p className="sub">빌딩 관제</p>
 
 
   \    <p className="title lgEiText">더 철저한 빌딩 관리</p>
@@ -818,13 +818,7 @@ contents: >-2
   \    </p>
 
 
-  \    <CoLink
-
-
-  \    href="/apiManage/business_connect"
-
-
-  \    className="btn-round-primary btn-l">
+  \    <CoLink   href="/apiManage/business_connect" className="btn-round-primary btn-l">
 
 
   \    API 문서 보기
