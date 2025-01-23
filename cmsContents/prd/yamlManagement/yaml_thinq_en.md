@@ -1,7 +1,7 @@
 ---
 contents:
   lang: yaml
-  code: >
+  code: >-
     openapi: 3.1.0
 
     info:
@@ -22,6 +22,15 @@ contents:
             5. Select a feature you want.
             6. Select the "CREATE TOKEN" button, and the token will be created. You will then be redirected to the PAT page.
             7. Copy the newly generated token for use.
+      - name: Base URL
+        description: |
+          ThinQ API specifies a Base URL based on the location of the customer's device. <br> Therefore, please select and apply the Base URL below when calling a ThinQ API, considering the region where the customer's device is located.
+
+            |Region|ThinQ API|
+            |-|-|
+            |South Asia, East Asia and Pacific|https://api-kic.lgthinq.com|
+            |America|https://api-aic.lgthinq.com|
+            |Europe, Middle East, Africa|https://api-eic.lgthinq.com|
       - name: Route API
         description: |
           An API to view the domain name of ThinQ Backend.
@@ -136,11 +145,11 @@ contents:
                       $ref: '#/components/examples/styler-profile-example'
                     Dish Washer:
                       $ref: '#/components/examples/dish_washer-profile-example'
-                    WashTower Washer:
+                    WashTower (Washer):
                       $ref: '#/components/examples/washtower_washer-profile-example'
-                    WashTower Dryer:
+                    WashTower (Dryer):
                       $ref: '#/components/examples/washtower_dryer-profile-example'
-                    WashTower (Single Unit):
+                    WashTower:
                       $ref: '#/components/examples/washtower-profile-example'
                     Main WashCombo:
                       $ref: '#/components/examples/main_washcombo-profile-example'
@@ -223,11 +232,11 @@ contents:
                       $ref: '#/components/examples/styler-object-example'
                     Dish Washer:
                       $ref: '#/components/examples/dish_washer-object-example'
-                    WashTower Washer(Washer):
+                    WashTower (Washer):
                       $ref: '#/components/examples/washtower_washer-object-example'
-                    WashTower Washer(Dryer):
+                    WashTower (Dryer):
                       $ref: '#/components/examples/washtower_dryer-object-example'
-                    WashTower (Single Unit):
+                    WashTower:
                       $ref: '#/components/examples/washtower-object-example'
                     Main WashCombo:
                       $ref: '#/components/examples/main_washcombo-object-example'
@@ -303,11 +312,11 @@ contents:
                     $ref: '#/components/examples/styler-command-example'
                   Dish Washer:
                     $ref: '#/components/examples/dish_washer-command-example'
-                  WashTower Washer(Washer):
+                  WashTower (Washer):
                     $ref: '#/components/examples/washtower_washer-command-example'
-                  WashTower Washer(Dryer):
+                  WashTower (Dryer):
                     $ref: '#/components/examples/washtower_dryer-command-example'
-                  WashTower (Single Unit):
+                  WashTower:
                     $ref: '#/components/examples/washtower-command-example'
                   Main WashCombo:
                     $ref: '#/components/examples/main_washcombo-command-example'
@@ -757,7 +766,7 @@ contents:
           schema:
             type: string
           description: |
-            API key for making API calls. Modify the value below to make the call.<br> "v6GFvkweNo7DK7yD3ylIZ9w52aKBU0eJ7wLXkSR3"
+            API key for making API calls. Call an API with the API key below. The key is a fixed value.<br> "v6GFvkweNo7DK7yD3ylIZ9w52aKBU0eJ7wLXkSR3"
           example: v6GFvkweNo7DK7yD3ylIZ9w52aKBU0eJ7wLXkSR3
         x-conditional-control:
           name: x-conditional-control
@@ -5015,19 +5024,19 @@ contents:
             operation:
               dishWasherOperationMode: START
         washtower_washer-command-example:
-          description: WashTower Washer Washer - Start washing
+          description: WashTower (Washer) - Start washing
           value:
             operation:
               washerOperationMode: START
             location:
               locationName: MAIN
         washtower_dryer-command-example:
-          description: WashTower Washer(Dryer) - POWER_OFF
+          description: WashTower (Dryer) - POWER_OFF
           value:
             operation:
               dryerOperationMode: POWER_OFF
         washtower-command-example:
-          description: WashTower Washer - Start drying
+          description: WashTower - Start drying
           value:
             dryer:
               operation:
@@ -5123,6 +5132,9 @@ contents:
       - name: Token
         tags:
           - PAT(Personal Access Token)
+      - name: Base URL
+        tags:
+          - Base URL
       - name: APIs
         tags:
           - Route API
