@@ -1,7 +1,7 @@
 ---
 contents:
   lang: yaml
-  code: >
+  code: >-
     openapi: 3.1.0
 
     info:
@@ -27,7 +27,7 @@ contents:
                 |-|-|
                 | property | Read/write support per property and value characteristics |
                 | notification |the type of push messages supported by your device |
-                | error |the type of push messages supported by your device |
+                | error |the type of errors supported by your device |
                 | extensionProperty | expanded properties |
 
             - **Request/Response Schema**
@@ -36,7 +36,7 @@ contents:
       - name: device type
         x-displayName: Device Type
         x-traitTag: true
-        description: "**Device Type** characterizes the device and allows you to distinguish the kind of device in the **Get Device List API** response. Device profiles are defined based on device type.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | Refrigerator | O | O |\n  | DEVICE_WASHER | Washer | O | O |\n  | DEVICE_DRYER | Dryer | O | O |\n  | DEVICE_AIR_CONDITIONER | Air Conditioner | O | O |\n  | DEVICE_AIR_PURIFIER | Air Purifier | O | O |\n  | DEVICE_ROBOT_CLEANER | Robot Cleaner | O | O |\n  | DEVICE_OVEN | Oven | O | O |\n  | DEVICE_DISH_WASHER | Dish Washer | O | O |\n  | DEVICE_STYLER | Styler | O | O |\n  | DEVICE_WATER_PURIFIER | Water Purifier | O | O |\n  | DEVICE_DEHUMIDIFIER | Dehumidifier | O | O |\n  | DEVICE_CEILING_FAN | Ceiling Fan | O | O |\n  | DEVICE_WINE_CELLAR | Wine Cellar | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | Kimchi Refrigerator | O | O |\n  | DEVICE_HOME_BREW | Home Brew | O | O |\n  | DEVICE_PLANT_CULTIVATOR | Plant Cultivator | O | O |\n  | DEVICE_WASHTOWER_WASHER | WashTower Washer(Washer) | O | O |\n  | DEVICE_WASHTOWER_DRYER | WashTower Washer(Dryer) | O | O |\n  | DEVICE_WASHTOWER | WashTower Washer | O | O |\n  | DEVICE_COOKTOP | Cooktop | O | O |\n  | DEVICE_HOOD | Hood | O | O |\n  | DEVICE_MICROWAVE_OVEN | Microwave Oven | O | O |\n  | DEVICE_SYSTEM_BOILER | System Boiler | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | Air Purifier Fan | O | O |\n  | DEVICE_STICK_CLEANER | Stick Cleaner | O | O |\n  | DEVICE_WATER_HEATER | Water Heater | O | O |\n  | DEVICE_WASHCOMBO_MAIN | Main WashCombo | O | O |\n  | DEVICE_WASHCOMBO_MINI | Mini WashCombo | O | O |\n  | DEVICE_HUMIDIFIER | Humidifier | O | O |\n  | DEVICE_ODU | Outdoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_IDU | Indoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_SIGNAGE | Signage registered in Business Cloud | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | Smart Motion Sensor | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | Smart Temperature and Humidity Sensor | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | Smart door Sensor | X | O |\n  | DEVICE_HEJ_BUTTON | Smart button | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | Smart light switch | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | Smart door lock | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | Smart Push Pull door lock | X | O |\n  | DEVICE_HEJ_PLUG | Smart Plug | X | O |\n  | DEVICE_HEJ_PLUG_MINI | Smart Plug Mini | X | O |\n  | DEVICE_HEJ_BULB_WHITE | Smart light bulb (White) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | Smart light bulb (Multi-Color) | X | O |\n  | DEVICE_HEJ_LINE_LED | Smart String Light LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | Smart Motorized Curtain Controller | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | Smart electric blinds | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | Switch strap | X | O |\n  | DEVICE_HEJ_STARLIGHT | Smart Star Light | X | O |\n  | DEVICE_HEJ_DOORBELL | Smart Chime Bell | X | O |\n  | DEVICE_HEJ_PET_FEEDER | Smart Pet Feeder | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | Smart Home Camera | X | O |\n  | DEVICE_HEJ_SYNC_BOX | Syc Box | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | Synclight | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| Smart Gas sensor | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | Smart fire detection sensor | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | Smart water leak detection sensor | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | Smart thermohygrometer | X | O |\n  | DEVICE_HEJ_SIREN | Smart siren | X | O |\n"
+        description: "**Device Type** characterizes the device and allows you to distinguish the kind of device in the **Get Device List API** response. Device profiles are defined based on device type.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | Refrigerator | O | O |\n  | DEVICE_WASHER | Washer | O | O |\n  | DEVICE_DRYER | Dryer | O | O |\n  | DEVICE_AIR_CONDITIONER | Air Conditioner | O | O |\n  | DEVICE_AIR_PURIFIER | Air Purifier | O | O |\n  | DEVICE_ROBOT_CLEANER | Robot Cleaner | O | O |\n  | DEVICE_OVEN | Oven | O | O |\n  | DEVICE_DISH_WASHER | Dish Washer | O | O |\n  | DEVICE_STYLER | Styler | O | O |\n  | DEVICE_WATER_PURIFIER | Water Purifier | O | O |\n  | DEVICE_DEHUMIDIFIER | Dehumidifier | O | O |\n  | DEVICE_CEILING_FAN | Ceiling Fan | O | O |\n  | DEVICE_WINE_CELLAR | Wine Cellar | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | Kimchi Refrigerator | O | O |\n  | DEVICE_HOME_BREW | Home Brew | O | O |\n  | DEVICE_PLANT_CULTIVATOR | Plant Cultivator | O | O |\n  | DEVICE_WASHTOWER_WASHER | WashTower (Washer) | O | O |\n  | DEVICE_WASHTOWER_DRYER | WashTower (Dryer) | O | O |\n  | DEVICE_WASHTOWER | WashTower  | O | O |\n  | DEVICE_COOKTOP | Cooktop | O | O |\n  | DEVICE_HOOD | Hood | O | O |\n  | DEVICE_MICROWAVE_OVEN | Microwave Oven | O | O |\n  | DEVICE_SYSTEM_BOILER | System Boiler | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | Air Purifier Fan | O | O |\n  | DEVICE_STICK_CLEANER | Stick Cleaner | O | O |\n  | DEVICE_WATER_HEATER | Water Heater | O | O |\n  | DEVICE_WASHCOMBO_MAIN | Main WashCombo | O | O |\n  | DEVICE_WASHCOMBO_MINI | Mini WashCombo | O | O |\n  | DEVICE_HUMIDIFIER | Humidifier | O | O |\n  | DEVICE_ODU | Outdoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_IDU | Indoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_SIGNAGE | Signage registered in Business Cloud | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | Smart Motion Sensor | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | Smart Temperature and Humidity Sensor | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | Smart door Sensor | X | O |\n  | DEVICE_HEJ_BUTTON | Smart button | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | Smart light switch | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | Smart door lock | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | Smart Push Pull door lock | X | O |\n  | DEVICE_HEJ_PLUG | Smart Plug | X | O |\n  | DEVICE_HEJ_PLUG_MINI | Smart Plug Mini | X | O |\n  | DEVICE_HEJ_BULB_WHITE | Smart light bulb (White) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | Smart light bulb (Multi-Color) | X | O |\n  | DEVICE_HEJ_LINE_LED | Smart String Light LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | Smart Motorized Curtain Controller | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | Smart electric blinds | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | Switch strap | X | O |\n  | DEVICE_HEJ_STARLIGHT | Smart Star Light | X | O |\n  | DEVICE_HEJ_DOORBELL | Smart Chime Bell | X | O |\n  | DEVICE_HEJ_PET_FEEDER | Smart Pet Feeder | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | Smart Home Camera | X | O |\n  | DEVICE_HEJ_SYNC_BOX | Syc Box | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | Synclight | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| Smart Gas sensor | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | Smart fire detection sensor | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | Smart water leak detection sensor | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | Smart thermohygrometer | X | O |\n  | DEVICE_HEJ_SIREN | Smart siren | X | O |\n"
       - name: refrigerator
         x-displayName: Refrigerator
         description: |
@@ -1099,7 +1099,7 @@ contents:
           ### Device control request
           Plant Cultivator doesn't support control requests.
       - name: washtower_washer
-        x-displayName: WashTower Washer(Washer)
+        x-displayName: WashTower (Washer)
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1165,7 +1165,7 @@ contents:
               }
             ```
       - name: washtower_dryer
-        x-displayName: WashTower Washer(Dryer)
+        x-displayName: WashTower (Dryer)
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1219,7 +1219,7 @@ contents:
               }
             ```
       - name: washtower
-        x-displayName: WashTower Washer
+        x-displayName: WashTower 
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -4110,8 +4110,8 @@ contents:
                   description: |-
                     Push Code | Description
                     -|-
-                    DRYING_FAILED | Drying is complete.
-                    DRYING_IS_COMPLETE | Drying has failed.
+                    DRYING_FAILED | Drying has failed.
+                    DRYING_IS_COMPLETE | Drying is complete.
                   items:
                     type: string
                     enum:
@@ -27710,7 +27710,7 @@ contents:
                 totalHour: 0
                 totalMinute: 0
         washtower_washer-command-example:
-          description: WashTower Washer - Start washing
+          description: WashTower (Washer) - Start washing
           value:
             operation:
               washerOperationMode: START
@@ -28048,7 +28048,7 @@ contents:
                 totalHour: 0
                 totalMinute: 0
         washtower-command-example:
-          description: WashTower (Single Unit) - Start drying
+          description: WashTower - Start drying
           value:
             dryer:
               operation:
