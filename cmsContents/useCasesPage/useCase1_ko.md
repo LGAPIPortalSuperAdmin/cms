@@ -14,10 +14,10 @@ contents: >-2
   \    <div className="box-item">
 
 
-  \    <p className="sub">빌딩 관제</p>
+  \    <p className="sub">빌딩 관제111</p>
 
 
-  \    <p className="title lgEiText">더 철저한 빌딩 관리</p>
+  \    <p className="title lgEiText">111더 철저한 빌딩 관리</p>
 
 
   \    <p className="text--light mt3">
