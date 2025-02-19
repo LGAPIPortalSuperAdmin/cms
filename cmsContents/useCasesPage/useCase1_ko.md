@@ -50,7 +50,7 @@ contents: >-2
   <p className="bu-ex-g">비즈니스에 새로운 가능성을 열어줄 API를 만나보세요.	</p></div>
 
 
-  \    <div><CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388" onClick=gaCallClick()>
+  \    <div><CoLink className="btn-round-line btn-l" href="/mypage/partner/landing?s=1728539044388" >
 
 
   \    파트너십 신청
