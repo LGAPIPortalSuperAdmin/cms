@@ -1,8 +1,5 @@
 ---
 contents: >-2
-  
-
-
    <div className="main-wrap usecase-wrap mt0">
 
   \    <div className="top-visual">
@@ -817,7 +814,7 @@ contents: >-2
   \    <dt>Overall Sequence Diagram</dt>
 
 
-  \    <dd class="usecase-new-myconnect"><img src="/assets/images/img_new_Overall_Sequence.png" alt="" style="width: 100% !important; height:100% !important;"></dd>
+  \    <dd class="usecase-new-myconnect"><img src="/assets/images/img_new_Overall_Sequence_2.png" alt="" style="width: 100% !important; height:100% !important;"></dd>
 
 
   \    </dl>
