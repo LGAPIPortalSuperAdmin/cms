@@ -1,7 +1,7 @@
 ---
 contents:
   lang: yaml
-  code: >-
+  code: >
     openapi: 3.1.0
 
     info:
@@ -27,7 +27,7 @@ contents:
                 | property | 속성별 Read/Write 지원 여부와 값의 특성 |
                 | notification |해당 디바이스에서 지원하는 푸시 메시지의 종류 |
                 | error |해당 디바이스에서 지원하는 에러 유형 |
-                | extensonProperty | 확장된 속성 |
+                | extensionProperty | 확장된 속성 |
 
             - **요청/응답 스키마**
               
@@ -36,7 +36,7 @@ contents:
       - name: device type
         x-displayName: 디바이스 타입
         x-traitTag: true
-        description: "**디바이스 타입**은 디바이스의 특성을 구분하며 **디바이스 목록 조회 API** 응답에서 종류를 구분합니다. 디바이스 프로파일은 이 디바이스 타입에 따라 정의됩니다.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | 냉장고 | O | O |\n  | DEVICE_WASHER | 세탁기 | O | O |\n  | DEVICE_DRYER | 건조기 | O | O |\n  | DEVICE_AIR_CONDITIONER | 에어컨 | O | O |\n  | DEVICE_AIR_PURIFIER | 공기청정기 | O | O |\n  | DEVICE_ROBOT_CLEANER | 로봇청소기 | O | O |\n  | DEVICE_OVEN | 오븐 | O | O |\n  | DEVICE_DISH_WASHER | 식기세척기 | O | O |\n  | DEVICE_STYLER | 스타일러 | O | O |\n  | DEVICE_WATER_PURIFIER | 정수기 | O | O |\n  | DEVICE_DEHUMIDIFIER | 제습기 | O | O |\n  | DEVICE_CEILING_FAN | 실링팬 | O | O |\n  | DEVICE_WINE_CELLAR | 와인셀러 | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | 김치냉장고 | O | O |\n  | DEVICE_HOME_BREW | 홈브루 | O | O |\n  | DEVICE_PLANT_CULTIVATOR | 식물재배기 | O | O |\n  | DEVICE_WASHTOWER_WASHER | 워시타워 (세탁기) | O | O |\n  | DEVICE_WASHTOWER_DRYER | 워시타워 (건조기) | O | O |\n  | DEVICE_WASHTOWER | 워시타워 | O | O |\n  | DEVICE_COOKTOP | 쿡탑 | O | O |\n  | DEVICE_HOOD | 후드 | O | O |\n  | DEVICE_MICROWAVE_OVEN | 전자레인지 | O | O |\n  | DEVICE_SYSTEM_BOILER | 시스템 보일러 | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | 공기청정팬 | O | O |\n  | DEVICE_STICK_CLEANER | 스틱청소기 | O | O |\n  | DEVICE_WATER_HEATER | 온수기 | O | O |\n  | DEVICE_WASHCOMBO_MAIN | 워시콤보 (메인) | O | O |\n  | DEVICE_WASHCOMBO_MINI | 워시콤보 (미니) | O | O |\n  | DEVICE_HUMIDIFIER | 가습기 | O | O |\n  | DEVICE_ODU | BECON Cloud에 등록된 SAC 실외기 | X | O |\n  | DEVICE_IDU | BECON Cloud에 등록된 SAC 실내기 | X | O |\n  | DEVICE_SIGNAGE | Business Cloud에 등록된 사이니지 | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | 스마트 모션 센서 | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | 스마트 온습도 센서 | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | 스마트 도어 센서 | X | O |\n  | DEVICE_HEJ_BUTTON | 스마트 버튼 | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | 스마트 조명 스위치 | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | 스마트 도어락  | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | 스마트 푸쉬풀 도어락 | X | O |\n  | DEVICE_HEJ_PLUG | 스마트 플러그 | X | O |\n  | DEVICE_HEJ_PLUG_MINI | 스마트 플러그 미니 | X | O |\n  | DEVICE_HEJ_BULB_WHITE | 스마트 전구 (화이트) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | 스마트 전구 (컬러) | X | O |\n  | DEVICE_HEJ_LINE_LED | 스마트 라인 LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | 스마트 전동 커튼 컨트롤러 | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | 스마트 전동 블라인드 | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | 스위치 스트립 | X | O |\n  | DEVICE_HEJ_STARLIGHT | 스마트 스타 라이트 | X | O |\n  | DEVICE_HEJ_DOORBELL | 스마트 도어벨 | X | O |\n  | DEVICE_HEJ_PET_FEEDER | 스마트 펫 급식기 | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | 스마트 홈 카메라 | X | O |\n  | DEVICE_HEJ_SYNC_BOX | 싱크 박스 | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | 싱크 박스 서브 | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| 스마트 가스 감지 센서 | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | 스마트 화재 감지 센서 | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | 스마트 누수 감지 센서 | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | 스마트 온습도계 | X | O |\n  | DEVICE_HEJ_SIREN | 스마트 사이렌 | X | O |\n"
+        description: "**디바이스 타입**은 디바이스의 특성을 구분하며 **디바이스 목록 조회 API** 응답에서 종류를 구분합니다. 디바이스 프로파일은 이 디바이스 타입에 따라 정의됩니다.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | 냉장고 | O | O |\n  | DEVICE_WASHER | 세탁기 | O | O |\n  | DEVICE_DRYER | 건조기 | O | O |\n  | DEVICE_AIR_CONDITIONER | 에어컨 | O | O |\n  | DEVICE_AIR_PURIFIER | 공기청정기 | O | O |\n  | DEVICE_ROBOT_CLEANER | 로봇청소기 | O | O |\n  | DEVICE_OVEN | 오븐 | O | O |\n  | DEVICE_DISH_WASHER | 식기세척기 | O | O |\n  | DEVICE_STYLER | 스타일러 | O | O |\n  | DEVICE_WATER_PURIFIER | 정수기 | O | O |\n  | DEVICE_DEHUMIDIFIER | 제습기 | O | O |\n  | DEVICE_CEILING_FAN | 실링팬 | O | O |\n  | DEVICE_WINE_CELLAR | 와인셀러 | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | 김치냉장고 | O | O |\n  | DEVICE_HOME_BREW | 홈브루 | O | O |\n  | DEVICE_PLANT_CULTIVATOR | 식물재배기 | O | O |\n  | DEVICE_WASHTOWER_WASHER | 워시타워(세탁기) | O | O |\n  | DEVICE_WASHTOWER_DRYER | 워시타워(건조기) | O | O |\n  | DEVICE_WASHTOWER | 워시타워 | O | O |\n  | DEVICE_COOKTOP | 쿡탑 | O | O |\n  | DEVICE_HOOD | 후드 | O | O |\n  | DEVICE_MICROWAVE_OVEN | 전자레인지 | O | O |\n  | DEVICE_SYSTEM_BOILER | 시스템 보일러 | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | 공기청정팬 | O | O |\n  | DEVICE_STICK_CLEANER | 스틱청소기 | O | O |\n  | DEVICE_WATER_HEATER | 온수기 | O | O |\n  | DEVICE_WASHCOMBO_MAIN | 워시콤보 (메인) | O | O |\n  | DEVICE_WASHCOMBO_MINI | 워시콤보 (미니) | O | O |\n  | DEVICE_HUMIDIFIER | 가습기 | O | O |\n  | DEVICE_ODU | BECON Cloud에 등록된 SAC 실외기 | X | O |\n  | DEVICE_IDU | BECON Cloud에 등록된 SAC 실내기 | X | O |\n  | DEVICE_SIGNAGE | Business Cloud에 등록된 사이니지 | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | 스마트 모션 센서 | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | 스마트 온습도 센서 | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | 스마트 도어 센서 | X | O |\n  | DEVICE_HEJ_BUTTON | 스마트 버튼 | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | 스마트 조명 스위치 | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | 스마트 도어락  | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | 스마트 푸쉬풀 도어락 | X | O |\n  | DEVICE_HEJ_PLUG | 스마트 플러그 | X | O |\n  | DEVICE_HEJ_PLUG_MINI | 스마트 플러그 미니 | X | O |\n  | DEVICE_HEJ_BULB_WHITE | 스마트 전구 (화이트) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | 스마트 전구 (컬러) | X | O |\n  | DEVICE_HEJ_LINE_LED | 스마트 라인 LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | 스마트 전동 커튼 컨트롤러 | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | 스마트 전동 블라인드 | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | 스위치 스트립 | X | O |\n  | DEVICE_HEJ_STARLIGHT | 스마트 스타 라이트 | X | O |\n  | DEVICE_HEJ_DOORBELL | 스마트 도어벨 | X | O |\n  | DEVICE_HEJ_PET_FEEDER | 스마트 펫 급식기 | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | 스마트 홈 카메라 | X | O |\n  | DEVICE_HEJ_SYNC_BOX | 싱크 박스 | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | 싱크 박스 서브 | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| 스마트 가스 감지 센서 | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | 스마트 화재 감지 센서 | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | 스마트 누수 감지 센서 | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | 스마트 온습도계 | X | O |\n  | DEVICE_HEJ_SIREN | 스마트 사이렌 | X | O |\n"
       - name: refrigerator
         x-displayName: 냉장고
         description: |
@@ -1219,6 +1219,82 @@ contents:
                 }
               }
             ```
+      - name: ventilator
+        x-displayName: 환기
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/ventilator-profile"
+            exampleRef="#/components/examples/ventilator-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/ventilator-object"
+            exampleRef="#/components/examples/ventilator-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            showExample={false} showWriteOnly={false} />
+
+          #### Example  
+          Set timer to start  
+            ```json
+              {
+                "timer": {
+                  "absoluteHourToStart": 10,
+                  "absoluteMinuteToStart": 20
+                }
+              }
+            ```
+
+          Set timer to stop
+            ```json
+              {
+                "timer": {
+                  "absoluteHourToStop": 10,
+                  "absoluteMinuteToStop": 20
+                }
+              }
+            ```
+
+          Unset timer to start
+            ```json
+              {
+                "timer": {
+                  "absoluteStartTimer": "UNSET"
+                }
+              }
+            ```
+
+          Unset timer to stop
+            ```json
+              {
+                "timer": {
+                  "absoluteStopTimer": "UNSET"
+                }
+              }
+            ```
+
+          Set sleep timer to stop
+            ```json
+              {
+                "sleepTimer": {
+                  "relativeHourToStop": 3
+                }
+              }
+            ```
+
+          Unset sleep timer to stop
+            ```json
+              {
+                "sleepTimer": {
+                  "relativeStopTimer": "UNSET"
+                }
+              }
+            ```
       - name: odu
         x-displayName: 실외기
         description: |
@@ -1812,6 +1888,8 @@ contents:
                       - $ref: '#/components/schemas/dehumidifier-object'
                       - $ref: '#/components/schemas/humidifier-profile'
                       - $ref: '#/components/schemas/humidifier-object'
+                      - $ref: '#/components/schemas/ventilator-profile'
+                      - $ref: '#/components/schemas/ventilator-object'
                       - $ref: '#/components/schemas/robot_cleaner-profile'
                       - $ref: '#/components/schemas/robot_cleaner-object'
                       - $ref: '#/components/schemas/oven-profile'
@@ -1964,6 +2042,12 @@ contents:
                       $ref: '#/components/examples/humidifier-object-example'
                     humidifier-command-example:
                       $ref: '#/components/examples/humidifier-command-example'
+                    ventilator-profile-example:
+                      $ref: '#/components/examples/ventilator-profile-example'
+                    ventilator-object-example:
+                      $ref: '#/components/examples/ventilator-object-example'
+                    ventilator-command-example:
+                      $ref: '#/components/examples/ventilator-command-example'
                     robot_cleaner-profile-example:
                       $ref: '#/components/examples/robot_cleaner-profile-example'
                     robot_cleaner-object-example:
@@ -9681,6 +9765,633 @@ contents:
                   enum:
                     - 'ON'
                     - 'OFF'
+        ventilator-profile:
+          type: object
+          title: Ventilator
+          properties:
+            property:
+              type: object
+              properties:
+                ventJobMode:
+                  type: object
+                  description: 모드
+                  properties:
+                    currentJobMode:
+                      type: object
+                      description: 운전 모드
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                VENT_NATURE | 자동 운전 모드
+                                VENT_AUTO | 자연바람환기
+                                VENT_HEAT_EXCHANGE | 실온교환기
+                              items:
+                                type: string
+                                enum:
+                                  - VENT_NATURE
+                                  - VENT_AUTO
+                                  - VENT_HEAT_EXCHANGE
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                VENT_NATURE | 자동 운전 모드
+                                VENT_AUTO | 자연바람환기
+                                VENT_HEAT_EXCHANGE | 실온교환기
+                              items:
+                                type: string
+                                enum:
+                                  - VENT_NATURE
+                                  - VENT_AUTO
+                                  - VENT_HEAT_EXCHANGE
+                operation:
+                  type: object
+                  description: 동작
+                  properties:
+                    ventOperationMode:
+                      type: object
+                      description: 본체 동작
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                temperature:
+                  type: object
+                  description: 온도
+                  properties:
+                    currentTemperature:
+                      type: object
+                      description: 현재 온도
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              description: 10.5-39.5 도
+                              properties:
+                                min:
+                                  type: number
+                                max:
+                                  type: number
+                                step:
+                                  type: number
+                    unit:
+                      type: object
+                      description: 단위
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                C | 섭씨
+                              items:
+                                type: string
+                                enum:
+                                  - C
+                airQualitySensor:
+                  type: object
+                  description: 공기질
+                  properties:
+                    PM1:
+                      type: number
+                      description: PM1.0 극초미세먼지 농도
+                      mode:
+                        type: array
+                        items:
+                          type: string
+                          enum:
+                            - r
+                    PM2:
+                      type: number
+                      description: PM2.5 초미세먼지 농도
+                      mode:
+                        type: array
+                        items:
+                          type: string
+                          enum:
+                            - r
+                    PM10:
+                      type: number
+                      description: PM10 미세먼지 농도
+                      mode:
+                        type: array
+                        items:
+                          type: string
+                          enum:
+                            - r
+                    CO2:
+                      type: object
+                      description: Co2 농도
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                INVALID | INVALID
+                                GOOD | 좋음
+                                NORMAL | 보통
+                                BAD | 나쁨
+                                VERY_BAD | 매우나쁨
+                              items:
+                                type: string
+                                enum:
+                                  - INVALID
+                                  - GOOD
+                                  - NORMAL
+                                  - BAD
+                                  - VERY_BAD
+                airFlow:
+                  type: object
+                  description: 바람 설정
+                  properties:
+                    windStrength:
+                      type: object
+                      description: 바람 세기
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                AUTO | 자동
+                                HIGH | 강풍
+                                POWER | 특강풍
+                                LOW | 약풍
+                              items:
+                                type: string
+                                enum:
+                                  - AUTO
+                                  - HIGH
+                                  - POWER
+                                  - LOW
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                AUTO | 자동
+                                HIGH | 강풍
+                                POWER | 특강풍
+                                LOW | 약풍
+                              items:
+                                type: string
+                                enum:
+                                  - AUTO
+                                  - HIGH
+                                  - POWER
+                                  - LOW
+                timer:
+                  type: object
+                  description: 타이머
+                  properties:
+                    absoluteHourToStop:
+                      type: object
+                      description: 지정한 꺼짐 예약 시간(시)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteMinuteToStop:
+                      type: object
+                      description: 지정한 꺼짐 예약 시간(분)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteStopTimer:
+                      type: object
+                      description: 지정한 꺼짐 예약시간 설정 여부
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                SET | 꺼짐 예약 시간 설정
+                                UNSET | 꺼짐 예약 시간 해제
+                              items:
+                                type: string
+                                enum:
+                                  - SET
+                                  - UNSET
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                UNSET | 꺼짐 예약 시간 해제
+                              items:
+                                type: string
+                                enum:
+                                  - UNSET
+                    absoluteHourToStart:
+                      type: object
+                      description: 지정한 켜짐 예약 시간(시)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteMinuteToStart:
+                      type: object
+                      description: 지정한 켜짐 예약 시간(분)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteStartTimer:
+                      type: object
+                      description: 지정한 켜짐 예약시간 설정 여부
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                SET | 켜짐 예약 시간 설정
+                                UNSET | 켜짐 예약 시간 해제
+                              items:
+                                type: string
+                                enum:
+                                  - SET
+                                  - UNSET
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                UNSET | 켜짐 예약 시간 해제
+                              items:
+                                type: string
+                                enum:
+                                  - UNSET
+                sleepTimer:
+                  type: object
+                  description: 슬립타이머
+                  properties:
+                    relativeHourToStop:
+                      type: object
+                      description: 취침(꺼짐) 예약 시간(시)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    relativeMinuteToStop:
+                      type: object
+                      description: 취침(꺼짐) 예약 시간(분)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                    relativeStopTimer:
+                      type: object
+                      description: 취침(꺼짐) 예약 시간 설정 여부
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                SET | 취침 예약 시간 설정
+                                UNSET | 취침 예약 시간 해제
+                              items:
+                                type: string
+                                enum:
+                                  - SET
+                                  - UNSET
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                UNSET | 취침 예약 시간 해제
+                              items:
+                                type: string
+                                enum:
+                                  - UNSET
+                notification:
+                  type: object
+                  description: null
+                  properties:
+                    push:
+                      type: array
+                      description: |-
+                        Value | Description
+                        -|-
+                        NEED_TO_CHANGE_DUST_FILTER | 먼지 필터 교체가 필요합니다.
+                        NEED_TO_CHANGE_PRE_FILTER | 프리 필터 교체가 필요합니다.
+                      items:
+                        type: string
+                        enum:
+                          - NEED_TO_CHANGE_DUST_FILTER
+                          - NEED_TO_CHANGE_PRE_FILTER
+        ventilator-object:
+          type: object
+          title: Ventilator
+          properties:
+            ventJobMode:
+              type: object
+              description: 모드
+              properties:
+                currentJobMode:
+                  type: string
+                  description: 운전 모드
+                  enum:
+                    - VENT_NATURE
+                    - VENT_AUTO
+                    - VENT_HEAT_EXCHANGE
+            operation:
+              type: object
+              description: 동작
+              properties:
+                ventOperationMode:
+                  type: string
+                  description: 본체 동작
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            temperature:
+              type: object
+              description: 온도
+              properties:
+                currentTemperature:
+                  type: number
+                  description: 현재 온도
+                unit:
+                  type: string
+                  description: 단위
+            airQualitySensor:
+              type: object
+              description: 공기질
+              properties:
+                PM1:
+                  type: number
+                  description: PM1.0 극초미세먼지 농도
+                PM2:
+                  type: number
+                  description: PM2.5 초미세먼지 농도
+                PM10:
+                  type: number
+                  description: PM10 미세먼지 농도
+                CO2:
+                  type: string
+                  description: Co2 농도
+                  enum:
+                    - INVALID
+                    - GOOD
+                    - NORMAL
+                    - BAD
+                    - VERY_BAD
+            airFlow:
+              type: object
+              description: 바람 설정
+              properties:
+                windStrength:
+                  type: string
+                  description: 바람 세기
+                  enum:
+                    - AUTO
+                    - HIGH
+                    - POWER
+                    - LOW
+            timer:
+              type: object
+              description: 타이머
+              properties:
+                absoluteHourToStart:
+                  type: number
+                  description: 지정한 켜짐 예약 시간(시)
+                absoluteMinuteToStart:
+                  type: number
+                  description: 지정한 켜짐 예약 시간(분)
+                absoluteHourToStop:
+                  type: number
+                  description: 지정한 꺼짐 예약 시간(시)
+                absoluteMinuteToStop:
+                  type: number
+                  description: 지정한 꺼짐 예약 시간(분)
+                absoluteStartTimer:
+                  type: string
+                  description: 지정한 켜짐 예약시간 설정 여부
+                  enum:
+                    - SET
+                    - UNSET
+                absoluteStopTimer:
+                  type: string
+                  description: 지정한 꺼짐 예약시간 설정 여부
+                  enum:
+                    - SET
+                    - UNSET
+            sleepTimer:
+              type: object
+              description: 슬립타이머
+              properties:
+                relativeHourToStop:
+                  type: number
+                  description: 취침 예약 (꺼짐) (시)
+                relativeMinuteToStop:
+                  type: number
+                  description: 취침 예약 (꺼짐) (분)
+                relativeStopTimer:
+                  type: string
+                  description: 꺼짐 예약 시간 설정 여부
+                  enum:
+                    - SET
+                    - UNSET
         robot_cleaner-profile:
           type: object
           title: Robot_Cleaner
@@ -16967,7 +17678,7 @@ contents:
                             - number
                     unit:
                       type: object
-                      description: 온도
+                      description: 단위
                       properties:
                         mode:
                           type: array
@@ -28342,6 +29053,189 @@ contents:
           value:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
+        ventilator-profile-example:
+          value:
+            property:
+              ventJobMode:
+                currentJobMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - VENT_NATURE
+                      - VENT_AUTO
+                      - VENT_HEAT_EXCHANGE
+                    w:
+                      - VENT_NATURE
+                      - VENT_AUTO
+                      - VENT_HEAT_EXCHANGE
+              operation:
+                ventOperationMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              temperature:
+                currentTemperature:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 39.5
+                      min: 10.5
+                      step: 0.5
+                unit:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - C
+              airQualitySensor:
+                PM1:
+                  type: number
+                  mode:
+                    - r
+                PM2:
+                  type: number
+                  mode:
+                    - r
+                PM10:
+                  type: number
+                  mode:
+                    - r
+                CO2:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+              airFlow:
+                windStrength:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - AUTO
+                      - HIGH
+                      - POWER
+                      - LOW
+                    w:
+                      - AUTO
+                      - HIGH
+                      - POWER
+                      - LOW
+              timer:
+                absoluteHourToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteStopTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteHourToStart:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteMinuteToStart:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteStartTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              sleepTimer:
+                relativeHourToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                relativeMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                relativeStopTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+            notification:
+              push:
+                - NEED_TO_CHANGE_DUST_FILTER
+                - NEED_TO_CHANGE_PRE_FILTER
+        ventilator-object-example:
+          value:
+            ventJobMode:
+              currentJobMode: VENT_NATURE
+            operation:
+              ventOperationMode: POWER_ON
+            airQualitySensor:
+              PM1: 4
+              PM2: 4
+              PM10: 5
+              CO2: GOOD
+            temperature:
+              currentTemperature: 26.5
+              unit: C
+            airFlow:
+              windStrength: AUTO
+            timer:
+              absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
+            sleepTimer:
+              relativeStopTimer: UNSET
+        ventilator-command-example:
+          description: 환기 - 자동 운전 모드
+          value:
+            ventJobMode:
+              currentJobMode: VENT_AUTO
         robot_cleaner-profile-example:
           title: Robot_Cleaner
           value:
@@ -33738,6 +34632,7 @@ contents:
           - main_washcombo
           - mini_washcombo
           - humidifier
+          - ventilator
       - name: LG BECON Cloud
         tags:
           - odu
