@@ -1,7 +1,7 @@
 ---
 contents:
   lang: yaml
-  code: >-
+  code: >
     openapi: 3.1.0
 
     info:
@@ -18,8 +18,11 @@ contents:
       - name: Overview
         x-displayName: Overview
         description: |
-          To search or control information about LG Electronics' home appliances, displays, and air conditioners with your service, you can utilize the ThinQ Business API. LG Electronics provides the ThinQ Business API so that a partner's service can obtain or control information about devices registered in LG Electronics' cloud service. ThinQ Business APIs are categorized as follows, depending on the usage purpose of the API.
-
+          By using the **ThinQ Business API**, you can check or control the status of LG Electronics' Home appliances, Signage, Commercial HVAC, and IoT devices all at once. ThinQ Business API provides integrated APIs, allowing B2B partner software to directly connect with and manage the status of registered devices on LG Electronics' cloud platforms, such as LG ThinQ, LG Business Cloud, and LG BECON Cloud. For more details on the types of supported devices and the schema of the API call messages, please refer to the  **[Device Profile](/en/apiManage/device_profile)** page.
+          
+          To use the ThinQ Business API, you should **[request a partnership](/en/mypage/partner/landing)** first. Once approved, you can simulate a product and call APIs for testing without registering actual devices on LG Electronics' cloud platform, as the **ThinQ Business Simulator** will be provided as well
+          
+          ThinQ Business APIs are categorized based on what their purposes are.
             |API Type|Summary|
             |-|-|
             |Device API|API to get a list and status of enrolled devices and perform controls|
@@ -152,29 +155,42 @@ contents:
           ## Country Code
           The country code used in ThinQ Business API Call supports the `ISO-3166 alpha-2` specification and can be used for countries, where LG ThinQ service is available. The supported country codes are shown in the table below.
 
+            ### South Asia, East Asia and Pacific
 
-            | Code | Name          | Code | Name         | Code | Name          | Code | Name          | Code | Name           | Code | Name         | Code | Name         | Code | Name         |
-            |-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|
-            | KR | South Korea | GH | Ghana | GA | Gabon | GY | Guyana | GM | Gambia | GT | Guatemala | GD | Grenada | GR | Greece |
-            | GN | Guinea | NG | Nigeria | ZA | South Africa| NL | Netherlands| NO | Norway| NZ | New Zealand| NE | Niger | NI | Nicaragua|
-            | TW | Taiwan | DK | Denmark | DM | Dominica | DO | Dominican Republic | DE | Germany | LR | Liberia | LV | Latvia | RU | Russia |
-            | LB | Lebanon | RO | Romania| LU | Luxembourg | RW | Rwanda | LY | Libya | LT | Lithuania | MK | Macedonia | MY | Malaysia |
-            | ML | Mali | MX | Mexico | MA | Morocco | MU | Mauritius | ME | Montenegro | MD | Moldova | MT | Malta | US | United States |
-            | MM | Myanmar | BH | Bahrain | BB | Barbados | BS | Bahamas | BD | Bangladesh | BJ | Benin | VE | Venezuela | VN | Vietnam |
-            | BE | Belgium | BY | Belarus | BZ | Belize | BA | Bosnia | BO | Bolivia | BF | Burkina Faso | BG | Bulgaria | BR | Brazil |
-            | SA | Saudi Arabia | ST | São Tomé and Príncipe | SN | Senegal | RS | Serbia | LC | Saint Lucia | VC | Saint Vincent and the Grenadines | KN | Saint Kitts and Nevis | SO | Somalia
-            | SD | Sudan | SR | Suriname | LK | Sri Lanka| SE | Sweden | CH | Switzerland | ES | Spain | SK | Slovakia | SI | Slovenia |
-            | SY | Syria | SL | Sierra Leone | SG | Singapore | AE | United Arab Emirates | AM | Armenia | AR | Argentina | IS | Iceland | HT | Haiti |
-            | IE | Ireland | AZ | Azerbaijan | AL | Albania | DZ | Algeria | AO | Angola | AG | Antigua and Barbuda | EE | Estonia | EC | Ecuador |
-            | SV | El Salvador | GB | United Kingdom | YE | Yemen | OM | Oman | AT | Austria | HN | Honduras | JO | Jordan | UG | Uganda |
-            | UY | Uruguay| UZ | Uzbekistan | UA | Ukraine | ET | Ethiopia | IQ | Iraq | IR | Iran | IL | Israel | EG | Egypt |
-            | IT | Italy | IN | India | ID | Indonesia | JP | Japan | JM | Jamaica | ZM | Zambia | GQ | Equatorial Guinea | GE | Georgia |
-            | CN | China | CF | Central African Republic | DJ | Djibouti | TD | Chad | CZ | Czech Republic | CL | Chile | CM | Cameroon | CV | Cape Verde |
-            | KZ | Kazakhstan | QA | Qatar | KH | Cambodia | CA | Canada | KE | Kenya | XK | Kosovo | CR | Costa Rica | CI | Côte d'Ivoire |
-            | CO | Colombia | CG | Congo | CD | Democratic Republic of the Congo | CU | Cuba | KW | Kuwait | HR | Croatia | KG | Kyrgyzstan | CY | Cyprus | Tanzania | TZ | Tanzania
-            | TZ | Tanzania| TH | Thailand | TR | Turkey | TG | Togo | TN | Tunisia | TT | Trinidad and Tobago | PA | Panama | PY | Paraguay|
-            | PK | Pakistan | PS | Palestine | PE | Peru | PT | Portugal | PL | Poland | PR | Puerto Rico | FR | France | FI | Finland |
-            | PH | Philippines | HU | Hungary | AU | Australia | HK | Hong Kong | NP | Nepal | || || || ||
+            | Code | Name       | Code | Name       | Code | Name       | Code | Name       | Code | Name       | Code | Name       | Code | Name       | Code | Name       |
+            |------|------------|------|------------|------|------------|------|------------|------|------------|------|------------|------|------------|------|------------|
+            | AU   | Australia  | BD   | Bangladesh | CN   | China      | HK   | Hong Kong  | ID   | Indonesia  | IN   | India      | JP   | Japan      | KR   | South Korea|
+            | LA   | Laos       | MY   | Malaysia   | NP   | Nepal      | NZ   | New Zealand| PH   | Philippines| SG   | Singapore  | TH   | Thailand   | TW   | Taiwan     |
+            | VN   | Vietnam    | MM   | Myanmar    | KH   | Cambodia   | LK   | Sri Lanka  |      |            |      |            |      |            |      |            |
+            
+            ### America
+
+            | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                |
+            |------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|
+            | AG   | Antigua and Barbuda | AR   | Argentina           | AW   | Aruba               | BB   | Barbados            | BO   | Bolivia             | BR   | Brazil              | BS   | Bahamas             | BZ   | Belize              |
+            | CA   | Canada              | CL   | Chile               | CO   | Colombia            | CR   | Costa Rica          | CU   | Cuba                | DM   | Dominica            | DO   | Dominican Republic  | EC   | Ecuador             |
+            | GD   | Grenada             | GT   | Guatemala           | GY   | Guyana              | HN   | Honduras            | HT   | Haiti               | JM   | Jamaica             | KN   | Saint Kitts and Nevis| LC   | Saint Lucia         |
+            | MX   | Mexico              | NI   | Nicaragua           | PA   | Panama              | PE   | Peru                | PR   | Puerto Rico         | PY   | Paraguay            | SR   | Suriname            | SV   | El Salvador         |
+            | TT   | Trinidad and Tobago | US   | United States       | UY   | Uruguay             | VC   | Saint Vincent and the Grenadines | VE   | Venezuela           |      |                     |      |                     |      |                     |
+
+            ### Europe, Middle East, Africa
+
+            | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                |
+            |------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|
+            | AE   | United Arab Emirates| AF   | Afghanistan         | AL   | Albania             | AM   | Armenia             | AO   | Angola              | AT   | Austria             | AZ   | Azerbaijan          | BA   | Bosnia and Herzegovina |
+            | BE   | Belgium             | BF   | Burkina Faso        | BG   | Bulgaria            | BH   | Bahrain             | BJ   | Benin               | BY   | Belarus             | CD   | Democratic Republic of the Congo | CF   | Central African Republic |
+            | CG   | Republic of the Congo| CH   | Switzerland         | CI   | Ivory Coast         | CM   | Cameroon            | CV   | Cape Verde          | CY   | Cyprus              | CZ   | Czech Republic      | DE   | Germany             |
+            | DJ   | Djibouti            | DK   | Denmark             | DZ   | Algeria             | EE   | Estonia             | EG   | Egypt               | ES   | Spain               | ET   | Ethiopia            | FI   | Finland             |
+            | FR   | France              | GA   | Gabon               | GB   | United Kingdom      | GE   | Georgia             | GH   | Ghana               | GM   | Gambia              | GN   | Guinea              | GQ   | Equatorial Guinea   |
+            | GR   | Greece              | HR   | Croatia             | HU   | Hungary             | IE   | Ireland             | IL   | Israel              | IQ   | Iraq                | IR   | Iran                | IS   | Iceland             |
+            | IT   | Italy               | JO   | Jordan              | KE   | Kenya               | KG   | Kyrgyzstan          | KW   | Kuwait              | KZ   | Kazakhstan          | LB   | Lebanon             | LR   | Liberia             |
+            | LT   | Lithuania           | LU   | Luxembourg          | LV   | Latvia              | LY   | Libya               | MA   | Morocco             | MD   | Moldova             | ME   | Montenegro          | MK   | North Macedonia     |
+            | ML   | Mali                | MR   | Mauritania          | MT   | Malta               | MU   | Mauritius           | MW   | Malawi              | NE   | Niger               | NG   | Nigeria             | NL   | Netherlands         |
+            | NO   | Norway              | OM   | Oman                | PK   | Pakistan            | PL   | Poland              | PS   | Palestine           | PT   | Portugal            | QA   | Qatar               | RO   | Romania             |
+            | RS   | Serbia              | RW   | Rwanda              | SA   | Saudi Arabia        | SD   | Sudan               | SE   | Sweden              | SI   | Slovenia            | SK   | Slovakia            | SL   | Sierra Leone        |
+            | SN   | Senegal             | SO   | Somalia             | ST   | Sao Tome and Principe| SY   | Syria               | TD   | Chad                | TG   | Togo                | TN   | Tunisia             | TR   | Turkey              |
+            | TZ   | Tanzania            | UA   | Ukraine             | UG   | Uganda              | UZ   | Uzbekistan          | XK   | Kosovo              | YE   | Yemen               | ZA   | South Africa        | ZM   | Zambia              |
+            | RU   | Russia              |      |                     |      |                     |      |                     |      |                     |      |                     |      |                     |      |                     |
 
           ## Response code
           When calling each API, a response code, which provides additional information on the type of response, may be retrieved with an HTTP status code. This response code is included in the HTTP response header and response body message, and its definition may vary by API type. Response codes supported by each type of API are listed below.
@@ -763,6 +779,8 @@ contents:
                       $ref: '#/components/examples/mini_washcombo-profile-example'
                     Humidifier:
                       $ref: '#/components/examples/humidifier-profile-example'
+                    Ventilation:
+                      $ref: '#/components/examples/ventilator-profile-example'
                     Outdoor unit of a system air conditioner registered in BECON Cloud:
                       $ref: '#/components/examples/odu-profile-example'
                     Indoor unit of a system air conditioner registered in BECON Cloud:
@@ -1021,6 +1039,8 @@ contents:
                       $ref: '#/components/examples/mini_washcombo-object-example'
                     Humidifier:
                       $ref: '#/components/examples/humidifier-object-example'
+                    Ventilation:
+                      $ref: '#/components/examples/ventilator-object-example'
                     Outdoor unit of a system air conditioner registered in BECON Cloud:
                       $ref: '#/components/examples/odu-object-example'
                     Indoor unit of a system air conditioner registered in BECON Cloud:
@@ -1259,6 +1279,8 @@ contents:
                     $ref: '#/components/examples/mini_washcombo-command-example'
                   Humidifier:
                     $ref: '#/components/examples/humidifier-command-example'
+                  Ventilation:
+                    $ref: '#/components/examples/ventilator-command-example'
                   Indoor unit of a system air conditioner registered in BECON Cloud:
                     $ref: '#/components/examples/idu-command-example'
                   Signage registered in the Business Cloud:
@@ -1363,6 +1385,8 @@ contents:
                       $ref: '#/components/examples/mini_washcombo-object-example'
                     Humidifier:
                       $ref: '#/components/examples/humidifier-object-example'
+                    Ventilation:
+                      $ref: '#/components/examples/ventilator-object-example'
                     Indoor unit of a system air conditioner registered in BECON Cloud:
                       $ref: '#/components/examples/idu-object-example'
                     Signage registered in the Business Cloud:
@@ -1928,7 +1952,7 @@ contents:
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/device-empty-res'
+                    $ref: '#/components/schemas/userno-res'
             '400':
               description: Bad request
               headers:
@@ -2038,7 +2062,7 @@ contents:
           tags:
             - User API
           summary: Deactivate User
-          description: B2B partner requests deactivation when they no longer want to connect a specific LG ThinQ user.
+          description: Deactivate a specific LG ThinQ user when the user is no longer synchronized. Once the user is deactivated, s/he cannot check the status of or control devices registered to the user. To reactivate this user, you need to call the **[Get Device List](#tag/Device-API/operation/getDevices)** for the user.
           operationId: disconnectService
           security:
             - ThinQ_Business_API_Key: []
@@ -2764,7 +2788,7 @@ contents:
                         properties:
                           userNo:
                             type: string
-                            example: 01581c1135488770282d3c09d478cef7
+                            example: 01581c1893b95f30282d3c09d478cef7
                             description: The user number of the created user's encrypted LG Electronics account.
             '400':
               description: Bad Request
@@ -3660,8 +3684,8 @@ contents:
                   Create & Update Event:
                     value:
                       eventId: 2024-04-25-dr-01
-                      eventName: 2024-04-25 test DR event
-                      partnerId: partner-1
+                      eventName: 2024-04-25-dr-01
+                      partnerId: herit-01
                       startTs: 1714024800000
                       endTs: 1714028400000
                       targets:
@@ -3674,7 +3698,7 @@ contents:
                             - US1234567890123
                             - KR1234567890123
                       signals:
-                        - signalId: 2024-04-25-dr-01-signal-01
+                        - signalId: 2023-04-25-dr-01-signal-01
                           deviceType: DEVICE_AIR_CONDITIONER
                           modelNames:
                             - RAC_056905_WW
@@ -3686,7 +3710,7 @@ contents:
                               unit: C
                           controlType: Temperature
                           restoreType: Temperature
-                        - signalId: 2024-04-25-dr-01-signal-02
+                        - signalId: 2023-04-25-dr-01-signal-02
                           deviceType: DEVICE_TV
                           modelNames: []
                           signalType: CONTROL
@@ -3717,7 +3741,7 @@ contents:
                         properties:
                           eventId:
                             type: string
-                            example: 2024-04-25-dr-01
+                            example: 2023-04-25-dr-01
                             description: The generated DR Event ID
             '400':
               description: Bad Request
@@ -4385,7 +4409,7 @@ contents:
                         path: /
                         value:
                           type: DEVICE
-                          id: 2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
+                          id: +2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf
                           opt: IN
                       - action: update
                         path: /KRXXX
@@ -4939,6 +4963,7 @@ contents:
                   example: fe12ed5bca00acc0ed68ec9f632342d0822a929f377b76cbe700649a11053f23
               required:
                 - deviceType
+                - alias
           required:
             - deviceId
             - deviceInfo
@@ -5308,6 +5333,87 @@ contents:
                         max: -16
                         min: -21
                         step: 1
+              temperatureInUnits:
+                - targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 8
+                        min: 1
+                        step: 1
+                      w:
+                        max: 8
+                        min: 1
+                        step: 1
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 46
+                        min: 33
+                        step: 1
+                      w:
+                        max: 46
+                        min: 33
+                        step: 1
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                  locationName: FRIDGE
+                - targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: -13
+                        min: -21
+                        step: 1
+                      w:
+                        max: -13
+                        min: -21
+                        step: 1
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 8
+                        min: -6
+                        step: 1
+                        except:
+                          - -5
+                          - 7
+                      w:
+                        max: 8
+                        min: -6
+                        step: 1
+                        except:
+                          - -5
+                          - 7
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                  locationName: FREEZER
               refrigeration:
                 expressMode:
                   type: boolean
@@ -5380,6 +5486,11 @@ contents:
             property:
               - detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 location:
                   locationName: MAIN
                 operation:
@@ -5612,12 +5723,89 @@ contents:
                       - HIGH
                       - LOW
                       - MID
+              windDirection:
+                airGuideWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                swirlWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                highCeilingWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                concentrationWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                autoFitWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                forestWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
               filterInfo:
                 filterLifetime:
                   mode:
                     - r
                   type: number
                 usedTime:
+                  mode:
+                    - r
+                  type: number
+                filterRemainPercent:
                   mode:
                     - r
                   type: number
@@ -5756,6 +5944,168 @@ contents:
                   value:
                     r:
                       - C
+              temperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 0.5
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 0.5
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 1
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 1
+                  unit: F
+              twoSetTemperature:
+                currentTemperature:
+                  type: number
+                  mode:
+                    - r
+                unit:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - C
+                coolTargetTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 37.5
+                      min: 10
+                      step: 0.5
+                    w:
+                      max: 37.5
+                      min: 10
+                      step: 0.5
+                heatTargetTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 32
+                      min: 4
+                      step: 0.5
+                    w:
+                      max: 32
+                      min: 4
+                      step: 0.5
+                twoSetEnabled:
+                  type: boolean
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - true
+                      - false
+              twoSetTemperatureInUnits:
+                - unit: C
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 37.5
+                        min: 10
+                        step: 0.5
+                      w:
+                        max: 37.5
+                        min: 10
+                        step: 0.5
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 32
+                        min: 4
+                        step: 0.5
+                      w:
+                        max: 32
+                        min: 4
+                        step: 0.5
+                - unit: F
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 99
+                        min: 50
+                        step: 1
+                      w:
+                        max: 99
+                        min: 50
+                        step: 1
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 90
+                        min: 40
+                        step: 1
+                      w:
+                        max: 90
+                        min: 40
+                        step: 1
               timer:
                 relativeHourToStart:
                   mode:
@@ -5799,6 +6149,19 @@ contents:
                       - UNSET
                     w:
                       - UNSET
+              display:
+                light:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
         air_purifier-profile-example:
           value:
             notification:
@@ -6597,6 +6960,89 @@ contents:
                         min: 5
                         step: 1
                         except: []
+              temperatureInUnits:
+                - locationName: WINE_UPPER
+                  targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                - locationName: WINE_LOWER
+                  targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
               operation:
                 lightStatus:
                   type: range
@@ -6687,10 +7133,50 @@ contents:
                       - ORANGE
                       - CORIANDER
                       - CORIANDER_SEED
+                flavorCapsule1:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ORANGE
+                      - CORIANDER
+                flavorCapsule2:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ORANGE
+                      - CORIANDER_SEED
                 hopOilInfo:
                   mode:
                     - r
                   type: list
+                  value:
+                    r:
+                      - FUGGLES
+                      - CASCADE
+                      - HALLERTAU
+                      - CITRUSSY
+                      - GOLDINGS
+                      - CHINOOK
+                hopOilCapsule1:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - FUGGLES
+                      - CASCADE
+                      - HALLERTAU
+                      - CITRUSSY
+                      - GOLDINGS
+                      - CHINOOK
+                hopOilCapsule2:
+                  mode:
+                    - r
+                  type: enum
                   value:
                     r:
                       - FUGGLES
@@ -7001,6 +7487,11 @@ contents:
             property:
               - detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 location:
                   locationName: MAIN
                 operation:
@@ -7259,6 +7750,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: AUTO
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -7771,11 +8267,31 @@ contents:
                 hotWaterMode:
                   mode:
                     - r
+                    - w
                   type: enum
                   value:
                     r:
                       - 'ON'
                       - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+                roomTempMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - AIR
+                      - WATER
+                roomWaterMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - OUT_WATER
+                      - IN_WATER
               temperature:
                 currentTemperature:
                   mode:
@@ -7816,6 +8332,240 @@ contents:
                   value:
                     r:
                       - C
+              hotWaterTemperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 80
+                        min: 30
+                        step: 1
+                      w:
+                        max: 80
+                        min: 30
+                        step: 1
+                  maxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  minTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 176
+                        min: 86
+                        step: 2
+                      w:
+                        max: 176
+                        min: 86
+                        step: 2
+                  maxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  minTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: F
+              roomTemperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  outWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  inWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 18
+                        step: 1
+                  airHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 1
+                  waterCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 24
+                        min: 5
+                        step: 1
+                  waterHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 57
+                        min: 14
+                        step: 1
+                  airHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  outWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  inWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 64
+                        step: 2
+                  airHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 2
+                  waterCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 76
+                        min: 40
+                        step: 2
+                  waterHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 134
+                        min: 58
+                        step: 2
+                  airHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: F
         air_purifier_fan-profile-example:
           value:
             notification:
@@ -8228,6 +8978,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: AUTO
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -8361,6 +9116,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -8702,6 +9462,163 @@ contents:
                     w:
                       - 'ON'
                       - 'OFF'
+        ventilator-profile-example:
+          value:
+            property:
+              ventJobMode:
+                currentJobMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - VENT_NATURE
+                      - VENT_AUTO
+                      - VENT_HEAT_EXCHANGE
+                    w:
+                      - VENT_NATURE
+                      - VENT_AUTO
+                      - VENT_HEAT_EXCHANGE
+              operation:
+                ventOperationMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              temperature:
+                currentTemperature:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 39.5
+                      min: 10.5
+                      step: 0.5
+                unit:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - C
+              airQualitySensor:
+                PM1:
+                  type: number
+                  mode:
+                    - r
+                PM2:
+                  type: number
+                  mode:
+                    - r
+                PM10:
+                  type: number
+                  mode:
+                    - r
+                CO2:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+              airFlow:
+                windStrength:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - AUTO
+                      - HIGH
+                      - POWER
+                      - LOW
+                    w:
+                      - AUTO
+                      - HIGH
+                      - POWER
+                      - LOW
+              timer:
+                absoluteHourToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteStopTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteHourToStart:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteMinuteToStart:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteStartTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              sleepTimer:
+                relativeHourToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                relativeMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                relativeStopTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+            notification:
+              push:
+                - NEED_TO_CHANGE_DUST_FILTER
+                - NEED_TO_CHANGE_PRE_FILTER
         odu-profile-example:
           value:
             operation:
@@ -9331,12 +10248,8 @@ contents:
                 type: boolean
                 mode:
                   - r
-                  - w
                 value:
                   r:
-                    - true
-                    - false
-                  w:
                     - true
                     - false
               soundMode:
@@ -10737,6 +11650,15 @@ contents:
               - locationName: FREEZER
                 targetTemperature: -13
                 unit: C
+            temperatureInUnits:
+              - targetTemperatureC: 7
+                targetTemperatureF: 46
+                unit: C
+                locationName: FRIDGE
+              - targetTemperatureC: -16
+                targetTemperatureF: 8
+                unit: C
+                locationName: FREEZER
             waterFilterInfo:
               usedTime: 0
         washer-object-example:
@@ -10747,6 +11669,8 @@ contents:
                 remoteControlEnabled: true
               runState:
                 currentState: INITIAL
+              cycle:
+                cycleCount: 0
               timer:
                 relativeHourToStop: 3
                 relativeMinuteToStop: 0
@@ -10770,23 +11694,57 @@ contents:
         air_conditioner-object-example:
           value:
             airConJobMode:
-              currentJobMode: FAN
+              currentJobMode: AUTO
+            airQualitySensor:
+              PM1: 27
+              PM2: 35
+              PM10: 49
+              humidity: 27
+            temperature:
+              currentTemperature: 10.5
+              targetTemperature: 14
+              unit: C
+            temperatureInUnits:
+              - currentTemperature: 10.5
+                targetTemperature: 14
+                unit: C
+              - currentTemperature: 51
+                targetTemperature: 58
+                unit: F
+            twoSetTemperature:
+              currentTemperature: 10.5
+              coolTargetTemperature: 29.5
+              heatTargetTemperature: 14
+              unit: C
+              twoSetEnabled: true
+            twoSetTemperatureInUnits:
+              - coolTargetTemperature: 29.5
+                heatTargetTemperature: 14
+                unit: C
+              - coolTargetTemperature: 85
+                heatTargetTemperature: 58
+                unit: F
+            filterInfo:
+              filterRemainPercent: 98
             airFlow:
               windStrength: HIGH
-              windStep: 5
+            windDirection:
+              swirlWind: false
+              forestWind: false
+              airGuideWind: false
+              highCeilingWind: false
+              autoFitWind: false
+              concentrationWind: false
             operation:
-              airConOperationMode: POWER_OFF
-            powerSave:
-              powerSaveEnabled: false
-            temperature:
-              currentTemperature: 27
-              targetTemperature: 24.5
-              unit: C
+              airConOperationMode: POWER_ON
+              airCleanOperationMode: 'ON'
             timer:
-              absoluteStopTimer: UNSET
               absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
             sleepTimer:
               relativeStopTimer: UNSET
+            display:
+              light: 'OFF'
         air_purifier-object-example:
           value:
             airPurifierJobMode:
@@ -10918,15 +11876,24 @@ contents:
               ceilingfanOperationMode: POWER_ON
         wine_cellar-object-example:
           value:
+            operation:
+              optimalHumidity: 'OFF'
             temperature:
-              - targetTemperature: 18
+              - locationName: WINE_UPPER
+                targetTemperature: 18
+                unit: C
+              - locationName: WINE_LOWER
+                targetTemperature: 11
+                unit: C
+            temperatureInUnits:
+              - targetTemperatureC: 18
+                targetTemperatureF: 18
                 unit: C
                 locationName: WINE_UPPER
-              - targetTemperature: 18
+              - targetTemperatureC: 11
+                targetTemperatureF: 11
                 unit: C
                 locationName: WINE_LOWER
-            operation:
-              lightStatus: 100
         kimchi_refrigerator-object-example:
           value:
             refrigeration:
@@ -10948,9 +11915,13 @@ contents:
               yeastInfo: AMERICAN_ALE
               hopOilInfo:
                 - CASCADE
+              hopOilCapsule1: CASCADE
+              hopOilCapsule2: CASCADE
               flavorInfo:
                 - CORIANDER
                 - CORIANDER_SEED
+              flavorCapsule1: CORIANDER
+              flavorCapsule2: CORIANDER_SEED
               beerRemain: 1
             timer:
               elapsedDayState: 0
@@ -10995,6 +11966,8 @@ contents:
                 locationName: MAIN
               remoteControlEnable:
                 remoteControlEnabled: false
+              cycle:
+                cycleCount: 0
               runState:
                 currentState: END
               timer:
@@ -11024,6 +11997,8 @@ contents:
                 currentState: POWER_OFF
               remoteControlEnable:
                 remoteControlEnabled: false
+              cycle:
+                cycleCount: 0
               timer:
                 remainHour: 0
                 remainMinute: 0
@@ -11105,12 +12080,28 @@ contents:
             boilerJobMode:
               currentJobMode: COOL
             operation:
-              boilerOperationMode: POWER_ON
-              hotWaterMode: 'ON'
+              boilerOperationMode: POWER_OFF
+              hotWaterMode: 'OFF'
+              roomTempMode: AIR
+              roomWaterMode: OUT_WATER
             temperature:
               currentTemperature: 40
               targetTemperature: 18
               unit: C
+            hotWaterTemperatureInUnits:
+              - currentTemperature: 0
+                unit: C
+              - currentTemperature: 32
+                unit: F
+            roomTemperatureInUnits:
+              - airCurrentTemperature: 40
+                targetTemperature: 18
+                currentTemperature: 40
+                unit: C
+              - airCurrentTemperature: 104
+                targetTemperature: 64
+                currentTemperature: 104
+                unit: F
         air_purifier_fan-object-example:
           value:
             airFanJobMode:
@@ -11172,6 +12163,8 @@ contents:
                 relativeMinuteToStop: 0
                 totalHour: 0
                 totalMinute: 0
+              cycle:
+                cycleCount: 0
               location:
                 locationName: MAIN
         mini_washcombo-object-example:
@@ -11187,6 +12180,8 @@ contents:
                 relativeMinuteToStop: 0
                 totalHour: 0
                 totalMinute: 0
+              cycle:
+                cycleCount: 0
               location:
                 locationName: MINI
         humidifier-object-example:
@@ -11217,6 +12212,27 @@ contents:
               light: LEVEL_2
             moodLamp:
               moodLampState: 'ON'
+            timer:
+              absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
+            sleepTimer:
+              relativeStopTimer: UNSET
+        ventilator-object-example:
+          value:
+            ventJobMode:
+              currentJobMode: VENT_NATURE
+            operation:
+              ventOperationMode: POWER_ON
+            airQualitySensor:
+              PM1: 4
+              PM2: 4
+              PM10: 5
+              CO2: GOOD
+            temperature:
+              currentTemperature: 26.5
+              unit: C
+            airFlow:
+              windStrength: AUTO
             timer:
               absoluteStartTimer: UNSET
               absoluteStopTimer: UNSET
@@ -11655,6 +12671,11 @@ contents:
           value:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
+        ventilator-command-example:
+          description: Ventilation - Rund mode
+          value:
+            ventJobMode:
+              currentJobMode: VENT_AUTO
         idu-command-example:
           title: IDU
           value:
