@@ -46,6 +46,40 @@ contents:
       - name: Client API
         description: |
           ThinQ 디바이스에서 전달하는 메시지를 받기 위한 사용자 디바이스 인증서 발급/등록을 위한 API입니다.  
+      - name: Push Message
+        description: |
+          푸쉬 메시지는 다음 4가지 상황을 알리기 위해, 디바이스가 비주기적으로 발생시키는 메시지입니다. 
+            1. 디바이스 등록
+            2. 디바이스 삭제
+            3. 디바이스 닉네임 변경 
+            4. 디바이스 동작 완료 (예: 세탁 완료)/ 부품 교체 (예: 필터 교체)
+
+          ## 디바이스 등록 메시지
+          <SchemaDefinition
+            schemaRef="#/components/schemas/push_message_register_device"
+            exampleRef="#/components/examples/push_message_register_device_example" />
+
+          ## 디바이스 삭제 메시지
+          <SchemaDefinition
+            schemaRef="#/components/schemas/push_message_delete_device"
+            exampleRef="#/components/examples/push_message_delete_device_example" />
+
+          ## 디바이스 닉네임 변경 메시지
+          <SchemaDefinition
+            schemaRef="#/components/schemas/push_message_change_nickname"
+            exampleRef="#/components/examples/push_message_change_nickname_example" />
+
+          ## 디바이스 동작 완료 메시지
+          <SchemaDefinition
+            schemaRef="#/components/schemas/push_message_complete_operation"
+            exampleRef="#/components/examples/push_message_complete_operation_example" />
+      - name: Event Message
+        description: |
+          이벤트 메시지는 디바이스의 상태가 변경될 때 발생하는 메시지입니다.
+          ## 이벤트 메시지
+          <SchemaDefinition
+            schemaRef="#/components/schemas/event_message"
+            exampleRef="#/components/examples/event_message_example" />
     paths:
       /route:
         get:
@@ -61,6 +95,8 @@ contents:
               $ref: '#/components/parameters/x-country'
             - required: true
               $ref: '#/components/parameters/x-service-phase'
+            - required: true
+              $ref: '#/components/parameters/x-api-key'
           responses:
             '200':
               description: OK
@@ -145,11 +181,11 @@ contents:
                       $ref: '#/components/examples/styler-profile-example'
                     식기세척기:
                       $ref: '#/components/examples/dish_washer-profile-example'
-                    워시타워(세탁기):
+                    워시타워 (세탁기):
                       $ref: '#/components/examples/washtower_washer-profile-example'
-                    워시타워(건조기):
+                    워시타워 (건조기):
                       $ref: '#/components/examples/washtower_dryer-profile-example'
-                    일체형워시타워:
+                    워시타워:
                       $ref: '#/components/examples/washtower-profile-example'
                     워시콤보세탁기:
                       $ref: '#/components/examples/main_washcombo-profile-example'
@@ -232,11 +268,11 @@ contents:
                       $ref: '#/components/examples/styler-object-example'
                     식기세척기:
                       $ref: '#/components/examples/dish_washer-object-example'
-                    워시타워(세탁기):
+                    워시타워 (세탁기):
                       $ref: '#/components/examples/washtower_washer-object-example'
-                    워시타워(건조기):
+                    워시타워 (건조기):
                       $ref: '#/components/examples/washtower_dryer-object-example'
-                    일체형워시타워:
+                    워시타워:
                       $ref: '#/components/examples/washtower-object-example'
                     워시콤보세탁기:
                       $ref: '#/components/examples/main_washcombo-object-example'
@@ -312,11 +348,11 @@ contents:
                     $ref: '#/components/examples/styler-command-example'
                   식기세척기:
                     $ref: '#/components/examples/dish_washer-command-example'
-                  워시타워(세탁기):
+                  워시타워 (세탁기):
                     $ref: '#/components/examples/washtower_washer-command-example'
-                  워시타워(건조기):
+                  워시타워 (건조기):
                     $ref: '#/components/examples/washtower_dryer-command-example'
-                  일체형워시타워:
+                  워시타워:
                     $ref: '#/components/examples/washtower-command-example'
                   워시콤보세탁기:
                     $ref: '#/components/examples/main_washcombo-command-example'
@@ -717,66 +753,44 @@ contents:
             '401':
               description: Unauthorized
     components:
-      parameters:
-        x-message-id:
-          name: x-message-id
-          in: header
-          schema:
-            type: string
-          description: |
-            요청되는 정보를 추적하기 위한 값입니다. 특정 API의 흐름을 추적하고 에러 발생 시 원인을 찾을 수 있습니다. 생성 규칙은 아래와 같습니다.
-                url-safe-base64-no-padding (UUID Version 4) 방법으로 생성합니다.
-                길이는 22자입니다.
-          example: fNvdZ1brTn-wWKUlWGoSVw
-        x-country:
-          name: x-country
-          in: header
-          schema:
-            type: string
-          description: |
-            서비스를 제공할 국가를 지정합니다 ISO 국가코드 알파벳 두 자리(ISO 3166-1 alpha-2)를 따릅니다. (예: KR, US, GB, ...)
-          example: KR
-        x-service-phase:
-          name: x-service-phase
-          in: header
-          schema:
-            type: string
-          description: |
-            서비스를 제공할 형상을 지정할 수 있습니다.
-          example: OP
-        Authorization:
-          name: Authorization
-          in: header
-          schema:
-            type: string
-          description: |
-            https://connect-pat.lgthinq.com 을 통해서 받은 PAT 토큰
-          example: Bearer 4d76546d61f01baf31c1sd8f6b4e38b110ba0a34f825b8c5d54c
-        x-client-id:
-          name: x-client-id
-          in: header
-          schema:
-            type: string
-          description: |
-            요청하는 클라이언트의 식별자 ID 값 입니다. unique한 값을 가질 수 있도록 생성해야 합니다.
-          example: test-client-123456
-        x-api-key:
-          name: x-api-key
-          in: header
-          schema:
-            type: string
-          description: |
-            API 호출을 위한 api key 값입니다. 아래값을 고정해서 호출해주세요.<br> "v6GFvkweNo7DK7yD3ylIZ9w52aKBU0eJ7wLXkSR3"
-          example: v6GFvkweNo7DK7yD3ylIZ9w52aKBU0eJ7wLXkSR3
-        x-conditional-control:
-          name: x-conditional-control
-          in: header
-          schema:
-            type: boolean
-          description: |
-            디바이스 상태 조회 후 제어 가능한 상태에서만 제어되도록 설정
-          example: true
       schemas:
+        push_message_register_device:
+          $ref: '#/components/schemas/register_device'
+        push_message_delete_device:
+          $ref: '#/components/schemas/delete_device'
+        push_message_change_nickname:
+          $ref: '#/components/schemas/change_nickname'
+        push_message_complete_operation:
+          $ref: '#/components/schemas/complete_operation'
+        event_message:
+          description: 이벤트 메시지
+          type: object
+          properties:
+            event:
+              type: object
+              description: 이벤트에 대한 정보를 포함한 오브젝트
+              properties:
+                serviceId:
+                  type: string
+                  description: 서비스 아이디
+                deviceId:
+                  type: string
+                  description: 디바이스 식별자
+                deviceType:
+                  type: string
+                  description: 디바이스 타입
+                report:
+                  type: object
+                  description: |
+                    변경된 디바이스의 상태에 대해서만 전달되며, 상태에 대한 schema는 디바이스 프로파일의 디바이스 상태 응답을 참고합니다.
+                pushType:
+                  type: enum
+                  description: DEVICE_STATUS
+                userList:
+                  type: array
+                  description: 디바이스 이벤트를 등록한 사용자 리스트
+                  items:
+                    type: string
         base-res:
           type: object
           description: Response Object for any device
@@ -801,7 +815,7 @@ contents:
                     apiServer:
                       type: string
                       description: API 서버 도메인 이름
-                      example: https://kic-connect-client.lgthinq.com
+                      example: https://api-kic.lgthinq.com
                     mqttServer:
                       type: string
                       description: MQTT 도메인 이름
@@ -847,7 +861,7 @@ contents:
                             example: true
                           groupId:
                             type: string
-                            description: groupId, 워시타워 세탁기와 워시타워 건조기가 디바이스 식별 Id가 구분되어서 전달되는 워시타워 그룹값을 표시하기 위한 값
+                            description: groupId, 워시타워 (세탁기)와 워시타워 (건조기)가 디바이스 식별 Id가 구분되어서 전달되는 워시타워 그룹값을 표시하기 위한 값
                             example: '234506858'
         device-profile-res:
           description: 디바이스 프로파일 조회 응답
@@ -1051,7 +1065,137 @@ contents:
                   type: string
                   description: 서비스 코드 (고정값 - SVC202)
                   example: SVC202
+        register_device:
+          description: 디바이스 등록 메시지
+          type: object
+          properties:
+            push:
+              type: object
+              description: Push 콜백 메시지
+              properties:
+                pushType:
+                  type: enum
+                  description: DEVICE_REGISTERED
+                serviceId:
+                  type: string
+                  description: 서비스 아이디
+                deviceId:
+                  type: string
+                  description: 디바이스 식별자
+                userNumber:
+                  type: string
+                  description: 디바이스 사용자 식별자
+                modelName:
+                  type: string
+                  description: 모델 이름
+                deviceType:
+                  type: string
+                  description: 디바이스 타입
+                alias:
+                  type: string
+                  description: 디바이스 닉네임
+        delete_device:
+          description: 디바이스 삭제 메시지
+          type: object
+          properties:
+            push:
+              type: object
+              description: Push 콜백 메시지
+              properties:
+                pushType:
+                  type: enum
+                  description: DEVICE_UNREGISTERED
+                serviceId:
+                  type: string
+                  description: 서비스 아이디
+                deviceId:
+                  type: string
+                  description: 디바이스 식별자
+                userNumber:
+                  type: string
+                  description: 디바이스 사용자 식별자
+                deviceType:
+                  type: string
+                  description: 디바이스 타입
+                alias:
+                  type: string
+                  description: 디바이스 닉네임
+        change_nickname:
+          description: 디바이스 닉네임 변경 메시지
+          type: object
+          properties:
+            push:
+              type: object
+              description: Push 콜백 메시지
+              properties:
+                pushType:
+                  type: enum
+                  description: DEVICE_ALIAS_CHANGED
+                serviceId:
+                  type: string
+                  description: 서비스 아이디
+                deviceId:
+                  type: string
+                  description: 디바이스 식별자
+                userNumber:
+                  type: string
+                  description: 디바이스 사용자 식별자
+                alias:
+                  type: string
+                  description: 디바이스 닉네임
+        complete_operation:
+          description: 디바이스 동작 완료 메시지
+          type: object
+          properties:
+            push:
+              type: object
+              description: Push에 대한 정보를 포함하는 오브젝트
+              properties:
+                pushType:
+                  type: enum
+                  description: DEVICE_PUSH
+                serviceId:
+                  type: string
+                  description: 서비스 아이디
+                deviceId:
+                  type: string
+                  description: 디바이스 식별자
+                pushCode:
+                  type: string
+                  description: |
+                    디바이스 동작 완료 메시지 (예: 세탁기-세탁 완료, 공기청정기-필터 교체)
+                deviceType:
+                  type: string
+                  description: 디바이스 타입
+                userList:
+                  type: array
+                  description: 디바이스 푸쉬를 등록한 사용자 리스트
+                  items:
+                    type: string
       examples:
+        push_message_register_device_example:
+          $ref: '#/components/examples/register_device_example'
+        push_message_delete_device_example:
+          $ref: '#/components/examples/delete_device_example'
+        push_message_change_nickname_example:
+          $ref: '#/components/examples/change_nickname_example'
+        push_message_complete_operation_example:
+          $ref: '#/components/examples/complete_operation_example'
+        event_message_example:
+          description: 에어컨 - 운전 모드 ON
+          value:
+            messageId: W1FKFRBZRkiuFAfU9pb6kw
+            timestamp: '2019-06-20T01:14:27.069000'
+            event:
+              pushType: DEVICE_STATUS
+              serviceId: 6b2011e7ff026e984215522d
+              deviceId: HW1-69C3EDD9-1993-4442-B139-794CA5997ECA
+              report:
+                operation:
+                  airConOperationMode: POWER_ON
+              deviceType: DEVICE_WASHER
+              userList:
+                - KR1910213944934
         refrigerator-profile-example:
           value:
             property:
@@ -1088,6 +1232,87 @@ contents:
                         max: -16
                         min: -21
                         step: 1
+              temperatureInUnits:
+                - targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 8
+                        min: 1
+                        step: 1
+                      w:
+                        max: 8
+                        min: 1
+                        step: 1
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 46
+                        min: 33
+                        step: 1
+                      w:
+                        max: 46
+                        min: 33
+                        step: 1
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                  locationName: FRIDGE
+                - targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: -13
+                        min: -21
+                        step: 1
+                      w:
+                        max: -13
+                        min: -21
+                        step: 1
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 8
+                        min: -6
+                        step: 1
+                        except:
+                          - -5
+                          - 7
+                      w:
+                        max: 8
+                        min: -6
+                        step: 1
+                        except:
+                          - -5
+                          - 7
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                  locationName: FREEZER
               refrigeration:
                 expressMode:
                   type: boolean
@@ -1204,6 +1429,89 @@ contents:
                         min: 5
                         step: 1
                         except: []
+              temperatureInUnits:
+                - locationName: WINE_UPPER
+                  targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                - locationName: WINE_LOWER
+                  targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
               operation:
                 lightStatus:
                   type: range
@@ -1294,10 +1602,50 @@ contents:
                       - ORANGE
                       - CORIANDER
                       - CORIANDER_SEED
+                flavorCapsule1:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ORANGE
+                      - CORIANDER
+                flavorCapsule2:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ORANGE
+                      - CORIANDER_SEED
                 hopOilInfo:
                   mode:
                     - r
                   type: list
+                  value:
+                    r:
+                      - FUGGLES
+                      - CASCADE
+                      - HALLERTAU
+                      - CITRUSSY
+                      - GOLDINGS
+                      - CHINOOK
+                hopOilCapsule1:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - FUGGLES
+                      - CASCADE
+                      - HALLERTAU
+                      - CITRUSSY
+                      - GOLDINGS
+                      - CHINOOK
+                hopOilCapsule2:
+                  mode:
+                    - r
+                  type: enum
                   value:
                     r:
                       - FUGGLES
@@ -1607,6 +1955,11 @@ contents:
             property:
               - detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 location:
                   locationName: MAIN
                 operation:
@@ -2065,6 +2418,11 @@ contents:
             property:
               - detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 location:
                   locationName: MAIN
                 operation:
@@ -2323,6 +2681,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: AUTO
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -2532,6 +2895,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: AUTO
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -2665,6 +3033,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -3189,12 +3562,89 @@ contents:
                       - HIGH
                       - LOW
                       - MID
+              windDirection:
+                airGuideWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                swirlWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                highCeilingWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                concentrationWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                autoFitWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                forestWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
               filterInfo:
                 filterLifetime:
                   mode:
                     - r
                   type: number
                 usedTime:
+                  mode:
+                    - r
+                  type: number
+                filterRemainPercent:
                   mode:
                     - r
                   type: number
@@ -3333,6 +3783,168 @@ contents:
                   value:
                     r:
                       - C
+              temperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 0.5
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 0.5
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 1
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 1
+                  unit: F
+              twoSetTemperature:
+                currentTemperature:
+                  type: number
+                  mode:
+                    - r
+                unit:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - C
+                coolTargetTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 37.5
+                      min: 10
+                      step: 0.5
+                    w:
+                      max: 37.5
+                      min: 10
+                      step: 0.5
+                heatTargetTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 32
+                      min: 4
+                      step: 0.5
+                    w:
+                      max: 32
+                      min: 4
+                      step: 0.5
+                twoSetEnabled:
+                  type: boolean
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - true
+                      - false
+              twoSetTemperatureInUnits:
+                - unit: C
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 37.5
+                        min: 10
+                        step: 0.5
+                      w:
+                        max: 37.5
+                        min: 10
+                        step: 0.5
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 32
+                        min: 4
+                        step: 0.5
+                      w:
+                        max: 32
+                        min: 4
+                        step: 0.5
+                - unit: F
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 99
+                        min: 50
+                        step: 1
+                      w:
+                        max: 99
+                        min: 50
+                        step: 1
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 90
+                        min: 40
+                        step: 1
+                      w:
+                        max: 90
+                        min: 40
+                        step: 1
               timer:
                 relativeHourToStart:
                   mode:
@@ -3376,6 +3988,19 @@ contents:
                       - UNSET
                     w:
                       - UNSET
+              display:
+                light:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
         system_boiler-profile-example:
           value:
             property:
@@ -3410,11 +4035,31 @@ contents:
                 hotWaterMode:
                   mode:
                     - r
+                    - w
                   type: enum
                   value:
                     r:
                       - 'ON'
                       - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+                roomTempMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - AIR
+                      - WATER
+                roomWaterMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - OUT_WATER
+                      - IN_WATER
               temperature:
                 currentTemperature:
                   mode:
@@ -3455,6 +4100,240 @@ contents:
                   value:
                     r:
                       - C
+              hotWaterTemperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 80
+                        min: 30
+                        step: 1
+                      w:
+                        max: 80
+                        min: 30
+                        step: 1
+                  maxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  minTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 176
+                        min: 86
+                        step: 2
+                      w:
+                        max: 176
+                        min: 86
+                        step: 2
+                  maxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  minTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: F
+              roomTemperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  outWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  inWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 18
+                        step: 1
+                  airHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 1
+                  waterCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 24
+                        min: 5
+                        step: 1
+                  waterHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 57
+                        min: 14
+                        step: 1
+                  airHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  outWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  inWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 64
+                        step: 2
+                  airHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 2
+                  waterCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 76
+                        min: 40
+                        step: 2
+                  waterHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 134
+                        min: 58
+                        step: 2
+                  airHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: F
         air_purifier-profile-example:
           value:
             notification:
@@ -4499,6 +5378,15 @@ contents:
               - locationName: FREEZER
                 targetTemperature: -13
                 unit: C
+            temperatureInUnits:
+              - targetTemperatureC: 7
+                targetTemperatureF: 46
+                unit: C
+                locationName: FRIDGE
+              - targetTemperatureC: -16
+                targetTemperatureF: 8
+                unit: C
+                locationName: FREEZER
             waterFilterInfo:
               usedTime: 0
         water_purifier-object-example:
@@ -4513,15 +5401,24 @@ contents:
                 - SODA
         wine_cellar-object-example:
           value:
+            operation:
+              optimalHumidity: 'OFF'
             temperature:
-              - targetTemperature: 18
+              - locationName: WINE_UPPER
+                targetTemperature: 18
+                unit: C
+              - locationName: WINE_LOWER
+                targetTemperature: 11
+                unit: C
+            temperatureInUnits:
+              - targetTemperatureC: 18
+                targetTemperatureF: 18
                 unit: C
                 locationName: WINE_UPPER
-              - targetTemperature: 18
+              - targetTemperatureC: 11
+                targetTemperatureF: 11
                 unit: C
                 locationName: WINE_LOWER
-            operation:
-              lightStatus: 100
         kimchi_refrigerator-object-example:
           value:
             refrigeration:
@@ -4543,9 +5440,13 @@ contents:
               yeastInfo: AMERICAN_ALE
               hopOilInfo:
                 - CASCADE
+              hopOilCapsule1: CASCADE
+              hopOilCapsule2: CASCADE
               flavorInfo:
                 - CORIANDER
                 - CORIANDER_SEED
+              flavorCapsule1: CORIANDER
+              flavorCapsule2: CORIANDER_SEED
               beerRemain: 1
             timer:
               elapsedDayState: 0
@@ -4592,6 +5493,8 @@ contents:
                 remoteControlEnabled: true
               runState:
                 currentState: INITIAL
+              cycle:
+                cycleCount: 0
               timer:
                 relativeHourToStop: 3
                 relativeMinuteToStop: 0
@@ -4652,6 +5555,8 @@ contents:
                 locationName: MAIN
               remoteControlEnable:
                 remoteControlEnabled: false
+              cycle:
+                cycleCount: 0
               runState:
                 currentState: END
               timer:
@@ -4681,6 +5586,8 @@ contents:
                 currentState: POWER_OFF
               remoteControlEnable:
                 remoteControlEnabled: false
+              cycle:
+                cycleCount: 0
               timer:
                 remainHour: 0
                 remainMinute: 0
@@ -4713,6 +5620,8 @@ contents:
                 relativeMinuteToStop: 0
                 totalHour: 0
                 totalMinute: 0
+              cycle:
+                cycleCount: 0
               location:
                 locationName: MAIN
         mini_washcombo-object-example:
@@ -4728,6 +5637,8 @@ contents:
                 relativeMinuteToStop: 0
                 totalHour: 0
                 totalMinute: 0
+              cycle:
+                cycleCount: 0
               location:
                 locationName: MINI
         oven-object-example:
@@ -4819,34 +5730,84 @@ contents:
         air_conditioner-object-example:
           value:
             airConJobMode:
-              currentJobMode: FAN
+              currentJobMode: AUTO
+            airQualitySensor:
+              PM1: 27
+              PM2: 35
+              PM10: 49
+              humidity: 27
+            temperature:
+              currentTemperature: 10.5
+              targetTemperature: 14
+              unit: C
+            temperatureInUnits:
+              - currentTemperature: 10.5
+                targetTemperature: 14
+                unit: C
+              - currentTemperature: 51
+                targetTemperature: 58
+                unit: F
+            twoSetTemperature:
+              currentTemperature: 10.5
+              coolTargetTemperature: 29.5
+              heatTargetTemperature: 14
+              unit: C
+              twoSetEnabled: true
+            twoSetTemperatureInUnits:
+              - coolTargetTemperature: 29.5
+                heatTargetTemperature: 14
+                unit: C
+              - coolTargetTemperature: 85
+                heatTargetTemperature: 58
+                unit: F
+            filterInfo:
+              filterRemainPercent: 98
             airFlow:
               windStrength: HIGH
-              windStep: 5
+            windDirection:
+              swirlWind: false
+              forestWind: false
+              airGuideWind: false
+              highCeilingWind: false
+              autoFitWind: false
+              concentrationWind: false
             operation:
-              airConOperationMode: POWER_OFF
-            powerSave:
-              powerSaveEnabled: false
-            temperature:
-              currentTemperature: 27
-              targetTemperature: 24.5
-              unit: C
+              airConOperationMode: POWER_ON
+              airCleanOperationMode: 'ON'
             timer:
-              absoluteStopTimer: UNSET
               absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
             sleepTimer:
               relativeStopTimer: UNSET
+            display:
+              light: 'OFF'
         system_boiler-object-example:
           value:
             boilerJobMode:
               currentJobMode: COOL
             operation:
-              boilerOperationMode: POWER_ON
-              hotWaterMode: 'ON'
+              boilerOperationMode: POWER_OFF
+              hotWaterMode: 'OFF'
+              roomTempMode: AIR
+              roomWaterMode: OUT_WATER
             temperature:
               currentTemperature: 40
               targetTemperature: 18
               unit: C
+            hotWaterTemperatureInUnits:
+              - currentTemperature: 0
+                unit: C
+              - currentTemperature: 32
+                unit: F
+            roomTemperatureInUnits:
+              - airCurrentTemperature: 40
+                targetTemperature: 18
+                currentTemperature: 40
+                unit: C
+              - airCurrentTemperature: 104
+                targetTemperature: 64
+                currentTemperature: 104
+                unit: F
         air_purifier-object-example:
           value:
             airPurifierJobMode:
@@ -5017,14 +5978,14 @@ contents:
             operation:
               dishWasherOperationMode: START
         washtower_washer-command-example:
-          description: 워시타워 세탁기 - 세탁 시작
+          description: 워시타워 (세탁기) - 세탁 시작
           value:
             operation:
               washerOperationMode: START
             location:
               locationName: MAIN
         washtower_dryer-command-example:
-          description: 워시타워(건조기) - 전원 POWER_OFF
+          description: 워시타워 (건조기) - 전원 POWER_OFF
           value:
             operation:
               dryerOperationMode: POWER_OFF
@@ -5121,6 +6082,110 @@ contents:
           value:
             operation:
               cleanOperationMode: HOMING
+        register_device_example:
+          value:
+            messageId: c2d362a0-dd0f-11e6-a7c7-abfb76e3e664
+            timestamp: '2017-12-29T00:53:00.017513'
+            push:
+              pushType: DEVICE_REGISTERED
+              serviceId: 2d4b2b6fa6af2b51b36d0038
+              deviceId: 87e78580-7117-11d3-a99e-30a9de10016f
+              userNumber: KR1812273049127
+              modelName: FH0D7DDNK0_WIFI
+              deviceType: DEVICE_WASHER
+              alias: t10_test
+        delete_device_example:
+          value:
+            messageId: c2d362a0-dd0f-11e6-a7c7-abfb76e3e664
+            timestamp: '2017-12-29T00:53:00.017513'
+            push:
+              pushType: DEVICE_UNREGISTERED
+              serviceId: 2d4b2b6fa6af2b51b36d0038
+              deviceId: 87e78580-7117-11d3-a99e-30a9de10016f
+              userNumber: KR1812273049127
+              deviceType: DEVICE_WASHER
+              alias: t10_test
+        change_nickname_example:
+          value:
+            messageId: c2d362a0-dd0f-11e6-a7c7-abfb76e3e664
+            timestamp: '2017-12-29T00:53:00.017513'
+            push:
+              pushType: DEVICE_ALIAS_CHANGED
+              serviceId: 2d4b2b6fa6af2b51b36d0038
+              deviceId: 87e78580-7117-11d3-a99e-30a9de10016f
+              userNumber: ABCDE
+              alias: MyDishWasher
+        complete_operation_example:
+          value:
+            messageId: 5o5MOYXCR0qb05Sa-f0kpg
+            timestamp: '2019-06-20T01:05:21.811029'
+            push:
+              pushType: DEVICE_PUSH
+              serviceId: 6b2011e7ff026e984215522d
+              deviceId: HW1-69C3EDD9-1993-4442-B139-794CA5997ECA
+              pushCode: WASHING_IS_COMPLETE
+              deviceType: DEVICE_WASHER
+              userList:
+                - KR1910213944934
+      parameters:
+        x-message-id:
+          name: x-message-id
+          in: header
+          schema:
+            type: string
+          description: |
+            요청되는 정보를 추적하기 위한 값입니다. 특정 API의 흐름을 추적하고 에러 발생 시 원인을 찾을 수 있습니다. 생성 규칙은 아래와 같습니다.
+                url-safe-base64-no-padding (UUID Version 4) 방법으로 생성합니다.
+                길이는 22자입니다.
+          example: fNvdZ1brTn-wWKUlWGoSVw
+        x-country:
+          name: x-country
+          in: header
+          schema:
+            type: string
+          description: |
+            서비스를 제공할 국가를 지정합니다 ISO 국가코드 알파벳 두 자리(ISO 3166-1 alpha-2)를 따릅니다. (예: KR, US, GB, ...)
+          example: KR
+        x-service-phase:
+          name: x-service-phase
+          in: header
+          schema:
+            type: string
+          description: |
+            서비스를 제공할 형상을 지정할 수 있습니다.
+          example: OP
+        x-api-key:
+          name: x-api-key
+          in: header
+          schema:
+            type: string
+          description: |
+            API 호출을 위한 api key 값입니다. 아래값을 고정해서 호출해주세요.<br> "v6GFvkweNo7DK7yD3ylIZ9w52aKBU0eJ7wLXkSR3"
+          example: v6GFvkweNo7DK7yD3ylIZ9w52aKBU0eJ7wLXkSR3
+        Authorization:
+          name: Authorization
+          in: header
+          schema:
+            type: string
+          description: |
+            https://connect-pat.lgthinq.com 을 통해서 받은 PAT 토큰
+          example: Bearer 4d76546d61f01baf31c1sd8f6b4e38b110ba0a34f825b8c5d54c
+        x-client-id:
+          name: x-client-id
+          in: header
+          schema:
+            type: string
+          description: |
+            요청하는 클라이언트의 식별자 ID 값 입니다. unique한 값을 가질 수 있도록 생성해야 합니다.
+          example: test-client-123456
+        x-conditional-control:
+          name: x-conditional-control
+          in: header
+          schema:
+            type: boolean
+          description: |
+            디바이스 상태 조회 후 제어 가능한 상태에서만 제어되도록 설정
+          example: true
     x-tagGroups:
       - name: Token
         tags:
@@ -5135,4 +6200,8 @@ contents:
           - Push API
           - Event API
           - Client API
+      - name: Messages
+        tags:
+          - Push Message
+          - Event Message
 ---
