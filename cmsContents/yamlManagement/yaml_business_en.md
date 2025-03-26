@@ -166,7 +166,7 @@ contents:
             ### America
 
             | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                |
-            |------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|
+            |------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|
             | AG   | Antigua and Barbuda | AR   | Argentina           | AW   | Aruba               | BB   | Barbados            | BO   | Bolivia             | BR   | Brazil              | BS   | Bahamas             | BZ   | Belize              |
             | CA   | Canada              | CL   | Chile               | CO   | Colombia            | CR   | Costa Rica          | CU   | Cuba                | DM   | Dominica            | DO   | Dominican Republic  | EC   | Ecuador             |
             | GD   | Grenada             | GT   | Guatemala           | GY   | Guyana              | HN   | Honduras            | HT   | Haiti               | JM   | Jamaica             | KN   | Saint Kitts and Nevis| LC   | Saint Lucia         |
@@ -779,6 +779,8 @@ contents:
                       $ref: '#/components/examples/mini_washcombo-profile-example'
                     Humidifier:
                       $ref: '#/components/examples/humidifier-profile-example'
+                    Ventilation:
+                      $ref: '#/components/examples/ventilator-profile-example'
                     Outdoor unit of a system air conditioner registered in BECON Cloud:
                       $ref: '#/components/examples/odu-profile-example'
                     Indoor unit of a system air conditioner registered in BECON Cloud:
@@ -1037,6 +1039,8 @@ contents:
                       $ref: '#/components/examples/mini_washcombo-object-example'
                     Humidifier:
                       $ref: '#/components/examples/humidifier-object-example'
+                    Ventilation:
+                      $ref: '#/components/examples/ventilator-object-example'
                     Outdoor unit of a system air conditioner registered in BECON Cloud:
                       $ref: '#/components/examples/odu-object-example'
                     Indoor unit of a system air conditioner registered in BECON Cloud:
@@ -1275,6 +1279,8 @@ contents:
                     $ref: '#/components/examples/mini_washcombo-command-example'
                   Humidifier:
                     $ref: '#/components/examples/humidifier-command-example'
+                  Ventilation:
+                    $ref: '#/components/examples/ventilator-command-example'
                   Indoor unit of a system air conditioner registered in BECON Cloud:
                     $ref: '#/components/examples/idu-command-example'
                   Signage registered in the Business Cloud:
@@ -1379,6 +1385,8 @@ contents:
                       $ref: '#/components/examples/mini_washcombo-object-example'
                     Humidifier:
                       $ref: '#/components/examples/humidifier-object-example'
+                    Ventilation:
+                      $ref: '#/components/examples/ventilator-object-example'
                     Indoor unit of a system air conditioner registered in BECON Cloud:
                       $ref: '#/components/examples/idu-object-example'
                     Signage registered in the Business Cloud:
@@ -9454,6 +9462,163 @@ contents:
                     w:
                       - 'ON'
                       - 'OFF'
+        ventilator-profile-example:
+          value:
+            property:
+              ventJobMode:
+                currentJobMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - VENT_NATURE
+                      - VENT_AUTO
+                      - VENT_HEAT_EXCHANGE
+                    w:
+                      - VENT_NATURE
+                      - VENT_AUTO
+                      - VENT_HEAT_EXCHANGE
+              operation:
+                ventOperationMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              temperature:
+                currentTemperature:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 39.5
+                      min: 10.5
+                      step: 0.5
+                unit:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - C
+              airQualitySensor:
+                PM1:
+                  type: number
+                  mode:
+                    - r
+                PM2:
+                  type: number
+                  mode:
+                    - r
+                PM10:
+                  type: number
+                  mode:
+                    - r
+                CO2:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+              airFlow:
+                windStrength:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - AUTO
+                      - HIGH
+                      - POWER
+                      - LOW
+                    w:
+                      - AUTO
+                      - HIGH
+                      - POWER
+                      - LOW
+              timer:
+                absoluteHourToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteStopTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteHourToStart:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteMinuteToStart:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteStartTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              sleepTimer:
+                relativeHourToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                relativeMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                relativeStopTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+            notification:
+              push:
+                - NEED_TO_CHANGE_DUST_FILTER
+                - NEED_TO_CHANGE_PRE_FILTER
         odu-profile-example:
           value:
             operation:
@@ -12052,6 +12217,27 @@ contents:
               absoluteStopTimer: UNSET
             sleepTimer:
               relativeStopTimer: UNSET
+        ventilator-object-example:
+          value:
+            ventJobMode:
+              currentJobMode: VENT_NATURE
+            operation:
+              ventOperationMode: POWER_ON
+            airQualitySensor:
+              PM1: 4
+              PM2: 4
+              PM10: 5
+              CO2: GOOD
+            temperature:
+              currentTemperature: 26.5
+              unit: C
+            airFlow:
+              windStrength: AUTO
+            timer:
+              absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
+            sleepTimer:
+              relativeStopTimer: UNSET
         odu-object-example:
           title: ODU
           value:
@@ -12485,6 +12671,11 @@ contents:
           value:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
+        ventilator-command-example:
+          description: Ventilation - Rund mode
+          value:
+            ventJobMode:
+              currentJobMode: VENT_AUTO
         idu-command-example:
           title: IDU
           value:
