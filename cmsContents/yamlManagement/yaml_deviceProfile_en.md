@@ -27,7 +27,7 @@ contents:
                 |-|-|
                 | property | Read/write support per property and value characteristics |
                 | notification |the type of push messages supported by your device |
-                | error |the type of push messages supported by your device |
+                | error |the type of errors supported by your device |
                 | extensionProperty | expanded properties |
 
             - **Request/Response Schema**
@@ -36,7 +36,7 @@ contents:
       - name: device type
         x-displayName: Device Type
         x-traitTag: true
-        description: "**Device Type** characterizes the device and allows you to distinguish the kind of device in the **Get Device List API** response. Device profiles are defined based on device type.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | Refrigerator | O | O |\n  | DEVICE_WASHER | Washer | O | O |\n  | DEVICE_DRYER | Dryer | O | O |\n  | DEVICE_AIR_CONDITIONER | Air Conditioner | O | O |\n  | DEVICE_AIR_PURIFIER | Air Purifier | O | O |\n  | DEVICE_ROBOT_CLEANER | Robot Cleaner | O | O |\n  | DEVICE_OVEN | Oven | O | O |\n  | DEVICE_DISH_WASHER | Dish Washer | O | O |\n  | DEVICE_STYLER | Styler | O | O |\n  | DEVICE_WATER_PURIFIER | Water Purifier | O | O |\n  | DEVICE_DEHUMIDIFIER | Dehumidifier | O | O |\n  | DEVICE_CEILING_FAN | Ceiling Fan | O | O |\n  | DEVICE_WINE_CELLAR | Wine Cellar | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | Kimchi Refrigerator | O | O |\n  | DEVICE_HOME_BREW | Home Brew | O | O |\n  | DEVICE_PLANT_CULTIVATOR | Plant Cultivator | O | O |\n  | DEVICE_WASHTOWER_WASHER | WashTower Washer(Washer) | O | O |\n  | DEVICE_WASHTOWER_DRYER | WashTower Washer(Dryer) | O | O |\n  | DEVICE_WASHTOWER | WashTower Washer | O | O |\n  | DEVICE_COOKTOP | Cooktop | O | O |\n  | DEVICE_HOOD | Hood | O | O |\n  | DEVICE_MICROWAVE_OVEN | Microwave Oven | O | O |\n  | DEVICE_SYSTEM_BOILER | System Boiler | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | Air Purifier Fan | O | O |\n  | DEVICE_STICK_CLEANER | Stick Cleaner | O | O |\n  | DEVICE_WATER_HEATER | Water Heater | O | O |\n  | DEVICE_WASHCOMBO_MAIN | Main WashCombo | O | O |\n  | DEVICE_WASHCOMBO_MINI | Mini WashCombo | O | O |\n  | DEVICE_HUMIDIFIER | Humidifier | O | O |\n  | DEVICE_ODU | Outdoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_IDU | Indoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_SIGNAGE | Signage registered in Business Cloud | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | Smart Motion Sensor | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | Smart Temperature and Humidity Sensor | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | Smart door Sensor | X | O |\n  | DEVICE_HEJ_BUTTON | Smart button | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | Smart light switch | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | Smart door lock | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | Smart Push Pull door lock | X | O |\n  | DEVICE_HEJ_PLUG | Smart Plug | X | O |\n  | DEVICE_HEJ_PLUG_MINI | Smart Plug Mini | X | O |\n  | DEVICE_HEJ_BULB_WHITE | Smart light bulb (White) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | Smart light bulb (Multi-Color) | X | O |\n  | DEVICE_HEJ_LINE_LED | Smart String Light LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | Smart Motorized Curtain Controller | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | Smart electric blinds | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | Switch strap | X | O |\n  | DEVICE_HEJ_STARLIGHT | Smart Star Light | X | O |\n  | DEVICE_HEJ_DOORBELL | Smart Chime Bell | X | O |\n  | DEVICE_HEJ_PET_FEEDER | Smart Pet Feeder | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | Smart Home Camera | X | O |\n  | DEVICE_HEJ_SYNC_BOX | Syc Box | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | Synclight | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| Smart Gas sensor | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | Smart fire detection sensor | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | Smart water leak detection sensor | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | Smart thermohygrometer | X | O |\n  | DEVICE_HEJ_SIREN | Smart siren | X | O |\n"
+        description: "**Device Type** characterizes the device and allows you to distinguish the kind of device in the **Get Device List API** response. Device profiles are defined based on device type.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | Refrigerator | O | O |\n  | DEVICE_WASHER | Washer | O | O |\n  | DEVICE_DRYER | Dryer | O | O |\n  | DEVICE_AIR_CONDITIONER | Air Conditioner | O | O |\n  | DEVICE_AIR_PURIFIER | Air Purifier | O | O |\n  | DEVICE_ROBOT_CLEANER | Robot Cleaner | O | O |\n  | DEVICE_OVEN | Oven | O | O |\n  | DEVICE_DISH_WASHER | Dish Washer | O | O |\n  | DEVICE_STYLER | Styler | O | O |\n  | DEVICE_WATER_PURIFIER | Water Purifier | O | O |\n  | DEVICE_DEHUMIDIFIER | Dehumidifier | O | O |\n  | DEVICE_CEILING_FAN | Ceiling Fan | O | O |\n  | DEVICE_WINE_CELLAR | Wine Cellar | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | Kimchi Refrigerator | O | O |\n  | DEVICE_HOME_BREW | Home Brew | O | O |\n  | DEVICE_PLANT_CULTIVATOR | Plant Cultivator | O | O |\n  | DEVICE_WASHTOWER_WASHER | WashTower (Washer) | O | O |\n  | DEVICE_WASHTOWER_DRYER | WashTower (Dryer) | O | O |\n  | DEVICE_WASHTOWER | WashTower  | O | O |\n  | DEVICE_COOKTOP | Cooktop | O | O |\n  | DEVICE_HOOD | Hood | O | O |\n  | DEVICE_MICROWAVE_OVEN | Microwave Oven | O | O |\n  | DEVICE_SYSTEM_BOILER | System Boiler | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | Air Purifier Fan | O | O |\n  | DEVICE_STICK_CLEANER | Stick Cleaner | O | O |\n  | DEVICE_WATER_HEATER | Water Heater | O | O |\n  | DEVICE_WASHCOMBO_MAIN | Main WashCombo | O | O |\n  | DEVICE_WASHCOMBO_MINI | Mini WashCombo | O | O |\n  | DEVICE_HUMIDIFIER | Humidifier | O | O |\n  | DEVICE_ODU | Outdoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_IDU | Indoor unit of SAC registered in BECON Cloud | X | O |\n  | DEVICE_SIGNAGE | Signage registered in Business Cloud | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | Smart Motion Sensor | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | Smart Temperature and Humidity Sensor | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | Smart door Sensor | X | O |\n  | DEVICE_HEJ_BUTTON | Smart button | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | Smart light switch | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | Smart door lock | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | Smart Push Pull door lock | X | O |\n  | DEVICE_HEJ_PLUG | Smart Plug | X | O |\n  | DEVICE_HEJ_PLUG_MINI | Smart Plug Mini | X | O |\n  | DEVICE_HEJ_BULB_WHITE | Smart light bulb (White) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | Smart light bulb (Multi-Color) | X | O |\n  | DEVICE_HEJ_LINE_LED | Smart String Light LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | Smart Motorized Curtain Controller | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | Smart electric blinds | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | Switch strap | X | O |\n  | DEVICE_HEJ_STARLIGHT | Smart Star Light | X | O |\n  | DEVICE_HEJ_DOORBELL | Smart Chime Bell | X | O |\n  | DEVICE_HEJ_PET_FEEDER | Smart Pet Feeder | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | Smart Home Camera | X | O |\n  | DEVICE_HEJ_SYNC_BOX | Syc Box | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | Synclight | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| Smart Gas sensor | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | Smart fire detection sensor | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | Smart water leak detection sensor | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | Smart thermohygrometer | X | O |\n  | DEVICE_HEJ_SIREN | Smart siren | X | O |\n"
       - name: refrigerator
         x-displayName: Refrigerator
         description: |
@@ -1099,7 +1099,7 @@ contents:
           ### Device control request
           Plant Cultivator doesn't support control requests.
       - name: washtower_washer
-        x-displayName: WashTower Washer(Washer)
+        x-displayName: WashTower (Washer)
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1165,7 +1165,7 @@ contents:
               }
             ```
       - name: washtower_dryer
-        x-displayName: WashTower Washer(Dryer)
+        x-displayName: WashTower (Dryer)
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1219,7 +1219,7 @@ contents:
               }
             ```
       - name: washtower
-        x-displayName: WashTower Washer
+        x-displayName: WashTower 
         description: |
           ## Device profile schema
           <SchemaDefinition
@@ -1625,6 +1625,83 @@ contents:
                 }
               }
             ```
+      - name: ventilator
+        x-displayName: Ventilation
+        description: |
+          ## Device profile schema
+          <SchemaDefinition
+            schemaRef="#/components/schemas/ventilator-profile"
+            exampleRef="#/components/examples/ventilator-profile-example" />
+        
+          ## Request/Response Schema
+          ### Device status response
+          <SchemaDefinition
+              schemaRef="#/components/schemas/ventilator-object"
+              exampleRef="#/components/examples/ventilator-object-example" />
+
+          ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            showExample={false} showWriteOnly={false} />
+        
+          #### Example  
+          Set timer to start  
+            ```json
+              {
+                "timer": {
+                  "absoluteHourToStart": 10,
+                  "absoluteMinuteToStart": 20
+                }
+              }
+            ```
+
+          Set timer to stop
+            ```json
+              {
+                "timer": {
+                  "absoluteHourToStop": 10,
+                  "absoluteMinuteToStop": 20
+                }
+              }
+            ```
+
+          Unset timer to start
+            ```json
+              {
+                "timer": {
+                  "absoluteStartTimer": "UNSET"
+                }
+              }
+            ```
+
+          Unset timer to stop
+            ```json
+              {
+                "timer": {
+                  "absoluteStopTimer": "UNSET"
+                }
+              }
+            ```
+
+          Set sleep timer to stop
+            ```json
+              {
+                "sleepTimer": {
+                  "relativeHourToStop": 3
+                }
+              }
+            ```
+
+          Unset sleep timer to stop
+            ```json
+              {
+                "sleepTimer": {
+                  "relativeStopTimer": "UNSET"
+                }
+              }
+            ```
+
       - name: odu
         x-displayName: Outdoor unit
         description: |
@@ -2218,6 +2295,8 @@ contents:
                       - $ref: '#/components/schemas/dehumidifier-object'
                       - $ref: '#/components/schemas/humidifier-profile'
                       - $ref: '#/components/schemas/humidifier-object'
+                      - $ref: '#/components/schemas/ventilator-profile'
+                      - $ref: '#/components/schemas/ventilator-object'
                       - $ref: '#/components/schemas/robot_cleaner-profile'
                       - $ref: '#/components/schemas/robot_cleaner-object'
                       - $ref: '#/components/schemas/oven-profile'
@@ -2370,6 +2449,12 @@ contents:
                       $ref: '#/components/examples/humidifier-object-example'
                     humidifier-command-example:
                       $ref: '#/components/examples/humidifier-command-example'
+                    ventilator-profile-example:
+                      $ref: '#/components/examples/ventilator-profile-example'
+                    ventilator-object-example:
+                      $ref: '#/components/examples/ventilator-object-example'
+                    ventilator-command-example:
+                      $ref: '#/components/examples/ventilator-command-example'
                     robot_cleaner-profile-example:
                       $ref: '#/components/examples/robot_cleaner-profile-example'
                     robot_cleaner-object-example:
@@ -2724,6 +2809,125 @@ contents:
                           -|-
                           C | Celsius
                           F | Fahrenheit
+                temperatureInUnits:
+                  type: array
+                  description: Temperature
+                  items:
+                    type: object
+                    properties:
+                      targetTemperatureC:
+                        type: object
+                        description: Desired temperature (Celsius)
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      targetTemperatureF:
+                        type: object
+                        description: Desired temperature (Fahrenheit)
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      unit:
+                        type: object
+                        description: Unit
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - enum
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: array
+                                description: |-
+                                  Value | Description
+                                  -|-
+                                  C | Celsius
+                                  F | Fahrenheit
+                                items:
+                                  type: string
+                                  enum:
+                                    - C
+                                    - F
+                      locationName:
+                        type: string
+                        enum:
+                          - FRIDGE
+                          - FREEZER
+                          - CONVERTIBLE
+                        description: |-
+                          Value | Description
+                          -|-
+                          FRIDGE | Refrigerator compartment
+                          FREEZER | Freezer compartment
+                          CONVERTIBLE | Convertible
                 refrigeration:
                   type: object
                   description: Features
@@ -3187,6 +3391,31 @@ contents:
                     enum:
                       - C
                       - F
+            temperatureInUnits:
+              type: array
+              description: Temperature
+              items:
+                type: object
+                properties:
+                  targetTemperatureC:
+                    type: integer
+                    description: Desired temperature (Celsius)
+                  targetTemperatureF:
+                    type: integer
+                    description: Desired temperature (Fahrenheit)
+                  unit:
+                    type: string
+                    enum:
+                      - C
+                      - F
+                    description: Unit
+                  locationName:
+                    type: string
+                    description: Location name
+                    enum:
+                      - FRIDGE
+                      - FREEZER
+                      - CONVERTIBLE
             powerSave:
               type: object
               properties:
@@ -3661,6 +3890,24 @@ contents:
                           -|-
                           AUTO | Automatic Setup Devices
                           NORMAL | Non-Automatic Setup Devices
+                  cycle:
+                    type: object
+                    description: Number of washes
+                    properties:
+                      cycleCount:
+                        type: object
+                        description: Number of washes
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
                   location:
                     description: Place
                     type: object
@@ -3816,6 +4063,13 @@ contents:
                     enum:
                       - AUTO
                       - NORMAL
+              cycle:
+                type: object
+                description: Number of washes
+                properties:
+                  cycleCount:
+                    type: integer
+                    description: Number of washes
               location:
                 description: Location
                 type: object
@@ -4110,8 +4364,8 @@ contents:
                   description: |-
                     Push Code | Description
                     -|-
-                    DRYING_FAILED | Drying is complete.
-                    DRYING_IS_COMPLETE | Drying has failed.
+                    DRYING_FAILED | Drying has failed.
+                    DRYING_IS_COMPLETE | Drying is complete.
                   items:
                     type: string
                     enum:
@@ -4539,7 +4793,7 @@ contents:
                         type:
                           type: string
                           enum:
-                            - range
+                            - number
                     heatTargetTemperature:
                       type: object
                       description: Heating Desired temperature
@@ -4610,6 +4864,7 @@ contents:
                                   type: integer
                     unit:
                       type: object
+                      description: Unit
                       properties:
                         mode:
                           type: array
@@ -4630,6 +4885,219 @@ contents:
                                 Value | Description
                                 -|-
                                 C | Celsius
+                    twoSetEnabled:
+                      type: object
+                      description: twoSet settings (On/Off)
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Activate twoSet
+                                FALSE | Disable twoSet
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                temperatureInUnits:
+                  type: array
+                  description: Temperature
+                  items:
+                    type: object
+                    properties:
+                      currentTemperature:
+                        type: object
+                        description: Current temperature
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      targetTemperature:
+                        type: object
+                        description: Desired temperature
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      heatTargetTemperature:
+                        type: object
+                        description: Desired temperature for heating
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      coolTargetTemperature:
+                        type: object
+                        description: Desired temperature for cooling
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      unit:
+                        type: string
+                        enum:
+                          - C
+                          - F
+                        description: |-
+                          Value | Description
+                          -|-
+                          C | Celsius
+                          F | Fahrenheit
+                twoSetTemperatureInUnits:
+                  type: array
+                  description: Temperature
+                  items:
+                    type: object
+                    properties:
+                      heatTargetTemperature:
+                        type: object
+                        description: Desired temperature for heating
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: number
+                                  min:
+                                    type: number
+                                  step:
+                                    type: number
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: number
+                                  min:
+                                    type: number
+                                  step:
+                                    type: number
+                      coolTargetTemperature:
+                        type: object
+                        description: Desired temperature for cooling
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: number
+                                  min:
+                                    type: number
+                                  step:
+                                    type: number
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: number
+                                  min:
+                                    type: number
+                                  step:
+                                    type: number
+                      unit:
+                        type: string
+                        enum:
+                          - C
+                          - F
+                        description: |-
+                          Value | Description
+                          -|-
+                          C | Celsius
+                          F | Fahrenheit
                 timer:
                   type: object
                   description: timer
@@ -5127,6 +5595,346 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+                windDirection:
+                  type: object
+                  description: Wind direction
+                  properties:
+                    rotateLeftRight:
+                      type: object
+                      description: Left/right rotation
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set left/right rotation
+                                FALSE | Disable left/right rotation
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set left/right rotation
+                                FALSE | Disable left/right rotation
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    rotateUpDown:
+                      type: object
+                      description: Up/down rotation
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set up/down rotation
+                                FALSE | Disable up/down rotation 
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set up/down rotation
+                                FALSE | Disable up/down rotation 
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    forestWind:
+                      type: object
+                      description: Forest wind
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set forest wind
+                                FALSE | Disable forest wind
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set forest wind
+                                FALSE | Disable forest wind
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    airGuideWind:
+                      type: object
+                      description: Air guide wind
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set air guide wind
+                                FALSE | Disable air guide wind
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set air guide wind
+                                FALSE | Disable air guide wind
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    highCeilingWind:
+                      type: object
+                      description: High ceiling wind
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set high ceiling wind
+                                FALSE | Disable high ceiling wind
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set high ceiling wind
+                                FALSE | Disable high ceiling wind
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    autoFitWind:
+                      type: object
+                      description: Smart mode
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set smart mode
+                                FALSE | Disable smart mode
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set smart mode
+                                FALSE | Disable smart mode
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    concentrationWind:
+                      type: object
+                      description: Refresh mode
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set refresh mode
+                                FALSE | Disable refresh mode
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set refresh mode
+                                FALSE | Disable refresh mode
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    swirlWind:
+                      type: object
+                      description: Swirl mode
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set swirl mode
+                                FALSE | Disable swirl mode
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | Set swirl mode
+                                FALSE | Disable swirl mode
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
                 airQualitySensor:
                   type: object
                   description: airQuality
@@ -5365,6 +6173,66 @@ contents:
                           type: string
                           enum:
                             - number
+                    filterRemainPercent:
+                      type: object
+                      description: Remaining filter %
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - number
+                display:
+                  type: object
+                  description: Screen
+                  properties:
+                    light:
+                      type: object
+                      description: Light
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                OFF | Turn off light
+                                ON | Turn on light
+                              items:
+                                type: string
+                                enum:
+                                  - 'OFF'
+                                  - 'ON'
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                OFF | Turn off light
+                                ON | Turn on light
+                              items:
+                                type: string
+                                enum:
+                                  - 'OFF'
+                                  - 'ON'
             notification:
               type: object
               properties:
@@ -5437,6 +6305,27 @@ contents:
                 unit:
                   type: string
                   description: Temperature units
+            temperatureInUnits:
+              type: array
+              description: Temperature
+              items:
+                type: object
+                properties:
+                  currentTemperature:
+                    type: number
+                    description: Current temperature
+                  targetTemperature:
+                    type: number
+                    description: Desired temperature
+                  heatTargetTemperature:
+                    type: range
+                    description: Desired temperature for heating
+                  coolTargetTemperature:
+                    type: range
+                    description: Desired temperature for cooling
+                  unit:
+                    type: string
+                    description: Temperature unit
             twoSetTemperature:
               type: object
               description: Temperature
@@ -5452,7 +6341,28 @@ contents:
                   description: Desired cooling temperature
                 unit:
                   type: string
-                  description: Temperature units
+                  description: Temperature unit
+                twoSetEnabled:
+                  type: boolean
+                  description: twoSet settings (On/Off)
+                  enum:
+                    - true
+                    - false
+            twoSetTemperatureInUnits:
+              type: array
+              description: 온도
+              items:
+                type: object
+                properties:
+                  heatTargetTemperature:
+                    type: number
+                    description: Desired temperature for heating
+                  coolTargetTemperature:
+                    type: number
+                    description: Desired temperature for cooling
+                  unit:
+                    type: string
+                    description: Temperature unit
             timer:
               type: object
               description: timer
@@ -5548,6 +6458,58 @@ contents:
                 windStep:
                   type: range
                   description: Wind Step
+            windDirection:
+              type: object
+              description: Wind direction
+              properties:
+                rotateLeftRight:
+                  type: boolean
+                  description: Left/right rotation
+                  enum:
+                    - true
+                    - false
+                rotateUpDown:
+                  type: boolean
+                  description: Up/down rotation
+                  enum:
+                    - true
+                    - false
+                forestWind:
+                  type: boolean
+                  description: Forest wind
+                  enum:
+                    - true
+                    - false
+                airGuideWind:
+                  type: boolean
+                  description: Air guide wind
+                  enum:
+                    - true
+                    - false
+                highCeilingWind:
+                  type: boolean
+                  description: High ceiling wind
+                  enum:
+                    - true
+                    - false
+                autoFitWind:
+                  type: boolean
+                  description: Smart mode
+                  enum:
+                    - true
+                    - false
+                concentrationWind:
+                  type: boolean
+                  description: Refresh mode
+                  enum:
+                    - true
+                    - false
+                swirlWind:
+                  type: boolean
+                  description: Swirl mode
+                  enum:
+                    - true
+                    - false
             airQualitySensor:
               type: object
               description: airQuality
@@ -5607,6 +6569,19 @@ contents:
                 filterLifetime:
                   type: number
                   description: Filter accumulated usage time
+                filterRemainPercent:
+                  type: number
+                  description: Remaining filter %
+            display:
+              type: object
+              description: Screen
+              properties:
+                light:
+                  type: string
+                  description: Light
+                  enum:
+                    - 'OFF'
+                    - 'ON'
         air_purifier-profile:
           type: object
           title: Air_Purifier
@@ -9119,6 +10094,633 @@ contents:
               enum:
                 - TIME_TO_CHANGE_FILTER
                 - LACK_OF_WATER
+        ventilator-profile:
+          type: object
+          title: Ventilator
+          properties:
+            property:
+              type: object
+              properties:
+                ventJobMode:
+                  type: object
+                  description: mode
+                  properties:
+                    currentJobMode:
+                      type: object
+                      description: Operation Mode
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                VENT_NATURE | Auto mode
+                                VENT_AUTO | Natural wind flow
+                                VENT_HEAT_EXCHANGE | Heat exchanger
+                              items:
+                                type: string
+                                enum:
+                                  - VENT_NATURE
+                                  - VENT_AUTO
+                                  - VENT_HEAT_EXCHANGE
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                VENT_NATURE | Auto mode
+                                VENT_AUTO | Natural wind flow
+                                VENT_HEAT_EXCHANGE | Heat exchanger
+                              items:
+                                type: string
+                                enum:
+                                  - VENT_NATURE
+                                  - VENT_AUTO
+                                  - VENT_HEAT_EXCHANGE
+                operation:
+                  type: object
+                  description: operation
+                  properties:
+                    ventOperationMode:
+                      type: object
+                      description: Main Body Behavior
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | Power on
+                                POWER_OFF | Power off
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | Power on
+                                POWER_OFF | Power off
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                temperature:
+                  type: object
+                  description: Temperature
+                  properties:
+                    currentTemperature:
+                      type: object
+                      description: Current Temperature
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              description: 10.5-39.5 C
+                              properties:
+                                min:
+                                  type: number
+                                max:
+                                  type: number
+                                step:
+                                  type: number
+                    unit:
+                      type: object
+                      description: Unit
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                C | Celsius
+                              items:
+                                type: string
+                                enum:
+                                  - C
+                airQualitySensor:
+                  type: object
+                  description: airQuality
+                  properties:
+                    PM1:
+                      type: number
+                      description: PM1.0 Ultrafine particulate matter concentration
+                      mode:
+                        type: array
+                        items:
+                          type: string
+                          enum:
+                            - r
+                    PM2:
+                      type: number
+                      description: PM2.5 Fine particulate matter concentration
+                      mode:
+                        type: array
+                        items:
+                          type: string
+                          enum:
+                            - r
+                    PM10:
+                      type: number
+                      description: PM10 Coarse particulate matter concentration
+                      mode:
+                        type: array
+                        items:
+                          type: string
+                          enum:
+                            - r
+                    CO2:
+                      type: object
+                      description: Co2 concentration
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                INVALID | Invalid
+                                GOOD | Good
+                                NORMAL | Normal
+                                BAD | Bad
+                                VERY_BAD | Very bad
+                              items:
+                                type: string
+                                enum:
+                                  - INVALID
+                                  - GOOD
+                                  - NORMAL
+                                  - BAD
+                                  - VERY_BAD
+                airFlow:
+                  type: object
+                  description: airFlow
+                  properties:
+                    windStrength:
+                      type: object
+                      description: Wind strength
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                AUTO | Auto
+                                HIGH | High wind
+                                POWER | Max
+                                LOW | Light wind
+                              items:
+                                type: string
+                                enum:
+                                  - AUTO
+                                  - HIGH
+                                  - POWER
+                                  - LOW
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                AUTO | Auto
+                                HIGH | High wind
+                                POWER | Max
+                                LOW | Light wind
+                              items:
+                                type: string
+                                enum:
+                                  - AUTO
+                                  - HIGH
+                                  - POWER
+                                  - LOW
+                timer:
+                  type: object
+                  description: timer
+                  properties:
+                    absoluteHourToStop:
+                      type: object
+                      description: Absolute stop timer (hour)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteMinuteToStop:
+                      type: object
+                      description: Absolute stop timer (minute)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteStopTimer:
+                      type: object
+                      description: Absolute stop timer state
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                SET | Absolute stop timer on
+                                UNSET | Absolute stop timer off
+                              items:
+                                type: string
+                                enum:
+                                  - SET
+                                  - UNSET
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                UNSET | Absolute stop timer off
+                              items:
+                                type: string
+                                enum:
+                                  - UNSET
+                    absoluteHourToStart:
+                      type: object
+                      description: Absolute start timer (hour)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteMinuteToStart:
+                      type: object
+                      description: Absolute start timer (minute)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteStartTimer:
+                      type: object
+                      description: Absolute start timer state
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                SET | Absolute start timer on
+                                UNSET | Absolute start timer off
+                              items:
+                                type: string
+                                enum:
+                                  - SET
+                                  - UNSET
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                UNSET | Absolute start timer off
+                              items:
+                                type: string
+                                enum:
+                                  - UNSET
+                sleepTimer:
+                  type: object
+                  description: Sleep timer
+                  properties:
+                    relativeHourToStop:
+                      type: object
+                      description: Sleep timer (off) timer (hour)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    relativeMinuteToStop:
+                      type: object
+                      description: Sleep timer (off) timer (minute)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                    relativeStopTimer:
+                      type: object
+                      description: Sleep timer (off) timer state
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                SET | Sleep timer on
+                                UNSET | Sleep timer off
+                              items:
+                                type: string
+                                enum:
+                                  - SET
+                                  - UNSET
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                UNSET | Sleep timer off
+                              items:
+                                type: string
+                                enum:
+                                  - UNSET
+                notification:
+                  type: object
+                  description: null
+                  properties:
+                    push:
+                      type: array
+                      description: |-
+                        Value | Description
+                        -|-
+                        NEED_TO_CHANGE_DUST_FILTER | Dust filter needs to be replaced.
+                        NEED_TO_CHANGE_PRE_FILTER | Pre-filter needs to be replaced.
+                      items:
+                        type: string
+                        enum:
+                          - NEED_TO_CHANGE_DUST_FILTER
+                          - NEED_TO_CHANGE_PRE_FILTER
+        ventilator-object:
+          type: object
+          title: Ventilator
+          properties:
+            ventJobMode:
+              type: object
+              description: mode
+              properties:
+                currentJobMode:
+                  type: string
+                  description: Operation Mode
+                  enum:
+                    - VENT_NATURE
+                    - VENT_AUTO
+                    - VENT_HEAT_EXCHANGE
+            operation:
+              type: object
+              description: operation
+              properties:
+                ventOperationMode:
+                  type: string
+                  description: Main Body Behavior
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            temperature:
+              type: object
+              description: Temperature
+              properties:
+                currentTemperature:
+                  type: number
+                  description: Current Temperature
+                unit:
+                  type: string
+                  description: Unit
+            airQualitySensor:
+              type: object
+              description: airQuality
+              properties:
+                PM1:
+                  type: number
+                  description: PM1.0 Ultrafine particulate matter concentration
+                PM2:
+                  type: number
+                  description: PM2.5 Fine particulate matter concentration
+                PM10:
+                  type: number
+                  description: PM10 Coarse particulate matter concentration
+                CO2:
+                  type: string
+                  description: Co2 concentration
+                  enum:
+                    - INVALID
+                    - GOOD
+                    - NORMAL
+                    - BAD
+                    - VERY_BAD
+            airFlow:
+              type: object
+              description: airFlow
+              properties:
+                windStrength:
+                  type: string
+                  description: Wind strength
+                  enum:
+                    - AUTO
+                    - HIGH
+                    - POWER
+                    - LOW
+            timer:
+              type: object
+              description: Timer
+              properties:
+                absoluteHourToStart:
+                  type: number
+                  description: Absolute start timer (hour)
+                absoluteMinuteToStart:
+                  type: number
+                  description: Absolute start timer (minute)
+                absoluteHourToStop:
+                  type: number
+                  description: Absolute stop timer (hour)
+                absoluteMinuteToStop:
+                  type: number
+                  description: Absolute stop timer (minute)
+                absoluteStartTimer:
+                  type: string
+                  description: Absolute start timer state
+                  enum:
+                    - SET
+                    - UNSET
+                absoluteStopTimer:
+                  type: string
+                  description: Absolute stop timer state
+                  enum:
+                    - SET
+                    - UNSET
+            sleepTimer:
+              type: object
+              description: Sleep timer
+              properties:
+                relativeHourToStop:
+                  type: number
+                  description: Sleep timer (off) timer (hour)
+                relativeMinuteToStop:
+                  type: number
+                  description: Sleep timer (off) timer (minute)
+                relativeStopTimer:
+                  type: string
+                  description: Sleep timer (off) timer state
+                  enum:
+                    - SET
+                    - UNSET
         robot_cleaner-profile:
           type: object
           title: Robot_Cleaner
@@ -11729,6 +13331,8 @@ contents:
                                     type: integer
                                   except:
                                     type: array
+                                    items: 
+                                      type: integer
                               w:
                                 type: object
                                 properties:
@@ -11740,6 +13344,8 @@ contents:
                                     type: integer
                                   except:
                                     type: array
+                                    items: 
+                                      type: integer
                       unit:
                         type: string
                         description: |-
@@ -11762,6 +13368,141 @@ contents:
                           - WINE_UPPER
                           - WINE_MIDDLE
                           - WINE_LOWER
+                temperatureInUnits:
+                  type: array
+                  description: Temperature
+                  items:
+                    type: object
+                    properties:
+                      targetTemperatureC:
+                        type: object
+                        description: Desired temperature (Celsius)
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                                  except:
+                                    type: array
+                                    items:
+                                      type: integer
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                                  except:
+                                    type: array
+                                    items:
+                                      type: integer
+                      targetTemperatureF:
+                        type: object
+                        description: Desired temperature (Fahrenheit)
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                                  except:
+                                    type: array
+                                    items:
+                                      type: integer
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                                  except:
+                                    type: array
+                                    items:
+                                      type: integer
+                      unit:
+                        type: object
+                        description: Unit
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - enum
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: array
+                                description: |-
+                                  Value | Description
+                                  -|-
+                                  C | Celsius
+                                  F | Fahrenheit
+                                items:
+                                  type: string
+                                  enum:
+                                    - C
+                                    - F
+                      locationName:
+                        type: string
+                        enum:
+                          - WINE_UPPER
+                          - WINE_MIDDLE
+                          - WINE_LOWER
+                        description: |-
+                          Value | Description
+                          -|-
+                          WINE_UPPER | Top compartment
+                          WINE_MIDDLE | Middle compartment
+                          WINE_LOWER | Bottom compartment
         wine_cellar-object:
           type: object
           title: Wine_Cellar
@@ -11813,6 +13554,31 @@ contents:
                   locationName:
                     type: string
                     description: Place name
+                    enum:
+                      - WINE_UPPER
+                      - WINE_MIDDLE
+                      - WINE_LOWER
+            temperatureInUnits:
+              type: array
+              description: Temperature
+              items:
+                type: object
+                properties:
+                  targetTemperatureC:
+                    type: integer
+                    description: Desired temperature (Celsius)
+                  targetTemperatureㄹ:
+                    type: integer
+                    description: Desired temperature (Fahrenheit)
+                  unit:
+                    type: string
+                    enum:
+                      - C
+                      - F
+                    description: Unit
+                  locationName:
+                    type: string
+                    description: Location name
                     enum:
                       - WINE_UPPER
                       - WINE_MIDDLE
@@ -12259,7 +14025,7 @@ contents:
                         type:
                           type: string
                           enum:
-                            - array
+                            - enum
                         value:
                           type: object
                           properties:
@@ -12274,6 +14040,80 @@ contents:
                                 FUGGLES | Fuggles
                                 HALLERTAU | Hallertau
                                 CITRUSSY | Citrus
+                              items:
+                                type: string
+                                enum:
+                                  - CASCADE
+                                  - CHINOOK
+                                  - GOLDINGS
+                                  - FUGGLES
+                                  - HALLERTAU
+                                  - CITRUSSY
+                    hopOilCapsule1:
+                      type: object
+                      description: Hop oil capsule1
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                CASCADE | Cascade
+                                CHINOOK | Chinook
+                                GOLDINGS | Goldings
+                                FUGGLES | Fuggles
+                                HALLERTAU | Hallertau
+                                CITRUSSY | Citrussy
+                              items:
+                                type: string
+                                enum:
+                                  - CASCADE
+                                  - CHINOOK
+                                  - GOLDINGS
+                                  - FUGGLES
+                                  - HALLERTAU
+                                  - CITRUSSY
+                    hopOilCapsule2:
+                      type: object
+                      description: Hop oil capsule2
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                CASCADE | Cascade
+                                CHINOOK | Chinook
+                                GOLDINGS | Goldings
+                                FUGGLES | Fuggles
+                                HALLERTAU | Hallertau
+                                CITRUSSY | Citrussy
                               items:
                                 type: string
                                 enum:
@@ -12285,7 +14125,7 @@ contents:
                                   - CITRUSSY
                     flavorInfo:
                       type: object
-                      description: flavor Info
+                      description: Fragrance information
                       properties:
                         mode:
                           type: array
@@ -12296,7 +14136,7 @@ contents:
                         type:
                           type: string
                           enum:
-                            - array
+                            - enum
                         value:
                           type: object
                           properties:
@@ -12305,21 +14145,77 @@ contents:
                               description: |-
                                 Value | Description
                                 -|-
-                                CASCADE | Cascade
-                                CHINOOK | Chinook
-                                GOLDINGS | Goldings
-                                FUGGLES | Fuggles
-                                HALLERTAU | Hallertau
-                                CITRUSSY | Citrus
+                                CORIANDER | Coriander
+                                ORANGE | Orange
+                                CORIANDER_SEED | Coriander seed
                               items:
                                 type: string
                                 enum:
-                                  - CASCADE
-                                  - CHINOOK
-                                  - GOLDINGS
-                                  - FUGGLES
-                                  - HALLERTAU
-                                  - CITRUSSY
+                                  - CORIANDER
+                                  - ORANGE
+                                  - CORIANDER_SEED
+                    flavorCapsule1:
+                      type: object
+                      description: Fragrance capsule1
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                CORIANDER | Coriander
+                                ORANGE | Orange
+                                CORIANDER_SEED | Coriander seed
+                              items:
+                                type: string
+                                enum:
+                                  - CORIANDER
+                                  - ORANGE
+                                  - CORIANDER_SEED
+                    flavorCapsule2:
+                      type: object
+                      description: Fragrance capsule2
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                CORIANDER | Coriander
+                                ORANGE | Orange
+                                CORIANDER_SEED | Coriander seed
+                              items:
+                                type: string
+                                enum:
+                                  - CORIANDER
+                                  - ORANGE
+                                  - CORIANDER_SEED
                     beerRemain:
                       type: object
                       description: Recipe Progress Rate (%)
@@ -12421,18 +14317,49 @@ contents:
                       - FUGGLES
                       - HALLERTAU
                       - CITRUSSY
+                hopOilCapsule1:
+                  type: string
+                  description: Hop oil capsule1
+                  enum:
+                    - CASCADE
+                    - CHINOOK
+                    - GOLDINGS
+                    - FUGGLES
+                    - HALLERTAU
+                    - CITRUSSY
+                hopOilCapsule2:
+                  type: string
+                  description: Hop oil capsule2
+                  enum:
+                    - CASCADE
+                    - CHINOOK
+                    - GOLDINGS
+                    - FUGGLES
+                    - HALLERTAU
+                    - CITRUSSY
                 flavorInfo:
                   type: array
-                  description: flavor Info
+                  description: Fragrance information
                   items:
                     type: string
                     enum:
-                      - CASCADE
-                      - CHINOOK
-                      - GOLDINGS
-                      - FUGGLES
-                      - HALLERTAU
-                      - CITRUSSY
+                      - CORIANDER
+                      - ORANGE
+                      - CORIANDER_SEED
+                flavorCapsule1:
+                  type: string
+                  description: Fragrance capsule1
+                  enum:
+                    - CORIANDER
+                    - ORANGE
+                    - CORIANDER_SEED
+                flavorCapsule2:
+                  type: string
+                  description: Fragrance capsule2
+                  enum:
+                    - CORIANDER
+                    - ORANGE
+                    - CORIANDER_SEED
                 beerRemain:
                   type: integer
                   description: Recipe Progress Rate (%)
@@ -13278,6 +15205,24 @@ contents:
                         enum:
                           - AUTO
                           - NORMAL
+                  cycle:
+                    type: object
+                    description: Number of washes
+                    properties:
+                      cycleCount:
+                        type: object
+                        description: Number of washes
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
                   location:
                     type: object
                     description: Place
@@ -13452,6 +15397,13 @@ contents:
                     enum:
                       - AUTO
                       - NORMAL
+              cycle:
+                type: object
+                description: Number of washes
+                properties:
+                  cycleCount:
+                    type: integer
+                    description: Number of washes
               location:
                 type: object
                 description: Place
@@ -13921,421 +15873,458 @@ contents:
           properties:
             washer:
               type: object
+              description: Washer
               properties:
                 property:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      runState:
-                        type: object
-                        description: runState
-                        properties:
-                          currentState:
-                            type: object
-                            description: currentState
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                  type: object
+                  properties:
+                    runState:
+                      type: object
+                      description: runState
+                      properties:
+                        currentState:
+                          type: object
+                          description: currentState
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - enum
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: array
-                                    description: "Value | Description\n-|-\nPOWER_OFF | Power OFF\nINITIAL | Standby runState\nPAUSE | Pause\nDETECTING | Detecting load\nSOAKING | Soaking\nRUNNING\t|\tRunning\nRINSING\t|\tRinsing\nSPINNING | Spinning\nEND\t| Washing completed\nRESERVED | Reserved\nFIRMWARE | Updating firmware\nDRYING | Drying\nCOOL_DOWN\t| Wrinkle Care 1\nRINSE_HOLD | Pausing after rinsing\nREFRESHING | Wrinkle Care 2 FRESHCARE\nSTEAM_SOFTENING | Steam Softening\nERROR\t| Error\nSMART_GRID_RUN | Running Smart Grid\nADD_DRAIN\t| Draining added\nDETERGENT_AMOUNT | Displaying detergent amount\nPREWASH | Pre-washing\nSHOES_MODULE | Drying shoes\nPROOFING | Proofing \nDISPENSING | Auto-dispensing detergen\nSOFTENING | Checking the amount of softener\nCHECKING_TURBIDITY | Detecting turbidity (when using AUTOWASH course of G+Best model)\nCHANGE_CONDITION | Displays after automatically changing options based on the turbidity detection results\nDISPLAY_LOADSIZE | Displays load detection results\nFROZEN_PREVENT_INITIAL | Anti-freeze mode standby\nFROZEN_PREVENT_RUNNING | Running anti-freeze\nFROZEN_PREVENT_PAUSE | Pausing anti-freeze\nSLEEP | Sleep runState"
-                                    items:
-                                      type: string
-                                      enum:
-                                        - POWER_OFF
-                                        - INITIAL
-                                        - PAUSE
-                                        - DETECTING
-                                        - SOAKING
-                                        - RUNNING
-                                        - RINSING
-                                        - SPINNING
-                                        - END
-                                        - RESERVED
-                                        - FIRMWARE
-                                        - DRYING
-                                        - COOL_DOWN
-                                        - RINSE_HOLD
-                                        - REFRESHING
-                                        - STEAM_SOFTENING
-                                        - ERROR
-                                        - SMART_GRID_RUN
-                                        - ADD_DRAIN
-                                        - DETERGENT_AMOUNT
-                                        - PREWASH
-                                        - SHOES_MODULE
-                                        - PROOFING
-                                        - DISPENSING
-                                        - SOFTENING
-                                        - CHECKING_TURBIDITY
-                                        - CHANGE_CONDITION
-                                        - DISPLAY_LOADSIZE
-                                        - FROZEN_PREVENT_INITIAL
-                                        - FROZEN_PREVENT_RUNNING
-                                        - FROZEN_PREVENT_PAUSE
-                                        - SLEEP
-                      operation:
-                        type: object
-                        description: operation
-                        properties:
-                          washerOperationMode:
-                            type: object
-                            description: washerOperationMode
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - w
-                              type:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - enum
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: array
+                                  description: "Value | Description\n-|-\nPOWER_OFF | Power OFF\nINITIAL | Standby runState\nPAUSE | Pause\nDETECTING | Detecting load\nSOAKING | Soaking\nRUNNING\t|\tRunning\nRINSING\t|\tRinsing\nSPINNING | Spinning\nEND\t| Washing completed\nRESERVED | Reserved\nFIRMWARE | Updating firmware\nDRYING | Drying\nCOOL_DOWN\t| Wrinkle Care 1\nRINSE_HOLD | Pausing after rinsing\nREFRESHING | Wrinkle Care 2 FRESHCARE\nSTEAM_SOFTENING | Steam Softening\nERROR\t| Error\nSMART_GRID_RUN | Running Smart Grid\nADD_DRAIN\t| Draining added\nDETERGENT_AMOUNT | Displaying detergent amount\nPREWASH | Pre-washing\nSHOES_MODULE | Drying shoes\nPROOFING | Proofing \nDISPENSING | Auto-dispensing detergen\nSOFTENING | Checking the amount of softener\nCHECKING_TURBIDITY | Detecting turbidity (when using AUTOWASH course of G+Best model)\nCHANGE_CONDITION | Displays after automatically changing options based on the turbidity detection results\nDISPLAY_LOADSIZE | Displays load detection results\nFROZEN_PREVENT_INITIAL | Anti-freeze mode standby\nFROZEN_PREVENT_RUNNING | Running anti-freeze\nFROZEN_PREVENT_PAUSE | Pausing anti-freeze\nSLEEP | Sleep runState"
+                                  items:
+                                    type: string
+                                    enum:
+                                      - POWER_OFF
+                                      - INITIAL
+                                      - PAUSE
+                                      - DETECTING
+                                      - SOAKING
+                                      - RUNNING
+                                      - RINSING
+                                      - SPINNING
+                                      - END
+                                      - RESERVED
+                                      - FIRMWARE
+                                      - DRYING
+                                      - COOL_DOWN
+                                      - RINSE_HOLD
+                                      - REFRESHING
+                                      - STEAM_SOFTENING
+                                      - ERROR
+                                      - SMART_GRID_RUN
+                                      - ADD_DRAIN
+                                      - DETERGENT_AMOUNT
+                                      - PREWASH
+                                      - SHOES_MODULE
+                                      - PROOFING
+                                      - DISPENSING
+                                      - SOFTENING
+                                      - CHECKING_TURBIDITY
+                                      - CHANGE_CONDITION
+                                      - DISPLAY_LOADSIZE
+                                      - FROZEN_PREVENT_INITIAL
+                                      - FROZEN_PREVENT_RUNNING
+                                      - FROZEN_PREVENT_PAUSE
+                                      - SLEEP
+                    operation:
+                      type: object
+                      description: operation
+                      properties:
+                        washerOperationMode:
+                          type: object
+                          description: washerOperationMode
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - enum
-                              value:
-                                type: object
-                                properties:
-                                  w:
-                                    type: array
-                                    description: |-
-                                      Value | Description
-                                      -|-
-                                      START | Start washing
-                                      STOP | Stop washing
-                                      POWER_OFF | Power OFF
-                                      WAKE_UP | Wake up
-                                    items:
-                                      type: string
-                                      enum:
-                                        - START
-                                        - STOP
-                                        - POWER_OFF
-                                        - WAKE_UP
-                      remoteControlEnable:
-                        type: object
-                        description: remoteControlEnable
-                        properties:
-                          remoteControlEnabled:
-                            type: object
-                            description: remoteControlEnabled runState
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                                  - w
+                            type:
+                              type: string
+                              enum:
+                                - enum
+                            value:
+                              type: object
+                              properties:
+                                w:
+                                  type: array
+                                  description: |-
+                                    Value | Description
+                                    -|-
+                                    START | Start washing
+                                    STOP | Stop washing
+                                    POWER_OFF | Power OFF
+                                    WAKE_UP | Wake up
+                                  items:
+                                    type: string
+                                    enum:
+                                      - START
+                                      - STOP
+                                      - POWER_OFF
+                                      - WAKE_UP
+                    remoteControlEnable:
+                      type: object
+                      description: remoteControlEnable
+                      properties:
+                        remoteControlEnabled:
+                          type: object
+                          description: remoteControlEnabled runState
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - boolean
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: array
-                                    description: |-
-                                      Value | Description
-                                      -|-
-                                      TRUE | Remote Control On
-                                      FALSE | Remote Control Off
-                                    items:
-                                      type: boolean
-                                      enum:
-                                        - true
-                                        - false
-                      timer:
-                        type: object
-                        description: timer
-                        properties:
-                          remainHour:
-                            type: object
-                            description: Remaining Time - Hours
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - boolean
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: array
+                                  description: |-
+                                    Value | Description
+                                    -|-
+                                    TRUE | Remote Control On
+                                    FALSE | Remote Control Off
+                                  items:
+                                    type: boolean
+                                    enum:
+                                      - true
+                                      - false
+                    timer:
+                      type: object
+                      description: timer
+                      properties:
+                        remainHour:
+                          type: object
+                          description: Remaining Time - Hours
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items: 
                                         type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          remainMinute:
-                            type: object
-                            description: Remaining Time - Minutes
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                        remainMinute:
+                          type: object
+                          description: Remaining Time - Minutes
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items: 
                                         type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          relativeHourToStart:
-                            type: object
-                            description: Delay Time - Hours
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                                    - w
-                              type:
+                        relativeHourToStart:
+                          type: object
+                          description: Delay Time - Hours
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                                  - w
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items: 
                                         type: integer
-                                      min:
+                                w:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items: 
                                         type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                                  w:
-                                    type: object
-                                    properties:
-                                      max:
-                                        type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          relativeMinuteToStart:
-                            type: object
-                            description: Delay Time - Minutes
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                        relativeMinuteToStart:
+                          type: object
+                          description: Delay Time - Minutes
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items: 
                                         type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          relativeHourToStop:
-                            type: object
-                            description: OFF Completion Time - Hour
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                                    - w
-                              type:
+                        relativeHourToStop:
+                          type: object
+                          description: OFF Completion Time - Hour
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                                  - w
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items: 
                                         type: integer
-                                      min:
+                                w:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items: 
                                         type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                                  w:
-                                    type: object
-                                    properties:
-                                      max:
-                                        type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          relativeMinuteToStop:
-                            type: object
-                            description: OFF Completion Time - Minute
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                        relativeMinuteToStop:
+                          type: object
+                          description: OFF Completion Time - Minute
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items: 
                                         type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          totalHour:
-                            type: object
-                            description: Total Time - Hours
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                        totalHour:
+                          type: object
+                          description: Total Time - Hours
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items: 
                                         type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          totalMinute:
-                            type: object
-                            description: Total Time - Minutes
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                        totalMinute:
+                          type: object
+                          description: Total Time - Minutes
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items: 
                                         type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                      detergent:
-                        type: object
-                        description: detergent
-                        properties:
-                          detergentSetting:
-                            type: string
-                            description: |-
-                              Value | Description
-                              -|-
-                              AUTO | Automatic Setup Devices
-                              NORMAL | Non-Automatic Setup Devices
-                            enum:
-                              - AUTO
-                              - NORMAL
-                      location:
-                        type: object
-                        description: Place
-                        properties:
-                          locationName:
-                            type: string
-                            description: |-
-                              Value | Description
-                              -|-
-                              MAIN | main washer
-                              MINI | mini washer
-                            enum:
-                              - MAIN
-                              - MINI
+                    detergent:
+                      type: object
+                      description: detergent
+                      properties:
+                        detergentSetting:
+                          type: string
+                          description: |-
+                            Value | Description
+                            -|-
+                            AUTO | Automatic Setup Devices
+                            NORMAL | Non-Automatic Setup Devices
+                          enum:
+                            - AUTO
+                            - NORMAL
+                    cycle:
+                      type: object
+                      description: Number of washes
+                      properties:
+                        cycleCount:
+                          type: object
+                          description: Number of washes
+                          properties:
+                            mode:
+                              type: array
+                              items:
+                                type: string
+                                enum:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - number
+                    location:
+                      type: object
+                      description: Place
+                      properties:
+                        locationName:
+                          type: string
+                          description: |-
+                            Value | Description
+                            -|-
+                            MAIN | main washer
+                            MINI | mini washer
+                          enum:
+                            - MAIN
+                            - MINI
                 notification:
                   type: object
                   properties:
@@ -14392,6 +16381,7 @@ contents:
                       - PART_MALFUNCTION_ERROR
             dryer:
               type: object
+              description: Dryer
               properties:
                 property:
                   type: object
@@ -14829,6 +16819,13 @@ contents:
                       enum:
                         - AUTO
                         - NORMAL
+                cycle:
+                  type: object
+                  description: Number of washes
+                  properties:
+                    cycleCount:
+                      type: integer
+                      description: Number of washes
                 location:
                   type: object
                   description: Place
@@ -15905,6 +17902,64 @@ contents:
                                 enum:
                                   - 'ON'
                                   - 'OFF'
+                    roomTempMode:
+                      type: object
+                      description: Room temperature mode settings
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                AIR | Set room temperature based on air temperature
+                                WATER | Set room temperature based on water input/output
+                              items:
+                                type: string
+                                enum:
+                                  - AIR
+                                  - WATER
+                    roomWaterMode:
+                      type: object
+                      description: Room temperature water input/output mode settings
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                IN_WATER | Set room temperature based on water input
+                                OUT_WATER | Set room temperature based on water output 
+                              items:
+                                type: string
+                                enum:
+                                  - IN_WATER
+                                  - OUT_WATER
                 temperature:
                   type: object
                   description: Temperature
@@ -16048,6 +18103,402 @@ contents:
                                 type: string
                                 enum:
                                   - C
+                hotWaterTemperatureInUnits:
+                  type: array
+                  description: Temperature
+                  items:
+                    type: object
+                    properties:
+                      currentTemperature:
+                        type: object
+                        description: Current temperature for hot water mode
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      targetTemperature:
+                        type: object
+                        description: Desired temperature for hot water mode
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      maxTemperature:
+                        type: object
+                        description: Highest temperature for hot water mode
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      minTemperature:
+                        type: object
+                        description: Lowest temperature for hot water mode
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      unit:
+                        type: string
+                        enum:
+                          - C
+                          - F
+                        description: |-
+                          Value | Description
+                          -|-
+                          C | Celsius
+                          F | Fahrenheit
+                roomTemperatureInUnits:
+                  type: array
+                  description: Temperature
+                  items:
+                    type: object
+                    properties:
+                      currentTemperature:
+                        type: object
+                        description: Current temperature
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      airCurrentTemperature:
+                        type: object
+                        description: Current temperature (When roomTempMode is AIR)
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      outWaterCurrentTemperature:
+                        type: object
+                        description: Water output temperature (When roomTempMode is WATER and roomWaterMode is OUT_WATER)
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      inWaterCurrentTemperature:
+                        type: object
+                        description: Water input temperature (When roomTempMode is WATER and roomWaterMode is IN_WATER)
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      targetTemperature:
+                        type: object
+                        description: Desired temperature
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      airCoolTargetTemperature:
+                        type: object
+                        description: Desired room temperature for cooling
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      airHeatTargetTemperature:
+                        type: object
+                        description: Desired room temperature for heating
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      waterCoolTargetTemperature:
+                        type: object
+                        description: Desired water input/output temperature for cooling
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      waterHeatTargetTemperature:
+                        type: object
+                        description: Desired room temperature for heating
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      airHeatMaxTemperature:
+                        type: object
+                        description: Highest temperature for heating
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      airHeatMinTemperature:
+                        type: object
+                        description: Lowest temperature for heating
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      airCoolMaxTemperature:
+                        type: object
+                        description: Highest temperature for cooling
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      airCoolMinTemperature:
+                        type: object
+                        description: Lowest temperature for cooling
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      waterHeatMaxTemperature:
+                        type: object
+                        description: Highest water input/ouput temperature for heating
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      waterHeatMinTemperature:
+                        type: object
+                        description: Lowest water input/ouput temperature for heating
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      waterCoolMaxTemperature:
+                        type: object
+                        description: Highest water input/ouput temperature for cooling
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      waterCoolMinTemperature:
+                        type: object
+                        description: Lowest water input/ouput temperature for cooling
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      unit:
+                        type: string
+                        enum:
+                          - C
+                          - F
+                        description: |-
+                          Value | Description
+                          -|-
+                          C | Celsius
+                          F | Fahrenheit
         system_boiler-object:
           type: object
           title: System_Boiler
@@ -16079,6 +18530,18 @@ contents:
                   enum:
                     - 'ON'
                     - 'OFF'
+                roomTempMode:
+                  type: string
+                  description: Main Body Behavior
+                  enum:
+                    - AIR
+                    - WATER
+                roomWaterMode:
+                  type: string
+                  description: Main Body Behavior
+                  enum:
+                    - IN_WATER
+                    - OUT_WATER
             temperature:
               type: object
               description: Temperature
@@ -16107,11 +18570,98 @@ contents:
                 coolMinTemperature:
                   type: number
                   description: Cooling minimum temperature
-            unit:
-              type: string
-              description: Unit
-              enum:
-                - C
+              unit:
+                type: string
+                description: Unit
+                enum:
+                  - C
+            hotWaterTemperatureInUnits:
+              type: array
+              description: Temperature
+              items:
+                type: object
+                properties:
+                  currentTemperature:
+                    type: number
+                    description: Current temperature for hot water mode
+                  targetTemperature:
+                    type: number
+                    description: Desired temperature for hot water mode
+                  maxTemperature:
+                    type: number
+                    description: Highest temperature for hot water mode
+                  minTemperature:
+                    type: number
+                    description: Lowest temperature for hot water mode
+                  unit:
+                    type: string
+                    description: Unit
+                    enum:
+                      - C
+                      - F
+            roomTemperatureInUnits:
+              type: array
+              description: Temperature
+              items:
+                type: object
+                properties:
+                  currentTemperature:
+                    type: number
+                    description: Current temperature
+                  airCurrentTemperature:
+                    type: number
+                    description: Current temperature (When roomTempMode is AIR)
+                  outWaterCurrentTemperature:
+                    type: number
+                    description: Water output temperature (When roomTempMode is WATER and roomWaterMode is OUT_WATER)
+                  inWaterCurrentTemperature:
+                    type: number
+                    description: Water input temperature (When roomTempMode is WATER and roomWaterMode is IN_WATER)
+                  targetTemperature:
+                    type: number
+                    description: Desired temperature
+                  airCoolTargetTemperature:
+                    type: number
+                    description: Desired room temperature for cooling
+                  airHeatTargetTemperature:
+                    type: number
+                    description: Desired room temperature for heating
+                  waterCoolTargetTemperature:
+                    type: number
+                    description: Desired water input/output temperature for cooling
+                  waterHeatTargetTemperature:
+                    type: number
+                    description: Desired room temperature for heating
+                  airHeatMaxTemperature:
+                    type: number
+                    description: Highest temperature for heating
+                  airHeatMinTemperature:
+                    type: number
+                    description: Lowest temperature for heating
+                  airCoolMaxTemperature:
+                    type: number
+                    description: Highest temperature for cooling
+                  airCoolMinTemperature:
+                    type: number
+                    description: Lowest temperature for cooling
+                  waterHeatMaxTemperature:
+                    type: number
+                    description: Highest water input/ouput temperature for heating
+                  waterHeatMinTemperature:
+                    type: number
+                    description: Lowest water input/ouput temperature for heating
+                  waterCoolMaxTemperature:
+                    type: number
+                    description: Highest water input/ouput temperature for cooling
+                  waterCoolMinTemperature:
+                    type: number
+                    description: Lowest water input/ouput temperature for cooling
+                  unit:
+                    type: string
+                    description: Unit
+                    enum:
+                      - C
+                      - F
         stick_cleaner-profile:
           type: object
           title: Stick_Cleaner
@@ -16933,6 +19483,24 @@ contents:
                         enum:
                           - AUTO
                           - NORMAL
+                  cycle:
+                    type: object
+                    description: Number of washes
+                    properties:
+                      cycleCount:
+                        type: object
+                        description: Number of washes
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
                   location:
                     type: object
                     description: Place
@@ -17114,6 +19682,13 @@ contents:
                     enum:
                       - AUTO
                       - NORMAL
+              cycle:
+                type: object
+                description: Number of washes
+                properties:
+                  cycleCount:
+                    type: integer
+                    description: Number of washes
               location:
                 type: object
                 description: Place
@@ -17557,6 +20132,24 @@ contents:
                         enum:
                           - AUTO
                           - NORMAL
+                  cycle:
+                    type: object
+                    description: Number of washes
+                    properties:
+                      cycleCount:
+                        type: object
+                        description: Number of washes
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
                   location:
                     type: object
                     description: Place
@@ -17723,6 +20316,13 @@ contents:
                     enum:
                       - AUTO
                       - NORMAL
+              cycle:
+                type: object
+                description: Number of washes
+                properties:
+                  cycleCount:
+                    type: integer
+                    description: Number of washes
               location:
                 type: object
                 description: Place
@@ -24952,6 +27552,87 @@ contents:
                         max: -16
                         min: -21
                         step: 1
+              temperatureInUnits:
+                - targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 8
+                        min: 1
+                        step: 1
+                      w:
+                        max: 8
+                        min: 1
+                        step: 1
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 46
+                        min: 33
+                        step: 1
+                      w:
+                        max: 46
+                        min: 33
+                        step: 1
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                  locationName: FRIDGE
+                - targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: -13
+                        min: -21
+                        step: 1
+                      w:
+                        max: -13
+                        min: -21
+                        step: 1
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 8
+                        min: -6
+                        step: 1
+                        except:
+                          - -5
+                          - 7
+                      w:
+                        max: 8
+                        min: -6
+                        step: 1
+                        except:
+                          - -5
+                          - 7
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                  locationName: FREEZER
               refrigeration:
                 expressMode:
                   type: boolean
@@ -25022,6 +27703,15 @@ contents:
               - locationName: FREEZER
                 targetTemperature: -13
                 unit: C
+            temperatureInUnits:
+              - targetTemperatureC: 7
+                targetTemperatureF: 46
+                unit: C
+                locationName: FRIDGE
+              - targetTemperatureC: -16
+                targetTemperatureF: 8
+                unit: C
+                locationName: FREEZER
             waterFilterInfo:
               usedTime: 0
         refrigerator-command-example:
@@ -25048,6 +27738,11 @@ contents:
             property:
               - detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 location:
                   locationName: MAIN
                 operation:
@@ -25163,6 +27858,8 @@ contents:
                 remoteControlEnabled: true
               runState:
                 currentState: INITIAL
+              cycle:
+                cycleCount: 0
               timer:
                 relativeHourToStop: 3
                 relativeMinuteToStop: 0
@@ -25320,12 +28017,89 @@ contents:
                       - HIGH
                       - LOW
                       - MID
+              windDirection:
+                airGuideWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                swirlWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                highCeilingWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                concentrationWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                autoFitWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                forestWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
               filterInfo:
                 filterLifetime:
                   mode:
                     - r
                   type: number
                 usedTime:
+                  mode:
+                    - r
+                  type: number
+                filterRemainPercent:
                   mode:
                     - r
                   type: number
@@ -25464,6 +28238,168 @@ contents:
                   value:
                     r:
                       - C
+              temperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 0.5
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 0.5
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 1
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 1
+                  unit: F
+              twoSetTemperature:
+                currentTemperature:
+                  type: number
+                  mode:
+                    - r
+                unit:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - C
+                coolTargetTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 37.5
+                      min: 10
+                      step: 0.5
+                    w:
+                      max: 37.5
+                      min: 10
+                      step: 0.5
+                heatTargetTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 32
+                      min: 4
+                      step: 0.5
+                    w:
+                      max: 32
+                      min: 4
+                      step: 0.5
+                twoSetEnabled:
+                  type: boolean
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - true
+                      - false
+              twoSetTemperatureInUnits:
+                - unit: C
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 37.5
+                        min: 10
+                        step: 0.5
+                      w:
+                        max: 37.5
+                        min: 10
+                        step: 0.5
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 32
+                        min: 4
+                        step: 0.5
+                      w:
+                        max: 32
+                        min: 4
+                        step: 0.5
+                - unit: F
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 99
+                        min: 50
+                        step: 1
+                      w:
+                        max: 99
+                        min: 50
+                        step: 1
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 90
+                        min: 40
+                        step: 1
+                      w:
+                        max: 90
+                        min: 40
+                        step: 1
               timer:
                 relativeHourToStart:
                   mode:
@@ -25507,26 +28443,73 @@ contents:
                       - UNSET
                     w:
                       - UNSET
+              display:
+                light:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
         air_conditioner-object-example:
           value:
             airConJobMode:
-              currentJobMode: FAN
+              currentJobMode:currentJobMode: AUTO
+            airQualitySensor:
+              PM1: 27
+              PM2: 35
+              PM10: 49
+              humidity: 27
+            temperature:
+              currentTemperature: 10.5
+              targetTemperature: 14
+              unit: C
+            temperatureInUnits:
+              - currentTemperature: 10.5
+                targetTemperature: 14
+                unit: C
+              - currentTemperature: 51
+                targetTemperature: 58
+                unit: F
+            twoSetTemperature:
+              currentTemperature: 10.5
+              coolTargetTemperature: 29.5
+              heatTargetTemperature: 14
+              unit: C
+              twoSetEnabled: true
+            twoSetTemperatureInUnits:
+              - coolTargetTemperature: 29.5
+                heatTargetTemperature: 14
+                unit: C
+              - coolTargetTemperature: 85
+                heatTargetTemperature: 58
+                unit: F
+            filterInfo:
+              filterRemainPercent: 98
             airFlow:
               windStrength: HIGH
-              windStep: 5
+            windDirection:
+              swirlWind: false
+              forestWind: false
+              airGuideWind: false
+              highCeilingWind: false
+              autoFitWind: false
+              concentrationWind: false
             operation:
-              airConOperationMode: POWER_OFF
-            powerSave:
-              powerSaveEnabled: false
-            temperature:
-              currentTemperature: 27
-              targetTemperature: 24.5
-              unit: C
+              airConOperationMode: POWER_ON
+              airCleanOperationMode: 'ON'
             timer:
               absoluteStopTimer: UNSET
               absoluteStartTimer: UNSET
             sleepTimer:
               relativeStopTimer: UNSET
+            display:
+              light: 'OFF'
         air_conditioner-command-example:
           description: Air Conditioner - Set On Timer 
           value:
@@ -26472,6 +29455,189 @@ contents:
           value:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
+        ventilator-profile-example:
+          value:
+            property:
+              ventJobMode:
+                currentJobMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - VENT_NATURE
+                      - VENT_AUTO
+                      - VENT_HEAT_EXCHANGE
+                    w:
+                      - VENT_NATURE
+                      - VENT_AUTO
+                      - VENT_HEAT_EXCHANGE
+              operation:
+                ventOperationMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              temperature:
+                currentTemperature:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 39.5
+                      min: 10.5
+                      step: 0.5
+                unit:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - C
+              airQualitySensor:
+                PM1:
+                  type: number
+                  mode:
+                    - r
+                PM2:
+                  type: number
+                  mode:
+                    - r
+                PM10:
+                  type: number
+                  mode:
+                    - r
+                CO2:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+              airFlow:
+                windStrength:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - AUTO
+                      - HIGH
+                      - POWER
+                      - LOW
+                    w:
+                      - AUTO
+                      - HIGH
+                      - POWER
+                      - LOW
+              timer:
+                absoluteHourToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteStopTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteHourToStart:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteMinuteToStart:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteStartTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              sleepTimer:
+                relativeHourToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                relativeMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                relativeStopTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+            notification:
+              push:
+                - NEED_TO_CHANGE_DUST_FILTER
+                - NEED_TO_CHANGE_PRE_FILTER
+        ventilator-object-example:
+          value:
+            ventJobMode:
+              currentJobMode: VENT_NATURE
+            operation:
+              ventOperationMode: POWER_ON
+            airQualitySensor:
+              PM1: 4
+              PM2: 4
+              PM10: 5
+              CO2: GOOD
+            temperature:
+              currentTemperature: 26.5
+              unit: C
+            airFlow:
+              windStrength: AUTO
+            timer:
+              absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
+            sleepTimer:
+              relativeStopTimer: UNSET
+        ventilator-command-example:
+          description: Ventilation - Auto mode
+          value:
+            ventJobMode:
+              currentJobMode: VENT_AUTO
         robot_cleaner-profile-example:
           title: Robot_Cleaner
           value:
@@ -27098,6 +30264,89 @@ contents:
                         min: 5
                         step: 1
                         except: []
+              temperatureInUnits:
+                - locationName: WINE_UPPER
+                  targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                - locationName: WINE_LOWER
+                  targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
               operation:
                 lightStatus:
                   type: range
@@ -27118,15 +30367,24 @@ contents:
                 - DOOR_IS_OPEN
         wine_cellar-object-example:
           value:
+            operation:
+              optimalHumidity: 'OFF'
             temperature:
-              - targetTemperature: 18
+              - locationName: WINE_UPPER
+                targetTemperature: 18
+                unit: C
+              - locationName: WINE_LOWER
+                targetTemperature: 11
+                unit: C
+            temperatureInUnits:
+              - targetTemperatureC: 18
+                targetTemperatureF: 18
                 unit: C
                 locationName: WINE_UPPER
-              - targetTemperature: 18
+              - targetTemperatureC: 11
+                targetTemperatureF: 11
                 unit: C
                 locationName: WINE_LOWER
-            operation:
-              lightStatus: 100
         wine_cellar-command-example:
           description: Wine Cellar - light Brightness
           value:
@@ -27215,10 +30473,50 @@ contents:
                       - ORANGE
                       - CORIANDER
                       - CORIANDER_SEED
+                flavorCapsule1:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ORANGE
+                      - CORIANDER
+                flavorCapsule2:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ORANGE
+                      - CORIANDER_SEED
                 hopOilInfo:
                   mode:
                     - r
                   type: list
+                  value:
+                    r:
+                      - FUGGLES
+                      - CASCADE
+                      - HALLERTAU
+                      - CITRUSSY
+                      - GOLDINGS
+                      - CHINOOK
+                hopOilCapsule1:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - FUGGLES
+                      - CASCADE
+                      - HALLERTAU
+                      - CITRUSSY
+                      - GOLDINGS
+                      - CHINOOK
+                hopOilCapsule2:
+                  mode:
+                    - r
+                  type: enum
                   value:
                     r:
                       - FUGGLES
@@ -27306,9 +30604,13 @@ contents:
               yeastInfo: AMERICAN_ALE
               hopOilInfo:
                 - CASCADE
+              hopOilCapsule1: CASCADE
+              hopOilCapsule2: CASCADE
               flavorInfo:
                 - CORIANDER
                 - CORIANDER_SEED
+              flavorCapsule1: CORIANDER
+              flavorCapsule2: CORIANDER_SEED
               beerRemain: 1
             timer:
               elapsedDayState: 0
@@ -27580,6 +30882,11 @@ contents:
             property:
               - detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 location:
                   locationName: MAIN
                 operation:
@@ -27700,6 +31007,8 @@ contents:
                 locationName: MAIN
               remoteControlEnable:
                 remoteControlEnabled: false
+              cycle:
+                cycleCount: 0
               runState:
                 currentState: END
               timer:
@@ -27710,7 +31019,7 @@ contents:
                 totalHour: 0
                 totalMinute: 0
         washtower_washer-command-example:
-          description: WashTower Washer - Start washing
+          description: WashTower (Washer) - Start washing
           value:
             operation:
               washerOperationMode: START
@@ -27878,6 +31187,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: AUTO
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -28028,6 +31342,8 @@ contents:
                 currentState: POWER_OFF
               remoteControlEnable:
                 remoteControlEnabled: false
+              cycle:
+                cycleCount: 0
               timer:
                 remainHour: 0
                 remainMinute: 0
@@ -28048,7 +31364,7 @@ contents:
                 totalHour: 0
                 totalMinute: 0
         washtower-command-example:
-          description: WashTower (Single Unit) - Start drying
+          description: WashTower - Start drying
           value:
             dryer:
               operation:
@@ -28496,11 +31812,31 @@ contents:
                 hotWaterMode:
                   mode:
                     - r
+                    - w
                   type: enum
                   value:
                     r:
                       - 'ON'
                       - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+                roomTempMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - AIR
+                      - WATER
+                roomWaterMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - OUT_WATER
+                      - IN_WATER
               temperature:
                 currentTemperature:
                   mode:
@@ -28541,17 +31877,267 @@ contents:
                   value:
                     r:
                       - C
+              hotWaterTemperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 80
+                        min: 30
+                        step: 1
+                      w:
+                        max: 80
+                        min: 30
+                        step: 1
+                  maxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  minTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 176
+                        min: 86
+                        step: 2
+                      w:
+                        max: 176
+                        min: 86
+                        step: 2
+                  maxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  minTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: F
+              roomTemperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  outWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  inWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 18
+                        step: 1
+                  airHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 1
+                  waterCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 24
+                        min: 5
+                        step: 1
+                  waterHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 57
+                        min: 14
+                        step: 1
+                  airHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  outWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  inWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 64
+                        step: 2
+                  airHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 2
+                  waterCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 76
+                        min: 40
+                        step: 2
+                  waterHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 134
+                        min: 58
+                        step: 2
+                  airHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: F
         system_boiler-object-example:
           value:
             boilerJobMode:
               currentJobMode: COOL
             operation:
-              boilerOperationMode: POWER_ON
-              hotWaterMode: 'ON'
+              boilerOperationMode: POWER_OFF
+              hotWaterMode: 'OFF'
+              roomTempMode: AIR
+              roomWaterMode: OUT_WATER
             temperature:
               currentTemperature: 40
               targetTemperature: 18
               unit: C
+            hotWaterTemperatureInUnits:
+              - currentTemperature: 0
+                unit: C
+              - currentTemperature: 32
+                unit: F
+            roomTemperatureInUnits:
+              - airCurrentTemperature: 40
+                targetTemperature: 18
+                currentTemperature: 40
+                unit: C
+              - airCurrentTemperature: 104
+                targetTemperature: 64
+                currentTemperature: 104
+                unit: F
         system_boiler-command-example:
           description: System Boiler - Power ON
           value:
@@ -28726,6 +32312,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: AUTO
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -28823,6 +32414,8 @@ contents:
                 relativeMinuteToStop: 0
                 totalHour: 0
                 totalMinute: 0
+              cycle:
+                cycleCount: 0
               location:
                 locationName: MAIN
         main_washcombo-command-example:
@@ -28881,6 +32474,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -28976,6 +32574,8 @@ contents:
                 relativeMinuteToStop: 0
                 totalHour: 0
                 totalMinute: 0
+              cycle:
+                cycleCount: 0
               location:
                 locationName: MINI
         mini_washcombo-command-example:
@@ -31432,6 +35032,7 @@ contents:
           - main_washcombo
           - mini_washcombo
           - humidifier
+          - ventilator
       - name: LG BECON Cloud
         tags:
           - odu
