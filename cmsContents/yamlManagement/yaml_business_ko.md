@@ -18,7 +18,7 @@ contents:
       - name: Overview
         x-displayName: 소개
         description: |
-          **ThinQ Business API**를 활용하면 LG전자의 가전제품 뿐만 아니라, 사이니지, 공조설비와 IoT 디바이스의 상태도 한 번에 조회하거나 제어할 수 있습니다.  LG전자 클라우드 플랫폼(LG ThinQ, LG Business Cloud, LG Business Cloud 등)에 등록된 디바이스라면 직접 손쉽게 B2B 파트너사의 SW와 연동하여 LG전자 디바이스의 상태를 조회/ 제어할 수 있도록 통합 API를 제공합니다.        ThinQ Business API에서 지원하는 디바이스의 종류 및 호출 메시지의 스키마는 **[디바이스 프로파일](/ko/apiManage/device_profile)** 페이지를 참조해주십시오.      
+          **ThinQ Business API**를 활용하면 LG전자의 가전제품 뿐만 아니라, 사이니지, 공조설비와 IoT 디바이스의 상태도 한 번에 조회하거나 제어할 수 있습니다.  LG전자 클라우드 플랫폼(LG ThinQ, LG Business Cloud, LG BECON Cloud 등)에 등록된 디바이스라면 직접 손쉽게 B2B 파트너사의 SW와 연동하여 LG전자 디바이스의 상태를 조회/ 제어할 수 있도록 통합 API를 제공합니다.        ThinQ Business API에서 지원하는 디바이스의 종류 및 호출 메시지의 스키마는 **[디바이스 프로파일](/ko/apiManage/device_profile)** 페이지를 참조해주십시오.      
 
           ThinQ Business API를 사용하기 위해서는 **[파트너십 체결](/ko/mypage/partner/landing)** 절차가 선행되어야 합니다. 파트너십이 승인되면, 실제 제품 없이도 제품이 있는 것처럼 LG전자 클라우드 플랫폼 내에 제품을 등록하고 API 호출을 테스트해 볼 수 있도록 **ThinQ Business 시뮬레이터**를 함께 제공하고 있습니다.      
 
@@ -62,29 +62,43 @@ contents:
           ## 국가 코드
           ThinQ Business API 호출에서 사용하는 국가 코드는 `ISO-3166 alpha-2` 규격을 지원하며 LG ThinQ 서비스를 지원하는 국가에서 사용할 수 있습니다.  지원하는 국가 코드는 아래 표와 같습니다.
 
+            ### South Asia, East Asia and Pacific
 
-            | Code | Name          | Code | Name         | Code | Name          | Code | Name          | Code | Name           | Code | Name         | Code | Name         | Code | Name         |
-            |-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|-----------|------------------|
-            | KR        | 대한민국         | GH        | 가나             | GA        | 가봉             | GY        | 가이아나         | GM        | 감비아           | GT        | 과테말라         | GD        | 그레나다         | GR        | 그리스           |
-            | GN        | 기니             | NG        | 나이지리아       | ZA        | 남아프리카 공화국| NL        | 네덜란드         | NO        | 노르웨이         | NZ        | 뉴질랜드         | NE        | 니제르           | NI        | 니카라과         |
-            | TW        | 대만             | DK        | 덴마크           | DM        | 도미니카         | DO        | 도미니카 공화국  | DE        | 독일             | LR        | 라이베리아       | LV        | 라트비아         | RU        | 러시아           |
-            | LB        | 레바논           | RO        | 루마니아         | LU        | 룩셈부르크       | RW        | 르완다           | LY        | 리비아           | LT        | 리투아니아       | MK        | 마케도니아       | MY        | 말레이시아       |
-            | ML        | 말리             | MX        | 멕시코           | MA        | 모로코           | MU        | 모리셔스         | ME        | 몬테네그로       | MD        | 몰도바           | MT        | 몰타             | US        | 미국             |
-            | MM        | 미얀마           | BH        | 바레인           | BB        | 바베이도스       | BS        | 바하마           | BD        | 방글라데시       | BJ        | 베냉             | VE        | 베네수엘라       | VN        | 베트남           |
-            | BE        | 벨기에           | BY        | 벨라루스         | BZ        | 벨리즈           | BA        | 보스니아         | BO        | 볼리비아         | BF        | 부르키나 파소    | BG        | 불가리아         | BR        | 브라질           |
-            | SA        | 사우디아라비아   | ST        | 상투메 프린시페  | SN        | 세네갈           | RS        | 세르비아         | LC        | 세인트루시아     | VC        | 세인트빈센트 그레나딘 | KN        | 세인트키츠 네비스 | SO        | 소말리아         |
-            | SD        | 수단             | SR        | 수리남           | LK        | 스리랑카         | SE        | 스웨덴           | CH        | 스위스           | ES        | 스페인           | SK        | 슬로바키아       | SI        | 슬로베니아       |
-            | SY        | 시리아           | SL        | 시에라리온       | SG        | 싱가포르         | AE        | 아랍에미리트     | AM        | 아르메니아       | AR        | 아르헨티나       | IS        | 아이슬란드       | HT        | 아이티           |
-            | IE        | 아일랜드         | AZ        | 아제르바이잔     | AL        | 알바니아         | DZ        | 알제리           | AO        | 앙골라           | AG        | 앤티가 바부다    | EE        | 에스토니아       | EC        | 에콰도르         |
-            | SV        | 엘살바도르       | GB        | 영국             | YE        | 예멘             | OM        | 오만             | AT        | 오스트리아       | HN        | 온두라스         | JO        | 요르단           | UG        | 우간다           |
-            | UY        | 우루과이         | UZ        | 우즈베키스탄     | UA        | 우크라이나       | ET        | 이디오피아       | IQ        | 이라크           | IR        | 이란             | IL        | 이스라엘         | EG        | 이집트           |
-            | IT        | 이탈리아         | IN        | 인도             | ID        | 인도네시아       | JP        | 일본             | JM        | 자메이카         | ZM        | 잠비아           | GQ        | 적도 기니        | GE        | 조지아           |
-            | CN        | 중국             | CF        | 중앙아프리카공화국 | DJ        | 지부티           | TD        | 차드             | CZ        | 체코             | CL        | 칠레             | CM        | 카메룬           | CV        | 카보베르데       |
-            | KZ        | 카자흐스탄       | QA        | 카타르           | KH        | 캄보디아         | CA        | 캐나다           | KE        | 케냐             | XK        | 코소보           | CR        | 코스타리카       | CI        | 코트디부아르     |
-            | CO        | 콜롬비아         | CG        | 콩고             | CD        | 콩고 민주공화국  | CU        | 쿠바             | KW        | 쿠웨이트         | HR        | 크로아티아       | KG        | 키르기스스탄     | CY        | 키프로스         |
-            | TZ        | 탄자니아         | TH        | 태국             | TR        | 터키             | TG        | 토고             | TN        | 튀니지           | TT        | 트리니다드 섬    | PA        | 파나마           | PY        | 파라과이         |
-            | PK        | 파키스탄         | PS        | 팔레스타인       | PE        | 페루             | PT        | 포르투갈         | PL        | 폴란드           | PR        | 푸에르토리코     | FR        | 프랑스           | FI        | 핀란드           |
-            | PH        | 필리핀           | HU        | 헝가리           | AU        | 호주             | HK        | 홍콩             | NP        | 네팔             |           |                  |           |                  |           |                  |
+            | Code | Name       | Code | Name       | Code | Name       | Code | Name       | Code | Name       | Code | Name       | Code | Name       | Code | Name       |
+            |------|------------|------|------------|------|------------|------|------------|------|------------|------|------------|------|------------|------|------------|
+            | AU   | 호주       | BD   | 방글라데시 | CN   | 중국       | HK   | 홍콩       | ID   | 인도네시아 | IN   | 인도       | JP   | 일본       | KR   | 대한민국   |
+            | LA   | 라오스     | MY   | 말레이시아 | NP   | 네팔       | NZ   | 뉴질랜드   | PH   | 필리핀     | SG   | 싱가포르   | TH   | 태국       | TW   | 대만       |
+            | VN   | 베트남     | MM   | 미얀마     | KH   | 캄보디아   | LK   | 스리랑카   |      |            |      |            |      |            |      |            |
+            
+            ### America
+
+            | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                |
+            |------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|
+            | AG   | 앤티가 바부다       | AR   | 아르헨티나          | AW   | 아루바              | BB   | 바베이도스          | BO   | 볼리비아            | BR   | 브라질              | BS   | 바하마              | BZ   | 벨리즈              |
+            | CA   | 캐나다              | CL   | 칠레                | CO   | 콜롬비아            | CR   | 코스타리카          | CU   | 쿠바                | DM   | 도미니카            | DO   | 도미니카 공화국     | EC   | 에콰도르            |
+            | GD   | 그레나다            | GT   | 과테말라            | GY   | 가이아나            | HN   | 온두라스            | HT   | 아이티              | JM   | 자메이카            | KN   | 세인트키츠 네비스   | LC   | 세인트루시아        |
+            | MX   | 멕시코              | NI   | 니카라과            | PA   | 파나마              | PE   | 페루                | PR   | 푸에르토리코        | PY   | 파라과이            | SR   | 수리남              | SV   | 엘살바도르          |
+            | TT   | 트리니다드 섬       | US   | 미국                | UY   | 우루과이            | VC   | 세인트빈센트 그레나딘 | VE   | 베네수엘라          |      |                     |      |                     |      |                     |
+
+            ### Europe, Middle East, Africa
+
+            | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                |
+            |------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|------|---------------------|
+            | AE   | 아랍에미리트        | AF   | 아프가니스탄        | AL   | 알바니아            | AM   | 아르메니아          | AO   | 앙골라              | AT   | 오스트리아          | AZ   | 아제르바이잔        | BA   | 보스니아 헤르체고비나 |
+            | BE   | 벨기에              | BF   | 부르키나파소        | BG   | 불가리아            | BH   | 바레인              | BJ   | 베냉                | BY   | 벨라루스            | CD   | 콩고 민주공화국     | CF   | 중앙아프리카공화국  |
+            | CG   | 콩고                | CH   | 스위스              | CI   | 코트디부아르        | CM   | 카메룬              | CV   | 카보베르데          | CY   | 키프로스            | CZ   | 체코                | DE   | 독일                |
+            | DJ   | 지부티              | DK   | 덴마크              | DZ   | 알제리              | EE   | 에스토니아          | EG   | 이집트              | ES   | 스페인              | ET   | 이디오피아          | FI   | 핀란드              |
+            | FR   | 프랑스              | GA   | 가봉                | GB   | 영국                | GE   | 조지아              | GH   | 가나                | GM   | 감비아              | GN   | 기니                | GQ   | 적도 기니           |
+            | GR   | 그리스              | HR   | 크로아티아          | HU   | 헝가리              | IE   | 아일랜드            | IL   | 이스라엘            | IQ   | 이라크              | IR   | 이란                | IS   | 아이슬란드          |
+            | IT   | 이탈리아            | JO   | 요르단              | KE   | 케냐                | KG   | 키르기스스탄        | KW   | 쿠웨이트            | KZ   | 카자흐스탄          | LB   | 레바논              | LR   | 라이베리아          |
+            | LT   | 리투아니아          | LU   | 룩셈부르크          | LV   | 라트비아            | LY   | 리비아              | MA   | 모로코              | MD   | 몰도바              | ME   | 몬테네그로          | MK   | 마케도니아          |
+            | ML   | 말리                | MR   | 모리타니아          | MT   | 몰타                | MU   | 모리셔스            | MW   | 말라위              | NE   | 니제르              | NG   | 나이지리아          | NL   | 네덜란드            |
+            | NO   | 노르웨이            | OM   | 오만                | PK   | 파키스탄            | PL   | 폴란드              | PS   | 팔레스타인          | PT   | 포르투갈            | QA   | 카타르              | RO   | 루마니아            |
+            | RS   | 세르비아            | RW   | 르완다              | SA   | 사우디아라비아      | SD   | 수단                | SE   | 스웨덴              | SI   | 슬로베니아          | SK   | 슬로바키아          | SL   | 시에라리온          |
+            | SN   | 세네갈              | SO   | 소말리아            | ST   | 상투메 프린시페     | SY   | 시리아              | TD   | 차드                | TG   | 토고                | TN   | 튀니지              | TR   | 터키                |
+            | TZ   | 탄자니아            | UA   | 우크라이나          | UG   | 우간다              | UZ   | 우즈베키스탄        | XK   | 코소보              | YE   | 예멘                | ZA   | 남아프리카 공화국   | ZM   | 잠비아              |
+            | RU   | 러시아              |      |                     |      |                     |      |                     |      |                     |      |                     |      |                     |      |                     |
+
 
           ## 응답 코드
           각 API를 호출하면 HTTP 상태 코드와 함께 응답 유형을 부가적으로 설명하는 응답 코드가 함께 반환될 수 있습니다.  이 응답 코드는 HTTP 응답 헤더와 응답 바디의 메시지에 포함되어 있으며 API의 종류별로 그 정의는 다를 수 있습니다.  API의 종류별로 지원하는 응답 코드는 아래와 같습니다.
@@ -290,14 +304,35 @@ contents:
         description: "등록한 디바이스의 목록을 조회하고, 특정 디바이스의 프로파일 및 상태를 조회하거나 디바이스를 제어하기 위해 Device API를 사용합니다.  기업이 구매한 다양한 LG전자 제품의 Device API를 사용하는 경우, 디바이스가 일괄 등록되어 있는 LG전자 계정이나 설치 현장의 정보를 LG Smart Solution API Developer에서 사전에 지정할 수 있습니다.  또한 LG전자 제품의 Device API를 호출할 때 특정 LG전자 사용자를 지정해 해당 사용자의 디바이스에 대한 접근을 수행할 수 있습니다.  Device API를 호출하기 위해서는 B2B 파트너 또는 그의 고객이 디바이스를 등록하는 과정을 거쳐야 합니다.  구매한 디바이스는 아래와 같이 디바이스 종류에 따라 해당 LG전자의 플랫폼의 서비스에 가입해 등록해야 합니다.\n\n |디바이스 종류|LG전자 플랫폼|\n |-|-|\n |가전제품 및 기타 IoT 디바이스|LG ThinQ (mobile app)|\n |사이니지|LG Business Cloud\_(https://lgbusinesscloud.com)|\n |상업용 HVAC|LG BECON Cloud\_(https://beconcloud.lge.com)|\n"
       - name: Push API
         description: |
-          특정 디바이스 상태 변화를 B2B 파트너의 서비스가 수신하거나 수신을 해제하기 위해 Push API를 사용합니다.  이 API는 현재 LG ThinQ에 등록한 제품에 한해 제공되며 향후 다른 제품의 지원을 확대할 예정입니다.  B2B 파트너의 서비스가 디바이스의 상태를 수신하기 위해서는 사전에 LG Smart Solution API Developer에서 B2B 파트너 서비스의 Callback 호출 정보를 등록해야 합니다.  Callback으로 제공하는 디바이스의 상태 변화 종류는 아래와 같고, 종류별로 Callback 구독이 수행하는 조건이 다를 수 있습니다.
+          특정 디바이스 상태 변화를 B2B 파트너의 서비스가 수신하거나 수신을 해제하기 위해 Push API를 사용합니다.  이 API는 현재 LG ThinQ 등록 디바이스에 한해 제공되며 향후 다른 디바이스의 지원을 확대할 예정입니다.  B2B 파트너의 서비스가 디바이스의 상태를 수신하기 위해서는 사전에 LG Smart Solution API Developer에서 B2B 파트너 서비스의 Callback 호출 정보를 등록해야 합니다.  Callback으로 제공하는 디바이스의 상태 변화 종류는 아래와 같고, 종류별로 Callback 구독이 수행하는 조건이 다를 수 있습니다.
 
-           | Type | Description | Pre-Condition |
+           | Push Type | Description | Pre-Condition |
            |-|-|-|
            | DEVICE_PUSH | 디바이스의 동작 완료, 디바이스 부품 교체 등을 알림<br> (예: 세탁 완료, 필터 교체 등) | 디바이스 푸시 메시지 구독 API 호출 |
            | DEVICE_REGISTERED | 디바이스가 추가됨 | 디바이스 목록 조회 API 호출 |
            | DEVICE_UNREGISTERED | 디바이스가 삭제됨 | 디바이스 목록 조회 API 호출 |
            | DEVICE_ALIAS_CHANGED | 디바이스의 닉네임이 변경됨 | 디바이스 목록 조회 API 호출 |
+
+          <br/><br/>
+          ### DEVICE_PUSH
+            <SchemaDefinition
+            schemaRef="#/components/schemas/push-callback-device-push-schema"
+            exampleRef="#/components/examples/push-callback-device-push-example" />
+
+          ### DEVICE_REGISTERED
+            <SchemaDefinition
+            schemaRef="#/components/schemas/push-callback-device-registered-schema"
+            exampleRef="#/components/examples/push-callback-device-registered-example" />
+
+          ### DEVICE_UNREGISTERED
+            <SchemaDefinition
+            schemaRef="#/components/schemas/push-callback-device-unregistered-schema"
+            exampleRef="#/components/examples/push-callback-device-unregistered-example" />
+
+          ### DEVICE_ALIAS_CHANGED
+            <SchemaDefinition
+            schemaRef="#/components/schemas/push-callback-device-alias-changed-schema"
+            exampleRef="#/components/examples/push-callback-device-alias-changed-example" />
       - name: User API
         description: |
           B2B 파트너의 서비스에 등록한 LG전자 사용자의 정보를 관리하기 위해 User API를 사용합니다. <b>이 API는 현재 LG ThinQ 등록 디바이스에 한해 제공합니다.</b>
@@ -408,6 +443,45 @@ contents:
                 application/json:
                   schema:
                     $ref: '#/components/schemas/device-list-res'
+                  example:
+                    value:
+                      messageId: 2ADaRijIk8CvaSHVPeEWNw
+                      timestamp: '2024-10-01T06:23:20.866279'
+                      response:
+                        - deviceId: 8a6bc612a906a788e021f907819a8fe6a354c972e72d17c6c270ee94b6d9e4ca
+                          deviceInfo:
+                            deviceType: DEVICE_AIR_PURIFIER
+                            modelName: AIR_910604_WW
+                            alias: My New AIR PURIFIER
+                            reportable: 'true'
+                        - deviceId: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
+                          deviceInfo:
+                            deviceType: DEVICE_WASHTOWER_WASHER
+                            alias: My New WashTower Washer
+                            modelName: FAKPK21021
+                            reportable: 'true'
+                            groupId: '171807013576723372'
+                        - deviceId: bab8196f0d3529ce1243457333fcbed8fa2d7bc17f64e4e0a7f48377abf4494f
+                          deviceInfo:
+                            deviceType: DEVICE_WASHTOWER_DRYER
+                            alias: My New WashTower Dryer
+                            modelName: SDH_WT4101_KR
+                            reportable: 'true'
+                            groupId: '171807013576723372'
+                        - deviceId: df37d9f9fdf9360255754b1e916008f31b29d44dd6dac1a026b726f0496bd755
+                          deviceInfo:
+                            deviceType: DEVICE_SIGNAGE
+                            alias: SKJY1107 UH5E
+                            modelName: 65UH5E
+                        - deviceId: 7bd6ef74940bda3c9007a3abbd7a2d4f224134f9ba513dc32691cba371de8304
+                          deviceInfo:
+                            deviceType: DEVICE_IDU
+                            alias: AC_00
+                            parentId: e75adfb7f3aea29228198bf06a4213ad3a60644d21e45357cb083fe306c07bf1
+                        - deviceId: e75adfb7f3aea29228198bf06a4213ad3a60644d21e45357cb083fe306c07bf1
+                          deviceInfo:
+                            deviceType: DEVICE_ODU
+                            alias: ODU[00]
             '400':
               description: Bad request
               headers:
@@ -582,9 +656,9 @@ contents:
                       $ref: '#/components/examples/home_brew-profile-example'
                     식물재배기:
                       $ref: '#/components/examples/plant_cultivator-profile-example'
-                    워시타워(세탁기):
+                    워시타워 (세탁기):
                       $ref: '#/components/examples/washtower_washer-profile-example'
-                    워시타워(건조기):
+                    워시타워 (건조기):
                       $ref: '#/components/examples/washtower_dryer-profile-example'
                     워시타워:
                       $ref: '#/components/examples/washtower-profile-example'
@@ -840,9 +914,9 @@ contents:
                       $ref: '#/components/examples/home_brew-object-example'
                     식물재배기:
                       $ref: '#/components/examples/plant_cultivator-object-example'
-                    워시타워(세탁기):
+                    워시타워 (세탁기):
                       $ref: '#/components/examples/washtower_washer-object-example'
-                    워시타워(건조기):
+                    워시타워 (건조기):
                       $ref: '#/components/examples/washtower_dryer-object-example'
                     워시타워:
                       $ref: '#/components/examples/washtower-object-example'
@@ -1080,9 +1154,9 @@ contents:
                     $ref: '#/components/examples/ceiling_fan-command-example'
                   와인셀러:
                     $ref: '#/components/examples/wine_cellar-command-example'
-                  워시타워(세탁기):
+                  워시타워 (세탁기):
                     $ref: '#/components/examples/washtower_washer-command-example'
-                  워시타워(건조기):
+                  워시타워 (건조기):
                     $ref: '#/components/examples/washtower_dryer-command-example'
                   워시타워:
                     $ref: '#/components/examples/washtower-command-example'
@@ -1184,9 +1258,9 @@ contents:
                       $ref: '#/components/examples/ceiling_fan-object-example'
                     와인셀러:
                       $ref: '#/components/examples/wine_cellar-object-example'
-                    워시타워(세탁기):
+                    워시타워 (세탁기):
                       $ref: '#/components/examples/washtower_washer-object-example'
-                    워시타워(건조기):
+                    워시타워 (건조기):
                       $ref: '#/components/examples/washtower_dryer-object-example'
                     워시타워:
                       $ref: '#/components/examples/washtower-object-example'
@@ -1773,7 +1847,7 @@ contents:
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/device-empty-res'
+                    $ref: '#/components/schemas/userno-res'
             '400':
               description: Bad request
               headers:
@@ -1883,7 +1957,8 @@ contents:
           tags:
             - User API
           summary: 사용자 비활성화
-          description: B2B 파트너가 더 이상 특정 LG ThinQ 사용자를 연동하지 않을 때 비활성화를 요청합니다.
+          description: |
+            더 이상 특정 LG ThinQ 사용자를 연동하지 않을 때 사용자를 비활성화합니다. 특정 사용자가 비활성화되면 그 사용자에게 등록된 디바이스의 상태 조회와 제어를 수행할 수 없습니다. 사용자를 다시 활성화하려면 해당 사용자에 대하여 **[디바이스 목록 조회](#tag/Device-API/operation/getDevices)** API를 호출하면 됩니다.
           operationId: disconnectService
           security:
             - ThinQ_Business_API_Key: []
@@ -4422,12 +4497,12 @@ contents:
                           targetId:
                             type: string
                             example: KR1234567890123
-                            description: DR 이벤트 타겟 ID입니다.
+                            description: DR 이벤트 타깃 ID입니다.
                           targetType:
                             type: string
                             example: USER
                             description: |-
-                              DR 이벤트 타겟 타입입니다.
+                              DR 이벤트 타깃 타입입니다.
                               - USER
                               - DEVICE
                               - GROUP
@@ -4690,6 +4765,34 @@ contents:
                             type: string
                             description: 에러 상세 메시지입니다.
                             example: Internal Server Error
+      /your-callback-uri:
+        post:
+          summary: callback API of your service
+          description: callback API of your service
+          operationId: yourCallback
+          security:
+            - basic_auth: []
+          servers:
+            - url: https://your-domain
+          requestBody:
+            description: dummy
+            content:
+              application/json:
+                schema:
+                  oneOf:
+                    - $ref: '#/components/schemas/push-callback-device-push-schema'
+                    - $ref: '#/components/schemas/push-callback-device-registered-schema'
+                    - $ref: '#/components/schemas/push-callback-device-unregistered-schema'
+                    - $ref: '#/components/schemas/push-callback-device-alias-changed-schema'
+                examples:
+                  device-push-example:
+                    $ref: '#/components/examples/push-callback-device-push-example'
+                  device-registered-example:
+                    $ref: '#/components/examples/push-callback-device-registered-example'
+                  device-unregistered-example:
+                    $ref: '#/components/examples/push-callback-device-unregistered-example'
+                  device-alias-changed-example:
+                    $ref: '#/components/examples/push-callback-device-alias-changed-example'
     components:
       securitySchemes:
         ThinQ_Business_API_Key:
@@ -4732,7 +4835,7 @@ contents:
               properties:
                 deviceType:
                   type: string
-                  description: 디바이스 타입. 지원하는 디바이스 타입의 목록은 [**디바이스 프로파일**](/apiManage/device_profile) 페이지를 참조해주세요.
+                  description: 디바이스 타입입니다. 지원하는 디바이스 타입의 목록은 [**디바이스 프로파일**](/ko/apiManage/device_profile) 페이지를 참조해주세요.
                   example: DEVICE_WASHTOWER_WASHER
                 alias:
                   type: string
@@ -4742,6 +4845,10 @@ contents:
                   type: string
                   description: 디바이스 모델명입니다.
                   example: FAKPK21021
+                reportable:
+                  type: boolean
+                  description: 디바이스 상태 변경 시 발생하는 이벤트에 대한 구독 가능 여부입니다.
+                  example: 'true'
                 groupId:
                   type: string
                   description: 디바이스 타입이 `DEVICE_WASHTOWER_WASHER` 또는 `DEVICE_WASHTOWER_DRYER`일 때, 다른 디바이스와의 동일 그룹임을 식별하기 위한 그룹 ID입니다.
@@ -4752,6 +4859,7 @@ contents:
                   example: fe12ed5bca00acc0ed68ec9f632342d0822a929f377b76cbe700649a11053f23
               required:
                 - deviceType
+                - alias
           required:
             - deviceId
             - deviceInfo
@@ -4829,6 +4937,19 @@ contents:
               properties:
                 response:
                   type: object
+        userno-res:
+          description: 사용자 번호 응답입니다.
+          allOf:
+            - $ref: '#/components/schemas/device-base-res'
+            - type: object
+              properties:
+                response:
+                  type: object
+                  properties:
+                    userNumber:
+                      type: string
+                      description: 사용자 번호입니다.
+                      example: SaGvM4ETAgOHSAFhezzi
         dr-event-target-opt-res:
           type: object
           properties:
@@ -4836,7 +4957,7 @@ contents:
               type: string
               example: USER
               description: |-
-                타겟 타입입니다.
+                타깃 타입입니다.
                 - GROUP
                 - USER
                 - DEVICE
@@ -4844,10 +4965,10 @@ contents:
               type: string
               example: KRXXXX
               description: |-
-                DR 이벤트 타겟 ID입니다.
-                - 이벤트 타겟 타입이 USER일 경우: userNo
-                - 이벤트 타겟 타입이 GROUP일 경우: groupId
-                - 이벤트 타겟 타입이 DEVICE일 경우: deviceId
+                DR 이벤트 타깃 ID입니다.
+                - 이벤트 타깃 타입이 USER일 경우: userNo
+                - 이벤트 타깃 타입이 GROUP일 경우: groupId
+                - 이벤트 타깃 타입이 DEVICE일 경우: deviceId
             opt:
               type: string
               example: OUT
@@ -4855,6 +4976,146 @@ contents:
                 DR 이벤트 참여 여부(Opt in / out)를 확인할 수 있습니다.
                 - IN: DR 이벤트에 참여(default)
                 - OUT: DR 이벤트에 미참여
+        callback-base-res:
+          type: object
+          description: Callback 관련 기본 응답 항목입니다.
+          properties:
+            messageId:
+              type: string
+              description: 메시지의 흐름을 추적하기 위해 url-safe-base64-no-padding(UUID Version 4)의 22개 문자로 생성한 문자열입니다.
+              example: 8O4J3mY-dkKYhH4LSo-Hpw
+            timestamp:
+              type: string
+              description: 메시지를 생성한 시각입니다. `ISO-8601` 포맷을 따릅니다.
+              example: '2024-10-01T06:23:20.866279'
+        push-callback-device-push-schema:
+          allOf:
+            - $ref: '#/components/schemas/callback-base-res'
+            - type: object
+              properties:
+                push:
+                  type: object
+                  properties:
+                    pushType:
+                      type: string
+                      description: 푸시 타입입니다.
+                      example: DEVICE_PUSH
+                    deviceId:
+                      type: string
+                      description: 특정 디바이스의 ID입니다.
+                      example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
+                    deviceType:
+                      type: string
+                      description: 디바이스 타입입니다. 지원하는 디바이스 타입의 목록은 [**디바이스 프로파일**](/ko/apiManage/device_profile) 페이지를 참조해주세요.
+                      example: DEVICE_WASHTOWER_WASHER
+                    pushCode:
+                      type: string
+                      description: 푸시 메시지 코드입니다. 지원하는 코드의 목록은 [**디바이스 프로파일**](/ko/apiManage/device_profile) 페이지를 참조해주세요.
+                      example: WASHING_IS_COMPLETE
+                    userList:
+                      type: array
+                      description: 푸시를 구독한 사용자 번호의 목록입니다.
+                      items:
+                        type: string
+                        example: n2uR0D5vLjvZRvTdvhVJ
+        push-callback-device-registered-schema:
+          allOf:
+            - $ref: '#/components/schemas/callback-base-res'
+            - type: object
+              properties:
+                push:
+                  type: object
+                  properties:
+                    pushType:
+                      type: string
+                      description: 푸시 타입입니다.
+                      example: DEVICE_REGISTERED
+                    userNumber:
+                      type: string
+                      description: 사용자 번호입니다.
+                      example: SaGvM4ETAgOHSAFhezzi
+                    deviceId:
+                      type: string
+                      description: 특정 디바이스의 ID입니다.
+                      example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
+                    deviceType:
+                      type: string
+                      description: 디바이스 타입. 지원하는 디바이스 타입의 목록은 [**디바이스 프로파일**](/ko/apiManage/device_profile) 페이지를 참조해주세요.
+                      example: DEVICE_WASHTOWER_WASHER
+                    alias:
+                      type: string
+                      description: 디바이스 별칭입니다.
+                      example: My New WashTower Washer
+                    modelName:
+                      type: string
+                      description: 디바이스 모델명입니다.
+                      example: FAKPK21021
+                    reportable:
+                      type: boolean
+                      description: 디바이스 상태 변경 시 발생하는 이벤트에 대한 구독 가능 여부입니다.
+                      example: 'true'
+                    groupId:
+                      type: string
+                      description: 디바이스 타입이 `DEVICE_WASHTOWER_WASHER` 또는 `DEVICE_WASHTOWER_DRYER`일 때, 다른 디바이스와의 동일 그룹임을 식별하기 위한 그룹 ID입니다.
+                      example: '171807013576723372'
+                  required:
+                    - pushType
+                    - userNumber
+                    - deviceId
+                    - deviceType
+                    - alias
+        push-callback-device-unregistered-schema:
+          allOf:
+            - $ref: '#/components/schemas/callback-base-res'
+            - type: object
+              properties:
+                push:
+                  type: object
+                  properties:
+                    pushType:
+                      type: string
+                      description: 푸시 타입입니다.
+                      example: DEVICE_UNREGISTERED
+                    userNumber:
+                      type: string
+                      description: 사용자 번호입니다.
+                      example: SaGvM4ETAgOHSAFhezzi
+                    deviceId:
+                      type: string
+                      description: 특정 디바이스의 ID입니다.
+                      example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
+                    deviceType:
+                      type: string
+                      description: 디바이스 타입. 지원하는 디바이스 타입의 목록은 [**디바이스 프로파일**](/ko/apiManage/device_profile) 페이지를 참조해주세요.
+                      example: DEVICE_WASHTOWER_WASHER
+                    alias:
+                      type: string
+                      description: 디바이스 별칭입니다.
+                      example: My New WashTower Washer
+        push-callback-device-alias-changed-schema:
+          allOf:
+            - $ref: '#/components/schemas/callback-base-res'
+            - type: object
+              properties:
+                push:
+                  type: object
+                  properties:
+                    pushType:
+                      type: string
+                      description: 푸시 타입입니다.
+                      example: DEVICE_ALIAS_CHANGED
+                    userNumber:
+                      type: string
+                      description: 사용자 번호입니다.
+                      example: SaGvMtETAgOHSAFhezzi
+                    deviceId:
+                      type: string
+                      description: 특정 디바이스의 ID입니다.
+                      example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
+                    alias:
+                      type: string
+                      description: 디바이스 별칭입니다.
+                      example: My New WashTower Washer
       parameters:
         X-Api-Token:
           name: X-Api-Token
@@ -4968,6 +5229,87 @@ contents:
                         max: -16
                         min: -21
                         step: 1
+              temperatureInUnits:
+                - targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 8
+                        min: 1
+                        step: 1
+                      w:
+                        max: 8
+                        min: 1
+                        step: 1
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 46
+                        min: 33
+                        step: 1
+                      w:
+                        max: 46
+                        min: 33
+                        step: 1
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                  locationName: FRIDGE
+                - targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: -13
+                        min: -21
+                        step: 1
+                      w:
+                        max: -13
+                        min: -21
+                        step: 1
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 8
+                        min: -6
+                        step: 1
+                        except:
+                          - -5
+                          - 7
+                      w:
+                        max: 8
+                        min: -6
+                        step: 1
+                        except:
+                          - -5
+                          - 7
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                  locationName: FREEZER
               refrigeration:
                 expressMode:
                   type: boolean
@@ -5040,6 +5382,11 @@ contents:
             property:
               - detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 location:
                   locationName: MAIN
                 operation:
@@ -5272,12 +5619,89 @@ contents:
                       - HIGH
                       - LOW
                       - MID
+              windDirection:
+                airGuideWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                swirlWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                highCeilingWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                concentrationWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                autoFitWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                forestWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
               filterInfo:
                 filterLifetime:
                   mode:
                     - r
                   type: number
                 usedTime:
+                  mode:
+                    - r
+                  type: number
+                filterRemainPercent:
                   mode:
                     - r
                   type: number
@@ -5416,6 +5840,168 @@ contents:
                   value:
                     r:
                       - C
+              temperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 0.5
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 0.5
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 1
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 1
+                  unit: F
+              twoSetTemperature:
+                currentTemperature:
+                  type: number
+                  mode:
+                    - r
+                unit:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - C
+                coolTargetTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 37.5
+                      min: 10
+                      step: 0.5
+                    w:
+                      max: 37.5
+                      min: 10
+                      step: 0.5
+                heatTargetTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 32
+                      min: 4
+                      step: 0.5
+                    w:
+                      max: 32
+                      min: 4
+                      step: 0.5
+                twoSetEnabled:
+                  type: boolean
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - true
+                      - false
+              twoSetTemperatureInUnits:
+                - unit: C
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 37.5
+                        min: 10
+                        step: 0.5
+                      w:
+                        max: 37.5
+                        min: 10
+                        step: 0.5
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 32
+                        min: 4
+                        step: 0.5
+                      w:
+                        max: 32
+                        min: 4
+                        step: 0.5
+                - unit: F
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 99
+                        min: 50
+                        step: 1
+                      w:
+                        max: 99
+                        min: 50
+                        step: 1
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 90
+                        min: 40
+                        step: 1
+                      w:
+                        max: 90
+                        min: 40
+                        step: 1
               timer:
                 relativeHourToStart:
                   mode:
@@ -5459,6 +6045,19 @@ contents:
                       - UNSET
                     w:
                       - UNSET
+              display:
+                light:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
         air_purifier-profile-example:
           value:
             notification:
@@ -6257,6 +6856,89 @@ contents:
                         min: 5
                         step: 1
                         except: []
+              temperatureInUnits:
+                - locationName: WINE_UPPER
+                  targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                - locationName: WINE_LOWER
+                  targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
               operation:
                 lightStatus:
                   type: range
@@ -6347,10 +7029,50 @@ contents:
                       - ORANGE
                       - CORIANDER
                       - CORIANDER_SEED
+                flavorCapsule1:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ORANGE
+                      - CORIANDER
+                flavorCapsule2:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ORANGE
+                      - CORIANDER_SEED
                 hopOilInfo:
                   mode:
                     - r
                   type: list
+                  value:
+                    r:
+                      - FUGGLES
+                      - CASCADE
+                      - HALLERTAU
+                      - CITRUSSY
+                      - GOLDINGS
+                      - CHINOOK
+                hopOilCapsule1:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - FUGGLES
+                      - CASCADE
+                      - HALLERTAU
+                      - CITRUSSY
+                      - GOLDINGS
+                      - CHINOOK
+                hopOilCapsule2:
+                  mode:
+                    - r
+                  type: enum
                   value:
                     r:
                       - FUGGLES
@@ -6661,6 +7383,11 @@ contents:
             property:
               - detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 location:
                   locationName: MAIN
                 operation:
@@ -6919,6 +7646,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: AUTO
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -7431,11 +8163,31 @@ contents:
                 hotWaterMode:
                   mode:
                     - r
+                    - w
                   type: enum
                   value:
                     r:
                       - 'ON'
                       - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+                roomTempMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - AIR
+                      - WATER
+                roomWaterMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - OUT_WATER
+                      - IN_WATER
               temperature:
                 currentTemperature:
                   mode:
@@ -7476,6 +8228,240 @@ contents:
                   value:
                     r:
                       - C
+              hotWaterTemperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 80
+                        min: 30
+                        step: 1
+                      w:
+                        max: 80
+                        min: 30
+                        step: 1
+                  maxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  minTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 176
+                        min: 86
+                        step: 2
+                      w:
+                        max: 176
+                        min: 86
+                        step: 2
+                  maxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  minTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: F
+              roomTemperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  outWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  inWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 18
+                        step: 1
+                  airHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 1
+                  waterCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 24
+                        min: 5
+                        step: 1
+                  waterHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 57
+                        min: 14
+                        step: 1
+                  airHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  outWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  inWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 64
+                        step: 2
+                  airHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 2
+                  waterCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 76
+                        min: 40
+                        step: 2
+                  waterHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 134
+                        min: 58
+                        step: 2
+                  airHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: F
         air_purifier_fan-profile-example:
           value:
             notification:
@@ -7888,6 +8874,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: AUTO
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -8021,6 +9012,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -8991,12 +9987,8 @@ contents:
                 type: boolean
                 mode:
                   - r
-                  - w
                 value:
                   r:
-                    - true
-                    - false
-                  w:
                     - true
                     - false
               soundMode:
@@ -9049,6 +10041,10 @@ contents:
                     r:
                       min: 0
                       max: 100
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - MOTION_IS_DETECTED
         temperature_humidity_sensor-profile-example:
           value:
             property:
@@ -9075,6 +10071,9 @@ contents:
                     r:
                       min: 0
                       max: 100
+            notification:
+              push:
+                - BATTERY_IS_LOW
         door_sensor-profile-example:
           value:
             property:
@@ -9087,6 +10086,7 @@ contents:
                     r:
                       min: 0
                       max: 100
+                      step: 1
               doorState:
                 currentState:
                   mode:
@@ -9096,18 +10096,27 @@ contents:
                     r:
                       - OPEN
                       - CLOSE
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - DOOR_WINDOW_IS_OPENED
+                - DOOR_WINDOW_IS_CLOSED
         button-profile-example:
           value:
             property:
               battery:
                 percent:
+                  type: range
                   mode:
                     - r
-                  type: range
                   value:
                     r:
-                      min: 0
                       max: 100
+                      min: 0
+                      step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
         light_switch-profile-example:
           value:
             property:
@@ -9240,6 +10249,10 @@ contents:
                   type: string
                   mode:
                     - r
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - POWER_IS_OVERLOADED
         plug_mini-profile-example:
           value:
             property:
@@ -9322,6 +10335,10 @@ contents:
                     w:
                       - LOCK
                       - UNLOCK
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - POWER_IS_OVERLOADED
         bulb_white-profile-example:
           value:
             property:
@@ -9873,6 +10890,11 @@ contents:
                       max: 100
                       min: 0
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - MOTION_IS_DETECTED
+                - DOORBELL_RING
         pet_peeder-profile-example:
           value:
             property:
@@ -9891,6 +10913,10 @@ contents:
                       max: 200
                       min: 10
                       step: 10
+            notification:
+              push:
+                - MOTION_IS_DETECTED
+                - FEEDING_IS_COMPLETE
         home_camera-profile-example:
           value:
             property:
@@ -9907,6 +10933,10 @@ contents:
                     w:
                       - 'ON'
                       - 'OFF'
+            notification:
+              push:
+                - MOTION_IS_DETECTED
+                - SOUND_IS_DETECTED
         sync_box-profile-example:
           value:
             property:
@@ -10196,6 +11226,9 @@ contents:
                     r:
                       - ALARM
                       - NORMAL
+            notification:
+              push:
+                - GAS_IS_DETECTED
         fire_sensor-profile-example:
           value:
             property:
@@ -10226,6 +11259,11 @@ contents:
                       max: 100
                       min: 0
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - FIRE_IS_DETECTED
+                - COVER_IS_SEPARATED
         water_leak_sensor-profile-example:
           value:
             property:
@@ -10248,6 +11286,10 @@ contents:
                       max: 100
                       min: 0
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - WATER_LEAK_IS_DETECTED
         thermo_hygrometer-profile-example:
           value:
             property:
@@ -10276,6 +11318,9 @@ contents:
                       max: 100
                       min: 0
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
         siren-profile-example:
           value:
             property:
@@ -10323,6 +11368,10 @@ contents:
                       max: 3600
                       min: 1
                       step: 1
+            notification:
+              push:
+                - BATTERY_IS_LOW
+                - ALARM_IS_DETECTED
         refrigerator-object-example:
           value:
             doorStatus:
@@ -10340,6 +11389,15 @@ contents:
               - locationName: FREEZER
                 targetTemperature: -13
                 unit: C
+            temperatureInUnits:
+              - targetTemperatureC: 7
+                targetTemperatureF: 46
+                unit: C
+                locationName: FRIDGE
+              - targetTemperatureC: -16
+                targetTemperatureF: 8
+                unit: C
+                locationName: FREEZER
             waterFilterInfo:
               usedTime: 0
         washer-object-example:
@@ -10350,6 +11408,8 @@ contents:
                 remoteControlEnabled: true
               runState:
                 currentState: INITIAL
+              cycle:
+                cycleCount: 0
               timer:
                 relativeHourToStop: 3
                 relativeMinuteToStop: 0
@@ -10373,23 +11433,57 @@ contents:
         air_conditioner-object-example:
           value:
             airConJobMode:
-              currentJobMode: FAN
+              currentJobMode: AUTO
+            airQualitySensor:
+              PM1: 27
+              PM2: 35
+              PM10: 49
+              humidity: 27
+            temperature:
+              currentTemperature: 10.5
+              targetTemperature: 14
+              unit: C
+            temperatureInUnits:
+              - currentTemperature: 10.5
+                targetTemperature: 14
+                unit: C
+              - currentTemperature: 51
+                targetTemperature: 58
+                unit: F
+            twoSetTemperature:
+              currentTemperature: 10.5
+              coolTargetTemperature: 29.5
+              heatTargetTemperature: 14
+              unit: C
+              twoSetEnabled: true
+            twoSetTemperatureInUnits:
+              - coolTargetTemperature: 29.5
+                heatTargetTemperature: 14
+                unit: C
+              - coolTargetTemperature: 85
+                heatTargetTemperature: 58
+                unit: F
+            filterInfo:
+              filterRemainPercent: 98
             airFlow:
               windStrength: HIGH
-              windStep: 5
+            windDirection:
+              swirlWind: false
+              forestWind: false
+              airGuideWind: false
+              highCeilingWind: false
+              autoFitWind: false
+              concentrationWind: false
             operation:
-              airConOperationMode: POWER_OFF
-            powerSave:
-              powerSaveEnabled: false
-            temperature:
-              currentTemperature: 27
-              targetTemperature: 24.5
-              unit: C
+              airConOperationMode: POWER_ON
+              airCleanOperationMode: 'ON'
             timer:
-              absoluteStopTimer: UNSET
               absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
             sleepTimer:
               relativeStopTimer: UNSET
+            display:
+              light: 'OFF'
         air_purifier-object-example:
           value:
             airPurifierJobMode:
@@ -10521,15 +11615,24 @@ contents:
               ceilingfanOperationMode: POWER_ON
         wine_cellar-object-example:
           value:
+            operation:
+              optimalHumidity: 'OFF'
             temperature:
-              - targetTemperature: 18
+              - locationName: WINE_UPPER
+                targetTemperature: 18
+                unit: C
+              - locationName: WINE_LOWER
+                targetTemperature: 11
+                unit: C
+            temperatureInUnits:
+              - targetTemperatureC: 18
+                targetTemperatureF: 18
                 unit: C
                 locationName: WINE_UPPER
-              - targetTemperature: 18
+              - targetTemperatureC: 11
+                targetTemperatureF: 11
                 unit: C
                 locationName: WINE_LOWER
-            operation:
-              lightStatus: 100
         kimchi_refrigerator-object-example:
           value:
             refrigeration:
@@ -10551,9 +11654,13 @@ contents:
               yeastInfo: AMERICAN_ALE
               hopOilInfo:
                 - CASCADE
+              hopOilCapsule1: CASCADE
+              hopOilCapsule2: CASCADE
               flavorInfo:
                 - CORIANDER
                 - CORIANDER_SEED
+              flavorCapsule1: CORIANDER
+              flavorCapsule2: CORIANDER_SEED
               beerRemain: 1
             timer:
               elapsedDayState: 0
@@ -10598,6 +11705,8 @@ contents:
                 locationName: MAIN
               remoteControlEnable:
                 remoteControlEnabled: false
+              cycle:
+                cycleCount: 0
               runState:
                 currentState: END
               timer:
@@ -10627,6 +11736,8 @@ contents:
                 currentState: POWER_OFF
               remoteControlEnable:
                 remoteControlEnabled: false
+              cycle:
+                cycleCount: 0
               timer:
                 remainHour: 0
                 remainMinute: 0
@@ -10708,12 +11819,28 @@ contents:
             boilerJobMode:
               currentJobMode: COOL
             operation:
-              boilerOperationMode: POWER_ON
-              hotWaterMode: 'ON'
+              boilerOperationMode: POWER_OFF
+              hotWaterMode: 'OFF'
+              roomTempMode: AIR
+              roomWaterMode: OUT_WATER
             temperature:
               currentTemperature: 40
               targetTemperature: 18
               unit: C
+            hotWaterTemperatureInUnits:
+              - currentTemperature: 0
+                unit: C
+              - currentTemperature: 32
+                unit: F
+            roomTemperatureInUnits:
+              - airCurrentTemperature: 40
+                targetTemperature: 18
+                currentTemperature: 40
+                unit: C
+              - airCurrentTemperature: 104
+                targetTemperature: 64
+                currentTemperature: 104
+                unit: F
         air_purifier_fan-object-example:
           value:
             airFanJobMode:
@@ -10775,6 +11902,8 @@ contents:
                 relativeMinuteToStop: 0
                 totalHour: 0
                 totalMinute: 0
+              cycle:
+                cycleCount: 0
               location:
                 locationName: MAIN
         mini_washcombo-object-example:
@@ -10790,6 +11919,8 @@ contents:
                 relativeMinuteToStop: 0
                 totalHour: 0
                 totalMinute: 0
+              cycle:
+                cycleCount: 0
               location:
                 locationName: MINI
         humidifier-object-example:
@@ -11189,14 +12320,14 @@ contents:
             operation:
               lightStatus: 90
         washtower_washer-command-example:
-          description: 워시타워 세탁기 - 세탁 시작
+          description: 워시타워 (세탁기) - 세탁 시작
           value:
             operation:
               washerOperationMode: START
             location:
               locationName: MAIN
         washtower_dryer-command-example:
-          description: 워시타워(건조기) - 전원 POWER_OFF
+          description: 워시타워 (건조기) - 전원 POWER_OFF
           value:
             operation:
               dryerOperationMode: POWER_OFF
@@ -11356,6 +12487,48 @@ contents:
           value:
             switchState:
               currentSwitch: 'ON'
+        push-callback-device-push-example:
+          value:
+            messageId: kVuV69kGTS25FUs1wrkECQ
+            timestamp: '2025-01-09T04:24:35.540658'
+            push:
+              pushType: DEVICE_PUSH
+              deviceId: 30d81ed55587005b58e8143804f93550a6acce04e540a451e5044b6a0489bd02
+              deviceType: DEVICE_DRYER
+              pushCode: DRYING_IS_COMPLETE
+              userList:
+                - n2uR0D5vLjvZRvTdvhVJ
+        push-callback-device-registered-example:
+          value:
+            messageId: e5NYvUUApkimXi1yhu3NCA
+            timestamp: '2025-01-09T05:23:59.492982'
+            push:
+              pushType: DEVICE_REGISTERED
+              deviceId: 7de94bb8509ade98c49914897f4f12076a45124f28d20a18e105dfcdbfb6dd16
+              userNumber: R9EToaDa98Rdnr7KZayE
+              modelName: RH16KX
+              deviceType: DEVICE_DRYER
+              alias: My Dryer
+              reportable: true
+        push-callback-device-unregistered-example:
+          value:
+            messageId: M5TIAMMdHUmI1lz3nImWfF
+            timestamp: '2025-01-09T05:23:59.492982'
+            push:
+              pushType: DEVICE_UNREGISTERED
+              deviceId: 7de94bb8509ade98c49914897f4f12076a45124f28d20a18e105dfcdbfb6dd16
+              userNumber: R9EToaDa98Rdnr7KZayE
+              deviceType: DEVICE_DRYER
+              alias: My Dryer
+        push-callback-device-alias-changed-example:
+          value:
+            messageId: oGS8u4DVHsuEio7PuZEVmV
+            timestamp: '2025-01-09T05:26:46.403987'
+            push:
+              pushType: DEVICE_ALIAS_CHANGED
+              deviceId: 7de94bb8509ade98c49914897f4f12076a45124f28d20a18e105dfcdbfb6dd16
+              userNumber: R9EToaDa98Rdnr7KZayE
+              alias: My New Dryer
     x-tagGroups:
       - name: Get Started
         tags:
