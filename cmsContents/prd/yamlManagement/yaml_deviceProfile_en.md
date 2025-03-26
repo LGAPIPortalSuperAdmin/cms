@@ -1,7 +1,7 @@
 ---
 contents:
   lang: yaml
-  code: >-
+  code: >
     openapi: 3.1.0
 
     info:
@@ -1625,6 +1625,83 @@ contents:
                 }
               }
             ```
+      - name: ventilator
+        x-displayName: Ventilation
+        description: |
+          ## Device profile schema
+          <SchemaDefinition
+            schemaRef="#/components/schemas/ventilator-profile"
+            exampleRef="#/components/examples/ventilator-profile-example" />
+        
+          ## Request/Response Schema
+          ### Device status response
+          <SchemaDefinition
+              schemaRef="#/components/schemas/ventilator-object"
+              exampleRef="#/components/examples/ventilator-object-example" />
+
+          ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            showExample={false} showWriteOnly={false} />
+        
+          #### Example  
+          Set timer to start  
+            ```json
+              {
+                "timer": {
+                  "absoluteHourToStart": 10,
+                  "absoluteMinuteToStart": 20
+                }
+              }
+            ```
+
+          Set timer to stop
+            ```json
+              {
+                "timer": {
+                  "absoluteHourToStop": 10,
+                  "absoluteMinuteToStop": 20
+                }
+              }
+            ```
+
+          Unset timer to start
+            ```json
+              {
+                "timer": {
+                  "absoluteStartTimer": "UNSET"
+                }
+              }
+            ```
+
+          Unset timer to stop
+            ```json
+              {
+                "timer": {
+                  "absoluteStopTimer": "UNSET"
+                }
+              }
+            ```
+
+          Set sleep timer to stop
+            ```json
+              {
+                "sleepTimer": {
+                  "relativeHourToStop": 3
+                }
+              }
+            ```
+
+          Unset sleep timer to stop
+            ```json
+              {
+                "sleepTimer": {
+                  "relativeStopTimer": "UNSET"
+                }
+              }
+            ```
+
       - name: odu
         x-displayName: Outdoor unit
         description: |
@@ -2218,6 +2295,8 @@ contents:
                       - $ref: '#/components/schemas/dehumidifier-object'
                       - $ref: '#/components/schemas/humidifier-profile'
                       - $ref: '#/components/schemas/humidifier-object'
+                      - $ref: '#/components/schemas/ventilator-profile'
+                      - $ref: '#/components/schemas/ventilator-object'
                       - $ref: '#/components/schemas/robot_cleaner-profile'
                       - $ref: '#/components/schemas/robot_cleaner-object'
                       - $ref: '#/components/schemas/oven-profile'
@@ -2370,6 +2449,12 @@ contents:
                       $ref: '#/components/examples/humidifier-object-example'
                     humidifier-command-example:
                       $ref: '#/components/examples/humidifier-command-example'
+                    ventilator-profile-example:
+                      $ref: '#/components/examples/ventilator-profile-example'
+                    ventilator-object-example:
+                      $ref: '#/components/examples/ventilator-object-example'
+                    ventilator-command-example:
+                      $ref: '#/components/examples/ventilator-command-example'
                     robot_cleaner-profile-example:
                       $ref: '#/components/examples/robot_cleaner-profile-example'
                     robot_cleaner-object-example:
@@ -10009,6 +10094,633 @@ contents:
               enum:
                 - TIME_TO_CHANGE_FILTER
                 - LACK_OF_WATER
+        ventilator-profile:
+          type: object
+          title: Ventilator
+          properties:
+            property:
+              type: object
+              properties:
+                ventJobMode:
+                  type: object
+                  description: mode
+                  properties:
+                    currentJobMode:
+                      type: object
+                      description: Operation Mode
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                VENT_NATURE | Auto mode
+                                VENT_AUTO | Natural wind flow
+                                VENT_HEAT_EXCHANGE | Heat exchanger
+                              items:
+                                type: string
+                                enum:
+                                  - VENT_NATURE
+                                  - VENT_AUTO
+                                  - VENT_HEAT_EXCHANGE
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                VENT_NATURE | Auto mode
+                                VENT_AUTO | Natural wind flow
+                                VENT_HEAT_EXCHANGE | Heat exchanger
+                              items:
+                                type: string
+                                enum:
+                                  - VENT_NATURE
+                                  - VENT_AUTO
+                                  - VENT_HEAT_EXCHANGE
+                operation:
+                  type: object
+                  description: operation
+                  properties:
+                    ventOperationMode:
+                      type: object
+                      description: Main Body Behavior
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | Power on
+                                POWER_OFF | Power off
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | Power on
+                                POWER_OFF | Power off
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                temperature:
+                  type: object
+                  description: Temperature
+                  properties:
+                    currentTemperature:
+                      type: object
+                      description: Current Temperature
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              description: 10.5-39.5 C
+                              properties:
+                                min:
+                                  type: number
+                                max:
+                                  type: number
+                                step:
+                                  type: number
+                    unit:
+                      type: object
+                      description: Unit
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                C | Celsius
+                              items:
+                                type: string
+                                enum:
+                                  - C
+                airQualitySensor:
+                  type: object
+                  description: airQuality
+                  properties:
+                    PM1:
+                      type: number
+                      description: PM1.0 Ultrafine particulate matter concentration
+                      mode:
+                        type: array
+                        items:
+                          type: string
+                          enum:
+                            - r
+                    PM2:
+                      type: number
+                      description: PM2.5 Fine particulate matter concentration
+                      mode:
+                        type: array
+                        items:
+                          type: string
+                          enum:
+                            - r
+                    PM10:
+                      type: number
+                      description: PM10 Coarse particulate matter concentration
+                      mode:
+                        type: array
+                        items:
+                          type: string
+                          enum:
+                            - r
+                    CO2:
+                      type: object
+                      description: Co2 concentration
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                INVALID | Invalid
+                                GOOD | Good
+                                NORMAL | Normal
+                                BAD | Bad
+                                VERY_BAD | Very bad
+                              items:
+                                type: string
+                                enum:
+                                  - INVALID
+                                  - GOOD
+                                  - NORMAL
+                                  - BAD
+                                  - VERY_BAD
+                airFlow:
+                  type: object
+                  description: airFlow
+                  properties:
+                    windStrength:
+                      type: object
+                      description: Wind strength
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                AUTO | Auto
+                                HIGH | High wind
+                                POWER | Max
+                                LOW | Light wind
+                              items:
+                                type: string
+                                enum:
+                                  - AUTO
+                                  - HIGH
+                                  - POWER
+                                  - LOW
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                AUTO | Auto
+                                HIGH | High wind
+                                POWER | Max
+                                LOW | Light wind
+                              items:
+                                type: string
+                                enum:
+                                  - AUTO
+                                  - HIGH
+                                  - POWER
+                                  - LOW
+                timer:
+                  type: object
+                  description: timer
+                  properties:
+                    absoluteHourToStop:
+                      type: object
+                      description: Absolute stop timer (hour)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteMinuteToStop:
+                      type: object
+                      description: Absolute stop timer (minute)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteStopTimer:
+                      type: object
+                      description: Absolute stop timer state
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                SET | Absolute stop timer on
+                                UNSET | Absolute stop timer off
+                              items:
+                                type: string
+                                enum:
+                                  - SET
+                                  - UNSET
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                UNSET | Absolute stop timer off
+                              items:
+                                type: string
+                                enum:
+                                  - UNSET
+                    absoluteHourToStart:
+                      type: object
+                      description: Absolute start timer (hour)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteMinuteToStart:
+                      type: object
+                      description: Absolute start timer (minute)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteStartTimer:
+                      type: object
+                      description: Absolute start timer state
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                SET | Absolute start timer on
+                                UNSET | Absolute start timer off
+                              items:
+                                type: string
+                                enum:
+                                  - SET
+                                  - UNSET
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                UNSET | Absolute start timer off
+                              items:
+                                type: string
+                                enum:
+                                  - UNSET
+                sleepTimer:
+                  type: object
+                  description: Sleep timer
+                  properties:
+                    relativeHourToStop:
+                      type: object
+                      description: Sleep timer (off) timer (hour)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    relativeMinuteToStop:
+                      type: object
+                      description: Sleep timer (off) timer (minute)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                    relativeStopTimer:
+                      type: object
+                      description: Sleep timer (off) timer state
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                SET | Sleep timer on
+                                UNSET | Sleep timer off
+                              items:
+                                type: string
+                                enum:
+                                  - SET
+                                  - UNSET
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                UNSET | Sleep timer off
+                              items:
+                                type: string
+                                enum:
+                                  - UNSET
+                notification:
+                  type: object
+                  description: null
+                  properties:
+                    push:
+                      type: array
+                      description: |-
+                        Value | Description
+                        -|-
+                        NEED_TO_CHANGE_DUST_FILTER | Dust filter needs to be replaced.
+                        NEED_TO_CHANGE_PRE_FILTER | Pre-filter needs to be replaced.
+                      items:
+                        type: string
+                        enum:
+                          - NEED_TO_CHANGE_DUST_FILTER
+                          - NEED_TO_CHANGE_PRE_FILTER
+        ventilator-object:
+          type: object
+          title: Ventilator
+          properties:
+            ventJobMode:
+              type: object
+              description: mode
+              properties:
+                currentJobMode:
+                  type: string
+                  description: Operation Mode
+                  enum:
+                    - VENT_NATURE
+                    - VENT_AUTO
+                    - VENT_HEAT_EXCHANGE
+            operation:
+              type: object
+              description: operation
+              properties:
+                ventOperationMode:
+                  type: string
+                  description: Main Body Behavior
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            temperature:
+              type: object
+              description: Temperature
+              properties:
+                currentTemperature:
+                  type: number
+                  description: Current Temperature
+                unit:
+                  type: string
+                  description: Unit
+            airQualitySensor:
+              type: object
+              description: airQuality
+              properties:
+                PM1:
+                  type: number
+                  description: PM1.0 Ultrafine particulate matter concentration
+                PM2:
+                  type: number
+                  description: PM2.5 Fine particulate matter concentration
+                PM10:
+                  type: number
+                  description: PM10 Coarse particulate matter concentration
+                CO2:
+                  type: string
+                  description: Co2 concentration
+                  enum:
+                    - INVALID
+                    - GOOD
+                    - NORMAL
+                    - BAD
+                    - VERY_BAD
+            airFlow:
+              type: object
+              description: airFlow
+              properties:
+                windStrength:
+                  type: string
+                  description: Wind strength
+                  enum:
+                    - AUTO
+                    - HIGH
+                    - POWER
+                    - LOW
+            timer:
+              type: object
+              description: Timer
+              properties:
+                absoluteHourToStart:
+                  type: number
+                  description: Absolute start timer (hour)
+                absoluteMinuteToStart:
+                  type: number
+                  description: Absolute start timer (minute)
+                absoluteHourToStop:
+                  type: number
+                  description: Absolute stop timer (hour)
+                absoluteMinuteToStop:
+                  type: number
+                  description: Absolute stop timer (minute)
+                absoluteStartTimer:
+                  type: string
+                  description: Absolute start timer state
+                  enum:
+                    - SET
+                    - UNSET
+                absoluteStopTimer:
+                  type: string
+                  description: Absolute stop timer state
+                  enum:
+                    - SET
+                    - UNSET
+            sleepTimer:
+              type: object
+              description: Sleep timer
+              properties:
+                relativeHourToStop:
+                  type: number
+                  description: Sleep timer (off) timer (hour)
+                relativeMinuteToStop:
+                  type: number
+                  description: Sleep timer (off) timer (minute)
+                relativeStopTimer:
+                  type: string
+                  description: Sleep timer (off) timer state
+                  enum:
+                    - SET
+                    - UNSET
         robot_cleaner-profile:
           type: object
           title: Robot_Cleaner
@@ -28743,6 +29455,189 @@ contents:
           value:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
+        ventilator-profile-example:
+          value:
+            property:
+              ventJobMode:
+                currentJobMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - VENT_NATURE
+                      - VENT_AUTO
+                      - VENT_HEAT_EXCHANGE
+                    w:
+                      - VENT_NATURE
+                      - VENT_AUTO
+                      - VENT_HEAT_EXCHANGE
+              operation:
+                ventOperationMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              temperature:
+                currentTemperature:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 39.5
+                      min: 10.5
+                      step: 0.5
+                unit:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - C
+              airQualitySensor:
+                PM1:
+                  type: number
+                  mode:
+                    - r
+                PM2:
+                  type: number
+                  mode:
+                    - r
+                PM10:
+                  type: number
+                  mode:
+                    - r
+                CO2:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+              airFlow:
+                windStrength:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - AUTO
+                      - HIGH
+                      - POWER
+                      - LOW
+                    w:
+                      - AUTO
+                      - HIGH
+                      - POWER
+                      - LOW
+              timer:
+                absoluteHourToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteStopTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteHourToStart:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteMinuteToStart:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteStartTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              sleepTimer:
+                relativeHourToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                relativeMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                relativeStopTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+            notification:
+              push:
+                - NEED_TO_CHANGE_DUST_FILTER
+                - NEED_TO_CHANGE_PRE_FILTER
+        ventilator-object-example:
+          value:
+            ventJobMode:
+              currentJobMode: VENT_NATURE
+            operation:
+              ventOperationMode: POWER_ON
+            airQualitySensor:
+              PM1: 4
+              PM2: 4
+              PM10: 5
+              CO2: GOOD
+            temperature:
+              currentTemperature: 26.5
+              unit: C
+            airFlow:
+              windStrength: AUTO
+            timer:
+              absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
+            sleepTimer:
+              relativeStopTimer: UNSET
+        ventilator-command-example:
+          description: Ventilation - Auto mode
+          value:
+            ventJobMode:
+              currentJobMode: VENT_AUTO
         robot_cleaner-profile-example:
           title: Robot_Cleaner
           value:
@@ -34137,6 +35032,7 @@ contents:
           - main_washcombo
           - mini_washcombo
           - humidifier
+          - ventilator
       - name: LG BECON Cloud
         tags:
           - odu
