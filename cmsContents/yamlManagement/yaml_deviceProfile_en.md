@@ -1,7 +1,7 @@
 ---
 contents:
   lang: yaml
-  code: >-
+  code: >
     openapi: 3.1.0
 
     info:
@@ -35068,5 +35068,4 @@ contents:
           - hej_water_leak_sensor
           - hej_thermo_hygrometer
           - hej_siren
-    vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 ---
