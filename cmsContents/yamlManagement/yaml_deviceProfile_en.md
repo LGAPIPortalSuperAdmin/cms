@@ -55,27 +55,8 @@ contents:
           You can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example 
-          Setting the refrigeration room temperature to Celsius 0 degree
-          ```json
-            { 
-              "temperature": {
-                "targetTemperature": 0,
-                "locationName": "FRIDGE",
-                "unit": "C"
-              }
-            }
-          ```
-          Setting the power saving mode
-          ```json
-            { 
-              "powerSave": {
-                "powerSaveEnabled": true
-              }
-            }
-          ```
+            exampleRef="#/components/examples/refrigerator-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: washer
         x-displayName: Washer
         description: |
@@ -91,56 +72,12 @@ contents:
             exampleRef="#/components/examples/washer-object-example" />
 
           ### Device control request
-          You can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.<br>
+          When controlling the washer, use the "location" property to make a control request along with the location.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example 
-          Starting the standard washing course
-            
-          ```json
-            { 
-              "operation": {
-                "washerOperationMode": "START"
-              }, 
-              "location": { 
-                "locationName": "MAIN"
-              }
-            }
-          ```
-          Stopping the washing course
-          ```json
-            { 
-              "operation": {
-                "washerOperationMode": "STOP"
-              }, 
-              "location": { 
-                "locationName": "MAIN"
-              }
-            }
-          ```
-          Washer on timer
-          ```json
-            {
-              "location": {
-                "locationName": "MAIN"
-              },
-              "timer": {
-                "relativeHourToStop": 6
-              }
-            }
-          ```
-          ```json
-            {
-              "location": {
-                "locationName": "MAIN"
-              },
-              "timer": {
-                "relativeHourToStop": 6
-              }
-            }
-          ```
+            exampleRef="#/components/examples/washer-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: dryer
         x-displayName: Dryer
         description: |
@@ -157,42 +94,10 @@ contents:
 
           ### Device control request
           You can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.
-          <SchemaDefinition
+           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example 
-          Starting the standard drying course
-          ```json
-            {
-              "operation": {
-                "dryerOperationMode": "START"
-              }
-            }
-          ```
-          Stopping the standard drying course
-          ```json
-            { 
-              "operation": {
-                "dryerOperationMode": "STOP"
-              }
-            }
-          ```
-          Setting start/stop time
-          ```json
-            { 
-              "timer": {
-                "relativeHourToStart": 2
-              }
-            }
-          ```
-          ```json
-            { 
-              "timer": {
-                "relativeHourToStop": 4
-              }
-            }
-          ```
+            exampleRef="#/components/examples/dryer-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: air_conditioner
         x-displayName: Air Conditioner
         description: |
@@ -208,351 +113,79 @@ contents:
             exampleRef="#/components/examples/air_conditioner-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
+            exampleRef="#/components/examples/air_conditioner-command-example"
+            showExample={true} showWriteOnly={false} />
 
-          ### Example 
-          Control run mode 
-          ```json
+          #### Control the Air Conditioner depending on the state of the device
+            The device might not be controllable depending on the state of the device. <br>
+            When using the Control Request API, you must first query the device status and handle any exceptions appropriately if control is not possible.
+
+            | operationMode | airConJobMode | Possibility of Air Conditioner temperature control |
+            |----------------|----------------|------------------|
+            | `POWER_OFF` | - | Not possible |
+            | `POWER_ON` | `COOL` | Possible |
+            | `POWER_ON` | `HEAT` | Possible |
+            | `POWER_ON` | `AUTO` | Possible |
+            | `POWER_ON` | `AIR_DRY` | Possible |
+            | `POWER_ON` | `FAN` | Not possible |
+
+            If temperature control of Air Conditioner is possible, then make a control request as shown in the following example.<br>
+            (If you're requesting in Fahrenheit, you'll need a separate conversion table. Please contact your LG representative.)
+
+            - Changing the header value (Not supported by ThinQ Business API)
+
+            ```json
             {
-              "operation": {
-                "dryerOperationMode": "START"
-              }
+              "x-conditional-control": false,
             }
-          ```
-          Control the operation of the air conditioner
-          ```json
-            {
-              "operation":{
-                "airConOperationMode": "POWER_ON"
-              }   
-            }
-          ```
-          Control the operation of the air purifier
-          ```json
-            {
-              "operation": {
-                "airCleanOperationMode": "START"
-              }
-            }
-          ```
-          Control cooling temperature
-          ```json
-            #targetTemperature
+            ```
+
+            - If **airConJobMode** is set to **COOL**, temperature request Body
+
+            ```json
             {
               "temperature": {
-                "targetTemperature": 18,
+                "coolTargetTemperature": Desired temperature,
                 "unit": "C"
               }
             }
-          ```
-          ```json
-            #coolTargetTemperature
-            {
-              "temperature":{
-                "coolTargetTemperature": 18,
-                "unit": "C"
-              }   
-            }
-          ```
-          ```json
-            #autoTargetTemperature
-            {
-              "temperature":{
-                "autoTargetTemperature": 18,
-                "unit": "C"
-              }   
-            }
-          ```
-          Control heating temperature
-          ```json
+            ```
+
+            - If **airConJobMode** is set to **HEAT**, temperature request Body
+
+            ```json
             {
               "temperature": {
-                "heatTargetTemperature": 18,
+                "heatTargetTemperature": Desired temperature,
                 "unit": "C"
               }
             }
-          ```
-          Control Absolute Time On Timer / Control cancel
-          ```json
-            #Timer On
+            ```
+
+            - If **airConJobMode** is **AUTO**, temperature request Body
+
+            ```json
             {
-              "timer": {
-                "absoluteHourToStart": 1,
-                "absoluteMinuteToStart": 30
-              }
-            }
-          ```
-          ```json
-            #Timer Off
-            {
-              "timer": {
-                "absoluteHourToStart": -1,
-                "absoluteMinuteToStart": -1
-              }
-            }
-          ```
-          Control Absolute Time Off Timer/ Control cancel
-          ```json
-            #Timer On
-            {
-              "timer": {
-                "absoluteHourToStop": 1,
-                "absoluteMinuteToStop": 30
-              }
-            }
-          ```
-          ```json
-            #Timer Off
-            {
-              "timer": {
-                "absoluteHourToStop": -1,
-                "absoluteMinuteToStop": -1
-              }
-            }
-          ```
-          Control Relative Time On Timer/ Control cancel 
-          ```json
-            #Timer On
-            {
-              "timer": {
-                "relativeHourToStart": 1
-              }
-            }
-          ```
-          ```json
-            #Timer Off
-            {
-              "timer": {
-                "relativeHourToStart": 0
-              }
-            }
-          ```
-          Control Relative Time Off Timer/ Control cancel
-          ```json
-            #Timer On
-            {
-              "timer": {
-                "relativeHourToStop": 1
-              }
-            }
-          ```
-          ```json
-            #Timer Off
-            {
-              "timer": {
-                "relativeHourToStop": 0
-              }
-            }
-          ```
-          Control Sleep Timer Off Timer/ Control cancel
-          ```json
-            #Timer On
-            {
-              "sleepTimer": {
-                "relativeHourToStop": 1
-              }
-            }
-          ```
-          ```json
-            #Timer Off
-            {
-              "sleepTimer": {
-                "relativeHourToStop": 0
-              }
-            }
-          ```
-          Control wind strength
-          ```json
-            {
-              "airFlow": {
-                "windStrength": "MID"
-              }
-            }
-          ```
-          Control power save
-          ```json
-            {
-              "powerSave": {
-                "powerSaveEnabled": true
-              }
-            }
-          ```
-          Control air quality monitoring settings
-          ```json
-            {
-              "airQualitySensor": {
-                "monitoringEnabled": "ALWAYS"
-              }
-            }
-          ```
-          Control twoSet Temperature
-          ```json
-            {
-              "twoSetTemperature": {
-                "coolTargetTemperature": 20,
-                "heatTargetTemperature": 30,
+              "temperature": {
+                "autoTargetTemperature": Desired temperature,
                 "unit": "C"
               }
             }
-          ```
-          ###Control exception handling the Air Conditioner
-            
-            The device might not be controllable depending on the state of the device. 
-          When using the Control Request API, you must first query the device status and handle any exceptions appropriately if control is not possible. Use the following examples as a guide.
+            ```
 
-            #### 1. Control Air Conditioner Settings Temperature Relative 
-            e.g.) User commands : 'Air Conditioner Temperature 1 degree up/down'
+            - If **airConJobMode** is **AIR_DRY**, temperature request Body
 
-            1. handle when **airConOperationMode** is **POWER_OFF  
-              - If airConOperationMode has a value of POWER_OFF, the device is uncontrollable. 
-              Process the user to respond, as shown in the following example. 
-              - Response example:
-                - "The air conditioner is powered off.
-
-            2. **Handle if **airConOperationMode** is **POWER_ON  
-              - If the value of airConOperationMode is POWER_ON, then depending on the value of currentJobMode, you should handle it as follows.
-                - **currentJobMode**: **AUTO**, **COOL** or **HEAT**
-                  - If the value of currentJobMode is AUTO, COOL, or HEAT, handle it as follows.
-                    - 1. change the request header value.
-                      - **Change **x-conditional-control** to false.
-                        ```json
-                          {
-                            "x-conditional-control": false,
-                          }
-                        ```
-                    - 2. Change the request body value.
-                      - **CurrentJobMode** is **COOL**, then
-                        ```json
-                          {
-                            "temperature": {
-                              "coolTargetTemperature": Desired Temperature±1,
-                              "unit": "C"
-                            }
-                          }
-                        ```
-                      - **CurrentJobMode** is **HEAT**, then
-                        ```json
-                          {
-                            "temperature": {
-                              "heatTargetTemperature": Desired Temperature±1,
-                              "unit": "C"
-                            }
-                          }
-                        ```
-                      - **CurrentJobMode** is **Then**, then
-                        ```json
-                          {
-                            "temperature": {
-                              "autoTargetTemperature": Desired Temperature,
-                              "unit": "C"
-                            }
-                          }
-                        ```
-                    - 3. Handle when a request results in Error Code 2201 - Not provided Feature
-                      - An error that occurs when the controllable temperature range is exceeded. Use the following examples to help you provide an appropriate response to your users.
-                      - Response example
-                        - "Air Conditioner (Cooling/Heating) Temperature can be set from x degrees to x degrees.
-                - **currentJobMode**is not **AUTO**, **COOL** or **HEAT**,then  
-                  - If the value of currentJobMode has a value other than AUTO, COOL, or HEAT, Temperature control is not possible. Provide the user with an out-of-control response.
-                  - Response example
-                    - "It is not controllable as it can only be controlled in cooling/heating mode.
-
-            3. If you control Fahrenheit temperatures  
-              - If you're requesting in Fahrenheit, you'll need a separate conversion table. Please contact your LG representative.
-
-
-            #### 2. set the Air Conditioner temperature to absolute control
-            e.g) User commands: "Set the Air Conditioner Temperature to N degrees."
-
-            1. **airConOperationMode**is **POWER_OFF**, then 
-              If airConOperationMode is POWER_OFF, the device is uncontrollable. Process the user to respond, as shown in the following example.  
-              - Response example:
-                - "Air Conditioner is in Power Off state."
-
-            2. Handle when airConOperationMode is POWER_ON  
-              If airConOperationMode is POWER_ON, then depending on the currentJobMode value, you should handle it as follows  
-                - **currentJobMode**: is **AUTO**, **COOL** or **HEAT** then,  Process as follows  
-                  - 1. Change the request header value.
-                    - Change **x-conditional-control** to false.
-                      ```json
-                        {
-                          "x-conditional-control": false,
-                        }
-                      ```
-                  - 2. Change the request body value.
-                    - **currentJobMode** is **COOL** then, 
-                      ```json
-                        {
-                          "temperature": {
-                            "coolTargetTemperature": Desired Temperature,
-                            "unit": "C"
-                          }
-                        }
-                      ```
-                    - **currentJobMode**is **HEAT** then,
-                      ```json
-                        {
-                          "temperature": {
-                            "heatTargetTemperature": Desired Temperature,
-                            "unit": "C"
-                          }
-                        }
-                      ```
-                    - **currentJobMode** is **AUTO** then,
-                      ```json
-                        {
-                          "temperature": {
-                            "autoTargetTemperature": Desired Temperature,
-                            "unit": "C"
-                          }
-                        }
-                      ```
-                  - 3. Handle when a request results in Error Code 2201 - Not provided Feature
-                    - This error occurs when the controllable temperature range is exceeded. Use the following examples to help you provide an appropriate response to your users.
-                    - Response example
-                      - Air Conditioner (Cooling/Heating) Temperature can be set from N degrees to N degrees.  
-                - **currentJobMode** is not **AUTO**, **COOL** or **HEAT** then,  
-                  - If **currentJobMode** has a value other than **AUTO**, **COOL** or **HEAT**, Temperature control is not possible. Provide the user with an out-of-control response.
-                  - Response example  
-                    - "It is not controllable as it can only be controlled in cooling/heating mode.  
-
-            3. If you control Fahrenheit temperatures  
-              - If you're requesting control in Fahrenheit, you'll need a separate conversion table. Please ask your LG representative.
-
-            #### 3.  Relative control of Air Conditioner Airflow Control
-            e.g.) User command: "Air Conditioner Airflow Increase/Decrease."  
-
-            1. **airConOperationMode is **POWER_OFF** then, 
-              - If airConOperationMode is **POWER_OFF**, device control is not possible. Process the user to respond as shown in the following example.  
-              - Response example:
-                - "Air Conditioner is **Power Off**."
-
-            2. **airConOperationMode** is **POWER_ON** then, 
-              - If airConOperationMode is POWER_ON, then depending on the windStrength value, you should handle it as follows  
-                - **windStrength**: is **AUTO** then, 
-                  If windStrength is AUTO, the wind strength is controlled in auto mode and cannot be manually controlled. Process the user to respond, as shown in the following example. 
-                  - Response example:  
-                    - "The air conditioner airflow is adjusted in auto mode and cannot be controlled."  
-                - **windStrength**: is not **AUTO** then, 
-                  If windStrength has a value other than AUTO, it is handled as follows  
-                    1. Check the device profile to see the airFlow values provided by that Air Conditioner device. Each device model has different supported airFlow values.  
-                    2. Change the request body value.
-                      - Change **x-conditional-control** to **false**.  
-                        ```json
-                          {
-                            "x-conditional-control": false,
-                          }
-                        ```   
-                    3. Change the request body value.  
-                        ```json
-                        {
-                          "airFlow": {
-                            "windStrength": X
-                          }
-                        }
-                        ```
+            ```json
+            {
+              "temperature": {
+                "coolTargetTemperature": Desired temperature,
+                "unit": "C"
+              }
+            }
+            ```
       - name: air_purifier
         x-displayName: Air Purifier
         description: |
@@ -568,48 +201,41 @@ contents:
             exampleRef="#/components/examples/air_purifier-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
+            exampleRef="#/components/examples/air_purifier-command-example"
+            showExample={true} showWriteOnly={false} />
 
-          ### Air Purifier Exception Handling (Airflow Control)    
-            Depending on the state of the device, you might not be able to control it. 
-            When using the Control Request API, you must first query the device status and handle any exceptions appropriately if control is not possible. Use the following examples as a guide.  
+          ### Control the Air Purifier depending on the state of the device 
+            The device might not be controllable depending on the state of the device.  <br>
+            When using the Control Request API, you must first query the device status and handle any exceptions appropriately if control is not possible.
 
-          e.g) User command: 'Increase/decrease air conditioning temperature by 1 degree' 
-          #### 1. **Handling if POWER_OFF*.**  
-            - If **airPurifierOperationMode** is **POWER_OFF**, the device is uncontrollable. Handle it to respond to the user as shown in the following example.
-            - Response example:  
-              - "Air Conditioner Power is off.  
+            | airPurifierOperationMode | currentJobMode | Possibility of Air Purifier wind strength control |
+            |----------------|----------------|------------------|
+            | `POWER_OFF` | - | Not possible |
+            | `POWER_ON` | `AUTO` | Not possible |
+            | `POWER_ON` | Statuses other than `AUTO` | Possible |
 
-          #### 2. **Handling if POWER_ON**  
-            - If **airPurifierOperationMode** is **POWER_ON**, then depending on the **currentJobMode** value, you should handle it as follows
-              1. if **currentJobMode** or **windStrength** is **AUTO
-                - If windStrength is AUTO or currentJobMode is AUTO, the wind is controlled automatically and cannot be controlled manually. Handle it to respond to the user as shown in the following example.
-                - Response example:  
-                  - “The air purifier is running in AUTO mode and cannot be controlled.” 
-              2. **If the value of currentJobMode is not AUTO, and the value of windStrength is also not AUTO, handle as follows
-                - If the value of currentJobMode is not AUTO, and the value of windStrength is also not AUTO, handle as follows
-                  - 1. Look up the device profile to see the **airFlow** values supported by that air cleaner device.Different product models support different **airFlow** values.
-                    - **Change **x-conditional-control** to **false
-                      ```json
-                        {
-                          "x-conditional-control": false,
-                        }
-                      ```
-                  - 2. Change the control request API body value. 
-                    - **If **currentJobMode** is **COOL**, then
-                      ```json
-                        {
-                          "airFlow": {
-                            "windStrength": X
-                          }
-                        }
-                      ```
-                  - 3. Provide an appropriate response to the user.
-                    - Response example
-                      - Changed the airflow of the air purifier to power/high/low.
-                      - The air purifier airflow is at a maximum/minimum state (if the airflow you want to set is at a maximum/minimum state).
+            If wind strength control of Air Purifier is possible, then make a control request as shown in the following example.
+
+            - Changing the header value (Not supported by ThinQ Business API)
+
+            ```json
+            {
+              "x-conditional-control": false,
+            }
+            ```
+
+            - Wind strength control request Body
+
+            ```json
+            {
+              "airFlow": {
+                "windStrength": "LOW"
+              }
+            }
+            ```
       - name: robot_cleaner
         x-displayName: Robot Cleaner
         description: |
@@ -625,30 +251,11 @@ contents:
             exampleRef="#/components/examples/robot_cleaner-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />  
-
-          #### Example  
-          Starting the robot cleaner  
-
-            ```json
-              {
-                "operation": {
-                  "cleanOperationMode": "START"
-                }
-              }
-            ```  
-
-          Robot cleaner on timer (Timer set for 11:30)  
-            ```json
-              {
-                "timer": {
-                  "absoluteHourToStart": 11, 
-                  "absoluteMinuteToStart": 30
-                }
-              }
-            ```
+            exampleRef="#/components/examples/robot_cleaner-command-example"
+            showExample={true} showWriteOnly={false} />  
       - name: oven
         x-displayName: Oven
         description: |
@@ -664,154 +271,11 @@ contents:
             exampleRef="#/components/examples/oven-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control. <br> For the Oven, it is possible to make a control request along with the location, where "operation," "timer," "cook property" can be controlled at the same time.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          operation  
-
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "PREHEATING"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                }
-              } {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                }
-              } {
-                "operation": {
-                  "ovenOperationMode": "STOP"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                }
-              }
-            ```
-
-          operation + cook mode  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "cook": {
-                  "cookMode": "BAKE"
-                }
-              }
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "cook": {
-                  "cookMode": "CONVECTION_BAKE"
-                }
-              } 
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "cook": {
-                  "cookMode": "CONVECTION_ROAST"
-                }
-              }
-            ```
-
-          operation + time  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "timer": {
-                  "targetHour": 1,
-                  "targetMinute": 5
-                }
-              }
-            ```  
-
-          operation + cook mode + time  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "timer": {
-                  "targetHour": 1,
-                  "targetMinute": 5
-                },
-                "cook": {
-                  "cookMode": "BAKE"
-                }
-              }
-            ```
-
-          operation + temperature  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "temperature": {
-                  "targetTemperature": 160,
-                  "unit": "C"
-                }
-              }
-            ```
-
-          operation + cook mode + temperature  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "cook": {
-                  "cookMode": "BAKE"
-                },
-                "temperature": {
-                  "targetTemperature": 160,
-                  "unit": "C"
-                }
-              }
-            ```
-
-          timer setting  
-            ```json
-              {
-                "timer": {
-                  "timerHour": 0,
-                  "timerMinute": 5
-                }
-              }
-            ```
+            exampleRef="#/components/examples/oven-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: dish_washer
         x-displayName: Dish Washer
         description: |
@@ -827,28 +291,11 @@ contents:
             exampleRef="#/components/examples/dish_washer-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example
-          Start control  
-            ```json
-              {
-                "operation": {
-                  "dishWasherOperationMode": "START"
-                }
-              }
-            ```
-
-          Control Stop  
-            ```json
-              {
-                "operation": {
-                  "dishWasherOperationMode": "STOP"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/dish_washer-command-example"
+            showExample={true} showWriteOnly={false} />  
       - name: styler
         x-displayName: Styler
         description: |
@@ -864,36 +311,11 @@ contents:
             exampleRef="#/components/examples/styler-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example
-          Starting the styler
-            ```json
-              {
-                "operation": {
-                  "stylerOperationMode": "START"
-                }
-              }
-            ```
-
-          Stopping the styler
-            ```json
-              {
-                "operation": {
-                  "stylerOperationMode ": "STOP"
-                }
-              }
-            ```
-          Setting stop time
-            ```json
-              {
-                "timer": {
-                  "relativeHourToStop": 4
-                }
-              }
-            ```
+            exampleRef="#/components/examples/styler-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: water_purifier
         x-displayName: Water Purifier
         description: |
@@ -925,45 +347,11 @@ contents:
             exampleRef="#/components/examples/dehumidifier-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example
-          Dehumidifier power on
-            ```json
-              {
-                "operation": {
-                  "dehumidifierOperationMode": "POWER_ON"
-                }
-              }
-            ```
-
-          Dehumidifier power off
-            ```json
-              {
-                "operation": {
-                  "dehumidifierOperationMode": "POWER_OFF"
-                }
-              }
-            ```
-
-          Dehumidifier wind strength adjustment (Strength high)
-            ```json
-              {
-                "airFlow": {
-                  "windStrength": "HIGH"
-                }
-              }
-            ```
-          Dehumidifier wind strength adjustment (Strength Low)
-            ```json
-              {
-                "airFlow": {
-                  "windStrength": "LOW"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/dehumidifier-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: ceiling_fan
         x-displayName: Ceiling Fan
         description: |
@@ -979,28 +367,11 @@ contents:
             exampleRef="#/components/examples/ceiling_fan-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Ceiling fan power on  
-            ```json
-              {
-                "operation": {
-                  "ceilingfanOperationMode":  "POWER_ON"
-                }
-              }
-            ```
-
-          Ceiling fan wind strength adjustment  
-            ```json
-              {
-                "airFlow": {
-                  "windStrength": "HIGH"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/ceiling_fan-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: wine_cellar
         x-displayName: Wine Cellar
         description: |
@@ -1016,40 +387,11 @@ contents:
             exampleRef="#/components/examples/wine_cellar-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control. <br> When controlling the Wine Cellar temperature, use the "location" property to make a control request along with the location.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Temperature Control  
-            ```json
-              {
-                "temperature": {
-                  "locationName": "WINE_LOWER",
-                  "targetTemperature": 6,
-                  "unit": "C"
-                }
-              }
-            ```
-
-          Brightness Control  
-            ```json
-              #enum - lightBrightness
-              {
-                "operation": {
-                  "lightBrightness": "70%"
-                }
-              }
-            ```  
-
-            ```json
-              #range - lightStatus 
-              {
-                "operation": {
-                  "lightBrightness": "70%"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/wine_cellar-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: kimchi_refrigerator
         x-displayName: Kimchi Refrigerator
         description: |
@@ -1113,57 +455,11 @@ contents:
             exampleRef="#/components/examples/washtower_washer-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.<br> When controlling the WashTower, use the "location" property to make a control request along with the location.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Starting the standard washing course  
-            ```json
-              { 
-                "operation": {
-                  "washerOperationMode": "START"
-                }, 
-                "location": { 
-                  "locationName": "MAIN"
-                }
-              }
-            ```
-
-          Stopping the washing course  
-            ```json
-              { 
-                "operation": {
-                  "washerOperationMode": "START"
-                }, 
-                "location": { 
-                  "locationName": "MAIN"
-                }
-              }
-            ```
-
-          Washer on timer
-            ```json
-              {
-                "location": {
-                  "locationName": "MAIN"
-                },
-                "timer": {
-                  "relativeHourToStart": 4
-                }
-              }
-            ```
-
-            ```json
-              {
-                "location": {
-                  "locationName": "MAIN"
-                },
-                "timer": {
-                  "relativeHourToStop": 6
-                }
-              }
-            ```
+            exampleRef="#/components/examples/washtower_washer-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: washtower_dryer
         x-displayName: WashTower (Dryer)
         description: |
@@ -1179,45 +475,11 @@ contents:
             exampleRef="#/components/examples/washtower_dryer-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Starting the standard drying course  
-            ```json
-              { 
-                "operation": {
-                  "dryerOperationMode": "START"
-                }
-              }
-            ```
-
-          Stopping the standard drying course  
-            ```json
-              { 
-                "operation": {
-                  "dryerOperationMode": "STOP"
-                }
-              }
-            ```
-
-          Setting start/stop time  
-            ```json
-              { 
-                "timer": {
-                  "relativeHourToStart": 2
-                }
-              }
-            ```
-
-            ```json
-              { 
-                "timer": {
-                  "relativeHourToStop": 4
-                }
-              }
-            ```
+            exampleRef="#/components/examples/washtower_dryer-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: washtower
         x-displayName: WashTower 
         description: |
@@ -1231,34 +493,13 @@ contents:
           <SchemaDefinition
             schemaRef="#/components/schemas/washtower-object"
             exampleRef="#/components/examples/washtower-object-example" />
-
+          
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.<br> When controlling the WashTower, you must request control of the "Washer" and the "Dryer" separately.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Washer  
-            ```json
-              {
-                "washer": {
-                  "operation": {
-                    "washerOperationMode": "START"
-                  }
-                }
-              }
-            ```
-
-          Dryer  
-            ```json
-              {
-                "dryer": {
-                  "operation": {
-                    "dryerOperationMode": "START"
-                  }
-                }
-              }
-            ```
+            exampleRef="#/components/examples/washtower-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: cooktop
         x-displayName: Cooktop
         description: |
@@ -1274,35 +515,11 @@ contents:
             exampleRef="#/components/examples/cooktop-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.<br> When controlling the Cooktop, request control without the "location" for "operation," but include "location" for "power" and "timer."
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Power Off  
-            ```json
-              {
-                "operation": {
-                  "operationMode": "POWER_OFF"
-                }
-              }
-            ```
-
-          Setting the power to 3 and the remaining time to 10 minutes for the LEFT_FRONT burner  
-            ```json
-              {
-                "power": {
-                  "powerLevel": 3
-                },
-                "timer": {
-                  "remainHour": 0,
-                  "remainMinute": 10
-                },
-                "location": {
-                  "locationName": "LEFT_FRONT"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/cooktop-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: hood
         x-displayName: Hood
         description: |
@@ -1318,22 +535,11 @@ contents:
             exampleRef="#/components/examples/hood-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.<br> When controlling the Hood, you must command the "lamp" and "ventilation" properties at the same time.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Setting lamp brightness and fan speed
-            ```json
-              {
-                "lamp": {
-                  "lampBrightness": 1
-                },
-                "ventilation": {
-                  "fanSpeed": 0
-                }
-              }
-            ```
+            exampleRef="#/components/examples/hood-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: microwave_oven
         x-displayName: Microwave Oven
         description: |
@@ -1348,22 +554,12 @@ contents:
             schemaRef="#/components/schemas/microwave_oven-object"
             exampleRef="#/components/examples/microwave_oven-object-example" />
 
-          ### The Device control request control command must command the lampBrightness and fanSpeed properties at the same time.
+          ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.<br> The Device control request control command must command the lampBrightness and fanSpeed properties at the same time.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-            ```json
-              {
-                "lamp": {
-                    "lampBrightness": 1
-                },
-                "ventilation": {
-                    "fanSpeed": 0
-                }
-              }
-            ```
+            exampleRef="#/components/examples/microwave_oven-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: system_boiler
         x-displayName: System Boiler
         description: |
@@ -1379,48 +575,11 @@ contents:
             exampleRef="#/components/examples/system_boiler-object-example" />
 
           ### Device control request
-          <SchemaDefinition
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control. <br> (If you're requesting in Fahrenheit, you'll need a separate conversion table. Please contact your LG representative.)
+           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Setting the power on
-            ```json
-              {
-                "operation": {
-                  "boilerOperationMode": "POWER_ON"
-                }
-              }
-            ```
-
-          Setting the hot water mode  
-            ```json
-              {
-                "operation": {
-                  "hotWaterMode": "ON"
-                }
-              }
-            ```
-
-          Setting the cooling target temperature  
-            ```json
-              {
-                "temperature": {
-                  "coolTargetTemperature": 18,
-                  "unit": "C"
-                }
-              }
-            ```
-
-          Setting the heating target temperature  
-            ```json
-              {
-                "temperature": {
-                  "heatTargetTemperature": 28,
-                  "unit": "C"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/system_boiler-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: air_purifier_fan
         x-displayName: Air Purifier Fan
         description: |
@@ -1436,19 +595,11 @@ contents:
             exampleRef="#/components/examples/air_purifier_fan-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Power On  
-            ```json
-              {
-                "operation": {
-                  "airFanOperationMode": "POWER_ON"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/air_purifier_fan-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: stick_cleaner
         x-displayName: Stick Cleaner
         description: |
@@ -1480,28 +631,11 @@ contents:
             exampleRef="#/components/examples/water_heater-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Temperature change  
-            ```json
-              {
-                "temperature": {
-                  "targetTemperature": 45
-                }
-              }
-            ```
-
-          Mode change
-            ```json
-              {
-                "waterHeaterJobMode": {
-                  "currentJobMode": "AUTO"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/water_heater-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: main_washcombo
         x-displayName: Main WashCombo
         description: |
@@ -1517,34 +651,11 @@ contents:
             exampleRef="#/components/examples/main_washcombo-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.<br> When controlling the WashCombo, use the "location" property to make a control request along with the location.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Start a wash  
-            ```json
-              {
-                "location": {
-                  "locationName": "MAIN"
-                },
-                "operation": {
-                  "washerOperationMode": "START"
-                }
-              }
-            ```
-
-          Set up schedules  
-            ```json
-              {
-                "location": {
-                  "locationName": "Main"
-                },
-                "timer": {
-                  "relativeHourToStop": 4
-                }
-              }
-            ```
+            exampleRef="#/components/examples/main_washcombo-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: mini_washcombo
         x-displayName: Mini WashCombo
         description: |
@@ -1560,34 +671,11 @@ contents:
             exampleRef="#/components/examples/mini_washcombo-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.<br> When controlling the WashCombo, use the "location" property to make a control request along with the location.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />  
-
-          #### Example  
-          Start a wash  
-            ```json
-              {
-                "location": {
-                  "locationName": "MINI"
-                },
-                "operation": {
-                  "washerOperationMode": "START"
-                }
-              }
-            ```
-
-          Set up schedules  
-            ```json
-              {
-                "location": {
-                  "locationName": "MINI"
-                },
-                "timer": {
-                  "relativeHourToStop": 4
-                }
-              }
-            ```
+            exampleRef="#/components/examples/mini_washcombo-command-example"
+            showExample={true} showWriteOnly={false} />  
       - name: humidifier
         x-displayName: Humidifier
         description: |
@@ -1603,28 +691,11 @@ contents:
             exampleRef="#/components/examples/humidifier-object-example" />
 
           ### Device control request
+          You can control properties with 'w' permissions in the device profile. Write a request body with the parent key and value of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Power On  
-            ```json
-              {
-                "operation": {
-                  "humidifierOperationMode": "POWER_ON"
-                }
-              }
-            ```
-
-          Display Light  
-            ```json
-              {
-                "display": {
-                  "light": "LEVEL_2"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/humidifier-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: ventilator
         x-displayName: Ventilation
         description: |
@@ -1643,65 +714,8 @@ contents:
           You can control properties with 'w' permissions in the device profile. Write a request body with the parent value and key of the property you want to control.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-        
-          #### Example  
-          Set timer to start  
-            ```json
-              {
-                "timer": {
-                  "absoluteHourToStart": 10,
-                  "absoluteMinuteToStart": 20
-                }
-              }
-            ```
-
-          Set timer to stop
-            ```json
-              {
-                "timer": {
-                  "absoluteHourToStop": 10,
-                  "absoluteMinuteToStop": 20
-                }
-              }
-            ```
-
-          Unset timer to start
-            ```json
-              {
-                "timer": {
-                  "absoluteStartTimer": "UNSET"
-                }
-              }
-            ```
-
-          Unset timer to stop
-            ```json
-              {
-                "timer": {
-                  "absoluteStopTimer": "UNSET"
-                }
-              }
-            ```
-
-          Set sleep timer to stop
-            ```json
-              {
-                "sleepTimer": {
-                  "relativeHourToStop": 3
-                }
-              }
-            ```
-
-          Unset sleep timer to stop
-            ```json
-              {
-                "sleepTimer": {
-                  "relativeStopTimer": "UNSET"
-                }
-              }
-            ```
-
+            exampleRef="#/components/examples/ventilator-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: odu
         x-displayName: Outdoor unit
         description: |
@@ -31696,6 +30710,8 @@ contents:
           value:
             lamp:
               lampBrightness: 0
+            ventilation:
+              fanSpeed: 0
         microwave_oven-profile-example:
           value:
             property:
