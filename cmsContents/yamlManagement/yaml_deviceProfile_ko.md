@@ -27,7 +27,7 @@ contents:
                 | property | 속성별 Read/Write 지원 여부와 값의 특성 |
                 | notification |해당 디바이스에서 지원하는 푸시 메시지의 종류 |
                 | error |해당 디바이스에서 지원하는 에러 유형 |
-                | extensonProperty | 확장된 속성 |
+                | extensionProperty | 확장된 속성 |
 
             - **요청/응답 스키마**
               
@@ -36,7 +36,7 @@ contents:
       - name: device type
         x-displayName: 디바이스 타입
         x-traitTag: true
-        description: "**디바이스 타입**은 디바이스의 특성을 구분하며 **디바이스 목록 조회 API** 응답에서 종류를 구분합니다. 디바이스 프로파일은 이 디바이스 타입에 따라 정의됩니다.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | 냉장고 | O | O |\n  | DEVICE_WASHER | 세탁기 | O | O |\n  | DEVICE_DRYER | 건조기 | O | O |\n  | DEVICE_AIR_CONDITIONER | 에어컨 | O | O |\n  | DEVICE_AIR_PURIFIER | 공기청정기 | O | O |\n  | DEVICE_ROBOT_CLEANER | 로봇청소기 | O | O |\n  | DEVICE_OVEN | 오븐 | O | O |\n  | DEVICE_DISH_WASHER | 식기세척기 | O | O |\n  | DEVICE_STYLER | 스타일러 | O | O |\n  | DEVICE_WATER_PURIFIER | 정수기 | O | O |\n  | DEVICE_DEHUMIDIFIER | 제습기 | O | O |\n  | DEVICE_CEILING_FAN | 실링팬 | O | O |\n  | DEVICE_WINE_CELLAR | 와인셀러 | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | 김치냉장고 | O | O |\n  | DEVICE_HOME_BREW | 홈브루 | O | O |\n  | DEVICE_PLANT_CULTIVATOR | 식물재배기 | O | O |\n  | DEVICE_WASHTOWER_WASHER | 워시타워(세탁기) | O | O |\n  | DEVICE_WASHTOWER_DRYER | 워시타워(건조기) | O | O |\n  | DEVICE_WASHTOWER | 워시타워 | O | O |\n  | DEVICE_COOKTOP | 쿡탑 | O | O |\n  | DEVICE_HOOD | 후드 | O | O |\n  | DEVICE_MICROWAVE_OVEN | 전자레인지 | O | O |\n  | DEVICE_SYSTEM_BOILER | 시스템 보일러 | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | 공기청정팬 | O | O |\n  | DEVICE_STICK_CLEANER | 스틱청소기 | O | O |\n  | DEVICE_WATER_HEATER | 온수기 | O | O |\n  | DEVICE_WASHCOMBO_MAIN | 워시콤보 (메인) | O | O |\n  | DEVICE_WASHCOMBO_MINI | 워시콤보 (미니) | O | O |\n  | DEVICE_HUMIDIFIER | 가습기 | O | O |\n  | DEVICE_ODU | BECON Cloud에 등록된 SAC 실외기 | X | O |\n  | DEVICE_IDU | BECON Cloud에 등록된 SAC 실내기 | X | O |\n  | DEVICE_SIGNAGE | Business Cloud에 등록된 사이니지 | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | 스마트 모션 센서 | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | 스마트 온습도 센서 | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | 스마트 도어 센서 | X | O |\n  | DEVICE_HEJ_BUTTON | 스마트 버튼 | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | 스마트 조명 스위치 | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | 스마트 도어락  | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | 스마트 푸쉬풀 도어락 | X | O |\n  | DEVICE_HEJ_PLUG | 스마트 플러그 | X | O |\n  | DEVICE_HEJ_PLUG_MINI | 스마트 플러그 미니 | X | O |\n  | DEVICE_HEJ_BULB_WHITE | 스마트 전구 (화이트) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | 스마트 전구 (컬러) | X | O |\n  | DEVICE_HEJ_LINE_LED | 스마트 라인 LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | 스마트 전동 커튼 컨트롤러 | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | 스마트 전동 블라인드 | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | 스위치 스트립 | X | O |\n  | DEVICE_HEJ_STARLIGHT | 스마트 스타 라이트 | X | O |\n  | DEVICE_HEJ_DOORBELL | 스마트 도어벨 | X | O |\n  | DEVICE_HEJ_PET_FEEDER | 스마트 펫 급식기 | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | 스마트 홈 카메라 | X | O |\n  | DEVICE_HEJ_SYNC_BOX | 싱크 박스 | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | 싱크 박스 서브 | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| 스마트 가스 감지 센서 | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | 스마트 화재 감지 센서 | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | 스마트 누수 감지 센서 | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | 스마트 온습도계 | X | O |\n  | DEVICE_HEJ_SIREN | 스마트 사이렌 | X | O |\n"
+        description: "**디바이스 타입**은 디바이스의 특성을 구분하며 **디바이스 목록 조회 API** 응답에서 종류를 구분합니다. 디바이스 프로파일은 이 디바이스 타입에 따라 정의됩니다.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | 냉장고 | O | O |\n  | DEVICE_WASHER | 세탁기 | O | O |\n  | DEVICE_DRYER | 건조기 | O | O |\n  | DEVICE_AIR_CONDITIONER | 에어컨 | O | O |\n  | DEVICE_AIR_PURIFIER | 공기청정기 | O | O |\n  | DEVICE_ROBOT_CLEANER | 로봇청소기 | O | O |\n  | DEVICE_OVEN | 오븐 | O | O |\n  | DEVICE_DISH_WASHER | 식기세척기 | O | O |\n  | DEVICE_STYLER | 스타일러 | O | O |\n  | DEVICE_WATER_PURIFIER | 정수기 | O | O |\n  | DEVICE_DEHUMIDIFIER | 제습기 | O | O |\n  | DEVICE_CEILING_FAN | 실링팬 | O | O |\n  | DEVICE_WINE_CELLAR | 와인셀러 | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | 김치냉장고 | O | O |\n  | DEVICE_HOME_BREW | 홈브루 | O | O |\n  | DEVICE_PLANT_CULTIVATOR | 식물재배기 | O | O |\n  | DEVICE_WASHTOWER_WASHER | 워시타워 (세탁기) | O | O |\n  | DEVICE_WASHTOWER_DRYER | 워시타워 (건조기) | O | O |\n  | DEVICE_WASHTOWER | 워시타워 | O | O |\n  | DEVICE_COOKTOP | 쿡탑 | O | O |\n  | DEVICE_HOOD | 후드 | O | O |\n  | DEVICE_MICROWAVE_OVEN | 전자레인지 | O | O |\n  | DEVICE_SYSTEM_BOILER | 시스템 보일러 | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | 공기청정팬 | O | O |\n  | DEVICE_STICK_CLEANER | 스틱청소기 | O | O |\n  | DEVICE_WATER_HEATER | 온수기 | O | O |\n  | DEVICE_WASHCOMBO_MAIN | 워시콤보 (메인) | O | O |\n  | DEVICE_WASHCOMBO_MINI | 워시콤보 (미니) | O | O |\n  | DEVICE_HUMIDIFIER | 가습기 | O | O |\n  | DEVICE_VENTILATOR | 환기 | O | O |\n  | DEVICE_ODU | BECON Cloud에 등록된 SAC 실외기 | X | O |\n  | DEVICE_IDU | BECON Cloud에 등록된 SAC 실내기 | X | O |\n  | DEVICE_SIGNAGE | Business Cloud에 등록된 사이니지 | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | 스마트 모션 센서 | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | 스마트 온습도 센서 | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | 스마트 도어 센서 | X | O |\n  | DEVICE_HEJ_BUTTON | 스마트 버튼 | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | 스마트 조명 스위치 | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | 스마트 도어락  | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | 스마트 푸쉬풀 도어락 | X | O |\n  | DEVICE_HEJ_PLUG | 스마트 플러그 | X | O |\n  | DEVICE_HEJ_PLUG_MINI | 스마트 플러그 미니 | X | O |\n  | DEVICE_HEJ_BULB_WHITE | 스마트 전구 (화이트) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | 스마트 전구 (컬러) | X | O |\n  | DEVICE_HEJ_LINE_LED | 스마트 라인 LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | 스마트 전동 커튼 컨트롤러 | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | 스마트 전동 블라인드 | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | 스위치 스트립 | X | O |\n  | DEVICE_HEJ_STARLIGHT | 스마트 스타 라이트 | X | O |\n  | DEVICE_HEJ_DOORBELL | 스마트 도어벨 | X | O |\n  | DEVICE_HEJ_PET_FEEDER | 스마트 펫 급식기 | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | 스마트 홈 카메라 | X | O |\n  | DEVICE_HEJ_SYNC_BOX | 싱크 박스 | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | 싱크 박스 서브 | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| 스마트 가스 감지 센서 | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | 스마트 화재 감지 센서 | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | 스마트 누수 감지 센서 | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | 스마트 온습도계 | X | O |\n  | DEVICE_HEJ_SIREN | 스마트 사이렌 | X | O |\n"
       - name: refrigerator
         x-displayName: 냉장고
         description: |
@@ -55,27 +55,8 @@ contents:
           디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example 
-          Setting the refrigeration room temperature to Celsius 0 degree
-          ```json
-            { 
-              "temperature": {
-                "targetTemperature": 0,
-                "locationName": "FRIDGE",
-                "unit": "C"
-              }
-            }
-          ```
-          Setting the power saving mode
-          ```json
-            { 
-              "powerSave": {
-                "powerSaveEnabled": true
-              }
-            }
-          ```
+            exampleRef="#/components/examples/refrigerator-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: washer
         x-displayName: 세탁기
         description: |
@@ -91,62 +72,120 @@ contents:
             exampleRef="#/components/examples/washer-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 세탁기 제어시, "location" property를 사용하여 위치와 함께 제어 요청을 하십시오.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/washer-command-example"
+            showExample={true} showWriteOnly={false} />
+      - name: dryer
+        x-displayName: 건조기
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/dryer-profile"
+            exampleRef="#/components/examples/dryer-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/dryer-object"
+            exampleRef="#/components/examples/dryer-object-example" />
+
+          ### 디바이스 제어 요청
           디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example 
-          Starting the standard washing course
-            
-          ```json
-            { 
-              "operation": {
-                "washerOperationMode": "START"
-              }, 
-              "location": { 
-                "locationName": "MAIN"
-              }
-            }
-          ```
-          Stopping the washing course
-          ```json
-            { 
-              "operation": {
-                "washerOperationMode": "STOP"
-              }, 
-              "location": { 
-                "locationName": "MAIN"
-              }
-            }
-          ```
-          Washer on timer
-          ```json
-            {
-              "location": {
-                "locationName": "MAIN"
-              },
-              "timer": {
-                "relativeHourToStop": 6
-              }
-            }
-          ```
-          ```json
-            {
-              "location": {
-                "locationName": "MAIN"
-              },
-              "timer": {
-                "relativeHourToStop": 6
-              }
-            }
-          ```
-      - name: dryer
-        x-displayName: 건조기
-        description: "## 디바이스 프로파일 스키마\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-profile\"\n  exampleRef=\"#/components/examples/dryer-profile-example\" />\n\n## 요청/응답 스키마\n### 디바이스 상태 응답\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-object\"\n  exampleRef=\"#/components/examples/dryer-object-example\" />\n\n### 디바이스 제어 요청\n디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n#### Example \nStarting the standard drying course\n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\nStopping the standard drying course\n```json\n  { \n    \"operation\": {\n      \"dryerOperationMode\": \"STOP\"\n    }\n  }\n```\nSetting start/stop time\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStart\": 2\n    }\n  }\n```\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStop\": 4\n    }\n  }\n```\n"
+            exampleRef="#/components/examples/dryer-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: air_conditioner
         x-displayName: 에어컨
-        description: "## 디바이스 프로파일 스키마\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-profile\"\n  exampleRef=\"#/components/examples/air_conditioner-profile-example\" />\n\n## 요청/응답 스키마\n### 디바이스 상태 응답\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-object\"\n  exampleRef=\"#/components/examples/air_conditioner-object-example\" />\n\n### 디바이스 제어 요청\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n### Example \n운전 모드 제어 \n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\n에어컨 동작 제어\n```json\t\n  {\n    \"operation\":{\n      \"airConOperationMode\": \"POWER_ON\"\n    }   \n  }\n```\n공기청정 동작 제어\n```json\t\n  {\n    \"operation\": {\n      \"airCleanOperationMode\": \"START\"\n    }\n  }\n```\n냉방 온도 제어\n```json\t\n  #targetTemperature\n  {\n    \"temperature\": {\n      \"targetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\n```json\t\n  #coolTargetTemperature\n  {\n    \"temperature\":{\n      \"coolTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\n```json\t\n  #autoTargetTemperature\n  {\n    \"temperature\":{\n      \"autoTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\n난방 온도 제어\n```json\t\n  {\n    \"temperature\": {\n      \"heatTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\n절대 시간 켜짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": 1,\n      \"absoluteMinuteToStart\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": -1,\n      \"absoluteMinuteToStart\": -1\n    }\n  }\n```\n절대 시간 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": 1,\n      \"absoluteMinuteToStop\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": -1,\n      \"absoluteMinuteToStop\": -1\n    }\n  }\n```\n상대 시간 켜짐 Timer 제어/ 취소 제어 \n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 0\n    }\n  }\n```\n상대 시간 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\n슬립 타이머 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\n바람세기 제어\n```json\t\n  {\n    \"airFlow\": {\n      \"windStrength\": \"MID\"\n    }\n  }\n```\n절전 제어\n```json\t\n  {\n    \"powerSave\": {\n      \"powerSaveEnabled\": true\n    }\n  }\n```\n공기질 모니터링 설정 제어\n```json\t\n  {\n    \"airQualitySensor\": {\n      \"monitoringEnabled\": \"ALWAYS\"\n    }\n  }\n```\ntwoSet 온도 제어\n```json\t\n  {\n    \"twoSetTemperature\": {\n      \"coolTargetTemperature\": 20,\n      \"heatTargetTemperature\": 30,\n      \"unit\": \"C\"\n    }\n  }\n```\n### 에어컨 제어 예외 처리\n  \n  디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다. \n  제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다. 다음 예시를 참고로 하십시오.\n\n  #### 1. 에어컨 설정 온도 상대 제어  \n  예) 사용자 명령 : '에어컨 온도 1도 올려줘/내려줘'\n\n  1. **airConOperationMode**가 **POWER_OFF**인 경우 처리  \n    - airConOperationMode의 값이 POWER_OFF이면 디바이스 제어가 불가능합니다. \n    다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - 응답 예시:\n      - \"에어컨 전원이 꺼져있습니다.\n  \n  2. **airConOperationMode**가 **POWER_ON**인 경우 처리  \n    - airConOperationMode의 값이 POWER_ON이면 currentJobMode 값에 따라 다음과 같이 처리해주어야 합니다.\n      - **currentJobMode**: **AUTO**, **COOL** 또는 **HEAT**인 경우\n        - currentJobMode의 값이 AUTO, COOL 또는 HEAT인 경우 다음과 같이 처리합니다.\n          - 1. 요청 헤더 값을 변경합니다.\n            - **x-conditional-control**를 false로 변경합니다.\n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```\n          - 2. 요청 바디 값을 변경합니다.\n            - **currentJobMode**가 **COOL**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"coolTargetTemperature\": 희망온도±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **currentJobMode**가 **HEAT**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"heatTargetTemperature\": 희망온도±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **currentJobMode**가 **AUTO**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"autoTargetTemperature\": 희망온도,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n          - 3. 요청 결과로 Error Code 2201 - Not provided Feature가 발생하는 경우 처리\n            - 제어 가능 온도 범위를 벗어난 경우 발생하는 에러입니다. 다음 예시를 참고하여 사용자에게 적절한 응답을 제공합니다.\n            - 응답 예시\n              - \"에어컨 (냉방/난방) 온도는 x도에서 x도까지 설정이 가능합니다.\n      - **currentJobMode**가 **AUTO**, **COOL**, 또는 **HEAT**이 아닌 경우  \n        - currentJobMode의 값이 AUTO, COOL 또는 HEAT 이외의 값을 갖는 경우 온도 제어가 불가능합니다. 사용자에게 제어가 불가능함을 응답으로 제공합니다.\n        - 응답 예시\n          - \"냉방/난방 모드에서만 제어가 가능하므로 제어할 수 없습니다.\n  \n  3. 화씨 온도 제어인 경우  \n    - 화씨 온도로 제어요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.\n\n  \n  #### 2. 에어컨 설정 온도 절대 제어\n  예) 사용자 명령: \"에어컨 온도 X도로 설정해줘.\"\n\n  1. **airConOperationMode**가 **POWER_OFF**인 경우 처리  \n    airConOperationMode가 POWER_OFF이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - 응답 예시:\n      - \"에어컨이 Power Off 상태 입니다.\"\n\n  2. **airConOperationMode가 POWER_ON인 경우 처리**  \n    airConOperationMode가 POWER_ON이면 currentJobMode 값에 따라 다음과 같이 처리해주어야 합니다.  \n      - **currentJobMode: AUTO, COOL, 또는 HEAT인 경우** 다음과 같이 처리합니다.  \n        - 1. 요청 헤더 값을 변경합니다.\n          - **x-conditional-control**를 false로 변경합니다.\n            ```json\n              {\n                \"x-conditional-control\": false,\n              }\n            ```\n        - 2. 요청 바디 값을 변경합니다.\n          - **currentJobMode**가 **COOL**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"coolTargetTemperature\": 희망온도,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode**가 **HEAT**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"heatTargetTemperature\": 희망온도,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode**가 **AUTO**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"autoTargetTemperature\": 희망온도,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n        - 3. 요청 결과로 Error Code 2201 - Not provided Feature가 발생하는 경우 처리\n          - 제어 가능 온도 범위를 벗어난 경우 발생하는 에러입니다. 다음 예시를 참고하여 사용자에게 적절한 응답을 제공합니다.\n          - 응답 예시\n            - 에어컨 (냉방/난방) 온도는 x도에서 x도까지 설정이 가능합니다.  \n      - **currentJobMode**가 **AUTO**, **COOL**, 또는 **HEAT**이 아닌 경우    \n        - **currentJobMode**의 값이 **AUTO**, **COOL** 또는 **HEAT** 이외의 값을 갖는 경우 온도 제어가 불가능합니다. 사용자에게 제어가 불가능함을 응답으로 제공합니다.\n        - 응답 예시  \n          - \"냉방/난방 모드에서만 제어가 가능하므로 제어할 수 없습니다.  \n\n  3. 화씨 온도 제어인 경우  \n    - 화씨 온도로 제어 요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.\n\n  #### 3. 에어컨 풍량 상대 제어\n  예) 사용자 명령: \"에어컨 풍량 올려줘/내려줘.\"  \n\n  1. **airConOperationMode가 POWER_OFF인 경우** 처리  \n    - airConOperationMode가 POWER_OFF이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - 응답 예시:\n      - \"에어컨이 Power Off 상태 입니다.\"\n\n  2. **airConOperationMode가 POWER_ON인 경우** 처리  \n    - airConOperationMode가 POWER_ON이면 windStrength 값에 따라 다음과 같이 처리해주어야 합니다.  \n      - **windStrength : AUTO인 경우**  \n        windStrength가 AUTO인 경우 풍량이 자동으로 제어되며 수동으로 제어할 수 없습니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n        - 응답 예시:  \n          - \"에어컨 풍량이 자동으로 조절되므로 제어할 수 없습니다.\"  \n      - **windStrength : AUTO가 아닌 경우**  \n        windStrength가 AUTO 이외의 값을 가지는 경우 다음과 같이 처리합니다.  \n          1. 디바이스 프로파일을 조회하여 해당 에어컨 디바이스가 제공하는 airFlow값을 확인합니다. 제품 모델 별 지원하는 airFlow 값이 다릅니다.  \n          2. 요청 바디 값을 변경합니다.\n            - **x-conditional-control**를 **false**로 변경합니다.  \n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```   \n          3. 요청 바디 값을 변경합니다.  \n              ```json\n              {\n                \"airFlow\": {\n                  \"windStrength\": X\n                }  \n              }\n              ```\n"
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/air_conditioner-profile"
+            exampleRef="#/components/examples/air_conditioner-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/air_conditioner-object"
+            exampleRef="#/components/examples/air_conditioner-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/air_conditioner-command-example"
+            showExample={true} showWriteOnly={false} />
+
+
+          #### 에어컨 상태에 따른 제어
+            디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다. <br>
+            제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다.
+
+            | operationMode | airConJobMode | 에어컨 온도 제어 가능 여부 |
+            |----------------|----------------|------------------|
+            | `POWER_OFF` | - | 불가 |
+            | `POWER_ON` | `COOL` | 가능 |
+            | `POWER_ON` | `HEAT` | 가능 |
+            | `POWER_ON` | `AUTO` | 가능 |
+            | `POWER_ON` | `AIR_DRY` | 가능 |
+            | `POWER_ON` | `FAN` | 불가 |
+
+            에어컨 온도 제어가 가능한 경우, 다음 예시를 참고하여 제어 요청을 작성합니다.<br>
+            (화씨 온도로 제어요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.)
+
+            - Header 값 변경 (ThinQ Business API에서는 미지원합니다.)
+
+            ```json
+            {
+              "x-conditional-control": false,
+            }
+            ```
+
+            - **airConJobMode**가 **COOL**인 경우, 온도 제어 요청 Body
+
+            ```json
+            {
+              "temperature": {
+                "coolTargetTemperature": 희망온도,
+                "unit": "C"
+              }
+            }
+            ```
+
+            - **airConJobMode**가 **HEAT**인 경우, 온도 제어 요청 Body
+
+            ```json
+            {
+              "temperature": {
+                "heatTargetTemperature": 희망온도,
+                "unit": "C"
+              }
+            }
+            ```
+
+            - **airConJobMode**가 **AUTO**인 경우, 온도 제어 요청 Body
+
+            ```json
+            {
+              "temperature": {
+                "autoTargetTemperature": 희망온도,
+                "unit": "C"
+              }
+            }
+            ```
+
+            - **airConJobMode**가 **AIR_DRY**인 경우, 온도 제어 요청 Body
+
+            ```json
+            {
+              "temperature": {
+                "coolTargetTemperature": 희망온도,
+                "unit": "C"
+              }
+            }
+            ```
       - name: air_purifier
         x-displayName: 공기청정기
         description: |
@@ -162,48 +201,41 @@ contents:
             exampleRef="#/components/examples/air_purifier-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
+            exampleRef="#/components/examples/air_purifier-command-example"
+            showExample={true} showWriteOnly={false} />
 
-          ### 공기청정기 예외 처리 (풍량 제어)  
-            디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다.  
-            제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다. 다음 예시를 참고로 하십시오.  
+          #### 공기청정기 상태에 따른 제어
+            디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다. <br>
+            제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다.
 
-          예) 사용자 명령 : '에어컨 온도 1도 올려줘/내려줘'  
-          #### 1. **POWER_OFF인 경우 처리**  
-            - **airPurifierOperationMode**가 **POWER_OFF**이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  
-            - 응답 예시:  
-              - "에어컨 전원이 꺼져있습니다.  
+            | airPurifierOperationMode | currentJobMode | 공기청정기 바람세기 제어 가능 여부 |
+            |----------------|----------------|------------------|
+            | `POWER_OFF` | - | 불가 |
+            | `POWER_ON` | `AUTO` | 불가 |
+            | `POWER_ON` | `AUTO 이외` | 가능 |
 
-          #### 2. **POWER_ON인 경우 처리**  
-            - **airPurifierOperationMode**가 **POWER_ON**이면 **currentJobMode** 값에 따라 다음과 같이 처리해주어야 합니다.
-              1. **currentJobMode** 혹은 **windStrength**가 **AUTO**인 경우
-                - windStrength가 AUTO 이거나 혹은 currentJobMode가 AUTO인 경우 풍량이 자동으로 제어되며 수동으로 제어할 수 없습니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  
-                - 응답 예시:  
-                  - "공기청정기가 AUTO 모드로 동작 중이므로 제어할 수 없습니다."   
-              2. **currentJobMode**와 **windStrength** 둘 다 **AUTO**가 아닌 경우  
-                - currentJobMode의 값이 AUTO가 아니고, windStrength 값도 AUTO가 아닌 경우 다음과 같이 처리합니다.
-                  - 1. 디바이스 프로파일을 조회하여 해당 공기 청정기 디바이스에서 지원하는 **airFlow** 값을 확인합니다.  제품 모델 별로 지원하는 **airFlow** 값이 다릅니다.  
-                    - **x-conditional-control**를 **false**로 변경합니다.  
-                      ```json
-                        {
-                          "x-conditional-control": false,
-                        }
-                      ```
-                  - 2. 제어 요청 API 바디 값을 변경합니다. 
-                    - **currentJobMode**가 **COOL**인 경우
-                      ```json
-                        {
-                          "airFlow": {
-                            "windStrength": X
-                          }
-                        }
-                      ```
-                  - 3. 사용자에게 적정한 응답을 제공합니다.  
-                    - 응답 예시
-                      - 공기청정기 풍량은 power/high/low 상태로 변경 하였습니다.  
-                      - 공기청정기 풍량이 최대/최소 상태입니다. (설정하고자 하는 풍량이 최대/최소 상태인 경우)  
+            공기청정기 바람세기 제어가 가능한 경우, 다음 예시를 참고하여 제어 요청을 작성합니다.
+
+            - Header 값 변경 (ThinQ Business API에서는 미지원합니다.)
+
+            ```json
+            {
+              "x-conditional-control": false,
+            }
+            ```
+
+            - 바람세기 제어 요청 Body
+
+            ```json
+            {
+              "airFlow": {
+                "windStrength": "LOW"
+              }
+            }
+            ```
       - name: robot_cleaner
         x-displayName: 로봇청소기
         description: |
@@ -219,30 +251,11 @@ contents:
             exampleRef="#/components/examples/robot_cleaner-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />  
-
-          #### Example  
-          Starting the robot cleaner  
-
-            ```json
-              {
-                "operation": {
-                  "cleanOperationMode": "START"
-                }
-              }
-            ```  
-
-          Robot cleaner on timer (Timer set for 11:30)  
-            ```json
-              {
-                "timer": {
-                  "absoluteHourToStart": 11, 
-                  "absoluteMinuteToStart": 30
-                }
-              }
-            ```
+            exampleRef="#/components/examples/robot_cleaner-command-example"
+            showExample={true} showWriteOnly={false} />  
       - name: oven
         x-displayName: 오븐
         description: |
@@ -258,154 +271,11 @@ contents:
             exampleRef="#/components/examples/oven-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 오븐의 경우, `location` property를 사용하여 위치와 함께 제어 요청을 할 수 있으며, `operation`, `timer`, `cook` property를 한 번에 사용하여 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          operation  
-
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "PREHEATING"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                }
-              } {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                }
-              } {
-                "operation": {
-                  "ovenOperationMode": "STOP"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                }
-              }
-            ```
-
-          operation + cook mode  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "cook": {
-                  "cookMode": "BAKE"
-                }
-              }
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "cook": {
-                  "cookMode": "CONVECTION_BAKE"
-                }
-              } 
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "cook": {
-                  "cookMode": "CONVECTION_ROAST"
-                }
-              }
-            ```
-
-          operation + time  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "timer": {
-                  "targetHour": 1,
-                  "targetMinute": 5
-                }
-              }
-            ```  
-
-          operation + cook mode + time  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "timer": {
-                  "targetHour": 1,
-                  "targetMinute": 5
-                },
-                "cook": {
-                  "cookMode": "BAKE"
-                }
-              }
-            ```
-
-          operation + temperature  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "temperature": {
-                  "targetTemperature": 160,
-                  "unit": "C"
-                }
-              }
-            ```
-
-          operation + cook mode + temperature  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "cook": {
-                  "cookMode": "BAKE"
-                },
-                "temperature": {
-                  "targetTemperature": 160,
-                  "unit": "C"
-                }
-              }
-            ```
-
-          timer setting  
-            ```json
-              {
-                "timer": {
-                  "timerHour": 0,
-                  "timerMinute": 5
-                }
-              }
-            ```
+            exampleRef="#/components/examples/oven-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: dish_washer
         x-displayName: 식기세척기
         description: |
@@ -421,28 +291,11 @@ contents:
             exampleRef="#/components/examples/dish_washer-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />  
-
-          #### Example  
-          제어 시작  
-            ```json
-              {
-                "operation": {
-                  "dishWasherOperationMode": "START"
-                }
-              }
-            ```
-
-          제어 멈춤  
-            ```json
-              {
-                "operation": {
-                  "dishWasherOperationMode": "STOP"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/dish_washer-command-example"
+            showExample={true} showWriteOnly={false} />  
       - name: styler
         x-displayName: 스타일러
         description: |
@@ -458,36 +311,11 @@ contents:
             exampleRef="#/components/examples/styler-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Starting the styler  
-            ```json
-              { 
-                "operation": {
-                  "stylerOperationMode": "START"
-                }
-              }
-            ```
-
-          Stopping the styler  
-            ```json
-              { 
-                "operation": {
-                  "stylerOperationMode ": "STOP"
-                }
-              }
-            ```
-          Setting stop time  
-            ```json
-              {
-                "timer": {
-                  "relativeHourToStop": 4
-                }
-              }
-            ```
+            exampleRef="#/components/examples/styler-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: water_purifier
         x-displayName: 정수기
         description: |
@@ -519,45 +347,11 @@ contents:
             exampleRef="#/components/examples/dehumidifier-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Dehumidifier power on  
-            ```json
-              {
-                "operation": {
-                  "dehumidifierOperationMode": "POWER_ON"
-                }
-              }
-            ```
-
-          Dehumidifier power off  
-            ```json
-              {
-                "operation": {
-                  "dehumidifierOperationMode": "POWER_OFF"
-                }
-              }
-            ```
-
-          Dehumidifier wind strength adjustment (Strength high)  
-            ```json
-              {
-                "airFlow": {
-                  "windStrength": "HIGH"
-                }
-              }
-            ```
-          Dehumidifier wind strength adjustment (Strength Low)  
-            ```json
-              {
-                "airFlow": {
-                  "windStrength": "LOW"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/dehumidifier-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: ceiling_fan
         x-displayName: 실링팬
         description: |
@@ -573,28 +367,11 @@ contents:
             exampleRef="#/components/examples/ceiling_fan-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Ceiling fan power on  
-            ```json
-              {
-                "operation": {
-                  "ceilingfanOperationMode":  "POWER_ON"
-                }
-              }
-            ```
-
-          Ceiling fan wind strength adjustment  
-            ```json
-              {
-                "airFlow": {
-                  "windStrength": "HIGH"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/ceiling_fan-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: wine_cellar
         x-displayName: 와인셀러
         description: |
@@ -610,40 +387,11 @@ contents:
             exampleRef="#/components/examples/wine_cellar-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 와인셀러 `temperature` 제어 시, `location` property를 사용하여 위치와 함께 제어 요청을 하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Temperature Control  
-            ```json
-              {
-                "temperature": {
-                  "locationName": "WINE_LOWER",
-                  "targetTemperature": 6,
-                  "unit": "C"
-                }
-              }
-            ```
-
-          Brightness Control  
-            ```json
-              #enum - lightBrightness
-              {
-                "operation": {
-                  "lightBrightness": "70%"
-                }
-              }
-            ```  
-
-            ```json
-              #range - lightStatus 
-              {
-                "operation": {
-                  "lightBrightness": "70%"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/wine_cellar-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: kimchi_refrigerator
         x-displayName: 김치냉장고
         description: |
@@ -693,7 +441,7 @@ contents:
           ### 디바이스 제어 요청
           식물재배기 디바이스는 제어 요청을 지원하지 않습니다.
       - name: washtower_washer
-        x-displayName: 워시타워(세탁기)
+        x-displayName: 워시타워 (세탁기)
         description: |
           ## 디바이스 프로파일 스키마
           <SchemaDefinition
@@ -707,59 +455,13 @@ contents:
             exampleRef="#/components/examples/washtower_washer-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 워시타워 제어시, `location` property를 사용하여 위치와 함께 제어 요청을 하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Starting the standard washing course  
-            ```json
-              { 
-                "operation": {
-                  "washerOperationMode": "START"
-                }, 
-                "location": { 
-                  "locationName": "MAIN"
-                }
-              }
-            ```
-
-          Stopping the washing course  
-            ```json
-              { 
-                "operation": {
-                  "washerOperationMode": "START"
-                }, 
-                "location": { 
-                  "locationName": "MAIN"
-                }
-              }
-            ```
-
-          Washer on timer
-            ```json
-              {
-                "location": {
-                  "locationName": "MAIN"
-                },
-                "timer": {
-                  "relativeHourToStart": 4
-                }
-              }
-            ```
-
-            ```json
-              {
-                "location": {
-                  "locationName": "MAIN"
-                },
-                "timer": {
-                  "relativeHourToStop": 6
-                }
-              }
-            ```
+            exampleRef="#/components/examples/washtower_washer-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: washtower_dryer
-        x-displayName: 워시타워(건조기)
+        x-displayName: 워시타워 (건조기)
         description: |
           ## 디바이스 프로파일 스키마
           <SchemaDefinition
@@ -773,45 +475,11 @@ contents:
             exampleRef="#/components/examples/washtower_dryer-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br>
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Starting the standard drying course  
-            ```json
-              { 
-                "operation": {
-                  "dryerOperationMode": "START"
-                }
-              }
-            ```
-
-          Stopping the standard drying course  
-            ```json
-              { 
-                "operation": {
-                  "dryerOperationMode": "STOP"
-                }
-              }
-            ```
-
-          Setting start/stop time  
-            ```json
-              { 
-                "timer": {
-                  "relativeHourToStart": 2
-                }
-              }
-            ```
-
-            ```json
-              { 
-                "timer": {
-                  "relativeHourToStop": 4
-                }
-              }
-            ```
+            exampleRef="#/components/examples/washtower_dryer-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: washtower
         x-displayName: 워시타워
         description: |
@@ -827,32 +495,11 @@ contents:
             exampleRef="#/components/examples/washtower-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 워시타워 제어시, `washer`와 `dryer`는 따로 제어 요청을 하셔야 합니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          세탁기  
-            ```json
-              {
-                "washer": {
-                  "operation": {
-                    "washerOperationMode": "START"
-                  }
-                }
-              }
-            ```
-
-          건조기  
-            ```json
-              {
-                "dryer": {
-                  "operation": {
-                    "dryerOperationMode": "START"
-                  }
-                }
-              }
-            ```
+            exampleRef="#/components/examples/washtower-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: cooktop
         x-displayName: 쿡탑
         description: |
@@ -868,35 +515,11 @@ contents:
             exampleRef="#/components/examples/cooktop-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 쿡탑 제어시, `operation`은 `location`없이 제어하고, `power`와 `timer`는 `location`과 함께 제어 요청하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Power Off  
-            ```json
-              {
-                "operation": {
-                  "operationMode": "POWER_OFF"
-                }
-              }
-            ```
-
-          Setting the power to 3 and the remaining time to 10 minutes for the LEFT_FRONT burner  
-            ```json
-              {
-                "power": {
-                  "powerLevel": 3
-                },
-                "timer": {
-                  "remainHour": 0,
-                  "remainMinute": 10
-                },
-                "location": {
-                  "locationName": "LEFT_FRONT"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/cooktop-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: hood
         x-displayName: 후드
         description: |
@@ -912,22 +535,11 @@ contents:
             exampleRef="#/components/examples/hood-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 후드 제어시, `lamp`와 `ventilation` 속성을 동시에 명령해야합니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Setting lamp brightness and fan speed
-            ```json
-              {
-                "lamp": {
-                  "lampBrightness": 1
-                },
-                "ventilation": {
-                  "fanSpeed": 0
-                }
-              }
-            ```
+            exampleRef="#/components/examples/hood-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: microwave_oven
         x-displayName: 전자레인지
         description: |
@@ -942,22 +554,12 @@ contents:
             schemaRef="#/components/schemas/microwave_oven-object"
             exampleRef="#/components/examples/microwave_oven-object-example" />
 
-          ### 디바이스 제어 요청 제어 명령은 lampBrightness와 fanSpeed 속성을 동시에 명령해야합니다.
+          ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 제어 명령은 lampBrightness와 fanSpeed 속성을 동시에 명령해야합니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-            ```json
-              {
-                "lamp": {
-                    "lampBrightness": 1
-                },
-                "ventilation": {
-                    "fanSpeed": 0
-                }
-              }
-            ```
+            exampleRef="#/components/examples/microwave_oven-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: system_boiler
         x-displayName: 시스템 보일러
         description: |
@@ -973,48 +575,11 @@ contents:
             exampleRef="#/components/examples/system_boiler-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> (화씨 온도로 제어요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.)
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Setting the power on
-            ```json
-              {
-                "operation": {
-                  "boilerOperationMode": "POWER_ON"
-                }
-              }
-            ```
-
-          Setting the hot water mode  
-            ```json
-              {
-                "operation": {
-                  "hotWaterMode": "ON"
-                }
-              }
-            ```
-
-          Setting the cooling target temperature  
-            ```json
-              {
-                "temperature": {
-                  "coolTargetTemperature": 18,
-                  "unit": "C"
-                }
-              }
-            ```
-
-          Setting the heating target temperature  
-            ```json
-              {
-                "temperature": {
-                  "heatTargetTemperature": 28,
-                  "unit": "C"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/system_boiler-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: air_purifier_fan
         x-displayName: 공기청정팬
         description: |
@@ -1030,19 +595,11 @@ contents:
             exampleRef="#/components/examples/air_purifier_fan-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br>
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Power On  
-            ```json
-              {
-                "operation": {
-                  "airFanOperationMode": "POWER_ON"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/air_purifier_fan-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: stick_cleaner
         x-displayName: 스틱청소기
         description: |
@@ -1074,28 +631,11 @@ contents:
             exampleRef="#/components/examples/water_heater-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br>
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          온도 변경  
-            ```json
-              {
-                "temperature": {
-                  "targetTemperature": 45
-                }
-              }
-            ```
-
-          모드 변경
-            ```json
-              {
-                "waterHeaterJobMode": {
-                  "currentJobMode": "AUTO"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/water_heater-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: main_washcombo
         x-displayName: 워시콤보 (메인)
         description: |
@@ -1111,34 +651,11 @@ contents:
             exampleRef="#/components/examples/main_washcombo-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 워시콤보 제어시, `location` property를 사용하여 위치와 함께 제어 요청을 하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          세탁 시작  
-            ```json
-              {
-                "location": {
-                  "locationName": "MAIN"
-                },
-                "operation": {
-                  "washerOperationMode": "START"
-                }
-              }
-            ```
-
-          예약 설정  
-            ```json
-              {
-                "location": {
-                  "locationName": "Main"
-                },
-                "timer": {
-                  "relativeHourToStop": 4
-                }
-              }
-            ```
+            exampleRef="#/components/examples/main_washcombo-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: mini_washcombo
         x-displayName: 워시콤보 (미니)
         description: |
@@ -1154,34 +671,11 @@ contents:
             exampleRef="#/components/examples/mini_washcombo-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 워시콤보 제어시, `location` property를 사용하여 위치와 함께 제어 요청을 하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />  
-
-          #### Example  
-          세탁 시작  
-            ```json
-              {
-                "location": {
-                  "locationName": "MINI"
-                },
-                "operation": {
-                  "washerOperationMode": "START"
-                }
-              }
-            ```
-
-          예약 설정  
-            ```json
-              {
-                "location": {
-                  "locationName": "MINI"
-                },
-                "timer": {
-                  "relativeHourToStop": 4
-                }
-              }
-            ```
+            exampleRef="#/components/examples/mini_washcombo-command-example"
+            showExample={true} showWriteOnly={false} />  
       - name: humidifier
         x-displayName: 가습기
         description: |
@@ -1197,28 +691,31 @@ contents:
             exampleRef="#/components/examples/humidifier-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br>
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
+            exampleRef="#/components/examples/humidifier-command-example"
+            showExample={true} showWriteOnly={false} />
+      - name: ventilator
+        x-displayName: 환기
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/ventilator-profile"
+            exampleRef="#/components/examples/ventilator-profile-example" />
 
-          #### Example  
-          Power On  
-            ```json
-              {
-                "operation": {
-                  "humidifierOperationMode": "POWER_ON"
-                }
-              }
-            ```
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/ventilator-object"
+            exampleRef="#/components/examples/ventilator-object-example" />
 
-          Display Light  
-            ```json
-              {
-                "display": {
-                  "light": "LEVEL_2"
-                }
-              }
-            ```
+          ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/ventilator-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: odu
         x-displayName: 실외기
         description: |
@@ -1812,6 +1309,8 @@ contents:
                       - $ref: '#/components/schemas/dehumidifier-object'
                       - $ref: '#/components/schemas/humidifier-profile'
                       - $ref: '#/components/schemas/humidifier-object'
+                      - $ref: '#/components/schemas/ventilator-profile'
+                      - $ref: '#/components/schemas/ventilator-object'
                       - $ref: '#/components/schemas/robot_cleaner-profile'
                       - $ref: '#/components/schemas/robot_cleaner-object'
                       - $ref: '#/components/schemas/oven-profile'
@@ -1964,6 +1463,12 @@ contents:
                       $ref: '#/components/examples/humidifier-object-example'
                     humidifier-command-example:
                       $ref: '#/components/examples/humidifier-command-example'
+                    ventilator-profile-example:
+                      $ref: '#/components/examples/ventilator-profile-example'
+                    ventilator-object-example:
+                      $ref: '#/components/examples/ventilator-object-example'
+                    ventilator-command-example:
+                      $ref: '#/components/examples/ventilator-command-example'
                     robot_cleaner-profile-example:
                       $ref: '#/components/examples/robot_cleaner-profile-example'
                     robot_cleaner-object-example:
@@ -2318,6 +1823,125 @@ contents:
                           -|-
                           C | 섭씨
                           F | 화씨
+                temperatureInUnits:
+                  type: array
+                  description: 온도
+                  items:
+                    type: object
+                    properties:
+                      targetTemperatureC:
+                        type: object
+                        description: 희망 온도(섭씨)
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      targetTemperatureF:
+                        type: object
+                        description: 희망 온도(화씨)
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      unit:
+                        type: object
+                        description: 단위
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - enum
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: array
+                                description: |-
+                                  Value | Description
+                                  -|-
+                                  C | 섭씨
+                                  F | 화씨
+                                items:
+                                  type: string
+                                  enum:
+                                    - C
+                                    - F
+                      locationName:
+                        type: string
+                        enum:
+                          - FRIDGE
+                          - FREEZER
+                          - CONVERTIBLE
+                        description: |-
+                          Value | Description
+                          -|-
+                          FRIDGE | 냉장실
+                          FREEZER | 냉동실
+                          CONVERTIBLE | 컨버터블
                 refrigeration:
                   type: object
                   description: 기능
@@ -2781,6 +2405,31 @@ contents:
                     enum:
                       - C
                       - F
+            temperatureInUnits:
+              type: array
+              description: 온도
+              items:
+                type: object
+                properties:
+                  targetTemperatureC:
+                    type: integer
+                    description: 희망 온도 (섭씨)
+                  targetTemperatureㄹ:
+                    type: integer
+                    description: 희망 온도 (화씨)
+                  unit:
+                    type: string
+                    enum:
+                      - C
+                      - F
+                    description: 단위
+                  locationName:
+                    type: string
+                    description: 위치 이름
+                    enum:
+                      - FRIDGE
+                      - FREEZER
+                      - CONVERTIBLE
             powerSave:
               type: object
               properties:
@@ -3255,6 +2904,24 @@ contents:
                           -|-
                           AUTO | 자동 설정 기기
                           NORMAL | 일반 기기
+                  cycle:
+                    type: object
+                    description: 세탁 횟수
+                    properties:
+                      cycleCount:
+                        type: object
+                        description: 세탁 횟수
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
                   location:
                     description: 위치
                     type: object
@@ -3410,6 +3077,13 @@ contents:
                     enum:
                       - AUTO
                       - NORMAL
+              cycle:
+                type: object
+                description: 세탁 횟수
+                properties:
+                  cycleCount:
+                    type: integer
+                    description: 세탁 횟수
               location:
                 description: 위치
                 type: object
@@ -4130,7 +3804,7 @@ contents:
                         type:
                           type: string
                           enum:
-                            - range
+                            - number
                     heatTargetTemperature:
                       type: object
                       description: 난방 희망 온도
@@ -4201,6 +3875,7 @@ contents:
                                   type: integer
                     unit:
                       type: object
+                      description: 단위
                       properties:
                         mode:
                           type: array
@@ -4221,6 +3896,219 @@ contents:
                                 Value | Description
                                 -|-
                                 C | 섭씨
+                    twoSetEnabled:
+                      type: object
+                      description: twoSet 설정 여부
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | twoSet 설정
+                                FALSE | twoSet 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                temperatureInUnits:
+                  type: array
+                  description: 온도
+                  items:
+                    type: object
+                    properties:
+                      currentTemperature:
+                        type: object
+                        description: 현재 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      targetTemperature:
+                        type: object
+                        description: 희망 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      heatTargetTemperature:
+                        type: object
+                        description: 난방 희망 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      coolTargetTemperature:
+                        type: object
+                        description: 냉방 희망 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      unit:
+                        type: string
+                        enum:
+                          - C
+                          - F
+                        description: |-
+                          Value | Description
+                          -|-
+                          C | 섭씨
+                          F | 화씨
+                twoSetTemperatureInUnits:
+                  type: array
+                  description: 온도
+                  items:
+                    type: object
+                    properties:
+                      heatTargetTemperature:
+                        type: object
+                        description: 난방 희망 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: number
+                                  min:
+                                    type: number
+                                  step:
+                                    type: number
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: number
+                                  min:
+                                    type: number
+                                  step:
+                                    type: number
+                      coolTargetTemperature:
+                        type: object
+                        description: 냉방 희망 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: number
+                                  min:
+                                    type: number
+                                  step:
+                                    type: number
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: number
+                                  min:
+                                    type: number
+                                  step:
+                                    type: number
+                      unit:
+                        type: string
+                        enum:
+                          - C
+                          - F
+                        description: |-
+                          Value | Description
+                          -|-
+                          C | 섭씨
+                          F | 화씨
                 timer:
                   type: object
                   description: 타이머
@@ -4718,6 +4606,430 @@ contents:
                                   type: integer
                                 step:
                                   type: integer
+                windDirection:
+                  type: object
+                  description: 바람 방향
+                  properties:
+                    rotateLeftRight:
+                      type: object
+                      description: 좌우 회전
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 좌우 회전 설정
+                                FALSE | 좌우 회전 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 좌우 회전 설정
+                                FALSE | 좌우 회전 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    rotateUpDown:
+                      type: object
+                      description: 상하 회전
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 상하 회전 설정
+                                FALSE | 상하 회전 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 상하 회전 설정
+                                FALSE | 상하 회전 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    forestWind:
+                      type: object
+                      description: 숲속 바람
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 숲속 바람 설정
+                                FALSE | 숲속 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 숲속 바람 설정
+                                FALSE | 숲속 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    airGuideWind:
+                      type: object
+                      description: 에어가이드 바람
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 에어가이드 바람 설정
+                                FALSE | 에어가이드 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 에어가이드 바람 설정
+                                FALSE | 에어가이드 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    highCeilingWind:
+                      type: object
+                      description: 고천장 바람
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 고천장 바람 설정
+                                FALSE | 고천장 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 고천장 바람 설정
+                                FALSE | 고천장 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    autoFitWind:
+                      type: object
+                      description: 자동 맞춤 바람
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 자동 맞춤 바람 설정
+                                FALSE | 자동 맞춤 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 자동 맞춤 바람 설정
+                                FALSE | 자동 맞춤 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    concentrationWind:
+                      type: object
+                      description: 집중력 강화 바람
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 집중력 강화 바람 설정
+                                FALSE | 집중력 강화 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 집중력 강화 바람 설정
+                                FALSE | 집중력 강화 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    swirlWind:
+                      type: object
+                      description: 쾌적풍 바람
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 쾌적풍 바람 설정
+                                FALSE | 쾌적풍 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 쾌적풍 바람 설정
+                                FALSE | 쾌적풍 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    longPowerWind:
+                      type: object
+                      description: 롱파워 바람
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 롱파워 바람 설정
+                                FALSE | 롱파워 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 롱파워 바람 설정
+                                FALSE | 롱파워 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                    mannerWind:
+                      type: object
+                      description: 매너 바람
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - boolean
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 매너 바람 설정
+                                FALSE | 매너 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                TRUE | 매너 바람 설정
+                                FALSE | 매너 바람 해제
+                              items:
+                                type: boolean
+                                enum:
+                                  - true
+                                  - false
                 airQualitySensor:
                   type: object
                   description: 공기질
@@ -4956,6 +5268,66 @@ contents:
                           type: string
                           enum:
                             - number
+                    filterRemainPercent:
+                      type: object
+                      description: 남은 필터 %
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - number
+                display:
+                  type: object
+                  description: 화면
+                  properties:
+                    light:
+                      type: object
+                      description: 조명
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                OFF | 조명 꺼짐
+                                ON | 조명 켜짐
+                              items:
+                                type: string
+                                enum:
+                                  - 'OFF'
+                                  - 'ON'
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                OFF | 조명 꺼짐
+                                ON | 조명 켜짐
+                              items:
+                                type: string
+                                enum:
+                                  - 'OFF'
+                                  - 'ON'
             notification:
               type: object
               properties:
@@ -5028,6 +5400,27 @@ contents:
                 unit:
                   type: string
                   description: 온도 단위
+            temperatureInUnits:
+              type: array
+              description: 온도
+              items:
+                type: object
+                properties:
+                  currentTemperature:
+                    type: number
+                    description: 현재 온도
+                  targetTemperature:
+                    type: number
+                    description: 희망 온도
+                  heatTargetTemperature:
+                    type: range
+                    description: 난방 희망 온도
+                  coolTargetTemperature:
+                    type: range
+                    description: 냉방 희망 온도
+                  unit:
+                    type: string
+                    description: 온도 단위
             twoSetTemperature:
               type: object
               description: 온도
@@ -5044,6 +5437,27 @@ contents:
                 unit:
                   type: string
                   description: 온도 단위
+                twoSetEnabled:
+                  type: boolean
+                  description: twoSet 설정 여부
+                  enum:
+                    - true
+                    - false
+            twoSetTemperatureInUnits:
+              type: array
+              description: 온도
+              items:
+                type: object
+                properties:
+                  heatTargetTemperature:
+                    type: number
+                    description: 난방 희망 온도
+                  coolTargetTemperature:
+                    type: number
+                    description: 냉방 희망 온도
+                  unit:
+                    type: string
+                    description: 온도 단위
             timer:
               type: object
               description: 타이머
@@ -5139,6 +5553,70 @@ contents:
                 windStep:
                   type: range
                   description: 바람 단계
+            windDirection:
+              type: object
+              description: 바람 방향
+              properties:
+                rotateLeftRight:
+                  type: boolean
+                  description: 좌우 회전
+                  enum:
+                    - true
+                    - false
+                rotateUpDown:
+                  type: boolean
+                  description: 상하 회전
+                  enum:
+                    - true
+                    - false
+                forestWind:
+                  type: boolean
+                  description: 숲속 바람
+                  enum:
+                    - true
+                    - false
+                airGuideWind:
+                  type: boolean
+                  description: 에어가이드 바람
+                  enum:
+                    - true
+                    - false
+                highCeilingWind:
+                  type: boolean
+                  description: 고천장 바람
+                  enum:
+                    - true
+                    - false
+                autoFitWind:
+                  type: boolean
+                  description: 자동 맞춤 바람
+                  enum:
+                    - true
+                    - false
+                concentrationWind:
+                  type: boolean
+                  description: 집중력 강화 바람
+                  enum:
+                    - true
+                    - false
+                swirlWind:
+                  type: boolean
+                  description: 쾌적풍 바람
+                  enum:
+                    - true
+                    - false
+                longPowerWind:
+                  type: boolean
+                  description: 롱파워 바람
+                  enum:
+                    - true
+                    - false
+                mannerWind:
+                  type: boolean
+                  description: 매너 바람
+                  enum:
+                    - true
+                    - false
             airQualitySensor:
               type: object
               description: 공기질
@@ -5198,6 +5676,19 @@ contents:
                 filterLifetime:
                   type: number
                   description: 필터 잔여 시간
+                filterRemainPercent:
+                  type: number
+                  description: 남은 필터 %
+            display:
+              type: object
+              description: 화면
+              properties:
+                light:
+                  type: string
+                  description: 조명
+                  enum:
+                    - 'OFF'
+                    - 'ON'
         air_purifier-profile:
           type: object
           title: Air_Purifier
@@ -8695,6 +9186,633 @@ contents:
                   enum:
                     - 'ON'
                     - 'OFF'
+        ventilator-profile:
+          type: object
+          title: Ventilator
+          properties:
+            property:
+              type: object
+              properties:
+                ventJobMode:
+                  type: object
+                  description: 모드
+                  properties:
+                    currentJobMode:
+                      type: object
+                      description: 운전 모드
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                VENT_NATURE | 자동 운전 모드
+                                VENT_AUTO | 자연바람환기
+                                VENT_HEAT_EXCHANGE | 실온교환기
+                              items:
+                                type: string
+                                enum:
+                                  - VENT_NATURE
+                                  - VENT_AUTO
+                                  - VENT_HEAT_EXCHANGE
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                VENT_NATURE | 자동 운전 모드
+                                VENT_AUTO | 자연바람환기
+                                VENT_HEAT_EXCHANGE | 실온교환기
+                              items:
+                                type: string
+                                enum:
+                                  - VENT_NATURE
+                                  - VENT_AUTO
+                                  - VENT_HEAT_EXCHANGE
+                operation:
+                  type: object
+                  description: 동작
+                  properties:
+                    ventOperationMode:
+                      type: object
+                      description: 본체 동작
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                POWER_ON | 전원 켜짐
+                                POWER_OFF | 전원 꺼짐
+                              items:
+                                type: string
+                                enum:
+                                  - POWER_ON
+                                  - POWER_OFF
+                temperature:
+                  type: object
+                  description: 온도
+                  properties:
+                    currentTemperature:
+                      type: object
+                      description: 현재 온도
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - range
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: object
+                              description: 10.5-39.5 도
+                              properties:
+                                min:
+                                  type: number
+                                max:
+                                  type: number
+                                step:
+                                  type: number
+                    unit:
+                      type: object
+                      description: 단위
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                C | 섭씨
+                              items:
+                                type: string
+                                enum:
+                                  - C
+                airQualitySensor:
+                  type: object
+                  description: 공기질
+                  properties:
+                    PM1:
+                      type: number
+                      description: PM1.0 극초미세먼지 농도
+                      mode:
+                        type: array
+                        items:
+                          type: string
+                          enum:
+                            - r
+                    PM2:
+                      type: number
+                      description: PM2.5 초미세먼지 농도
+                      mode:
+                        type: array
+                        items:
+                          type: string
+                          enum:
+                            - r
+                    PM10:
+                      type: number
+                      description: PM10 미세먼지 농도
+                      mode:
+                        type: array
+                        items:
+                          type: string
+                          enum:
+                            - r
+                    CO2:
+                      type: object
+                      description: Co2 농도
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                INVALID | INVALID
+                                GOOD | 좋음
+                                NORMAL | 보통
+                                BAD | 나쁨
+                                VERY_BAD | 매우나쁨
+                              items:
+                                type: string
+                                enum:
+                                  - INVALID
+                                  - GOOD
+                                  - NORMAL
+                                  - BAD
+                                  - VERY_BAD
+                airFlow:
+                  type: object
+                  description: 바람 설정
+                  properties:
+                    windStrength:
+                      type: object
+                      description: 바람 세기
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                AUTO | 자동
+                                HIGH | 강풍
+                                POWER | 특강풍
+                                LOW | 약풍
+                              items:
+                                type: string
+                                enum:
+                                  - AUTO
+                                  - HIGH
+                                  - POWER
+                                  - LOW
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                AUTO | 자동
+                                HIGH | 강풍
+                                POWER | 특강풍
+                                LOW | 약풍
+                              items:
+                                type: string
+                                enum:
+                                  - AUTO
+                                  - HIGH
+                                  - POWER
+                                  - LOW
+                timer:
+                  type: object
+                  description: 타이머
+                  properties:
+                    absoluteHourToStop:
+                      type: object
+                      description: 지정한 꺼짐 예약 시간(시)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteMinuteToStop:
+                      type: object
+                      description: 지정한 꺼짐 예약 시간(분)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteStopTimer:
+                      type: object
+                      description: 지정한 꺼짐 예약시간 설정 여부
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                SET | 꺼짐 예약 시간 설정
+                                UNSET | 꺼짐 예약 시간 해제
+                              items:
+                                type: string
+                                enum:
+                                  - SET
+                                  - UNSET
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                UNSET | 꺼짐 예약 시간 해제
+                              items:
+                                type: string
+                                enum:
+                                  - UNSET
+                    absoluteHourToStart:
+                      type: object
+                      description: 지정한 켜짐 예약 시간(시)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteMinuteToStart:
+                      type: object
+                      description: 지정한 켜짐 예약 시간(분)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    absoluteStartTimer:
+                      type: object
+                      description: 지정한 켜짐 예약시간 설정 여부
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                SET | 켜짐 예약 시간 설정
+                                UNSET | 켜짐 예약 시간 해제
+                              items:
+                                type: string
+                                enum:
+                                  - SET
+                                  - UNSET
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                UNSET | 켜짐 예약 시간 해제
+                              items:
+                                type: string
+                                enum:
+                                  - UNSET
+                sleepTimer:
+                  type: object
+                  description: 슬립타이머
+                  properties:
+                    relativeHourToStop:
+                      type: object
+                      description: 취침(꺼짐) 예약 시간(시)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                    relativeMinuteToStop:
+                      type: object
+                      description: 취침(꺼짐) 예약 시간(분)
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - number
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                    relativeStopTimer:
+                      type: object
+                      description: 취침(꺼짐) 예약 시간 설정 여부
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                              - w
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                SET | 취침 예약 시간 설정
+                                UNSET | 취침 예약 시간 해제
+                              items:
+                                type: string
+                                enum:
+                                  - SET
+                                  - UNSET
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                UNSET | 취침 예약 시간 해제
+                              items:
+                                type: string
+                                enum:
+                                  - UNSET
+                notification:
+                  type: object
+                  description: null
+                  properties:
+                    push:
+                      type: array
+                      description: |-
+                        Value | Description
+                        -|-
+                        NEED_TO_CHANGE_DUST_FILTER | 먼지 필터 교체가 필요합니다.
+                        NEED_TO_CHANGE_PRE_FILTER | 프리 필터 교체가 필요합니다.
+                      items:
+                        type: string
+                        enum:
+                          - NEED_TO_CHANGE_DUST_FILTER
+                          - NEED_TO_CHANGE_PRE_FILTER
+        ventilator-object:
+          type: object
+          title: Ventilator
+          properties:
+            ventJobMode:
+              type: object
+              description: 모드
+              properties:
+                currentJobMode:
+                  type: string
+                  description: 운전 모드
+                  enum:
+                    - VENT_NATURE
+                    - VENT_AUTO
+                    - VENT_HEAT_EXCHANGE
+            operation:
+              type: object
+              description: 동작
+              properties:
+                ventOperationMode:
+                  type: string
+                  description: 본체 동작
+                  enum:
+                    - POWER_ON
+                    - POWER_OFF
+            temperature:
+              type: object
+              description: 온도
+              properties:
+                currentTemperature:
+                  type: number
+                  description: 현재 온도
+                unit:
+                  type: string
+                  description: 단위
+            airQualitySensor:
+              type: object
+              description: 공기질
+              properties:
+                PM1:
+                  type: number
+                  description: PM1.0 극초미세먼지 농도
+                PM2:
+                  type: number
+                  description: PM2.5 초미세먼지 농도
+                PM10:
+                  type: number
+                  description: PM10 미세먼지 농도
+                CO2:
+                  type: string
+                  description: Co2 농도
+                  enum:
+                    - INVALID
+                    - GOOD
+                    - NORMAL
+                    - BAD
+                    - VERY_BAD
+            airFlow:
+              type: object
+              description: 바람 설정
+              properties:
+                windStrength:
+                  type: string
+                  description: 바람 세기
+                  enum:
+                    - AUTO
+                    - HIGH
+                    - POWER
+                    - LOW
+            timer:
+              type: object
+              description: 타이머
+              properties:
+                absoluteHourToStart:
+                  type: number
+                  description: 지정한 켜짐 예약 시간(시)
+                absoluteMinuteToStart:
+                  type: number
+                  description: 지정한 켜짐 예약 시간(분)
+                absoluteHourToStop:
+                  type: number
+                  description: 지정한 꺼짐 예약 시간(시)
+                absoluteMinuteToStop:
+                  type: number
+                  description: 지정한 꺼짐 예약 시간(분)
+                absoluteStartTimer:
+                  type: string
+                  description: 지정한 켜짐 예약시간 설정 여부
+                  enum:
+                    - SET
+                    - UNSET
+                absoluteStopTimer:
+                  type: string
+                  description: 지정한 꺼짐 예약시간 설정 여부
+                  enum:
+                    - SET
+                    - UNSET
+            sleepTimer:
+              type: object
+              description: 슬립타이머
+              properties:
+                relativeHourToStop:
+                  type: number
+                  description: 취침 예약 (꺼짐) (시)
+                relativeMinuteToStop:
+                  type: number
+                  description: 취침 예약 (꺼짐) (분)
+                relativeStopTimer:
+                  type: string
+                  description: 꺼짐 예약 시간 설정 여부
+                  enum:
+                    - SET
+                    - UNSET
         robot_cleaner-profile:
           type: object
           title: Robot_Cleaner
@@ -11270,6 +12388,8 @@ contents:
                                     type: integer
                                   except:
                                     type: array
+                                    items:
+                                      type: integer
                               w:
                                 type: object
                                 properties:
@@ -11281,6 +12401,8 @@ contents:
                                     type: integer
                                   except:
                                     type: array
+                                    items:
+                                      type: integer
                       unit:
                         type: string
                         description: |-
@@ -11303,6 +12425,141 @@ contents:
                           - WINE_UPPER
                           - WINE_MIDDLE
                           - WINE_LOWER
+                temperatureInUnits:
+                  type: array
+                  description: 온도
+                  items:
+                    type: object
+                    properties:
+                      targetTemperatureC:
+                        type: object
+                        description: 희망 온도(섭씨)
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                                  except:
+                                    type: array
+                                    items:
+                                      type: integer
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                                  except:
+                                    type: array
+                                    items:
+                                      type: integer
+                      targetTemperatureF:
+                        type: object
+                        description: 희망 온도(화씨)
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                                  except:
+                                    type: array
+                                    items:
+                                      type: integer
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                                  except:
+                                    type: array
+                                    items:
+                                      type: integer
+                      unit:
+                        type: object
+                        description: 단위
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - enum
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: array
+                                description: |-
+                                  Value | Description
+                                  -|-
+                                  C | 섭씨
+                                  F | 화씨
+                                items:
+                                  type: string
+                                  enum:
+                                    - C
+                                    - F
+                      locationName:
+                        type: string
+                        enum:
+                          - WINE_UPPER
+                          - WINE_MIDDLE
+                          - WINE_LOWER
+                        description: |-
+                          Value | Description
+                          -|-
+                          WINE_UPPER | 상단 칸
+                          WINE_MIDDLE | 중간 칸
+                          WINE_LOWER | 하단 칸
         wine_cellar-object:
           type: object
           title: Wine_Cellar
@@ -11345,6 +12602,31 @@ contents:
                   targetTemperature:
                     type: integer
                     description: 희망 온도
+                  unit:
+                    type: string
+                    enum:
+                      - C
+                      - F
+                    description: 단위
+                  locationName:
+                    type: string
+                    description: 위치 이름
+                    enum:
+                      - WINE_UPPER
+                      - WINE_MIDDLE
+                      - WINE_LOWER
+            temperatureInUnits:
+              type: array
+              description: 온도
+              items:
+                type: object
+                properties:
+                  targetTemperatureC:
+                    type: integer
+                    description: 희망 온도 (섭씨)
+                  targetTemperatureㄹ:
+                    type: integer
+                    description: 희망 온도 (화씨)
                   unit:
                     type: string
                     enum:
@@ -11795,7 +13077,81 @@ contents:
                         type:
                           type: string
                           enum:
-                            - array
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                CASCADE | 케스케이드
+                                CHINOOK | 치누크
+                                GOLDINGS | 골딩스
+                                FUGGLES | 퍼글스
+                                HALLERTAU | 할러타우
+                                CITRUSSY | 시트러스
+                              items:
+                                type: string
+                                enum:
+                                  - CASCADE
+                                  - CHINOOK
+                                  - GOLDINGS
+                                  - FUGGLES
+                                  - HALLERTAU
+                                  - CITRUSSY
+                    hopOilCapsule1:
+                      type: object
+                      description: 홉오일 캡슐1
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                CASCADE | 케스케이드
+                                CHINOOK | 치누크
+                                GOLDINGS | 골딩스
+                                FUGGLES | 퍼글스
+                                HALLERTAU | 할러타우
+                                CITRUSSY | 시트러스
+                              items:
+                                type: string
+                                enum:
+                                  - CASCADE
+                                  - CHINOOK
+                                  - GOLDINGS
+                                  - FUGGLES
+                                  - HALLERTAU
+                                  - CITRUSSY
+                    hopOilCapsule2:
+                      type: object
+                      description: 홉오일 캡슐2
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
                         value:
                           type: object
                           properties:
@@ -11832,7 +13188,7 @@ contents:
                         type:
                           type: string
                           enum:
-                            - array
+                            - enum
                         value:
                           type: object
                           properties:
@@ -11841,21 +13197,77 @@ contents:
                               description: |-
                                 Value | Description
                                 -|-
-                                CASCADE | 케스케이드
-                                CHINOOK | 치누크
-                                GOLDINGS | 골딩스
-                                FUGGLES | 퍼글스
-                                HALLERTAU | 할러타우
-                                CITRUSSY | 시트러스
+                                CORIANDER | 코리엔더향
+                                ORANGE | 오렌지향
+                                CORIANDER_SEED | 코리엔더시드향
                               items:
                                 type: string
                                 enum:
-                                  - CASCADE
-                                  - CHINOOK
-                                  - GOLDINGS
-                                  - FUGGLES
-                                  - HALLERTAU
-                                  - CITRUSSY
+                                  - CORIANDER
+                                  - ORANGE
+                                  - CORIANDER_SEED
+                    flavorCapsule1:
+                      type: object
+                      description: 플레이버 캡슐1
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                CORIANDER | 코리엔더향
+                                ORANGE | 오렌지향
+                                CORIANDER_SEED | 코리엔더시드향
+                              items:
+                                type: string
+                                enum:
+                                  - CORIANDER
+                                  - ORANGE
+                                  - CORIANDER_SEED
+                    flavorCapsule2:
+                      type: object
+                      description: 플레이버 캡슐2
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                CORIANDER | 코리엔더향
+                                ORANGE | 오렌지향
+                                CORIANDER_SEED | 코리엔더시드향
+                              items:
+                                type: string
+                                enum:
+                                  - CORIANDER
+                                  - ORANGE
+                                  - CORIANDER_SEED
                     beerRemain:
                       type: object
                       description: 진행율
@@ -11957,18 +13369,49 @@ contents:
                       - FUGGLES
                       - HALLERTAU
                       - CITRUSSY
+                hopOilCapsule1:
+                  type: string
+                  description: 홉오일 캡슐1
+                  enum:
+                    - CASCADE
+                    - CHINOOK
+                    - GOLDINGS
+                    - FUGGLES
+                    - HALLERTAU
+                    - CITRUSSY
+                hopOilCapsule2:
+                  type: string
+                  description: 홉오일 캡슐2
+                  enum:
+                    - CASCADE
+                    - CHINOOK
+                    - GOLDINGS
+                    - FUGGLES
+                    - HALLERTAU
+                    - CITRUSSY
                 flavorInfo:
                   type: array
                   description: 플레이버 정보
                   items:
                     type: string
                     enum:
-                      - CASCADE
-                      - CHINOOK
-                      - GOLDINGS
-                      - FUGGLES
-                      - HALLERTAU
-                      - CITRUSSY
+                      - CORIANDER
+                      - ORANGE
+                      - CORIANDER_SEED
+                flavorCapsule1:
+                  type: string
+                  description: 플레이버 캡슐1
+                  enum:
+                    - CORIANDER
+                    - ORANGE
+                    - CORIANDER_SEED
+                flavorCapsule2:
+                  type: string
+                  description: 플레이버 캡슐2
+                  enum:
+                    - CORIANDER
+                    - ORANGE
+                    - CORIANDER_SEED
                 beerRemain:
                   type: integer
                   description: 진행율
@@ -12814,6 +14257,24 @@ contents:
                         enum:
                           - AUTO
                           - NORMAL
+                  cycle:
+                    type: object
+                    description: 세탁 횟수
+                    properties:
+                      cycleCount:
+                        type: object
+                        description: 세탁 횟수
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
                   location:
                     type: object
                     description: 위치
@@ -12988,6 +14449,13 @@ contents:
                     enum:
                       - AUTO
                       - NORMAL
+              cycle:
+                type: object
+                description: 세탁 횟수
+                properties:
+                  cycleCount:
+                    type: integer
+                    description: 세탁 횟수
               location:
                 type: object
                 description: 위치
@@ -13445,421 +14913,458 @@ contents:
           properties:
             washer:
               type: object
+              description: 세탁기
               properties:
                 property:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      runState:
-                        type: object
-                        description: 상태
-                        properties:
-                          currentState:
-                            type: object
-                            description: 현재 상태
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                  type: object
+                  properties:
+                    runState:
+                      type: object
+                      description: 상태
+                      properties:
+                        currentState:
+                          type: object
+                          description: 현재 상태
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - enum
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: array
-                                    description: "Value | Description\n-|-\nPOWER_OFF | 제품 OFF\nINITIAL | 대기 중 상태\nPAUSE | 일시정지\nDETECTING | 옷감량확인\nSOAKING | 불림 상태\nRUNNING\t|\t행정중\nRINSING\t|\t행굼 중\nSPINNING | 탈수중\nEND\t| 세탁완료상태\nRESERVED | 예약상태\nFIRMWARE | 펌웨어 업데이트 중\nDRYING | 건조 중\nCOOL_DOWN\t| 구김방지1\nRINSE_HOLD | 린스 후 일시정지 중\nREFRESHING | 구김방지2 FRESHCARE\nSTEAM_SOFTENING | 스팀소프트닝\nERROR\t| 에러상태\nSMART_GRID_RUN | Smart Grid 동작 상태\nADD_DRAIN\t| 배수 추가 상태\nDETERGENT_AMOUNT | 세제량 표시중\nPREWASH | 예비 세탁 동작 상태\nSHOES_MODULE | 슈즈 건조 동작 상태\nPROOFING | 발수처리 상태\nDISPENSING | 세제 자동 투입 중\nSOFTENING | 유연제량 확인\nCHECKING_TURBIDITY | 탁도감지 중(G+Best모델 AUTOWASH 코스 사용 시)\nCHANGE_CONDITION | 탁도감지 결과를 가지고 자동으로 옵션변경 후 Display\nDISPLAY_LOADSIZE | 옷감량 확인 결과 Display\nFROZEN_PREVENT_INITIAL | 동결방지모드 대기상태\nFROZEN_PREVENT_RUNNING | 동결방지모드 진행상태\nFROZEN_PREVENT_PAUSE | 동결방지모드 멈춤상태\nSLEEP | Sleep 상태"
-                                    items:
-                                      type: string
-                                      enum:
-                                        - POWER_OFF
-                                        - INITIAL
-                                        - PAUSE
-                                        - DETECTING
-                                        - SOAKING
-                                        - RUNNING
-                                        - RINSING
-                                        - SPINNING
-                                        - END
-                                        - RESERVED
-                                        - FIRMWARE
-                                        - DRYING
-                                        - COOL_DOWN
-                                        - RINSE_HOLD
-                                        - REFRESHING
-                                        - STEAM_SOFTENING
-                                        - ERROR
-                                        - SMART_GRID_RUN
-                                        - ADD_DRAIN
-                                        - DETERGENT_AMOUNT
-                                        - PREWASH
-                                        - SHOES_MODULE
-                                        - PROOFING
-                                        - DISPENSING
-                                        - SOFTENING
-                                        - CHECKING_TURBIDITY
-                                        - CHANGE_CONDITION
-                                        - DISPLAY_LOADSIZE
-                                        - FROZEN_PREVENT_INITIAL
-                                        - FROZEN_PREVENT_RUNNING
-                                        - FROZEN_PREVENT_PAUSE
-                                        - SLEEP
-                      operation:
-                        type: object
-                        description: 동작
-                        properties:
-                          washerOperationMode:
-                            type: object
-                            description: 세탁 동작
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - w
-                              type:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - enum
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: array
+                                  description: "Value | Description\n-|-\nPOWER_OFF | 제품 OFF\nINITIAL | 대기 중 상태\nPAUSE | 일시정지\nDETECTING | 옷감량확인\nSOAKING | 불림 상태\nRUNNING\t|\t행정중\nRINSING\t|\t행굼 중\nSPINNING | 탈수중\nEND\t| 세탁완료상태\nRESERVED | 예약상태\nFIRMWARE | 펌웨어 업데이트 중\nDRYING | 건조 중\nCOOL_DOWN\t| 구김방지1\nRINSE_HOLD | 린스 후 일시정지 중\nREFRESHING | 구김방지2 FRESHCARE\nSTEAM_SOFTENING | 스팀소프트닝\nERROR\t| 에러상태\nSMART_GRID_RUN | Smart Grid 동작 상태\nADD_DRAIN\t| 배수 추가 상태\nDETERGENT_AMOUNT | 세제량 표시중\nPREWASH | 예비 세탁 동작 상태\nSHOES_MODULE | 슈즈 건조 동작 상태\nPROOFING | 발수처리 상태\nDISPENSING | 세제 자동 투입 중\nSOFTENING | 유연제량 확인\nCHECKING_TURBIDITY | 탁도감지 중(G+Best모델 AUTOWASH 코스 사용 시)\nCHANGE_CONDITION | 탁도감지 결과를 가지고 자동으로 옵션변경 후 Display\nDISPLAY_LOADSIZE | 옷감량 확인 결과 Display\nFROZEN_PREVENT_INITIAL | 동결방지모드 대기상태\nFROZEN_PREVENT_RUNNING | 동결방지모드 진행상태\nFROZEN_PREVENT_PAUSE | 동결방지모드 멈춤상태\nSLEEP | Sleep 상태"
+                                  items:
+                                    type: string
+                                    enum:
+                                      - POWER_OFF
+                                      - INITIAL
+                                      - PAUSE
+                                      - DETECTING
+                                      - SOAKING
+                                      - RUNNING
+                                      - RINSING
+                                      - SPINNING
+                                      - END
+                                      - RESERVED
+                                      - FIRMWARE
+                                      - DRYING
+                                      - COOL_DOWN
+                                      - RINSE_HOLD
+                                      - REFRESHING
+                                      - STEAM_SOFTENING
+                                      - ERROR
+                                      - SMART_GRID_RUN
+                                      - ADD_DRAIN
+                                      - DETERGENT_AMOUNT
+                                      - PREWASH
+                                      - SHOES_MODULE
+                                      - PROOFING
+                                      - DISPENSING
+                                      - SOFTENING
+                                      - CHECKING_TURBIDITY
+                                      - CHANGE_CONDITION
+                                      - DISPLAY_LOADSIZE
+                                      - FROZEN_PREVENT_INITIAL
+                                      - FROZEN_PREVENT_RUNNING
+                                      - FROZEN_PREVENT_PAUSE
+                                      - SLEEP
+                    operation:
+                      type: object
+                      description: 동작
+                      properties:
+                        washerOperationMode:
+                          type: object
+                          description: 세탁 동작
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - enum
-                              value:
-                                type: object
-                                properties:
-                                  w:
-                                    type: array
-                                    description: |-
-                                      Value | Description
-                                      -|-
-                                      START | 세탁 시작
-                                      STOP | 세탁 정지
-                                      POWER_OFF | 전원 OFF
-                                      WAKE_UP | Wake up
-                                    items:
-                                      type: string
-                                      enum:
-                                        - START
-                                        - STOP
-                                        - POWER_OFF
-                                        - WAKE_UP
-                      remoteControlEnable:
-                        type: object
-                        description: 원격제어설정
-                        properties:
-                          remoteControlEnabled:
-                            type: object
-                            description: 원격 제어 설정 상태
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                                  - w
+                            type:
+                              type: string
+                              enum:
+                                - enum
+                            value:
+                              type: object
+                              properties:
+                                w:
+                                  type: array
+                                  description: |-
+                                    Value | Description
+                                    -|-
+                                    START | 세탁 시작
+                                    STOP | 세탁 정지
+                                    POWER_OFF | 전원 OFF
+                                    WAKE_UP | Wake up
+                                  items:
+                                    type: string
+                                    enum:
+                                      - START
+                                      - STOP
+                                      - POWER_OFF
+                                      - WAKE_UP
+                    remoteControlEnable:
+                      type: object
+                      description: 원격제어설정
+                      properties:
+                        remoteControlEnabled:
+                          type: object
+                          description: 원격 제어 설정 상태
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - boolean
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: array
-                                    description: |-
-                                      Value | Description
-                                      -|-
-                                      TRUE | 원격 제어 가능
-                                      FALSE | 원격 제어 불가능
-                                    items:
-                                      type: boolean
-                                      enum:
-                                        - true
-                                        - false
-                      timer:
-                        type: object
-                        description: 타이머
-                        properties:
-                          remainHour:
-                            type: object
-                            description: 남은 시간(시)
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - boolean
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: array
+                                  description: |-
+                                    Value | Description
+                                    -|-
+                                    TRUE | 원격 제어 가능
+                                    FALSE | 원격 제어 불가능
+                                  items:
+                                    type: boolean
+                                    enum:
+                                      - true
+                                      - false
+                    timer:
+                      type: object
+                      description: 타이머
+                      properties:
+                        remainHour:
+                          type: object
+                          description: 남은 시간(시)
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items:
                                         type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          remainMinute:
-                            type: object
-                            description: 남은 시간(분)
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                        remainMinute:
+                          type: object
+                          description: 남은 시간(분)
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items:
                                         type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          relativeHourToStart:
-                            type: object
-                            description: 세탁 시작 예약 시간(시)
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                                    - w
-                              type:
+                        relativeHourToStart:
+                          type: object
+                          description: 세탁 시작 예약 시간(시)
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                                  - w
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items:
                                         type: integer
-                                      min:
+                                w:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items:
                                         type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                                  w:
-                                    type: object
-                                    properties:
-                                      max:
-                                        type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          relativeMinuteToStart:
-                            type: object
-                            description: 세탁 시작 예약 시간(분)
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                        relativeMinuteToStart:
+                          type: object
+                          description: 세탁 시작 예약 시간(분)
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items:
                                         type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          relativeHourToStop:
-                            type: object
-                            description: 세탁 종료 예약 시간(시)
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                                    - w
-                              type:
+                        relativeHourToStop:
+                          type: object
+                          description: 세탁 종료 예약 시간(시)
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                                  - w
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items:
                                         type: integer
-                                      min:
+                                w:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items:
                                         type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                                  w:
-                                    type: object
-                                    properties:
-                                      max:
-                                        type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          relativeMinuteToStop:
-                            type: object
-                            description: 세탁 종료 예약 시간(분)
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                        relativeMinuteToStop:
+                          type: object
+                          description: 세탁 종료 예약 시간(분)
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items:
                                         type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          totalHour:
-                            type: object
-                            description: 세탁 전체 시간(시)
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                        totalHour:
+                          type: object
+                          description: 세탁 전체 시간(시)
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items:
                                         type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                          totalMinute:
-                            type: object
-                            description: 세탁 전체 시간(분)
-                            properties:
-                              mode:
-                                type: array
-                                items:
-                                  type: string
-                                  enum:
-                                    - r
-                              type:
+                        totalMinute:
+                          type: object
+                          description: 세탁 전체 시간(분)
+                          properties:
+                            mode:
+                              type: array
+                              items:
                                 type: string
                                 enum:
-                                  - range
-                              value:
-                                type: object
-                                properties:
-                                  r:
-                                    type: object
-                                    properties:
-                                      max:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - range
+                            value:
+                              type: object
+                              properties:
+                                r:
+                                  type: object
+                                  properties:
+                                    max:
+                                      type: integer
+                                    min:
+                                      type: integer
+                                    step:
+                                      type: integer
+                                    except:
+                                      type: array
+                                      items:
                                         type: integer
-                                      min:
-                                        type: integer
-                                      step:
-                                        type: integer
-                                      except:
-                                        type: array
-                      detergent:
-                        type: object
-                        description: 세제 설정
-                        properties:
-                          detergentSetting:
-                            type: string
-                            description: |-
-                              Value | Description
-                              -|-
-                              AUTO | 자동 설정 기기
-                              NORMAL | 일반 기기
-                            enum:
-                              - AUTO
-                              - NORMAL
-                      location:
-                        type: object
-                        description: 위치
-                        properties:
-                          locationName:
-                            type: string
-                            description: |-
-                              Value | Description
-                              -|-
-                              MAIN | main washer
-                              MINI | mini washer
-                            enum:
-                              - MAIN
-                              - MINI
+                    detergent:
+                      type: object
+                      description: 세제 설정
+                      properties:
+                        detergentSetting:
+                          type: string
+                          description: |-
+                            Value | Description
+                            -|-
+                            AUTO | 자동 설정 기기
+                            NORMAL | 일반 기기
+                          enum:
+                            - AUTO
+                            - NORMAL
+                    cycle:
+                      type: object
+                      description: 세탁 횟수
+                      properties:
+                        cycleCount:
+                          type: object
+                          description: 세탁 횟수
+                          properties:
+                            mode:
+                              type: array
+                              items:
+                                type: string
+                                enum:
+                                  - r
+                            type:
+                              type: string
+                              enum:
+                                - number
+                    location:
+                      type: object
+                      description: 위치
+                      properties:
+                        locationName:
+                          type: string
+                          description: |-
+                            Value | Description
+                            -|-
+                            MAIN | main washer
+                            MINI | mini washer
+                          enum:
+                            - MAIN
+                            - MINI
                 notification:
                   type: object
                   properties:
@@ -13916,6 +15421,7 @@ contents:
                       - PART_MALFUNCTION_ERROR
             dryer:
               type: object
+              description: 건조기
               properties:
                 property:
                   type: object
@@ -14353,6 +15859,13 @@ contents:
                       enum:
                         - AUTO
                         - NORMAL
+                cycle:
+                  type: object
+                  description: 세탁 횟수
+                  properties:
+                    cycleCount:
+                      type: integer
+                      description: 세탁 횟수
                 location:
                   type: object
                   description: 위치
@@ -15391,6 +16904,7 @@ contents:
                             type: string
                             enum:
                               - r
+                              - w
                         type:
                           type: string
                           enum:
@@ -15410,6 +16924,76 @@ contents:
                                 enum:
                                   - 'ON'
                                   - 'OFF'
+                            w:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON | 온수 가동 시작
+                                OFF | 온수 가동 끄기
+                              items:
+                                type: string
+                                enum:
+                                  - 'ON'
+                                  - 'OFF'
+                    roomTempMode:
+                      type: object
+                      description: 방온도 모드 설정
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                AIR | 기온 기준 방온도 설정
+                                WATER | 입출수 기준 방온도 설정 
+                              items:
+                                type: string
+                                enum:
+                                  - AIR
+                                  - WATER
+                    roomWaterMode:
+                      type: object
+                      description: 방온도 입출수 모드 설정
+                      properties:
+                        mode:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - r
+                        type:
+                          type: string
+                          enum:
+                            - enum
+                        value:
+                          type: object
+                          properties:
+                            r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                IN_WATER | 입수 기준 방온도 설정
+                                OUT_WATER | 출수 기준 방온도 설정 
+                              items:
+                                type: string
+                                enum:
+                                  - IN_WATER
+                                  - OUT_WATER
                 temperature:
                   type: object
                   description: 온도
@@ -15528,7 +17112,7 @@ contents:
                             - number
                     unit:
                       type: object
-                      description: 온도
+                      description: 단위
                       properties:
                         mode:
                           type: array
@@ -15553,6 +17137,402 @@ contents:
                                 type: string
                                 enum:
                                   - C
+                hotWaterTemperatureInUnits:
+                  type: array
+                  description: 온도
+                  items:
+                    type: object
+                    properties:
+                      currentTemperature:
+                        type: object
+                        description: 온수 모드 현재 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      targetTemperature:
+                        type: object
+                        description: 온수 모드 희망 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              r:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      maxTemperature:
+                        type: object
+                        description: 온수 모드 최대 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      minTemperature:
+                        type: object
+                        description: 온수 모드 최소 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      unit:
+                        type: string
+                        enum:
+                          - C
+                          - F
+                        description: |-
+                          Value | Description
+                          -|-
+                          C | 섭씨
+                          F | 화씨
+                roomTemperatureInUnits:
+                  type: array
+                  description: 온도
+                  items:
+                    type: object
+                    properties:
+                      currentTemperature:
+                        type: object
+                        description: 현재 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      airCurrentTemperature:
+                        type: object
+                        description: 현재 기온
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      outWaterCurrentTemperature:
+                        type: object
+                        description: 출수 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      inWaterCurrentTemperature:
+                        type: object
+                        description: 입수 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      targetTemperature:
+                        type: object
+                        description: 희망 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      airCoolTargetTemperature:
+                        type: object
+                        description: 방온도 냉방 희망 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      airHeatTargetTemperature:
+                        type: object
+                        description: 방온도 난방 희망 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      waterCoolTargetTemperature:
+                        type: object
+                        description: 입출수 온도 냉방 희망 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      waterHeatTargetTemperature:
+                        type: object
+                        description: 방온도 난방 희망 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - w
+                          type:
+                            type: string
+                            enum:
+                              - range
+                          value:
+                            type: object
+                            properties:
+                              w:
+                                type: object
+                                properties:
+                                  max:
+                                    type: integer
+                                  min:
+                                    type: integer
+                                  step:
+                                    type: integer
+                      airHeatMaxTemperature:
+                        type: object
+                        description: 난방 최대 기온
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      airHeatMinTemperature:
+                        type: object
+                        description: 난방 최소 기온
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      airCoolMaxTemperature:
+                        type: object
+                        description: 냉방 최대 기온
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      airCoolMinTemperature:
+                        type: object
+                        description: 냉방 최소 기온
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      waterHeatMaxTemperature:
+                        type: object
+                        description: 난방 최대 입출수 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      waterHeatMinTemperature:
+                        type: object
+                        description: 난방 최소 입출수 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      waterCoolMaxTemperature:
+                        type: object
+                        description: 냉방 최대 입출수 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      waterCoolMinTemperature:
+                        type: object
+                        description: 냉방 최소 입출수 온도
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
+                      unit:
+                        type: string
+                        enum:
+                          - C
+                          - F
+                        description: |-
+                          Value | Description
+                          -|-
+                          C | 섭씨
+                          F | 화씨
         system_boiler-object:
           type: object
           title: System_Boiler
@@ -15584,6 +17564,18 @@ contents:
                   enum:
                     - 'ON'
                     - 'OFF'
+                roomTempMode:
+                  type: string
+                  description: 본체 동작
+                  enum:
+                    - AIR
+                    - WATER
+                roomWaterMode:
+                  type: string
+                  description: 본체 동작
+                  enum:
+                    - IN_WATER
+                    - OUT_WATER
             temperature:
               type: object
               description: 온도
@@ -15612,11 +17604,98 @@ contents:
                 coolMinTemperature:
                   type: number
                   description: 냉방 최소 온도
-            unit:
-              type: string
-              description: 단위
-              enum:
-                - C
+              unit:
+                type: string
+                description: 단위
+                enum:
+                  - C
+            hotWaterTemperatureInUnits:
+              type: array
+              description: 온도
+              items:
+                type: object
+                properties:
+                  currentTemperature:
+                    type: number
+                    description: 온수 모드 현재 온도
+                  targetTemperature:
+                    type: number
+                    description: 온수 모드 희망 온도
+                  maxTemperature:
+                    type: number
+                    description: 온수 모드 최대 온도
+                  minTemperature:
+                    type: number
+                    description: 온수 모드 최소 온도
+                  unit:
+                    type: string
+                    description: 단위
+                    enum:
+                      - C
+                      - F
+            roomTemperatureInUnits:
+              type: array
+              description: 온도
+              items:
+                type: object
+                properties:
+                  currentTemperature:
+                    type: number
+                    description: 현재 온도
+                  airCurrentTemperature:
+                    type: number
+                    description: 현재 기온
+                  outWaterCurrentTemperature:
+                    type: number
+                    description: 출수 온도
+                  inWaterCurrentTemperature:
+                    type: number
+                    description: 입수 온도
+                  targetTemperature:
+                    type: number
+                    description: 희망 온도
+                  airCoolTargetTemperature:
+                    type: number
+                    description: 방온도 냉방 희망 온도
+                  airHeatTargetTemperature:
+                    type: number
+                    description: 방온도 난방 희망 온도
+                  waterCoolTargetTemperature:
+                    type: number
+                    description: 입출수 온도 냉방 희망 온도
+                  waterHeatTargetTemperature:
+                    type: number
+                    description: 방온도 난방 희망 온도
+                  airHeatMaxTemperature:
+                    type: number
+                    description: 난방 최대 기온
+                  airHeatMinTemperature:
+                    type: number
+                    description: 난방 최소 기온
+                  airCoolMaxTemperature:
+                    type: number
+                    description: 냉방 최대 기온
+                  airCoolMinTemperature:
+                    type: number
+                    description: 냉방 최소 기온
+                  waterHeatMaxTemperature:
+                    type: number
+                    description: 난방 최대 입출수 온도
+                  waterHeatMinTemperature:
+                    type: number
+                    description: 난방 최소 입출수 온도
+                  waterCoolMaxTemperature:
+                    type: number
+                    description: 냉방 최대 입출수 온도
+                  waterCoolMinTemperature:
+                    type: number
+                    description: 냉방 최소 입출수 온도
+                  unit:
+                    type: string
+                    description: 단위
+                    enum:
+                      - C
+                      - F
         stick_cleaner-profile:
           type: object
           title: Stick_Cleaner
@@ -16432,6 +18511,24 @@ contents:
                         enum:
                           - AUTO
                           - NORMAL
+                  cycle:
+                    type: object
+                    description: 세탁 횟수
+                    properties:
+                      cycleCount:
+                        type: object
+                        description: 세탁 횟수
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
                   location:
                     type: object
                     description: 위치
@@ -16613,6 +18710,13 @@ contents:
                     enum:
                       - AUTO
                       - NORMAL
+              cycle:
+                type: object
+                description: 세탁 횟수
+                properties:
+                  cycleCount:
+                    type: integer
+                    description: 세탁 횟수
               location:
                 type: object
                 description: 위치
@@ -17056,6 +19160,24 @@ contents:
                         enum:
                           - AUTO
                           - NORMAL
+                  cycle:
+                    type: object
+                    description: 세탁 횟수
+                    properties:
+                      cycleCount:
+                        type: object
+                        description: 세탁 횟수
+                        properties:
+                          mode:
+                            type: array
+                            items:
+                              type: string
+                              enum:
+                                - r
+                          type:
+                            type: string
+                            enum:
+                              - number
                   location:
                     type: object
                     description: 위치
@@ -17222,6 +19344,13 @@ contents:
                     enum:
                       - AUTO
                       - NORMAL
+              cycle:
+                type: object
+                description: 세탁 횟수
+                properties:
+                  cycleCount:
+                    type: integer
+                    description: 세탁 횟수
               location:
                 type: object
                 description: 위치
@@ -24455,6 +26584,87 @@ contents:
                         max: -16
                         min: -21
                         step: 1
+              temperatureInUnits:
+                - targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 8
+                        min: 1
+                        step: 1
+                      w:
+                        max: 8
+                        min: 1
+                        step: 1
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 46
+                        min: 33
+                        step: 1
+                      w:
+                        max: 46
+                        min: 33
+                        step: 1
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                  locationName: FRIDGE
+                - targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: -13
+                        min: -21
+                        step: 1
+                      w:
+                        max: -13
+                        min: -21
+                        step: 1
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 8
+                        min: -6
+                        step: 1
+                        except:
+                          - -5
+                          - 7
+                      w:
+                        max: 8
+                        min: -6
+                        step: 1
+                        except:
+                          - -5
+                          - 7
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                  locationName: FREEZER
               refrigeration:
                 expressMode:
                   type: boolean
@@ -24525,13 +26735,24 @@ contents:
               - locationName: FREEZER
                 targetTemperature: -13
                 unit: C
+            temperatureInUnits:
+              - targetTemperatureC: 7
+                targetTemperatureF: 46
+                unit: C
+                locationName: FRIDGE
+              - targetTemperatureC: -16
+                targetTemperatureF: 8
+                unit: C
+                locationName: FREEZER
             waterFilterInfo:
               usedTime: 0
         refrigerator-command-example:
-          description: 냉장고 - 절전 모드 설정
+          description: 냉장고 - 온도 설정
           value:
-            powerSave:
-              powerSaveEnabled: true
+            temperature:
+              targetTemperature: 0
+              locationName: FRIDGE
+              unit: C
         washer-profile-example:
           value:
             error:
@@ -24551,6 +26772,11 @@ contents:
             property:
               - detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 location:
                   locationName: MAIN
                 operation:
@@ -24666,6 +26892,8 @@ contents:
                 remoteControlEnabled: true
               runState:
                 currentState: INITIAL
+              cycle:
+                cycleCount: 0
               timer:
                 relativeHourToStop: 3
                 relativeMinuteToStop: 0
@@ -24823,12 +27051,89 @@ contents:
                       - HIGH
                       - LOW
                       - MID
+              windDirection:
+                airGuideWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                swirlWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                highCeilingWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                concentrationWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                autoFitWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
+                forestWind:
+                  type: boolean
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - true
+                      - false
+                    w:
+                      - true
+                      - false
               filterInfo:
                 filterLifetime:
                   mode:
                     - r
                   type: number
                 usedTime:
+                  mode:
+                    - r
+                  type: number
+                filterRemainPercent:
                   mode:
                     - r
                   type: number
@@ -24967,6 +27272,168 @@ contents:
                   value:
                     r:
                       - C
+              temperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 0.5
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 0.5
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 1
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 1
+                  unit: F
+              twoSetTemperature:
+                currentTemperature:
+                  type: number
+                  mode:
+                    - r
+                unit:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - C
+                coolTargetTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 37.5
+                      min: 10
+                      step: 0.5
+                    w:
+                      max: 37.5
+                      min: 10
+                      step: 0.5
+                heatTargetTemperature:
+                  type: range
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      max: 32
+                      min: 4
+                      step: 0.5
+                    w:
+                      max: 32
+                      min: 4
+                      step: 0.5
+                twoSetEnabled:
+                  type: boolean
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - true
+                      - false
+              twoSetTemperatureInUnits:
+                - unit: C
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 37.5
+                        min: 10
+                        step: 0.5
+                      w:
+                        max: 37.5
+                        min: 10
+                        step: 0.5
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 32
+                        min: 4
+                        step: 0.5
+                      w:
+                        max: 32
+                        min: 4
+                        step: 0.5
+                - unit: F
+                  coolTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 99
+                        min: 50
+                        step: 1
+                      w:
+                        max: 99
+                        min: 50
+                        step: 1
+                  heatTargetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 90
+                        min: 40
+                        step: 1
+                      w:
+                        max: 90
+                        min: 40
+                        step: 1
               timer:
                 relativeHourToStart:
                   mode:
@@ -25010,32 +27477,78 @@ contents:
                       - UNSET
                     w:
                       - UNSET
+              display:
+                light:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - 'ON'
+                      - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
         air_conditioner-object-example:
           value:
             airConJobMode:
-              currentJobMode: FAN
+              currentJobMode: AUTO
+            airQualitySensor:
+              PM1: 27
+              PM2: 35
+              PM10: 49
+              humidity: 27
+            temperature:
+              currentTemperature: 10.5
+              targetTemperature: 14
+              unit: C
+            temperatureInUnits:
+              - currentTemperature: 10.5
+                targetTemperature: 14
+                unit: C
+              - currentTemperature: 51
+                targetTemperature: 58
+                unit: F
+            twoSetTemperature:
+              currentTemperature: 10.5
+              coolTargetTemperature: 29.5
+              heatTargetTemperature: 14
+              unit: C
+              twoSetEnabled: true
+            twoSetTemperatureInUnits:
+              - coolTargetTemperature: 29.5
+                heatTargetTemperature: 14
+                unit: C
+              - coolTargetTemperature: 85
+                heatTargetTemperature: 58
+                unit: F
+            filterInfo:
+              filterRemainPercent: 98
             airFlow:
               windStrength: HIGH
-              windStep: 5
+            windDirection:
+              swirlWind: false
+              forestWind: false
+              airGuideWind: false
+              highCeilingWind: false
+              autoFitWind: false
+              concentrationWind: false
             operation:
-              airConOperationMode: POWER_OFF
-            powerSave:
-              powerSaveEnabled: false
-            temperature:
-              currentTemperature: 27
-              targetTemperature: 24.5
-              unit: C
+              airConOperationMode: POWER_ON
+              airCleanOperationMode: 'ON'
             timer:
-              absoluteStopTimer: UNSET
               absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
             sleepTimer:
               relativeStopTimer: UNSET
+            display:
+              light: 'OFF'
         air_conditioner-command-example:
-          description: 에어컨 - 지정한 켜짐 예약시간
           value:
             timer:
-              absoluteHourToStart: 10
-              absoluteMinuteToStart: 36
+              absoluteHourToStart: 1
+              absoluteMinuteToStart: 30
         air_purifier-profile-example:
           value:
             notification:
@@ -25673,7 +28186,7 @@ contents:
               absoluteStartTimer: UNSET
               absoluteStopTimer: UNSET
         dehumidifier-command-example:
-          description: 가습기 - 운전 모드
+          description: 가습기 - 제습 모드
           value:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
@@ -25975,6 +28488,190 @@ contents:
           value:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
+        ventilator-profile-example:
+          value:
+            property:
+              ventJobMode:
+                currentJobMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - VENT_NATURE
+                      - VENT_AUTO
+                      - VENT_HEAT_EXCHANGE
+                    w:
+                      - VENT_NATURE
+                      - VENT_AUTO
+                      - VENT_HEAT_EXCHANGE
+              operation:
+                ventOperationMode:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - POWER_ON
+                      - POWER_OFF
+                    w:
+                      - POWER_ON
+                      - POWER_OFF
+              temperature:
+                currentTemperature:
+                  type: range
+                  mode:
+                    - r
+                  value:
+                    r:
+                      max: 39.5
+                      min: 10.5
+                      step: 0.5
+                unit:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - C
+              airQualitySensor:
+                PM1:
+                  type: number
+                  mode:
+                    - r
+                PM2:
+                  type: number
+                  mode:
+                    - r
+                PM10:
+                  type: number
+                  mode:
+                    - r
+                CO2:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - INVALID
+                      - GOOD
+                      - NORMAL
+                      - BAD
+                      - VERY_BAD
+              airFlow:
+                windStrength:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - AUTO
+                      - HIGH
+                      - POWER
+                      - LOW
+                    w:
+                      - AUTO
+                      - HIGH
+                      - POWER
+                      - LOW
+              timer:
+                absoluteHourToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteStopTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+                absoluteHourToStart:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteMinuteToStart:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                absoluteStartTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+              sleepTimer:
+                relativeHourToStop:
+                  type: number
+                  mode:
+                    - r
+                    - w
+                relativeMinuteToStop:
+                  type: number
+                  mode:
+                    - r
+                relativeStopTimer:
+                  type: enum
+                  mode:
+                    - r
+                    - w
+                  value:
+                    r:
+                      - SET
+                      - UNSET
+                    w:
+                      - UNSET
+            notification:
+              push:
+                - NEED_TO_CHANGE_DUST_FILTER
+                - NEED_TO_CHANGE_PRE_FILTER
+        ventilator-object-example:
+          value:
+            ventJobMode:
+              currentJobMode: VENT_NATURE
+            operation:
+              ventOperationMode: POWER_ON
+            airQualitySensor:
+              PM1: 4
+              PM2: 4
+              PM10: 5
+              CO2: GOOD
+            temperature:
+              currentTemperature: 26.5
+              unit: C
+            airFlow:
+              windStrength: AUTO
+            timer:
+              absoluteStartTimer: UNSET
+              absoluteStopTimer: UNSET
+            sleepTimer:
+              relativeStopTimer: UNSET
+        ventilator-command-example:
+          description: 환기 - 타이머 설정
+          value:
+            timer:
+              absoluteHourToStart: 10
+              absoluteMinuteToStart: 20
         robot_cleaner-profile-example:
           title: Robot_Cleaner
           value:
@@ -26086,7 +28783,7 @@ contents:
               level: FULL
         robot_cleaner-command-example:
           title: Robot_Cleaner
-          description: 로봇청소기 - 청소 모드
+          description: 로봇청소기 - 충전대로 이동
           value:
             operation:
               cleanOperationMode: HOMING
@@ -26194,10 +28891,15 @@ contents:
           title: Oven
           description: 오븐 - 오븐 동작
           value:
-            location:
-              locationName: LOWER
             operation:
               ovenOperationMode: START
+            location:
+              locationName: LOWER
+            timer:
+              targetHour: 1
+              targetMinute: 5
+            cook:
+              cookMode: BAKE
         dish_washer-profile-example:
           value:
             error:
@@ -26364,7 +29066,7 @@ contents:
               totalHour: 0
               totalMinute: 0
         dish_washer-command-example:
-          description: 식기세척기 - 운전 모드
+          description: 식기세척기 - 행정 시작
           value:
             operation:
               dishWasherOperationMode: START
@@ -26480,7 +29182,7 @@ contents:
               totalHour: 0
               totalMinute: 0
         styler-command-example:
-          description: 스타일러 - 운전 모드
+          description: 스타일러 - 행정 시작
           value:
             operation:
               stylerOperationMode: START
@@ -26557,7 +29259,7 @@ contents:
             operation:
               ceilingfanOperationMode: POWER_ON
         ceiling_fan-command-example:
-          description: 실링팬 - 운전 모드
+          description: 실링팬 - 가동 시작
           value:
             operation:
               ceilingfanOperationMode: POWER_ON
@@ -26601,6 +29303,89 @@ contents:
                         min: 5
                         step: 1
                         except: []
+              temperatureInUnits:
+                - locationName: WINE_UPPER
+                  targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                      w:
+                        max: 18
+                        min: 11
+                        step: 1
+                        except: []
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
+                - locationName: WINE_LOWER
+                  targetTemperatureC:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                  targetTemperatureF:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                      w:
+                        max: 11
+                        min: 5
+                        step: 1
+                        except: []
+                  unit:
+                    type: enum
+                    mode:
+                      - r
+                    value:
+                      r:
+                        - C
+                        - F
               operation:
                 lightStatus:
                   type: range
@@ -26621,20 +29406,31 @@ contents:
                 - DOOR_IS_OPEN
         wine_cellar-object-example:
           value:
+            operation:
+              optimalHumidity: 'OFF'
             temperature:
-              - targetTemperature: 18
+              - locationName: WINE_UPPER
+                targetTemperature: 18
+                unit: C
+              - locationName: WINE_LOWER
+                targetTemperature: 11
+                unit: C
+            temperatureInUnits:
+              - targetTemperatureC: 18
+                targetTemperatureF: 18
                 unit: C
                 locationName: WINE_UPPER
-              - targetTemperature: 18
+              - targetTemperatureC: 11
+                targetTemperatureF: 11
                 unit: C
                 locationName: WINE_LOWER
-            operation:
-              lightStatus: 100
         wine_cellar-command-example:
-          description: 와인셀러 - 조명 밝기
+          description: 와인셀러 - 온도 제어
           value:
-            operation:
-              lightStatus: 90
+            temperature:
+              locationName: WINE_LOWER
+              targetTemperature: 6
+              unit: C
         kimchi_refrigerator-profile-example:
           value:
             notification:
@@ -26718,10 +29514,50 @@ contents:
                       - ORANGE
                       - CORIANDER
                       - CORIANDER_SEED
+                flavorCapsule1:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ORANGE
+                      - CORIANDER
+                flavorCapsule2:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - ORANGE
+                      - CORIANDER_SEED
                 hopOilInfo:
                   mode:
                     - r
                   type: list
+                  value:
+                    r:
+                      - FUGGLES
+                      - CASCADE
+                      - HALLERTAU
+                      - CITRUSSY
+                      - GOLDINGS
+                      - CHINOOK
+                hopOilCapsule1:
+                  mode:
+                    - r
+                  type: enum
+                  value:
+                    r:
+                      - FUGGLES
+                      - CASCADE
+                      - HALLERTAU
+                      - CITRUSSY
+                      - GOLDINGS
+                      - CHINOOK
+                hopOilCapsule2:
+                  mode:
+                    - r
+                  type: enum
                   value:
                     r:
                       - FUGGLES
@@ -26809,9 +29645,13 @@ contents:
               yeastInfo: AMERICAN_ALE
               hopOilInfo:
                 - CASCADE
+              hopOilCapsule1: CASCADE
+              hopOilCapsule2: CASCADE
               flavorInfo:
                 - CORIANDER
                 - CORIANDER_SEED
+              flavorCapsule1: CORIANDER
+              flavorCapsule2: CORIANDER_SEED
               beerRemain: 1
             timer:
               elapsedDayState: 0
@@ -27083,6 +29923,11 @@ contents:
             property:
               - detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 location:
                   locationName: MAIN
                 operation:
@@ -27203,6 +30048,8 @@ contents:
                 locationName: MAIN
               remoteControlEnable:
                 remoteControlEnabled: false
+              cycle:
+                cycleCount: 0
               runState:
                 currentState: END
               timer:
@@ -27213,7 +30060,7 @@ contents:
                 totalHour: 0
                 totalMinute: 0
         washtower_washer-command-example:
-          description: 워시타워 세탁기 - 세탁 시작
+          description: 워시타워 (세탁기) - 세탁 시작
           value:
             operation:
               washerOperationMode: START
@@ -27321,7 +30168,7 @@ contents:
               totalHour: 0
               totalMinute: 0
         washtower_dryer-command-example:
-          description: 워시타워(건조기) - 전원 POWER_OFF
+          description: 워시타워 (건조기) - 전원 POWER_OFF
           value:
             operation:
               dryerOperationMode: POWER_OFF
@@ -27381,6 +30228,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: AUTO
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -27531,6 +30383,8 @@ contents:
                 currentState: POWER_OFF
               remoteControlEnable:
                 remoteControlEnabled: false
+              cycle:
+                cycleCount: 0
               timer:
                 remainHour: 0
                 remainMinute: 0
@@ -27802,10 +30656,15 @@ contents:
               remoteControlEnable:
                 remoteControlEnabled: false
         cooktop-command-example:
-          description: 쿡탑 - 전원 OFF
+          description: 쿡탑 - 파워 레벨, 타이머 설정
           value:
-            operation:
-              operationMode: POWER_OFF
+            power:
+              powerLevel: 3
+            timer:
+              remainHour: 0
+              remainMinute: 10
+            location:
+              locationName: LEFT_FRONT
         hood-profile-example:
           value:
             property:
@@ -27879,10 +30738,12 @@ contents:
               remainMinute: 3
               remainSecond: 25
         hood-command-example:
-          description: 후드 - 램프 밝기
+          description: 후드 - 램프 밝기, 팬 속도 제어
           value:
             lamp:
-              lampBrightness: 0
+              lampBrightness: 1
+            ventilation:
+              fanSpeed: 0
         microwave_oven-profile-example:
           value:
             property:
@@ -27959,7 +30820,7 @@ contents:
             lamp:
               lampBrightness: 0
         microwave_oven-command-example:
-          description: 전자레인지
+          description: 전자레인지 -  램프 밝기, 팬 속도 제어
           value:
             lamp:
               lampBrightness: 1
@@ -27999,11 +30860,31 @@ contents:
                 hotWaterMode:
                   mode:
                     - r
+                    - w
                   type: enum
                   value:
                     r:
                       - 'ON'
                       - 'OFF'
+                    w:
+                      - 'ON'
+                      - 'OFF'
+                roomTempMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - AIR
+                      - WATER
+                roomWaterMode:
+                  type: enum
+                  mode:
+                    - r
+                  value:
+                    r:
+                      - OUT_WATER
+                      - IN_WATER
               temperature:
                 currentTemperature:
                   mode:
@@ -28044,17 +30925,267 @@ contents:
                   value:
                     r:
                       - C
+              hotWaterTemperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 80
+                        min: 30
+                        step: 1
+                      w:
+                        max: 80
+                        min: 30
+                        step: 1
+                  maxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  minTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: range
+                    mode:
+                      - r
+                      - w
+                    value:
+                      r:
+                        max: 176
+                        min: 86
+                        step: 2
+                      w:
+                        max: 176
+                        min: 86
+                        step: 2
+                  maxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  minTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: F
+              roomTemperatureInUnits:
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  outWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  inWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 18
+                        step: 1
+                  airHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 30
+                        min: 16
+                        step: 1
+                  waterCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 24
+                        min: 5
+                        step: 1
+                  waterHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 57
+                        min: 14
+                        step: 1
+                  airHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: C
+                - currentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  outWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  inWaterCurrentTemperature:
+                    type: number
+                    mode:
+                      - r
+                  targetTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 64
+                        step: 2
+                  airHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 86
+                        min: 60
+                        step: 2
+                  waterCoolTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 76
+                        min: 40
+                        step: 2
+                  waterHeatTargetTemperature:
+                    type: range
+                    mode:
+                      - w
+                    value:
+                      w:
+                        max: 134
+                        min: 58
+                        step: 2
+                  airHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  airCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterHeatMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMaxTemperature:
+                    type: number
+                    mode:
+                      - r
+                  waterCoolMinTemperature:
+                    type: number
+                    mode:
+                      - r
+                  unit: F
         system_boiler-object-example:
           value:
             boilerJobMode:
               currentJobMode: COOL
             operation:
-              boilerOperationMode: POWER_ON
-              hotWaterMode: 'ON'
+              boilerOperationMode: POWER_OFF
+              hotWaterMode: 'OFF'
+              roomTempMode: AIR
+              roomWaterMode: OUT_WATER
             temperature:
               currentTemperature: 40
               targetTemperature: 18
               unit: C
+            hotWaterTemperatureInUnits:
+              - currentTemperature: 0
+                unit: C
+              - currentTemperature: 32
+                unit: F
+            roomTemperatureInUnits:
+              - airCurrentTemperature: 40
+                targetTemperature: 18
+                currentTemperature: 40
+                unit: C
+              - airCurrentTemperature: 104
+                targetTemperature: 64
+                currentTemperature: 104
+                unit: F
         system_boiler-command-example:
           description: 시스템 보일러 - 전원 ON
           value:
@@ -28229,6 +31360,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: AUTO
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -28326,6 +31462,8 @@ contents:
                 relativeMinuteToStop: 0
                 totalHour: 0
                 totalMinute: 0
+              cycle:
+                cycleCount: 0
               location:
                 locationName: MAIN
         main_washcombo-command-example:
@@ -28384,6 +31522,11 @@ contents:
                         - POWER_OFF
                 detergent:
                   detergentSetting: NORMAL
+                cycle:
+                  cycleCount:
+                    type: number
+                    mode:
+                      - r
                 remoteControlEnable:
                   remoteControlEnabled:
                     type: boolean
@@ -28479,6 +31622,8 @@ contents:
                 relativeMinuteToStop: 0
                 totalHour: 0
                 totalMinute: 0
+              cycle:
+                cycleCount: 0
               location:
                 locationName: MINI
         mini_washcombo-command-example:
@@ -30937,6 +34082,7 @@ contents:
           - main_washcombo
           - mini_washcombo
           - humidifier
+          - ventilator
       - name: LG BECON Cloud
         tags:
           - odu
