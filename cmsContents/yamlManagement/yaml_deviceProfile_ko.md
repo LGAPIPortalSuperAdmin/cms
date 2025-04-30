@@ -36,7 +36,7 @@ contents:
       - name: device type
         x-displayName: 디바이스 타입
         x-traitTag: true
-        description: "**디바이스 타입**은 디바이스의 특성을 구분하며 **디바이스 목록 조회 API** 응답에서 종류를 구분합니다. 디바이스 프로파일은 이 디바이스 타입에 따라 정의됩니다.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | 냉장고 | O | O |\n  | DEVICE_WASHER | 세탁기 | O | O |\n  | DEVICE_DRYER | 건조기 | O | O |\n  | DEVICE_AIR_CONDITIONER | 에어컨 | O | O |\n  | DEVICE_AIR_PURIFIER | 공기청정기 | O | O |\n  | DEVICE_ROBOT_CLEANER | 로봇청소기 | O | O |\n  | DEVICE_OVEN | 오븐 | O | O |\n  | DEVICE_DISH_WASHER | 식기세척기 | O | O |\n  | DEVICE_STYLER | 스타일러 | O | O |\n  | DEVICE_WATER_PURIFIER | 정수기 | O | O |\n  | DEVICE_DEHUMIDIFIER | 제습기 | O | O |\n  | DEVICE_CEILING_FAN | 실링팬 | O | O |\n  | DEVICE_WINE_CELLAR | 와인셀러 | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | 김치냉장고 | O | O |\n  | DEVICE_HOME_BREW | 홈브루 | O | O |\n  | DEVICE_PLANT_CULTIVATOR | 식물재배기 | O | O |\n  | DEVICE_WASHTOWER_WASHER | 워시타워(세탁기) | O | O |\n  | DEVICE_WASHTOWER_DRYER | 워시타워(건조기) | O | O |\n  | DEVICE_WASHTOWER | 워시타워 | O | O |\n  | DEVICE_COOKTOP | 쿡탑 | O | O |\n  | DEVICE_HOOD | 후드 | O | O |\n  | DEVICE_MICROWAVE_OVEN | 전자레인지 | O | O |\n  | DEVICE_SYSTEM_BOILER | 시스템 보일러 | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | 공기청정팬 | O | O |\n  | DEVICE_STICK_CLEANER | 스틱청소기 | O | O |\n  | DEVICE_WATER_HEATER | 온수기 | O | O |\n  | DEVICE_WASHCOMBO_MAIN | 워시콤보 (메인) | O | O |\n  | DEVICE_WASHCOMBO_MINI | 워시콤보 (미니) | O | O |\n  | DEVICE_HUMIDIFIER | 가습기 | O | O |\n  | DEVICE_ODU | BECON Cloud에 등록된 SAC 실외기 | X | O |\n  | DEVICE_IDU | BECON Cloud에 등록된 SAC 실내기 | X | O |\n  | DEVICE_SIGNAGE | Business Cloud에 등록된 사이니지 | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | 스마트 모션 센서 | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | 스마트 온습도 센서 | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | 스마트 도어 센서 | X | O |\n  | DEVICE_HEJ_BUTTON | 스마트 버튼 | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | 스마트 조명 스위치 | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | 스마트 도어락  | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | 스마트 푸쉬풀 도어락 | X | O |\n  | DEVICE_HEJ_PLUG | 스마트 플러그 | X | O |\n  | DEVICE_HEJ_PLUG_MINI | 스마트 플러그 미니 | X | O |\n  | DEVICE_HEJ_BULB_WHITE | 스마트 전구 (화이트) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | 스마트 전구 (컬러) | X | O |\n  | DEVICE_HEJ_LINE_LED | 스마트 라인 LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | 스마트 전동 커튼 컨트롤러 | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | 스마트 전동 블라인드 | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | 스위치 스트립 | X | O |\n  | DEVICE_HEJ_STARLIGHT | 스마트 스타 라이트 | X | O |\n  | DEVICE_HEJ_DOORBELL | 스마트 도어벨 | X | O |\n  | DEVICE_HEJ_PET_FEEDER | 스마트 펫 급식기 | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | 스마트 홈 카메라 | X | O |\n  | DEVICE_HEJ_SYNC_BOX | 싱크 박스 | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | 싱크 박스 서브 | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| 스마트 가스 감지 센서 | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | 스마트 화재 감지 센서 | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | 스마트 누수 감지 센서 | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | 스마트 온습도계 | X | O |\n  | DEVICE_HEJ_SIREN | 스마트 사이렌 | X | O |\n"
+        description: "**디바이스 타입**은 디바이스의 특성을 구분하며 **디바이스 목록 조회 API** 응답에서 종류를 구분합니다. 디바이스 프로파일은 이 디바이스 타입에 따라 정의됩니다.\n\n  | Device Type | Name | ThinQ API | ThinQ Business API |\n  |-|-|:-:|:-:|\n  | DEVICE_REFRIGERATOR | 냉장고 | O | O |\n  | DEVICE_WASHER | 세탁기 | O | O |\n  | DEVICE_DRYER | 건조기 | O | O |\n  | DEVICE_AIR_CONDITIONER | 에어컨 | O | O |\n  | DEVICE_AIR_PURIFIER | 공기청정기 | O | O |\n  | DEVICE_ROBOT_CLEANER | 로봇청소기 | O | O |\n  | DEVICE_OVEN | 오븐 | O | O |\n  | DEVICE_DISH_WASHER | 식기세척기 | O | O |\n  | DEVICE_STYLER | 스타일러 | O | O |\n  | DEVICE_WATER_PURIFIER | 정수기 | O | O |\n  | DEVICE_DEHUMIDIFIER | 제습기 | O | O |\n  | DEVICE_CEILING_FAN | 실링팬 | O | O |\n  | DEVICE_WINE_CELLAR | 와인셀러 | O | O |\n  | DEVICE_KIMCHI_REFRIGERATOR | 김치냉장고 | O | O |\n  | DEVICE_HOME_BREW | 홈브루 | O | O |\n  | DEVICE_PLANT_CULTIVATOR | 식물재배기 | O | O |\n  | DEVICE_WASHTOWER_WASHER | 워시타워 (세탁기) | O | O |\n  | DEVICE_WASHTOWER_DRYER | 워시타워 (건조기) | O | O |\n  | DEVICE_WASHTOWER | 워시타워 | O | O |\n  | DEVICE_COOKTOP | 쿡탑 | O | O |\n  | DEVICE_HOOD | 후드 | O | O |\n  | DEVICE_MICROWAVE_OVEN | 전자레인지 | O | O |\n  | DEVICE_SYSTEM_BOILER | 시스템 보일러 | O | O |\n  | DEVICE_AIR_PURIFIER_FAN | 공기청정팬 | O | O |\n  | DEVICE_STICK_CLEANER | 스틱청소기 | O | O |\n  | DEVICE_WATER_HEATER | 온수기 | O | O |\n  | DEVICE_WASHCOMBO_MAIN | 워시콤보 (메인) | O | O |\n  | DEVICE_WASHCOMBO_MINI | 워시콤보 (미니) | O | O |\n  | DEVICE_HUMIDIFIER | 가습기 | O | O |\n  | DEVICE_VENTILATOR | 환기 | O | O |\n  | DEVICE_ODU | BECON Cloud에 등록된 SAC 실외기 | X | O |\n  | DEVICE_IDU | BECON Cloud에 등록된 SAC 실내기 | X | O |\n  | DEVICE_SIGNAGE | Business Cloud에 등록된 사이니지 | X | O |\n  | DEVICE_HEJ_MOTION_SENSOR | 스마트 모션 센서 | X | O |\n  | DEVICE_HEJ_TEMPERATURE_HUMIDITY_SENSOR | 스마트 온습도 센서 | X | O |\n  | DEVICE_HEJ_DOOR_SENSOR | 스마트 도어 센서 | X | O |\n  | DEVICE_HEJ_BUTTON | 스마트 버튼 | X | O |\n  | DEVICE_HEJ_LIGHT_SWITCH | 스마트 조명 스위치 | X | O |\n  | DEVICE_HEJ_DOOR_LOCK | 스마트 도어락  | X | O |\n  | DEVICE_HEJ_PUSH_PULL_DOOR_LOCK | 스마트 푸쉬풀 도어락 | X | O |\n  | DEVICE_HEJ_PLUG | 스마트 플러그 | X | O |\n  | DEVICE_HEJ_PLUG_MINI | 스마트 플러그 미니 | X | O |\n  | DEVICE_HEJ_BULB_WHITE | 스마트 전구 (화이트) | X | O |\n  | DEVICE_HEJ_BULB_COLOR | 스마트 전구 (컬러) | X | O |\n  | DEVICE_HEJ_LINE_LED | 스마트 라인 LED | X | O |\n  | DEVICE_HEJ_CURTAIN_CTRL | 스마트 전동 커튼 컨트롤러 | X | O |\n  | DEVICE_HEJ_BLIND_MOTOR | 스마트 전동 블라인드 | X | O |\n  | DEVICE_HEJ_SWITCH_STRIP | 스위치 스트립 | X | O |\n  | DEVICE_HEJ_STARLIGHT | 스마트 스타 라이트 | X | O |\n  | DEVICE_HEJ_DOORBELL | 스마트 도어벨 | X | O |\n  | DEVICE_HEJ_PET_FEEDER | 스마트 펫 급식기 | X | O |\n  | DEVICE_HEJ_HOME_CAMERA | 스마트 홈 카메라 | X | O |\n  | DEVICE_HEJ_SYNC_BOX | 싱크 박스 | X | O |\n  | DEVICE_HEJ_SYNC_BOX_SUB | 싱크 박스 서브 | X | O |\n  | DEVICE_HEJ_GAS_SENSOR\t| 스마트 가스 감지 센서 | X | O |\n  | DEVICE_HEJ_FIRE_SENSOR | 스마트 화재 감지 센서 | X | O |\n  | DEVICE_HEJ_WATER_LEAK_SENSOR | 스마트 누수 감지 센서 | X | O |\n  | DEVICE_HEJ_THERMO_HYGROMETER | 스마트 온습도계 | X | O |\n  | DEVICE_HEJ_SIREN | 스마트 사이렌 | X | O |\n"
       - name: refrigerator
         x-displayName: 냉장고
         description: |
@@ -55,27 +55,8 @@ contents:
           디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example 
-          Setting the refrigeration room temperature to Celsius 0 degree
-          ```json
-            { 
-              "temperature": {
-                "targetTemperature": 0,
-                "locationName": "FRIDGE",
-                "unit": "C"
-              }
-            }
-          ```
-          Setting the power saving mode
-          ```json
-            { 
-              "powerSave": {
-                "powerSaveEnabled": true
-              }
-            }
-          ```
+            exampleRef="#/components/examples/refrigerator-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: washer
         x-displayName: 세탁기
         description: |
@@ -91,62 +72,120 @@ contents:
             exampleRef="#/components/examples/washer-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 세탁기 제어시, "location" property를 사용하여 위치와 함께 제어 요청을 하십시오.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/washer-command-example"
+            showExample={true} showWriteOnly={false} />
+      - name: dryer
+        x-displayName: 건조기
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/dryer-profile"
+            exampleRef="#/components/examples/dryer-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/dryer-object"
+            exampleRef="#/components/examples/dryer-object-example" />
+
+          ### 디바이스 제어 요청
           디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example 
-          Starting the standard washing course
-            
-          ```json
-            { 
-              "operation": {
-                "washerOperationMode": "START"
-              }, 
-              "location": { 
-                "locationName": "MAIN"
-              }
-            }
-          ```
-          Stopping the washing course
-          ```json
-            { 
-              "operation": {
-                "washerOperationMode": "STOP"
-              }, 
-              "location": { 
-                "locationName": "MAIN"
-              }
-            }
-          ```
-          Washer on timer
-          ```json
-            {
-              "location": {
-                "locationName": "MAIN"
-              },
-              "timer": {
-                "relativeHourToStop": 6
-              }
-            }
-          ```
-          ```json
-            {
-              "location": {
-                "locationName": "MAIN"
-              },
-              "timer": {
-                "relativeHourToStop": 6
-              }
-            }
-          ```
-      - name: dryer
-        x-displayName: 건조기
-        description: "## 디바이스 프로파일 스키마\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-profile\"\n  exampleRef=\"#/components/examples/dryer-profile-example\" />\n\n## 요청/응답 스키마\n### 디바이스 상태 응답\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/dryer-object\"\n  exampleRef=\"#/components/examples/dryer-object-example\" />\n\n### 디바이스 제어 요청\n디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n#### Example \nStarting the standard drying course\n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\nStopping the standard drying course\n```json\n  { \n    \"operation\": {\n      \"dryerOperationMode\": \"STOP\"\n    }\n  }\n```\nSetting start/stop time\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStart\": 2\n    }\n  }\n```\n```json\n  { \n    \"timer\": {\n      \"relativeHourToStop\": 4\n    }\n  }\n```\n"
+            exampleRef="#/components/examples/dryer-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: air_conditioner
         x-displayName: 에어컨
-        description: "## 디바이스 프로파일 스키마\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-profile\"\n  exampleRef=\"#/components/examples/air_conditioner-profile-example\" />\n\n## 요청/응답 스키마\n### 디바이스 상태 응답\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/air_conditioner-object\"\n  exampleRef=\"#/components/examples/air_conditioner-object-example\" />\n\n### 디바이스 제어 요청\n<SchemaDefinition\n  schemaRef=\"#/components/schemas/device-command-schema\"\n  showExample={false} showWriteOnly={false} />\n\n### Example \n운전 모드 제어 \n  \n```json\t\n  {\n    \"operation\": {\n      \"dryerOperationMode\": \"START\"\n    }\n  }\n```\n에어컨 동작 제어\n```json\t\n  {\n    \"operation\":{\n      \"airConOperationMode\": \"POWER_ON\"\n    }   \n  }\n```\n공기청정 동작 제어\n```json\t\n  {\n    \"operation\": {\n      \"airCleanOperationMode\": \"START\"\n    }\n  }\n```\n냉방 온도 제어\n```json\t\n  #targetTemperature\n  {\n    \"temperature\": {\n      \"targetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\n```json\t\n  #coolTargetTemperature\n  {\n    \"temperature\":{\n      \"coolTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\n```json\t\n  #autoTargetTemperature\n  {\n    \"temperature\":{\n      \"autoTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }   \n  }\n```\n난방 온도 제어\n```json\t\n  {\n    \"temperature\": {\n      \"heatTargetTemperature\": 18,\n      \"unit\": \"C\"\n    }\n  }\n```\n절대 시간 켜짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": 1,\n      \"absoluteMinuteToStart\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStart\": -1,\n      \"absoluteMinuteToStart\": -1\n    }\n  }\n```\n절대 시간 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": 1,\n      \"absoluteMinuteToStop\": 30\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"absoluteHourToStop\": -1,\n      \"absoluteMinuteToStop\": -1\n    }\n  }\n```\n상대 시간 켜짐 Timer 제어/ 취소 제어 \n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStart\": 0\n    }\n  }\n```\n상대 시간 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"timer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\n슬립 타이머 꺼짐 Timer 제어/ 취소 제어\n```json\t\n  #Timer On\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 1\n    }\n  }\n```\n```json\t\n  #Timer Off\n  {\n    \"sleepTimer\": {\n      \"relativeHourToStop\": 0\n    }\n  }\n```\n바람세기 제어\n```json\t\n  {\n    \"airFlow\": {\n      \"windStrength\": \"MID\"\n    }\n  }\n```\n절전 제어\n```json\t\n  {\n    \"powerSave\": {\n      \"powerSaveEnabled\": true\n    }\n  }\n```\n공기질 모니터링 설정 제어\n```json\t\n  {\n    \"airQualitySensor\": {\n      \"monitoringEnabled\": \"ALWAYS\"\n    }\n  }\n```\ntwoSet 온도 제어\n```json\t\n  {\n    \"twoSetTemperature\": {\n      \"coolTargetTemperature\": 20,\n      \"heatTargetTemperature\": 30,\n      \"unit\": \"C\"\n    }\n  }\n```\n### 에어컨 제어 예외 처리\n  \n  디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다. \n  제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다. 다음 예시를 참고로 하십시오.\n\n  #### 1. 에어컨 설정 온도 상대 제어  \n  예) 사용자 명령 : '에어컨 온도 1도 올려줘/내려줘'\n\n  1. **airConOperationMode**가 **POWER_OFF**인 경우 처리  \n    - airConOperationMode의 값이 POWER_OFF이면 디바이스 제어가 불가능합니다. \n    다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - 응답 예시:\n      - \"에어컨 전원이 꺼져있습니다.\n  \n  2. **airConOperationMode**가 **POWER_ON**인 경우 처리  \n    - airConOperationMode의 값이 POWER_ON이면 currentJobMode 값에 따라 다음과 같이 처리해주어야 합니다.\n      - **currentJobMode**: **AUTO**, **COOL** 또는 **HEAT**인 경우\n        - currentJobMode의 값이 AUTO, COOL 또는 HEAT인 경우 다음과 같이 처리합니다.\n          - 1. 요청 헤더 값을 변경합니다.\n            - **x-conditional-control**를 false로 변경합니다.\n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```\n          - 2. 요청 바디 값을 변경합니다.\n            - **currentJobMode**가 **COOL**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"coolTargetTemperature\": 희망온도±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **currentJobMode**가 **HEAT**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"heatTargetTemperature\": 희망온도±1,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n            - **currentJobMode**가 **AUTO**인 경우\n              ```json\n                {\n                  \"temperature\": {\n                    \"autoTargetTemperature\": 희망온도,\n                    \"unit\": \"C\"\n                  }\n                }\n              ```\n          - 3. 요청 결과로 Error Code 2201 - Not provided Feature가 발생하는 경우 처리\n            - 제어 가능 온도 범위를 벗어난 경우 발생하는 에러입니다. 다음 예시를 참고하여 사용자에게 적절한 응답을 제공합니다.\n            - 응답 예시\n              - \"에어컨 (냉방/난방) 온도는 x도에서 x도까지 설정이 가능합니다.\n      - **currentJobMode**가 **AUTO**, **COOL**, 또는 **HEAT**이 아닌 경우  \n        - currentJobMode의 값이 AUTO, COOL 또는 HEAT 이외의 값을 갖는 경우 온도 제어가 불가능합니다. 사용자에게 제어가 불가능함을 응답으로 제공합니다.\n        - 응답 예시\n          - \"냉방/난방 모드에서만 제어가 가능하므로 제어할 수 없습니다.\n  \n  3. 화씨 온도 제어인 경우  \n    - 화씨 온도로 제어요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.\n\n  \n  #### 2. 에어컨 설정 온도 절대 제어\n  예) 사용자 명령: \"에어컨 온도 X도로 설정해줘.\"\n\n  1. **airConOperationMode**가 **POWER_OFF**인 경우 처리  \n    airConOperationMode가 POWER_OFF이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - 응답 예시:\n      - \"에어컨이 Power Off 상태 입니다.\"\n\n  2. **airConOperationMode가 POWER_ON인 경우 처리**  \n    airConOperationMode가 POWER_ON이면 currentJobMode 값에 따라 다음과 같이 처리해주어야 합니다.  \n      - **currentJobMode: AUTO, COOL, 또는 HEAT인 경우** 다음과 같이 처리합니다.  \n        - 1. 요청 헤더 값을 변경합니다.\n          - **x-conditional-control**를 false로 변경합니다.\n            ```json\n              {\n                \"x-conditional-control\": false,\n              }\n            ```\n        - 2. 요청 바디 값을 변경합니다.\n          - **currentJobMode**가 **COOL**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"coolTargetTemperature\": 희망온도,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode**가 **HEAT**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"heatTargetTemperature\": 희망온도,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n          - **currentJobMode**가 **AUTO**인 경우\n            ```json\n              {\n                \"temperature\": {\n                  \"autoTargetTemperature\": 희망온도,\n                  \"unit\": \"C\"\n                }\n              }\n            ```\n        - 3. 요청 결과로 Error Code 2201 - Not provided Feature가 발생하는 경우 처리\n          - 제어 가능 온도 범위를 벗어난 경우 발생하는 에러입니다. 다음 예시를 참고하여 사용자에게 적절한 응답을 제공합니다.\n          - 응답 예시\n            - 에어컨 (냉방/난방) 온도는 x도에서 x도까지 설정이 가능합니다.  \n      - **currentJobMode**가 **AUTO**, **COOL**, 또는 **HEAT**이 아닌 경우    \n        - **currentJobMode**의 값이 **AUTO**, **COOL** 또는 **HEAT** 이외의 값을 갖는 경우 온도 제어가 불가능합니다. 사용자에게 제어가 불가능함을 응답으로 제공합니다.\n        - 응답 예시  \n          - \"냉방/난방 모드에서만 제어가 가능하므로 제어할 수 없습니다.  \n\n  3. 화씨 온도 제어인 경우  \n    - 화씨 온도로 제어 요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.\n\n  #### 3. 에어컨 풍량 상대 제어\n  예) 사용자 명령: \"에어컨 풍량 올려줘/내려줘.\"  \n\n  1. **airConOperationMode가 POWER_OFF인 경우** 처리  \n    - airConOperationMode가 POWER_OFF이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n    - 응답 예시:\n      - \"에어컨이 Power Off 상태 입니다.\"\n\n  2. **airConOperationMode가 POWER_ON인 경우** 처리  \n    - airConOperationMode가 POWER_ON이면 windStrength 값에 따라 다음과 같이 처리해주어야 합니다.  \n      - **windStrength : AUTO인 경우**  \n        windStrength가 AUTO인 경우 풍량이 자동으로 제어되며 수동으로 제어할 수 없습니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  \n        - 응답 예시:  \n          - \"에어컨 풍량이 자동으로 조절되므로 제어할 수 없습니다.\"  \n      - **windStrength : AUTO가 아닌 경우**  \n        windStrength가 AUTO 이외의 값을 가지는 경우 다음과 같이 처리합니다.  \n          1. 디바이스 프로파일을 조회하여 해당 에어컨 디바이스가 제공하는 airFlow값을 확인합니다. 제품 모델 별 지원하는 airFlow 값이 다릅니다.  \n          2. 요청 바디 값을 변경합니다.\n            - **x-conditional-control**를 **false**로 변경합니다.  \n              ```json\n                {\n                  \"x-conditional-control\": false,\n                }\n              ```   \n          3. 요청 바디 값을 변경합니다.  \n              ```json\n              {\n                \"airFlow\": {\n                  \"windStrength\": X\n                }  \n              }\n              ```\n"
+        description: |
+          ## 디바이스 프로파일 스키마
+          <SchemaDefinition
+            schemaRef="#/components/schemas/air_conditioner-profile"
+            exampleRef="#/components/examples/air_conditioner-profile-example" />
+
+          ## 요청/응답 스키마
+          ### 디바이스 상태 응답
+          <SchemaDefinition
+            schemaRef="#/components/schemas/air_conditioner-object"
+            exampleRef="#/components/examples/air_conditioner-object-example" />
+
+          ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
+          <SchemaDefinition
+            schemaRef="#/components/schemas/device-command-schema"
+            exampleRef="#/components/examples/air_conditioner-command-example"
+            showExample={true} showWriteOnly={false} />
+
+
+          #### 에어컨 상태에 따른 제어
+            디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다. <br>
+            제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다.
+
+            | operationMode | airConJobMode | 에어컨 온도 제어 가능 여부 |
+            |----------------|----------------|------------------|
+            | `POWER_OFF` | - | 불가 |
+            | `POWER_ON` | `COOL` | 가능 |
+            | `POWER_ON` | `HEAT` | 가능 |
+            | `POWER_ON` | `AUTO` | 가능 |
+            | `POWER_ON` | `AIR_DRY` | 가능 |
+            | `POWER_ON` | `FAN` | 불가 |
+
+            에어컨 온도 제어가 가능한 경우, 다음 예시를 참고하여 제어 요청을 작성합니다.<br>
+            (화씨 온도로 제어요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.)
+
+            - Header 값 변경 (ThinQ Business API에서는 미지원합니다.)
+
+            ```json
+            {
+              "x-conditional-control": false,
+            }
+            ```
+
+            - **airConJobMode**가 **COOL**인 경우, 온도 제어 요청 Body
+
+            ```json
+            {
+              "temperature": {
+                "coolTargetTemperature": 희망온도,
+                "unit": "C"
+              }
+            }
+            ```
+
+            - **airConJobMode**가 **HEAT**인 경우, 온도 제어 요청 Body
+
+            ```json
+            {
+              "temperature": {
+                "heatTargetTemperature": 희망온도,
+                "unit": "C"
+              }
+            }
+            ```
+
+            - **airConJobMode**가 **AUTO**인 경우, 온도 제어 요청 Body
+
+            ```json
+            {
+              "temperature": {
+                "autoTargetTemperature": 희망온도,
+                "unit": "C"
+              }
+            }
+            ```
+
+            - **airConJobMode**가 **AIR_DRY**인 경우, 온도 제어 요청 Body
+
+            ```json
+            {
+              "temperature": {
+                "coolTargetTemperature": 희망온도,
+                "unit": "C"
+              }
+            }
+            ```
       - name: air_purifier
         x-displayName: 공기청정기
         description: |
@@ -162,48 +201,41 @@ contents:
             exampleRef="#/components/examples/air_purifier-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
+            exampleRef="#/components/examples/air_purifier-command-example"
+            showExample={true} showWriteOnly={false} />
 
-          ### 공기청정기 예외 처리 (풍량 제어)  
-            디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다.  
-            제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다. 다음 예시를 참고로 하십시오.  
+          #### 공기청정기 상태에 따른 제어
+            디바이스 상태에 따라 디바이스를 제어할 수 없는 경우가 있습니다. <br>
+            제어 요청 API를 사용할 경우, 먼저 디바이스 상태를 조회하고 제어가 불가능한 경우에 대해 적절한 예외 처리를 해주어야 합니다.
 
-          예) 사용자 명령 : '에어컨 온도 1도 올려줘/내려줘'  
-          #### 1. **POWER_OFF인 경우 처리**  
-            - **airPurifierOperationMode**가 **POWER_OFF**이면 디바이스 제어가 불가능합니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  
-            - 응답 예시:  
-              - "에어컨 전원이 꺼져있습니다.  
+            | airPurifierOperationMode | currentJobMode | 공기청정기 바람세기 제어 가능 여부 |
+            |----------------|----------------|------------------|
+            | `POWER_OFF` | - | 불가 |
+            | `POWER_ON` | `AUTO` | 불가 |
+            | `POWER_ON` | `AUTO 이외` | 가능 |
 
-          #### 2. **POWER_ON인 경우 처리**  
-            - **airPurifierOperationMode**가 **POWER_ON**이면 **currentJobMode** 값에 따라 다음과 같이 처리해주어야 합니다.
-              1. **currentJobMode** 혹은 **windStrength**가 **AUTO**인 경우
-                - windStrength가 AUTO 이거나 혹은 currentJobMode가 AUTO인 경우 풍량이 자동으로 제어되며 수동으로 제어할 수 없습니다. 다음 예시와 같이 사용자에게 응답하도록 처리합니다.  
-                - 응답 예시:  
-                  - "공기청정기가 AUTO 모드로 동작 중이므로 제어할 수 없습니다."   
-              2. **currentJobMode**와 **windStrength** 둘 다 **AUTO**가 아닌 경우  
-                - currentJobMode의 값이 AUTO가 아니고, windStrength 값도 AUTO가 아닌 경우 다음과 같이 처리합니다.
-                  - 1. 디바이스 프로파일을 조회하여 해당 공기 청정기 디바이스에서 지원하는 **airFlow** 값을 확인합니다.  제품 모델 별로 지원하는 **airFlow** 값이 다릅니다.  
-                    - **x-conditional-control**를 **false**로 변경합니다.  
-                      ```json
-                        {
-                          "x-conditional-control": false,
-                        }
-                      ```
-                  - 2. 제어 요청 API 바디 값을 변경합니다. 
-                    - **currentJobMode**가 **COOL**인 경우
-                      ```json
-                        {
-                          "airFlow": {
-                            "windStrength": X
-                          }
-                        }
-                      ```
-                  - 3. 사용자에게 적정한 응답을 제공합니다.  
-                    - 응답 예시
-                      - 공기청정기 풍량은 power/high/low 상태로 변경 하였습니다.  
-                      - 공기청정기 풍량이 최대/최소 상태입니다. (설정하고자 하는 풍량이 최대/최소 상태인 경우)  
+            공기청정기 바람세기 제어가 가능한 경우, 다음 예시를 참고하여 제어 요청을 작성합니다.
+
+            - Header 값 변경 (ThinQ Business API에서는 미지원합니다.)
+
+            ```json
+            {
+              "x-conditional-control": false,
+            }
+            ```
+
+            - 바람세기 제어 요청 Body
+
+            ```json
+            {
+              "airFlow": {
+                "windStrength": "LOW"
+              }
+            }
+            ```
       - name: robot_cleaner
         x-displayName: 로봇청소기
         description: |
@@ -219,30 +251,11 @@ contents:
             exampleRef="#/components/examples/robot_cleaner-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />  
-
-          #### Example  
-          Starting the robot cleaner  
-
-            ```json
-              {
-                "operation": {
-                  "cleanOperationMode": "START"
-                }
-              }
-            ```  
-
-          Robot cleaner on timer (Timer set for 11:30)  
-            ```json
-              {
-                "timer": {
-                  "absoluteHourToStart": 11, 
-                  "absoluteMinuteToStart": 30
-                }
-              }
-            ```
+            exampleRef="#/components/examples/robot_cleaner-command-example"
+            showExample={true} showWriteOnly={false} />  
       - name: oven
         x-displayName: 오븐
         description: |
@@ -258,154 +271,11 @@ contents:
             exampleRef="#/components/examples/oven-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 오븐의 경우, `location` property를 사용하여 위치와 함께 제어 요청을 할 수 있으며, `operation`, `timer`, `cook` property를 한 번에 사용하여 제어할 수 있습니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          operation  
-
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "PREHEATING"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                }
-              } {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                }
-              } {
-                "operation": {
-                  "ovenOperationMode": "STOP"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                }
-              }
-            ```
-
-          operation + cook mode  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "cook": {
-                  "cookMode": "BAKE"
-                }
-              }
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "cook": {
-                  "cookMode": "CONVECTION_BAKE"
-                }
-              } 
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "cook": {
-                  "cookMode": "CONVECTION_ROAST"
-                }
-              }
-            ```
-
-          operation + time  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "timer": {
-                  "targetHour": 1,
-                  "targetMinute": 5
-                }
-              }
-            ```  
-
-          operation + cook mode + time  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "timer": {
-                  "targetHour": 1,
-                  "targetMinute": 5
-                },
-                "cook": {
-                  "cookMode": "BAKE"
-                }
-              }
-            ```
-
-          operation + temperature  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "temperature": {
-                  "targetTemperature": 160,
-                  "unit": "C"
-                }
-              }
-            ```
-
-          operation + cook mode + temperature  
-            ```json
-              {
-                "operation": {
-                  "ovenOperationMode": "START"
-                },
-                "location": {
-                  "locationName": "LOWER"
-                },
-                "cook": {
-                  "cookMode": "BAKE"
-                },
-                "temperature": {
-                  "targetTemperature": 160,
-                  "unit": "C"
-                }
-              }
-            ```
-
-          timer setting  
-            ```json
-              {
-                "timer": {
-                  "timerHour": 0,
-                  "timerMinute": 5
-                }
-              }
-            ```
+            exampleRef="#/components/examples/oven-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: dish_washer
         x-displayName: 식기세척기
         description: |
@@ -421,28 +291,11 @@ contents:
             exampleRef="#/components/examples/dish_washer-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />  
-
-          #### Example  
-          제어 시작  
-            ```json
-              {
-                "operation": {
-                  "dishWasherOperationMode": "START"
-                }
-              }
-            ```
-
-          제어 멈춤  
-            ```json
-              {
-                "operation": {
-                  "dishWasherOperationMode": "STOP"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/dish_washer-command-example"
+            showExample={true} showWriteOnly={false} />  
       - name: styler
         x-displayName: 스타일러
         description: |
@@ -458,36 +311,11 @@ contents:
             exampleRef="#/components/examples/styler-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Starting the styler  
-            ```json
-              { 
-                "operation": {
-                  "stylerOperationMode": "START"
-                }
-              }
-            ```
-
-          Stopping the styler  
-            ```json
-              { 
-                "operation": {
-                  "stylerOperationMode ": "STOP"
-                }
-              }
-            ```
-          Setting stop time  
-            ```json
-              {
-                "timer": {
-                  "relativeHourToStop": 4
-                }
-              }
-            ```
+            exampleRef="#/components/examples/styler-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: water_purifier
         x-displayName: 정수기
         description: |
@@ -519,45 +347,11 @@ contents:
             exampleRef="#/components/examples/dehumidifier-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Dehumidifier power on  
-            ```json
-              {
-                "operation": {
-                  "dehumidifierOperationMode": "POWER_ON"
-                }
-              }
-            ```
-
-          Dehumidifier power off  
-            ```json
-              {
-                "operation": {
-                  "dehumidifierOperationMode": "POWER_OFF"
-                }
-              }
-            ```
-
-          Dehumidifier wind strength adjustment (Strength high)  
-            ```json
-              {
-                "airFlow": {
-                  "windStrength": "HIGH"
-                }
-              }
-            ```
-          Dehumidifier wind strength adjustment (Strength Low)  
-            ```json
-              {
-                "airFlow": {
-                  "windStrength": "LOW"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/dehumidifier-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: ceiling_fan
         x-displayName: 실링팬
         description: |
@@ -573,28 +367,11 @@ contents:
             exampleRef="#/components/examples/ceiling_fan-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Ceiling fan power on  
-            ```json
-              {
-                "operation": {
-                  "ceilingfanOperationMode":  "POWER_ON"
-                }
-              }
-            ```
-
-          Ceiling fan wind strength adjustment  
-            ```json
-              {
-                "airFlow": {
-                  "windStrength": "HIGH"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/ceiling_fan-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: wine_cellar
         x-displayName: 와인셀러
         description: |
@@ -610,40 +387,11 @@ contents:
             exampleRef="#/components/examples/wine_cellar-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 와인셀러 `temperature` 제어 시, `location` property를 사용하여 위치와 함께 제어 요청을 하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Temperature Control  
-            ```json
-              {
-                "temperature": {
-                  "locationName": "WINE_LOWER",
-                  "targetTemperature": 6,
-                  "unit": "C"
-                }
-              }
-            ```
-
-          Brightness Control  
-            ```json
-              #enum - lightBrightness
-              {
-                "operation": {
-                  "lightBrightness": "70%"
-                }
-              }
-            ```  
-
-            ```json
-              #range - lightStatus 
-              {
-                "operation": {
-                  "lightBrightness": "70%"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/wine_cellar-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: kimchi_refrigerator
         x-displayName: 김치냉장고
         description: |
@@ -707,57 +455,11 @@ contents:
             exampleRef="#/components/examples/washtower_washer-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 워시타워 제어시, `location` property를 사용하여 위치와 함께 제어 요청을 하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Starting the standard washing course  
-            ```json
-              { 
-                "operation": {
-                  "washerOperationMode": "START"
-                }, 
-                "location": { 
-                  "locationName": "MAIN"
-                }
-              }
-            ```
-
-          Stopping the washing course  
-            ```json
-              { 
-                "operation": {
-                  "washerOperationMode": "START"
-                }, 
-                "location": { 
-                  "locationName": "MAIN"
-                }
-              }
-            ```
-
-          Washer on timer
-            ```json
-              {
-                "location": {
-                  "locationName": "MAIN"
-                },
-                "timer": {
-                  "relativeHourToStart": 4
-                }
-              }
-            ```
-
-            ```json
-              {
-                "location": {
-                  "locationName": "MAIN"
-                },
-                "timer": {
-                  "relativeHourToStop": 6
-                }
-              }
-            ```
+            exampleRef="#/components/examples/washtower_washer-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: washtower_dryer
         x-displayName: 워시타워 (건조기)
         description: |
@@ -773,45 +475,11 @@ contents:
             exampleRef="#/components/examples/washtower_dryer-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br>
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Starting the standard drying course  
-            ```json
-              { 
-                "operation": {
-                  "dryerOperationMode": "START"
-                }
-              }
-            ```
-
-          Stopping the standard drying course  
-            ```json
-              { 
-                "operation": {
-                  "dryerOperationMode": "STOP"
-                }
-              }
-            ```
-
-          Setting start/stop time  
-            ```json
-              { 
-                "timer": {
-                  "relativeHourToStart": 2
-                }
-              }
-            ```
-
-            ```json
-              { 
-                "timer": {
-                  "relativeHourToStop": 4
-                }
-              }
-            ```
+            exampleRef="#/components/examples/washtower_dryer-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: washtower
         x-displayName: 워시타워
         description: |
@@ -827,32 +495,11 @@ contents:
             exampleRef="#/components/examples/washtower-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 워시타워 제어시, `washer`와 `dryer`는 따로 제어 요청을 하셔야 합니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          세탁기  
-            ```json
-              {
-                "washer": {
-                  "operation": {
-                    "washerOperationMode": "START"
-                  }
-                }
-              }
-            ```
-
-          건조기  
-            ```json
-              {
-                "dryer": {
-                  "operation": {
-                    "dryerOperationMode": "START"
-                  }
-                }
-              }
-            ```
+            exampleRef="#/components/examples/washtower-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: cooktop
         x-displayName: 쿡탑
         description: |
@@ -868,35 +515,11 @@ contents:
             exampleRef="#/components/examples/cooktop-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 쿡탑 제어시, `operation`은 `location`없이 제어하고, `power`와 `timer`는 `location`과 함께 제어 요청하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Power Off  
-            ```json
-              {
-                "operation": {
-                  "operationMode": "POWER_OFF"
-                }
-              }
-            ```
-
-          Setting the power to 3 and the remaining time to 10 minutes for the LEFT_FRONT burner  
-            ```json
-              {
-                "power": {
-                  "powerLevel": 3
-                },
-                "timer": {
-                  "remainHour": 0,
-                  "remainMinute": 10
-                },
-                "location": {
-                  "locationName": "LEFT_FRONT"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/cooktop-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: hood
         x-displayName: 후드
         description: |
@@ -912,22 +535,11 @@ contents:
             exampleRef="#/components/examples/hood-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 후드 제어시, `lamp`와 `ventilation` 속성을 동시에 명령해야합니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Setting lamp brightness and fan speed
-            ```json
-              {
-                "lamp": {
-                  "lampBrightness": 1
-                },
-                "ventilation": {
-                  "fanSpeed": 0
-                }
-              }
-            ```
+            exampleRef="#/components/examples/hood-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: microwave_oven
         x-displayName: 전자레인지
         description: |
@@ -942,22 +554,12 @@ contents:
             schemaRef="#/components/schemas/microwave_oven-object"
             exampleRef="#/components/examples/microwave_oven-object-example" />
 
-          ### 디바이스 제어 요청 제어 명령은 lampBrightness와 fanSpeed 속성을 동시에 명령해야합니다.
+          ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 제어 명령은 lampBrightness와 fanSpeed 속성을 동시에 명령해야합니다.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-            ```json
-              {
-                "lamp": {
-                    "lampBrightness": 1
-                },
-                "ventilation": {
-                    "fanSpeed": 0
-                }
-              }
-            ```
+            exampleRef="#/components/examples/microwave_oven-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: system_boiler
         x-displayName: 시스템 보일러
         description: |
@@ -973,48 +575,11 @@ contents:
             exampleRef="#/components/examples/system_boiler-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> (화씨 온도로 제어요청하는 경우 별도의 변환 테이블이 필요합니다. LG 담당자에게 요청하십시오.)
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Setting the power on
-            ```json
-              {
-                "operation": {
-                  "boilerOperationMode": "POWER_ON"
-                }
-              }
-            ```
-
-          Setting the hot water mode  
-            ```json
-              {
-                "operation": {
-                  "hotWaterMode": "ON"
-                }
-              }
-            ```
-
-          Setting the cooling target temperature  
-            ```json
-              {
-                "temperature": {
-                  "coolTargetTemperature": 18,
-                  "unit": "C"
-                }
-              }
-            ```
-
-          Setting the heating target temperature  
-            ```json
-              {
-                "temperature": {
-                  "heatTargetTemperature": 28,
-                  "unit": "C"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/system_boiler-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: air_purifier_fan
         x-displayName: 공기청정팬
         description: |
@@ -1030,19 +595,11 @@ contents:
             exampleRef="#/components/examples/air_purifier_fan-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br>
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Power On  
-            ```json
-              {
-                "operation": {
-                  "airFanOperationMode": "POWER_ON"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/air_purifier_fan-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: stick_cleaner
         x-displayName: 스틱청소기
         description: |
@@ -1074,28 +631,11 @@ contents:
             exampleRef="#/components/examples/water_heater-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br>
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          온도 변경  
-            ```json
-              {
-                "temperature": {
-                  "targetTemperature": 45
-                }
-              }
-            ```
-
-          모드 변경
-            ```json
-              {
-                "waterHeaterJobMode": {
-                  "currentJobMode": "AUTO"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/water_heater-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: main_washcombo
         x-displayName: 워시콤보 (메인)
         description: |
@@ -1111,34 +651,11 @@ contents:
             exampleRef="#/components/examples/main_washcombo-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 워시콤보 제어시, `location` property를 사용하여 위치와 함께 제어 요청을 하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          세탁 시작  
-            ```json
-              {
-                "location": {
-                  "locationName": "MAIN"
-                },
-                "operation": {
-                  "washerOperationMode": "START"
-                }
-              }
-            ```
-
-          예약 설정  
-            ```json
-              {
-                "location": {
-                  "locationName": "Main"
-                },
-                "timer": {
-                  "relativeHourToStop": 4
-                }
-              }
-            ```
+            exampleRef="#/components/examples/main_washcombo-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: mini_washcombo
         x-displayName: 워시콤보 (미니)
         description: |
@@ -1154,34 +671,11 @@ contents:
             exampleRef="#/components/examples/mini_washcombo-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br> 워시콤보 제어시, `location` property를 사용하여 위치와 함께 제어 요청을 하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />  
-
-          #### Example  
-          세탁 시작  
-            ```json
-              {
-                "location": {
-                  "locationName": "MINI"
-                },
-                "operation": {
-                  "washerOperationMode": "START"
-                }
-              }
-            ```
-
-          예약 설정  
-            ```json
-              {
-                "location": {
-                  "locationName": "MINI"
-                },
-                "timer": {
-                  "relativeHourToStop": 4
-                }
-              }
-            ```
+            exampleRef="#/components/examples/mini_washcombo-command-example"
+            showExample={true} showWriteOnly={false} />  
       - name: humidifier
         x-displayName: 가습기
         description: |
@@ -1197,28 +691,11 @@ contents:
             exampleRef="#/components/examples/humidifier-object-example" />
 
           ### 디바이스 제어 요청
+          디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.<br>
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Power On  
-            ```json
-              {
-                "operation": {
-                  "humidifierOperationMode": "POWER_ON"
-                }
-              }
-            ```
-
-          Display Light  
-            ```json
-              {
-                "display": {
-                  "light": "LEVEL_2"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/humidifier-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: ventilator
         x-displayName: 환기
         description: |
@@ -1237,64 +714,8 @@ contents:
           디바이스 프로파일에 'w' 권한이 있는 property는 제어가 가능합니다. 제어하고자 하는 property의 상위 key 값과 value로 request body를 작성하십시오.
           <SchemaDefinition
             schemaRef="#/components/schemas/device-command-schema"
-            showExample={false} showWriteOnly={false} />
-
-          #### Example  
-          Set timer to start  
-            ```json
-              {
-                "timer": {
-                  "absoluteHourToStart": 10,
-                  "absoluteMinuteToStart": 20
-                }
-              }
-            ```
-
-          Set timer to stop
-            ```json
-              {
-                "timer": {
-                  "absoluteHourToStop": 10,
-                  "absoluteMinuteToStop": 20
-                }
-              }
-            ```
-
-          Unset timer to start
-            ```json
-              {
-                "timer": {
-                  "absoluteStartTimer": "UNSET"
-                }
-              }
-            ```
-
-          Unset timer to stop
-            ```json
-              {
-                "timer": {
-                  "absoluteStopTimer": "UNSET"
-                }
-              }
-            ```
-
-          Set sleep timer to stop
-            ```json
-              {
-                "sleepTimer": {
-                  "relativeHourToStop": 3
-                }
-              }
-            ```
-
-          Unset sleep timer to stop
-            ```json
-              {
-                "sleepTimer": {
-                  "relativeStopTimer": "UNSET"
-                }
-              }
-            ```
+            exampleRef="#/components/examples/ventilator-command-example"
+            showExample={true} showWriteOnly={false} />
       - name: odu
         x-displayName: 실외기
         description: |
@@ -17483,6 +16904,7 @@ contents:
                             type: string
                             enum:
                               - r
+                              - w
                         type:
                           type: string
                           enum:
@@ -17491,6 +16913,18 @@ contents:
                           type: object
                           properties:
                             r:
+                              type: array
+                              description: |-
+                                Value | Description
+                                -|-
+                                ON | 온수 가동 시작
+                                OFF | 온수 가동 끄기
+                              items:
+                                type: string
+                                enum:
+                                  - 'ON'
+                                  - 'OFF'
+                            w:
                               type: array
                               description: |-
                                 Value | Description
@@ -27313,10 +26747,12 @@ contents:
             waterFilterInfo:
               usedTime: 0
         refrigerator-command-example:
-          description: 냉장고 - 절전 모드 설정
+          description: 냉장고 - 온도 설정
           value:
-            powerSave:
-              powerSaveEnabled: true
+            temperature:
+              targetTemperature: 0
+              locationName: FRIDGE
+              unit: C
         washer-profile-example:
           value:
             error:
@@ -28109,11 +27545,10 @@ contents:
             display:
               light: 'OFF'
         air_conditioner-command-example:
-          description: 에어컨 - 지정한 켜짐 예약시간
           value:
             timer:
-              absoluteHourToStart: 10
-              absoluteMinuteToStart: 36
+              absoluteHourToStart: 1
+              absoluteMinuteToStart: 30
         air_purifier-profile-example:
           value:
             notification:
@@ -28751,7 +28186,7 @@ contents:
               absoluteStartTimer: UNSET
               absoluteStopTimer: UNSET
         dehumidifier-command-example:
-          description: 가습기 - 운전 모드
+          description: 가습기 - 제습 모드
           value:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
@@ -29232,10 +28667,11 @@ contents:
             sleepTimer:
               relativeStopTimer: UNSET
         ventilator-command-example:
-          description: 환기 - 자동 운전 모드
+          description: 환기 - 타이머 설정
           value:
-            ventJobMode:
-              currentJobMode: VENT_AUTO
+            timer:
+              absoluteHourToStart: 10
+              absoluteMinuteToStart: 20
         robot_cleaner-profile-example:
           title: Robot_Cleaner
           value:
@@ -29347,7 +28783,7 @@ contents:
               level: FULL
         robot_cleaner-command-example:
           title: Robot_Cleaner
-          description: 로봇청소기 - 청소 모드
+          description: 로봇청소기 - 충전대로 이동
           value:
             operation:
               cleanOperationMode: HOMING
@@ -29455,10 +28891,15 @@ contents:
           title: Oven
           description: 오븐 - 오븐 동작
           value:
-            location:
-              locationName: LOWER
             operation:
               ovenOperationMode: START
+            location:
+              locationName: LOWER
+            timer:
+              targetHour: 1
+              targetMinute: 5
+            cook:
+              cookMode: BAKE
         dish_washer-profile-example:
           value:
             error:
@@ -29625,7 +29066,7 @@ contents:
               totalHour: 0
               totalMinute: 0
         dish_washer-command-example:
-          description: 식기세척기 - 운전 모드
+          description: 식기세척기 - 행정 시작
           value:
             operation:
               dishWasherOperationMode: START
@@ -29741,7 +29182,7 @@ contents:
               totalHour: 0
               totalMinute: 0
         styler-command-example:
-          description: 스타일러 - 운전 모드
+          description: 스타일러 - 행정 시작
           value:
             operation:
               stylerOperationMode: START
@@ -29818,7 +29259,7 @@ contents:
             operation:
               ceilingfanOperationMode: POWER_ON
         ceiling_fan-command-example:
-          description: 실링팬 - 운전 모드
+          description: 실링팬 - 가동 시작
           value:
             operation:
               ceilingfanOperationMode: POWER_ON
@@ -29984,10 +29425,12 @@ contents:
                 unit: C
                 locationName: WINE_LOWER
         wine_cellar-command-example:
-          description: 와인셀러 - 조명 밝기
+          description: 와인셀러 - 온도 제어
           value:
-            operation:
-              lightStatus: 90
+            temperature:
+              locationName: WINE_LOWER
+              targetTemperature: 6
+              unit: C
         kimchi_refrigerator-profile-example:
           value:
             notification:
@@ -31213,10 +30656,15 @@ contents:
               remoteControlEnable:
                 remoteControlEnabled: false
         cooktop-command-example:
-          description: 쿡탑 - 전원 OFF
+          description: 쿡탑 - 파워 레벨, 타이머 설정
           value:
-            operation:
-              operationMode: POWER_OFF
+            power:
+              powerLevel: 3
+            timer:
+              remainHour: 0
+              remainMinute: 10
+            location:
+              locationName: LEFT_FRONT
         hood-profile-example:
           value:
             property:
@@ -31290,10 +30738,12 @@ contents:
               remainMinute: 3
               remainSecond: 25
         hood-command-example:
-          description: 후드 - 램프 밝기
+          description: 후드 - 램프 밝기, 팬 속도 제어
           value:
             lamp:
-              lampBrightness: 0
+              lampBrightness: 1
+            ventilation:
+              fanSpeed: 0
         microwave_oven-profile-example:
           value:
             property:
@@ -31370,7 +30820,7 @@ contents:
             lamp:
               lampBrightness: 0
         microwave_oven-command-example:
-          description: 전자레인지
+          description: 전자레인지 -  램프 밝기, 팬 속도 제어
           value:
             lamp:
               lampBrightness: 1
