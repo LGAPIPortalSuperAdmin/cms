@@ -19,9 +19,9 @@ contents:
         x-displayName: Overview
         description: |
           By using the **ThinQ Business API**, you can check or control the status of LG Electronics' Home appliances, Signage, Commercial HVAC, and IoT devices all at once. ThinQ Business API provides integrated APIs, allowing B2B partner software to directly connect with and manage the status of registered devices on LG Electronics' cloud platforms, such as LG ThinQ, LG Business Cloud, and LG BECON Cloud. For more details on the types of supported devices and the schema of the API call messages, please refer to the  **[Device Profile](/en/apiManage/device_profile)** page.
-          
+
           To use the ThinQ Business API, you should **[request a partnership](/en/mypage/partner/landing)** first. Once approved, you can simulate a product and call APIs for testing without registering actual devices on LG Electronics' cloud platform, as the **ThinQ Business Simulator** will be provided as well
-          
+
           ThinQ Business APIs are categorized based on what their purposes are.
             |API Type|Summary|
             |-|-|
@@ -35,30 +35,30 @@ contents:
           Describes how to develop a service using the ThinQ Business API through a sequence of API calls.
 
           ## Issue API Token
-          An API Token must be included in the HTTP request header of all ThinQ Business API calls. This API Token can be issued with a pair of pre-issued API Key and API Secret from LG Smart Solution API Developer and is valid for 24 hours.      
+          An API Token must be included in the HTTP request header of all ThinQ Business API calls. This API Token can be issued with a pair of pre-issued API Key and API Secret from LG Smart Solution API Developer and is valid for 24 hours.
 
             - API to Use
               - [`POST /token`](#tag/auth/operation/createAPIToken)
-              
+
             - Sequence
               1. Set the API Key and API Secret received from LG Smart Solution API Developer for the API Token issuance logic (API Secret will be sent via email when the API Key is issued).
-              2. Call the Issue API Token API (POST /token) to get an API Token periodically. You'll need to make another API Token issuance request within 24 hours.  
-              
-              <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="447px" preserveAspectRatio="none" style="width:623px;height:447px;background:#FFFFFF;" version="1.1" viewBox="0 0 623 447" width="623px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="208.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="306.439"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="164.9414"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="262.6182"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="46" x2="46" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="236.5" x2="236.5" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="371.5" x2="371.5" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="534.5" x2="534.5" y1="84.2295" y2="363.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="77" x="5" y="81.1533">B2B Partner</text><ellipse cx="46.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M46.5,21.5 L46.5,48.5 M33.5,29.5 L59.5,29.5 M46.5,48.5 L33.5,63.5 M46.5,48.5 L59.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="77" x="5" y="378.4482">B2B Partner</text><ellipse cx="46.5" cy="390.0244" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M46.5,398.0244 L46.5,425.0244 M33.5,406.0244 L59.5,406.0244 M46.5,425.0244 L33.5,440.0244 M46.5,425.0244 L59.5,440.0244 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="180.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="187.5" y="73.1533">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="180.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="187.5" y="385.4482">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="302.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="309.5" y="73.1533">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="302.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="309.5" y="385.4482">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="451.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="152" x="458.5" y="73.1533">LG Smart Solution API Developer</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="451.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="152" x="458.5" y="385.4482">LG Smart Solution API Developer</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="208.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="306.439"/><polygon fill="#181818" points="57.5,114.0854,47.5,118.0854,57.5,122.0854,53.5,118.0854" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="51.5" x2="533.5" y1="118.0854" y2="118.0854"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="188" x="63.5" y="113.229">provide API Key, API Secret pair</text><polygon fill="#181818" points="224.5,145.9414,234.5,149.9414,224.5,153.9414,228.5,149.9414" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="46.5" x2="230.5" y1="149.9414" y2="149.9414"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="166" x="53.5" y="145.085">set API Key, API Secret pair</text><path d="M170.5,164.9414 L247.5,164.9414 L247.5,174.7974 L237.5,184.7974 L170.5,184.7974 L170.5,164.9414 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="164.9414"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="185.5" y="180.9409">loop</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="93" x="262.5" y="179.6333">[within 24 hours]</text><polygon fill="#181818" points="355,204.7622,365,208.7622,355,212.7622,359,208.7622" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="236.5" x2="361" y1="208.7622" y2="208.7622"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="75" x="243.5" y="203.9058">POST /token</text><polygon fill="#181818" points="247.5,236.6182,237.5,240.6182,247.5,244.6182,243.5,240.6182" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="241.5" x2="371" y1="240.6182" y2="240.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="60" x="253.5" y="235.7617">API Token</text><path d="M170.5,262.6182 L231.5,262.6182 L231.5,272.4741 L221.5,282.4741 L170.5,282.4741 L170.5,262.6182 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="262.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="185.5" y="278.6177">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="109" x="246.5" y="277.3101">[API Token expired]</text><polygon fill="#181818" points="355,302.439,365,306.439,355,310.439,359,306.439" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="236.5" x2="361" y1="306.439" y2="306.439"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="75" x="243.5" y="301.5825">POST /token</text><polygon fill="#181818" points="247.5,334.2949,237.5,338.2949,247.5,342.2949,243.5,338.2949" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="241.5" x2="371" y1="338.2949" y2="338.2949"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="60" x="253.5" y="333.4385">API Token</text><!--SRC=[XP11JyCm38NFpQ-mUWOXJPnwGAA2JHCJAsflY4EM6cQjIoB7AUFVasQLq0x0pVBx_FpiS23hDUiZzFYkuo1BP-LP7n4sgyTrXoTHseXZAEj53OrciSWbw00n8AiqAcJ8QojGpYgqo2CPp9G_zox1Ra_s1UeOo688SD-iCxipbzXc1LkFTjBX0KSSd9ztzpW64bHgBk3wBkUfmBCRgSSyyuHVLxbeqJ1AoaAi9cp2vs0LXAJyId-mYnu6vpoyVfAatB2uXRsB7DvKCNjCTZjJGRDjExWHTq2hYlGr6dMAbgugab_ayo5Tbj7sIW_oqm4yUMBi5Vpb2l_RVWC0]--></g></svg>
-              
+              2. Call the Issue API Token API (POST /token) to get an API Token periodically. You'll need to make another API Token issuance request within 24 hours.
+
+              <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="447px" preserveAspectRatio="none" style="width:680px;height:447px;background:#FFFFFF;" version="1.1" viewBox="0 0 680 447" width="680px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="208.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="306.439"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="164.9414"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="262.6182"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="46" x2="46" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="236.5" x2="236.5" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="371.5" x2="371.5" y1="84.2295" y2="363.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="562.5" x2="562.5" y1="84.2295" y2="363.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="77" x="5" y="81.1533">B2B Partner</text><ellipse cx="46.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M46.5,21.5 L46.5,48.5 M33.5,29.5 L59.5,29.5 M46.5,48.5 L33.5,63.5 M46.5,48.5 L59.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="77" x="5" y="378.4482">B2B Partner</text><ellipse cx="46.5" cy="390.0244" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M46.5,398.0244 L46.5,425.0244 M33.5,406.0244 L59.5,406.0244 M46.5,425.0244 L33.5,440.0244 M46.5,425.0244 L59.5,440.0244 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="180.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="187.5" y="73.1533">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="180.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="187.5" y="385.4482">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="302.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="309.5" y="73.1533">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="302.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="309.5" y="385.4482">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="223" x="451.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="209" x="458.5" y="73.1533">LG Smart Solution API Developer</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="223" x="451.5" y="362.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="209" x="458.5" y="385.4482">LG Smart Solution API Developer</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="208.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="367" y="306.439"/><polygon fill="#181818" points="57.5,114.0854,47.5,118.0854,57.5,122.0854,53.5,118.0854" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="51.5" x2="562" y1="118.0854" y2="118.0854"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="188" x="63.5" y="113.229">provide API Key, API Secret pair</text><polygon fill="#181818" points="224.5,145.9414,234.5,149.9414,224.5,153.9414,228.5,149.9414" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="46.5" x2="230.5" y1="149.9414" y2="149.9414"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="166" x="53.5" y="145.085">set API Key, API Secret pair</text><path d="M170.5,164.9414 L247.5,164.9414 L247.5,174.7974 L237.5,184.7974 L170.5,184.7974 L170.5,164.9414 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="164.9414"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="185.5" y="180.9409">loop</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="132" x="262.5" y="179.6333">[repeat within 24 hours]</text><polygon fill="#181818" points="355,204.7622,365,208.7622,355,212.7622,359,208.7622" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="236.5" x2="361" y1="208.7622" y2="208.7622"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="75" x="243.5" y="203.9058">POST /token</text><polygon fill="#181818" points="247.5,236.6182,237.5,240.6182,247.5,244.6182,243.5,240.6182" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="241.5" x2="371" y1="240.6182" y2="240.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="60" x="253.5" y="235.7617">API Token</text><path d="M170.5,262.6182 L231.5,262.6182 L231.5,272.4741 L221.5,282.4741 L170.5,282.4741 L170.5,262.6182 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="281" x="170.5" y="262.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="185.5" y="278.6177">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="109" x="246.5" y="277.3101">[API Token expired]</text><polygon fill="#181818" points="355,302.439,365,306.439,355,310.439,359,306.439" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="236.5" x2="361" y1="306.439" y2="306.439"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="75" x="243.5" y="301.5825">POST /token</text><polygon fill="#181818" points="247.5,334.2949,237.5,338.2949,247.5,342.2949,243.5,338.2949" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="241.5" x2="371" y1="338.2949" y2="338.2949"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="60" x="253.5" y="333.4385">API Token</text><!--SRC=[XP11IyD048NFtL_nw5aHYgSS18jQYaKZoKqyR9FH3artbzdPMF-zcpGWFQYtuSqtZ_Scxja5A_Q0bjvjwlJ1Etso1y9cTR-kwQZ6Dke5y-LYYTAAEf8vR4IA92QVAZSSh5FCfoqgafuR6gbmqix1UiVk1SiKsL6Ck2tN8xjjph7D2jKX2wXybvIz6qZSKK-T3rEAblh8IiPC0ovlncG5WlYUMnfl7kdhOXmgQeGqfs8n0pRWKyG2CMz-fJ_4fu3E-u1NeK1MyScQYs1nZPrF4j_CRB8QNBTDWVAvgd6bVa_EpF8RkRSvOQuvoxP9JdtgSKskDRRJ7mLq32pK6lpbYlzjlm40]--></g></svg>
+
           ## Get Device Status
-          To search the status of a device, the following Device API is used.      
+          To search the status of a device, the following Device API is used.
 
             - API to Use
               - [`GET /devices`](#tag/Device-API/operation/getDevices)
               - [`GET /devices/{deviceId}/state`](#tag/Device-API/operation/getStatusOfDevice)
-              
+
             - Sequence
               1. Your service needs to use Get Device List API (GET /devices) to retrieve the device list registered on the LG platform. This process only needs to be done once and does not need to be done every time after the list is retrieved.
               2. Check the deviceId value of the device whose status you want to get from the device list, and call Get Device Status API (GET /devices/{deviceId}/state) using this value.
 
               <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="258px" preserveAspectRatio="none" style="width:346px;height:258px;background:#FFFFFF;" version="1.1" viewBox="0 0 346 258" width="346px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="256" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="256" y="170.7622"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="330.5" x="10" y="56.2295"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="76" x2="76" y1="39.2295" y2="220.6182"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="260.5" x2="260.5" y1="39.2295" y2="220.6182"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="28.1533">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="219.6182"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="242.7715">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="191.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="198.5" y="28.1533">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="191.5" y="219.6182"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="198.5" y="242.7715">ThinQ Business API</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="256" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="256" y="170.7622"/><path d="M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="330.5" x="10" y="56.2295"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="72.229">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="125" x="86" y="70.9214">[If you need a new list]</text><polygon fill="#181818" points="244,96.0503,254,100.0503,244,104.0503,248,100.0503" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="76" x2="250" y1="100.0503" y2="100.0503"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="77" x="83" y="95.1938">GET /devices</text><polygon fill="#181818" points="87,127.9063,77,131.9063,87,135.9063,83,131.9063" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="260" y1="131.9063" y2="131.9063"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="57" x="93" y="127.0498">device list</text><polygon fill="#181818" points="244,166.7622,254,170.7622,244,174.7622,248,170.7622" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="76" x2="250" y1="170.7622" y2="170.7622"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="161" x="83" y="165.9058">GET /device/{deviceId}/state</text><polygon fill="#181818" points="87,198.6182,77,202.6182,87,206.6182,83,202.6182" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="260" y1="202.6182" y2="202.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="69" x="93" y="197.7617">device state</text><!--SRC=[TOtB2i9034NNdQ-uk9VkNGWAjHH45Fi3iPFYO1lBJEe3yT-TMXUwS7L9pir9E3dfo5CBopNrZQxEeXjg6UiyAqg-gObONUKw4iLa6mTXZptxYwju0WhenjrliJmwsM7P1oSS0XRRujqzL8OQHL7ZVkuXp1OKuuh61JL8FYvCvx4wGvwLI2qFhqAaLAcxaFAWIJnhxmKZ7UzPhFblI1zZ5lQP1eqQy-txrRtv2m00]--></g></svg>
-              
+
           ## Control Device
           To control devices, the following Device API is used.
 
@@ -66,7 +66,7 @@ contents:
               - [`GET /devices`](#tag/Device-API/operation/getDevices)
               - [`GET /devices/{deviceId}/profile`](#tag/Device-API/operation/getProfileOfDevice)
               - [`POST /devices/{deviceId}/state`](#tag/Device-API/operation/controlDevice)
-              
+
             - Sequence
               1. Your service needs to use Get Device List API (GET /devices) to retrieve the device list registered on the LG platform. This process only needs to be done once and does not need to be done every time after the list is retrieved.
               2. Check the deviceId value of the device to be controlled in the device list, and call Get Device Profile API (GET /devices/{device-id}/profile) using this value.
@@ -75,24 +75,24 @@ contents:
               5. Get the device control result back as an API response.
 
               <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="397px" preserveAspectRatio="none" style="width:360px;height:397px;background:#FFFFFF;" version="1.1" viewBox="0 0 360 397" width="360px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="170.4238" style="stroke:#181818;stroke-width:1.0;" width="10" x="71" y="170.7622"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="76" y="242.4741"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="270" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="270" y="170.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="270" y="309.3301"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="344.5" x="10" y="56.2295"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="76" x2="76" y1="39.2295" y2="359.186"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="274.5" x2="274.5" y1="39.2295" y2="359.186"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="28.1533">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="358.186"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="381.3394">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="205.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="212.5" y="28.1533">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="205.5" y="358.186"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="212.5" y="381.3394">ThinQ Business API</text><rect fill="#FFFFFF" height="170.4238" style="stroke:#181818;stroke-width:1.0;" width="10" x="71" y="170.7622"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="76" y="242.4741"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="270" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="270" y="170.7622"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="270" y="309.3301"/><path d="M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="344.5" x="10" y="56.2295"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="72.229">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="125" x="86" y="70.9214">[If you need a new list]</text><polygon fill="#181818" points="258,96.0503,268,100.0503,258,104.0503,262,100.0503" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="76" x2="264" y1="100.0503" y2="100.0503"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="77" x="83" y="95.1938">GET /devices</text><polygon fill="#181818" points="87,127.9063,77,131.9063,87,135.9063,83,131.9063" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="274" y1="131.9063" y2="131.9063"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="57" x="93" y="127.0498">device list</text><polygon fill="#181818" points="258,166.7622,268,170.7622,258,174.7622,262,170.7622" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="81" x2="264" y1="170.7622" y2="170.7622"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="166" x="88" y="165.9058">GET /device/{deviceId}/profile</text><polygon fill="#181818" points="92,198.6182,82,202.6182,92,206.6182,88,202.6182" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="274" y1="202.6182" y2="202.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="74" x="98" y="197.7617">device profile</text><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="128" y1="234.4741" y2="234.4741"/><line style="stroke:#181818;stroke-width:1.0;" x1="128" x2="128" y1="234.4741" y2="247.4741"/><line style="stroke:#181818;stroke-width:1.0;" x1="87" x2="128" y1="247.4741" y2="247.4741"/><polygon fill="#181818" points="97,243.4741,87,247.4741,97,251.4741,93,247.4741" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="97" x="93" y="229.6177">create command</text><polygon fill="#181818" points="258,305.3301,268,309.3301,258,313.3301,262,309.3301" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="81" x2="264" y1="309.3301" y2="309.3301"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="170" x="88" y="304.4736">POST /device/{deviceId}/state</text><polygon fill="#181818" points="87,337.186,77,341.186,87,345.186,83,341.186" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="274" y1="341.186" y2="341.186"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="93" x="93" y="336.3296">command result</text><!--SRC=[TL7DIiD043vtd-AZTycz1q6XBG7HIFC2u-u45vDDs9bKHVhktJIfj3QUPdU-tsNbmuUE8ZLmN55VwwOD-amDuscxpal-KfDWzTPt51JB8bq2H-muxhtb9KZGZRjhOldkmoiUU_61HV1Gv2VkcpLKA_8AtssFmEn0QNoYzg86YyaBT_U9ki9sNI9pF4H9GicgtvFoOBE8h7qC6D5Hpy6P_nsodt7cxf1riQrypURNyVo8ouZhXBFa8c0whc0Z3nhRDWsb3ZUkZczMVteMBxlPeg99DDTgoa9aITysat04]--></g></svg>
-              
+
           ## Subscribe to Device Push
           Uses the Push API to subscribe to push notifications on a device (Currently, only home appliances registered on LG ThinQ are supported.)
 
             - API to Use
               - [`GET /devices`](#tag/Device-API/operation/getDevices)
               - [`POST /push/{deviceId}/subscribe`](#tag/Event-API/operation/subscribePushMessages)
-              
+
             - Sequence
               1. Your service needs to use Get Device List API (GET /devices) to retrieve the device list registered on the LG platform. This process only needs to be done once and does not need to be done every time after the list is retrieved.
               2. Check the deviceId value of the device you want to receive push notifications for from the device list, and call Subscribe to Device Push API (POST /push/{deviceId}/subscribe) using this value.
               3. In the API response, you get a result for the subscription success/failure.
               4. When a push notification occurs on your device, you'll receive a push message to the callback URL you registered. If there's a message you need to deliver to the user, you will handle it accordingly.
 
-              <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="356px" preserveAspectRatio="none" style="width:442px;height:356px;background:#FFFFFF;" version="1.1" viewBox="0 0 442 356" width="442px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="284" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="284" y="170.7622"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="358.5" x="10" y="56.2295"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="426.5" x="10" y="217.6182"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="76" x2="76" y1="39.2295" y2="318.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="288.5" x2="288.5" y1="39.2295" y2="318.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="397.5" x2="397.5" y1="39.2295" y2="318.2949"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="28.1533">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="317.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="340.4482">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="219.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="226.5" y="28.1533">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="219.5" y="317.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="226.5" y="340.4482">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="57" x="369.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="43" x="376.5" y="28.1533">Device</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="57" x="369.5" y="317.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="43" x="376.5" y="340.4482">Device</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="284" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="284" y="170.7622"/><path d="M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="358.5" x="10" y="56.2295"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="72.229">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="125" x="86" y="70.9214">[If you need a new list]</text><polygon fill="#181818" points="272,96.0503,282,100.0503,272,104.0503,276,100.0503" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="76" x2="278" y1="100.0503" y2="100.0503"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="77" x="83" y="95.1938">GET /devices</text><polygon fill="#181818" points="87,127.9063,77,131.9063,87,135.9063,83,131.9063" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="288" y1="131.9063" y2="131.9063"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="57" x="93" y="127.0498">device list</text><polygon fill="#181818" points="272,166.7622,282,170.7622,272,174.7622,276,170.7622" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="76" x2="278" y1="170.7622" y2="170.7622"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="189" x="83" y="165.9058">POST /push/{deviceId}/subscribe</text><polygon fill="#181818" points="87,198.6182,77,202.6182,87,206.6182,83,202.6182" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="288" y1="202.6182" y2="202.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="93" y="197.7617">result</text><path d="M10,217.6182 L71,217.6182 L71,227.4741 L61,237.4741 L10,237.4741 L10,217.6182 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="426.5" x="10" y="217.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="233.6177">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="91" x="86" y="232.3101">[if push created]</text><polygon fill="#181818" points="300,257.439,290,261.439,300,265.439,296,261.439" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="294" x2="397" y1="261.439" y2="261.439"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="85" x="306" y="256.5825">push message</text><polygon fill="#181818" points="87,289.2949,77,293.2949,87,297.2949,83,293.2949" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="81" x2="288" y1="293.2949" y2="293.2949"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="85" x="93" y="288.4385">push message</text><!--SRC=[NP31JiCm38RFpLDOkq-zSq02RKoLfb6qle2RkCnQcrLnCa28TyTj8yHsIkB_z_VRaJFx4GCEuAZ3rCUNYuy770ZskstLq6SqAaUsFAAFiAhruId0aSALBQq01SQbTcjiJkpVu3a9UnA1fxgQlQszjMte3-Fcgy4-GjN1roM19tA0Udn0pn8D53aArezAUe3Tje5owHDLqKQ-OgGffGWKK_2PklIJT-QEKByU5J4cEPNVYxLoFwMaLcpWLgVvXyp4GAB_DC_97KojO0EfnvaYfsNuh0swFhwJALexrNF-dQYJ_G80]--></g></svg>
-              
+              <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="356px" preserveAspectRatio="none" style="width:442px;height:356px;background:#FFFFFF;" version="1.1" viewBox="0 0 442 356" width="442px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="284" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="284" y="170.7622"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="358.5" x="10" y="56.2295"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="426.5" x="10" y="217.6182"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="76" x2="76" y1="39.2295" y2="318.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="288.5" x2="288.5" y1="39.2295" y2="318.2949"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="397.5" x2="397.5" y1="39.2295" y2="318.2949"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="28.1533">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="20" y="317.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="340.4482">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="219.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="226.5" y="28.1533">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="219.5" y="317.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="226.5" y="340.4482">ThinQ Business API</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="57" x="369.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="43" x="376.5" y="28.1533">Device</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="57" x="369.5" y="317.2949"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="43" x="376.5" y="340.4482">Device</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="284" y="100.0503"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="284" y="170.7622"/><path d="M10,56.2295 L71,56.2295 L71,66.0854 L61,76.0854 L10,76.0854 L10,56.2295 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="358.5" x="10" y="56.2295"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="72.229">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="125" x="86" y="70.9214">[If you need a new list]</text><polygon fill="#181818" points="272,96.0503,282,100.0503,272,104.0503,276,100.0503" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="76" x2="278" y1="100.0503" y2="100.0503"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="77" x="83" y="95.1938">GET /devices</text><polygon fill="#181818" points="87,127.9063,77,131.9063,87,135.9063,83,131.9063" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="288" y1="131.9063" y2="131.9063"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="57" x="93" y="127.0498">device list</text><polygon fill="#181818" points="272,166.7622,282,170.7622,272,174.7622,276,170.7622" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="76" x2="278" y1="170.7622" y2="170.7622"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="189" x="83" y="165.9058">POST /push/{deviceId}/subscribe</text><polygon fill="#181818" points="87,198.6182,77,202.6182,87,206.6182,83,202.6182" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="81" x2="288" y1="202.6182" y2="202.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="93" y="197.7617">result</text><path d="M10,217.6182 L71,217.6182 L71,227.4741 L61,237.4741 L10,237.4741 L10,217.6182 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="83.6768" style="stroke:#000000;stroke-width:1.5;" width="426.5" x="10" y="217.6182"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="233.6177">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="168" x="86" y="232.3101">[if a push message is created]</text><polygon fill="#181818" points="300,257.439,290,261.439,300,265.439,296,261.439" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="294" x2="397" y1="261.439" y2="261.439"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="85" x="306" y="256.5825">push message</text><polygon fill="#181818" points="87,289.2949,77,293.2949,87,297.2949,83,293.2949" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="81" x2="288" y1="293.2949" y2="293.2949"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="85" x="93" y="288.4385">push message</text><!--SRC=[NP3DQiCm48JFrbCikGVVUoWqD0s6qhh4Bx2MrirIMp5QAKqfVVUiRL6IdFIpCz-C95_iHmmuWACEKnzVZZw-uK3mkjjM3PsZqN5aooFw2AjQ3vu2x2cSsD8AK61Sxcw5pO7z1soIi2SHUAghMTlQMzap_MFSl3NOHwWw-3acy4GEK9Tlw5cYWI97mVfHIG-mspPGBZxHATh89umqfHI1OWe-KnS_UMVk2FNxNX5ZaaFvkqWhzrTAQiK6RhND5J8J0ud-qzoJEwqtcM7GH-8d0GlOG6fmfiZHEUbQPehMJlUvpDrGQru0]--></g></svg>
+
           ## Register for DR service
-          After consulting with LG Electronics' API manager in advance, B2B partners can register users for the DR service using a DR API.
+          After consulting with LG Electronics' API manager in advance, B2B partners can register users for the DR service using a DR API. LG Electronics users and devices are registered to the DR service in the following order.
 
             - API to Use
               - [`POST /dr/users`](#tag/DR-API/operation/createDrUser)
@@ -105,7 +105,7 @@ contents:
               5. When an LG Electronics user assigns a home and device to register with the DR service on the LG ThinQ mobile app, LG Electronics' DR service registers the device as a DR device.
 
               <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="698px" preserveAspectRatio="none" style="width:851px;height:698px;background:#FFFFFF;" version="1.1" viewBox="0 0 851 698" width="851px" zoomAndPan="magnify"><defs/><g><rect fill="#DDDDDD" height="686.2983" style="stroke:#181818;stroke-width:0.5;" width="223" x="182.5" y="6"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="99" x="244.5" y="20.9995">Partner Service</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="298" y="436.645"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="369.5" y="372.9331"/><rect fill="#FFFFFF" height="40.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="459" y="560.2129"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="606.5" y="213.6533"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="606.5" y="277.3652"/><rect fill="#FFFFFF" height="141.4238" style="stroke:#181818;stroke-width:1.0;" width="10" x="771" y="341.0771"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="37" x2="37" y1="84.2295" y2="610.0688"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="222.5" x2="222.5" y1="84.2295" y2="610.0688"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="302.5" x2="302.5" y1="84.2295" y2="610.0688"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="374.5" x2="374.5" y1="84.2295" y2="610.0688"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="463.5" x2="463.5" y1="84.2295" y2="610.0688"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="611.5" x2="611.5" y1="84.2295" y2="610.0688"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="775.5" x2="775.5" y1="84.2295" y2="610.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="59" x="5" y="81.1533">End-User</text><ellipse cx="37.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M37.5,21.5 L37.5,48.5 M24.5,29.5 L50.5,29.5 M37.5,48.5 L24.5,63.5 M37.5,48.5 L50.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="59" x="5" y="625.2222">End-User</text><ellipse cx="37.5" cy="636.7983" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M37.5,644.7983 L37.5,671.7983 M24.5,652.7983 L50.5,652.7983 M37.5,671.7983 L24.5,686.7983 M37.5,671.7983 L50.5,686.7983 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="72" x="186.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="58" x="193.5" y="73.1533">Frontend</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="72" x="186.5" y="609.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="58" x="193.5" y="632.2222">Frontend</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="69" x="268.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="55" x="275.5" y="73.1533">Backend</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="69" x="268.5" y="609.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="55" x="275.5" y="632.2222">Backend</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="54" x="347.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="40" x="354.5" y="73.1533">OAuth</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="54" x="347.5" y="609.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="40" x="354.5" y="632.2222">OAuth</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="411.5" y="50"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="91" x="418.5" y="73.1533">LG ThinQ App</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="411.5" y="609.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="91" x="418.5" y="632.2222">LG ThinQ App</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="170" x="526.5" y="30.7705"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="72" x="575.5" y="53.9238">LMP OAuth</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="156" x="533.5" y="73.1533">(LGE Members Platform)</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="170" x="526.5" y="609.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="72" x="575.5" y="632.2222">LMP OAuth</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="156" x="533.5" y="651.4517">(LGE Members Platform)</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="706.5" y="30.7705"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="713.5" y="53.9238">ThinQ Business API</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="81" x="735.5" y="73.1533">(DR Service)</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="706.5" y="609.0688"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="713.5" y="632.2222">ThinQ Business API</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="81" x="735.5" y="651.4517">(DR Service)</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="298" y="436.645"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="369.5" y="372.9331"/><rect fill="#FFFFFF" height="40.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="459" y="560.2129"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="606.5" y="213.6533"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="606.5" y="277.3652"/><rect fill="#FFFFFF" height="141.4238" style="stroke:#181818;stroke-width:1.0;" width="10" x="771" y="341.0771"/><polygon fill="#181818" points="452,114.0854,462,118.0854,452,122.0854,456,118.0854" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="37.5" x2="458" y1="118.0854" y2="118.0854"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="246" x="44.5" y="113.229">register devices : Air Conditioner, ESS, TV</text><polygon fill="#181818" points="210.5,145.9414,220.5,149.9414,210.5,153.9414,214.5,149.9414" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="37.5" x2="216.5" y1="149.9414" y2="149.9414"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="161" x="44.5" y="145.085">sign up partner's DR service</text><polygon fill="#181818" points="48.5,177.7974,38.5,181.7974,48.5,185.7974,44.5,181.7974" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="42.5" x2="221.5" y1="181.7974" y2="181.7974"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="140" x="54.5" y="176.9409">direct to LGE login page</text><polygon fill="#181818" points="594.5,209.6533,604.5,213.6533,594.5,217.6533,598.5,213.6533" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="37.5" x2="600.5" y1="213.6533" y2="213.6533"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="76" x="44.5" y="208.7969">log in to LGE</text><polygon fill="#181818" points="314,241.5093,304,245.5093,314,249.5093,310,245.5093" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="308" x2="610.5" y1="245.5093" y2="245.5093"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="106" x="320" y="240.6528">authorization code</text><polygon fill="#181818" points="594.5,273.3652,604.5,277.3652,594.5,281.3652,598.5,277.3652" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="303" x2="600.5" y1="277.3652" y2="277.3652"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="125" x="310" y="272.5088">request access token</text><polygon fill="#181818" points="314,305.2212,304,309.2212,314,313.2212,310,309.2212" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="308" x2="610.5" y1="309.2212" y2="309.2212"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="78" x="320" y="304.3647">access token</text><polygon fill="#181818" points="759,337.0771,769,341.0771,759,345.0771,763,341.0771" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="303" x2="765" y1="341.0771" y2="341.0771"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="196" x="310" y="336.2207">register the user (POST /dr/users)</text><polygon fill="#181818" points="390.5,368.9331,380.5,372.9331,390.5,376.9331,386.5,372.9331" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="384.5" x2="770" y1="372.9331" y2="372.9331"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="168" x="396.5" y="368.0767">request access/refresh token</text><polygon fill="#181818" points="759,400.7891,769,404.7891,759,408.7891,763,404.7891" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="374.5" x2="765" y1="404.7891" y2="404.7891"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="121" x="381.5" y="399.9326">access/refresh token</text><polygon fill="#181818" points="319,432.645,309,436.645,319,440.645,315,436.645" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="313" x2="770" y1="436.645" y2="436.645"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="96" x="325" y="431.7886">request user info</text><polygon fill="#181818" points="759,464.501,769,468.501,759,472.501,763,468.501" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="303" x2="765" y1="468.501" y2="468.501"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="49" x="310" y="463.6445">user info</text><polygon fill="#181818" points="314,478.501,304,482.501,314,486.501,310,482.501" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="308" x2="775" y1="482.501" y2="482.501"/><polygon fill="#181818" points="233.5,492.501,223.5,496.501,233.5,500.501,229.5,496.501" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="227.5" x2="302" y1="496.501" y2="496.501"/><polygon fill="#181818" points="48.5,524.3569,38.5,528.3569,48.5,532.3569,44.5,528.3569" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="42.5" x2="221.5" y1="528.3569" y2="528.3569"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="133" x="54.5" y="523.5005">direct to LG ThinQ App</text><polygon fill="#181818" points="447,556.2129,457,560.2129,447,564.2129,451,560.2129" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="37.5" x2="453" y1="560.2129" y2="560.2129"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="190" x="44.5" y="555.3564">choose home and devices for DR</text><polygon fill="#181818" points="764,588.0688,774,592.0688,764,596.0688,768,592.0688" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="469" x2="770" y1="592.0688" y2="592.0688"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="182" x="476" y="587.2124">send chosen home and devices</text><!--SRC=[RLDDJ-Cm4BtxLunoMH1KFUoDmqe52aA29RljxcalhZrfB1exEvuWnAzdx92IjCqb6Vkz-NXl4b-SRpNf1YnMkjlnNV3yKpS8Z_VBXpM-iTA60q6nz7Rs9o8Le2Dqyg4suGsAKXDx95WXlJg3XG9v92Cxurhj6OexafJeRIP-9rkb-1XshStB2BMHy1ZqlEYu7Y0vKC81wKHDS8_tiAwT_mMBjirmtRO01vYd4dAAV_vCXeKdR3P84SgTvYfGSvw9kwQTqlgyrrrq7cE4HVaW_DlVWm0zov9IIIEO_SYbhu1mwoBBYSK4YtAqS0GtmLl7BeY4bx1ShIvX_NVF7CGIR7HR3rsRrH3ijmXIClObrHut4r8cNu5rX8Q1Gp8ITc7hl92tk4ykWmbCBa1kUbYoshrgnZnr0ipwBf8P0jOYLY3thbF3O895PN726R1z_ekBFFZ_3YE3DYRfnK5SLeJSaP-UZScMFhcVed6D_M1dvVDg3NDBynJ6SsK7fRAL9ohE2Il2M9-gV72tpvNQcAJAjPslmi0_FFXgVkJRo9YJldpjw7XPSc5JXn0HwY1_efOD7xP65bESLscdianfDT8V87Xv7-4_0000]--></g></svg>
-              
+
           ## Create DR Event and Get Data
           Describes the process of registering a DR event and downloading monitoring data for a device before and after the DR event.
 
@@ -117,20 +117,20 @@ contents:
               - [`POST /dr/events/{eventId}/targets/batch`](#tag/DR-API/operation/createEventTargetBatch)
               - [`POST /dr/data-zip/files`](#tag/DR-API/operation/createDataZipFile)
               - [`POST /dr/data-zip/files/{filename}`](#tag/DR-API/operation/downloadDataZipFile)
-              
+
             - Sequence
               1. Call Create DR Event API (POST /dr/events) to register DR events on the LG DR service server.
               2. When the DR event is successfully registered, the DR Event ID (eventId) is retrieved.
               3. If the list of the devices that need to be participated in the DR event needs to be modified after the DR event has been created, call Modify DR Event target API.
               4. After the DR Event ends, download the monitoring data of the device within the DR event period.
 
-              <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="760px" preserveAspectRatio="none" style="width:517px;height:760px;background:#FFFFFF;" version="1.1" viewBox="0 0 517 760" width="517px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="119.1709"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="209.8477"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="290.6685"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="371.4893"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="519.166"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="582.8779"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="463.5" y="646.5898"/><rect fill="none" height="342.8862" style="stroke:#000000;stroke-width:1.5;" width="435.5" x="10" y="75.459"/><rect fill="none" height="245.3184" style="stroke:#000000;stroke-width:1.5;" width="415.5" x="20" y="166.0269"/><rect fill="none" height="210.9917" style="stroke:#000000;stroke-width:1.5;" width="491.5" x="20" y="475.4541"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="86" x2="86" y1="58.459" y2="425.3452"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;" x1="86" x2="86" y1="425.3452" y2="468.4541"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="86" x2="86" y1="468.4541" y2="703.4458"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="355.5" x2="355.5" y1="58.459" y2="425.3452"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;" x1="355.5" x2="355.5" y1="425.3452" y2="468.4541"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="355.5" x2="355.5" y1="468.4541" y2="703.4458"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="468.5" x2="468.5" y1="58.459" y2="425.3452"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;" x1="468.5" x2="468.5" y1="425.3452" y2="468.4541"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="468.5" x2="468.5" y1="468.4541" y2="703.4458"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="30" y="24.2295"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="37" y="47.3828">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="30" y="702.4458"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="37" y="725.5991">Partner Service</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="286.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="293.5" y="28.1533">ThinQ Business API</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="81" x="315.5" y="47.3828">(DR Service)</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="286.5" y="702.4458"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="293.5" y="725.5991">ThinQ Business API</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="81" x="315.5" y="744.8286">(DR Service)</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="66" x="435.5" y="24.2295"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="52" x="442.5" y="47.3828">AWS S3</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="66" x="435.5" y="702.4458"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="52" x="442.5" y="725.5991">AWS S3</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="119.1709"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="209.8477"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="290.6685"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="371.4893"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="519.166"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="582.8779"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="463.5" y="646.5898"/><path d="M10,75.459 L217,75.459 L217,85.3149 L207,95.3149 L10,95.3149 L10,75.459 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="342.8862" style="stroke:#000000;stroke-width:1.5;" width="435.5" x="10" y="75.459"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="162" x="25" y="91.4585">Create a new DR Request</text><polygon fill="#181818" points="339,115.1709,349,119.1709,339,123.1709,343,119.1709" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="119.1709" y2="119.1709"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="95" x="93" y="114.3145">POST /dr/events</text><polygon fill="#181818" points="97,147.0269,87,151.0269,97,155.0269,93,151.0269" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="151.0269" y2="151.0269"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="103" y="146.1704">result</text><path d="M20,166.0269 L81,166.0269 L81,175.8828 L71,185.8828 L20,185.8828 L20,166.0269 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="245.3184" style="stroke:#000000;stroke-width:1.5;" width="415.5" x="20" y="166.0269"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="35" y="182.0264">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="157" x="96" y="180.7188">[if targets need to be added]</text><polygon fill="#181818" points="339,205.8477,349,209.8477,339,213.8477,343,209.8477" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="209.8477" y2="209.8477"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="191" x="93" y="204.9912">POST /dr/events/{eventId}/targets</text><polygon fill="#181818" points="97,237.7036,87,241.7036,97,245.7036,93,241.7036" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="241.7036" y2="241.7036"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="103" y="236.8472">result</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="435.5" y1="250.7036" y2="250.7036"/><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="223" x="25" y="263.3955">[if a specific target needs to be updated]</text><polygon fill="#181818" points="339,286.6685,349,290.6685,339,294.6685,343,290.6685" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="290.6685" y2="290.6685"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="246" x="93" y="285.812">POST /dr/events/{eventId}/targets/{targetId}</text><polygon fill="#181818" points="97,318.5244,87,322.5244,97,326.5244,93,322.5244" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="322.5244" y2="322.5244"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="103" y="317.668">result</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="435.5" y1="331.5244" y2="331.5244"/><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="175" x="25" y="344.2163">[if targets needs to be updated]</text><polygon fill="#181818" points="339,367.4893,349,371.4893,339,375.4893,343,371.4893" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="371.4893" y2="371.4893"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="227" x="93" y="366.6328">POST /dr/events/{eventId}/targets/batch</text><polygon fill="#181818" points="97,399.3452,87,403.3452,97,407.3452,93,403.3452" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="403.3452" y2="403.3452"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="103" y="398.4888">result</text><text fill="#000000" font-family="LGEIText" font-size="11" lengthAdjust="spacing" textLength="112" x="222.75" y="452.0371">&lt; DR Event execution &gt;</text><path d="M20,475.4541 L234,475.4541 L234,485.3101 L224,495.3101 L20,495.3101 L20,475.4541 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="210.9917" style="stroke:#000000;stroke-width:1.5;" width="491.5" x="20" y="475.4541"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="169" x="35" y="491.4536">Download monitoring data</text><polygon fill="#181818" points="339,515.166,349,519.166,339,523.166,343,519.166" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="519.166" y2="519.166"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="131" x="93" y="514.3096">POST /dr/data-zip/files</text><polygon fill="#181818" points="97,547.022,87,551.022,97,555.022,93,551.022" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="551.022" y2="551.022"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="48" x="103" y="546.1655">filename</text><polygon fill="#181818" points="339,578.8779,349,582.8779,339,586.8779,343,582.8779" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="582.8779" y2="582.8779"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="191" x="93" y="578.0215">POST /dr/data-zip/files/{filename}</text><polygon fill="#181818" points="97,610.7339,87,614.7339,97,618.7339,93,614.7339" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="614.7339" y2="614.7339"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="78" x="103" y="609.8774">download info</text><polygon fill="#181818" points="451.5,642.5898,461.5,646.5898,451.5,650.5898,455.5,646.5898" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="457.5" y1="646.5898" y2="646.5898"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="96" x="93" y="641.7334">download the file</text><polygon fill="#181818" points="97,674.4458,87,678.4458,97,682.4458,93,678.4458" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="467.5" y1="678.4458" y2="678.4458"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="16" x="103" y="673.5894">file</text><!--SRC=[hLBTQy8m47_lNt7uj26Q1z_64DnqGnYRiy9UzXARguRLIvTSLIR-xqjZAtx0FjWA9UdTxolfkJTDkRHo0GfJMMHyPuWVvGBXuNumdE2Q8zzcdUXS4aDZv3y8BSHebph11aW7-Qvs39pCDJt3JU4qeNFG6mrVwQ8_hecNWQbEIBsN6E9EQBbE5CsiANAujIWPGGBX2hp26DyBT1o1VofhQ7MzLhC9Lp1wYYSWb1MuH68NK1QviEGNvmyOAZ9Zq2cmj3DavvLH0HkOUXkbK0NCZ_J59gn3jHMLs9vxxegPmz9MWiinqQbEgWGXWAiI5Bdov_rJ1h7PRNpf1t4ER-4_Gqmb9_El_4b5vHkrsssuBd_je9G0N6DIi3O4NT-fnw1lLfGPgM1XIBEnccRWCyhlvg34j3vqBbATuT4yb0NoenxzJa9iQkBsK4tL-JIbvapITOBa7iHp3FwdUSA5V080]--></g></svg>
-              
+              <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="760px" preserveAspectRatio="none" style="width:517px;height:760px;background:#FFFFFF;" version="1.1" viewBox="0 0 517 760" width="517px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="119.1709"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="209.8477"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="290.6685"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="371.4893"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="519.166"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="582.8779"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="463.5" y="646.5898"/><rect fill="none" height="342.8862" style="stroke:#000000;stroke-width:1.5;" width="435.5" x="10" y="75.459"/><rect fill="none" height="245.3184" style="stroke:#000000;stroke-width:1.5;" width="415.5" x="20" y="166.0269"/><rect fill="none" height="210.9917" style="stroke:#000000;stroke-width:1.5;" width="491.5" x="20" y="475.4541"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="86" x2="86" y1="58.459" y2="425.3452"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;" x1="86" x2="86" y1="425.3452" y2="468.4541"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="86" x2="86" y1="468.4541" y2="703.4458"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="355.5" x2="355.5" y1="58.459" y2="425.3452"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;" x1="355.5" x2="355.5" y1="425.3452" y2="468.4541"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="355.5" x2="355.5" y1="468.4541" y2="703.4458"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="468.5" x2="468.5" y1="58.459" y2="425.3452"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,4.0;" x1="468.5" x2="468.5" y1="425.3452" y2="468.4541"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="468.5" x2="468.5" y1="468.4541" y2="703.4458"/><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="30" y="24.2295"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="37" y="47.3828">Partner Service</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="30" y="702.4458"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="98" x="37" y="725.5991">Partner Service</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="286.5" y="5"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="293.5" y="28.1533">ThinQ Business API</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="81" x="315.5" y="47.3828">(DR Service)</text><rect fill="#E2E2F0" height="52.459" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="286.5" y="702.4458"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="125" x="293.5" y="725.5991">ThinQ Business API</text><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="81" x="315.5" y="744.8286">(DR Service)</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="66" x="435.5" y="24.2295"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="52" x="442.5" y="47.3828">AWS S3</text><rect fill="#E2E2F0" height="33.2295" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="66" x="435.5" y="702.4458"/><text fill="#000000" font-family="LGEIText" font-size="14" lengthAdjust="spacing" textLength="52" x="442.5" y="725.5991">AWS S3</text><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="119.1709"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="209.8477"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="290.6685"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="371.4893"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="519.166"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="351" y="582.8779"/><rect fill="#FFFFFF" height="31.856" style="stroke:#181818;stroke-width:1.0;" width="10" x="463.5" y="646.5898"/><path d="M10,75.459 L217,75.459 L217,85.3149 L207,95.3149 L10,95.3149 L10,75.459 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="342.8862" style="stroke:#000000;stroke-width:1.5;" width="435.5" x="10" y="75.459"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="162" x="25" y="91.4585">Create a new DR Request</text><polygon fill="#181818" points="339,115.1709,349,119.1709,339,123.1709,343,119.1709" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="119.1709" y2="119.1709"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="95" x="93" y="114.3145">POST /dr/events</text><polygon fill="#181818" points="97,147.0269,87,151.0269,97,155.0269,93,151.0269" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="151.0269" y2="151.0269"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="103" y="146.1704">result</text><path d="M20,166.0269 L81,166.0269 L81,175.8828 L71,185.8828 L20,185.8828 L20,166.0269 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="245.3184" style="stroke:#000000;stroke-width:1.5;" width="415.5" x="20" y="166.0269"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="35" y="182.0264">alt</text><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="157" x="96" y="180.7188">[if targets need to be added]</text><polygon fill="#181818" points="339,205.8477,349,209.8477,339,213.8477,343,209.8477" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="209.8477" y2="209.8477"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="191" x="93" y="204.9912">POST /dr/events/{eventId}/targets</text><polygon fill="#181818" points="97,237.7036,87,241.7036,97,245.7036,93,241.7036" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="241.7036" y2="241.7036"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="103" y="236.8472">result</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="435.5" y1="250.7036" y2="250.7036"/><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="223" x="25" y="263.3955">[if a specific target needs to be updated]</text><polygon fill="#181818" points="339,286.6685,349,290.6685,339,294.6685,343,290.6685" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="290.6685" y2="290.6685"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="246" x="93" y="285.812">POST /dr/events/{eventId}/targets/{targetId}</text><polygon fill="#181818" points="97,318.5244,87,322.5244,97,326.5244,93,322.5244" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="322.5244" y2="322.5244"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="103" y="317.668">result</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="435.5" y1="331.5244" y2="331.5244"/><text fill="#000000" font-family="LGEIText" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="175" x="25" y="344.2163">[if targets needs to be updated]</text><polygon fill="#181818" points="339,367.4893,349,371.4893,339,375.4893,343,371.4893" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="371.4893" y2="371.4893"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="227" x="93" y="366.6328">POST /dr/events/{eventId}/targets/batch</text><polygon fill="#181818" points="97,399.3452,87,403.3452,97,407.3452,93,403.3452" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="403.3452" y2="403.3452"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="32" x="103" y="398.4888">result</text><text fill="#000000" font-family="LGEIText" font-size="11" lengthAdjust="spacing" textLength="112" x="222.75" y="452.0371">&lt; DR Event execution &gt;</text><path d="M20,475.4541 L234,475.4541 L234,485.3101 L224,495.3101 L20,495.3101 L20,475.4541 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="210.9917" style="stroke:#000000;stroke-width:1.5;" width="491.5" x="20" y="475.4541"/><text fill="#000000" font-family="LGEIText" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="169" x="35" y="491.4536">Download monitoring data</text><polygon fill="#181818" points="339,515.166,349,519.166,339,523.166,343,519.166" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="519.166" y2="519.166"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="131" x="93" y="514.3096">POST /dr/data-zip/files</text><polygon fill="#181818" points="97,547.022,87,551.022,97,555.022,93,551.022" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="551.022" y2="551.022"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="52" x="103" y="546.1655">file name</text><polygon fill="#181818" points="339,578.8779,349,582.8779,339,586.8779,343,582.8779" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="345" y1="582.8779" y2="582.8779"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="191" x="93" y="578.0215">POST /dr/data-zip/files/{filename}</text><polygon fill="#181818" points="97,610.7339,87,614.7339,97,618.7339,93,614.7339" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="355" y1="614.7339" y2="614.7339"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="78" x="103" y="609.8774">download info</text><polygon fill="#181818" points="451.5,642.5898,461.5,646.5898,451.5,650.5898,455.5,646.5898" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="86" x2="457.5" y1="646.5898" y2="646.5898"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="96" x="93" y="641.7334">download the file</text><polygon fill="#181818" points="97,674.4458,87,678.4458,97,682.4458,93,678.4458" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="91" x2="467.5" y1="678.4458" y2="678.4458"/><text fill="#000000" font-family="LGEIText" font-size="13" lengthAdjust="spacing" textLength="16" x="103" y="673.5894">file</text><!--SRC=[hL9DQm8n4BtlhnWyjOZkmLifWbLRXD9QL-YbbxYPrT1riarcLIh-zoPn5J-WjRI1PR8pxxrvISQ-Aog44NEGc8aovtjD_2Jc28yF_S4OLnovCgjK5O8OQaFtGsWWGRDGATP0M2YskMFWUARe1UvAgmYjXSvmy4PNlT6EU1sOyeJKUKqWQOMIRKNHrEYoWAv1mGW229VW54RuKQBb2DogMaEZxRJgTRY1uNCoXbYQ61T8R0FA89U6NB3kW24ZSWQL0GipHRPE6IMmXebh8oNAWBb8Frw7E92Rk1BRSy-xOcxHjnLW2qnLfjBAGJ1WAmTb8Trv_-GXNcytBdM1dSDR-4yJ4y7fxBl-92F_HSrc4sxzq_Qz1E0AqvAL9cYxocuCUdf9kHOIvfeKQwDe2iwZ-6aEFARngOeuKpaUpODF0BbPZtwd4QzzyCJDePpS6LIKwJD9smgIUn3FC1WuDHHkv0i0]--></g></svg>
+
       - name: Base URL
         description: |
-          The ThinQ Business API distinguishes the Base URL according to the location of the customer's device. Therefore, please select and apply the Base URL when calling the API by considering the region where the customer's device is located or the region where the B2B partner's business is located. Also, please note that the Base URLs for the Production environment and Simulator Testing environment are different, as follows. 
+          The ThinQ Business API distinguishes the Base URL according to the location of the customer's device. Therefore, please select and apply the Base URL when calling the API by considering the region where the customer's device is located or the region where the B2B partner's business is located. Also, please note that the Base URLs for the Production environment and Simulator Testing environment are different, as follows.
           ## Production Environment
-          Use the Base URL below to call ThinQ Business API by utilizing **Business API Key** in the production environment.  
+          Use the Base URL below to call ThinQ Business API by utilizing **Business API Key** in the production environment.
 
             |Region|Issue API Token API|ThinQ Business API|
             |-|-|-|
@@ -138,7 +138,7 @@ contents:
             |America|https://us.biz.api.lge.com|https://us.biz.api.lge.com/v1|
             |Europe, Middle East, Africa|https://eu.biz.api.lge.com|https://eu.biz.api.lge.com/v1|
 
-            
+
           ## Simulator Testing Environment
           Use the Base URL below to call ThinQ Business API by utilizing the **Test API Key** in the Simulator Testing environment.
 
@@ -146,8 +146,8 @@ contents:
             |-|-|-|
             |South Asia, East Asia and Pacific|https://ap-test.biz.api.lge.com|https://ap-test.biz.api.lge.com/v1|
             |America|https://us-test.biz.api.lge.com|https://us-test.biz.api.lge.com/v1|
-            |Europe, Middle East, Africa|https://eu-test.biz.api.lge.com|https://eu-test.biz.api.lge.com/v1|   
-           
+            |Europe, Middle East, Africa|https://eu-test.biz.api.lge.com|https://eu-test.biz.api.lge.com/v1|
+
       - name: Codes
         x-displayName: Code Definition
         description: |
@@ -162,7 +162,7 @@ contents:
             | AU   | Australia  | BD   | Bangladesh | CN   | China      | HK   | Hong Kong  | ID   | Indonesia  | IN   | India      | JP   | Japan      | KR   | South Korea|
             | LA   | Laos       | MY   | Malaysia   | NP   | Nepal      | NZ   | New Zealand| PH   | Philippines| SG   | Singapore  | TH   | Thailand   | TW   | Taiwan     |
             | VN   | Vietnam    | MM   | Myanmar    | KH   | Cambodia   | LK   | Sri Lanka  |      |            |      |            |      |            |      |            |
-            
+
             ### America
 
             | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                | Code | Name                |
@@ -225,13 +225,13 @@ contents:
                       <code>1102</code> : Parameters that are not permitted have been entered. <br>
                       <code>1104</code> : Message ID grammar is incorrect. <br>
                       <code>1216</code> : Values in the header are not correct. <br>
-                      <code>1217</code> : The device is deleted. <br> 
-                      <code>1218</code> : The token is not valid. <br> 
-                      <code>2202</code> : The product family is not supported. <br> 
-                      <code>2205</code> : The device status data is not transmitted normally or the transmitted data is not parsed normally. <br> 
-                      <code>2207</code> : The control command is not invalid. (The control command contains undefined resources or properties.) <br> 
-                      <code>2208</code> : Failed to control the device. <br> 
-                      <code>2209</code> : The response from the device is being delayed. <br> 
+                      <code>1217</code> : The device is deleted. <br>
+                      <code>1218</code> : The token is not valid. <br>
+                      <code>2202</code> : The product family is not supported. <br>
+                      <code>2205</code> : The device status data is not transmitted normally or the transmitted data is not parsed normally. <br>
+                      <code>2207</code> : The control command is not invalid. (The control command contains undefined resources or properties.) <br>
+                      <code>2208</code> : Failed to control the device. <br>
+                      <code>2209</code> : The response from the device is being delayed. <br>
                       <code>2210</code> : Retry the request. <br>
                       <code>2214</code> : Failed to request. <br>
                       <code>2301</code> : The device does not support control command. (If the remoteControl is false)  <br>
@@ -268,17 +268,17 @@ contents:
                       <code>1205</code> : There is no registered device. <br>
                       <code>1206</code> : There is no subscribed push. <br>
                       <code>1207</code> : There is a subscribed push (an identical push already exists). <br>
-                      <code>1210</code> : The device is not allowed by the service. <br> 
-                      <code>1211</code> : The device is not registered by the user. <br> 
-                      <code>1212</code> : The device is not owned by the user. <br> 
-                      <code>1213</code> : There is no registered device. <br> 
-                      <code>1214</code> : The device does not allow the event subscription. <br> 
+                      <code>1210</code> : The device is not allowed by the service. <br>
+                      <code>1211</code> : The device is not registered by the user. <br>
+                      <code>1212</code> : The device is not owned by the user. <br>
+                      <code>1213</code> : There is no registered device. <br>
+                      <code>1214</code> : The device does not allow the event subscription. <br>
                       <code>1224</code> : The device ID is not allowed.
                   </td>
                 </tr>
                 <tr>
                   <td><code>406</code></td>
-                  <td><code>6406</code> : Not Supported Resource</td>
+                  <td><code>6406</code> : Not Supported</td>
                   <td>
                       <code>code</code> field in the error response schema :<br>
                       <code>1219</code> : The product model is not supported. <br>
@@ -374,7 +374,7 @@ contents:
                     <code>4314</code> : Resource Already Exists: Group <br>
                     <code>4315</code> : Resource Already Exists: User
                 </td>
-              </tr>          
+              </tr>
               <tr>
                 <td><code>429</code></td>
                 <td><code>6429</code> : Too Many Requests</td>
@@ -406,10 +406,10 @@ contents:
 
             | Push Type | Description | Pre-Condition |
             |-|-|-|
-            | DEVICE_PUSH | Device operation is completed, Part replacements is required. <br> (e.g. washer - washing completed, air purifier - filter replacement) | Subscribe to Device Push API called |
-            | DEVICE_REGISTERED | Device added | Get Device List API called|
-            | DEVICE_UNREGISTERED | Device has been deleted | Get Device List API called|
-            | DEVICE_ALIAS_CHANGED | Device's alias changed | Get Device List API called|
+            | DEVICE_PUSH | Device operation is completed, Part replacements is required. <br> (e.g. washer - washing completed, air purifier - filter replacement) | [Subscribe to Device Push API](#tag/Push-API/operation/subscribePushMessages) called |
+            | DEVICE_REGISTERED | Device added | [Get Device List API](#tag/Device-API/operation/getDevices) called|
+            | DEVICE_UNREGISTERED | Device deleted | [Get Device List API](#tag/Device-API/operation/getDevices) called|
+            | DEVICE_ALIAS_CHANGED | Device's alias changed | [Get Device List API](#tag/Device-API/operation/getDevices) called|
 
           <br/><br/>
           ### DEVICE_PUSH
@@ -431,30 +431,43 @@ contents:
             <SchemaDefinition
             schemaRef="#/components/schemas/push-callback-device-alias-changed-schema"
             exampleRef="#/components/examples/push-callback-device-alias-changed-example" />
+      - name: Event API
+        description: |
+          Event API is used for enabling or disabling messages received by B2B partners’ services regarding device updates which are sent out when a specific device’s status is updated. This API is currently for LG ThinQ-registered appliances only but is planned for expanded support for other devices in the future. For a B2B partner’s service to receive device status, it must first register a Callback invoke information of the B2B partner on LG Smart Solution API Developer website. For a B2B partner to use this API, an agreement must first be made with LG Electronics’ contract manager.
+
+           | Push Type | Description | Pre-Condition |
+           |-|-|-|
+           | DEVICE_STATUS | Notify device status update | [Subscribe to Device Event API](#tag/Event-API/operation/subscribeEventMessages) called |
+
+          <br/><br/>
+          ### DEVICE_STATUS
+            <SchemaDefinition
+            schemaRef="#/components/schemas/event-callback-schema"
+            exampleRef="#/components/examples/event-callback-example" />
       - name: User API
         description: |
           The User API is used to manage the information of LG Electronics users who have registered for partner services. <b> Currently, the API is only available to devices registered on LG ThinQ.</b>
       - name: DR API
         description: |
           With B2B partners as demand response (DR) providers, the DR API is used to control the devices of LG Electronics users, who are DR service users. B2B partners can utilize this API to manage LG Electronics users who are DR service users, register DR events that may reduce or change the power consumption of LG Electronics users during certain power peak hours in response to the electricity demand, and search whether the DR target device participates in DR events. The DR target devices are currently limited to air conditioners and TVs, but more products will be supported in the future. The DR service using this API follows the following procedure.
-          ### 1. Device registration and signing-up for DR service 
+          ### 1. Device registration and signing-up for DR service
 
             - LG ThinQ users register their DR devices on the LG ThinQ app and sign up for a B2B partner's DR service.
-            
+
             <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_01.png" width="600"/>
 
           ### 2. DR request issuance
 
             - B2B partners register a DR event using the DR API before the DR event starts.
-            - LG Electronics delivers the registered DR event to the target device before a specified start time.
+            - LG Electronics delivers the registered DR event to the target device before a designated start time.
             - LG ThinQ users receive a notification on the LG ThinQ app before the DR event starts.
 
               <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_02.png" width="600"/>
 
           ### 3. Status monitoring
 
-            - LG Electronics monitors and records the status of the device while the DR event takes place. 
-            - the B2B partners download monitoring data using the DR API.
+            - LG Electronics monitors and records the status of the device while the DR event takes place.
+            - The B2B partners download monitoring data using the DR API.
 
               <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_03.png" width="600"/>
 
@@ -462,7 +475,7 @@ contents:
 
             - Based on the data provided by the DR API, the B2B partner calculates a bill based on the DR participation rate of the DR service users and provides the bill details to the users.
 
-            <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_04.png" width="600"/>        
+            <img src="https://smartsolution.developer.lge.com/assets/images/img_DR_04.png" width="600"/>
     paths:
       /token:
         post:
@@ -594,7 +607,7 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '401':
-              description: Unauthorized
+              description: Unauthorized (In case of authentication error, Response Body will not be provided.)
               headers:
                 X-Response-Code:
                   schema:
@@ -607,6 +620,7 @@ contents:
                 application/json:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
+                none: ''
             '403':
               description: Forbidden
               headers:
@@ -618,12 +632,12 @@ contents:
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: Not Found Resource
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6404`: Not Found Resource'
+                  description: '`6404`: Not Found'
                   example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -632,12 +646,12 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '406':
-              description: Not Supported Resource
+              description: Not Supported
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6406`: Not Supported Resource'
+                  description: '`6406`: Not Supported'
                   example: 6406
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -687,7 +701,7 @@ contents:
         get:
           tags:
             - Device API
-          summary: Get Device Profile List
+          summary: Get Device Profile
           description: Get profile for a specific device.
           operationId: getProfileOfDevice
           security:
@@ -854,7 +868,7 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '401':
-              description: Unauthorized
+              description: Unauthorized (In case of authentication error, Response Body will not be provided.)
               headers:
                 X-Response-Code:
                   schema:
@@ -867,6 +881,7 @@ contents:
                 application/json:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
+                none: ''
             '403':
               description: Forbidden
               headers:
@@ -878,12 +893,12 @@ contents:
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: Not Found Resource
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6404`: Not Found Resource'
+                  description: '`6404`: Not Found'
                   example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -892,12 +907,12 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '406':
-              description: Not Supported Resource
+              description: Not Supported
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6406`: Not Supported Resource'
+                  description: '`6406`: Not Supported'
                   example: 6406
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -1114,7 +1129,7 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '401':
-              description: Unauthorized
+              description: Unauthorized (In case of authentication error, Response Body will not be provided.)
               headers:
                 X-Response-Code:
                   schema:
@@ -1127,6 +1142,7 @@ contents:
                 application/json:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
+                none: ''
             '403':
               description: Forbidden
               headers:
@@ -1138,12 +1154,12 @@ contents:
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: Not Found Resource
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6404`: Not Found Resource'
+                  description: '`6404`: Not Found'
                   example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -1152,12 +1168,12 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '406':
-              description: Not Acceptable
+              description: Not Supported
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6406`: Not Supported Resource'
+                  description: '`6406`: Not Supported'
                   example: 6406
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -1229,7 +1245,7 @@ contents:
               application/json:
                 schema:
                   type: object
-                  description: For a schema of control request messages by device type, see the [**Device Profiles**](/en/apiManage/device_profile) page.
+                  description: For a schema of control request messages by device type, see the [**Device Profile**](/en/apiManage/device_profile) page.
                 examples:
                   Refrigerator:
                     $ref: '#/components/examples/refrigerator-command-example'
@@ -1442,7 +1458,7 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '401':
-              description: Unauthorized
+              description: Unauthorized (In case of authentication error, Response Body will not be provided.)
               headers:
                 X-Response-Code:
                   schema:
@@ -1466,12 +1482,12 @@ contents:
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: Not Found Resource
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6404`: Not Found Resource'
+                  description: '`6404`: Not Found'
                   example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -1480,12 +1496,12 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '406':
-              description: Not Supported Resource
+              description: Not Supported
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6406`: Not Supported Resource'
+                  description: '`6406`: Not Supported'
                   example: 6406
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -1582,7 +1598,7 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '401':
-              description: Unauthorized
+              description: Unauthorized (In case of authentication error, Response Body will not be provided.)
               headers:
                 X-Response-Code:
                   schema:
@@ -1595,6 +1611,7 @@ contents:
                 application/json:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
+                none: ''
             '403':
               description: Forbidden
               headers:
@@ -1606,12 +1623,12 @@ contents:
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: Not Found Resource
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6404`: Not Found Resource'
+                  description: '`6404`: Not Found'
                   example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -1620,12 +1637,12 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '406':
-              description: Not Supported Resource
+              description: Not Supported
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6406`: Not Supported Resource'
+                  description: '`6406`: Not Supported'
                   example: 6406
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -1724,7 +1741,7 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '401':
-              description: Unauthorized
+              description: Unauthorized (In case of authentication error, Response Body will not be provided.)
               headers:
                 X-Response-Code:
                   schema:
@@ -1737,6 +1754,7 @@ contents:
                 application/json:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
+                none: ''
             '403':
               description: Forbidden
               headers:
@@ -1747,13 +1765,27 @@ contents:
                   example: 6403
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
-            '406':
-              description: Not Supported Resource
+            '404':
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6406`: Not Supported Resource'
+                  description: '`6404`: Not Found'
+                  example: 6404
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '406':
+              description: Not Supported
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6406`: Not Supported'
                   example: 6406
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -1761,6 +1793,22 @@ contents:
                 application/json:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
+            '416':
+              description: Invalid Device Status
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6416`: Invalid Device Status'
+                  example: 6416
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
             '429':
               description: Too Many Requests
               headers:
@@ -1791,7 +1839,7 @@ contents:
             - Push API
           summary: Unsubscribe to Device Push
           description: |
-            Unsubscribed to push notifications of the target device. **(Currently, only LG ThinQ registered devices are supported.)**
+            Unsubscribe to push notifications sent from the specific device. **(Currently, only LG ThinQ registered devices are supported.)**
           operationId: unsubscribePushMessages
           security:
             - ThinQ_Business_API_Key: []
@@ -1830,7 +1878,7 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '401':
-              description: Unauthorized
+              description: Unauthorized (In case of authentication error, Response Body will not be provided.)
               headers:
                 X-Response-Code:
                   schema:
@@ -1843,6 +1891,7 @@ contents:
                 application/json:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
+                none: ''
             '403':
               description: Forbidden
               headers:
@@ -1854,12 +1903,12 @@ contents:
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: Not Found Resource
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6404`: Not Found Resource'
+                  description: '`6404`: Not Found'
                   example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -1868,12 +1917,431 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '406':
-              description: Not Supported Resource
+              description: Not Supported
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6406`: Not Supported Resource'
+                  description: '`6406`: Not Supported'
+                  example: 6406
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '416':
+              description: Invalid Device Status
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6416`: Invalid Device Status'
+                  example: 6416
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '429':
+              description: Too Many Requests
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6500`: Internal Server Error'
+                  example: 6500
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+      /event:
+        get:
+          tags:
+            - Event API
+          summary: Get Device Event Subscription List
+          description: |
+            Retrieve the list of event message-subscribed devices’ IDs. **(currently for LG ThinQ-registered appliances only)**
+          operationId: listDevicesEventSubscribed
+          security:
+            - ThinQ_Business_API_Key: []
+          parameters:
+            - required: true
+              $ref: '#/components/parameters/X-Api-Token'
+            - required: true
+              $ref: '#/components/parameters/X-Message-Id'
+            - required: true
+              $ref: '#/components/parameters/X-Use-Account'
+            - required: false
+              $ref: '#/components/parameters/Authorization'
+            - required: false
+              $ref: '#/components/parameters/X-Country-Code'
+          responses:
+            '200':
+              description: OK
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6200`: Successful operation'
+                  example: 6200
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/device-id-list-res'
+            '400':
+              description: Bad request
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6400`: Bad Request'
+                  example: 6400
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '401':
+              description: Unauthorized (In case of authentication error, Response Body will not be provided.)
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6401`: Unauthorized'
+                  example: 6401
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+                none: ''
+            '403':
+              description: Forbidden
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6403`: Forbidden'
+                  example: 6403
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '404':
+              description: Not Found
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6404`: Not Found'
+                  example: 6404
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '406':
+              description: Not Supported
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6406`: Not Supported'
+                  example: 6406
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '416':
+              description: Invalid Device Status
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6416`: Invalid Device Status'
+                  example: 6416
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '429':
+              description: Too Many Requests
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6500`: Internal Server Error'
+                  example: 6500
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+      /event/{deviceId}/subscribe:
+        post:
+          tags:
+            - Event API
+          summary: Subscribe to Device Event
+          description: |
+            Subscribe to the event messages sent out by specific devices. **(currently for LG ThinQ-registered appliances only)**
+          operationId: subscribeEventMessages
+          security:
+            - ThinQ_Business_API_Key: []
+          parameters:
+            - required: true
+              $ref: '#/components/parameters/X-Api-Token'
+            - required: true
+              $ref: '#/components/parameters/X-Message-Id'
+            - required: true
+              $ref: '#/components/parameters/deviceId'
+            - required: true
+              $ref: '#/components/parameters/X-Use-Account'
+            - required: false
+              $ref: '#/components/parameters/Authorization'
+            - required: false
+              $ref: '#/components/parameters/X-Country-Code'
+          responses:
+            '200':
+              description: OK
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6200`: Successful operation'
+                  example: 6200
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/device-empty-res'
+            '400':
+              description: Bad request
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6400`: Bad Request'
+                  example: 6400
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '401':
+              description: Unauthorized (In case of authentication error, Response Body will not be provided.)
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6401`: Unauthorized'
+                  example: 6401
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+                none: ''
+            '403':
+              description: Forbidden
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6403`: Forbidden'
+                  example: 6403
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '404':
+              description: Not Found
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6404`: Not Found'
+                  example: 6404
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '406':
+              description: Not Supported
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6406`: Not Supported'
+                  example: 6406
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '416':
+              description: Invalid Device Status
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6416`: Invalid Device Status'
+                  example: 6416
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '429':
+              description: Too Many Requests
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6429`: Too Many Requests'
+                  example: 6429
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '500':
+              description: Internal Server Error
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6500`: Internal Server Error'
+                  example: 6500
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+      /event/{deviceId}/unsubscribe:
+        delete:
+          tags:
+            - Event API
+          summary: Unsubscribe to Device Event
+          description: |
+            Disable the event message subscription sent out by specific devices. **(currently for LG ThinQ-registered appliances only)**
+          operationId: unsubscribeEventMessages
+          security:
+            - ThinQ_Business_API_Key: []
+          parameters:
+            - required: true
+              $ref: '#/components/parameters/X-Api-Token'
+            - required: true
+              $ref: '#/components/parameters/X-Message-Id'
+            - required: true
+              $ref: '#/components/parameters/deviceId'
+            - required: true
+              $ref: '#/components/parameters/X-Use-Account'
+            - required: false
+              $ref: '#/components/parameters/Authorization'
+            - required: false
+              $ref: '#/components/parameters/X-Country-Code'
+          responses:
+            '200':
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/device-empty-res'
+            '400':
+              description: Bad request
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6400`: Bad Request'
+                  example: 6400
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '401':
+              description: Unauthorized (In case of authentication error, Response Body will not be provided.)
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6401`: Unauthorized'
+                  example: 6401
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+                none: ''
+            '403':
+              description: Forbidden
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6403`: Forbidden'
+                  example: 6403
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+            '404':
+              description: Not Found
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6404`: Not Found'
+                  example: 6404
+                X-Message-Id:
+                  $ref: '#/components/headers/X-Message-Id-response'
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/error-res-backend'
+            '406':
+              description: Not Supported
+              headers:
+                X-Response-Code:
+                  schema:
+                    type: string
+                  description: '`6406`: Not Supported'
                   example: 6406
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -1968,7 +2436,7 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '401':
-              description: Unauthorized
+              description: Unauthorized (In case of authentication error, Response Body will not be provided.)
               headers:
                 X-Response-Code:
                   schema:
@@ -1981,6 +2449,7 @@ contents:
                 application/json:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
+                none: ''
             '403':
               description: Forbidden
               headers:
@@ -1992,12 +2461,12 @@ contents:
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: Not Found Resource
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6404`: Not Found Resource'
+                  description: '`6404`: Not Found'
                   example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -2006,12 +2475,12 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '406':
-              description: Not Supported Resource
+              description: Not Supported
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6406`: Not Supported Resource'
+                  description: '`6406`: Not Supported'
                   example: 6406
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -2105,7 +2574,7 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '401':
-              description: Unauthorized
+              description: Unauthorized (In case of authentication error, Response Body will not be provided.)
               headers:
                 X-Response-Code:
                   schema:
@@ -2118,6 +2587,7 @@ contents:
                 application/json:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
+                none: ''
             '403':
               description: Forbidden
               headers:
@@ -2129,12 +2599,12 @@ contents:
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
             '404':
-              description: Not Found Resource
+              description: Not Found
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6404`: Not Found Resource'
+                  description: '`6404`: Not Found'
                   example: 6404
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -2143,12 +2613,12 @@ contents:
                   schema:
                     $ref: '#/components/schemas/error-res-backend'
             '406':
-              description: Not Supported Resource
+              description: Not Supported
               headers:
                 X-Response-Code:
                   schema:
                     type: string
-                  description: '`6406`: Not Supported Resource'
+                  description: '`6406`: Not Supported'
                   example: 6406
                 X-Message-Id:
                   $ref: '#/components/headers/X-Message-Id-response'
@@ -2237,9 +2707,9 @@ contents:
                       type: string
                       example: '1168011000103690001004767'
                       description: |-
-                        - Street Name Address Building Control Number (Open Geospatial Information Platform)
+                        - Street Name Address Building Control Number (Open platform for geospatial information)
                         - 25-digit number
-                        - Legal address numbers(10) + Mountain or not(1) + main Address Number(4) + Appendages Address Number(4) + System Number(6)
+                        - Legal address numbers(10) + Mountain or not(1) + Primary address number(4) + Secondary address number(4) + System number(6)
                     comment:
                       type: string
                       example: Apgujeong Hyundai 1st Apartment
@@ -2311,7 +2781,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4307
                       error:
                         type: object
@@ -2348,7 +2818,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -2423,9 +2893,9 @@ contents:
                             type: string
                             example: '1168011000103690001004767'
                             description: |-
-                              - Street Name Address Building Control Number (Open Geospatial Information Platform)
+                              - Street Name Address Building Control Number (Open platform for geospatial information)
                               - 25-digit number
-                              - Legal address numbers(10) + Mountain or not(1) + main Address Number(4) + Appendages Address Number(4) + System Number(6)
+                              - Legal address numbers(10) + Mountain or not(1) + Primary address number(4) + Secondary address number(4) + System number(6)
                           comment:
                             type: string
                             example: Apgujeong Hyundai 1st Apartment
@@ -2468,7 +2938,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4308
                       error:
                         type: object
@@ -2505,7 +2975,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -2581,9 +3051,9 @@ contents:
                               type: string
                               example: '1168011000103690001004767'
                               description: |-
-                                - Street Name Address Building Control Number (Open Geospatial Information Platform)
+                                - Street Name Address Building Control Number (Open platform for geospatial information)
                                 - 25-digit number
-                                - Legal address numbers(10) + Mountain or not(1) + main Address Number(4) + Appendages Address Number(4) + System Number(6)
+                                - Legal address numbers(10) + Mountain or not(1) + Primary address number(4) + Secondary address number(4) + System number(6)
                             comment:
                               type: string
                               example: Apgujeong Hyundai 1st Apartment
@@ -2643,7 +3113,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4308
                       error:
                         type: object
@@ -2680,7 +3150,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -2694,7 +3164,7 @@ contents:
           tags:
             - DR API
           summary: Create User
-          description: Create new users (LG ThinQ App common)
+          description: Create new users (Commonly applied to ThinQ App)
           operationId: createDrUser
           security:
             - ThinQ_Business_API_Key: []
@@ -2789,7 +3259,7 @@ contents:
                           userNo:
                             type: string
                             example: 01581c1893b95f30282d3c09d478cef7
-                            description: The user number of the created user's encrypted LG Electronics account.
+                            description: The encrypted user number of the created user's LG Electronics account.
             '400':
               description: Bad Request
               headers:
@@ -2828,7 +3298,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4307
                       error:
                         type: object
@@ -2855,7 +3325,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4309
                       error:
                         type: object
@@ -2892,7 +3362,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -2949,7 +3419,7 @@ contents:
                           userNo:
                             type: string
                             example: 01581c1135488770282d3c09d478cef7
-                            description: Deleted User number of the LG Electronics account
+                            description: Deleted user number of the LG Electronics account
             '400':
               description: Bad Request
               headers:
@@ -2988,7 +3458,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4301
                       error:
                         type: object
@@ -3025,7 +3495,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -3132,7 +3602,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4301
                       error:
                         type: object
@@ -3169,7 +3639,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -3227,11 +3697,11 @@ contents:
                             deviceId:
                               type: string
                               example: 1f6bfb2796410a429f0015bf91f9583618458881645497851352d690513b13353f1da753095de970faba8099e2a56aa1
-                              description: The encrypted ThinQ device ID
+                              description: Encrypted ThinQ device ID
                             macAddress:
                               type: string
                               example: 66e71f19ada4fcaf3156aa26d49d4291
-                              description: The encrypted MAC address
+                              description: Encrypted MAC address
                             groupId:
                               type: string
                               example: k-apt-1234567890
@@ -3255,15 +3725,15 @@ contents:
                             deviceType:
                               type: string
                               example: DEVICE_AIR_CONDITIONER
-                              description: Appliance type of the device
+                              description: Device type
                             modelName:
                               type: string
                               example: PAC_910604_US
-                              description: A model name of the device
+                              description: Device model
                             alias:
                               type: string
                               example: air conditioner
-                              description: An alias of the device
+                              description: Alias of the device
                   examples:
                     200 OK:
                       value:
@@ -3327,7 +3797,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4301
                       error:
                         type: object
@@ -3364,7 +3834,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -3398,7 +3868,7 @@ contents:
                 example: 01581c1135488770282d3c09d478cef7
             - in: path
               name: deviceId
-              description: The encrypted ThinQ device ID
+              description: Encrypted ThinQ device ID
               required: true
               schema:
                 type: string
@@ -3429,11 +3899,11 @@ contents:
                             deviceId:
                               type: string
                               example: 1f6bfb2796410a429f0015bf91f9583618458881645497851352d690513b13353f1da753095de970faba8099e2a56aa1
-                              description: The encrypted ThinQ device ID
+                              description: Encrypted ThinQ device ID
                             macAddress:
                               type: string
                               example: 66e71f19ada4fcaf3156aa26d49d4291
-                              description: The encrypted MAC address
+                              description: Encrypted MAC address
                             groupId:
                               type: string
                               example: A12345678
@@ -3457,15 +3927,15 @@ contents:
                             deviceType:
                               type: string
                               example: DEVICE_AIR_CONDITIONER
-                              description: Appliance type of the device
+                              description: Device type
                             modelName:
                               type: string
                               example: PAC_910604_US
-                              description: A model name of the device
+                              description: Device model
                             alias:
                               type: string
                               example: air conditioner
-                              description: An alias of the device
+                              description: Alias of the device
                   examples:
                     200 OK:
                       value:
@@ -3519,7 +3989,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4301
                       error:
                         type: object
@@ -3556,7 +4026,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -3615,13 +4085,13 @@ contents:
                           targetType:
                             type: string
                             example: GROUP
-                            description: The event target type (GROUP, USER, DEVICE)
+                            description: Event target type(GROUP, USER, DEVICE)
                           targetIds:
                             type: array
                             items:
                               type: string
                               example: k-apt-1234567890
-                            description: A list of event target ID (of GROUP, USER or DEVICE)
+                            description: List of event target ID (of GROUP, USER or DEVICE)
                         required:
                           - targetType
                           - targetIds
@@ -3632,21 +4102,21 @@ contents:
                           signalId:
                             type: string
                             example: 2024-04-25-dr-01-signal-01
-                            description: The event signal ID
+                            description: Event signal ID
                           deviceType:
                             type: string
                             example: DEVICE_AIR_CONDITIONER
-                            description: The event target type
+                            description: Device type
                           modelNames:
                             type: array
                             items:
                               type: string
                               example: RAC_056905_WW
-                            description: A model name of the DR Event target dvice
+                            description: Model name of the DR Event target dvice
                           signalType:
                             type: string
                             example: CONTROL_RESTORE
-                            description: The DR Event signal type(CONTROL, CONTROL_RESTORE)
+                            description: DR Event signal type(CONTROL, CONTROL_RESTORE)
                           signalData:
                             type: object
                             properties:
@@ -3663,8 +4133,8 @@ contents:
                                     type: string
                                     example: C
                             description: |-
-                              The specific control value
-                              ex) { temerpature: { min: 20, max: 26, unit: "C } }
+                              Detailed control value
+                               E.g.) { temerpature: { min: 20, max: 26, unit: "C } }
                           constrolType:
                             type: string
                             example: Temperature
@@ -3742,7 +4212,7 @@ contents:
                           eventId:
                             type: string
                             example: 2023-04-25-dr-01
-                            description: The generated DR Event ID
+                            description: Generated DR Event ID
             '400':
               description: Bad Request
               headers:
@@ -3781,7 +4251,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4307
                       error:
                         type: object
@@ -3808,7 +4278,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4311
                       error:
                         type: object
@@ -3845,7 +4315,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -3940,7 +4410,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4302
                       error:
                         type: object
@@ -3977,7 +4447,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -3990,8 +4460,8 @@ contents:
         post:
           tags:
             - DR API
-          summary: Create DR Event target
-          description: Add event target information to an already created DR Event.
+          summary: Create DR Event Target
+          description: Add an event target information to the DR Event that’s already created.
           operationId: createEventTarget
           security:
             - ThinQ_Business_API_Key: []
@@ -4020,7 +4490,7 @@ contents:
                       type: string
                       example: USER
                       description: |-
-                        The target type
+                        Target type
                         - GROUP
                         - USER
                         - DEVICE
@@ -4029,9 +4499,9 @@ contents:
                       example: KR1234567890123
                       description: |-
                         DR Event target ID
-                        - If the event target type is USER: userNo
-                        - If the event target type is GROUP: groupId
-                        - If the event target type is DEVICE: deviceId
+                        - If Event target type is USER, userNo
+                        - If Event target type is GROUP, groupId
+                        - If Event target type is DEVICE, deviceId
                     opt:
                       type: string
                       example: OUT
@@ -4107,7 +4577,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4302
                       error:
                         type: object
@@ -4144,7 +4614,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -4157,8 +4627,8 @@ contents:
         post:
           tags:
             - DR API
-          summary: Modify DR Event target
-          description: Modify already created DR Event target.
+          summary: Modify DR Event Target
+          description: Modify the DR Event target that’s already created.
           operationId: updateEventTarget
           security:
             - ThinQ_Business_API_Key: []
@@ -4236,7 +4706,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4102
                       error:
                         type: object
@@ -4273,7 +4743,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4302
                       error:
                         type: object
@@ -4310,7 +4780,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -4323,7 +4793,7 @@ contents:
         post:
           tags:
             - DR API
-          summary: Create DR Event targets in bulk
+          summary: Create DR Event Targets in Bulk
           description: Create multiple DR Event targets at once.
           operationId: createEventTargetBatch
           security:
@@ -4364,8 +4834,8 @@ contents:
                           DR Event target ID.
                           - create: "/"
                           - replace: "/{targetId}"
-                          - Ex) Create: "/"
-                          - Ex) Modify: "/2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf"
+                          - e.g.) Create: "/"
+                          - e.g.) Modify: "/2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf"
                       value:
                         type: object
                         properties:
@@ -4382,8 +4852,8 @@ contents:
                           You can check whether you are opted in or out of DR Event.
                           - create: {type, id, opt}
                           - replace: {opt}
-                          - Ex) create: { type: "DEVICE", id: "2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf", opt: "IN"}
-                          - Ex) replace: { opt: "IN"}
+                          - e.g.) create: { type: "DEVICE", id: "2YjaqUmSr3ke2nmdssxAG5n0KDMwrJrvi8bTbzbdHelEEflqNkAx0WWmTIgyCQf", opt: "IN"}
+                          - e.g.) replace: { opt: "IN"}
                     required:
                       - action
                       - path
@@ -4474,7 +4944,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4102
                       error:
                         type: object
@@ -4511,7 +4981,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4302
                       error:
                         type: object
@@ -4558,7 +5028,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -4572,7 +5042,7 @@ contents:
           tags:
             - DR API
           summary: Create monitoring data files
-          description: Request to create a ZIP file of monitoring data from devices that participated in a DR event during the DR event period.
+          description: Request to create a monitoring data from the device that has participated in the DR Event during the DR Event period in a ZIP file.
           operationId: createDataZipFile
           security:
             - ThinQ_Business_API_Key: []
@@ -4644,7 +5114,7 @@ contents:
                           fileName:
                             type: string
                             example: data-zip-test_event_1234567890123-2345678901234.zip
-                            description: generated ZIP file name
+                            description: Created ZIP file name
             '400':
               description: Bad Request
               headers:
@@ -4663,7 +5133,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4102
                       error:
                         type: object
@@ -4700,7 +5170,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4302
                       error:
                         type: object
@@ -4737,7 +5207,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -4751,7 +5221,7 @@ contents:
           tags:
             - DR API
           summary: Download monitoring data files
-          description: Request a link to download a ZIP file of the monitoring data for the devices that participated in the DR event.
+          description: Request a link to download the ZIP file of a monitoring data from the device that has participated in the DR Event during the DR Event period.
           operationId: downloadDataZipFile
           security:
             - ThinQ_Business_API_Key: []
@@ -4764,7 +5234,7 @@ contents:
               $ref: '#/components/parameters/X-Country-Code-2'
             - in: path
               name: filename
-              description: generated ZIP file name
+              description: Created ZIP file name
               required: true
               schema:
                 type: string
@@ -4794,7 +5264,7 @@ contents:
                           presignedUrl:
                             type: string
                             example: https://s3-an2-tems-qa-dr-archiver.s3.ap-northeast-2.amazonaws.com/zip/data-zip-test_event_1234567890123-2345678901234?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIARU3MB3TCEDODQ2DO%2F20241004%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20241004T002817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEID%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0yIkcwRQIhALefnNnWXhAZcAcMWZA%2Bm23i5uALS%2FOI9ZwzOwUQMMQyAiACqvSExTC%2B3ErlEfOGtIXnZ450mlJRDu02kW4S2RojcyrVBQjJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDExMzUwNjM3NjkwMCIMi5fbbY%2Bs9%2FoMe2jWKqkFntfKoeTR0blrYtIPk0PdBLXhVa%2BpMgj9P0Y2%2F4c8g1IK0LOWuQrLL9bQ%2Bjg%2B4pzsgZWjdFZ8smSNqj3oQ%2FAgpHI56EltlZrnDQNPL%2FkMtj8dSgOJtxtgOE89wzYvB8hd9obkO0c%2BQN76loIX71y6MOC6JtCNlzbf0SpLkONT09IlOMhmFHB4KC87r%2Bb6V7ZIgFp56w9amawSxYK%2BCRj0yw5uXoboEUBwuqcn%2BSF6u2Xq4Z1cS018f%2F9bYtBxqz5M6rUrTup5xkf4ZEbUzFwMpFWk2WhXiu64uzKaF41C3d%2F5YUNa2K725HfWbntEAa0jr37AZtR%2BNagZGvnVnryZsmz%2Fn272kPdhdb3NLv55i1dtqWHu9HjJ2P35ujd5RadNO%2BCki9Vths6O99XDnHpCbrTWoQyCvHIq3wM38Nbbbnv%2BxXeKbzJ1PMbOmmGbqSPhGdFEwHzTiGLkiUXxREFtLLkC5xQn%2F%2FyBFmyoZBrpdVEvt6Ggyk5gh%2F%2BSxG1OvpmCcmYjRloE%2Bh%2F7QCZvboHaeD4wpre1xdRFrW%2FiPSeraR1MxurDFbf8nWqak88IQ%2B82EwOucjX6SKhdk148Vt6mBrd0Ae9MW7W4f82NksX%2FVFeDjeGmkRe4bg85B8b7gwIA8qHl3MwYhUgPm0%2BRlkzdFKYy%2B2eoBZpK0kx3tO52DIeb%2Fk41gfrxQj3lc41y7zKVxZsiftqK7bDbMt4eHkFZ5dTaf0uJlgzsU0AYanJjgZvDxlUCywCHfCTG%2Bb03dWwomJYy4cuN%2Fix8uYzYbM8TAdwFfjYKG0KH3n4W%2FDNvCiQBedoG%2Byx7e5MCr0dpAV2%2F90L9x%2Bq1HloUbqtnVqQ1MRV3PN%2FBv3brupENConWTz90ebLDCd4rJQLKmGprA0UOX2nI8yxMV6u6MLbl%2FLcGOrEBIPFbJuDYy4nYDv0IJF5FHnEM9hZFiC1s1kOPMQkUHbhXENPK4TWBPLx46Ewp%2FvT2PTdkzMVeZLVJ33YVg1V9uL%2BNT1KYs9KuwDdfCMUD22ItcGhm9DCHnp3Db%2FyyWus%2BtBVrdcIsbhtvyfVx0qsFa29MJmxdv%2FdTrOZZ8c6ZSFAOeM5RGsxTs9%2FBZrWyvHy6cbfcMlr8Utm%2BzCGxy5L87LkBhrD9wT6o1%2B3eGI333lGc&X-Amz-Signature=dcdb7b02b2350142fb4b41ab15036ac529981f7dc14d2fa2e6a4bf615b82f827&X-Amz-SignedHeaders=host&x-id=GetObject
-                            description: Download path for generated DR Event ZIP file (valid for 1 hour)
+                            description: Download path for created DR Event ZIP file (valid for 1 hour)
             '401':
               description: Unauthorized
               headers:
@@ -4823,7 +5293,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 4306
                       error:
                         type: object
@@ -4860,7 +5330,7 @@ contents:
                     properties:
                       code:
                         type: number
-                        description: The status code
+                        description: Status code
                         example: 5000
                       error:
                         type: object
@@ -4888,6 +5358,7 @@ contents:
                     - $ref: '#/components/schemas/push-callback-device-registered-schema'
                     - $ref: '#/components/schemas/push-callback-device-unregistered-schema'
                     - $ref: '#/components/schemas/push-callback-device-alias-changed-schema'
+                    - $ref: '#/components/schemas/event-callback-schema'
                 examples:
                   device-push-example:
                     $ref: '#/components/examples/push-callback-device-push-example'
@@ -4897,6 +5368,8 @@ contents:
                     $ref: '#/components/examples/push-callback-device-unregistered-example'
                   device-alias-changed-example:
                     $ref: '#/components/examples/push-callback-device-alias-changed-example'
+                  event-example:
+                    $ref: '#/components/examples/event-callback-example'
     components:
       securitySchemes:
         ThinQ_Business_API_Key:
@@ -4932,22 +5405,22 @@ contents:
           properties:
             deviceId:
               type: string
-              description: A specific device ID
+              description: Device ID for a specific device
               example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
             deviceInfo:
               type: object
               properties:
                 deviceType:
                   type: string
-                  description: Device type. For a list of supported device types, see the [**Device Profiles**](/en/apiManage/device_profile) page.
+                  description: Device type. For a list of supported device types, see the [**Device Profile**](/en/apiManage/device_profile) page.
                   example: DEVICE_WASHTOWER_WASHER
                 alias:
                   type: string
-                  description: An alias of the device
+                  description: Alias of the device
                   example: My New WashTower Washer
                 modelName:
                   type: string
-                  description: A model name of the device
+                  description: Device model
                   example: FAKPK21021
                 reportable:
                   type: boolean
@@ -4955,7 +5428,7 @@ contents:
                   example: 'true'
                 groupId:
                   type: string
-                  description: An group ID that a device is in the same group as another device when the device type is `DEVICE_WASHTOWER_WASHER` or `DEVICE_WASHTOWER_DRYER`.
+                  description: A group ID that indicates that a WashTower product belongs to the same group as the other devices when the device type is `DEVICE_WASHTOWER_WASHER` or `DEVICE_WASHTOWER_DRYER`.
                   example: '171807013576723372'
                 parentId:
                   type: string
@@ -4988,7 +5461,7 @@ contents:
               example: 2ADaRijIk8CvaSHVPeEWNw
             timestamp:
               type: datetime
-              description: The current time
+              description: current time
               example: '2024-09-13T06:55:58.65064'
             error:
               type: object
@@ -5031,7 +5504,7 @@ contents:
                     properties:
                       deviceId:
                         type: string
-                        description: A specific device ID
+                        description: Device ID for a specific device
                         example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
         device-empty-res:
           description: No Content response
@@ -5070,9 +5543,9 @@ contents:
               example: KRXXXX
               description: |-
                 DR Event target ID
-                - If the event target type is USER: userNo
-                - If the event target type is GROUP: groupId
-                - If the event target type is DEVICE: deviceId
+                - If Event target type is USER: userNo
+                - If Event target type is GROUP: groupId
+                - If Event target type is DEVICE: deviceId
             opt:
               type: string
               example: OUT
@@ -5106,15 +5579,15 @@ contents:
                       example: DEVICE_PUSH
                     deviceId:
                       type: string
-                      description: A specific device ID
+                      description: Device ID for a specific device
                       example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
                     deviceType:
                       type: string
-                      description: Device type. For a list of supported device types, see the [**Device Profiles**](/en/apiManage/device_profile) page.
+                      description: Device type. For a list of supported device types, see the [**Device Profile**](/en/apiManage/device_profile) page.
                       example: DEVICE_WASHTOWER_WASHER
                     pushCode:
                       type: string
-                      description: Push code. For a list of supported push codes, see the [**Device Profiles**](/en/apiManage/device_profile) page.
+                      description: Push code. For a list of supported push codes, see the [**Device Profile**](/en/apiManage/device_profile) page.
                       example: WASHING_IS_COMPLETE
                     userList:
                       type: array
@@ -5140,19 +5613,19 @@ contents:
                       example: SaGvM4ETAgOHSAFhezzi
                     deviceId:
                       type: string
-                      description: A specific device ID
+                      description: Device ID for a specific device
                       example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
                     deviceType:
                       type: string
-                      description: Device type. For a list of supported device types, see the [**Device Profiles**](/en/apiManage/device_profile) page.
+                      description: Device type. For a list of supported device types, see the [**Device Profile**](/en/apiManage/device_profile) page.
                       example: DEVICE_WASHTOWER_WASHER
                     alias:
                       type: string
-                      description: An alias of the device
+                      description: Alias of the device
                       example: My New WashTower Washer
                     modelName:
                       type: string
-                      description: A model name of the device
+                      description: Device model
                       example: FAKPK21021
                     reportable:
                       type: boolean
@@ -5160,7 +5633,7 @@ contents:
                       example: 'true'
                     groupId:
                       type: string
-                      description: Group ID for grouping WashTower devices which device types are `DEVICE_WASHTOWER_WASHER` or `DEVICE_WASHTOWER_DRYER`
+                      description: A group ID that indicates that a WashTower product belongs to the same group as the other devices when the device type is `DEVICE_WASHTOWER_WASHER` or `DEVICE_WASHTOWER_DRYER`
                       example: '171807013576723372'
                   required:
                     - pushType
@@ -5186,15 +5659,15 @@ contents:
                       example: SaGvM4ETAgOHSAFhezzi
                     deviceId:
                       type: string
-                      description: A specific device ID
+                      description: Device ID for a specific device
                       example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
                     deviceType:
                       type: string
-                      description: Device type. For a list of supported device types, see the [**Device Profiles**](/en/apiManage/device_profile) page.
+                      description: Device type. For a list of supported device types, see the [**Device Profile**](/en/apiManage/device_profile) page.
                       example: DEVICE_WASHTOWER_WASHER
                     alias:
                       type: string
-                      description: An alias of the device
+                      description: Alias of the device
                       example: My New WashTower Washer
         push-callback-device-alias-changed-schema:
           allOf:
@@ -5214,12 +5687,41 @@ contents:
                       example: SaGvMtETAgOHSAFhezzi
                     deviceId:
                       type: string
-                      description: A specific device ID
+                      description: Device ID for a specific device
                       example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
                     alias:
                       type: string
-                      description: An alias of the device
+                      description: Alias of the device
                       example: My New WashTower Washer
+        event-callback-schema:
+          allOf:
+            - $ref: '#/components/schemas/callback-base-res'
+            - type: object
+              properties:
+                event:
+                  type: object
+                  properties:
+                    pushType:
+                      type: string
+                      description: Push Type
+                      example: DEVICE_STATUS
+                    deviceId:
+                      type: string
+                      description: Device ID for a specific device
+                      example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
+                    deviceType:
+                      type: string
+                      description: Device type. For a list of supported device types, see the [**Device Profile**](/en/apiManage/device_profile) page.
+                      example: DEVICE_WASHTOWER_WASHER
+                    report:
+                      type: object
+                      description: The updated status of the device. For response schema by device type, please refer to the [**Device Profile**](/en/apiManage/device_profile) page.
+                    userList:
+                      type: array
+                      description: List of user numbers of the LG Electronics account which subscribe event messages.
+                      items:
+                        type: string
+                        example: n2uR0D5vLjvZRvTdvhVJ
       parameters:
         X-Api-Token:
           name: X-Api-Token
@@ -5247,7 +5749,7 @@ contents:
 
               |Value|Description|
               |-|-|
-              |REGISTERED|The account that have already registered through partner requests or permission updates.|
+              |REGISTERED|The account that is registered through partner requests or permission updates.|
               |IN-HEADER|The account specified as the OAuth token in the `Authorization` header of this HTTP request. (**Currently, only LG ThinQ registered devices are supported.**)|
           example: REGISTERED
         Authorization:
@@ -5256,7 +5758,7 @@ contents:
           schema:
             type: string
           description: |
-            The `Bearer` OAuth token of the LG Electronics account that subscribed to LG ThinQ. If the `X-Use-Account` header is included in the HTTP request and the value of the header is `IN-HEADER`, this header must be included in the request.
+            The `Bearer` OAuth token of the LG Electronics account that is registered to LG ThinQ. If the `X-Use-Account` header is included in the HTTP request and the value of the header is `IN-HEADER`, this header must be included in the request.
           example: Bearer 5a9a713f51a95c53d781addd1af0dfa4f6e1e7420a8bff3c5198308dac571aa9845832b8d29bbe1f04deec2d35229c6d
         X-Country-Code:
           name: X-Country-Code
@@ -5264,14 +5766,14 @@ contents:
           schema:
             type: string
           description: |
-            The `ISO-3166 alpha-2` country code for the countries supported by LG ThinQ. If the `X-Use-Account` header is included in the HTTP request and the value of the header is `IN-HEADER`, this header must be included in the request and must be the code of the country of registration of the LG Electronics account specified in `Authorization`.
+            The `ISO-3166 alpha-2` country code for the countries supported by LG ThinQ. If the `X-Use-Account` header is included in the HTTP request and the value of the header is `IN-HEADER`, this header must be included in the request and must be the country code of the registered LG Electronics account specified in `Authorization`.
           example: KR
         deviceId:
           name: deviceId
           in: path
           schema:
             type: string
-          description: A specific device ID
+          description: Device ID for a specific device
           example: eb8ce6a99e63beb7e2074409bc244f3fd6c534e40ca270b6895371f12b398660
         Authorization-2:
           name: Authorization
@@ -12535,10 +13037,12 @@ contents:
               volume: MUTE
               time: 0
         refrigerator-command-example:
-          description: Refrigerator - Power Save On
+          description: Refrigerator - Temperature Setting
           value:
-            powerSave:
-              powerSaveEnabled: true
+            temperature:
+              targetTemperature: 0
+              locationName: FRIDGE
+              unit: C
         washer-command-example:
           description: Washer - Power ON / Start washing
           value:
@@ -12555,8 +13059,8 @@ contents:
           description: Air Conditioner - Set On Timer
           value:
             timer:
-              absoluteHourToStart: 10
-              absoluteMinuteToStart: 36
+              absoluteHourToStart: 1
+              absoluteMinuteToStart: 30
         air_purifier-command-example:
           description: Air Purifier - Run mode
           value:
@@ -12570,12 +13074,17 @@ contents:
               cleanOperationMode: HOMING
         oven-command-example:
           title: Oven
-          description: Oven - Oven operation Mode
+          description: Oven - Oven Operation
           value:
-            location:
-              locationName: LOWER
             operation:
               ovenOperationMode: START
+            location:
+              locationName: LOWER
+            timer:
+              targetHour: 1
+              targetMinute: 5
+            cook:
+              cookMode: BAKE
         dish_washer-command-example:
           description: Dish Washer - Run mode
           value:
@@ -12597,10 +13106,12 @@ contents:
             operation:
               ceilingfanOperationMode: POWER_ON
         wine_cellar-command-example:
-          description: Wine Cellar - light Brightness
+          description: Wine Cellar - Temperature Control
           value:
-            operation:
-              lightStatus: 90
+            temperature:
+              locationName: WINE_LOWER
+              targetTemperature: 6
+              unit: C
         washtower_washer-command-example:
           description: WashTower(Washer) - Start washing
           value:
@@ -12620,15 +13131,22 @@ contents:
               operation:
                 dryerOperationMode: START
         cooktop-command-example:
-          description: Cooktop - Power Off
+          description: Cooktop - Power Level, Timer Setting
           value:
-            operation:
-              operationMode: POWER_OFF
+            power:
+              powerLevel: 3
+            timer:
+              remainHour: 0
+              remainMinute: 10
+            location:
+              locationName: LEFT_FRONT
         hood-command-example:
-          description: Hood - Lamp Brightness
+          description: Hood - Lamp Brightness, Fand Speed
           value:
             lamp:
-              lampBrightness: 0
+              lampBrightness: 1
+            ventilation:
+              fanSpeed: 0
         microwave_oven-command-example:
           description: Microwave Oven
           value:
@@ -12672,10 +13190,11 @@ contents:
             humidifierJobMode:
               currentJobMode: HUMIDIFY
         ventilator-command-example:
-          description: Ventilation - Rund mode
+          description: Ventilation - Timer setting
           value:
-            ventJobMode:
-              currentJobMode: VENT_AUTO
+            timer:
+              absoluteHourToStart: 10
+              absoluteMinuteToStart: 20
         idu-command-example:
           title: IDU
           value:
@@ -12816,6 +13335,19 @@ contents:
               deviceId: 7de94bb8509ade98c49914897f4f12076a45124f28d20a18e105dfcdbfb6dd16
               userNumber: R9EToaDa98Rdnr7KZayE
               alias: My New Dryer
+        event-callback-example:
+          value:
+            messageId: kVuV69kGTS25FUs1wrkECQ
+            timestamp: '2025-01-09T04:24:35.540658'
+            event:
+              pushType: DEVICE_STATUS
+              deviceId: 30d81ed55587005b58e8143804f3g550a6acce04e540a451e5044b6a0489bd02
+              userList:
+                - n2uR0D5vLjvZRvTdvhVJ
+              report:
+                runState:
+                  currentState: RUNNING
+              deviceType: DEVICE_DRYER
     x-tagGroups:
       - name: Get Started
         tags:
@@ -12828,6 +13360,7 @@ contents:
         tags:
           - Device API
           - Push API
+          - Event API
           - User API
           - DR API
 ---
