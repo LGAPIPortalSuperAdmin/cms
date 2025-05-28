@@ -17042,7 +17042,7 @@ contents:
                             - number
                     coolTargetTemperature:
                       type: object
-                      description: 난방 희망 온도
+                      description: 냉방 희망 온도
                       properties:
                         mode:
                           type: array
@@ -17591,7 +17591,7 @@ contents:
                   description: 난방 희망 온도
                 coolTargetTemperature:
                   type: number
-                  description: 난방 희망 온도
+                  description: 냉방 희망 온도
                 heatMaxTemperature:
                   type: number
                   description: 난방 최대 온도
