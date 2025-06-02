@@ -27,7 +27,8 @@ contents:
            |API 종류|요약|
            |-|-|
            |Device API|등록한 디바이스의 목록 및 상태를 조회하고, 제어를 수행하기 위한 API|
-           |Push API|디바이스의 상태 변화를 수신하기 위해 대상 디바이스를 관리하기 위한 API|
+           |Push API|푸시 알림을 수신하기 위해 대상 디바이스를 관리하기 위한 API|
+           |Event API|속성의 상태 변경 이벤트를 수신하기 위해 대상 디바이스를 관리하기 위한 API|
            |User API|B2B 파트너의 서비스에 등록한 사용자를 관리하기 위한 API|
            |DR API|B2B 파트너가 전력 수요반응(DR: Demand Response) 서비스 제공자로서 사용자의 디바이스를 제어하기 위한 API|
       - name: API Call Sequence
@@ -304,7 +305,7 @@ contents:
         description: "등록한 디바이스의 목록을 조회하고, 특정 디바이스의 프로파일 및 상태를 조회하거나 디바이스를 제어하기 위해 Device API를 사용합니다.  기업이 구매한 다양한 LG전자 제품의 Device API를 사용하는 경우, 디바이스가 일괄 등록되어 있는 LG전자 계정이나 설치 현장의 정보를 LG Smart Solution API Developer에서 사전에 지정할 수 있습니다.  또한 LG전자 제품의 Device API를 호출할 때 특정 LG전자 사용자를 지정해 해당 사용자의 디바이스에 대한 접근을 수행할 수 있습니다.  Device API를 호출하기 위해서는 B2B 파트너 또는 그의 고객이 디바이스를 등록하는 과정을 거쳐야 합니다.  구매한 디바이스는 아래와 같이 디바이스 종류에 따라 해당 LG전자의 플랫폼의 서비스에 가입해 등록해야 합니다.\n\n |디바이스 종류|LG전자 플랫폼|\n |-|-|\n |가전제품 및 기타 IoT 디바이스|LG ThinQ (mobile app)|\n |사이니지|LG Business Cloud\_(https://lgbusinesscloud.com)|\n |상업용 HVAC|LG BECON Cloud\_(https://beconcloud.lge.com)|\n"
       - name: Push API
         description: |
-          특정 디바이스의 푸시 알림을 B2B 파트너의 서비스가 수신하거나 수신을 해제하기 위해 Push API를 사용합니다.  이 API는 현재 LG ThinQ 등록 디바이스에 한해 제공되며 향후 다른 디바이스의 지원을 확대할 예정입니다.  B2B 파트너의 서비스가 디바이스의 상태를 수신하기 위해서는 사전에 LG Smart Solution API Developer에서 B2B 파트너 서비스의 Callback 호출 정보를 등록해야 합니다.  Callback으로 제공하는 푸시 알림의 종류는 아래와 같고, 종류별로 Callback 구독이 수행하는 조건이 다를 수 있습니다.
+          디바이스 프로파일에 정의된 푸시 알림을 B2B 파트너의 서비스가 수신하거나 수신을 해제하기 위해 Push API를 사용합니다. 이 API는 현재 LG ThinQ 등록 디바이스에 한해 제공되며 향후 다른 디바이스의 지원을 확대할 예정입니다.  B2B 파트너의 서비스가 디바이스의 상태를 수신하기 위해서는 사전에 LG Smart Solution API Developer에서 B2B 파트너 서비스의 Callback 호출 정보를 등록해야 합니다.  Callback으로 제공하는 푸시 알림의 종류는 아래와 같고, 종류별로 Callback 구독이 수행하는 조건이 다를 수 있습니다.
 
            | Push Type | Description | Pre-Condition |
            |-|-|-|
@@ -335,7 +336,7 @@ contents:
             exampleRef="#/components/examples/push-callback-device-alias-changed-example" />
       - name: Event API
         description: |
-          특정 디바이스의 상태가 변경되었을 때 변경된 항목에 대한 메시지를 B2B 파트너의 서비스가 수신하거나 수신을 해제하기 위해 Event API를 사용합니다.  이 API는 현재 LG ThinQ 등록 가전제품에 한해 제공되며 향후 다른 디바이스의 지원을 확대할 예정입니다.  B2B 파트너의 서비스가 디바이스의 상태를 수신하기 위해서는 사전에 LG Smart Solution API Developer에서 B2B 파트너 서비스의 Callback 호출 정보를 등록해야 합니다. B2B 파트너가 이 API를 사용하기 위해서는 LG전자의 계약 담당자와의 협의가 필요합니다.
+          디바이스 프로파일에 정의된 속성의 상태 변경 이벤트를 B2B 파트너의 서비스가 수신하거나 수신을 해제하기 위해 Event API를 사용합니다. 이 API는 현재 LG ThinQ 등록 가전제품에 한해 제공되며 향후 다른 디바이스의 지원을 확대할 예정입니다.  B2B 파트너의 서비스가 디바이스의 상태를 수신하기 위해서는 사전에 LG Smart Solution API Developer에서 B2B 파트너 서비스의 Callback 호출 정보를 등록해야 합니다. B2B 파트너가 이 API를 사용하기 위해서는 LG전자의 계약 담당자와의 협의가 필요합니다.
 
            | Push Type | Description | Pre-Condition |
            |-|-|-|
