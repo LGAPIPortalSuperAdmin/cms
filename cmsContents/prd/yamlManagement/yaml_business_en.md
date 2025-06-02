@@ -26,7 +26,8 @@ contents:
             |API Type|Summary|
             |-|-|
             |Device API|API to get a list and status of enrolled devices and perform controls|
-            |Push API|API for managing target devices to receive status changes on devices|
+            |Push API|API for managing target devices to receive push notifications|
+            |Event API|API for managing target devices to receive status change events of properties|
             |User API|API for managing users registered with B2B partner's service|
             |DR API|API for B2B partners to control a user's device as an electricity demand response (DR) service provider|
       - name: API Call Sequence
@@ -402,7 +403,7 @@ contents:
             |Commercial HVAC|LG BECON Cloud (https://beconcloud.lge.com)|
       - name: Push API
         description: |
-          The Push API is used to allow B2B partners' services to receive or stop receiving messages whenever there is a change in the status of a specific device. This API is currently available to products registered on LG ThinQ only, but more products will be supported in the future. In order for the B2B partner service to receive the device status, the Callback call information of the B2B partner service must be registered in the LG Smart Solution API Developer in advance. The types of device status changes provided by Callback are as follows. The conditions for the Callback subscription may differ by type.
+          The Push API is used to allow B2B partners' services to receive or stop receiving push notifications defined in Device Profile. This API is currently available to products registered on LG ThinQ only, but more products will be supported in the future. In order for the B2B partner service to receive the device status, the Callback call information of the B2B partner service must be registered in the LG Smart Solution API Developer in advance. The types of device status changes provided by Callback are as follows. The conditions for the Callback subscription may differ by type.
 
             | Push Type | Description | Pre-Condition |
             |-|-|-|
@@ -433,11 +434,11 @@ contents:
             exampleRef="#/components/examples/push-callback-device-alias-changed-example" />
       - name: Event API
         description: |
-          Event API is used for enabling or disabling messages received by B2B partners’ services regarding device updates which are sent out when a specific device’s status is updated. This API is currently for LG ThinQ-registered appliances only but is planned for expanded support for other devices in the future. For a B2B partner’s service to receive device status, it must first register a Callback invoke information of the B2B partner on LG Smart Solution API Developer website. For a B2B partner to use this API, an agreement must first be made with LG Electronics’ contract manager.
+          Event API is used to allow B2B partners' services to receive or stop receiving status change events of properties defined in Device Profile. This API is currently for LG ThinQ-registered appliances only but is planned for expanded support for other devices in the future. For a B2B partner’s service to receive device status, it must first register a Callback invoke information of the B2B partner on LG Smart Solution API Developer website. For a B2B partner to use this API, an agreement must first be made with LG Electronics’ contract manager.
 
            | Push Type | Description | Pre-Condition |
            |-|-|-|
-           | DEVICE_STATUS | Notify device status update | [Subscribe to Device Event API](#tag/Event-API/operation/subscribeEventMessages) called |
+           | DEVICE_STATUS | Specific status changed | [Subscribe to Device Event API](#tag/Event-API/operation/subscribeEventMessages) called |
 
           <br/><br/>
           ### DEVICE_STATUS
