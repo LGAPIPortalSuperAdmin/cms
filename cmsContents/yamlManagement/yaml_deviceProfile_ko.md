@@ -2414,7 +2414,7 @@ contents:
                   targetTemperatureC:
                     type: integer
                     description: 희망 온도 (섭씨)
-                  targetTemperatureㄹ:
+                  targetTemperatureF:
                     type: integer
                     description: 희망 온도 (화씨)
                   unit:
@@ -12624,7 +12624,7 @@ contents:
                   targetTemperatureC:
                     type: integer
                     description: 희망 온도 (섭씨)
-                  targetTemperatureㄹ:
+                  targetTemperatureF:
                     type: integer
                     description: 희망 온도 (화씨)
                   unit:
