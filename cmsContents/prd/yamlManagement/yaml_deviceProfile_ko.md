@@ -34088,7 +34088,7 @@ contents:
           - odu
           - idu
       - name: LG Business Cloud
-        tags:ㄹ
+        tags:f
           - signage
       - name: Hejhome
         tags:
