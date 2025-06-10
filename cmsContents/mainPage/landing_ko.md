@@ -198,7 +198,7 @@ contents: >-
   \              href="/product/useCase7?s=1728382710224"
 
 
-  \              className="btn-round-flat c-link p0">
+  \              className="btn-round-flat c-link p0" mpClickItem='smarthome_detail' mpScreenName='SmartSolution_Main'>
 
 
   \              자세히 보기<i className="arr-link"></i>
@@ -258,7 +258,7 @@ contents: >-
   \              href="/product/useCase4?s=1728382660697"
 
 
-  \              className="btn-round-flat c-link p0">
+  \              className="btn-round-flat c-link p0" mpClickItem='residentialbuilding_detail' mpScreenName='SmartSolution_Main' >
 
 
   \              자세히 보기<i className="arr-link"></i>
@@ -312,7 +312,7 @@ contents: >-
   \              href="/product/useCase1?s=1728382496802"
 
 
-  \              className="btn-round-flat c-link p0">
+  \              className="btn-round-flat c-link p0" mpClickItem='officebuilding_detail' mpScreenName='SmartSolution_Main' >
 
 
   \              자세히 보기<i className="arr-link"></i>
@@ -585,7 +585,7 @@ contents: >-
   \              href="mailto:bizdev@lge.com?subject=제목을 입력해 주세요.&body=문의 내용을 입력해 주세요."
 
 
-  \              className="btn-round-primary btn-l" target="_blank">
+  \              className="btn-round-primary btn-l" target="_blank"  mpClickItem='mailto_bizdev' mpScreenName='SmartSolution_Main' >
 
 
   \              문의하기
