@@ -85,7 +85,7 @@ contents:
         get:
           tags:
             - Route API
-          summary: 도메인 이름 조회
+          summary: 도메인 이름 조회 (테스트)
           description: |
             ThinQ Platform에 Backend 주소를 얻어오기 위한 API입니다. 리전 별, 형상 별 도메인 이름을 조회합니다.
           parameters:
