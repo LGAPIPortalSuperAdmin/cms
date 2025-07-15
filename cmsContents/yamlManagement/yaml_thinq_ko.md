@@ -85,7 +85,7 @@ contents:
         post:
           summary: 사용자에게 인사 메시지 전송
           tags:
-            - Example API
+            - Route API
           description: 사용자 이름을 받아 인사 메시지를 전송합니다.
           parameters:
             - name: x-api-key
