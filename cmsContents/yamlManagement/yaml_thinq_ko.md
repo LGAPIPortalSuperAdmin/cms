@@ -81,6 +81,50 @@ contents:
             schemaRef="#/components/schemas/event_message"
             exampleRef="#/components/examples/event_message_example" />
     paths:
+      /greet:
+        post:
+          summary: 사용자에게 인사 메시지 전송
+          tags:
+            - Example API
+          description: 사용자 이름을 받아 인사 메시지를 전송합니다.
+          parameters:
+            - name: x-api-key
+              in: header
+              required: true
+              description: API 호출 인증 키
+              schema:
+                type: string
+                example: my-secret-key-123
+          requestBody:
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: 사용자 이름
+                      example: Byunghoon
+                    language:
+                      type: string
+                      description: 인사할 언어
+                      enum: [ko, en, ja]
+                      example: ko
+                example:
+                  name: Byunghoon
+                  language: ko
+          responses:
+            '200':
+              description: 인사 메시지 전송 성공
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: 안녕하세요!
       /route:
         get:
           tags:
