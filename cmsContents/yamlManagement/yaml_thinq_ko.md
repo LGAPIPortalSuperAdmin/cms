@@ -4,6 +4,14 @@ contents:
   code: >
     openapi: 3.1.0
 
+    theme:
+      codeSampleLanguages:
+        - lang: curl
+          label: CURL
+        - lang: node
+          label: Node.js
+        - lang: python
+          label: Python
     info:
       version: null
       title: ThinQ API
@@ -85,7 +93,7 @@ contents:
         get:
           tags:
             - Route API
-          summary: 도메인 이름 조회 (테스트)
+          summary: 도메인 이름 조회
           description: |
             ThinQ Platform에 Backend 주소를 얻어오기 위한 API입니다. 리전 별, 형상 별 도메인 이름을 조회합니다.
           parameters:
