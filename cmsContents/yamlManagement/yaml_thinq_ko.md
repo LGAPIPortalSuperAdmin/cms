@@ -83,9 +83,9 @@ contents:
     paths:
       /greet:
         post:
-          summary: 사용자에게 인사 메시지 전송
           tags:
             - Route API
+          summary: 사용자에게 인사 메시지 전송
           description: 사용자 이름을 받아 인사 메시지를 전송합니다.
           parameters:
             - name: x-api-key
@@ -125,6 +125,28 @@ contents:
                       message:
                         type: string
                         example: 안녕하세요!
+          x-codeSamples:
+            - lang: curl
+              label: CURL 예시
+              source: |
+                curl -X POST "https://api.example.com/greet" \
+                  -H "x-api-key: my-secret-key-123" \
+                  -H "Content-Type: application/json" \
+                  -d '{"name": "Byunghoon", "language": "ko"}'
+            - lang: javascript
+              label: JavaScript 예시
+              source: |
+                fetch("https://api.example.com/greet", {
+                  method: "POST",
+                  headers: {
+                    "x-api-key": "my-secret-key-123",
+                    "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify({
+                    name: "Byunghoon",
+                    language: "ko"
+                  })
+                })
       /route:
         get:
           tags:
