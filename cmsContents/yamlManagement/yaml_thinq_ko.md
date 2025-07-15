@@ -4,14 +4,19 @@ contents:
   code: >
     openapi: 3.1.0
 
-    theme:
-      codeSampleLanguages:
-        - lang: curl
-          label: CURL
-        - lang: node
-          label: Node.js
-        - lang: python
-          label: Python
+    type: reference-docs
+
+    definitionId: acme
+
+    settings:
+
+    generateCodeSamples:
+      languages:
+        - lang: JavaScript
+          label: JS
+        - lang: C#
+        - lang: Java
+        - lang: Go
     info:
       version: null
       title: ThinQ API
