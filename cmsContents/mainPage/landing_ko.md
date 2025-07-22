@@ -12,7 +12,7 @@ contents: >-
   \              <b>Start</b> with <br class="mo" />
 
 
-  \              <b>LG Smart Solution API</b>
+  \              <b>LG Smart Solution API!!</b>
 
 
   \            </h3>
